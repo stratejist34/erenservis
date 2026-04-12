@@ -3,6 +3,8 @@
 
 import type { FaqItem } from './sanziman-faq';
 import { BRANDS, buildBrandTransmissionTitle } from './brands';
+import type { TransmissionFamily } from './transmissions';
+import type { Brand } from './brands';
 
 /* ── TYPES ───────────────────────────────────────────────────────────────── */
 
@@ -186,6 +188,43 @@ export function buildBrandListSchema() {
         url: `https://erenservis.net/arac/${brand.slug}/`,
       },
     })),
+  };
+}
+
+/* ── TRANSMISSION (Product entity) ──────────────────────────────────────── */
+
+export interface TransmissionSchemaParams {
+  transmission: TransmissionFamily;
+  relatedBrands: Brand[];
+  url: string;
+}
+
+export function buildTransmissionSchema(params: TransmissionSchemaParams) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: params.transmission.fullName,
+    alternateName: params.transmission.codes,
+    description: params.transmission.description,
+    manufacturer: {
+      '@type': 'Organization',
+      name: params.transmission.manufacturer,
+    },
+    category: 'Otomatik Şanzıman',
+    url: params.url,
+    brand: params.relatedBrands.map((b) => ({
+      '@type': 'Brand',
+      name: b.name,
+    })),
+    offers: {
+      '@type': 'Offer',
+      seller: {
+        '@type': 'AutoRepair',
+        name: 'Eren Servis',
+        url: 'https://erenservis.net',
+      },
+      areaServed: 'Bostancı, İstanbul',
+    },
   };
 }
 

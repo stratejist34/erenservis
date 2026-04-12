@@ -199,13 +199,13 @@
   --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
   --animate-pulse-fast: pulse-fast 1.5s ease-in-out infinite;
 
-  /* Content (light mode bölümler için — eğer bir yerde kullanılıyorsa kalsın) */
-  --color-content-bg: #F8F9FA;
-  --color-content-secondary: #F1F3F5;
-  --color-content-tertiary: #E9ECEF;
-  --color-content-text: #212529;
-  --color-content-muted: #6C757D;
-  --color-content-border: #DEE2E6;
+  /* Content (Diagnostic Cyan — tüm content-* tokenlar dark sisteme migre edildi) */
+  --color-content-bg: #070B11;
+  --color-content-secondary: #0C1219;
+  --color-content-tertiary: #0F1923;
+  --color-content-text: #F0F4F8;
+  --color-content-muted: #94A3B8;
+  --color-content-border: rgba(255, 255, 255, 0.08);
 }
 
 @keyframes pulse-slow {

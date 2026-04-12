@@ -410,6 +410,10 @@ body {
     font-variant-numeric: tabular-nums;
   }
 
+  .animate-fade-in {
+    animation: fade-in 0.4s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -789,4 +793,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .brand-marquee,
   .brand-marquee-rev  { animation: none; }
+}
+
+/* ── Fade-in utility (TransmissionTabs + general use) ───────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

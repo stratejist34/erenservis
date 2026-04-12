@@ -463,56 +463,6 @@ body {
   animation: selection-swap 320ms var(--ease-out);
 }
 
-.v1-depth-card {
-  position: relative;
-  overflow: hidden;
-  transition:
-    border-color var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) var(--ease-out);
-}
-
-.v1-depth-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(110deg, transparent 0%, rgba(232, 225, 215, 0.08) 48%, transparent 100%);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-125%);
-}
-
-.v1-depth-card:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 16px 34px rgba(0, 0, 0, 0.22),
-    0 0 0 1px rgba(232, 225, 215, 0.04);
-}
-
-.v1-depth-card:hover::after {
-  opacity: 1;
-  animation: console-sheen 900ms var(--ease-out);
-}
-
-.v1-signal-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.v1-signal-card::before {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(176, 138, 97, 0.42) 48%, transparent 100%);
-  opacity: 0;
-  transition: opacity var(--duration-base) var(--ease-out);
-}
-
-.v1-signal-card:hover::before {
-  opacity: 1;
-}
 
 .btn-brand,
 .btn-premium {
@@ -833,14 +783,8 @@ body {
 
   .animate-pulse-ring,
   .animate-scanline,
-  .selection-swap,
-  .v1-depth-card::after {
+  .selection-swap {
     animation: none;
-  }
-
-  .v1-depth-card,
-  .v1-depth-card:hover {
-    transform: none;
   }
 }
 

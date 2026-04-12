@@ -1,9 +1,19 @@
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 
-const PHONE_HREF = 'tel:+905327153751';
+const DEFAULT_PHONE = 'tel:+905327153751';
 const WHATSAPP_HREF = 'https://wa.me/905327153751';
 
-export default function FinalCTA() {
+interface FinalCTAProps {
+  title?: string;
+  subtitle?: string;
+  phone?: string;
+}
+
+export default function FinalCTA({
+  title,
+  subtitle = '30 dakikada net teşhis. Ücretsiz.',
+  phone = DEFAULT_PHONE,
+}: FinalCTAProps) {
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">
       <div
@@ -14,16 +24,19 @@ export default function FinalCTA() {
         }}
       >
         <h2 className="text-4xl font-semibold tracking-[-0.045em] text-[#F0F4F8] sm:text-5xl">
-          Sorun büyümeden{' '}
-          <span className="text-[#38BDF8]">kontrol ettirin.</span>
+          {title ? (
+            title
+          ) : (
+            <>Sorun büyümeden{' '}<span className="text-[#38BDF8]">kontrol ettirin.</span></>
+          )}
         </h2>
         <p className="mx-auto mt-4 max-w-[42ch] text-lg leading-8 text-[#94A3B8]">
-          30 dakikada net teşhis. Ücretsiz.
+          {subtitle}
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href={PHONE_HREF}
+            href={phone}
             className="inline-flex items-center gap-2 rounded-2xl bg-[#38BDF8] px-8 py-4 text-base font-semibold text-[#070B11] transition hover:-translate-y-0.5"
             style={{
               boxShadow: '0 10px 40px rgba(36,220,255,0.30), inset 0 1px 0 rgba(255,255,255,0.15)',

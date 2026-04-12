@@ -1,3 +1,4 @@
+import React from 'react';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 
 const PHONE_HREF = 'tel:+905327153751';
@@ -48,7 +49,17 @@ const COST_BARS = [
   },
 ] as const;
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  badge?: string;
+  title?: React.ReactNode;
+  subtitle?: string;
+  ctaPhone?: string;
+  ctaWhatsApp?: string;
+}
+
+export default function HeroSection({
+  badge = 'Bostancı · Otomatik Şanzıman Uzmanı',
+}: HeroSectionProps) {
   return (
     <section className="relative mx-auto grid max-w-7xl gap-10 overflow-hidden px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
 
@@ -94,7 +105,7 @@ export default function HeroSection() {
       <div className="relative z-10 pt-10 lg:pt-16">
         {/* Badge */}
         <div className="hero-item-1 mb-6 inline-flex items-center rounded-full border border-[#38BDF8]/20 bg-[#38BDF8]/8 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#7DD3FC]">
-          Bostancı · Otomatik Şanzıman Uzmanı
+          {badge}
         </div>
 
         {/* H1 */}

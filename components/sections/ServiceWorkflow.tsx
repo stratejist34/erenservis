@@ -32,12 +32,20 @@ const STEPS = [
   },
 ] as const;
 
-export default function ServiceWorkflow() {
+interface ServiceWorkflowProps {
+  eyebrow?: string;
+  title?: string;
+}
+
+export default function ServiceWorkflow({
+  eyebrow = 'Süreç',
+  title = '4 adımda kontrollü servis',
+}: ServiceWorkflowProps) {
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">
-      <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">Süreç</div>
+      <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">{eyebrow}</div>
       <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-[#F0F4F8]">
-        4 adımda kontrollü servis
+        {title}
       </h2>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">

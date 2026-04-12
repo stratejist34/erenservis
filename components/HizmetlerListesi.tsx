@@ -2,22 +2,22 @@ import { ArrowRight, Gauge, RefreshCcw, Settings2, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 const DSG_FAULTS = [
-  'Kavrama balata asinmasi',
-  'Mekatronik kart arizasi',
-  'Vites gecis sertligi',
-  'Basinc tupu problemi',
+  'Kavrama balata aşınması',
+  'Mekatronik kart arızası',
+  'Vites geçiş sertliği',
+  'Basınç tüpü problemi',
 ] as const;
 
 const AISIN_FAULTS = [
-  'Valf govdesi davranis bozulmasi',
-  'EAT6 / EAT8 gecis sertligi',
-  'Tork konvertoru ve yag basinci takibi',
+  'Valf gövdesi davranış bozulması',
+  'EAT6 / EAT8 geçiş sertliği',
+  'Tork konvertörü ve yağ basıncı takibi',
 ] as const;
 
 const DSG_TAGS = ['DQ200', 'DQ250', 'DQ381', 'DQ500'] as const;
 const AISIN_TAGS = ['Aisin', 'EAT6', 'EAT8', 'AT6'] as const;
 const CVT_TAGS = ['CVT', 'EDC', 'DCT', 'PowerShift'] as const;
-const BAKIM_TAGS = ['Diagnostik', 'Yag Degisimi', 'Filtre', 'Kalibrasyon'] as const;
+const BAKIM_TAGS = ['Diagnostik', 'Yağ Değişimi', 'Filtre', 'Kalibrasyon'] as const;
 
 export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean } = {}) {
   return (
@@ -25,13 +25,13 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {!hideHeader && (
           <div className="text-center mb-14">
-            <p className="section-tag mb-4">Uzmanlik Alanlarimiz</p>
+            <p className="section-tag mb-4">Uzmanlık Alanlarımız</p>
             <h2 id="hizmetler-baslik" className="text-fg mb-4">
-              Sanziman Hizmetlerimiz
+              Şanzıman Hizmetlerimiz
             </h2>
             <p className="text-fg-soft max-w-xl mx-auto leading-relaxed">
-              Turkiye parkinda sik gorulen otomatik sanziman ailelerinde tani, bakim ve revizyon.
-              Orijinal parca, garantili iscilik.
+              Türkiye parkında sık görülen otomatik şanzıman ailelerinde tanı, bakım ve revizyon.
+              Orijinal parça, garantili işçilik.
             </p>
           </div>
         )}
@@ -46,7 +46,7 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
               <div className="flex-1 min-w-0">
                 <div className="mb-4">
                   <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-accent/15 text-accent">
-                    En Cok Talep
+                    En Çok Talep
                   </span>
                 </div>
 
@@ -56,7 +56,7 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
                   </div>
                   <div className="min-w-0">
                     <h3 className="text-xl font-bold text-fg leading-snug mb-2 group-hover:text-accent-hi transition-colors duration-200">
-                      DSG &amp; S-Tronic Sanziman
+                      DSG &amp; S-Tronic Şanzıman
                     </h3>
                     <div className="flex flex-wrap gap-1.5">
                       {DSG_TAGS.map((tag) => (
@@ -69,8 +69,8 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
                 </div>
 
                 <p className="text-sm text-fg-soft leading-relaxed mb-6">
-                  VW, Audi, Skoda ve Seat DSG sanzimanlarinda mekatronik unite, kavrama paketi ve basinc
-                  tupu dahil komple revizyon. DQ200 basinc tupu yukseltme hizmeti dahil.
+                  VW, Audi, Skoda ve Seat DSG şanzımanlarında mekatronik ünite, kavrama paketi ve basınç
+                  tüpü dahil komple revizyon. DQ200 basınç tüpü yenileme hizmeti dahil.
                 </p>
 
                 <span className="text-sm font-semibold text-accent group-hover:underline">
@@ -80,7 +80,7 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
 
               <div className="lg:w-60 shrink-0 rounded-xl bg-surface-0 border border-edge p-5">
                 <p className="text-[10px] font-semibold text-fg-muted uppercase tracking-wider mb-4">
-                  Sik Gorulen DSG Arizalari
+                  Sık Görülen DSG Arızaları
                 </p>
                 <ul className="space-y-2.5">
                   {DSG_FAULTS.map((fault) => (
@@ -106,7 +106,7 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
                 <h3 className="text-base font-bold text-fg leading-snug mb-1 group-hover:text-accent-hi transition-colors duration-200">
                   Aisin &amp; Tam Otomatik
                 </h3>
-                <p className="text-xs text-white/40 mt-1 mb-2">Peugeot, Citroen, Opel, Toyota ve Aisin tabanli tam otomatik platformlar</p>
+                <p className="text-xs text-white/40 mt-1 mb-2">Peugeot, Citroën, Opel, Toyota ve Aisin tabanlı tam otomatik platformlar</p>
                 <div className="flex flex-wrap gap-1.5">
                   {AISIN_TAGS.map((tag) => (
                     <span key={tag} className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-surface-0 text-fg-muted">
@@ -118,8 +118,8 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
             </div>
 
             <p className="text-sm text-fg-soft leading-relaxed flex-1">
-              Aisin ve EAT6 / EAT8 ailelerinde valf govdesi, tork konvertoru, yag basinci ve gecis sertligi
-              problemlerini marka-model baglaminda ayri degerlendiriyoruz.
+              Aisin ve EAT6 / EAT8 ailelerinde valf gövdesi, tork konvertörü, yağ basıncı ve geçiş sertliği
+              sorunlarını marka-model bağlamında ayrı değerlendiriyoruz.
             </p>
 
             <ul className="space-y-2 pt-3 border-t border-edge">
@@ -152,10 +152,10 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
               <h3 className="text-base font-bold text-fg leading-snug mb-1 group-hover:text-accent-hi transition-colors duration-200">
                 CVT / EDC / DCT Takibi
               </h3>
-              <p className="text-xs text-white/40 mt-1 mb-2">Nissan ve Toyota CVT ile Renault EDC / DCT ve Ford PowerShift semptomlari</p>
+              <p className="text-xs text-white/40 mt-1 mb-2">Nissan ve Toyota CVT ile Renault EDC / DCT ve Ford PowerShift semptomları</p>
               <p className="text-sm text-fg-soft leading-relaxed">
-                CVT kayma davranisi ile Renault EDC / DCT ve Ford PowerShift gecis semptomlarini ayni listede
-                eritmeden, platforma gore ayri on teshis mantigi ile okuyoruz.
+                CVT kayma belirtileri, Renault EDC / DCT ve Ford PowerShift geçiş sorunlarını tek kategoriye
+                sıkıştırmadan platforma özel ön tanı yaklaşımıyla değerlendiriyoruz.
               </p>
             </div>
 
@@ -182,11 +182,11 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
 
             <div className="flex-1 min-w-0">
               <h3 className="text-base font-bold text-fg leading-snug mb-1 group-hover:text-accent-hi transition-colors duration-200">
-                Sanziman Bakim &amp; Kontrol
+                Şanzıman Bakım &amp; Kontrol
               </h3>
               <p className="text-sm text-fg-soft leading-snug">
-                Yag degisimi, filtre yenileme ve bilgisayarli diagnostik.
-                Duzenli bakim = uzun sanziman omru.
+                Yağ değişimi, filtre yenileme ve bilgisayarlı diagnostik.
+                Düzenli bakım = uzun şanzıman ömrü.
               </p>
             </div>
 
@@ -210,7 +210,7 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
             href="/hizmetler/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-edge-hi text-fg font-semibold text-sm hover:bg-surface-2 transition-colors"
           >
-            Tum Hizmetleri Gor
+            Tüm Hizmetleri Gör
             <ArrowRight className="w-4 h-4 text-fg-soft" strokeWidth={2} />
           </Link>
         </div>

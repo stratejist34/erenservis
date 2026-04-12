@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import { buildServiceSchema, schemaToString } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -71,30 +72,16 @@ const FIYAT_TABLOSU = [
 ];
 
 export default function DQ200Page() {
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+  const serviceSchema = buildServiceSchema({
     name: 'DQ200 DSG Şanzıman Tamiri',
     description: 'DQ200 7 ileri kuru kavramalı DSG şanzıman mekatronik, kavrama ve basınç tüpü tamiri.',
-    provider: {
-      '@type': 'AutoRepair',
-      name: 'Eren Servis',
-      url: 'https://erenservis.net',
-      telephone: '+905327153751',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4',
-        addressLocality: 'Bostancı',
-        addressRegion: 'İstanbul',
-        addressCountry: 'TR',
-      },
-    },
+    url: 'https://erenservis.net/arac/dq200/',
     areaServed: ['Bostancı', 'Kadıköy', 'İstanbul'],
-  };
+  });
 
   return (
     <main className="bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
 
       {/* Hero */}
       <section className="hero-deep pt-28 pb-16">

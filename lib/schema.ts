@@ -34,42 +34,58 @@ export interface BreadcrumbItem {
   url: string;
 }
 
+/* ── BUSINESS IDENTITY (tek kaynak) ─────────────────────────────────────── */
+
+const BUSINESS_NODE = {
+  '@type': 'AutoRepair' as const,
+  '@id': 'https://erenservis.net/#business',
+  name: 'Eren Servis',
+  description:
+    "Bostancı'nın DSG ve otomatik şanzıman uzmanı. DQ200, DQ250, DQ381 " +
+    'mekatronik, kavrama ve CVT tamiri.',
+  url: 'https://erenservis.net',
+  telephone: '+90 532 715 37 51',
+  address: {
+    '@type': 'PostalAddress' as const,
+    streetAddress: 'Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4',
+    addressLocality: 'Bostancı',
+    addressRegion: 'İstanbul',
+    postalCode: '34744',
+    addressCountry: 'TR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates' as const,
+    latitude: 40.9656025,
+    longitude: 29.1093912,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification' as const,
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:30',
+      closes: '18:30',
+    },
+  ],
+  priceRange: '₺₺',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+  sameAs: ['https://www.google.com/maps/place/Eren+Volkswagen+Servis+Bostanc%C4%B1/@40.9656025,29.1093912'],
+};
+
+/** Lightweight reference to Eren Servis for use inside other schemas. */
+export const BUSINESS_REF = {
+  '@type': 'AutoRepair' as const,
+  '@id': 'https://erenservis.net/#business',
+  name: 'Eren Servis',
+  url: 'https://erenservis.net',
+};
+
 /* ── LOCAL BUSINESS (site geneli — layout'a bir kez eklenir) ────────────── */
 
-export function buildLocalBusinessSchema(params: LocalBusinessParams) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function buildLocalBusinessSchema(_params?: LocalBusinessParams) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'AutoRepair',
-    name: 'Eren Servis',
-    description:
-      "Bostancı'nın DSG ve otomatik şanzıman uzmanı. DQ200, DQ250, DQ381 " +
-      'mekatronik, kavrama ve CVT tamiri.',
-    url: params.url,
-    telephone: '+90 532 715 37 51',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4',
-      addressLocality: 'Bostancı',
-      addressRegion: 'İstanbul',
-      postalCode: '34744',
-      addressCountry: 'TR',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 40.9656025,
-      longitude: 29.1093912,
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '08:30',
-        closes: '18:30',
-      },
-    ],
-    priceRange: '₺₺',
-    areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
-    sameAs: ['https://www.google.com/maps/place/Eren+Volkswagen+Servis+Bostanc%C4%B1/@40.9656025,29.1093912'],
+    ...BUSINESS_NODE,
   };
 }
 
@@ -100,11 +116,7 @@ export function buildServiceSchema(params: ServiceParams) {
     name: params.name,
     description: params.description,
     url: params.url,
-    provider: {
-      '@type': 'AutoRepair',
-      name: 'Eren Servis',
-      url: 'https://erenservis.net',
-    },
+    provider: BUSINESS_REF,
     areaServed: params.areaServed ?? ['Bostancı', 'İstanbul'],
     ...(params.priceRange && {
       offers: {
@@ -166,12 +178,6 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
 
 /* ── BRAND LIST (ItemList) ───────────────────────────────────────────────── */
 
-const PROVIDER_REF = {
-  '@type': 'AutoRepair',
-  name: 'Eren Servis',
-  url: 'https://erenservis.net',
-} as const;
-
 export function buildBrandListSchema() {
   return {
     '@context': 'https://schema.org',
@@ -184,7 +190,7 @@ export function buildBrandListSchema() {
         '@type': 'Service',
         name: buildBrandTransmissionTitle(brand),
         serviceType: 'Şanzıman Tamiri',
-        provider: PROVIDER_REF,
+        provider: BUSINESS_REF,
         url: `https://erenservis.net/arac/${brand.slug}/`,
       },
     })),
@@ -218,11 +224,7 @@ export function buildTransmissionSchema(params: TransmissionSchemaParams) {
     })),
     offers: {
       '@type': 'Offer',
-      seller: {
-        '@type': 'AutoRepair',
-        name: 'Eren Servis',
-        url: 'https://erenservis.net',
-      },
+      seller: BUSINESS_REF,
       areaServed: 'Bostancı, İstanbul',
     },
   };

@@ -59,7 +59,7 @@ export default function MarkalarIndexPage() {
         title="Ana Uzmanlık Markaları"
         subtitle="Sahaya en sık gelen ve teknik derinliğimizin en güçlü olduğu markalar"
         brands={tier1}
-        bgClass="bg-white"
+        bgClass="bg-[#070B11]"
       />
 
       <BrandTierSection
@@ -73,7 +73,7 @@ export default function MarkalarIndexPage() {
         title="Diğer Hizmet Verdiğimiz Markalar"
         subtitle="Spesifik şanzıman ailelerinde uzmanlığımızla servis verdiğimiz markalar"
         brands={tier3}
-        bgClass="bg-white"
+        bgClass="bg-[#070B11]"
       />
     </main>
   );
@@ -105,7 +105,7 @@ function BrandTierSection({
               <Link
                 key={brand.slug}
                 href={`/arac/${brand.slug}/`}
-                className="group p-5 rounded-2xl bg-white border border-content-border hover:border-accent transition-all"
+                className="group p-5 rounded-2xl bg-[#070B11] border border-content-border hover:border-accent transition-all"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 flex items-center justify-center shrink-0">

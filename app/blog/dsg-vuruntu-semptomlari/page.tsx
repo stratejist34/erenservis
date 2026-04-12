@@ -50,7 +50,7 @@ const FAQ = [
 
 export default function DSGVuruntuPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#070B11]">
       {/* Hero */}
       <section className="hero-deep pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -120,7 +120,7 @@ export default function DSGVuruntuPage() {
           <h2 className="text-2xl font-bold text-content-text mb-6">DSG Vuruntu Nedenleri</h2>
           <div className="grid gap-4">
             {NEDENLER.map((neden) => (
-              <div key={neden.baslik} className="p-5 rounded-xl bg-white border border-content-border shadow-sm">
+              <div key={neden.baslik} className="p-5 rounded-xl bg-[#070B11] border border-content-border shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                     <Wrench className="w-5 h-5 text-accent" />

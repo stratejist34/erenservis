@@ -44,7 +44,7 @@ export default function ContactForm() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-      <div className="bg-white rounded-2xl border border-content-border p-8 shadow-sm">
+      <div className="bg-[#070B11] rounded-2xl border border-content-border p-8 shadow-sm">
         <h3 className="text-xl font-bold text-content-text mb-2">Mesaj Gönderin</h3>
         <p className="text-sm text-content-muted mb-6">
           Formu doldurun, sizi WhatsApp üzerinden arayalım.

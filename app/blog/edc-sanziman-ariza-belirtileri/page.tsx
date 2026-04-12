@@ -47,7 +47,7 @@ const MODELLER = [
 
 export default function EDCArizaPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#070B11]">
       {/* Hero */}
       <section className="hero-deep pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -117,7 +117,7 @@ export default function EDCArizaPage() {
           <h2 className="text-2xl font-bold text-content-text mb-6">Model Bazlı Şikayetler</h2>
           <div className="grid gap-4">
             {MODELLER.map((item) => (
-              <div key={item.model} className="p-5 rounded-xl bg-white border border-content-border shadow-sm">
+              <div key={item.model} className="p-5 rounded-xl bg-[#070B11] border border-content-border shadow-sm">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
                   <h3 className="font-bold text-content-text">{item.model}</h3>
                   <span className="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded-full w-fit">

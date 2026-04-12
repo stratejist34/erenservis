@@ -104,7 +104,7 @@ export default function DSGHangiAraclarPage() {
   };
 
   return (
-    <main className="bg-white">
+    <main className="bg-[#070B11]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Hero */}

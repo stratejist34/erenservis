@@ -55,7 +55,7 @@ const FAQ = [
 
 export default function UyariLambasiPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#070B11]">
       {/* Hero */}
       <section className="hero-deep pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">

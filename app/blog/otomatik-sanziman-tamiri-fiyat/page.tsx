@@ -96,7 +96,7 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
   } : null;
 
   return (
-    <main className="bg-white">
+    <main className="bg-[#070B11]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -175,7 +175,7 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
           </p>
           <div className="grid gap-4">
             {SANZIMAN_TIPLERI.map((tip) => (
-              <div key={tip.baslik} className="p-5 rounded-xl bg-white border border-content-border shadow-sm">
+              <div key={tip.baslik} className="p-5 rounded-xl bg-[#070B11] border border-content-border shadow-sm">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                     <Wrench className="w-5 h-5 text-accent" />

@@ -80,7 +80,7 @@ export default function DQ200Page() {
   });
 
   return (
-    <main className="bg-white">
+    <main className="bg-[#070B11]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
 
       {/* Hero */}
@@ -159,7 +159,7 @@ export default function DQ200Page() {
           <h2 className="text-2xl font-bold text-content-text mb-6">DQ200 Sık Görülen Arızalar</h2>
           <div className="grid gap-4">
             {ARIZA_KALEMLERI.map((ariza) => (
-              <div key={ariza.baslik} className="p-5 rounded-xl bg-white border border-content-border shadow-sm">
+              <div key={ariza.baslik} className="p-5 rounded-xl bg-[#070B11] border border-content-border shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                     <Wrench className="w-5 h-5 text-accent" />

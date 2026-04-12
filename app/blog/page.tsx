@@ -71,7 +71,7 @@ export default async function BlogPage() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {allPosts.map((post) => (
-                  <article key={post.id} className="card-hover bg-white border border-content-border overflow-hidden">
+                  <article key={post.id} className="card-hover bg-[#070B11] border border-content-border overflow-hidden">
                     <div className="p-6">
                       <div className="flex items-center gap-1.5 text-xs text-content-muted mb-3">
                         <Calendar className="w-3.5 h-3.5" strokeWidth={2} />

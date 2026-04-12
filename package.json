@@ -1,0 +1,46 @@
+{
+  "name": "erenservis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node -e \"require('fs').rmSync('.next', {recursive:true,force:true})\" && next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "eslint",
+    "cirak": "node tools/cirak.mjs",
+    "kalfa": "node tools/kalfa.mjs",
+    "gemini": "node tools/gemini.mjs",
+    "gpt": "node tools/gpt.mjs",
+    "delegate": "node tools/delegate.mjs",
+    "delegate:route": "node tools/delegate.mjs --route-only",
+    "delegate:show": "node tools/delegate.mjs --show-route",
+    "chief": "node tools/chief.mjs",
+    "chief:route": "node tools/chief.mjs --route-only",
+    "delegation:doctor": "node tools/delegation-doctor.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.577.0",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "schema-dts": "^1.1.5",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "next-sitemap": "^4.2.3",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

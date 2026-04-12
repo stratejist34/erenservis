@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node tools/cirak.mjs *)",
+      "Bash(node tools/kalfa.mjs *)",
+      "Bash(node tools/gemini.mjs *)",
+      "Bash(node tools/gpt.mjs *)",
+      "Bash(node tools/delegate.mjs *)",
+      "Bash(node tools/delegation-doctor.mjs *)"
+    ]
+  }
+}

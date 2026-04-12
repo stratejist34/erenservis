@@ -1,0 +1,15 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /v1/
+Disallow: /v2/
+Disallow: /v4/
+
+# Host
+Host: https://erenservis.net
+
+# Sitemaps
+Sitemap: https://erenservis.net/sitemap.xml

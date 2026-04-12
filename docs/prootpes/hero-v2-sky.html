@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eren Servis — Hero Prototype v2 (Sky)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #070B11;
+            --bg-elevated: #0C1219;
+            --surface-1: rgba(20, 30, 42, 0.55);
+            --surface-2: rgba(28, 40, 54, 0.75);
+            --border-subtle: rgba(160, 200, 230, 0.08);
+            --border-accent: rgba(56, 189, 248, 0.35);
+
+            --sky-primary: #38BDF8;
+            --sky-bright: #7DD3FC;
+            --sky-deep: #0284C7;
+            --sky-glow: rgba(56, 189, 248, 0.15);
+            --sky-glow-strong: rgba(56, 189, 248, 0.35);
+            --sky-soft: rgba(56, 189, 248, 0.6);
+
+            --status-optimal: #10B981;
+            --status-warning: #F59E0B;
+            --status-critical: #F43F5E;
+
+            --text-primary: #F0F4F8;
+            --text-secondary: #94A3B8;
+            --text-tertiary: #64748B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Geist', -apple-system, sans-serif;
+            font-feature-settings: 'cv11', 'ss01';
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Living background — sky tones */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 75% 15%, rgba(56, 189, 248, 0.10), transparent 55%),
+                radial-gradient(ellipse 70% 50% at 15% 85%, rgba(2, 132, 199, 0.08), transparent 55%),
+                radial-gradient(ellipse 50% 40% at 50% 50%, rgba(56, 189, 248, 0.03), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Subtle grid texture */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(160, 200, 230, 0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(160, 200, 230, 0.018) 1px, transparent 1px);
+            background-size: 64px 64px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* NAV */
+        nav {
+            position: relative;
+            z-index: 10;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--sky-primary), var(--sky-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            color: #061018;
+            box-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-tag {
+            font-family: 'Geist Mono', monospace;
+            font-size: 10px;
+            color: var(--text-tertiary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--surface-1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 100px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            border-color: var(--border-accent);
+            box-shadow: 0 0 24px var(--sky-glow);
+        }
+
+        .nav-cta-icon {
+            width: 14px;
+            height: 14px;
+            color: var(--sky-primary);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            z-index: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 60px 32px 100px;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-left .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Geist Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--sky-primary);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            padding: 8px 14px;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            border-radius: 100px;
+        }
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sky-primary);
+            box-shadow: 0 0 10px var(--sky-primary);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
+        }
+
+        h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 36px;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        /* Primary CTA — Cognify-style with subtle inner gradient */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 26px;
+            background: linear-gradient(180deg, #5DCBFA 0%, var(--sky-primary) 50%, var(--sky-deep) 100%);
+            color: #061018;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid rgba(125, 211, 252, 0.4);
+            cursor: pointer;
+            transition: all 0.25s;
+            box-shadow:
+                0 0 0 1px rgba(56, 189, 248, 0.2),
+                0 0 32px rgba(56, 189, 248, 0.3),
+                0 8px 24px rgba(2, 132, 199, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 0 0 1px rgba(56, 189, 248, 0.3),
+                0 0 44px rgba(56, 189, 248, 0.45),
+                0 12px 30px rgba(2, 132, 199, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 26px;
+            background: var(--surface-1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-accent);
+            background: var(--surface-2);
+        }
+
+        .trust-row {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .trust-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--text-tertiary);
+        }
+
+        /* DIAGNOSTIC PANEL */
+        .diagnostic-panel {
+            position: relative;
+            background: var(--surface-1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow:
+                0 0 80px rgba(56, 189, 248, 0.10),
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .panel-title-group .panel-eyebrow {
+            font-family: 'Geist Mono', monospace;
+            font-size: 10px;
+            color: var(--text-tertiary);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            border-radius: 100px;
+            font-family: 'Geist Mono', monospace;
+            font-size: 10px;
+            color: var(--sky-bright);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .live-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--sky-primary);
+            box-shadow: 0 0 10px var(--sky-primary);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Risk curve chart */
+        .chart-container {
+            position: relative;
+            height: 140px;
+            margin-bottom: 24px;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .chart-grid-line {
+            stroke: rgba(160, 200, 230, 0.06);
+            stroke-width: 1;
+            stroke-dasharray: 2 4;
+        }
+
+        .chart-area {
+            fill: url(#skyGradient);
+        }
+
+        .chart-line {
+            fill: none;
+            stroke: var(--sky-primary);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.5));
+        }
+
+        .chart-dot {
+            fill: var(--bg-base);
+            stroke: var(--sky-primary);
+            stroke-width: 2;
+        }
+
+        .chart-dot-active {
+            fill: var(--sky-primary);
+            stroke: var(--bg-base);
+            stroke-width: 3;
+            filter: drop-shadow(0 0 8px var(--sky-primary));
+        }
+
+        .chart-label {
+            font-family: 'Geist Mono', monospace;
+            font-size: 9px;
+            fill: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Risk rows */
+        .risk-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .risk-row {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: rgba(0, 0, 0, 0.28);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+
+        .risk-row:hover {
+            border-color: var(--border-accent);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .risk-row-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .risk-row-dot.optimal {
+            background: var(--status-optimal);
+            box-shadow: 0 0 10px var(--status-optimal);
+        }
+
+        .risk-row-dot.warning {
+            background: var(--status-warning);
+            box-shadow: 0 0 10px var(--status-warning);
+        }
+
+        .risk-row-dot.critical {
+            background: var(--status-critical);
+            box-shadow: 0 0 10px var(--status-critical);
+        }
+
+        .risk-row-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .risk-row-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .risk-row-sub {
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+
+        .risk-row-value {
+            font-family: 'Geist Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .risk-row.optimal .risk-row-value {
+            color: var(--status-optimal);
+        }
+
+        .risk-row.warning .risk-row-value {
+            color: var(--status-warning);
+        }
+
+        .risk-row.critical .risk-row-value {
+            color: var(--status-critical);
+        }
+
+        /* STAT STRIP */
+        .stat-strip {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .stat-card {
+            position: relative;
+            background: var(--surface-1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px 28px;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 24px;
+            right: 24px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sky-soft), transparent);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-family: 'Geist Mono', monospace;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 24px 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                padding: 20px 24px;
+            }
+
+            .stat-strip {
+                grid-template-columns: 1fr;
+                padding: 0 24px 60px;
+            }
+
+            .stat-value {
+                font-size: 30px;
+            }
+
+            .diagnostic-panel,
+            .stat-card,
+            .nav-cta,
+            .btn-secondary {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                background: rgba(12, 18, 25, 0.92);
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .cta-row {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-mark">E</div>
+            <div class="logo-text">
+                <span class="logo-name">Eren Servis</span>
+                <span class="logo-tag">Şanzıman Teşhis</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#">Hizmetler</a></li>
+            <li><a href="#">Şanzıman Rehberi</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+        <a href="tel:+905327153751" class="nav-cta">
+            <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            0532 715 37 51
+        </a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-left">
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Bostancı · Otomatik Şanzıman Teşhis Merkezi
+            </div>
+            <h1>Şanzıman sorunu büyümeden teşhis edilir.</h1>
+            <p class="hero-desc">
+                Geç kalırsanız onarım maliyeti katlanır. DSG, ZF ve CVT sistemlerde
+                doğru teşhisle süreci baştan kontrol altına alıyoruz.
+            </p>
+            <div class="cta-row">
+                <a href="#" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    Ücretsiz Ön Teşhis
+                </a>
+                <a href="#" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                    WhatsApp'tan Yazın
+                </a>
+            </div>
+            <div class="trust-row">
+                <span class="trust-item"><span class="trust-dot"></span>Aynı gün inceleme</span>
+                <span class="trust-item"><span class="trust-dot"></span>Yazılı fiyat teklifi</span>
+                <span class="trust-item"><span class="trust-dot"></span>2 yıl işçilik garantisi</span>
+            </div>
+        </div>
+
+        <div class="diagnostic-panel">
+            <div class="panel-header">
+                <div class="panel-title-group">
+                    <div class="panel-eyebrow">Risk Büyüme Eğrisi</div>
+                    <div class="panel-title">Bekledikçe maliyet büyür</div>
+                </div>
+                <div class="live-badge">
+                    <span class="live-dot"></span>
+                    Canlı
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <svg class="chart-svg" viewBox="0 0 400 140" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                    <line class="chart-grid-line" x1="0" y1="35" x2="400" y2="35" />
+                    <line class="chart-grid-line" x1="0" y1="70" x2="400" y2="70" />
+                    <line class="chart-grid-line" x1="0" y1="105" x2="400" y2="105" />
+
+                    <path class="chart-area"
+                        d="M 20 110 L 100 95 L 180 75 L 260 45 L 340 18 L 380 8 L 380 140 L 20 140 Z" />
+                    <path class="chart-line" d="M 20 110 L 100 95 L 180 75 L 260 45 L 340 18 L 380 8" />
+
+                    <circle class="chart-dot" cx="20" cy="110" r="4" />
+                    <circle class="chart-dot" cx="100" cy="95" r="4" />
+                    <circle class="chart-dot" cx="180" cy="75" r="4" />
+                    <circle class="chart-dot-active" cx="260" cy="45" r="5" />
+                    <circle class="chart-dot" cx="340" cy="18" r="4" />
+                    <circle class="chart-dot" cx="380" cy="8" r="4" />
+
+                    <text class="chart-label" x="20" y="135" text-anchor="start">Hafta 1</text>
+                    <text class="chart-label" x="200" y="135" text-anchor="middle">Ay 1-3</text>
+                    <text class="chart-label" x="380" y="135" text-anchor="end">Ay 6+</text>
+                </svg>
+            </div>
+
+            <div class="risk-rows">
+                <div class="risk-row optimal">
+                    <span class="risk-row-dot optimal"></span>
+                    <div class="risk-row-content">
+                        <span class="risk-row-label">Erken Teşhis</span>
+                        <span class="risk-row-sub">Kavrama / mekatronik ayarı</span>
+                    </div>
+                    <span class="risk-row-value">8–15K ₺</span>
+                </div>
+                <div class="risk-row warning">
+                    <span class="risk-row-dot warning"></span>
+                    <div class="risk-row-content">
+                        <span class="risk-row-label">Geç Müdahale</span>
+                        <span class="risk-row-sub">Şanzıman revizyonu</span>
+                    </div>
+                    <span class="risk-row-value">35–80K ₺</span>
+                </div>
+                <div class="risk-row critical">
+                    <span class="risk-row-dot critical"></span>
+                    <div class="risk-row-content">
+                        <span class="risk-row-label">İhmal</span>
+                        <span class="risk-row-sub">Komple değişim</span>
+                    </div>
+                    <span class="risk-row-value">120K+ ₺</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stat-strip">
+        <div class="stat-card">
+            <div class="stat-value">15+</div>
+            <div class="stat-label">Yıl Deneyim</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">5.000+</div>
+            <div class="stat-label">Tamamlanan İş</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">6 Ay</div>
+            <div class="stat-label">İşçilik Garantisi</div>
+        </div>
+    </section>
+
+</body>
+
+</html>

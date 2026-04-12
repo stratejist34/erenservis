@@ -135,12 +135,9 @@ export default function HizmetlerListesi({ hideHeader }: { hideHeader?: boolean 
               Aisin Detaylar &rarr;
             </span>
 
-            <Link
-              href="/hizmetler/eat-sanziman-tamiri/"
-              className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent/80 hover:text-accent transition-colors"
-            >
+            <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent/80">
               EAT6 / EAT8 Servisi &rarr;
-            </Link>
+            </span>
           </Link>
 
           <Link

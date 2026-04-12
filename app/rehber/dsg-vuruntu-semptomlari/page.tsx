@@ -161,13 +161,13 @@ export default function DsgVuruntuSemptomlariPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#070B11]">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-zinc-500 mb-6 flex items-center gap-2">
+            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
               <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
               <span>/</span>
               <a href="/rehber" className="hover:text-zinc-300 transition-colors">Rehber</a>
@@ -225,20 +225,20 @@ export default function DsgVuruntuSemptomlariPage() {
             </p>
           </div>
 
-          <p className="text-zinc-700 text-base leading-relaxed mb-4">
+          <p className="text-slate-300 text-base leading-relaxed mb-4">
             Vuruntunun hangi viteste ve hangi koşulda yaşandığı hem arızanın
             kaynağını hem de aciliyetini belirler. Sabah soğukta yalnızca 1→2
             geçişte yaşanan hafif sarsıntı ile her viteste hissedilen güçlü
             vuruntu aynı şey değildir.
           </p>
-          <p className="text-zinc-700 text-base leading-relaxed">
+          <p className="text-slate-300 text-base leading-relaxed">
             Aşağıda 4 farklı senaryo ve her birinin ne anlama geldiğini
             bulabilirsiniz. Senaryonuzu tanıyın, aciliyetini görün.
           </p>
 
           {/* İç link */}
-          <div className="mt-6 p-4 bg-zinc-50 border border-zinc-200 rounded-lg">
-            <p className="text-sm text-zinc-700">
+          <div className="mt-6 p-4 bg-[#0C1219] border border-white/8 rounded-lg">
+            <p className="text-sm text-slate-300">
               Vuruntu var, kavrama arızası mı?{" "}
               <a
                 href="/rehber/dsg-kavrama-ariza-belirtileri"
@@ -252,10 +252,10 @@ export default function DsgVuruntuSemptomlariPage() {
 
         {/* ── SENARYO KARTLARI ─────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             Hangi Geçişte Vuruntu Yaşıyorsunuz?
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             Senaryonuzu bulun — aciliyet ve olası neden aşağıda.
           </p>
 
@@ -272,7 +272,7 @@ export default function DsgVuruntuSemptomlariPage() {
                       <span className="text-xs font-mono font-bold bg-white/60 border border-current/10 px-2 py-0.5 rounded">
                         {s.vites}
                       </span>
-                      <h3 className="font-semibold text-sm sm:text-base text-zinc-900">
+                      <h3 className="font-semibold text-sm sm:text-base text-slate-100">
                         {s.baslik}
                       </h3>
                     </div>
@@ -280,10 +280,10 @@ export default function DsgVuruntuSemptomlariPage() {
                       {stil.etiketMetin}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed text-zinc-700 mb-3">
+                  <p className="text-sm leading-relaxed text-slate-300 mb-3">
                     {s.aciklama}
                   </p>
-                  <div className="flex items-start gap-2 text-xs text-zinc-500">
+                  <div className="flex items-start gap-2 text-xs text-slate-500">
                     <span className="font-medium shrink-0">Olası neden:</span>
                     <span>{s.neden}</span>
                   </div>
@@ -297,15 +297,15 @@ export default function DsgVuruntuSemptomlariPage() {
         </section>
 
         {/* ── NASIL ILERLER ─────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Vuruntu Tedavi Edilmezse Ne Olur?
             </h2>
 
             <div className="relative pl-6">
               {/* Dikey çizgi */}
-              <div className="absolute left-2 top-2 bottom-2 w-px bg-zinc-200" />
+              <div className="absolute left-2 top-2 bottom-2 w-px bg-slate-800" />
 
               {[
                 {
@@ -338,12 +338,12 @@ export default function DsgVuruntuSemptomlariPage() {
                 },
               ].map((adim, i) => (
                 <div key={i} className="relative mb-8 last:mb-0">
-                  <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-white border-2 border-zinc-300" />
+                  <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-[#070B11] border-2 border-white/12" />
                   <div className="text-xs text-zinc-400 mb-1">{adim.sure}</div>
-                  <div className="font-semibold text-zinc-900 text-sm mb-1">
+                  <div className="font-semibold text-slate-100 text-sm mb-1">
                     {adim.baslik}
                   </div>
-                  <div className="text-sm text-zinc-600 mb-1">{adim.detay}</div>
+                  <div className="text-sm text-slate-400 mb-1">{adim.detay}</div>
                   <div className={`text-sm font-bold ${adim.renk}`}>
                     Tahmini maliyet: {adim.maliyet}
                   </div>
@@ -355,22 +355,22 @@ export default function DsgVuruntuSemptomlariPage() {
 
         {/* ── DQ200 vs DQ250 ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             Modelinize Göre Vuruntu Farklı Davranır
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             Aynı belirti, farklı şanzımanda farklı anlam taşır.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
+            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
               <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
                 DQ200 — Kuru Kavrama
               </div>
-              <div className="text-sm font-semibold text-zinc-800 mb-3">
+              <div className="text-sm font-semibold text-slate-200 mb-3">
                 Golf 5/6/7, Polo, A3, Leon, Fabia
               </div>
-              <ul className="text-sm text-zinc-600 space-y-2">
+              <ul className="text-sm text-slate-400 space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 mt-0.5 shrink-0">›</span>
                   Sabah soğukta 1→2 vuruntu çok tipik
@@ -390,14 +390,14 @@ export default function DsgVuruntuSemptomlariPage() {
               </ul>
             </div>
 
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
+            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
               <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
                 DQ250 — Islak Kavrama
               </div>
-              <div className="text-sm font-semibold text-zinc-800 mb-3">
+              <div className="text-sm font-semibold text-slate-200 mb-3">
                 Passat, A4/A5, Tiguan, Octavia, Superb
               </div>
-              <ul className="text-sm text-zinc-600 space-y-2">
+              <ul className="text-sm text-slate-400 space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 mt-0.5 shrink-0">›</span>
                   2→3 vuruntu daha sık, daha belirgin
@@ -420,9 +420,9 @@ export default function DsgVuruntuSemptomlariPage() {
         </section>
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Sık Sorulan Sorular
             </h2>
             <TransmissionFaq slug="dsg-vuruntu-semptomlari" />
@@ -431,25 +431,25 @@ export default function DsgVuruntuSemptomlariPage() {
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-10">
-          <h2 className="text-base font-semibold text-zinc-900 mb-4">
+          <h2 className="text-base font-semibold text-slate-100 mb-4">
             İlgili Rehberler
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             <a
               href="/rehber/dsg-kavrama-ariza-belirtileri"
-              className="block border border-zinc-200 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
             >
               <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-              <div className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
                 DSG Kavrama Arızası Belirtileri →
               </div>
             </a>
             <a
               href="/hizmetler/dsg-kavrama-degisimi"
-              className="block border border-zinc-200 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
             >
               <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Hizmet</div>
-              <div className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
                 DSG Kavrama Değişimi Fiyatı 2026 →
               </div>
             </a>
@@ -488,7 +488,7 @@ export default function DsgVuruntuSemptomlariPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-xl font-bold text-slate-100 mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

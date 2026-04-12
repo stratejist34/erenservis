@@ -159,13 +159,13 @@ export default function DsgKavramaArizaBelirtileriPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#070B11]">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
           <div className="max-w-2xl mx-auto">
             {/* Breadcrumb */}
-            <nav className="text-xs text-zinc-500 mb-6 flex items-center gap-2">
+            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
               <Link href="/" className="hover:text-zinc-300 transition-colors">
                 Ana Sayfa
               </Link>
@@ -218,12 +218,12 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── GİRİŞ ────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <p className="text-zinc-700 text-base leading-relaxed mb-4">
+          <p className="text-slate-300 text-base leading-relaxed mb-4">
             DSG şanzımanlar kuru veya ıslak kavrama kullanır. Zamanla kavrama
             plaketleri aşınır, bu tamamen normaldir. Sorun şu: kavrama arızaları
             sessiz başlar ve çoğu sürücü belirtileri &ldquo;arabanın özelliği&rdquo; sanır.
           </p>
-          <p className="text-zinc-700 text-base leading-relaxed">
+          <p className="text-slate-300 text-base leading-relaxed">
             Oysa erken dönemde fark edilen bir kavrama sorunu yalnızca kavrama
             değişimiyle çözülür. Geciktirilirse kavrama aşınan metal tozları
             mekatronik karta ulaşır — fatura iki katına çıkar. Aşağıdaki
@@ -247,10 +247,10 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── BELİRTİLER ───────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             7 Kritik Belirti
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             Birden fazlası varsa, tanıyı ertelemeyin.
           </p>
 
@@ -282,25 +282,25 @@ export default function DsgKavramaArizaBelirtileriPage() {
         </section>
 
         {/* ── MODELe GÖRE FARK ─────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+            <h2 className="text-2xl font-bold text-slate-100 mb-2">
               DQ200 ve DQ250&apos;de Farklı Davranış
             </h2>
-            <p className="text-zinc-500 text-sm mb-8">
+            <p className="text-slate-500 text-sm mb-8">
               Aynı belirti, farklı modelde farklı anlam taşır.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
               {/* DQ200 */}
-              <div className="bg-white border border-zinc-200 rounded-xl p-5">
+              <div className="bg-[#070B11] border border-white/8 rounded-xl p-5">
                 <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
                   DQ200 — Kuru Kavrama
                 </div>
-                <div className="text-sm font-semibold text-zinc-800 mb-1">
+                <div className="text-sm font-semibold text-slate-200 mb-1">
                   Golf, Polo, A3, Leon
                 </div>
-                <ul className="text-sm text-zinc-600 space-y-2 mt-3">
+                <ul className="text-sm text-slate-400 space-y-2 mt-3">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 mt-0.5">›</span>
                     Sabah ilk kalkışta vuruntu çok belirgin
@@ -317,14 +317,14 @@ export default function DsgKavramaArizaBelirtileriPage() {
               </div>
 
               {/* DQ250 */}
-              <div className="bg-white border border-zinc-200 rounded-xl p-5">
+              <div className="bg-[#070B11] border border-white/8 rounded-xl p-5">
                 <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
                   DQ250 — Islak Kavrama
                 </div>
-                <div className="text-sm font-semibold text-zinc-800 mb-1">
+                <div className="text-sm font-semibold text-slate-200 mb-1">
                   Passat, A4, Octavia, Tiguan
                 </div>
-                <ul className="text-sm text-zinc-600 space-y-2 mt-3">
+                <ul className="text-sm text-slate-400 space-y-2 mt-3">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 mt-0.5">›</span>
                     Kayma hissi ön plana çıkar
@@ -346,7 +346,7 @@ export default function DsgKavramaArizaBelirtileriPage() {
               Aracınızın modelini bilmiyorsanız{" "}
               <a
                 href="/iletisim"
-                className="underline underline-offset-2 hover:text-zinc-600 transition-colors"
+                className="underline underline-offset-2 hover:text-slate-400 transition-colors"
               >
                 bize sorun
               </a>
@@ -357,7 +357,7 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── GECİKMENİN MALİYETİ ──────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-2xl font-bold text-slate-100 mb-6">
             Erken vs. Geç Müdahale
           </h2>
 
@@ -399,9 +399,9 @@ export default function DsgKavramaArizaBelirtileriPage() {
         </section>
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Sık Sorulan Sorular
             </h2>
             {/*
@@ -444,7 +444,7 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-xl font-bold text-slate-100 mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

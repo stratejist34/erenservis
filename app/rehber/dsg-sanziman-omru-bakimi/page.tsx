@@ -147,13 +147,13 @@ export default function DsgSanzimanOmruBakimiPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#070B11]">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-zinc-500 mb-6 flex items-center gap-2">
+            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
               <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
               <span>/</span>
               <a href="/rehber" className="hover:text-zinc-300 transition-colors">Rehber</a>
@@ -207,21 +207,21 @@ export default function DsgSanzimanOmruBakimiPage() {
             </p>
           </div>
 
-          <p className="text-zinc-700 text-base leading-relaxed mb-4">
+          <p className="text-slate-300 text-base leading-relaxed mb-4">
             DSG (Direct Shift Gearbox) şanzımanlar, hızlı vites geçişleri ve
             yakıt ekonomisi ile bilinse de uzun ömürlü kullanım için belirli
             hassasiyetler gerektirir. &ldquo;DSG şanzıman ömrü ne kadar?&rdquo; sorusunun
             yanıtı tamamen bakım disiplinine bağlıdır.
           </p>
-          <p className="text-zinc-700 text-base leading-relaxed">
+          <p className="text-slate-300 text-base leading-relaxed">
             Bostancı Eren Servis olarak, DSG şanzımanlardaki kronik sorunları
             önlemek ve mekanik ömrü maksimize etmek için uzman çözümler
             sunuyoruz. Doğru müdahalelerle şanzıman revizyonu maliyetlerinden
             kurtulmanız mümkündür.
           </p>
 
-          <div className="mt-6 p-4 bg-zinc-50 border border-zinc-200 rounded-lg">
-            <p className="text-sm text-zinc-700">
+          <div className="mt-6 p-4 bg-[#0C1219] border border-white/8 rounded-lg">
+            <p className="text-sm text-slate-300">
               Şanzımanınızda vuruntu veya sarsıntı var mı?{" "}
               <a
                 href="/rehber/dsg-kavrama-ariza-belirtileri"
@@ -234,27 +234,27 @@ export default function DsgSanzimanOmruBakimiPage() {
         </section>
 
         {/* ── DQ200 vs DQ250 ───────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+            <h2 className="text-2xl font-bold text-slate-100 mb-2">
               DQ200 vs DQ250: Hangisi Daha Uzun Süruyor?
             </h2>
-            <p className="text-zinc-500 text-sm mb-8">
+            <p className="text-slate-500 text-sm mb-8">
               İki model farklı kavrama yapısı nedeniyle farklı ömür eğrisi çizer.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-white border border-zinc-200 rounded-xl p-5">
+              <div className="bg-[#070B11] border border-white/8 rounded-xl p-5">
                 <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-2">
                   DQ200 — Kuru Kavrama
                 </div>
-                <div className="text-sm font-semibold text-zinc-800 mb-1">
+                <div className="text-sm font-semibold text-slate-200 mb-1">
                   Golf 5/6/7, Polo, A3, Leon, Fabia
                 </div>
                 <div className="text-lg font-bold text-amber-600 mb-3">
                   120.000–150.000 KM kavrama ömrü
                 </div>
-                <ul className="text-sm text-zinc-600 space-y-2">
+                <ul className="text-sm text-slate-400 space-y-2">
                   {[
                     "Kuru kavrama yapısı nedeniyle ısıya daha duyarlıdır",
                     "Şehir içi dur-kalk trafikte kavrama aşınması hızlanır",
@@ -269,17 +269,17 @@ export default function DsgSanzimanOmruBakimiPage() {
                 </ul>
               </div>
 
-              <div className="bg-white border border-zinc-200 rounded-xl p-5">
+              <div className="bg-[#070B11] border border-white/8 rounded-xl p-5">
                 <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-2">
                   DQ250 — Islak Kavrama
                 </div>
-                <div className="text-sm font-semibold text-zinc-800 mb-1">
+                <div className="text-sm font-semibold text-slate-200 mb-1">
                   Passat, A4/A5, Tiguan, Octavia, Superb
                 </div>
                 <div className="text-lg font-bold text-green-600 mb-3">
                   200.000–300.000 KM genel ömür
                 </div>
-                <ul className="text-sm text-zinc-600 space-y-2">
+                <ul className="text-sm text-slate-400 space-y-2">
                   {[
                     "Yağ banyolu kavrama sayesinde ısıyı daha iyi tahliye eder",
                     "Yüksek torklu motorlarda daha dayanıklı performans sergiler",
@@ -299,44 +299,44 @@ export default function DsgSanzimanOmruBakimiPage() {
 
         {/* ── BAKIM TAKVİMİ ────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             DSG Bakım Takvimine Uymak Neden Kritik?
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             Her bakım adımı farklı bir riski engeller.
           </p>
 
           <div className="relative pl-6">
-            <div className="absolute left-2 top-2 bottom-2 w-px bg-zinc-200" />
+            <div className="absolute left-2 top-2 bottom-2 w-px bg-slate-800" />
 
             {bakimAdimlar.map((adim, i) => (
               <div key={i} className="relative mb-8 last:mb-0">
-                <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-white border-2 border-amber-400" />
+                <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-[#070B11] border-2 border-amber-400" />
                 <div className="text-xs font-bold text-amber-600 mb-1">{adim.km}</div>
-                <div className="font-semibold text-zinc-900 text-sm mb-1">{adim.islem}</div>
-                <div className="text-sm text-zinc-600">{adim.aciklama}</div>
+                <div className="font-semibold text-slate-100 text-sm mb-1">{adim.islem}</div>
+                <div className="text-sm text-slate-400">{adim.aciklama}</div>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── ÖMRÜ KISALTAN HATALAR ────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               DSG Ömrünü Kısaltan 4 Hata
             </h2>
 
             <div className="space-y-4">
               {hatalar.map((h, i) => (
-                <div key={h.baslik} className="bg-white border border-red-100 rounded-xl p-5">
+                <div key={h.baslik} className="bg-[#070B11] border border-red-100 rounded-xl p-5">
                   <div className="flex items-start gap-3">
                     <span className="text-red-500 font-bold text-sm shrink-0 mt-0.5">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h3 className="font-semibold text-zinc-900 mb-1">{h.baslik}</h3>
-                      <p className="text-sm text-zinc-600 leading-relaxed">{h.aciklama}</p>
+                      <h3 className="font-semibold text-slate-100 mb-1">{h.baslik}</h3>
+                      <p className="text-sm text-slate-400 leading-relaxed">{h.aciklama}</p>
                     </div>
                   </div>
                 </div>
@@ -347,7 +347,7 @@ export default function DsgSanzimanOmruBakimiPage() {
 
         {/* ── ÖMRÜ UZATMANIN 3 YOLU ────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+          <h2 className="text-2xl font-bold text-slate-100 mb-8">
             DSG Ömrünü Uzatmanın 3 Yolu
           </h2>
 
@@ -359,16 +359,16 @@ export default function DsgSanzimanOmruBakimiPage() {
             ].map((ipucu, i) => (
               <div key={i} className="flex items-start gap-4 p-4 bg-green-50 border border-green-200 rounded-xl">
                 <span className="text-green-600 font-bold text-lg shrink-0">{i + 1}</span>
-                <p className="text-sm text-zinc-700 leading-relaxed">{ipucu}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{ipucu}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Sık Sorulan Sorular
             </h2>
             <TransmissionFaq slug="dsg-sanziman-omru-bakimi" />
@@ -377,25 +377,25 @@ export default function DsgSanzimanOmruBakimiPage() {
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-10">
-          <h2 className="text-base font-semibold text-zinc-900 mb-4">
+          <h2 className="text-base font-semibold text-slate-100 mb-4">
             İlgili Rehberler
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             <a
               href="/rehber/dsg-kavrama-ariza-belirtileri"
-              className="block border border-zinc-200 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
             >
               <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-              <div className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
                 DSG Kavrama Arızası Belirtileri →
               </div>
             </a>
             <a
               href="/hizmetler/dsg-kavrama-degisimi"
-              className="block border border-zinc-200 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
             >
               <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Hizmet</div>
-              <div className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
                 DSG Kavrama Değişimi Fiyatı 2026 →
               </div>
             </a>
@@ -434,7 +434,7 @@ export default function DsgSanzimanOmruBakimiPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-xl font-bold text-slate-100 mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

@@ -177,13 +177,13 @@ export default function SolenoidValfArizaBelirtileriPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#070B11]">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-zinc-500 mb-6 flex items-center gap-2">
+            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
               <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
               <span>/</span>
               <a href="/rehber" className="hover:text-zinc-300 transition-colors">Rehber</a>
@@ -241,21 +241,21 @@ export default function SolenoidValfArizaBelirtileriPage() {
             </p>
           </div>
 
-          <p className="text-zinc-700 text-base leading-relaxed mb-4">
+          <p className="text-slate-300 text-base leading-relaxed mb-4">
             DSG şanzımanlarda mekatronik ünitesinin kalbi sayılan solenoid
             valfler, hidrolik yağı yönlendirerek vites değişimini ve kavrama
             kontrolünü sağlar. Bu valfler, mikron seviyesindeki hassasiyetle
             çalışarak aracın pürüzsüz vites değiştirmesine olanak tanır.
           </p>
-          <p className="text-zinc-700 text-base leading-relaxed">
+          <p className="text-slate-300 text-base leading-relaxed">
             Zamanla aşınan veya kirlenen solenoidler, şanzıman beyninin
             komutlarını yerine getiremez hale gelir. Bostancı&apos;daki DSG uzmanı
             kadromuzla, arızanın sadece valfte mi yoksa genel mekatronik
             kartında mı olduğunu gelişmiş test cihazlarıyla saptıyoruz.
           </p>
 
-          <div className="mt-6 p-4 bg-zinc-50 border border-zinc-200 rounded-lg">
-            <p className="text-sm text-zinc-700">
+          <div className="mt-6 p-4 bg-[#0C1219] border border-white/8 rounded-lg">
+            <p className="text-sm text-slate-300">
               Solenoid, mekatronik ünitenin bir parçası.{" "}
               <a
                 href="/rehber/mekatronik-nedir"
@@ -269,10 +269,10 @@ export default function SolenoidValfArizaBelirtileriPage() {
 
         {/* ── BELİRTİLER ───────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             En Yaygın Solenoid Valf Arıza Belirtileri
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             Belirtinizi bulun — aciliyet ve model bilgisi aşağıda.
           </p>
 
@@ -282,12 +282,12 @@ export default function SolenoidValfArizaBelirtileriPage() {
               return (
                 <div key={b.baslik} className={`border rounded-xl p-5 ${stil.kart}`}>
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-semibold text-zinc-900">{b.baslik}</h3>
+                    <h3 className="font-semibold text-slate-100">{b.baslik}</h3>
                     <span className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full ${stil.etiket}`}>
                       {stil.etiketMetin}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed text-zinc-700 mb-2">{b.aciklama}</p>
+                  <p className="text-sm leading-relaxed text-slate-300 mb-2">{b.aciklama}</p>
                   <div className="text-xs text-zinc-400">Model: {b.model}</div>
                 </div>
               );
@@ -296,17 +296,17 @@ export default function SolenoidValfArizaBelirtileriPage() {
         </section>
 
         {/* ── NEDENLER ─────────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Solenoid Valfler Neden Bozulur?
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-4">
               {nedenler.map((n) => (
-                <div key={n.baslik} className="bg-white border border-zinc-200 rounded-xl p-5">
-                  <h3 className="font-semibold text-zinc-900 mb-2">{n.baslik}</h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed">{n.aciklama}</p>
+                <div key={n.baslik} className="bg-[#070B11] border border-white/8 rounded-xl p-5">
+                  <h3 className="font-semibold text-slate-100 mb-2">{n.baslik}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{n.aciklama}</p>
                 </div>
               ))}
             </div>
@@ -315,22 +315,22 @@ export default function SolenoidValfArizaBelirtileriPage() {
 
         {/* ── DQ200 vs DQ250 ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             Modelinize Göre Solenoid Davranışı
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             DQ200 ve DQ250 farklı solenoid tipleri kullanır.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
+            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
               <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
                 DQ200 — Kuru Kavrama
               </div>
-              <div className="text-sm font-semibold text-zinc-800 mb-3">
+              <div className="text-sm font-semibold text-slate-200 mb-3">
                 Golf 5/6/7, Polo, A3, Leon, Fabia
               </div>
-              <ul className="text-sm text-zinc-600 space-y-2">
+              <ul className="text-sm text-slate-400 space-y-2">
                 {[
                   "N215 Basınç Kontrol Valfi",
                   "N216 Vites Değiştirme Valfi",
@@ -345,14 +345,14 @@ export default function SolenoidValfArizaBelirtileriPage() {
               </ul>
             </div>
 
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
+            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
               <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
                 DQ250 — Islak Kavrama
               </div>
-              <div className="text-sm font-semibold text-zinc-800 mb-3">
+              <div className="text-sm font-semibold text-slate-200 mb-3">
                 Passat, A4/A5, Tiguan, Octavia, Superb
               </div>
-              <ul className="text-sm text-zinc-600 space-y-2">
+              <ul className="text-sm text-slate-400 space-y-2">
                 {[
                   "N217 Ana Basınç Valfi",
                   "N218 Soğutma Valfi",
@@ -370,9 +370,9 @@ export default function SolenoidValfArizaBelirtileriPage() {
         </section>
 
         {/* ── TAMİR Mİ DEĞİŞİM Mİ ─────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Solenoid Valf Tamiri Mümkün mü?
             </h2>
 
@@ -381,7 +381,7 @@ export default function SolenoidValfArizaBelirtileriPage() {
                 <div className="text-xs font-bold tracking-widest uppercase text-green-700 mb-3">
                   Tamir Yeterli Olduğu Durumlar
                 </div>
-                <ul className="text-sm text-zinc-700 space-y-2">
+                <ul className="text-sm text-slate-300 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-0.5 shrink-0">✓</span>
                     Sadece yüzeysel talaş tıkanıklığında özel solüsyonla temizlik
@@ -401,7 +401,7 @@ export default function SolenoidValfArizaBelirtileriPage() {
                 <div className="text-xs font-bold tracking-widest uppercase text-red-700 mb-3">
                   Değişim Gereken Durumlar
                 </div>
-                <ul className="text-sm text-zinc-700 space-y-2">
+                <ul className="text-sm text-slate-300 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-red-400 mt-0.5 shrink-0">✗</span>
                     Solenoid bobininde elektriksel kopukluk veya direnç hatası
@@ -422,34 +422,34 @@ export default function SolenoidValfArizaBelirtileriPage() {
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+          <h2 className="text-2xl font-bold text-slate-100 mb-8">
             Sık Sorulan Sorular
           </h2>
           <TransmissionFaq slug="solenoid-valf-ariza-belirtileri" />
         </section>
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-10">
+        <section className="bg-[#0C1219] px-4 py-10">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-base font-semibold text-zinc-900 mb-4">
+            <h2 className="text-base font-semibold text-slate-100 mb-4">
               İlgili Rehberler
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
               <a
                 href="/rehber/mekatronik-nedir"
-                className="block border border-zinc-200 bg-white rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+                className="block border border-white/8 bg-[#070B11] rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
               >
                 <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-                <div className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+                <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
                   Mekatronik Nedir? DSG&apos;deki Görevi →
                 </div>
               </a>
               <a
                 href="/hizmetler/dsg-mekatronik-kart"
-                className="block border border-zinc-200 bg-white rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+                className="block border border-white/8 bg-[#070B11] rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
               >
                 <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Hizmet</div>
-                <div className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+                <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
                   DSG Mekatronik Kart Fiyatı 2026 →
                 </div>
               </a>
@@ -490,7 +490,7 @@ export default function SolenoidValfArizaBelirtileriPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-xl font-bold text-slate-100 mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

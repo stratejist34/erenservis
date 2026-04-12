@@ -121,13 +121,13 @@ export default function DsgMekatronikKartPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#070B11]">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
         <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-zinc-500 mb-6 flex items-center gap-2">
+            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
               <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
               <span>/</span>
               <a href="/hizmetler" className="hover:text-zinc-300 transition-colors">Hizmetler</a>
@@ -155,7 +155,7 @@ export default function DsgMekatronikKartPage() {
               <span className="text-amber-400 font-medium">8.000 – 18.000 TL</span>&apos;ye
               çözülebilir — tanı olmadan söylemek mümkün değil.
             </p>
-            <p className="text-zinc-500 text-xs mb-8">
+            <p className="text-slate-500 text-xs mb-8">
               Model, parça seçimi ve arıza kapsamına göre değişir.
               Ücretsiz ön tanı sonrası net fiyat verilir.
             </p>
@@ -180,12 +180,12 @@ export default function DsgMekatronikKartPage() {
         {/* ── GÜVEN ŞERİDİ ─────────────────────────────────────────────── */}
 
         {/* ── STICKY CTA mobil ─────────────────────────────────────────── */}
-        <div className="sticky top-0 z-40 bg-white border-b border-zinc-100
+        <div className="sticky top-0 z-40 bg-[#070B11] border-b border-white/8
                         px-4 py-3 flex items-center justify-between
                         shadow-sm sm:hidden">
           <div>
-            <div className="text-xs text-zinc-500">Mekatronik Kart — Nisan 2026</div>
-            <div className="text-sm font-bold text-zinc-900">28.000 – 48.000 TL</div>
+            <div className="text-xs text-slate-500">Mekatronik Kart — Nisan 2026</div>
+            <div className="text-sm font-bold text-slate-100">28.000 – 48.000 TL</div>
           </div>
           <a
             href="tel:+905327153751"
@@ -198,10 +198,10 @@ export default function DsgMekatronikKartPage() {
 
         {/* ── TAMİR Mİ DEĞİŞİM Mİ ─────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+          <h2 className="text-2xl font-bold text-slate-100 mb-2">
             Tamir mi, Değişim mi?
           </h2>
-          <p className="text-zinc-500 text-sm mb-8">
+          <p className="text-slate-500 text-sm mb-8">
             Bu sorunun cevabı hata koduna ve hasar kapsamına göre değişir.
             Her mekatronik kart değişim gerektirmez.
           </p>
@@ -216,7 +216,7 @@ export default function DsgMekatronikKartPage() {
               <div className="text-xl font-bold text-green-700 mb-3">
                 8.000 – 18.000 TL
               </div>
-              <ul className="text-sm text-zinc-600 space-y-2">
+              <ul className="text-sm text-slate-400 space-y-2">
                 {[
                   "Sensör veya solenoid arızası",
                   "Kavrama kaynaklı ikincil kirlilik",
@@ -232,15 +232,15 @@ export default function DsgMekatronikKartPage() {
             </div>
 
             {/* Değişim */}
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5">
-              <div className="text-xs font-bold text-zinc-500 uppercase
+            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
+              <div className="text-xs font-bold text-slate-500 uppercase
                               tracking-wider mb-3">
                 Değişim gerekli
               </div>
-              <div className="text-xl font-bold text-zinc-700 mb-3">
+              <div className="text-xl font-bold text-slate-300 mb-3">
                 28.000 – 48.000 TL
               </div>
-              <ul className="text-sm text-zinc-600 space-y-2">
+              <ul className="text-sm text-slate-400 space-y-2">
                 {[
                   "Mekatronik kart yanmış veya kırık",
                   "Metal toz kirliliği — kart içi hasar",
@@ -266,12 +266,12 @@ export default function DsgMekatronikKartPage() {
         </section>
 
         {/* ── FİYAT TABLOSU ────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-2">
+            <h2 className="text-2xl font-bold text-slate-100 mb-2">
               Model Bazlı Fiyat Tablosu
             </h2>
-            <p className="text-zinc-500 text-sm mb-8">
+            <p className="text-slate-500 text-sm mb-8">
               Nisan 2026 güncel fiyatlar. Döviz kuru değişimlerine
               göre güncellenir.
             </p>
@@ -280,10 +280,10 @@ export default function DsgMekatronikKartPage() {
               {fiyatTablosu.map((row) => (
                 <div
                   key={row.model}
-                  className={`rounded-xl border overflow-hidden bg-white ${
+                  className={`rounded-xl border overflow-hidden bg-[#070B11] ${
                     row.vurgu
                       ? "border-amber-300 ring-1 ring-amber-200"
-                      : "border-zinc-200"
+                      : "border-white/8"
                   }`}
                 >
                   {row.vurgu && (
@@ -295,10 +295,10 @@ export default function DsgMekatronikKartPage() {
                   <div className="p-5">
                     <div className="flex items-start justify-between gap-4 mb-4">
                       <div>
-                        <div className="font-bold text-zinc-900 text-base">
+                        <div className="font-bold text-slate-100 text-base">
                           {row.model}
                         </div>
-                        <div className="text-xs text-zinc-500 mt-0.5">
+                        <div className="text-xs text-slate-500 mt-0.5">
                           {row.tip}
                         </div>
                         <div className="text-xs text-zinc-400 mt-1">
@@ -309,13 +309,13 @@ export default function DsgMekatronikKartPage() {
                         <div className="text-xs text-zinc-400 mb-0.5">
                           Değişim
                         </div>
-                        <div className="text-base font-bold text-zinc-900">
+                        <div className="text-base font-bold text-slate-100">
                           {row.degisim} TL
                         </div>
                       </div>
                     </div>
 
-                    <div className="border-t border-zinc-100 pt-4 grid grid-cols-3
+                    <div className="border-t border-white/8 pt-4 grid grid-cols-3
                                     gap-3 text-center">
                       <div>
                         <div className="text-xs text-zinc-400">Tamir</div>
@@ -323,9 +323,9 @@ export default function DsgMekatronikKartPage() {
                           {row.tamir} TL
                         </div>
                       </div>
-                      <div className="border-x border-zinc-100">
+                      <div className="border-x border-white/8">
                         <div className="text-xs text-zinc-400">Süre</div>
-                        <div className="text-sm font-semibold text-zinc-700 mt-0.5">
+                        <div className="text-sm font-semibold text-slate-300 mt-0.5">
                           {row.sure}
                         </div>
                       </div>
@@ -351,16 +351,16 @@ export default function DsgMekatronikKartPage() {
 
         {/* ── KAVRAMA BAĞLANTISI ────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">
+          <h2 className="text-2xl font-bold text-slate-100 mb-4">
             Mekatronik Arızasının Sık Görülen Nedeni: Kavrama
           </h2>
-          <p className="text-zinc-600 text-sm leading-relaxed mb-4">
+          <p className="text-slate-400 text-sm leading-relaxed mb-4">
             DSG mekatronik kart arızalarının önemli bir kısmı doğrudan
             elektriksel değil, kavrama kökenlidir. Aşınan kavrama plaketlerinden
             çıkan metal tozları şanzıman yağına karışır ve zamanla mekatronik
             kartın sensör ve solenoidlerine ulaşır.
           </p>
-          <p className="text-zinc-600 text-sm leading-relaxed mb-6">
+          <p className="text-slate-400 text-sm leading-relaxed mb-6">
             Bu durumda yalnızca mekatronik kart değiştirmek sorunu çözmez —
             kavrama da değişmediyse yeni kart tekrar kirlenir. Tanı aşamasında
             her iki sistem birlikte değerlendirilir.
@@ -375,9 +375,9 @@ export default function DsgMekatronikKartPage() {
         </section>
 
         {/* ── SÜREÇ ────────────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-12">
+        <section className="bg-[#0C1219] px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">
               Nasıl Çalışıyoruz?
             </h2>
 
@@ -421,14 +421,14 @@ export default function DsgMekatronikKartPage() {
                       {adim.no}
                     </div>
                     {i < arr.length - 1 && (
-                      <div className="w-px flex-1 bg-zinc-200 my-1" />
+                      <div className="w-px flex-1 bg-slate-800 my-1" />
                     )}
                   </div>
                   <div className={`pb-8 ${i === arr.length - 1 ? "pb-0" : ""}`}>
-                    <div className="font-semibold text-zinc-900 text-sm mb-1">
+                    <div className="font-semibold text-slate-100 text-sm mb-1">
                       {adim.baslik}
                     </div>
-                    <div className="text-sm text-zinc-600 leading-relaxed">
+                    <div className="text-sm text-slate-400 leading-relaxed">
                       {adim.detay}
                     </div>
                   </div>
@@ -440,16 +440,16 @@ export default function DsgMekatronikKartPage() {
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-8">
+          <h2 className="text-2xl font-bold text-slate-100 mb-8">
             Sık Sorulan Sorular
           </h2>
           <TransmissionFaq slug="dsg-mekatronik-kart" />
         </section>
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
-        <section className="bg-zinc-50 px-4 py-10">
+        <section className="bg-[#0C1219] px-4 py-10">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-base font-semibold text-zinc-900 mb-4">
+            <h2 className="text-base font-semibold text-slate-100 mb-4">
               İlgili sayfalar
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -478,14 +478,14 @@ export default function DsgMekatronikKartPage() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block bg-white border border-zinc-200 rounded-xl p-4
+                  className="block bg-[#070B11] border border-white/8 rounded-xl p-4
                              hover:border-amber-300 hover:bg-amber-50
                              transition-all group"
                 >
                   <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">
                     {link.tip}
                   </div>
-                  <div className="text-sm font-semibold text-zinc-800
+                  <div className="text-sm font-semibold text-slate-200
                                   group-hover:text-amber-700 transition-colors">
                     {link.baslik}
                   </div>
@@ -544,7 +544,7 @@ export default function DsgMekatronikKartPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-xl font-bold text-slate-100 mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

@@ -437,31 +437,6 @@ body {
   }
 }
 
-@keyframes selection-swap {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes console-sheen {
-  from {
-    transform: translateX(-125%);
-  }
-
-  to {
-    transform: translateX(125%);
-  }
-}
-
-.selection-swap {
-  animation: selection-swap 320ms var(--ease-out);
-}
 
 
 .btn-brand,
@@ -692,29 +667,6 @@ body {
   animation: pulse-ring 2.5s infinite;
 }
 
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-.animate-scanline {
-  animation: scanline 4s linear infinite;
-}
 
 /* Diagnostic bar fill */
 @keyframes fill-bar {
@@ -781,9 +733,7 @@ body {
     transition: none;
   }
 
-  .animate-pulse-ring,
-  .animate-scanline,
-  .selection-swap {
+  .animate-pulse-ring {
     animation: none;
   }
 }
@@ -846,13 +796,6 @@ body {
   box-shadow: 0 0 80px rgba(56,189,248,0.10), 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
-.stat-fade { opacity: 0; }
-.stat-fade.reveal-visible { animation: stat-fade-in 600ms ease-out both; }
-
-@keyframes stat-fade-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 
 @media (max-width: 900px) {
   .glass-surface, .glass-surface-strong {

@@ -78,7 +78,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2003,
     serviceStatus: 'active',
     tier: 1,
-    description: '6 ileri yaş çift kavramalı, VW Grubunun ilk DSG nesli. Golf GTI, Tiguan, Passat ve Audi A3/TT gibi 2.0 TSI ve 2.0 TDI motorlarda kullanılır. Yaş kavrama yapısı sayesinde DQ200\'den daha dayanıklı ama yine de mekatronik ve solenoid sorunları görülür.',
+    description: '6 ileri ıslak çift kavramalı, VW Grubunun ilk seri üretim DSG modeli. Golf GTI, Tiguan, Passat ve Audi A3/TT gibi 2.0 TSI ve 2.0 TDI motorlarda kullanılır. Islak kavrama yapısı sayesinde DQ200\'den daha dayanıklı ama yine de mekatronik ve solenoid sorunları görülür.',
     commonFaults: [
       'Mekatronik solenoid arızası',
       'Yaş kavrama paketi aşınması',
@@ -126,7 +126,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2009,
     serviceStatus: 'active',
     tier: 1,
-    description: 'Dünyanın en yaygın kullanılan 8 ileri tam otomatik şanzımanı. BMW\'nin neredeyse tüm modellerinde, Audi A6/A7/A8/Q7/Q8, Land Rover, Range Rover, Jaguar, VW Touareg, Maserati ve Rolls-Royce gibi 20\'den fazla markada kullanılır. Mekatronik solenoid ve valf gövdesi arızaları yaygın.',
+    description: 'Dünyanın en yaygın kullanılan 8 ileri tam otomatik şanzımanı. BMW\'nin neredeyse tüm modellerinde, Audi A6/A7/A8/Q7/Q8, Land Rover, Range Rover, Jaguar, VW Touareg, Maserati ve Rolls-Royce gibi 10\'dan fazla markada kullanılır. Mekatronik solenoid ve valf gövdesi arızaları yaygın. 8HP45, 8HP50, 8HP70 ve 8HP90 olmak üzere tork kapasitesine göre dört ana varyantı vardır; her marka ve motor için farklı versiyon kullanılır.',
     commonFaults: [
       'Mekatronik solenoid tıkanması',
       'Tork konvertör kilitleme kavraması aşınması',
@@ -140,6 +140,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
       { question: 'ZF 8HP revizyonu mu değişimi mi?', answer: 'Valf gövdesi revizyonu ve yağ değişimi çoğu durumda yeterlidir. Tam revizyon ancak iç mekanik hasar (dişli veya plaka aşınması) durumunda gerekir.' },
       { question: 'ZF 8HP hangi araçlarda var?', answer: 'BMW 3/5/7 Serisi, X3/X5, Audi A6/A7/A8/Q7/Q8, Land Rover Discovery, Range Rover ve diğer premium araçlarda kullanılmaktadır.' },
       { question: 'BMW şanzıman tamiri Bostancı\'da yapılıyor mu?', answer: 'Evet. Eren Servis, ZF 8HP dahil BMW ve diğer premium marka şanzıman tamirlerini Bostancı\'da gerçekleştirmektedir.' },
+      { question: 'ZF 8HP\'nin hangi varyantları var?', answer: '8HP45 düşük tork (BMW 3/5 Serisi 4 silindir), 8HP50 orta tork (Audi A6/A7 V6), 8HP70 yüksek tork (BMW X5/X6, Range Rover V8), 8HP90 çok yüksek tork (M serisi, Range Rover supercharged) olmak üzere dört ana varyantı vardır. Aracınızın motoruna göre doğru varyant tespit edilir.' },
     ],
   },
 

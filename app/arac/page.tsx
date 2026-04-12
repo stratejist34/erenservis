@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BRANDS, getBrandsByTier, getPrimaryTransmission } from '@/lib/brands';
+import { getBrandsByTier, getPrimaryTransmission } from '@/lib/brands';
 import type { Brand } from '@/lib/brands';
 
 export const metadata: Metadata = {

@@ -2,10 +2,6 @@
 
 import { useEffect, useState, useRef } from 'react';
 
-interface UseScrollProgressOptions {
-  offset?: number;
-}
-
 export function useScrollProgress() {
   const [progress, setProgress] = useState(0);
   const frameRef = useRef<number | undefined>(undefined);

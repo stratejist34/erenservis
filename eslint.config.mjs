@@ -13,6 +13,12 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Allow intentional _underscore-prefixed variables (e.g. compile-time validators)
+      "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^_" }],
+    },
+  },
 ]);
 
 export default eslintConfig;

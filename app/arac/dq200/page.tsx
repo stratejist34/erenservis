@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle2, Wrench } from 'lucide-react';
 import Link from 'next/link';
 
 export const dynamic = 'force-static';

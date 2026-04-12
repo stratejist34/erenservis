@@ -1,4 +1,4 @@
-import HeroSection from '@/components/sections/HeroSection';
+import HeroSectionDC from '@/components/sections/HeroSectionDC';
 import SymptomSelector from '@/components/sections/SymptomSelector';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ServiceWorkflow from '@/components/sections/ServiceWorkflow';
@@ -13,7 +13,7 @@ export default function HomePageSections() {
   return (
     <>
       {/* Hero — no reveal, built-in hero-item animations */}
-      <HeroSection />
+      <HeroSectionDC />
 
       {/* Marka logoları strip — hero'nun hemen altında */}
       <BrandLogosStrip />

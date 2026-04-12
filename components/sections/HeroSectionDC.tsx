@@ -57,7 +57,7 @@ interface HeroSectionProps {
   ctaWhatsApp?: string;
 }
 
-export default function HeroSection({
+export default function HeroSectionDC({
   badge = 'Bostancı · Otomatik Şanzıman Uzmanı',
 }: HeroSectionProps) {
   return (

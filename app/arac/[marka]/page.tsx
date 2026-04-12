@@ -21,6 +21,8 @@ import {
   buildBrandTransmissionAnchor,
 } from '@/lib/brands';
 import { buildFAQSchema, buildServiceSchema } from '@/lib/schema';
+import { TRANSMISSIONS, buildTransmissionUrl } from '@/lib/transmissions';
+import CrossLinkGrid from '@/components/sections/CrossLinkGrid';
 
 export const dynamic = 'force-static';
 
@@ -65,6 +67,18 @@ export default async function MarkaPage({ params }: Props) {
   const crossBrandUsers = primary
     ? getBrandsByTransmission(primary.id).filter((b) => b.slug !== brand.slug)
     : [];
+
+  const transmissionCrossLinks = brand.transmissions
+    .map((bt) => {
+      const t = TRANSMISSIONS[bt.familyId];
+      if (!t) return null;
+      return {
+        href: buildTransmissionUrl(bt.familyId),
+        label: t.shortName ?? t.displayName,
+        sublabel: t.type,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null);
 
   const brandLabel = brand.displayName ?? brand.name;
 
@@ -281,6 +295,15 @@ export default async function MarkaPage({ params }: Props) {
             </div>
           </div>
         </section>
+      )}
+
+      {/* 4b. Şanzıman Teknolojileri cross-link */}
+      {transmissionCrossLinks.length > 0 && (
+        <CrossLinkGrid
+          title={`${brandLabel} Şanzıman Teknolojileri`}
+          items={transmissionCrossLinks}
+          variant="transmission"
+        />
       )}
 
       {/* 5. Cross-Brand — 2+ marka varsa göster */}

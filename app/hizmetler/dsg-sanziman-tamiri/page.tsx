@@ -123,7 +123,7 @@ export default function DsgSanzımanTamiriPage() {
         </section>
 
         {/* Hizmet Adımları */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-content-text text-center mb-10">Nasıl Çalışıyoruz?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -150,7 +150,7 @@ export default function DsgSanzımanTamiriPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {DSG_MODELLER.map((item) => (
-                <div key={item.model} className="p-6 rounded-2xl bg-white border border-content-border shadow-sm">
+                <div key={item.model} className="p-6 rounded-2xl bg-[#070B11] border border-content-border shadow-sm">
                   <h3 className="text-content-text font-semibold text-base mb-2">{item.model}</h3>
                   <p className="text-content-muted text-sm leading-relaxed">{item.desc}</p>
                 </div>
@@ -160,7 +160,7 @@ export default function DsgSanzımanTamiriPage() {
         </section>
 
         {/* Belirtiler */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row gap-10 items-start">
               <div className="flex-1">

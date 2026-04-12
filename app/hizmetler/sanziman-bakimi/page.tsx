@@ -106,7 +106,7 @@ export default function SanzımanBakımıPage() {
         </section>
 
         {/* Bakım Paketleri */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-content-text text-center mb-3">Bakım Seçenekleri</h2>
             <p className="text-content-muted text-center mb-10 max-w-xl mx-auto">
@@ -147,7 +147,7 @@ export default function SanzımanBakımıPage() {
             <h2 className="text-content-text text-center mb-10">Neden Düzenli Bakım?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {NEDEN_BAKIM.map((item) => (
-                <div key={item.baslik} className="flex gap-4 p-6 rounded-2xl bg-white border border-content-border">
+                <div key={item.baslik} className="flex gap-4 p-6 rounded-2xl bg-[#070B11] border border-content-border">
                   <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent/10 text-accent shrink-0">
                     <Gauge className="w-5 h-5" strokeWidth={2} />
                   </div>
@@ -162,7 +162,7 @@ export default function SanzımanBakımıPage() {
         </section>
 
         {/* Bakım sıklığı uyarısı */}
-        <section className="py-14 bg-white">
+        <section className="py-14 bg-[#070B11]">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <div className="status-card status-card-warning flex gap-4 p-7">
               <AlertTriangle className="status-label-warning w-6 h-6 shrink-0 mt-0.5" strokeWidth={2} />

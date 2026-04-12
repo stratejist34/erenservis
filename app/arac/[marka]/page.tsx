@@ -209,7 +209,7 @@ export default async function MarkaPage({ params }: Props) {
               {primary.codes.map((code) => (
                 <span
                   key={code}
-                  className="px-3 py-1.5 rounded-md bg-white border border-content-border font-mono text-xs font-semibold text-content-text"
+                  className="px-3 py-1.5 rounded-md bg-[#070B11] border border-content-border font-mono text-xs font-semibold text-content-text"
                 >
                   {code}
                 </span>
@@ -217,7 +217,7 @@ export default async function MarkaPage({ params }: Props) {
             </div>
 
             {primary.commonFaults && primary.commonFaults.length > 0 && (
-              <div className="bg-white rounded-2xl p-6 border border-content-border">
+              <div className="bg-[#070B11] rounded-2xl p-6 border border-content-border">
                 <h3 className="text-content-text font-bold text-base mb-4">
                   {primary.displayName} Yaygın Arıza Belirtileri
                 </h3>
@@ -239,7 +239,7 @@ export default async function MarkaPage({ params }: Props) {
       )}
 
       {/* 3. Modeller */}
-      <section className="pt-16 pb-8 bg-white">
+      <section className="pt-16 pb-8 bg-[#070B11]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-content-text text-center mb-3">
             Servis Verdiğimiz {brandLabel} Modelleri
@@ -272,7 +272,7 @@ export default async function MarkaPage({ params }: Props) {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {secondary.map((s) => (
-                <div key={s.id} className="p-6 rounded-2xl bg-white border border-content-border">
+                <div key={s.id} className="p-6 rounded-2xl bg-[#070B11] border border-content-border">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                       <Settings className="w-5 h-5 text-accent" />
@@ -308,7 +308,7 @@ export default async function MarkaPage({ params }: Props) {
 
       {/* 5. Cross-Brand — 2+ marka varsa göster */}
       {primary && crossBrandUsers.length >= 2 && (
-        <section className="pt-8 pb-16 bg-white">
+        <section className="pt-8 pb-16 bg-[#070B11]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <h2 className="text-content-text mb-3">
               {primary.displayName} Hangi Markalarda Var?
@@ -364,7 +364,7 @@ export default async function MarkaPage({ params }: Props) {
                 desc: 'Tamir sonrası yol testi yapıyoruz, arıza kodlarını sıfırlıyoruz, 6 ay yazılı garanti ile teslim ediyoruz.',
               },
             ].map((item) => (
-              <div key={item.step} className="p-6 rounded-2xl bg-white border border-content-border">
+              <div key={item.step} className="p-6 rounded-2xl bg-[#070B11] border border-content-border">
                 <div className="text-accent font-mono text-xs font-bold mb-2">{item.step}</div>
                 <h3 className="text-content-text font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-content-muted text-sm leading-relaxed">{item.desc}</p>
@@ -375,7 +375,7 @@ export default async function MarkaPage({ params }: Props) {
       </section>
 
       {/* 7. Garanti & Güven Bandı */}
-      <section className="py-12 bg-white border-y border-content-border">
+      <section className="py-12 bg-[#070B11] border-y border-content-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-start gap-3">
@@ -426,7 +426,7 @@ export default async function MarkaPage({ params }: Props) {
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="group bg-white rounded-xl border border-content-border overflow-hidden"
+                className="group bg-[#070B11] rounded-xl border border-content-border overflow-hidden"
               >
                 <summary className="p-5 cursor-pointer flex items-center justify-between gap-4 list-none">
                   <h3 className="text-content-text font-semibold text-base">{faq.q}</h3>

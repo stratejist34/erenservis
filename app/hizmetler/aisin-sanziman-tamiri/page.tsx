@@ -94,7 +94,7 @@ export default function AisinSanzimanTamiriPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#070B11]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-content-text text-center mb-10">Aisin Revizyon Sürecimiz</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -120,7 +120,7 @@ export default function AisinSanzimanTamiriPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {SANZIMAN_TURLERI.map((item) => (
-              <div key={item.tip} className="p-6 rounded-2xl bg-white border border-content-border shadow-sm">
+              <div key={item.tip} className="p-6 rounded-2xl bg-[#070B11] border border-content-border shadow-sm">
                 <h3 className="text-content-text font-semibold text-base mb-1">{item.tip}</h3>
                 <p className="text-xs font-medium text-accent mb-2">{item.markalar}</p>
                 <p className="text-content-muted text-sm leading-relaxed">{item.desc}</p>
@@ -130,7 +130,7 @@ export default function AisinSanzimanTamiriPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#070B11]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="flex-1 p-7 rounded-2xl bg-content-secondary border border-content-border">

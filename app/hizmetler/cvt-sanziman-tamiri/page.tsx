@@ -114,7 +114,7 @@ export default function CvtSanzımanTamiriPage() {
         </section>
 
         {/* Adımlar */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-content-text text-center mb-10">Servis Sürecimiz</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,7 +141,7 @@ export default function CvtSanzımanTamiriPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {CVT_MARKALAR.map((item) => (
-                <div key={item.marka} className="p-5 rounded-2xl bg-white border border-content-border shadow-sm">
+                <div key={item.marka} className="p-5 rounded-2xl bg-[#070B11] border border-content-border shadow-sm">
                   <h3 className="text-content-text font-semibold text-base mb-1">{item.marka}</h3>
                   <p className="text-xs font-medium text-accent mb-2">{item.model}</p>
                   <p className="text-content-muted text-sm leading-relaxed">{item.desc}</p>
@@ -152,7 +152,7 @@ export default function CvtSanzımanTamiriPage() {
         </section>
 
         {/* Belirtiler */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row gap-10 items-start">
               <div className="flex-1">

@@ -107,7 +107,7 @@ export default function DsgBasincTupuPage() {
         </section>
 
         {/* DSG Basınç Tüpü Nedir */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row gap-10 items-start">
               <div className="flex-1">
@@ -152,7 +152,7 @@ export default function DsgBasincTupuPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {KARSILASTIRMA.map((k) => (
                 <div key={k.tip}
-                  className={`p-7 rounded-2xl border flex flex-col gap-4 ${k.renk === 'orange' ? 'bg-surface-0 border-accent/40' : 'bg-white border-content-border'}`}>
+                  className={`p-7 rounded-2xl border flex flex-col gap-4 ${k.renk === 'orange' ? 'bg-surface-0 border-accent/40' : 'bg-[#070B11] border-content-border'}`}>
                   {k.renk === 'orange' && (
                     <span className="self-start text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-brand text-white">
                       Yükseltme
@@ -182,7 +182,7 @@ export default function DsgBasincTupuPage() {
         </section>
 
         {/* Montaj Süreci */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#070B11]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-content-text text-center mb-10">Montaj Süreci</h2>
             <div className="flex flex-col gap-4">
@@ -242,7 +242,7 @@ export default function DsgBasincTupuPage() {
         </section>
 
         {/* İlgili hizmetler */}
-        <section className="py-12 bg-white border-t border-content-border">
+        <section className="py-12 bg-[#070B11] border-t border-content-border">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <p className="text-content-muted text-sm mb-5">İlgili DSG hizmetlerimiz</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

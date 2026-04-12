@@ -75,7 +75,7 @@ export default async function MarkaPage({ params }: Props) {
       return {
         href: buildTransmissionUrl(bt.familyId),
         label: t.shortName ?? t.displayName,
-        sublabel: t.type,
+        sublabel: t.customerFacingName ?? t.displayName,
       };
     })
     .filter((x): x is NonNullable<typeof x> => x !== null);

@@ -78,7 +78,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2003,
     serviceStatus: 'active',
     tier: 1,
-    description: '6 ileri ıslak çift kavramalı, VW Grubunun ilk seri üretim DSG modeli. Golf GTI, Tiguan, Passat ve Audi A3/TT gibi 2.0 TSI ve 2.0 TDI motorlarda kullanılır. Islak kavrama yapısı sayesinde DQ200\'den daha dayanıklı ama yine de mekatronik ve solenoid sorunları görülür.',
+    description: '6 ileri ıslak çift kavramalı, VW Grubu\'nun ilk seri üretim DSG modeli. Golf GTI, Tiguan, Passat ve Audi A3/TT gibi 2.0 TSI ve 2.0 TDI motorlarda kullanılır. İslak kavrama yapısı sayesinde DQ200\'den daha dayanıklı ama yine de mekatronik ve solenoid sorunları görülür.',
     commonFaults: [
       'Mekatronik solenoid arızası',
       'Yaş kavrama paketi aşınması',

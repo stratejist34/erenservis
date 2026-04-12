@@ -28,6 +28,7 @@ export type TransmissionFamily = {
   tier: 1 | 2 | 3;
   description: string;       // SEO için kısa açıklama
   commonFaults?: string[];   // Yaygın arızalar
+  faqs?: Array<{ question: string; answer: string }>;  // Sayfa FAQ bölümü
 };
 
 export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
@@ -56,6 +57,13 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
       'Çift kütleli volan sorunları',
       'Şanzıman beyni yazılım hataları',
     ],
+    faqs: [
+      { question: 'DQ200 şanzıman ne kadar dayanır?', answer: 'Düzenli mekatronik bakımı ve yazılım güncellemesiyle 200.000 km ve üzeri ömür beklenir. Kuru kavrama diskleri genellikle 80.000–120.000 km arasında yenilenir.' },
+      { question: 'DQ200 titremesi ne zaman tehlikeli olur?', answer: 'Soğuk motorla 5–10 dakikadan uzun süren titreme, ani vites atlamayan adaptasyon veya P hata kodları varsa servis gereklidir. Geciktirmek mekatronik hasarını artırır.' },
+      { question: 'DQ200 ile DSG aynı şey mi?', answer: 'DSG, Volkswagen Grubu\'nun çift kavramalı şanzıman ailesi adıdır. DQ200 bu ailenin 7 ileri kuru kavramalı versiyonudur. DQ250 ise ıslak kavramalı 6 ileri versiyondur.' },
+      { question: 'DQ200 mekatronik tamiri mi, yoksa yenileme mi?', answer: 'Solenoid veya sensör arızalarında revizyon yeterlidir. Mekatronik beyninin elektronik kartı hasar görmüşse yenileme gerekebilir. Doğru teşhis maliyeti 2–3 katına düşürür.' },
+      { question: 'DQ200 tamiri Bostancı\'da yapılıyor mu?', answer: 'Evet. Eren Servis, Bostancı Oto Sanayi Sitesi\'nde DQ200 mekatronik revizyonu, kavrama değişimi ve yazılım güncellemesi yapıyor. Ücretsiz ön tanı için arayabilirsiniz.' },
+    ],
   },
 
   'dsg-dq250': {
@@ -76,6 +84,13 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
       'Yaş kavrama paketi aşınması',
       'Sıcak halde vites kayması',
       'Şanzıman yağı kirlenmesi',
+    ],
+    faqs: [
+      { question: 'DQ250 ne kadar dayanır?', answer: 'Islak kavrama sistemi sayesinde DQ200\'den daha uzun ömürlüdür. Bakımlı kullanımda 200.000 km üzeri beklenir. Şanzıman yağı 60.000 km\'de değiştirilmelidir.' },
+      { question: 'DQ250 mekatronik tamiri gerekiyor mu?', answer: 'DQ250 mekatronik arızaları DQ200 kadar sık değildir. En yaygın sorun mekatronik yağ sızıntısıdır. Erken müdahale mekatronik yenilenmesini önler.' },
+      { question: 'DQ250 hangi araçlarda var?', answer: 'Volkswagen Passat 2.0 TDI/TSI, Golf GTI, Audi A3 2.0 TFSI, Skoda Octavia RS ve benzeri yüksek torklu VAG grubu araçlarda yaygındır.' },
+      { question: 'DQ250 ile DQ200 farkı nedir?', answer: 'DQ250 ıslak kavramalı (yağ banyosunda) 6 ileri, DQ200 kuru kavramalı 7 ileri şanzımandır. DQ250 daha yüksek tork kapasitesi sunar; kavrama titremesi DQ200\'e göre çok daha azdır.' },
+      { question: 'DQ250 tamiri Bostancı\'da yapılıyor mu?', answer: 'Evet, Eren Servis Bostancı Oto Sanayi Sitesi\'nde DQ250 mekatronik, kavrama ve yağ değişimi hizmetleri verilmektedir.' },
     ],
   },
 
@@ -118,6 +133,13 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
       'Valf gövdesi sızdırma',
       'Şanzıman yağı pompası rulman arızası',
       'Yazılım/TCU adaptasyon hataları',
+    ],
+    faqs: [
+      { question: 'ZF 8HP şanzıman ne kadar dayanır?', answer: 'Düzgün bakımla 300.000 km ve üzeri dayanır. Şanzıman yağı üretici önerisi olan 80.000 km\'de değil, 60.000 km\'de değiştirilmesi uzun ömür için önerilir.' },
+      { question: 'ZF 8HP yağ değişimi ne sıklıkla yapılmalı?', answer: 'Üretici ömür boyu doldurma der; ancak uzman görüşü 60.000–80.000 km\'de değişim yönündedir. Eski yağ valf gövdesini kirletir ve vites gecikmesine yol açar.' },
+      { question: 'ZF 8HP revizyonu mu değişimi mi?', answer: 'Valf gövdesi revizyonu ve yağ değişimi çoğu durumda yeterlidir. Tam revizyon ancak iç mekanik hasar (dişli veya plaka aşınması) durumunda gerekir.' },
+      { question: 'ZF 8HP hangi araçlarda var?', answer: 'BMW 3/5/7 Serisi, X3/X5, Audi A6/A7/A8/Q7/Q8, Land Rover Discovery, Range Rover ve diğer premium araçlarda kullanılmaktadır.' },
+      { question: 'BMW şanzıman tamiri Bostancı\'da yapılıyor mu?', answer: 'Evet. Eren Servis, ZF 8HP dahil BMW ve diğer premium marka şanzıman tamirlerini Bostancı\'da gerçekleştirmektedir.' },
     ],
   },
 
@@ -456,4 +478,12 @@ export function getTransmissionsByTier(tier: 1 | 2 | 3): TransmissionFamily[] {
 
 export function getTransmissionById(id: string): TransmissionFamily | undefined {
   return TRANSMISSIONS[id];
+}
+
+export function buildTransmissionUrl(id: string): string {
+  return `/sanziman/${id}/`;
+}
+
+export function getTransmissionsByType(type: TransmissionType): TransmissionFamily[] {
+  return Object.values(TRANSMISSIONS).filter((t) => t.type === type);
 }

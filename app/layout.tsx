@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { buildLocalBusinessSchema } from "@/lib/schema";
-import { Archivo, IBM_Plex_Sans, Geist, Geist_Mono } from "next/font/google";
+import { Archivo, IBM_Plex_Sans, Geist, Geist_Mono, Saira_Semi_Condensed, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import MobileCtaBar from "@/components/MobileCtaBar";
@@ -36,6 +36,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500"],
   variable: "--font-geist-mono",
+  display: "swap",
+});
+
+const sairaSemiCondensed = Saira_Semi_Condensed({
+  subsets: ["latin", "latin-ext"],
+  weight: ["100", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-saira",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -100,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${archivo.variable} ${ibmPlexSans.variable} ${geistSans.variable} ${geistMono.variable}`}
+      className={`${archivo.variable} ${ibmPlexSans.variable} ${geistSans.variable} ${geistMono.variable} ${sairaSemiCondensed.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased pb-16 md:pb-0">
         {GA_ID && (

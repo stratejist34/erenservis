@@ -24,47 +24,47 @@ const REVIEWS = [
 export default function ReviewsSection() {
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">
-      <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">Müşteri Yorumları</div>
-      <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-[#F0F4F8]">
+      <div className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.22em] text-iron-light">Müşteri Yorumları</div>
+      <h2 className="mt-4 font-saira text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-text-primary">
         Bizden Hizmet Alanların Yorumları
       </h2>
 
-      <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-[#64748B]">
-        <span className="font-semibold text-[#38BDF8]">4.6/5 Google</span>
-        <span className="text-[#475569]">·</span>
-        <span className="font-semibold text-[#38BDF8]">34 Değerlendirme</span>
-        <span className="text-[#475569]">·</span>
-        <span className="font-semibold text-[#38BDF8]">1.500+ Onarım</span>
+      <div className="mt-5 flex flex-wrap items-center gap-4 font-jetbrains text-sm text-iron-light">
+        <span className="font-semibold text-brass">4.6/5 Google</span>
+        <span className="text-iron-deep">·</span>
+        <span className="font-semibold text-brass">34 Değerlendirme</span>
+        <span className="text-iron-deep">·</span>
+        <span className="font-semibold text-brass">1.500+ Onarım</span>
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {REVIEWS.map((review) => (
           <div
             key={review.name}
-            className="group rounded-[24px] border border-white/8 bg-[#0C1219] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#38BDF8]/20"
+            className="group rounded-xl border border-border-hairline bg-graphite-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-brass"
           >
             <div className="flex gap-0.5">
               {Array.from({ length: review.rating }).map((_, i) => (
                 <Star
                   key={i}
-                  className="h-4 w-4 text-[#38BDF8]"
+                  className="h-4 w-4 text-brass"
                   fill="currentColor"
                   strokeWidth={0}
                 />
               ))}
             </div>
 
-            <p className="mt-4 text-sm leading-[1.75] text-[#94A3B8]">
+            <p className="mt-4 font-saira text-sm leading-[1.75] text-text-secondary">
               &ldquo;{review.text}&rdquo;
             </p>
 
-            <div className="mt-4 flex items-center gap-3 border-t border-white/6 pt-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#38BDF8]/10 text-xs font-semibold text-[#38BDF8]">
+            <div className="mt-4 flex items-center gap-3 border-t border-border-hairline pt-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brass/10 font-saira text-xs font-semibold text-brass">
                 {review.name.charAt(0)}
               </div>
               <div>
-                <div className="text-sm font-medium text-[#F0F4F8]">{review.name}</div>
-                <div className="text-xs text-[#64748B]">{review.vehicle}</div>
+                <div className="font-saira text-sm font-medium text-text-primary">{review.name}</div>
+                <div className="font-jetbrains text-xs text-iron-light">{review.vehicle}</div>
               </div>
             </div>
           </div>

@@ -66,10 +66,10 @@ export default function ServiceWorkflow({
 }: ServiceWorkflowProps) {
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">
-      <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
+      <div className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.22em] text-iron-light">
         {eyebrow}
       </div>
-      <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-[#F0F4F8]">
+      <h2 className="mt-4 font-saira text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-text-primary">
         {title}
       </h2>
 
@@ -77,23 +77,23 @@ export default function ServiceWorkflow({
         {steps.map((step) => (
           <div
             key={step.number}
-            className={`rounded-[24px] border p-5 transition-all duration-300 hover:-translate-y-1 ${
+            className={`rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 ${
               step.highlighted
-                ? 'border-[#38BDF8]/25 bg-[#0C1219]'
-                : 'border-white/8 bg-[#0C1219]'
+                ? 'border-border-brass bg-graphite-surface'
+                : 'border-border-hairline bg-graphite-surface'
             }`}
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-2xl font-bold tracking-[-0.02em] text-[#38BDF8]/60">
+                <span className="font-jetbrains text-2xl font-bold tracking-[-0.02em] text-brass/60">
                   {step.number}
                 </span>
                 {step.icon && (
                   <div
                     className={`flex h-8 w-8 items-center justify-center rounded-lg border ${
                       step.highlighted
-                        ? 'border-[#38BDF8]/30 bg-[#38BDF8]/10 text-[#38BDF8]'
-                        : 'border-white/8 bg-white/[0.02] text-[#64748B]'
+                        ? 'border-border-brass bg-brass/10 text-brass'
+                        : 'border-border-hairline bg-graphite-elevated text-iron-light'
                     }`}
                   >
                     {step.icon}
@@ -101,24 +101,24 @@ export default function ServiceWorkflow({
                 )}
               </div>
               {step.duration && (
-                <div className="flex items-center gap-1.5 rounded-full border border-white/8 bg-white/[0.02] px-2.5 py-1">
-                  <Clock className="h-3 w-3 text-[#475569]" strokeWidth={2} />
-                  <span className="font-mono text-[11px] font-medium text-[#64748B]">
+                <div className="flex items-center gap-1.5 rounded-full border border-border-hairline bg-graphite-elevated px-2.5 py-1">
+                  <Clock className="h-3 w-3 text-iron-deep" strokeWidth={2} />
+                  <span className="font-jetbrains text-[11px] font-medium text-iron-light">
                     {step.duration}
                   </span>
                 </div>
               )}
             </div>
 
-            <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em] text-[#F0F4F8]">
+            <h3 className="mt-4 font-saira text-lg font-semibold tracking-[-0.02em] text-text-primary">
               {step.title}
             </h3>
-            <p className="mt-1.5 text-sm leading-6 text-[#94A3B8]">
+            <p className="mt-1.5 font-saira text-sm leading-6 text-text-secondary">
               {step.description}
             </p>
 
             {step.highlighted && (
-              <div className="mt-3 inline-flex rounded-full border border-[#38BDF8]/20 bg-[#38BDF8]/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7DD3FC]">
+              <div className="mt-3 inline-flex rounded-full border border-border-brass bg-brass/8 px-3 py-1 font-jetbrains text-[10px] font-semibold uppercase tracking-[0.18em] text-brass">
                 Ücretsiz
               </div>
             )}

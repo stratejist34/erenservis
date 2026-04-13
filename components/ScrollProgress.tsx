@@ -1,14 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import { ArrowUp } from 'lucide-react';
 
 export default function ScrollProgress() {
   const [progress, setProgress] = useState(0);
   const [showTop, setShowTop] = useState(false);
-  const pathname = usePathname();
-  const isV1 = pathname?.startsWith('/v1');
 
   useEffect(() => {
     const onScroll = () => {
@@ -26,11 +23,7 @@ export default function ScrollProgress() {
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-[60] transition-[width,background-color,box-shadow] duration-75 ease-out ${
-          isV1
-            ? 'h-[3px] bg-[var(--signal-alloy)] shadow-[0_0_18px_rgba(232,225,215,0.3)]'
-            : 'h-[2px] bg-accent'
-        }`}
+        className="fixed left-0 top-0 z-[60] h-[2px] bg-brass transition-[width] duration-75 ease-out"
         style={{ width: `${progress}%` }}
         role="progressbar"
         aria-valuenow={Math.round(progress)}
@@ -39,14 +32,10 @@ export default function ScrollProgress() {
         aria-label="Sayfa ilerleme cubugu"
       />
 
-{showTop && (
+      {showTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className={`fixed bottom-24 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-xl border transition-colors shadow-lg md:bottom-6 ${
-            isV1
-              ? 'border-edge-hi bg-surface-0/90 text-fg-soft hover:bg-surface-1 hover:text-[var(--signal-alloy)] md:right-6'
-              : 'border-edge bg-surface-3 text-fg-soft hover:bg-surface-2 hover:text-fg md:right-[13rem]'
-          }`}
+          className="fixed bottom-24 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-xl border border-border-hairline bg-graphite-elevated text-text-secondary shadow-lg transition-colors hover:bg-graphite-surface hover:text-text-primary md:bottom-6 md:right-[13rem]"
           aria-label="Sayfanin basina don"
         >
           <ArrowUp className="h-4 w-4" strokeWidth={2.5} />

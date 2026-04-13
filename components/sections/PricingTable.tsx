@@ -45,10 +45,10 @@ export default function PricingTable({
     <section className="py-10 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
         {/* Container */}
-        <div className="rounded-2xl border border-white/8 bg-[#0C1219]/80 backdrop-blur-sm overflow-hidden">
+        <div className="rounded-xl border border-border-hairline bg-graphite-surface overflow-hidden">
           {title && (
-            <div className="px-6 py-4 border-b border-white/8">
-              <h3 className="text-base font-semibold text-[#F0F4F8] tracking-[-0.02em]">
+            <div className="px-6 py-4 border-b border-border-hairline">
+              <h3 className="font-saira text-base font-semibold text-text-primary tracking-[-0.02em]">
                 {title}
               </h3>
             </div>
@@ -62,23 +62,23 @@ export default function PricingTable({
                 <li
                   key={i}
                   className={`px-6 py-4 flex items-start justify-between gap-4 ${
-                    !isLast ? 'border-b border-white/8' : ''
-                  } hover:bg-white/[0.02] transition-colors`}
+                    !isLast ? 'border-b border-border-hairline' : ''
+                  } hover:bg-graphite-elevated transition-colors`}
                 >
                   {/* Left: service name + note */}
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-[#F0F4F8] leading-snug">
+                    <p className="font-saira text-sm font-medium text-text-primary leading-snug">
                       {row.service}
                     </p>
                     {row.note && (
-                      <p className="mt-0.5 text-xs text-[#64748B] leading-relaxed">
+                      <p className="mt-0.5 font-jetbrains text-xs text-iron-light leading-relaxed">
                         {row.note}
                       </p>
                     )}
                   </div>
 
                   {/* Right: price */}
-                  <p className="shrink-0 text-sm font-semibold text-[#38BDF8] text-right whitespace-nowrap">
+                  <p className="shrink-0 font-saira text-sm font-semibold text-brass text-right whitespace-nowrap">
                     {formatPrice(row, currency)}
                   </p>
                 </li>
@@ -89,7 +89,7 @@ export default function PricingTable({
 
         {/* Disclaimer */}
         {disclaimer && (
-          <p className="mt-4 text-xs text-[#64748B] leading-relaxed">
+          <p className="mt-4 font-jetbrains text-xs text-iron-light leading-relaxed">
             {disclaimer}
           </p>
         )}

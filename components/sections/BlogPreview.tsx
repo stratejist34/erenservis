@@ -33,16 +33,16 @@ export default function BlogPreview() {
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">
       <div className="flex items-end justify-between gap-4 mb-8">
         <div>
-          <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
+          <div className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.22em] text-iron-light">
             Bilgi Merkezi
           </div>
-          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-[#F0F4F8]">
+          <h2 className="mt-4 font-saira text-3xl font-semibold tracking-[-0.04em] lg:text-4xl text-text-primary">
             Şanzıman rehberi
           </h2>
         </div>
         <Link
           href="/blog/"
-          className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.02] px-4 py-2 text-sm font-medium text-[#94A3B8] transition hover:bg-white/[0.04] hover:border-[#38BDF8]/30 hover:text-white"
+          className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-border-subtle px-4 py-2 font-saira text-sm font-medium text-text-secondary transition hover:border-brass hover:text-text-primary"
         >
           Tüm Yazılar
           <ArrowRight className="h-3.5 w-3.5" />
@@ -54,24 +54,24 @@ export default function BlogPreview() {
           <Link
             key={post.href}
             href={post.href}
-            className="group rounded-[24px] border border-white/8 bg-[#0C1219] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#38BDF8]/20"
+            className="group rounded-xl border border-border-hairline bg-graphite-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-brass"
           >
             {/* Category tag */}
             <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="h-3.5 w-3.5 text-[#38BDF8]" strokeWidth={2} />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#38BDF8]">
+              <BookOpen className="h-3.5 w-3.5 text-brass" strokeWidth={2} />
+              <span className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.18em] text-brass">
                 {post.category}
               </span>
             </div>
 
-            <h3 className="text-base font-semibold tracking-[-0.02em] text-[#F0F4F8] leading-snug mb-2 group-hover:text-[#7DD3FC] transition-colors duration-200">
+            <h3 className="font-saira text-base font-semibold tracking-[-0.02em] text-text-primary leading-snug mb-2 group-hover:text-brass transition-colors duration-200">
               {post.title}
             </h3>
-            <p className="text-sm leading-6 text-[#94A3B8] mb-4">
+            <p className="font-saira text-sm leading-6 text-text-secondary mb-4">
               {post.excerpt}
             </p>
 
-            <span className="inline-flex items-center gap-1 text-sm font-medium text-[#38BDF8] group-hover:gap-2 transition-all duration-200">
+            <span className="inline-flex items-center gap-1 font-saira text-sm font-medium text-brass group-hover:gap-2 transition-all duration-200">
               Oku
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </span>
@@ -83,7 +83,7 @@ export default function BlogPreview() {
       <div className="mt-6 text-center sm:hidden">
         <Link
           href="/blog/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#38BDF8]"
+          className="inline-flex items-center gap-1.5 font-saira text-sm font-medium text-brass"
         >
           Tüm Yazılar
           <ArrowRight className="h-3.5 w-3.5" />

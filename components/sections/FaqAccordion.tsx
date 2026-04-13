@@ -20,23 +20,23 @@ export default function FaqAccordion({ items, title = 'Sık Sorulan Sorular' }: 
   return (
     <section className="mx-auto mt-16 max-w-3xl px-4 sm:px-6">
       {title && (
-        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-[#F0F4F8] mb-6">{title}</h2>
+        <h2 className="font-saira text-2xl font-semibold tracking-[-0.03em] text-text-primary mb-6">{title}</h2>
       )}
       <div className="space-y-3">
         {items.map((item, i) => (
-          <div key={i} className="overflow-hidden rounded-2xl border border-white/8 bg-[#0C1219]">
+          <div key={i} className="overflow-hidden rounded-xl border border-border-hairline bg-graphite-surface">
             <button
-              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left text-[#F0F4F8] font-medium hover:bg-white/[0.03] transition-colors"
+              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-saira text-text-primary font-medium hover:bg-graphite-elevated transition-colors"
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
               aria-expanded={openIndex === i}
             >
               <span className="text-sm sm:text-base">{item.question}</span>
-              <span className="flex-shrink-0 text-[#38BDF8] text-lg leading-none">
+              <span className="flex-shrink-0 font-jetbrains text-brass text-lg leading-none">
                 {openIndex === i ? '−' : '+'}
               </span>
             </button>
             {openIndex === i && (
-              <div className="px-6 pb-5 text-sm leading-7 text-[#94A3B8]">
+              <div className="px-6 pb-5 font-saira text-sm leading-7 text-text-secondary">
                 {item.answer}
               </div>
             )}

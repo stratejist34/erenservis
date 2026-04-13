@@ -16,47 +16,38 @@ export default function FinalCTA({
 }: FinalCTAProps) {
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">
-      <div
-        className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0C1219] px-8 py-14 text-center"
-        style={{
-          boxShadow: '0 0 80px rgba(56,189,248,0.08), inset 0 1px 0 rgba(255,255,255,0.06)',
-          background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(56,189,248,0.06) 0%, transparent 60%), #0C1219',
-        }}
-      >
-        <h2 className="text-4xl font-semibold tracking-[-0.045em] text-[#F0F4F8] sm:text-5xl">
+      <div className="relative overflow-hidden rounded-2xl border border-border-subtle bg-graphite-surface px-8 py-14 text-center">
+        <h2 className="font-saira text-4xl font-semibold tracking-[-0.045em] text-text-primary sm:text-5xl">
           {title ? (
             title
           ) : (
-            <>Sorun büyümeden{' '}<span className="text-[#38BDF8]">kontrol ettirin.</span></>
+            <>Sorun büyümeden{' '}<span className="text-brass">kontrol ettirin.</span></>
           )}
         </h2>
-        <p className="mx-auto mt-4 max-w-[42ch] text-lg leading-8 text-[#94A3B8]">
+        <p className="mx-auto mt-4 max-w-[42ch] font-saira text-lg leading-8 text-text-secondary">
           {subtitle}
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href={phone}
-            className="inline-flex items-center gap-2 rounded-2xl bg-[#38BDF8] px-8 py-4 text-base font-semibold text-[#070B11] transition hover:-translate-y-0.5"
-            style={{
-              boxShadow: '0 10px 40px rgba(36,220,255,0.30), inset 0 1px 0 rgba(255,255,255,0.15)',
-            }}
+            className="inline-flex items-center gap-2 rounded-full bg-brass-bright px-8 py-4 font-saira text-base font-semibold text-graphite-base transition hover:bg-brass"
           >
-            <Phone className="h-4.5 w-4.5" strokeWidth={2.5} />
+            <Phone className="h-4 w-4" strokeWidth={2.5} />
             Hemen Arayın — Ücretsiz Ön Teşhis
           </a>
           <a
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.02] px-8 py-4 text-base font-medium text-[#F0F4F8] transition hover:bg-white/[0.04] hover:border-[#38BDF8]/30"
+            className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-8 py-4 font-saira text-base font-medium text-text-secondary transition hover:border-brass hover:text-text-primary"
           >
-            <MessageCircle className="h-4.5 w-4.5" strokeWidth={2} />
+            <MessageCircle className="h-4 w-4" strokeWidth={2} />
             WhatsApp&apos;tan Yazın
           </a>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-[#64748B]">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-jetbrains text-sm text-iron-light">
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5" strokeWidth={2} />
             Aynı gün inceleme

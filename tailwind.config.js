@@ -14,6 +14,22 @@ module.exports = {
           250: '#1D1B1A',
           300: '#2B2825',
         },
+        // Cold Brass Hybrid
+        graphite: {
+          base:     'var(--color-graphite-base)',
+          surface:  'var(--color-graphite-surface)',
+          elevated: 'var(--color-graphite-elevated)',
+        },
+        iron: {
+          DEFAULT: 'var(--color-iron)',
+          deep:    'var(--color-iron-deep)',
+          light:   'var(--color-iron-light)',
+        },
+        brass: {
+          DEFAULT: 'var(--color-brass)',
+          bright:  'var(--color-brass-bright)',
+          dim:     'var(--color-brass-dim)',
+        },
       },
       boxShadow: {
         'glow-sky': '0 0 32px rgba(56, 189, 248, 0.3)',
@@ -34,6 +50,10 @@ module.exports = {
       letterSpacing: {
         'tighter-2': '-0.025em',
         'tighter-1': '-0.015em',
+      },
+      fontFamily: {
+        saira: ['var(--font-saira)', 'system-ui', 'sans-serif'],
+        jetbrains: ['var(--font-jetbrains)', 'Courier New', 'monospace'],
       },
     },
   },

@@ -206,6 +206,54 @@
   --color-content-text: #F0F4F8;
   --color-content-muted: #94A3B8;
   --color-content-border: rgba(255, 255, 255, 0.08);
+
+  /* ============================================
+     COLD BRASS HYBRID — Yeni tasarım sistemi
+     Mimari: sıcak grafit zemin + soğuk çelik yapı + brass aksan
+     Diagnostic Cyan sistemi geçici olarak paralel duruyor.
+     Sprint 4 sonrası eski sistem silinecek.
+     ============================================ */
+
+  /* Cold Brass Hybrid — Font Families */
+  --font-display-cb: var(--font-saira), system-ui, sans-serif;
+  --font-mono-cb:    var(--font-jetbrains), 'Courier New', monospace;
+
+  /* SURFACES — sıcak grafit katmanları (zemin) */
+  --color-graphite-base:     #15130F;
+  --color-graphite-surface:  #1C1916;
+  --color-graphite-elevated: #252119;
+  --color-graphite-glass:    rgba(255, 252, 245, 0.04);
+  --color-graphite-glass-hover: rgba(255, 252, 245, 0.07);
+
+  /* STRUCTURAL METALS — soğuk gri çelik aksesuarlar
+     SADECE çizgi, ikon, küçük metin için. Büyük yüzeyde KULLANMA. */
+  --color-iron-deep:  #4B5563;
+  --color-iron:       #6B7280;
+  --color-iron-light: #9CA3AF;
+
+  /* BORDERS */
+  --color-border-hairline: rgba(255, 252, 245, 0.06);
+  --color-border-subtle:   rgba(255, 252, 245, 0.10);
+  --color-border-strong:   rgba(255, 252, 245, 0.16);
+  --color-border-iron:     #4B5563;
+  --color-border-brass:    rgba(166, 138, 100, 0.40);
+
+  /* TYPOGRAPHY — sıcak kemik beyazı + soğuk steel hints */
+  --color-text-primary:   #F5F1E8;
+  --color-text-secondary: #A8A29A;
+  --color-text-tertiary:  #6B655D;
+  --color-text-iron:      #9CA3AF;
+  --color-text-brass:     #A68A64;
+
+  /* BRASS — ana aksan + parlak CTA */
+  --color-brass:        #A68A64;
+  --color-brass-bright: #B89968;
+  --color-brass-dim:    #8A7252;
+
+  /* SEMANTIC — durum renkleri */
+  --color-success: #84CC16;
+  --color-warning: #D97706;
+  --color-danger:  #DC2626;
 }
 
 @keyframes pulse-slow {

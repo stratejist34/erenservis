@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { buildLocalBusinessSchema } from "@/lib/schema";
-import { Archivo, IBM_Plex_Sans, Geist, Geist_Mono, Saira_Semi_Condensed, JetBrains_Mono } from "next/font/google";
+import { Archivo, IBM_Plex_Sans, Geist, Geist_Mono, Saira_Semi_Condensed, JetBrains_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import MobileCtaBar from "@/components/MobileCtaBar";
@@ -50,6 +50,14 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  style: ["italic"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -114,7 +122,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${archivo.variable} ${ibmPlexSans.variable} ${geistSans.variable} ${geistMono.variable} ${sairaSemiCondensed.variable} ${jetbrainsMono.variable}`}
+      className={`${archivo.variable} ${ibmPlexSans.variable} ${geistSans.variable} ${geistMono.variable} ${sairaSemiCondensed.variable} ${jetbrainsMono.variable} ${fraunces.variable}`}
     >
       <body className="font-sans antialiased pb-16 md:pb-0">
         {GA_ID && (

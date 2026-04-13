@@ -215,8 +215,9 @@
      ============================================ */
 
   /* Cold Brass Hybrid — Font Families */
-  --font-display-cb: var(--font-saira), system-ui, sans-serif;
-  --font-mono-cb:    var(--font-jetbrains), 'Courier New', monospace;
+  --font-display-cb:      var(--font-saira), system-ui, sans-serif;
+  --font-mono-cb:         var(--font-jetbrains), 'Courier New', monospace;
+  --font-display-italic:  var(--font-fraunces), Georgia, serif;
 
   /* SURFACES — sıcak grafit katmanları (zemin) */
   --color-graphite-base:     #15130F;

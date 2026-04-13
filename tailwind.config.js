@@ -54,6 +54,7 @@ module.exports = {
       fontFamily: {
         saira: ['var(--font-saira)', 'system-ui', 'sans-serif'],
         jetbrains: ['var(--font-jetbrains)', 'Courier New', 'monospace'],
+        fraunces: ['var(--font-fraunces)', 'Georgia', 'serif'],
       },
     },
   },

@@ -4,10 +4,11 @@
  * Brand/servis sayfalarında title, subtitle ve CTA override edilebilir.
  */
 'use client';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 import { SYMPTOMS } from '@/data/symptoms';
 import { useSymptom } from '@/contexts/SymptomContext';
+import LiveDiagnosedFeed from '@/components/LiveDiagnosedFeed';
 
 /* ── INTERNAL DEFAULTS (homepage için sabit veri) ───────────────────────── */
 
@@ -96,6 +97,34 @@ export default function HeroSectionDC({
   const { selectedId, setSelectedId } = useSymptom();
   const selected = SYMPTOMS.find((s) => s.id === selectedId)!;
 
+  const [delayedId, setDelayedId] = useState(selectedId);
+  const [ctaFading, setCtaFading] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const firstRun = useRef(true);
+  useEffect(() => {
+    if (firstRun.current) {
+      firstRun.current = false;
+      return;
+    }
+    setHasInteracted(true);
+  }, [selectedId]);
+  useEffect(() => {
+    if (delayedId === selectedId) return;
+    setCtaFading(true);
+    const t = setTimeout(() => {
+      setDelayedId(selectedId);
+      setCtaFading(false);
+    }, 120);
+    return () => clearTimeout(t);
+  }, [selectedId, delayedId]);
+
+  const delayed = SYMPTOMS.find((s) => s.id === delayedId)!;
+  const preDiagLabel = `${delayed.shortLabel} için ön teşhis al`;
+  const preDiagContext = `Muhtemel: ${delayed.label} — ${delayed.severity === 'high' ? 'Yüksek risk' : 'Orta risk'}`;
+  const preDiagWaHref = `https://wa.me/905327153751?text=${encodeURIComponent(
+    `Merhaba, aracımda ${delayed.shortLabel.toLowerCase()} problemi var. Ön teşhis için bilgi almak istiyorum.`
+  )}`;
+
   return (
     <section className="relative overflow-hidden">
 
@@ -176,20 +205,31 @@ export default function HeroSectionDC({
 
         {/* Mini semptom seçici */}
         <div className="hero-item-4 mt-5 flex flex-wrap gap-2">
-          {SYMPTOMS.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => setSelectedId(s.id)}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-jetbrains text-xs transition-all duration-200 ${
-                selectedId === s.id
-                  ? 'border-border-brass bg-brass/10 text-brass'
-                  : 'border-border-subtle bg-graphite-surface/60 text-text-secondary hover:border-border-brass hover:text-text-primary'
-              }`}
-            >
-              <span className={`h-1.5 w-1.5 rounded-full ${s.severity === 'high' ? 'bg-red-400' : 'bg-amber-400'}`} />
-              {s.shortLabel}
-            </button>
-          ))}
+          {SYMPTOMS.map((s) => {
+            const isActive = selectedId === s.id;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setSelectedId(s.id)}
+                aria-pressed={isActive}
+                className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-jetbrains text-xs transition-all duration-200 ease-out ${
+                  isActive
+                    ? 'border-brass bg-brass/20 font-semibold text-text-primary'
+                    : 'border-border-hairline bg-graphite-surface/60 text-text-secondary hover:-translate-y-px hover:border-border-brass hover:bg-brass/5 hover:text-text-primary'
+                }`}
+              >
+                <span
+                  className={`h-1.5 w-1.5 rounded-full ${
+                    s.severity === 'high'
+                      ? isActive ? 'bg-red-500' : 'bg-red-400'
+                      : isActive ? 'bg-amber-500' : 'bg-amber-400'
+                  }`}
+                />
+                {s.shortLabel}
+              </button>
+            );
+          })}
         </div>
 
         {/* CTA */}
@@ -340,29 +380,31 @@ export default function HeroSectionDC({
             background: 'linear-gradient(90deg, rgba(21,19,15,0.9) 0%, rgba(21,19,15,0.7) 50%, rgba(21,19,15,0.9) 100%)',
           }}
         />
-        <div className="relative grid grid-cols-1 items-center gap-6 px-8 py-8 sm:grid-cols-3">
-          {/* Sol — kimlik */}
-          <div className="text-center sm:text-left">
-            <div className="font-saira text-sm font-medium text-text-secondary">Bostancı&apos;nın şanzıman uzmanı</div>
-            <div className="font-saira text-lg font-semibold text-text-primary">15 yıllık deneyim, 6 ay garanti</div>
+        <div className="relative grid grid-cols-1 items-center gap-8 px-8 py-8 sm:grid-cols-[auto_1fr_auto]">
+          {/* Sol — bağlam */}
+          <div className="sm:max-w-[200px]">
+            <div className="font-saira text-base font-semibold text-text-primary">Son teşhisler</div>
+            <div className="mt-1 font-saira text-xs text-iron-light">Gerçek servis kayıtları</div>
           </div>
 
-          {/* Orta — teşhis kanıtı */}
-          <div className="text-center">
-            <div className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.18em] text-iron-light mb-1.5">Son teşhis edilen arızalar</div>
-            <div className="font-saira text-sm text-text-secondary">
-              DSG mekatronik&nbsp;&middot;&nbsp;ZF valf body&nbsp;&middot;&nbsp;CVT kayma
-            </div>
+          {/* Orta — canlı liste */}
+          <div className="w-full sm:max-w-[560px]">
+            <LiveDiagnosedFeed />
           </div>
 
-          {/* Sağ — CTA */}
-          <div className="flex justify-center sm:justify-end">
+          {/* Sağ — aksiyon */}
+          <div
+            className="flex flex-col items-center gap-2 transition-opacity duration-300 ease-out sm:items-end"
+            style={{ opacity: !hasInteracted ? 0.6 : ctaFading ? 0.7 : 1 }}
+          >
+            <div className="font-saira text-[11px] text-iron-light">{preDiagContext}</div>
             <a
-              href={phoneHref}
-              className="inline-flex items-center gap-2 rounded-full bg-brass-bright px-6 py-3 font-saira text-sm font-semibold text-graphite-base transition-colors hover:bg-brass"
+              href={preDiagWaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-brass bg-brass/5 px-8 py-3 font-saira text-sm font-medium text-text-primary transition-colors duration-200 ease-out hover:border-brass hover:bg-brass/10"
             >
-              <Phone className="h-4 w-4" strokeWidth={2.5} />
-              Hemen Ara
+              {preDiagLabel}
             </a>
           </div>
         </div>

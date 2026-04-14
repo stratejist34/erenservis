@@ -54,7 +54,7 @@ export default function BlogPreview() {
           <Link
             key={post.href}
             href={post.href}
-            className="group rounded-xl border border-border-hairline bg-graphite-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-brass"
+            className="group rounded-xl border border-border-hairline bg-graphite-elevated p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-brass"
           >
             {/* Category tag */}
             <div className="flex items-center gap-2 mb-4">

@@ -159,71 +159,69 @@ export default function DsgKavramaArizaBelirtileriPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-[#070B11]">
+      <main className="min-h-screen bg-graphite-base">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
-        <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
+        <section className="bg-graphite-base px-4 pt-28 pb-12">
           <div className="max-w-2xl mx-auto">
             {/* Breadcrumb */}
-            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
-              <Link href="/" className="hover:text-zinc-300 transition-colors">
+            <nav className="text-xs text-text-secondary mb-6 flex items-center gap-2">
+              <Link href="/" className="hover:text-text-primary transition-colors">
                 Ana Sayfa
               </Link>
               <span>/</span>
-              <a href="/rehber" className="hover:text-zinc-300 transition-colors">
+              <a href="/rehber" className="hover:text-text-primary transition-colors">
                 Rehber
               </a>
               <span>/</span>
-              <span className="text-zinc-400">DSG Kavrama Arızası</span>
+              <span className="text-text-secondary">DSG Kavrama Arızası</span>
             </nav>
 
             {/* Etiket */}
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-amber-400 mb-4">
+            <span className="inline-block font-jetbrains text-[10px] font-semibold tracking-[0.22em] uppercase text-brass mb-4">
               Arıza Belirtileri
             </span>
 
             {/* H1 */}
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+            <h1 className="font-saira text-3xl sm:text-4xl font-semibold text-text-primary leading-tight mb-4">
               DSG Kavrama Arızası Belirtileri
             </h1>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-8">
+            <p className="font-saira text-text-secondary text-lg leading-relaxed mb-8">
               Aracınızda vuruntu, titreme veya geç geçiş mi var? Bu 7 belirti
               DSG kavrama arızasının erken habercisidir. Erken tanı, gereksiz
               masrafı önler.
             </p>
 
             {/* Hızlı özet kartları */}
-            <div className="grid grid-cols-3 gap-3 border-t border-zinc-800 pt-8">
+            <div className="grid grid-cols-3 gap-3 border-t border-border-hairline pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">7</div>
-                <div className="text-xs text-zinc-400 mt-1">Kritik belirti</div>
+                <div className="font-saira text-2xl font-semibold text-brass">7</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Kritik belirti</div>
               </div>
-              <div className="text-center border-x border-zinc-800">
-                <div className="text-2xl font-bold text-amber-400">%80</div>
-                <div className="text-xs text-zinc-400 mt-1">
+              <div className="text-center border-x border-border-hairline">
+                <div className="font-saira text-2xl font-semibold text-brass">%80</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">
                   Vuruntu = kavrama
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">
+                <div className="font-saira text-2xl font-semibold text-brass">
                   Ücretsiz
                 </div>
-                <div className="text-xs text-zinc-400 mt-1">Ön tanı</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Ön tanı</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── GÜVEN ŞERİDİ ─────────────────────────────────────────────── */}
-
         {/* ── GİRİŞ ────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <p className="text-slate-300 text-base leading-relaxed mb-4">
+          <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             DSG şanzımanlar kuru veya ıslak kavrama kullanır. Zamanla kavrama
             plaketleri aşınır, bu tamamen normaldir. Sorun şu: kavrama arızaları
             sessiz başlar ve çoğu sürücü belirtileri &ldquo;arabanın özelliği&rdquo; sanır.
           </p>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="font-saira text-text-secondary text-base leading-relaxed">
             Oysa erken dönemde fark edilen bir kavrama sorunu yalnızca kavrama
             değişimiyle çözülür. Geciktirilirse kavrama aşınan metal tozları
             mekatronik karta ulaşır — fatura iki katına çıkar. Aşağıdaki
@@ -232,12 +230,12 @@ export default function DsgKavramaArizaBelirtileriPage() {
           </p>
 
           {/* İç link — money page */}
-          <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-            <p className="text-sm text-amber-800">
+          <div className="mt-6 p-4 bg-graphite-surface border border-border-brass rounded-xl">
+            <p className="font-saira text-sm text-text-primary">
               <strong>Belirtiler tanıdık geldi mi?</strong>{" "}
               <a
                 href="/hizmetler/dsg-kavrama-degisimi"
-                className="underline underline-offset-2 hover:text-amber-900 transition-colors"
+                className="text-brass underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
                 DSG kavrama değişimi fiyatlarını ve sürecini görün →
               </a>
@@ -247,10 +245,10 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── BELİRTİLER ───────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-2">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
             7 Kritik Belirti
           </h2>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="font-saira text-text-secondary text-sm mb-8">
             Birden fazlası varsa, tanıyı ertelemeyin.
           </p>
 
@@ -262,10 +260,10 @@ export default function DsgKavramaArizaBelirtileriPage() {
               >
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold opacity-50">
+                    <span className="font-jetbrains text-xs font-bold opacity-50">
                       {b.no}
                     </span>
-                    <h3 className="font-semibold text-sm sm:text-base">
+                    <h3 className="font-saira font-semibold text-sm sm:text-base">
                       {b.baslik}
                     </h3>
                   </div>
@@ -273,7 +271,7 @@ export default function DsgKavramaArizaBelirtileriPage() {
                     {aciliyetEtiket[b.aciliyet]}
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed opacity-90 ml-7">
+                <p className="font-saira text-sm leading-relaxed opacity-90 ml-7">
                   {b.aciklama}
                 </p>
               </div>
@@ -282,71 +280,70 @@ export default function DsgKavramaArizaBelirtileriPage() {
         </section>
 
         {/* ── MODELe GÖRE FARK ─────────────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-2">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
               DQ200 ve DQ250&apos;de Farklı Davranış
             </h2>
-            <p className="text-slate-500 text-sm mb-8">
+            <p className="font-saira text-text-secondary text-sm mb-8">
               Aynı belirti, farklı modelde farklı anlam taşır.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
               {/* DQ200 */}
-              <div className="bg-[#070B11] border border-white/8 rounded-xl p-5">
-                <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
+              <div className="bg-graphite-base border border-border-hairline rounded-xl p-5">
+                <div className="font-jetbrains text-xs font-semibold uppercase tracking-widest text-iron-light mb-3">
                   DQ200 — Kuru Kavrama
                 </div>
-                <div className="text-sm font-semibold text-slate-200 mb-1">
+                <div className="font-saira text-sm font-semibold text-text-primary mb-1">
                   Golf, Polo, A3, Leon
                 </div>
-                <ul className="text-sm text-slate-400 space-y-2 mt-3">
+                <ul className="font-saira text-sm text-text-secondary space-y-2 mt-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">›</span>
+                    <span className="text-brass mt-0.5">›</span>
                     Sabah ilk kalkışta vuruntu çok belirgin
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">›</span>
+                    <span className="text-brass mt-0.5">›</span>
                     Sıvı değişiminin kavramaya etkisi yok
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">›</span>
+                    <span className="text-brass mt-0.5">›</span>
                     Gecikme = mekatronik kart riski
                   </li>
                 </ul>
               </div>
 
               {/* DQ250 */}
-              <div className="bg-[#070B11] border border-white/8 rounded-xl p-5">
-                <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
+              <div className="bg-graphite-base border border-border-hairline rounded-xl p-5">
+                <div className="font-jetbrains text-xs font-semibold uppercase tracking-widest text-iron-light mb-3">
                   DQ250 — Islak Kavrama
                 </div>
-                <div className="text-sm font-semibold text-slate-200 mb-1">
+                <div className="font-saira text-sm font-semibold text-text-primary mb-1">
                   Passat, A4, Octavia, Tiguan
                 </div>
-                <ul className="text-sm text-slate-400 space-y-2 mt-3">
+                <ul className="font-saira text-sm text-text-secondary space-y-2 mt-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">›</span>
+                    <span className="text-brass mt-0.5">›</span>
                     Kayma hissi ön plana çıkar
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">›</span>
+                    <span className="text-brass mt-0.5">›</span>
                     Erken dönemde sıvı değişimi yardımcı olabilir
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">›</span>
+                    <span className="text-brass mt-0.5">›</span>
                     Volant hasarı DQ200&apos;e göre daha sık
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* İç link — araç sayfası hazır olunca güncelle */}
-            <p className="text-xs text-zinc-400 mt-4 text-center">
+            <p className="font-jetbrains text-xs text-iron-light mt-4 text-center">
               Aracınızın modelini bilmiyorsanız{" "}
               <a
                 href="/iletisim"
-                className="underline underline-offset-2 hover:text-slate-400 transition-colors"
+                className="underline underline-offset-2 hover:text-text-secondary transition-colors"
               >
                 bize sorun
               </a>
@@ -357,11 +354,12 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── GECİKMENİN MALİYETİ ──────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-6">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">
             Erken vs. Geç Müdahale
           </h2>
 
           <div className="grid sm:grid-cols-2 gap-4">
+            {/* PRESERVED — semantic comparison green card */}
             <div className="border border-green-200 bg-green-50 rounded-xl p-5">
               <div className="text-xs font-bold text-green-700 uppercase tracking-wider mb-3">
                 Erken müdahale
@@ -379,6 +377,7 @@ export default function DsgKavramaArizaBelirtileriPage() {
               </ul>
             </div>
 
+            {/* PRESERVED — semantic comparison red card */}
             <div className="border border-red-200 bg-red-50 rounded-xl p-5">
               <div className="text-xs font-bold text-red-700 uppercase tracking-wider mb-3">
                 Geç müdahale
@@ -399,41 +398,37 @@ export default function DsgKavramaArizaBelirtileriPage() {
         </section>
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-8">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">
               Sık Sorulan Sorular
             </h2>
-            {/*
-              TransmissionFaq bileşeninin items prop'u varsa kullan.
-              Yoksa aşağıdaki statik HTML'i bırak — sonra entegre edersin.
-            */}
             <TransmissionFaq slug="dsg-kavrama-ariza-belirtileri" />
           </div>
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <div className="bg-zinc-950 text-white rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-3">
+          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-8 text-center">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">
               Belirtilerden biri tanıdık geldi mi?
             </h2>
-            <p className="text-zinc-300 text-sm mb-6 leading-relaxed">
+            <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed">
               Aracınızı getirin, ücretsiz ön tanı yapalım. Sorun varsa net fiyat
               verelim — sürpriz fatura yok.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+905327153751"
-                className="inline-block bg-amber-400 text-zinc-950 font-semibold
-                           px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors"
+                className="inline-block bg-brass-bright text-graphite-base font-saira font-semibold
+                           px-6 py-3 rounded-full hover:bg-brass transition-colors"
               >
                 Hemen Ara
               </a>
               <a
                 href="/hizmetler/dsg-kavrama-degisimi"
-                className="inline-block border border-zinc-700 text-zinc-300 font-medium
-                           px-6 py-3 rounded-xl hover:border-zinc-500 hover:text-white
+                className="inline-block border border-border-subtle text-text-secondary font-saira font-medium
+                           px-6 py-3 rounded-full hover:border-brass hover:text-text-primary
                            transition-colors"
               >
                 Kavrama değişimi fiyatları →
@@ -444,7 +439,7 @@ export default function DsgKavramaArizaBelirtileriPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-slate-100 mb-6">
+          <h2 className="font-saira text-xl font-semibold text-text-primary mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

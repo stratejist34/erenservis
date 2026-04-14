@@ -98,25 +98,25 @@ export default function SanzimanTipleriPage() {
       />
 
       {/* Hero */}
-      <section className="hero-deep pt-28 pb-14 px-4 sm:px-6">
+      <section className="bg-graphite-base pt-28 pb-14 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Sol — başlık */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-accent/20">
-                  <BookOpen className="w-3.5 h-3.5 text-accent" strokeWidth={2.5} />
+                <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-brass/8">
+                  <BookOpen className="w-3.5 h-3.5 text-brass" strokeWidth={2.5} />
                 </div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+                <span className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
                   Teknik Bilgi Bankası
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-fg leading-tight mb-4">
+              <h1 className="font-saira text-3xl sm:text-4xl font-semibold text-text-primary leading-tight mb-4">
                 Şanzıman Türleri ve{' '}
-                <span className="text-accent">Teknik Rehberi</span>
+                <span className="text-brass">Teknik Rehberi</span>
               </h1>
-              <p className="text-lg text-fg-soft leading-relaxed mb-8">
+              <p className="font-saira text-lg text-text-secondary leading-relaxed mb-8">
                 DSG&apos;den ZF&apos;e, CVT&apos;den konvansiyonel otomatiğe — her şanzıman
                 tipini teknik açıdan anlayın. Kronik arızalar, bakım aralıkları ve uzman çözüm
                 yolları.
@@ -129,9 +129,9 @@ export default function SanzimanTipleriPage() {
                     key={s.label}
                     className="flex flex-col gap-1.5 p-4 rounded-xl bg-surface-1 border border-edge"
                   >
-                    <div className="flex items-center gap-2 text-accent">
+                    <div className="flex items-center gap-2 text-brass">
                       {s.icon}
-                      <span className="text-xl font-bold">{s.value}</span>
+                      <span className="font-saira text-xl font-semibold">{s.value}</span>
                     </div>
                     <p className="text-sm font-semibold text-fg leading-none">{s.label}</p>
                     <p className="text-xs text-fg-soft leading-snug">{s.sub}</p>
@@ -147,7 +147,7 @@ export default function SanzimanTipleriPage() {
                 return (
                   <div
                     key={t.slug}
-                    className="flex items-center justify-between gap-4 px-4 py-3 rounded-xl bg-surface-1 border border-edge hover:border-accent/30 transition-colors"
+                    className="flex items-center justify-between gap-4 px-4 py-3 rounded-xl bg-surface-1 border border-edge hover:border-border-brass transition-colors"
                   >
                     <div className="flex flex-col gap-0.5">
                       <span className="text-sm font-semibold text-fg">{t.title}</span>
@@ -247,7 +247,7 @@ export default function SanzimanTipleriPage() {
                           {t.brands.join(', ')}
                         </td>
                         <td className="px-4 py-3.5 text-fg-soft">{m.task}</td>
-                        <td className="px-4 py-3.5 text-right text-accent font-medium whitespace-nowrap">
+                        <td className="px-4 py-3.5 text-right font-saira text-brass font-medium whitespace-nowrap">
                           {m.interval}
                         </td>
                       </tr>
@@ -267,7 +267,7 @@ export default function SanzimanTipleriPage() {
       <section className="pb-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <HelpCircle className="w-4 h-4 text-accent" strokeWidth={2} />
+            <HelpCircle className="w-4 h-4 text-brass" strokeWidth={2} />
             <h2 className="text-base font-semibold text-fg">
               Sık Sorulan Sorular
             </h2>
@@ -295,7 +295,7 @@ export default function SanzimanTipleriPage() {
       <section className="pb-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-start gap-4 p-5 rounded-xl bg-surface-1 border border-edge">
-            <Search className="w-5 h-5 text-accent mt-0.5 shrink-0" strokeWidth={2} />
+            <Search className="w-5 h-5 text-brass mt-0.5 shrink-0" strokeWidth={2} />
             <div>
               <p className="text-sm font-semibold text-fg mb-1">
                 Aracınızın şanzımanı hangisi?
@@ -303,7 +303,7 @@ export default function SanzimanTipleriPage() {
               <p className="text-sm text-fg-soft leading-relaxed">
                 Marka ve model bilgisini bilmiyorsanız, araç ruhsatınızdaki şanzıman kodunu veya
                 aracı bize getirerek ücretsiz diagnostik yapabilirsiniz.{' '}
-                <a href="tel:+905327153751" className="text-accent font-semibold hover:underline">
+                <a href="tel:+905327153751" className="text-brass font-semibold hover:underline">
                   0532 715 37 51
                 </a>
               </p>

@@ -74,11 +74,13 @@ export default async function BlogPostPage({ params }: Props) {
       />
 
       {/* Post Hero */}
-      <section className="hero-deep pt-28 pb-14 text-center">
+      <section className="bg-graphite-base pt-28 pb-14 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h1 className="text-hero-text mb-4">{post.title}</h1>
+          <h1 className="font-saira text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-text-primary mb-4">
+            {post.title}
+          </h1>
           {post.excerpt && (
-            <p className="text-hero-muted text-lg leading-relaxed max-w-xl mx-auto">
+            <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-xl mx-auto">
               {post.excerpt}
             </p>
           )}
@@ -86,10 +88,10 @@ export default async function BlogPostPage({ params }: Props) {
       </section>
 
       {/* Post İçerik */}
-      <section className="py-16 bg-content-bg">
+      <section className="py-16 bg-graphite-base">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <article
-            className="prose prose-slate max-w-none"
+            className="prose prose-invert max-w-none prose-headings:font-saira prose-headings:font-semibold prose-headings:text-text-primary prose-headings:tracking-tight prose-p:font-saira prose-p:text-text-secondary prose-a:text-brass hover:prose-a:text-brass-bright prose-strong:text-text-primary prose-li:font-saira prose-li:text-text-secondary prose-hr:border-border-hairline prose-blockquote:border-l-brass prose-blockquote:text-text-secondary"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>

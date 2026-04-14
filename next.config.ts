@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', 'date-fns'],
+    cpus: 4,
   },
 
   compiler: {

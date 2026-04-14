@@ -2,31 +2,11 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Backgrounds */
-  --bg-secondary: #0C1219;
-
-  /* Borders */
-  --border-subtle: rgba(160, 200, 230, 0.08);
-  --border-accent: rgba(56, 189, 248, 0.35);
-
-  /* Accent */
-  --accent-primary: #38BDF8;
-  --accent-soft: #7DD3FC;
-
-  /* Gradients */
-  --gradient-accent: linear-gradient(180deg, #5DCBFA 0%, #38BDF8 50%, #0284C7 100%);
-  --gradient-glow: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
-
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 200ms;
   --duration-base: 300ms;
   --duration-slow: 400ms;
-
-  /* Shadows */
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.3);
 
   /* Radii */
   --radius-card: 12px;
@@ -47,91 +27,33 @@
   --status-success-border: #10B981;
   --status-success-text: #6EE7B7;
   --status-success-label: #10B981;
-
-  --status-info-bg: rgba(56, 189, 248, 0.12);
-  --status-info-border: #38BDF8;
-  --status-info-text: #7DD3FC;
-  --status-info-label: #38BDF8;
 }
 
 @theme inline {
-  /* Fonts — Geist primary, Plex fallback */
+  /* Fonts */
   --font-display: var(--font-geist-sans), var(--font-archivo), 'Archivo', system-ui, sans-serif;
   --font-body: var(--font-geist-sans), var(--font-plex), 'IBM Plex Sans', system-ui, sans-serif;
   --font-sans: var(--font-geist-sans), var(--font-plex), 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 
-  /* Surfaces */
-  --color-bg-base: #070B11;
-  --color-surface-0: #070B11;
-  --color-surface-1: #0C1219;
-  --color-surface-2: #141B24;
-  --color-surface-3: #1C2530;
+  /* Sanziman semantic surfaces (legacy alias → Cold Brass Hybrid) */
+  --color-surface-0: #15130F;
+  --color-surface-1: #1C1916;
+  --color-surface-2: #252119;
+  --color-surface-3: #2E2A20;
 
-  --color-dark-50: #070B11;
-  --color-dark-100: #0C1219;
-  --color-dark-150: #0F1620;
-  --color-dark-200: #141B24;
-  --color-dark-250: #18212C;
-  --color-dark-300: #1C2530;
+  /* Sanziman semantic borders (legacy alias → Cold Brass Hybrid) */
+  --color-edge: rgba(255, 252, 245, 0.06);
+  --color-edge-hi: rgba(166, 138, 100, 0.40);
 
-  /* Borders */
-  --color-edge: rgba(160, 200, 230, 0.08);
-  --color-edge-hi: rgba(56, 189, 248, 0.35);
-  --color-border-subtle: rgba(160, 200, 230, 0.08);
-  --color-border-accent: rgba(56, 189, 248, 0.35);
+  /* Sanziman semantic text (legacy alias → Cold Brass Hybrid) */
+  --color-fg: #F5F1E8;
+  --color-fg-soft: #A8A29A;
+  --color-fg-muted: #6B655D;
+  --color-fg-dim: #4B5563;
 
-  /* Text */
-  --color-fg: #F0F4F8;
-  --color-fg-soft: #94A3B8;
-  --color-fg-muted: #64748B;
-  --color-fg-dim: #475569;
-
-  --color-text-primary: #F0F4F8;
-  --color-text-secondary: #94A3B8;
-  --color-text-tertiary: #64748B;
-  --color-text-muted: #475569;
-
-  /* Sky accent */
-  --color-sky-primary: #38BDF8;
-  --color-sky-bright: #7DD3FC;
-  --color-sky-deep: #0284C7;
-
-  /* Legacy accent aliases (sky değerleri) — eski component'ler bu class'ları kullanıyorsa kırılmasın */
-  --color-accent: #38BDF8;
-  --color-accent-400: #7DD3FC;
-  --color-accent-500: #38BDF8;
-  --color-accent-600: #0284C7;
-  --color-accent-700: #075985;
-  --color-accent-hi: #7DD3FC;
-  --color-accent-active: #0284C7;
-  --color-accent-warm: #7DD3FC;
-  --color-accent-soft: #7DD3FC;
-  --color-accent-bronze: #38BDF8;
-  --color-accent-brass: #0284C7;
-  --color-brand-400: #7DD3FC;
-  --color-brand-500: #38BDF8;
-  --color-brand-600: #0284C7;
-  --color-brand-700: #075985;
-  --color-brand: #38BDF8;
-  --color-brand-hover: #7DD3FC;
-  --color-brand-dark: #075985;
-
-  /* Gold legacy aliases — sky'a remap */
-  --color-gold-action: #38BDF8;
-  --color-gold-info: #7DD3FC;
-
-  /* Status */
-  --color-status-optimal: #10B981;
-  --color-status-warning: #F59E0B;
-  --color-status-critical: #F43F5E;
-  --color-success: #10B981;
-  --color-info: #38BDF8;
-
-  /* Risk levels */
-  --color-risk-high: #F43F5E;
-  --color-risk-medium: #F59E0B;
-  --color-risk-low: #10B981;
+  /* Sanziman accent (legacy alias → Cold Brass Hybrid brass) */
+  --color-accent: #A68A64;
 
   /* WhatsApp */
   --color-whatsapp: #25D366;
@@ -153,35 +75,6 @@
   --color-status-success-text: #6EE7B7;
   --color-status-success-label: #10B981;
 
-  --color-status-info-bg: rgba(56, 189, 248, 0.12);
-  --color-status-info-border: #38BDF8;
-  --color-status-info-text: #7DD3FC;
-  --color-status-info-label: #38BDF8;
-
-  /* Hero tokens */
-  --color-hero-bg: #070B11;
-  --color-hero-surface: #0C1219;
-  --color-hero-text: #F0F4F8;
-  --color-hero-muted: #94A3B8;
-
-  /* Gradients */
-  --background-image-gradient-card: linear-gradient(180deg, #141B24 0%, #0C1219 100%);
-  --background-image-gradient-accent: linear-gradient(180deg, #5DCBFA 0%, #38BDF8 50%, #0284C7 100%);
-  --background-image-gradient-glow: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
-
-  /* Shadows — sky glow */
-  --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.3);
-  --shadow-glow-sky: 0 0 32px rgba(56, 189, 248, 0.3);
-  --shadow-glow-sky-strong: 0 0 44px rgba(56, 189, 248, 0.45);
-  --shadow-panel: 0 0 80px rgba(56, 189, 248, 0.10), 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --shadow-cta: 0 0 0 1px rgba(56, 189, 248, 0.2), 0 0 32px rgba(56, 189, 248, 0.3), 0 8px 24px rgba(2, 132, 199, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  --shadow-cta-hover: 0 0 0 1px rgba(56, 189, 248, 0.3), 0 0 44px rgba(56, 189, 248, 0.45), 0 12px 30px rgba(2, 132, 199, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-
-  /* Backdrop blur */
-  --backdrop-blur-panel: 24px;
-  --backdrop-blur-card: 20px;
-  --backdrop-blur-nav: 12px;
-
   /* Font sizes */
   --text-eyebrow: 11px;
   --text-eyebrow--line-height: 1.4;
@@ -199,35 +92,21 @@
   --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
   --animate-pulse-fast: pulse-fast 1.5s ease-in-out infinite;
 
-  /* Content (Diagnostic Cyan — tüm content-* tokenlar dark sisteme migre edildi) */
-  --color-content-bg: #070B11;
-  --color-content-secondary: #0C1219;
-  --color-content-tertiary: #0F1923;
-  --color-content-text: #F0F4F8;
-  --color-content-muted: #94A3B8;
-  --color-content-border: rgba(255, 255, 255, 0.08);
+  /* ── COLD BRASS HYBRID ───────────────────────────────────────── */
 
-  /* ============================================
-     COLD BRASS HYBRID — Yeni tasarım sistemi
-     Mimari: sıcak grafit zemin + soğuk çelik yapı + brass aksan
-     Diagnostic Cyan sistemi geçici olarak paralel duruyor.
-     Sprint 4 sonrası eski sistem silinecek.
-     ============================================ */
-
-  /* Cold Brass Hybrid — Font Families */
+  /* Font Families */
   --font-display-cb:      var(--font-saira), system-ui, sans-serif;
   --font-mono-cb:         var(--font-jetbrains), 'Courier New', monospace;
   --font-display-italic:  var(--font-fraunces), Georgia, serif;
 
-  /* SURFACES — sıcak grafit katmanları (zemin) */
+  /* SURFACES */
   --color-graphite-base:     #15130F;
   --color-graphite-surface:  #1C1916;
   --color-graphite-elevated: #252119;
   --color-graphite-glass:    rgba(255, 252, 245, 0.04);
   --color-graphite-glass-hover: rgba(255, 252, 245, 0.07);
 
-  /* STRUCTURAL METALS — soğuk gri çelik aksesuarlar
-     SADECE çizgi, ikon, küçük metin için. Büyük yüzeyde KULLANMA. */
+  /* STRUCTURAL METALS */
   --color-iron-deep:  #4B5563;
   --color-iron:       #6B7280;
   --color-iron-light: #9CA3AF;
@@ -239,19 +118,19 @@
   --color-border-iron:     #4B5563;
   --color-border-brass:    rgba(166, 138, 100, 0.40);
 
-  /* TYPOGRAPHY — sıcak kemik beyazı + soğuk steel hints */
+  /* TYPOGRAPHY */
   --color-text-primary:   #F5F1E8;
   --color-text-secondary: #A8A29A;
   --color-text-tertiary:  #6B655D;
   --color-text-iron:      #9CA3AF;
   --color-text-brass:     #A68A64;
 
-  /* BRASS — ana aksan + parlak CTA */
+  /* BRASS */
   --color-brass:        #A68A64;
   --color-brass-bright: #B89968;
   --color-brass-dim:    #8A7252;
 
-  /* SEMANTIC — durum renkleri */
+  /* SEMANTIC */
   --color-success: #84CC16;
   --color-warning: #D97706;
   --color-danger:  #DC2626;
@@ -268,7 +147,7 @@
 }
 
 html {
-  background: #070B11;
+  background: #15130F;
   max-width: 100%;
   overflow-x: hidden;
   color-scheme: dark;
@@ -277,8 +156,8 @@ html {
 body {
   max-width: 100%;
   overflow-x: hidden;
-  background: #070B11;
-  color: #F0F4F8;
+  background: #15130F;
+  color: #F5F1E8;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   font-feature-settings: 'cv11', 'ss01';
@@ -351,25 +230,6 @@ body {
   }
 }
 
-.section-tag {
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-primary);
-}
-
-.heading-display {
-  letter-spacing: -0.02em;
-}
-
-.text-caption {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
-}
 
 @layer utilities {
   .reveal {
@@ -413,11 +273,10 @@ body {
   }
 
   .glass-header {
-    background: rgba(7, 11, 17, 0.92) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(160, 200, 230, 0.08);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    background: rgba(21, 19, 15, 0.92) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255, 252, 245, 0.06);
   }
 
   .scrollbar-hide::-webkit-scrollbar {
@@ -448,122 +307,21 @@ body {
 
 
 
-.btn-brand,
-.btn-premium {
-  background-color: var(--accent-primary);
-  background-image: var(--gradient-accent);
-  color: #061018;
-  border: 1px solid rgba(125, 211, 252, 0.4);
-  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transition:
-    transform var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out),
-    filter var(--duration-fast) var(--ease-out);
-}
-
-.btn-brand:hover,
-.btn-premium:hover {
-  border-color: rgba(125, 211, 252, 0.6);
-  box-shadow: var(--shadow-glow);
-  filter: saturate(1.1);
-}
-
-.btn-brand:active,
-.btn-premium:active {
-  transform: scale(0.98);
-}
-
-.btn-outline-brand {
-  border: 2px solid var(--accent-primary);
-  color: var(--accent-primary);
-  border-radius: var(--radius-btn);
-  transition: all var(--duration-fast) var(--ease-out);
-}
-
-.btn-outline-brand:hover {
-  background: var(--accent-primary);
-  color: #061018;
-}
-
-.hero-gradient {
-  background:
-    radial-gradient(ellipse at 30% 50%, rgba(56, 189, 248, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 30%, rgba(125, 211, 252, 0.06) 0%, transparent 50%),
-    #070B11;
-}
-
-.hero-deep {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background-image: linear-gradient(to bottom right, #070B11, #0C1219, #070B11);
-}
-
-.hero-deep::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-glow);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-deep>* {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-noise {
-  position: relative;
-}
-
-.hero-noise::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.025;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.card-hover {
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-card);
-  transition:
-    border-color var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
-}
-
-.card-hover:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
-}
 
 .card-elevated,
 .card-surface {
-  background: linear-gradient(180deg, #141B24 0%, #0C1219 100%);
-  border: 1px solid rgba(160, 200, 230, 0.08);
+  background: #1C1916;
+  border: 1px solid rgba(255, 252, 245, 0.06);
   border-radius: var(--radius-card);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
   transition:
     background var(--duration-base) var(--ease-out),
-    border-color var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
+    border-color var(--duration-base) var(--ease-out);
 }
 
 .card-elevated:hover,
 .card-surface:hover {
-  border-color: rgba(56, 189, 248, 0.3);
-  box-shadow:
-    0 10px 15px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(56, 189, 248, 0.15);
-  transform: translateY(-2px);
+  background: #252119;
+  border-color: rgba(166, 138, 100, 0.30);
 }
 
 .status-card {
@@ -593,12 +351,6 @@ body {
   color: var(--status-success-text);
 }
 
-.status-card-info {
-  background: var(--status-info-bg);
-  border-color: rgba(56, 189, 248, 0.18);
-  border-left-color: var(--status-info-border);
-  color: var(--status-info-text);
-}
 
 .status-label-critical {
   color: var(--status-critical-label);
@@ -648,27 +400,18 @@ body {
   animation: hero-rise 400ms var(--ease-out) 420ms both;
 }
 
-.cta-glow {
-  transition:
-    background var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out);
-}
-
-.cta-glow:hover {
-  box-shadow: var(--shadow-glow);
-}
 
 @keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 0 0 rgba(166, 138, 100, 0.18);
   }
 
   70% {
-    box-shadow: 0 0 0 12px rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 6px rgba(166, 138, 100, 0);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 0 rgba(166, 138, 100, 0);
   }
 }
 
@@ -707,21 +450,15 @@ body {
   animation: hero-cursor-blink 1s step-end infinite;
 }
 
-.risk-row:hover {
-  background: rgba(0, 0, 0, 0.4) !important;
-  border-color: rgba(56, 189, 248, 0.35) !important;
-}
 
 .cta-secondary {
-  background: rgba(20, 30, 42, 0.55);
-  border: 1px solid rgba(160, 200, 230, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(37, 33, 25, 0.85);
+  border: 1px solid rgba(255, 252, 245, 0.10);
 }
 
 .cta-secondary:hover {
-  background: rgba(28, 40, 54, 0.75);
-  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(37, 33, 25, 1);
+  border-color: rgba(166, 138, 100, 0.40);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -749,56 +486,11 @@ body {
 
 /* ── Cognify UI — bare CSS (always emitted by Tailwind v4) ──── */
 
-.stat-glow-top {
-  position: relative;
-  overflow: hidden;
-}
 
-.stat-glow-top::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 24px;
-  right: 24px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.6), transparent);
-}
-
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 5%, rgba(56,189,248,0.15) 50%, transparent 95%);
-  border: none;
-}
-
-.dot-glow-critical { box-shadow: 0 0 10px rgba(244,63,94,0.6); }
-.dot-glow-warning  { box-shadow: 0 0 10px rgba(245,158,11,0.6); }
-.dot-glow-success  { box-shadow: 0 0 10px rgba(16,185,129,0.6); }
-.dot-glow-sky      { box-shadow: 0 0 10px rgba(56,189,248,0.6); }
-
-.glass-surface {
-  background: rgba(12,18,25,0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(160,200,230,0.08);
-}
-
-.glass-surface-strong {
-  background: rgba(20,30,42,0.55);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(160,200,230,0.08);
-  box-shadow: 0 0 80px rgba(56,189,248,0.10), 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
-}
-
-
-@media (max-width: 900px) {
-  .glass-surface, .glass-surface-strong {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: rgba(12,18,25,0.92) !important;
-  }
-}
+/* Matte physics: zero glow — dots indicated by color+border only */
+.dot-glow-critical,
+.dot-glow-warning,
+.dot-glow-success { box-shadow: none; }
 
 /* ── Brand Marquee Carousel ─────────────────────────────────── */
 @keyframes marquee {

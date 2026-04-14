@@ -8,6 +8,7 @@ import BrandLogosStrip from '@/components/sections/BrandLogosStrip';
 import BrandSection from '@/components/sections/BrandSection';
 import BlogPreview from '@/components/sections/BlogPreview';
 import RevealSection from '@/components/RevealSection';
+import SectionMarker from '@/components/SectionMarker';
 
 export default function HomePageSections() {
   return (
@@ -18,70 +19,56 @@ export default function HomePageSections() {
       {/* Marka logoları strip — hero'nun hemen altında */}
       <BrandLogosStrip />
 
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-16">
-        <div className="section-divider" />
+      {/* ── 01 — graphite-base (sayfa default) ── */}
+      <div id="ariza-tespit">
+        <SectionMarker index="01" label="ARIZA_TESPIT_SISTEMI" />
+        <RevealSection className="relative z-[1]" variant="drift">
+          <SymptomSelector />
+        </RevealSection>
       </div>
 
-      {/* Belirtiler */}
-      <RevealSection className="relative z-[1]" variant="drift">
-        <SymptomSelector />
-      </RevealSection>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-24">
-        <div className="section-divider" />
+      {/* ── 02 — graphite-surface band ── */}
+      <SectionMarker index="02" label="SERVIS_KATALOGU" />
+      <div className="w-full bg-graphite-surface">
+        <RevealSection className="relative z-[1]" variant="rise" delay={1}>
+          <ServicesSection />
+        </RevealSection>
       </div>
 
-      {/* Hizmetler */}
-      <RevealSection className="relative z-[1]" variant="rise" delay={1}>
-        <ServicesSection />
-      </RevealSection>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-24">
-        <div className="section-divider" />
-      </div>
-
-      {/* 4 Adım Süreç */}
+      {/* ── 03 — graphite-base (sayfa default) ── */}
+      <SectionMarker index="03" label="KONTROL_ADIM_DIZISI" />
       <RevealSection className="relative z-[1]" variant="rise">
         <ServiceWorkflow />
       </RevealSection>
 
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-24">
-        <div className="section-divider" />
+      {/* ── 04 — graphite-surface band ── */}
+      <SectionMarker index="04" label="MUSTERI_DEGERLENDIRMELERI" />
+      <div className="w-full bg-graphite-surface">
+        <RevealSection className="relative z-[1]" variant="rise" delay={1}>
+          <ReviewsSection />
+        </RevealSection>
       </div>
 
-      {/* Müşteri Yorumları */}
-      <RevealSection className="relative z-[1]" variant="rise" delay={1}>
-        <ReviewsSection />
-      </RevealSection>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-24">
-        <div className="section-divider" />
-      </div>
-
-      {/* Marka Sayfaları — Blog Preview öncesi */}
+      {/* ── 05 — graphite-base (sayfa default) ── */}
+      <SectionMarker index="05" label="MARKA_KATALOG" />
       <RevealSection className="relative z-[1]" variant="rise">
         <BrandSection />
       </RevealSection>
 
-      {/* Divider */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-24">
-        <div className="section-divider" />
+      {/* ── 06 — graphite-surface band ── */}
+      <SectionMarker index="06" label="TEKNIK_MAKALE_ARSIVI" />
+      <div className="w-full bg-graphite-surface">
+        <RevealSection className="relative z-[1]" variant="drift">
+          <BlogPreview />
+        </RevealSection>
       </div>
 
-      {/* Blog Preview — Yorumlar ile Final CTA arası */}
-      <RevealSection className="relative z-[1]" variant="drift">
-        <BlogPreview />
-      </RevealSection>
-
-      {/* Final CTA — kapanış */}
-      <RevealSection className="relative z-[1]" variant="drift" delay={1}>
-        <FinalCTA />
-      </RevealSection>
+      {/* Final CTA — graphite-surface band (kapanış) */}
+      <div className="w-full bg-graphite-surface">
+        <RevealSection className="relative z-[1]" variant="drift" delay={1}>
+          <FinalCTA />
+        </RevealSection>
+      </div>
     </>
   );
 }

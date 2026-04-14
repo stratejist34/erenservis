@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="mt-5 font-saira text-sm leading-7 text-text-secondary">
               Bostancı&apos;nın otomatik şanzıman odaklı teknik servisi. DSG, Aisin, ZF, CVT ve tam otomatik ailelerde teşhisten teslim anına kadar kontrollü bir servis akışı.
             </p>
-            <div className="mt-5 flex gap-3">
+            <div className="mt-5 flex flex-col gap-2">
               <a
                 href={PHONE_HREF}
                 className="flex items-center gap-2 rounded-full bg-brass-bright px-4 py-2.5 font-saira text-sm font-semibold text-graphite-base transition hover:bg-brass"

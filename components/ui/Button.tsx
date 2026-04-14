@@ -10,23 +10,27 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<ButtonVariant, string> = {
   primary: `
-    bg-gradient-accent
-    text-white
-    hover:shadow-glow
-    border border-accent-400/20
+    bg-brass-bright
+    text-graphite-base
+    font-saira
+    font-semibold
+    hover:bg-brass
   `,
   whatsapp: `
-    bg-whatsapp
+    bg-[#25D366]
     text-white
-    hover:bg-whatsapp-hi
-    hover:shadow-[0_0_20px_rgba(37,211,102,0.3)]
+    font-saira
+    font-semibold
+    hover:bg-[#1DAD55]
   `,
   outline: `
     bg-transparent
-    border border-dark-300
+    border border-border-subtle
     text-text-secondary
-    hover:border-accent-500/50
-    hover:text-accent-500
+    font-saira
+    font-medium
+    hover:border-brass
+    hover:text-brass
   `,
 };
 
@@ -42,7 +46,7 @@ export function Button({
       type={type}
       className={cn(
         `
-          px-6 py-3 rounded-lg font-medium
+          px-6 py-3 rounded-full
           active:scale-[0.98]
           transition-all duration-200
         `,

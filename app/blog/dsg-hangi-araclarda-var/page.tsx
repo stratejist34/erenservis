@@ -104,29 +104,27 @@ export default function DSGHangiAraclarPage() {
   };
 
   return (
-    <main className="bg-[#070B11]">
+    <main className="bg-graphite-base">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Hero */}
-      <section className="hero-deep pt-28 pb-16">
+      <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 mb-6">
-            <span className="text-xs font-semibold text-accent-soft uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-brass bg-brass/8 mb-6">
+            <span className="font-jetbrains text-[10px] font-semibold text-brass uppercase tracking-[0.22em]">
               DSG Rehberi
             </span>
           </div>
-          <h1 className="text-hero-text mb-5">
+          <h1 className="font-saira text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-text-primary mb-5">
             DSG Hangi{' '}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'var(--gradient-accent)' }}>
-              Araçlarda Var?
-            </span>
+            <span className="text-brass">Araçlarda Var?</span>
           </h1>
-          <p className="text-hero-muted text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
             DQ200, DQ250, DQ381 ve DQ500 — Volkswagen Grubu&apos;nun dört DSG ailesini kullanan araçların
             tam listesi. Aracınızın hangi DSG&apos;ye sahip olduğunu öğrenin.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href={PHONE_HREF} className="btn-premium flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-white font-bold text-base">
+            <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2.5 px-7 py-3.5 text-base transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
               {PHONE}
             </a>
@@ -134,7 +132,7 @@ export default function DSGHangiAraclarPage() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl border-2 border-white/20 text-white font-semibold text-base hover:bg-white/10 hover:border-white/40 transition-all"
+              className="flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-base hover:border-brass hover:text-text-primary transition-all"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.5} />
               WhatsApp&apos;tan Yaz
@@ -147,7 +145,7 @@ export default function DSGHangiAraclarPage() {
 
         {/* Intro */}
         <div className="prose prose-lg max-w-none mb-12">
-          <p className="text-content-text text-lg leading-relaxed">
+          <p className="font-saira text-text-primary text-lg leading-relaxed">
             DSG (Direct Shift Gearbox), Volkswagen Grubu&apos;nun geliştirdiği çift kavramalı otomatik şanzıman
             teknolojisidir. Audi&apos;de S-tronic, Seat ve Cupra&apos;da DSG adıyla anılır. 4 farklı model ailesi
             farklı araçlarda kullanılır — arızanın türü ve tamir maliyeti hangi DSG&apos;ye sahip olduğunuza
@@ -157,18 +155,18 @@ export default function DSGHangiAraclarPage() {
 
         {/* Model Listeleri */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-8">DSG Modeline Göre Araç Listesi</h2>
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">DSG Modeline Göre Araç Listesi</h2>
           <div className="space-y-6">
             {DSG_MODELLER.map((model) => (
-              <div key={model.kod} className="rounded-2xl border border-content-border overflow-hidden">
-                <div className={`flex items-center gap-3 px-5 py-4 border-b border-content-border ${model.renk} border`}>
+              <div key={model.kod} className="rounded-xl border border-border-hairline overflow-hidden">
+                <div className={`flex items-center gap-3 px-5 py-4 border-b border-border-hairline ${model.renk} border`}>
                   <span className={`text-lg font-bold ${model.renk.split(' ')[0]}`}>{model.kod}</span>
-                  <span className="text-sm font-medium text-content-muted">— {model.ad}</span>
+                  <span className="font-saira text-sm font-medium text-text-secondary">— {model.ad}</span>
                 </div>
-                <ul className="divide-y divide-content-border">
+                <ul className="divide-y divide-border-hairline">
                   {model.araclar.map((arac) => (
-                    <li key={arac} className="px-5 py-3 text-sm text-content-text flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                    <li key={arac} className="px-5 py-3 font-saira text-sm text-text-primary flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brass shrink-0" />
                       {arac}
                     </li>
                   ))}
@@ -180,13 +178,13 @@ export default function DSGHangiAraclarPage() {
 
         {/* Dikkat Noktaları */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-6">Dikkat Edilmesi Gerekenler</h2>
-          <div className="bg-surface-0 rounded-2xl p-6 text-white">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Dikkat Edilmesi Gerekenler</h2>
+          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-6">
             <ul className="space-y-3">
               {DIKKAT_NOKTALARI.map((madde) => (
                 <li key={madde} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-sm">{madde}</span>
+                  <CheckCircle2 className="w-5 h-5 text-brass shrink-0 mt-0.5" />
+                  <span className="font-saira text-sm text-text-primary">{madde}</span>
                 </li>
               ))}
             </ul>
@@ -194,16 +192,16 @@ export default function DSGHangiAraclarPage() {
         </section>
 
         {/* İç Linkler */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-content-border">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-border-hairline">
           <Link
             href="/arac/dq200/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent/90 transition"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brass-bright text-graphite-base font-saira font-semibold hover:bg-brass transition-colors"
           >
             DQ200 Tamir Detayı
           </Link>
           <Link
             href="/hizmetler/dsg-mekatronik-kart/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-content-border text-content-text font-semibold hover:bg-content-secondary transition"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-colors"
           >
             Mekatronik Kart Fiyatları &rarr;
           </Link>
@@ -211,20 +209,20 @@ export default function DSGHangiAraclarPage() {
       </article>
 
       {/* Footer CTA */}
-      <section className="hero-deep py-14 text-center">
+      <section className="bg-graphite-base py-14 text-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-hero-text mb-4">DSG Arızanız mı Var?</h2>
-          <p className="text-hero-muted mb-8">
+          <h2 className="font-saira text-2xl sm:text-3xl font-semibold text-text-primary mb-4">DSG Arızanız mı Var?</h2>
+          <p className="font-saira text-text-secondary mb-8">
             Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi-Cumartesi 08:00-18:00
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={PHONE_HREF} className="btn-premium flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-bold">
+            <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2 px-7 py-3.5 transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
               {PHONE}
             </a>
             <Link
               href="/blog/"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all text-sm"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-all text-sm"
             >
               Diğer Yazılar &rarr;
             </Link>

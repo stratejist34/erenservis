@@ -77,15 +77,28 @@ export default function ServiceWorkflow({
         {steps.map((step) => (
           <div
             key={step.number}
-            className={`rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 ${
+            className={`relative overflow-hidden rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 ${
               step.highlighted
                 ? 'border-border-brass bg-graphite-surface'
                 : 'border-border-hairline bg-graphite-surface'
             }`}
           >
-            <div className="flex items-center justify-between">
+            {step.highlighted && (
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 z-0"
+                style={{
+                  backgroundImage: 'url(/images/Screenshot_4153.webp)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'blur(3px) saturate(0.4) brightness(0.4)',
+                  opacity: 0.5,
+                }}
+              />
+            )}
+            <div className="relative z-10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="font-jetbrains text-2xl font-bold tracking-[-0.02em] text-brass/60">
+                <span className="font-jetbrains text-2xl font-semibold tracking-[-0.02em] text-brass/60">
                   {step.number}
                 </span>
                 {step.icon && (
@@ -101,7 +114,7 @@ export default function ServiceWorkflow({
                 )}
               </div>
               {step.duration && (
-                <div className="flex items-center gap-1.5 rounded-full border border-border-hairline bg-graphite-elevated px-2.5 py-1">
+                <div className="flex items-center gap-1.5 rounded-full border border-iron-deep bg-graphite-elevated px-2.5 py-1">
                   <Clock className="h-3 w-3 text-iron-deep" strokeWidth={2} />
                   <span className="font-jetbrains text-[11px] font-medium text-iron-light">
                     {step.duration}
@@ -110,15 +123,15 @@ export default function ServiceWorkflow({
               )}
             </div>
 
-            <h3 className="mt-4 font-saira text-lg font-semibold tracking-[-0.02em] text-text-primary">
+            <h3 className="relative z-10 mt-4 font-saira text-lg font-semibold tracking-[-0.02em] text-text-primary">
               {step.title}
             </h3>
-            <p className="mt-1.5 font-saira text-sm leading-6 text-text-secondary">
+            <p className="relative z-10 mt-1.5 font-saira text-sm leading-6 text-text-secondary">
               {step.description}
             </p>
 
             {step.highlighted && (
-              <div className="mt-3 inline-flex rounded-full border border-border-brass bg-brass/8 px-3 py-1 font-jetbrains text-[10px] font-semibold uppercase tracking-[0.18em] text-brass">
+              <div className="relative z-10 mt-3 inline-flex rounded-full border border-border-brass bg-brass/8 px-3 py-1 font-jetbrains text-[10px] font-semibold uppercase tracking-[0.18em] text-brass">
                 Ücretsiz
               </div>
             )}

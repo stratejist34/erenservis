@@ -71,33 +71,30 @@ export default function SanzımanBakımıPage() {
     <main>
 
         {/* Hero */}
-        <section className="hero-deep pt-28 pb-16">
+        <section className="bg-graphite-base pt-28 pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 mb-6">
-              <span className="text-xs font-semibold text-accent-soft uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-brass bg-brass/8 mb-6">
+              <span className="font-jetbrains text-[10px] font-semibold text-brass uppercase tracking-[0.22em]">
                 Koruyucu Bakım
               </span>
             </div>
-            <h1 className="text-hero-text mb-5">
+            <h1 className="font-saira text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-text-primary mb-5">
               Şanzıman Bakımı{' '}
-              <span className="text-transparent bg-clip-text"
-                style={{ backgroundImage: 'var(--gradient-accent)' }}>
-                ve Kontrolü
-              </span>
+              <span className="text-brass">ve Kontrolü</span>
             </h1>
-            <p className="text-hero-muted text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
               DSG, ZF, CVT ve konvansiyonel otomatik şanzımanlar için yağ değişimi, filtre ve
               elektronik tanı. Arızayı önlemek, onarmaktan çok daha{' '}
-              <strong className="text-hero-muted font-medium">ekonomiktir</strong>.
+              <strong className="text-text-primary font-medium">ekonomiktir</strong>.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href={PHONE_HREF}
-                className="btn-premium flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-white font-bold text-base">
+                className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2.5 px-7 py-3.5 text-base transition-colors">
                 <Phone className="w-5 h-5" strokeWidth={2.5} />
                 {PHONE}
               </a>
               <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl border-2 border-white/20 text-white font-semibold text-base hover:bg-white/10 hover:border-white/40 transition-all">
+                className="flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-base hover:border-brass hover:text-text-primary transition-all">
                 <MessageCircle className="w-5 h-5" strokeWidth={2.5} />
                 WhatsApp&apos;tan Yaz
               </a>
@@ -106,33 +103,33 @@ export default function SanzımanBakımıPage() {
         </section>
 
         {/* Bakım Paketleri */}
-        <section className="py-16 bg-[#070B11]">
+        <section className="py-16 bg-graphite-base">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 className="text-content-text text-center mb-3">Bakım Seçenekleri</h2>
-            <p className="text-content-muted text-center mb-10 max-w-xl mx-auto">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-3">Bakım Seçenekleri</h2>
+            <p className="font-saira text-text-secondary text-center mb-10 max-w-xl mx-auto">
               Şanzıman türüne ve ihtiyacınıza göre uygun bakım paketini birlikte belirleriz.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {BAKIM_PAKETLERI.map((paket, i) => (
                 <div key={paket.baslik}
-                  className={`p-7 rounded-2xl border flex flex-col gap-4 ${i === 1 ? 'bg-surface-0 border-accent/30' : 'bg-content-secondary border-content-border'}`}>
+                  className={`p-7 rounded-xl border flex flex-col gap-4 ${i === 1 ? 'bg-graphite-elevated border-border-brass' : 'bg-graphite-surface border-border-hairline'}`}>
                   {i === 1 && (
-                    <span className="self-start text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-brand text-white">
+                    <span className="self-start font-jetbrains text-[10px] font-bold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full bg-brass text-graphite-base">
                       Önerilen
                     </span>
                   )}
-                  <h3 className={`font-bold text-lg ${i === 1 ? 'text-white' : 'text-content-text'}`}>
+                  <h3 className="font-saira font-semibold text-lg text-text-primary">
                     {paket.baslik}
                   </h3>
                   <ul className="flex flex-col gap-2 flex-1">
                     {paket.icerik.map((item) => (
                       <li key={item} className="flex items-start gap-2">
-                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${i === 1 ? 'text-accent-soft' : 'text-accent'}`} strokeWidth={2.5} />
-                        <span className={`text-sm ${i === 1 ? 'text-fg-soft' : 'text-content-text'}`}>{item}</span>
+                        <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-brass" strokeWidth={2.5} />
+                        <span className="font-saira text-sm text-text-primary">{item}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className={`text-xs border-t pt-3 ${i === 1 ? 'text-fg-dim border-edge' : 'text-content-muted border-content-border'}`}>
+                  <p className="font-saira text-xs text-text-secondary border-t border-border-subtle pt-3">
                     {paket.not}
                   </p>
                 </div>
@@ -142,18 +139,18 @@ export default function SanzımanBakımıPage() {
         </section>
 
         {/* Neden Bakım */}
-        <section className="py-16 bg-content-secondary">
+        <section className="py-16 bg-graphite-surface">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 className="text-content-text text-center mb-10">Neden Düzenli Bakım?</h2>
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Neden Düzenli Bakım?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {NEDEN_BAKIM.map((item) => (
-                <div key={item.baslik} className="flex gap-4 p-6 rounded-2xl bg-[#070B11] border border-content-border">
-                  <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent/10 text-accent shrink-0">
+                <div key={item.baslik} className="flex gap-4 p-6 rounded-xl bg-graphite-surface border border-border-hairline">
+                  <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-brass/8 text-brass shrink-0">
                     <Gauge className="w-5 h-5" strokeWidth={2} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-content-text text-base mb-1">{item.baslik}</h3>
-                    <p className="text-content-muted text-sm leading-relaxed">{item.aciklama}</p>
+                    <h3 className="font-saira font-semibold text-base text-text-primary mb-1">{item.baslik}</h3>
+                    <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.aciklama}</p>
                   </div>
                 </div>
               ))}
@@ -162,7 +159,7 @@ export default function SanzımanBakımıPage() {
         </section>
 
         {/* Bakım sıklığı uyarısı */}
-        <section className="py-14 bg-[#070B11]">
+        <section className="py-14 bg-graphite-base">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <div className="status-card status-card-warning flex gap-4 p-7">
               <AlertTriangle className="status-label-warning w-6 h-6 shrink-0 mt-0.5" strokeWidth={2} />
@@ -183,20 +180,20 @@ export default function SanzımanBakımıPage() {
         </section>
 
         {/* Alt CTA */}
-        <section className="hero-deep py-14 text-center">
+        <section className="bg-graphite-base py-14 text-center">
           <div className="max-w-2xl mx-auto px-4 sm:px-6">
-            <h2 className="text-hero-text mb-4">Şanzıman Bakımı İçin Randevu Alın</h2>
-            <p className="text-hero-muted mb-8">
+            <h2 className="font-saira text-2xl sm:text-3xl font-semibold text-text-primary mb-4">Şanzıman Bakımı İçin Randevu Alın</h2>
+            <p className="font-saira text-text-secondary mb-8">
               Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi–Cumartesi 08:00–18:00
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href={PHONE_HREF}
-                className="btn-premium flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-bold">
+                className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2 px-7 py-3.5 transition-colors">
                 <Phone className="w-5 h-5" strokeWidth={2.5} />
                 {PHONE}
               </a>
               <Link href="/hizmetler/"
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all text-sm">
+                className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-all text-sm">
                 Tüm Hizmetler →
               </Link>
             </div>

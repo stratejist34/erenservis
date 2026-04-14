@@ -82,33 +82,31 @@ export default function MekatronikNedirPage() {
   } : null;
 
   return (
-    <main className="bg-[#070B11]">
+    <main className="bg-graphite-base">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
       {/* Hero */}
-      <section className="hero-deep pt-28 pb-16">
+      <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 mb-6">
-            <span className="text-xs font-semibold text-accent-soft uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-brass bg-brass/8 mb-6">
+            <span className="font-jetbrains text-[10px] font-semibold text-brass uppercase tracking-[0.22em]">
               Teknik Rehber
             </span>
           </div>
-          <h1 className="text-hero-text mb-5">
+          <h1 className="font-saira text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-text-primary mb-5">
             Mekatronik{' '}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'var(--gradient-accent)' }}>
-              Nedir?
-            </span>
+            <span className="text-brass">Nedir?</span>
           </h1>
-          <p className="text-hero-muted text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
             DSG şanzımanın elektronik ve hidrolik kontrolünü birleştiren mekatronik ünite, vites geçişlerini
             milisaniyeler içinde yönetir. Arızalandığında araç genellikle sürülemez hale gelir.{' '}
-            <strong className="text-hero-muted font-medium">Bostancı — ücretsiz ön tanı.</strong>
+            <strong className="text-text-primary font-medium">Bostancı — ücretsiz ön tanı.</strong>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href={PHONE_HREF} className="btn-premium flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-white font-bold text-base">
+            <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2.5 px-7 py-3.5 text-base transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
               {PHONE}
             </a>
@@ -116,7 +114,7 @@ export default function MekatronikNedirPage() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl border-2 border-white/20 text-white font-semibold text-base hover:bg-white/10 hover:border-white/40 transition-all"
+              className="flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-base hover:border-brass hover:text-text-primary transition-all"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.5} />
               WhatsApp&apos;tan Yaz
@@ -130,7 +128,7 @@ export default function MekatronikNedirPage() {
 
         {/* Intro */}
         <div className="prose prose-lg max-w-none mb-12">
-          <p className="text-content-text text-lg leading-relaxed">
+          <p className="font-saira text-text-primary text-lg leading-relaxed">
             Mekatronik, DSG şanzımanın &quot;beyni&quot; olarak tanımlanır. İki ana bileşenden oluşur:{' '}
             <strong>elektronik kontrol kartı</strong> (vitesleri hesaplar, sensörleri okur) ve{' '}
             <strong>hidrolik ünite</strong> (kavrama ve vites geçişlerini fiziksel olarak yönetir). Bu iki sistem
@@ -141,12 +139,12 @@ export default function MekatronikNedirPage() {
 
         {/* Arıza Belirtileri */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-6">Mekatronik Arıza Belirtileri</h2>
-          <div className="bg-content-secondary rounded-2xl p-6 border border-content-border">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Mekatronik Arıza Belirtileri</h2>
+          <div className="bg-graphite-surface rounded-xl p-6 border border-border-hairline">
             <ul className="space-y-3">
               {BELIRTILER.map((belirti) => (
-                <li key={belirti} className="flex items-start gap-3 text-content-text">
-                  <AlertTriangle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <li key={belirti} className="flex items-start gap-3 font-saira text-text-primary">
+                  <AlertTriangle className="w-5 h-5 text-brass shrink-0 mt-0.5" />
                   {belirti}
                 </li>
               ))}
@@ -156,21 +154,21 @@ export default function MekatronikNedirPage() {
 
         {/* DQ200 vs DQ250 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-6">DQ200 ve DQ250 Mekatronik Farkı</h2>
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DQ200 ve DQ250 Mekatronik Farkı</h2>
           <div className="grid gap-4">
             {MODELLER.map((model) => (
-              <div key={model.kod} className="p-5 rounded-xl bg-[#070B11] border border-content-border shadow-sm">
+              <div key={model.kod} className="p-5 rounded-xl bg-graphite-surface border border-border-hairline shadow-sm">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <Wrench className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-lg bg-brass/8 flex items-center justify-center shrink-0">
+                    <Wrench className="w-5 h-5 text-brass" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
-                      <h3 className="font-bold text-content-text">{model.kod}</h3>
-                      <span className="text-xs text-accent font-medium bg-accent/10 px-2 py-0.5 rounded-full">{model.tip}</span>
+                      <h3 className="font-saira font-semibold text-text-primary">{model.kod}</h3>
+                      <span className="font-jetbrains text-xs text-brass bg-brass/8 px-2 py-0.5 rounded-full">{model.tip}</span>
                     </div>
-                    <p className="text-xs text-content-muted mb-2">{model.araclar}</p>
-                    <p className="text-sm text-content-text leading-relaxed">{model.ozellik}</p>
+                    <p className="font-jetbrains text-xs text-iron-light mb-2">{model.araclar}</p>
+                    <p className="font-saira text-sm text-text-primary leading-relaxed">{model.ozellik}</p>
                   </div>
                 </div>
               </div>
@@ -180,13 +178,13 @@ export default function MekatronikNedirPage() {
 
         {/* Erken Teşhis */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-6">Neden Erken Teşhis Kritik?</h2>
-          <div className="bg-surface-0 rounded-2xl p-6 text-white">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Neden Erken Teşhis Kritik?</h2>
+          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-6">
             <ul className="space-y-3">
               {ERKEN_TESHIS.map((madde) => (
                 <li key={madde} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-sm">{madde}</span>
+                  <CheckCircle2 className="w-5 h-5 text-brass shrink-0 mt-0.5" />
+                  <span className="font-saira text-sm text-text-primary">{madde}</span>
                 </li>
               ))}
             </ul>
@@ -196,12 +194,12 @@ export default function MekatronikNedirPage() {
         {/* FAQ */}
         {faqItems.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-content-text mb-6">Sık Sorulan Sorular</h2>
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Sık Sorulan Sorular</h2>
             <div className="space-y-4">
               {faqItems.map((item) => (
-                <div key={item.q} className="p-5 rounded-xl bg-content-secondary border border-content-border">
-                  <h3 className="font-bold text-content-text mb-2">{item.q}</h3>
-                  <p className="text-content-muted text-sm">{item.a}</p>
+                <div key={item.q} className="p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+                  <h3 className="font-saira font-semibold text-text-primary mb-2">{item.q}</h3>
+                  <p className="font-saira text-text-secondary text-sm">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -209,16 +207,16 @@ export default function MekatronikNedirPage() {
         )}
 
         {/* İç Linkler */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-content-border">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-border-hairline">
           <Link
             href="/hizmetler/dsg-mekatronik-kart/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent/90 transition"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brass-bright text-graphite-base font-saira font-semibold hover:bg-brass transition-colors"
           >
             Mekatronik Kart Fiyatları
           </Link>
           <Link
             href="/blog/dsg-mekatronik-ariza-fiyati/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-content-border text-content-text font-semibold hover:bg-content-secondary transition"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-colors"
           >
             Arıza Fiyat Rehberi &rarr;
           </Link>
@@ -226,20 +224,20 @@ export default function MekatronikNedirPage() {
       </article>
 
       {/* Footer CTA */}
-      <section className="hero-deep py-14 text-center">
+      <section className="bg-graphite-base py-14 text-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-hero-text mb-4">Mekatronik Sorununuz mu Var?</h2>
-          <p className="text-hero-muted mb-8">
+          <h2 className="font-saira text-2xl sm:text-3xl font-semibold text-text-primary mb-4">Mekatronik Sorununuz mu Var?</h2>
+          <p className="font-saira text-text-secondary mb-8">
             Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi-Cumartesi 08:00-18:00
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={PHONE_HREF} className="btn-premium flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-bold">
+            <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2 px-7 py-3.5 transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
               {PHONE}
             </a>
             <Link
               href="/blog/"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all text-sm"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-all text-sm"
             >
               Diğer Yazılar &rarr;
             </Link>

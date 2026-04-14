@@ -33,7 +33,7 @@ export function Hero() {
         <div className="flex gap-6 items-center flex-wrap">
           <TrustItem>Aynı gün inceleme</TrustItem>
           <TrustItem>Yazılı fiyat teklifi</TrustItem>
-          <TrustItem>2 yıl işçilik garantisi</TrustItem>
+          <TrustItem>6 ay işçilik garantisi</TrustItem>
         </div>
       </div>
 

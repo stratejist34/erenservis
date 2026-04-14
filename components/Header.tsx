@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { getBrandsByTier, getPrimaryTransmission } from '@/lib/brands';
 
@@ -9,9 +10,9 @@ const PHONE_HREF = 'tel:+905327153751';
 const PHONE = '0532 715 37 51';
 
 const HOME_LINKS = [
-  { href: '/', label: 'Ana Sayfa' },
+  { href: '/', label: 'Anasayfa' },
   { href: '/hizmetler/', label: 'Hizmetler' },
-  { href: '/sanziman-tipleri/', label: 'Şanzıman Rehberi' },
+  { href: '/sanziman-tipleri/', label: 'Şanzımanlar' },
   { href: '/hakkimizda/', label: 'Hakkımızda' },
   { href: '/blog/', label: 'Blog' },
   { href: '/iletisim/', label: 'İletişim' },
@@ -19,7 +20,7 @@ const HOME_LINKS = [
 
 const NAV_LINKS = [
   { href: '/hizmetler/', label: 'Hizmetler' },
-  { href: '/sanziman-tipleri/', label: 'Şanzıman Rehberi' },
+  { href: '/sanziman-tipleri/', label: 'Şanzımanlar' },
   { href: '/hakkimizda/', label: 'Hakkımızda' },
   { href: '/blog/', label: 'Blog' },
   { href: '/iletisim/', label: 'İletişim' },
@@ -34,34 +35,43 @@ const ARAC_LINKS = getBrandsByTier(1).map((b) => ({
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aracMenuOpen, setAracMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-4 z-20 mx-auto mb-10 flex max-w-7xl items-center justify-between rounded-full border border-border-hairline bg-graphite-base/90 px-4 py-3 backdrop-blur-sm sm:px-6">
+    <div className="fixed left-0 right-0 top-4 z-50 px-4 sm:px-6">
+    <header className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border-hairline bg-graphite-base/92 px-4 backdrop-blur-sm transition-[padding] duration-300 sm:px-6 ${scrolled ? 'py-1.5' : 'py-3'}`}>
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-brass bg-graphite-elevated font-semibold text-xs text-brass">
-          ES
-        </div>
-        <div className="flex flex-col leading-none">
-          <span className="font-saira text-sm font-semibold tracking-wide text-text-primary">Eren Servis</span>
-          <span className="font-jetbrains text-[11px] uppercase tracking-[0.24em] text-iron-light">Şanzıman Uzmani</span>
-        </div>
+      <Link href="/" className="flex items-center">
+        <Image
+          src="/images/erenlogo.webp"
+          alt="Eren Otomatik Şanzıman Servisi"
+          width={112}
+          height={31}
+          className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-[26px]' : 'h-[31px]'}`}
+          priority
+        />
       </Link>
 
       {/* Desktop nav */}
-      <nav className="hidden items-center gap-0.5 text-sm lg:flex rounded-full border border-border-hairline bg-graphite-surface/40 p-1">
+      <nav className="hidden items-center text-sm lg:flex rounded-full border border-border-hairline bg-graphite-surface/40 p-1">
         <Link
           href="/"
-          className="rounded-full px-4 py-2 font-saira text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-brass"
+          className="rounded-full px-3 py-1.5 font-saira text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-brass"
         >
-          Ana Sayfa
+          Anasayfa
         </Link>
 
         {/* Araçlar dropdown */}
         <div className="group relative">
           <button
             type="button"
-            className={`inline-flex items-center gap-1 rounded-full px-4 py-2 font-saira text-sm font-medium transition-colors duration-200 ${aracMenuOpen ? 'text-brass' : 'text-text-secondary hover:text-brass'}`}
+            className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 font-saira text-sm font-medium transition-colors duration-200 ${aracMenuOpen ? 'text-brass' : 'text-text-secondary hover:text-brass'}`}
             onClick={() => setAracMenuOpen((o) => !o)}
             onBlur={(e) => {
               if (!e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) {
@@ -69,14 +79,14 @@ export default function Header() {
               }
             }}
           >
-            <span>Araçlar</span>
+            <span>Markalar</span>
             <ChevronDown className={`h-3.5 w-3.5 transition-transform ${aracMenuOpen ? 'rotate-180' : ''}`} />
           </button>
 
           <div
             className={`absolute left-0 top-full min-w-[460px] pt-2 transition-all duration-200 ${aracMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 group-hover:visible group-hover:opacity-100'}`}
           >
-            <div className="overflow-hidden border border-border-hairline bg-graphite-base p-3 shadow-[0_20px_45px_rgba(0,0,0,0.5)]">
+            <div className="overflow-hidden border border-border-subtle bg-graphite-base p-3">
               <div className="grid grid-cols-2 gap-x-1">
                 {ARAC_LINKS.map((link) => (
                   <Link
@@ -107,7 +117,7 @@ export default function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-full px-4 py-2 font-saira text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-brass"
+            className="rounded-full px-3 py-1.5 font-saira text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-brass"
           >
             {link.label}
           </Link>
@@ -134,7 +144,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="absolute inset-x-0 top-full mt-2 border border-border-hairline bg-graphite-base p-4 shadow-[0_20px_45px_rgba(0,0,0,0.5)] lg:hidden">
+        <div className="absolute inset-x-0 top-full mt-2 border border-border-subtle bg-graphite-base p-4 lg:hidden">
           <nav className="flex flex-col gap-1 text-sm">
             {HOME_LINKS.map((link) => (
               <Link
@@ -165,17 +175,6 @@ export default function Header() {
             >
               Tüm Markalar →
             </Link>
-            <div className="my-2 h-px bg-iron-deep" />
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 font-saira text-text-secondary transition-colors hover:bg-graphite-elevated hover:text-text-primary"
-              >
-                {link.label}
-              </Link>
-            ))}
             <a
               href={PHONE_HREF}
               className="mt-3 flex items-center justify-center gap-2 bg-brass-bright px-4 py-3 font-saira text-sm font-semibold uppercase tracking-wide text-graphite-base"
@@ -187,5 +186,6 @@ export default function Header() {
         </div>
       )}
     </header>
+    </div>
   );
 }

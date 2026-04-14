@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'DSG Mekatronik Arıza Fiyatı 2026 | Tamir & Revizyon — Eren Servis',
   description:
-    'DSG mekatronik arıza fiyatları 2026. DQ200 ve DQ250 kart tamiri, güçlendirilmiş tüp ve revizyon maliyetleri. 12 ay garantili uzman servis.',
+    'DSG mekatronik arıza fiyatları 2026. DQ200 ve DQ250 kart tamiri, güçlendirilmiş tüp ve revizyon maliyetleri. 6 ay garantili uzman servis.',
   keywords: [
     'dsg mekatronik arıza fiyatı',
     'mekatronik kart tamiri fiyatı 2026',
@@ -35,10 +35,10 @@ const BELIRTILER = [
 ];
 
 const FIYAT_TABLOSU = [
-  { islem: 'Elektronik Kart Onarımı', dq200: '8.500 – 14.500 TL', dq250: '11.000 – 18.000 TL' },
-  { islem: 'Güçlendirilmiş Basınç Tüpü', dq200: '9.000 – 13.000 TL', dq250: '—' },
-  { islem: 'Komple Hidrolik Ünite Revizyonu', dq200: '16.000 – 24.000 TL', dq250: '19.000 – 28.000 TL' },
-  { islem: 'Sıfır Orijinal Ünite Değişimi', dq200: '42.000 – 52.000 TL', dq250: '48.000 – 65.000 TL' },
+  { islem: 'Elektronik Kart Onarımı', dq200: '14.000 – 20.000 TL', dq250: '18.000 – 25.000 TL' },
+  { islem: 'Güçlendirilmiş Basınç Tüpü', dq200: '6.000 – 8.000 TL', dq250: '—' },
+  { islem: 'Komple Hidrolik Ünite Revizyonu', dq200: '24.000 – 35.000 TL', dq250: '28.000 – 40.000 TL' },
+  { islem: 'Sıfır Orijinal Ünite Değişimi', dq200: '45.000 – 58.000 TL', dq250: '55.000 – 68.000 TL' },
 ];
 
 const ADIMLAR = [
@@ -72,33 +72,48 @@ export default function DSGMekatronikArızaFiyatiPage() {
   } : null;
 
   return (
-    <main className="bg-[#070B11]">
+    <main className="bg-graphite-base">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
       {/* Hero */}
-      <section className="hero-deep pt-28 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 mb-6">
-            <span className="text-xs font-semibold text-accent-soft uppercase tracking-wider">
-              Fiyatlar & Revizyon
+      <section className="relative overflow-hidden pt-28 pb-16">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/images/Screenshot_4149.webp)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(6px) saturate(0.5) brightness(0.5)',
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[1]"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.90) 100%)',
+          }}
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-brass bg-brass/8 mb-6">
+            <span className="font-jetbrains text-[10px] font-semibold text-brass uppercase tracking-[0.22em]">
+              Fiyatlar &amp; Revizyon
             </span>
           </div>
-          <h1 className="text-hero-text mb-5">
+          <h1 className="font-saira text-4xl sm:text-5xl font-semibold tracking-[-0.04em] text-text-primary mb-5">
             DSG Mekatronik Arıza{' '}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'var(--gradient-accent)' }}>
-              Fiyatı 2026
-            </span>
+            <span className="text-brass">Fiyatı 2026</span>
           </h1>
-          <p className="text-hero-muted text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
             DQ200 ve DQ250 mekatronik ünitelerinin %80&apos;ini komple değişim olmadan kurtarıyoruz.
             Kart onarımı, güçlendirilmiş basınç tüpü ve hidrolik revizyon fiyatları.{' '}
-            <strong className="text-hero-muted font-medium">Bostancı — ücretsiz ön tanı.</strong>
+            <strong className="text-text-primary font-medium">Bostancı — ücretsiz ön tanı.</strong>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href={PHONE_HREF} className="btn-premium flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-white font-bold text-base">
+            <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2.5 px-7 py-3.5 text-base transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
               {PHONE}
             </a>
@@ -106,7 +121,7 @@ export default function DSGMekatronikArızaFiyatiPage() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl border-2 border-white/20 text-white font-semibold text-base hover:bg-white/10 hover:border-white/40 transition-all"
+              className="flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-base hover:border-brass hover:text-text-primary transition-all"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={2.5} />
               WhatsApp&apos;tan Yaz
@@ -120,22 +135,22 @@ export default function DSGMekatronikArızaFiyatiPage() {
 
         {/* Intro */}
         <div className="prose prose-lg max-w-none mb-12">
-          <p className="text-content-text text-lg leading-relaxed">
+          <p className="font-saira text-text-primary text-lg leading-relaxed">
             DSG şanzımanın &quot;beyni&quot; olan mekatronik ünite, arızalandığında araç sahiplerinin en çok
             korktuğu kalemdir. Ancak arızanın türüne göre fiyat aralığı inanılmaz ölçüde değişir:{' '}
-            <strong>kart onarımı 8.500 TL&apos;den başlarken</strong> sıfır ünite değişimi 65.000 TL&apos;ye ulaşabilir.
+            <strong>kart onarımı 14.000 TL&apos;den başlarken</strong> sıfır ünite değişimi 68.000 TL&apos;ye ulaşabilir.
             Bostancı&apos;daki Eren Servis olarak ücretsiz ön tanı sonrası size net sabit fiyat sunuyoruz.
           </p>
         </div>
 
         {/* Arıza Belirtileri */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-6">DSG Mekatronik Arıza Belirtileri</h2>
-          <div className="bg-content-secondary rounded-2xl p-6 border border-content-border">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DSG Mekatronik Arıza Belirtileri</h2>
+          <div className="bg-graphite-surface rounded-xl p-6 border border-border-hairline">
             <ul className="space-y-3">
               {BELIRTILER.map((belirti) => (
-                <li key={belirti} className="flex items-start gap-3 text-content-text">
-                  <AlertTriangle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <li key={belirti} className="flex items-start gap-3 font-saira text-text-primary">
+                  <AlertTriangle className="w-5 h-5 text-brass shrink-0 mt-0.5" />
                   {belirti}
                 </li>
               ))}
@@ -145,13 +160,13 @@ export default function DSGMekatronikArızaFiyatiPage() {
 
         {/* Fiyat Tablosu */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-2">Mekatronik Fiyat Tablosu — Nisan 2026</h2>
-          <p className="text-content-muted text-sm mb-6">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">Mekatronik Fiyat Tablosu — Nisan 2026</h2>
+          <p className="font-saira text-text-secondary text-sm mb-6">
             Fiyatlar arızanın kapsamına göre değişir. Net fiyat ücretsiz ön tanı sonrası yazılı sunulur.
           </p>
-          <div className="rounded-2xl border border-content-border overflow-hidden">
+          <div className="rounded-xl border border-border-hairline overflow-hidden">
             {/* Tablo Başlığı */}
-            <div className="grid grid-cols-3 bg-content-secondary px-5 py-3 text-xs font-semibold uppercase tracking-wider text-content-muted">
+            <div className="grid grid-cols-3 bg-graphite-surface px-5 py-3 font-jetbrains text-xs font-semibold uppercase tracking-wider text-text-secondary">
               <span>İşlem</span>
               <span className="text-center">DQ200 (7 İleri)</span>
               <span className="text-center">DQ250 (6 İleri)</span>
@@ -160,11 +175,11 @@ export default function DSGMekatronikArızaFiyatiPage() {
             {FIYAT_TABLOSU.map((row, i) => (
               <div
                 key={row.islem}
-                className={`grid grid-cols-3 px-5 py-4 items-center ${i < FIYAT_TABLOSU.length - 1 ? 'border-b border-content-border' : ''}`}
+                className={`grid grid-cols-3 px-5 py-4 items-center ${i < FIYAT_TABLOSU.length - 1 ? 'border-b border-border-hairline' : ''}`}
               >
-                <span className="text-sm font-medium text-content-text">{row.islem}</span>
-                <span className="text-center text-sm text-accent font-semibold">{row.dq200}</span>
-                <span className="text-center text-sm text-accent font-semibold">{row.dq250}</span>
+                <span className="font-saira text-sm font-medium text-text-primary">{row.islem}</span>
+                <span className="font-saira text-center text-sm text-brass font-semibold">{row.dq200}</span>
+                <span className="font-saira text-center text-sm text-brass font-semibold">{row.dq250}</span>
               </div>
             ))}
           </div>
@@ -172,9 +187,9 @@ export default function DSGMekatronikArızaFiyatiPage() {
 
         {/* Güçlendirilmiş Basınç Tüpü */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-6">Güçlendirilmiş Basınç Tüpü — DQ200&apos;e Özel</h2>
-          <div className="bg-surface-0 rounded-2xl p-6 text-white">
-            <p className="text-sm text-white/70 leading-relaxed mb-5">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Güçlendirilmiş Basınç Tüpü — DQ200&apos;e Özel</h2>
+          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-6">
+            <p className="font-saira text-sm text-text-secondary leading-relaxed mb-5">
               DQ200 mekatroniklerinde en sık arıza, hidrolik gövdedeki tüp yuvasının çatlamasıdır.
               Gövde değiştirmek yerine güçlendirilmiş kit uyguluyoruz. Bu yöntem maliyeti %60 düşürür
               ve kronik tekrarı önler.
@@ -183,12 +198,12 @@ export default function DSGMekatronikArızaFiyatiPage() {
               {[
                 'Komple gövde değişimine kıyasla ortalama %60 tasarruf',
                 'Çatlak yuvayı kalıcı olarak kapatan güçlendirilmiş alüminyum kit',
-                'İşlem tamamlandıktan sonra 12 ay garanti',
+                'İşlem tamamlandıktan sonra 6 ay garanti',
                 'Aynı gün teslimat — çoğu vakada araç aynı günü teslim edilir',
               ].map((madde) => (
                 <li key={madde} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-sm">{madde}</span>
+                  <CheckCircle2 className="w-5 h-5 text-brass shrink-0 mt-0.5" />
+                  <span className="font-saira text-sm text-text-primary">{madde}</span>
                 </li>
               ))}
             </ul>
@@ -197,24 +212,24 @@ export default function DSGMekatronikArızaFiyatiPage() {
 
         {/* Neden Tek Başına Yetmez */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-content-text mb-3">Neden Sadece Mekatronik Tamiri Yetmeyebilir?</h2>
-          <p className="text-content-muted text-sm mb-6">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">Neden Sadece Mekatronik Tamiri Yetmeyebilir?</h2>
+          <p className="font-saira text-text-secondary text-sm mb-6">
             Aşınmış kavramadan yağa karışan metal tozu yeni mekatroniği 3 ayda bozar.
             Bu yüzden Eren Servis&apos;te şu sırayı uyguluyoruz:
           </p>
           <div className="grid gap-4">
             {ADIMLAR.map((adim) => (
-              <div key={adim.no} className="p-5 rounded-xl bg-[#070B11] border border-content-border shadow-sm">
+              <div key={adim.no} className="p-5 rounded-xl bg-graphite-surface border border-border-hairline shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <Wrench className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-lg bg-brass/8 flex items-center justify-center shrink-0">
+                    <Wrench className="w-5 h-5 text-brass" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-bold text-accent">{adim.no}</span>
-                      <h3 className="font-bold text-content-text">{adim.baslik}</h3>
+                      <span className="font-jetbrains text-xs font-bold text-brass">{adim.no}</span>
+                      <h3 className="font-saira font-semibold text-text-primary">{adim.baslik}</h3>
                     </div>
-                    <p className="text-content-muted text-sm">{adim.aciklama}</p>
+                    <p className="font-saira text-text-secondary text-sm">{adim.aciklama}</p>
                   </div>
                 </div>
               </div>
@@ -225,12 +240,12 @@ export default function DSGMekatronikArızaFiyatiPage() {
         {/* FAQ */}
         {faqItems.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-content-text mb-6">Sık Sorulan Sorular</h2>
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Sık Sorulan Sorular</h2>
             <div className="space-y-4">
               {faqItems.map((item) => (
-                <div key={item.q} className="p-5 rounded-xl bg-content-secondary border border-content-border">
-                  <h3 className="font-bold text-content-text mb-2">{item.q}</h3>
-                  <p className="text-content-muted text-sm">{item.a}</p>
+                <div key={item.q} className="p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+                  <h3 className="font-saira font-semibold text-text-primary mb-2">{item.q}</h3>
+                  <p className="font-saira text-text-secondary text-sm">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -238,16 +253,16 @@ export default function DSGMekatronikArızaFiyatiPage() {
         )}
 
         {/* İç Linkler */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-content-border">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-border-hairline">
           <Link
             href="/hizmetler/dsg-kavrama-degisimi/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent/90 transition"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brass-bright text-graphite-base font-saira font-semibold hover:bg-brass transition-colors"
           >
             DSG Kavrama Değişimi
           </Link>
           <Link
             href="/hizmetler/dsg-sanziman-tamiri/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-content-border text-content-text font-semibold hover:bg-content-secondary transition"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-colors"
           >
             DSG Servis Detayı &rarr;
           </Link>
@@ -255,20 +270,20 @@ export default function DSGMekatronikArızaFiyatiPage() {
       </article>
 
       {/* Footer CTA */}
-      <section className="hero-deep py-14 text-center">
+      <section className="bg-graphite-base py-14 text-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-hero-text mb-4">Mekatronik Arızanız mı Var?</h2>
-          <p className="text-hero-muted mb-8">
+          <h2 className="font-saira text-2xl sm:text-3xl font-semibold text-text-primary mb-4">Mekatronik Arızanız mı Var?</h2>
+          <p className="font-saira text-text-secondary mb-8">
             Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi-Cumartesi 08:00-18:00
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={PHONE_HREF} className="btn-premium flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-bold">
+            <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2 px-7 py-3.5 transition-colors">
               <Phone className="w-5 h-5" strokeWidth={2.5} />
               {PHONE}
             </a>
             <Link
               href="/blog/"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all text-sm"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-all text-sm"
             >
               Diğer Yazılar &rarr;
             </Link>

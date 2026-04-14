@@ -23,7 +23,7 @@ export interface TrustBandProps {
 export const DEFAULT_TRUST_ITEMS: TrustBandItem[] = [
   { value: '15+',    label: 'Yıl Deneyim' },
   { value: '4.000+', label: 'Tamamlanan Tamir' },
-  { value: '2 Yıl',  label: 'İşçilik Garantisi' },
+  { value: '6 Ay',   label: 'İşçilik Garantisi' },
   { value: '100%',   label: 'Yazılı Teklif' },
 ];
 

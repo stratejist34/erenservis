@@ -29,8 +29,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'DSG kavrama değişimi fiyatı ne kadar?',
       a:
-        "2026 yılında DQ200 kavrama değişimi 18.000–28.000 TL, DQ250'de " +
-        '22.000–35.000 TL aralığındadır. Volant hasarı varsa bu rakam yükselir. ' +
+        "2026 yılında DQ200 kavrama değişimi 55.000–65.000 TL, DQ250'de " +
+        '62.000–72.000 TL aralığındadır. Volant hasarı varsa bu rakam yükselir. ' +
         'Kesin fiyat ücretsiz ön tanı sonrası verilir.',
     },
     {
@@ -158,8 +158,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       q: 'DSG kavrama değişimi ne kadar tutar 2026?',
       a:
         '2026 fiyatları model bazındır değişir:\n' +
-        'DQ200 kuru kavrama 18.000–28.000 TL, DQ250\'de 22.000–35.000 TL, ' +
-        'DQ381\'de 15.000–25.000 TL aralığındadır. ' +
+        'DQ200 kuru kavrama 55.000–65.000 TL, DQ250\'de 62.000–72.000 TL, ' +
+        'DQ381\'de 70.000–82.000 TL aralığındadır. ' +
         'Volant da etkilenmişse maliyet 2-3 katına çıkar. ' +
         'Kesin fiyat ücretsiz ön tanı sonrası verilir.',
     },
@@ -251,7 +251,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       a:
         'Evet, her mekatronik kart değişim gerektirmez. Sensör veya solenoid ' +
         'arızası, erken dönem kavrama kirliliği veya yazılım hatası gibi ' +
-        'durumlarda tamir 8.000–18.000 TL\'ye çözülebilir. Kart fiziksel ' +
+        'durumlarda tamir 14.000–25.000 TL\'ye çözülebilir. Kart fiziksel ' +
         'olarak hasar görmüş ya da ileri düzey kirlilik varsa değişim gerekir. ' +
         'Hata kodu okumadan karar verilmez.',
     },
@@ -273,8 +273,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'Mekatronik kart değişiminde orijinal mi muadil mi tercih edilmeli?',
       a:
-        'DQ200 için orijinal kart 2026 Nisan itibarıyla 36.000–42.000 TL, ' +
-        'muadil 28.000–34.000 TL civarındadır. Her ikisi de 12 ay garanti ' +
+        'DQ200 için orijinal kart 2026 Nisan itibarıyla 45.000–58.000 TL, ' +
+        'muadil 36.000–44.000 TL civarındadır. Her ikisi de 6 ay garanti ' +
         'kapsamındadır. Araç yaşı ve kullanım koşullarına göre birlikte ' +
         'değerlendirip öneri yapıyoruz.',
     },
@@ -293,8 +293,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         {
           q: 'DSG mekatronik arıza fiyatı 2026 ne kadar?',
           a:
-            'DQ200 için tamir 8.000–14.000 TL, değişim 28.000–42.000 TL. ' +
-            'DQ250 için tamir 10.000–18.000 TL, değişim 32.000–48.000 TL aralığındadır. ' +
+            'DQ200 için tamir 14.000–20.000 TL, değişim 45.000–58.000 TL. ' +
+            'DQ250 için tamir 18.000–25.000 TL, değişim 55.000–68.000 TL aralığındadır. ' +
             'Kesin fiyat hata kodu okuma ve fiziksel inceleme sonrası verilir. ' +
             'Eren Servis\'te ön tanı ücretsizdir.',
         },
@@ -303,7 +303,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
           a:
             'Genel bir fiyat aralığı verilebilir ancak net fiyat için araç mutlaka ' +
             'getirilip hata kodu okunmalıdır. Aynı semptom (örneğin vuruntu) bazen ' +
-            'solenoid temizliğiyle 8.000 TL\'ye, bazen kart değişimiyle 42.000 TL\'ye ' +
+            'solenoid temizliğiyle 14.000 TL\'ye, bazen kart değişimiyle 58.000 TL\'ye ' +
             'çözülür. Tanısız fiyat vermek yanlış yönlendirme olur.',
         },
         {
@@ -333,8 +333,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
           q: 'Muadil mekatronik kart kullanılır mı?',
           a:
             'Hem orijinal hem muadil (OEM eşdeğeri) seçenek sunulur. Orijinal ' +
-            '36.000–42.000 TL, muadil 28.000–34.000 TL civarındadır. Her ikisi de ' +
-            '12 ay garantilidir. Araç yaşı ve kullanım şekline göre öneri yapılır.',
+            '45.000–58.000 TL, muadil 36.000–44.000 TL civarındadır. Her ikisi de ' +
+            '6 ay garantilidir. Araç yaşı ve kullanım şekline göre öneri yapılır.',
         },
         {
           q: 'Mekatronik tamiri kaç günde tamamlanır?',
@@ -356,11 +356,11 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
   'otomatik-sanziman-tamiri-fiyat': [
     {
       q: 'Otomatik şanzıman tamiri ne kadar tutar 2026?',
-      a: 'Nisan 2026 itibarıyla şanzıman tamir fiyatları arıza tipine göre değişir: DSG kavrama değişimi 18.000–35.000 TL, mekatronik tamiri 8.000–18.000 TL, CVT revizyonu 12.000–38.000 TL aralığındadır. Net maliyet ancak ücretsiz ön tanı sonrası belirlenebilir.',
+      a: 'Nisan 2026 itibarıyla şanzıman tamir fiyatları arıza tipine göre değişir: DSG kavrama değişimi 55.000–72.000 TL, mekatronik tamiri 14.000–25.000 TL, CVT revizyonu 58.000–78.000 TL aralığındadır. Net maliyet ancak ücretsiz ön tanı sonrası belirlenebilir.',
     },
     {
       q: 'Şanzıman tamiri mi yoksa komple değişim mi mantıklı?',
-      a: 'Eğer şanzıman gövdesinde çatlak yoksa veya metal kirliliği tüm dişli grubuna yayılmadıysa tamir (revizyon) her zaman daha mantıklıdır. Tamir maliyeti, sıfır şanzıman fiyatının genellikle %20-30\'u kadardır ve 12 ay garanti ile sunulur.',
+      a: 'Eğer şanzıman gövdesinde çatlak yoksa veya metal kirliliği tüm dişli grubuna yayılmadıysa tamir (revizyon) her zaman daha mantıklıdır. Tamir maliyeti, sıfır şanzıman fiyatının genellikle %20-30\'u kadardır ve 6 ay garanti ile sunulur.',
     },
     {
       q: 'Şanzıman tamiri fiyatına neler dahil?',
@@ -376,7 +376,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
     {
       q: 'Fiyatlar neden bu kadar değişken?',
-      a: 'Otomatik şanzıman karmaşık bir yapıdır. Vuruntu şikayeti bazen sadece 3.000 TL\'lik bir sensörden, bazen 30.000 TL\'lik kavrama setinden kaynaklanabilir. Bu yüzden araç incelenmeden verilen fiyatlar yanıltıcı olur.',
+      a: 'Otomatik şanzıman karmaşık bir yapıdır. Vuruntu şikayeti bazen sadece 6.000 TL\'lik bir sensörden, bazen 65.000 TL\'lik kavrama setinden kaynaklanabilir. Bu yüzden araç incelenmeden verilen fiyatlar yanıltıcı olur.',
     },
   ],
 
@@ -398,8 +398,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'Mekatronik kart değişimi fiyatı 2026?',
       a:
-        '2026 yılında revizyonlu üniteler 25.000 TL\'den başlarken sıfır orijinal ' +
-        'mekatronik setleri işçilik dahil 50.000–65.000 TL bandına çıkabilmektedir. ' +
+        '2026 yılında revizyonlu üniteler 45.000 TL\'den başlarken sıfır orijinal ' +
+        'mekatronik setleri işçilik dahil 55.000–68.000 TL bandına çıkabilmektedir. ' +
         'Kesin fiyat ücretsiz ön tanı sonrası yazılı olarak sunulur.',
     },
     {

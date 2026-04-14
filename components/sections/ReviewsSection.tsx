@@ -41,7 +41,7 @@ export default function ReviewsSection() {
         {REVIEWS.map((review) => (
           <div
             key={review.name}
-            className="group rounded-xl border border-border-hairline bg-graphite-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-brass"
+            className="group rounded-xl border border-border-hairline bg-graphite-elevated p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-brass"
           >
             <div className="flex gap-0.5">
               {Array.from({ length: review.rating }).map((_, i) => (

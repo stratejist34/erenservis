@@ -109,7 +109,7 @@ export default async function SanzimanDetayPage({
       <section className="pt-6 pb-10 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="inline-block px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider bg-accent/10 text-accent">
+            <span className="inline-block px-3 py-1 rounded-md font-jetbrains text-[10px] font-semibold uppercase tracking-[0.22em] bg-brass/8 text-brass">
               {CATEGORY_LABELS[data.category]}
             </span>
             {highFaultCount > 0 && (
@@ -170,7 +170,7 @@ export default async function SanzimanDetayPage({
             {/* Related models */}
             <div className="bg-surface-1 border border-edge rounded-xl p-5">
               <h2 className="text-sm font-semibold text-fg mb-3 flex items-center gap-2">
-                <Car className="w-4 h-4 text-accent" strokeWidth={2} />
+                <Car className="w-4 h-4 text-brass" strokeWidth={2} />
                 Bu Şanzımanı Kullanan Araçlar
               </h2>
               <ul className="flex flex-col gap-2">
@@ -180,7 +180,7 @@ export default async function SanzimanDetayPage({
                     className="flex items-start gap-2 text-sm text-fg-soft"
                   >
                     <ChevronRight
-                      className="w-3.5 h-3.5 text-accent mt-0.5 shrink-0"
+                      className="w-3.5 h-3.5 text-brass mt-0.5 shrink-0"
                       strokeWidth={2.5}
                     />
                     {model}
@@ -193,11 +193,11 @@ export default async function SanzimanDetayPage({
             <TrustBar />
 
             {/* CTA card */}
-            <div className="bg-accent/5 border border-accent/20 rounded-xl p-5 flex flex-col gap-3">
-              <p className="text-sm font-semibold text-fg">
+            <div className="bg-brass/8 border border-border-brass rounded-xl p-5 flex flex-col gap-3">
+              <p className="font-saira text-sm font-semibold text-text-primary">
                 {data.title} arızasını ücretsiz tespit ettirin
               </p>
-              <p className="text-xs text-fg-soft leading-relaxed">
+              <p className="font-saira text-xs text-text-secondary leading-relaxed">
                 Araçta semptom varsa randevu almadan doğrudan gelin — ya da önce telefonla
                 danışın.
               </p>
@@ -205,14 +205,14 @@ export default async function SanzimanDetayPage({
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-success text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 py-2.5 rounded-lg border border-border-subtle text-text-secondary font-saira text-sm font-semibold hover:border-brass hover:text-text-primary transition-colors"
               >
                 <MessageCircle className="w-4 h-4" strokeWidth={2.5} />
                 WhatsApp&apos;tan Yaz
               </a>
               <a
                 href={PHONE_HREF}
-                className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-surface-2 border border-edge text-fg text-sm font-semibold hover:bg-surface-1 transition-colors"
+                className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-brass-bright text-graphite-base font-saira text-sm font-semibold hover:bg-brass transition-colors"
               >
                 <Phone className="w-4 h-4" strokeWidth={2.5} />
                 {PHONE}
@@ -243,7 +243,7 @@ export default async function SanzimanDetayPage({
       <div className="fixed bottom-6 right-6 z-40 hidden md:flex flex-col gap-2">
         <a
           href={PHONE_HREF}
-          className="btn-premium flex items-center gap-2 px-5 py-3 rounded-xl text-white text-sm font-semibold"
+          className="bg-brass-bright text-graphite-base flex items-center gap-2 px-5 py-3 rounded-full font-saira font-semibold text-sm hover:bg-brass transition-colors"
           aria-label="Arıza tespiti için bizi arayın"
         >
           <Phone className="w-4 h-4" strokeWidth={2.5} />

@@ -1,17 +1,20 @@
 /**
- * HeroSectionDC — Diagnostic Cyan hero bileşeni.
+ * HeroSectionDC — Cold Brass hero bileşeni.
  * Anasayfada props'suz kullanılır (tüm default'lar homepage için).
  * Brand/servis sayfalarında title, subtitle ve CTA override edilebilir.
  */
+'use client';
 import React from 'react';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
+import { SYMPTOMS } from '@/data/symptoms';
+import { useSymptom } from '@/contexts/SymptomContext';
 
 /* ── INTERNAL DEFAULTS (homepage için sabit veri) ───────────────────────── */
 
 const DEFAULT_TRUST_DOTS = [
   { icon: <Clock className="h-3.5 w-3.5" strokeWidth={2} />, label: 'Aynı gün inceleme' },
   { icon: <FileText className="h-3.5 w-3.5" strokeWidth={2} />, label: 'Yazılı fiyat teklifi' },
-  { icon: <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2} />, label: '2 yıl işçilik garantisi' },
+  { icon: <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2} />, label: '6 ay işçilik garantisi' },
 ];
 
 const STATS = [
@@ -90,20 +93,22 @@ export default function HeroSectionDC({
   showDiagnosticPanel = true,
 }: HeroSectionDCProps) {
   const phoneHref = `tel:${ctaPhone.number.replace(/\s/g, '')}`;
+  const { selectedId, setSelectedId } = useSymptom();
+  const selected = SYMPTOMS.find((s) => s.id === selectedId)!;
 
   return (
-    <section className="relative mx-auto grid max-w-7xl gap-10 overflow-hidden px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+    <section className="relative overflow-hidden">
 
-      {/* ===== LAYER 1: Gerçek servis görüntüsü — EN ARKADA ===== */}
+      {/* ===== LAYER 1: Gerçek servis görüntüsü — FULL WIDTH ===== */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -left-16 -right-16 -top-10 -bottom-10 z-0"
+        className="pointer-events-none absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/images/servis.jpg)',
+          backgroundImage: 'url(/images/part2/Screenshot_57.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(5px) brightness(0.6)',
-          opacity: 0.60,
+          filter: 'blur(2px) saturate(0.55) brightness(0.65)',
+          opacity: 1,
         }}
       />
 
@@ -113,41 +118,46 @@ export default function HeroSectionDC({
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background: `linear-gradient(
-            90deg,
-            rgba(7,11,17,0.97) 0%,
-            rgba(7,11,17,0.88) 40%,
-            rgba(7,11,17,0.62) 100%
+            to right,
+            rgba(10,10,10,0.88) 0%,
+            rgba(10,10,10,0.74) 38%,
+            rgba(10,10,10,0.62) 68%,
+            rgba(10,10,10,0.50) 100%
           )`,
         }}
       />
 
-      {/* ===== LAYER 3: Sky radial glow ===== */}
+      {/* ===== LAYER 2b: Grain overlay ===== */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-[2]"
         style={{
-          background:
-            'radial-gradient(ellipse 70% 60% at 28% 50%, rgba(56,189,248,0.18) 0%, transparent 65%)',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '180px 180px',
+          opacity: 0.03,
+          mixBlendMode: 'overlay',
         }}
       />
 
-      {/* ===== LAYER 4: İçerik ===== */}
-      <div className="relative z-10 pt-10 lg:pt-16">
+      {/* ===== LAYER 3: İçerik — max-w kısıtlaması burada ===== */}
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+      <div className="pt-10 lg:pt-16">
         {/* Badge */}
-        <div className="hero-item-1 mb-6 inline-flex items-center rounded-full border border-[#38BDF8]/20 bg-[#38BDF8]/8 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#7DD3FC]">
+        <div className="hero-item-1 mb-6 inline-flex items-center rounded-full border border-border-brass bg-brass/8 px-4 py-1.5 font-jetbrains text-[11px] font-medium uppercase tracking-[0.22em] text-brass">
           {badge}
         </div>
 
         {/* H1 */}
-        <h1 className="hero-item-2 max-w-[12ch] text-5xl font-semibold leading-[0.94] tracking-[-0.055em] sm:text-6xl lg:text-7xl text-[#F0F4F8]">
+        <h1 className="hero-item-2 max-w-[12ch] font-saira text-5xl font-semibold leading-[0.94] tracking-[-0.055em] text-text-primary sm:text-6xl lg:text-7xl">
           {title != null ? title : (
             <>
               Şanzıman sorunu{' '}
               <span className="relative inline-block">
-                <span className="text-[#38BDF8]">büyümeden</span>
+                <span className="text-brass">büyümeden</span>
                 <span
                   aria-hidden="true"
-                  className="animate-fill-bar absolute -bottom-1 left-0 h-[2px] rounded-full bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC]"
+                  className="animate-fill-bar absolute bottom-0 left-0 h-px rounded-full bg-gradient-to-r from-brass to-brass-bright"
                   style={{ '--bar-target': '100%', animationDelay: '0.5s' } as React.CSSProperties}
                 />
               </span>{' '}
@@ -156,15 +166,37 @@ export default function HeroSectionDC({
           )}
         </h1>
 
-        <p className="hero-item-3 mt-7 max-w-[52ch] text-lg leading-8 text-[#94A3B8]">
+        <p className="hero-item-3 mt-7 max-w-[52ch] font-saira text-lg leading-8 text-text-secondary">
           {subtitle}
         </p>
+
+        <p className="hero-item-3 mt-3 font-jetbrains text-[11px] uppercase tracking-widest text-[#64748B]">
+          DSG · ZF · CVT · Aisin şanzımanlarda uzman teşhis
+        </p>
+
+        {/* Mini semptom seçici */}
+        <div className="hero-item-4 mt-5 flex flex-wrap gap-2">
+          {SYMPTOMS.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => setSelectedId(s.id)}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-jetbrains text-xs transition-all duration-200 ${
+                selectedId === s.id
+                  ? 'border-border-brass bg-brass/10 text-brass'
+                  : 'border-border-subtle bg-graphite-surface/60 text-text-secondary hover:border-border-brass hover:text-text-primary'
+              }`}
+            >
+              <span className={`h-1.5 w-1.5 rounded-full ${s.severity === 'high' ? 'bg-red-400' : 'bg-amber-400'}`} />
+              {s.shortLabel}
+            </button>
+          ))}
+        </div>
 
         {/* CTA */}
         <div className="hero-item-4 mt-8 flex flex-col gap-3 sm:flex-row">
           <a
             href={phoneHref}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#38BDF8] px-7 py-4 text-base font-semibold text-[#070B11] shadow-[0_12px_36px_rgba(56,189,248,0.25)] ring-1 ring-[#7DD3FC]/20 transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(56,189,248,0.35)]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-brass-bright px-7 py-4 font-saira text-base font-semibold text-graphite-base transition-colors hover:bg-brass"
           >
             <Phone className="h-4.5 w-4.5" strokeWidth={2.5} />
             {ctaPhone.label}
@@ -173,7 +205,7 @@ export default function HeroSectionDC({
             href={ctaWhatsApp.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-4 text-base font-medium text-[#F0F4F8] transition hover:bg-white/[0.04] hover:border-[#38BDF8]/30"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-border-subtle px-6 py-4 font-saira text-base font-medium text-text-secondary transition hover:border-brass hover:text-text-primary"
           >
             <MessageCircle className="h-4.5 w-4.5" strokeWidth={2} />
             {ctaWhatsApp.label}
@@ -181,10 +213,10 @@ export default function HeroSectionDC({
         </div>
 
         {/* Trust dots */}
-        <div className="hero-item-5 mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#64748B]">
+        <div className="hero-item-5 mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 font-jetbrains text-xs text-iron-light">
           {trustItems.map((dot) => (
             <span key={dot.label} className="inline-flex items-center gap-2">
-              {dot.icon ?? <span className="h-1.5 w-1.5 rounded-full bg-[#38BDF8] dot-glow-sky" />}
+              {dot.icon ?? <span className="h-1.5 w-1.5 rounded-full bg-brass/60" />}
               {dot.label}
             </span>
           ))}
@@ -197,43 +229,60 @@ export default function HeroSectionDC({
           className="animate-scan-reveal relative z-10 grid gap-4 lg:max-w-[92%] lg:pt-12"
           style={{ animationDelay: '0.3s' }}
         >
-          <div className="glass-surface-strong rounded-[28px] p-5">
+          <div className="relative overflow-hidden rounded-xl border border-border-subtle bg-graphite-surface p-5">
+            {/* 3D model arka plan */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage: 'url(/images/diagnostic_model_3d.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center right',
+                opacity: 0.07,
+              }}
+            />
             {/* Terminal header */}
-            <div className="mb-5 flex items-center gap-2">
+            <div className="relative z-10 mb-5 flex items-center gap-2">
               <div className="flex gap-1.5">
                 <div className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
                 <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/50" />
                 <div className="h-2.5 w-2.5 rounded-full bg-green-500/50" />
               </div>
-              <span className="font-mono text-[11px] tracking-wider text-[#64748B]">
+              <span className="font-jetbrains text-[11px] tracking-wider text-iron-light">
                 MALIYET_ANALIZI.exe
               </span>
-              <span
-                aria-hidden="true"
-                className="animate-hero-cursor ml-auto inline-block h-[13px] w-[7px] rounded-sm bg-[#38BDF8]/60"
-              />
+              {selectedId > 1 ? (
+                <span className="ml-auto font-jetbrains text-[10px] tracking-wider text-[#38BDF8]">
+                  › {selected.label}
+                </span>
+              ) : (
+                <span
+                  aria-hidden="true"
+                  className="animate-hero-cursor ml-auto inline-block h-[13px] w-[7px] rounded-sm bg-brass/60"
+                />
+              )}
             </div>
 
-            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
+            <div className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.22em] text-iron-light">
               Risk Büyüme Eğrisi
             </div>
-            <div className="mt-2 text-xl font-semibold tracking-[-0.03em] text-[#F0F4F8]">
+            <div className="mt-2 font-saira text-xl font-semibold tracking-[-0.03em] text-text-primary">
               Bekledikçe maliyet{' '}
-              <span className="text-[#38BDF8]">büyür</span>
+              <span className="text-brass">büyür</span>
             </div>
 
             <div className="mt-5 space-y-3">
               {COST_BARS.map((bar, i) => (
                 <div key={bar.label}>
                   <div className="mb-1.5 flex items-baseline justify-between">
-                    <span className="font-mono text-[11px] text-[#64748B]">{bar.label}</span>
-                    <span className="font-mono text-[11px] font-semibold" style={{ color: bar.color }}>
+                    <span className="font-jetbrains text-[11px] text-iron-light">{bar.label}</span>
+                    <span className="font-jetbrains text-[11px] font-semibold" style={{ color: bar.color }}>
                       {bar.status}
                     </span>
                   </div>
-                  <div className="relative h-8 overflow-hidden rounded-lg border border-white/[0.06] bg-white/[0.03]">
+                  <div className="relative h-8 overflow-hidden rounded-lg border border-border-hairline bg-graphite-elevated">
                     <div
-                      className={`animate-fill-bar absolute inset-y-0 left-0 rounded-lg ${i === 0 ? 'dot-glow-success' : i === 1 ? 'dot-glow-warning' : 'dot-glow-critical'}`}
+                      className="animate-fill-bar absolute inset-y-0 left-0 rounded-lg"
                       style={{
                         '--bar-target': bar.pct,
                         background: bar.bgColor,
@@ -242,10 +291,10 @@ export default function HeroSectionDC({
                       } as React.CSSProperties}
                     />
                     <div className="absolute inset-0 flex items-center justify-between px-3">
-                      <span className="font-mono text-sm font-semibold" style={{ color: bar.color }}>
+                      <span className="font-jetbrains text-sm font-semibold" style={{ color: bar.color }}>
                         {bar.range}
                       </span>
-                      <span className="font-mono text-[10px] text-[#475569]">{bar.note}</span>
+                      <span className="font-jetbrains text-[10px] text-text-tertiary">{bar.note}</span>
                     </div>
                   </div>
                 </div>
@@ -258,12 +307,12 @@ export default function HeroSectionDC({
             {STATS.map((stat) => (
               <div
                 key={stat.value}
-                className="stat-glow-top rounded-[24px] border border-white/8 bg-[#0C1219]/80 p-3.5 backdrop-blur-sm transition hover:-translate-y-1"
+                className="rounded-xl border border-border-subtle bg-graphite-surface p-3.5 transition-colors hover:border-border-brass"
               >
-                <div className="text-3xl font-semibold tracking-[-0.03em] text-[#F0F4F8]">
+                <div className="font-saira text-3xl font-semibold tracking-[-0.03em] text-text-primary">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-[#64748B]">
+                <div className="mt-1 font-jetbrains text-xs font-medium uppercase tracking-[0.16em] text-iron-light">
                   {stat.label}
                 </div>
               </div>
@@ -278,32 +327,46 @@ export default function HeroSectionDC({
           aria-hidden="true"
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(/images/servis.jpg)',
+            backgroundImage: 'url(/images/part2/Screenshot_57.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.2,
-            filter: 'blur(15px) saturate(0.8)',
+            opacity: 0.15,
+            filter: 'blur(3px) saturate(0.65) brightness(0.7)',
           }}
         />
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(90deg, rgba(7,11,17,0.9) 0%, rgba(7,11,17,0.7) 50%, rgba(7,11,17,0.9) 100%)',
+            background: 'linear-gradient(90deg, rgba(21,19,15,0.9) 0%, rgba(21,19,15,0.7) 50%, rgba(21,19,15,0.9) 100%)',
           }}
         />
-        <div className="relative flex flex-col items-center justify-center gap-4 px-8 py-8 sm:flex-row sm:gap-8">
+        <div className="relative grid grid-cols-1 items-center gap-6 px-8 py-8 sm:grid-cols-3">
+          {/* Sol — kimlik */}
           <div className="text-center sm:text-left">
-            <div className="text-sm font-medium text-[#94A3B8]">Bostancı&apos;nın şanzıman uzmanı</div>
-            <div className="text-lg font-semibold text-[#F0F4F8]">15 yıllık deneyim, 2 yıl garanti</div>
+            <div className="font-saira text-sm font-medium text-text-secondary">Bostancı&apos;nın şanzıman uzmanı</div>
+            <div className="font-saira text-lg font-semibold text-text-primary">15 yıllık deneyim, 6 ay garanti</div>
           </div>
-          <a
-            href={phoneHref}
-            className="inline-flex items-center gap-2 rounded-xl border border-[#38BDF8]/30 bg-[#38BDF8] px-6 py-3 text-sm font-semibold text-[#070B11] transition hover:-translate-y-0.5"
-          >
-            <Phone className="h-4 w-4" strokeWidth={2.5} />
-            Hemen Ara
-          </a>
+
+          {/* Orta — teşhis kanıtı */}
+          <div className="text-center">
+            <div className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.18em] text-iron-light mb-1.5">Son teşhis edilen arızalar</div>
+            <div className="font-saira text-sm text-text-secondary">
+              DSG mekatronik&nbsp;&middot;&nbsp;ZF valf body&nbsp;&middot;&nbsp;CVT kayma
+            </div>
+          </div>
+
+          {/* Sağ — CTA */}
+          <div className="flex justify-center sm:justify-end">
+            <a
+              href={phoneHref}
+              className="inline-flex items-center gap-2 rounded-full bg-brass-bright px-6 py-3 font-saira text-sm font-semibold text-graphite-base transition-colors hover:bg-brass"
+            >
+              <Phone className="h-4 w-4" strokeWidth={2.5} />
+              Hemen Ara
+            </a>
+          </div>
         </div>
+      </div>
       </div>
     </section>
   );

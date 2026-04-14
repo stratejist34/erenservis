@@ -68,8 +68,8 @@ function MarqueeRow({
 export default function BrandLogosStrip() {
   return (
     <section className="mx-auto mt-16 max-w-7xl px-0 sm:px-6" aria-label="Servis verdiğimiz markalar">
-      <div className="mb-5 flex flex-wrap items-center justify-center gap-2 px-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#64748B]">
-        <span className="text-[#7DD3FC]">Servis Verdiğimiz Markalar</span>
+      <div className="mb-5 flex flex-wrap items-center justify-center gap-2 px-4">
+        <span className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">Servis Verdiğimiz Markalar</span>
       </div>
 
       <div className="relative">
@@ -82,12 +82,12 @@ export default function BrandLogosStrip() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-40 z-10"
-          style={{ background: 'linear-gradient(to right, #040810, transparent)' }}
+          style={{ background: 'linear-gradient(to right, #15130F, transparent)' }}
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-40 z-10"
-          style={{ background: 'linear-gradient(to left, #040810, transparent)' }}
+          style={{ background: 'linear-gradient(to left, #15130F, transparent)' }}
         />
       </div>
     </section>

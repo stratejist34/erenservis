@@ -9,7 +9,7 @@ const PRIMARY = [
   },
   {
     icon: Shield,
-    title: '2 Yıl İşçilik Garantisi',
+    title: '6 Ay İşçilik Garantisi',
     description:
       'Yaptığımız işin arkasında duruyoruz. Süreci sözlü vaatle değil, net garanti çerçevesiyle teslim ediyoruz.',
   },
@@ -41,14 +41,30 @@ const SECONDARY = [
 
 export default function WhyUs() {
   return (
-    <section className="py-24 bg-surface-2" aria-labelledby="neden-baslik">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="relative overflow-hidden py-24" aria-labelledby="neden-baslik">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/images/servis.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(8px) saturate(0.4) brightness(0.35)',
+          opacity: 0.6,
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{ background: 'rgba(12,14,18,0.82)' }}
+      />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14">
-          <p className="section-tag mb-4">Neden Eren Servis</p>
-          <h2 id="neden-baslik" className="text-fg mb-4">
+          <p className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.22em] text-brass mb-4">Neden Eren Servis</p>
+          <h2 id="neden-baslik" className="font-saira font-semibold text-text-primary mb-4">
             Bu İş Güven İster.
           </h2>
-          <p className="text-fg-soft max-w-2xl mx-auto leading-relaxed">
+          <p className="font-saira text-text-secondary max-w-2xl mx-auto leading-relaxed">
             Şanzıman tamiri sadece parça değiştirmek değildir. Doğru teşhis, doğru müdahale
             ve temiz işçilik gerekir. Süreci bu yüzden farklı yönetiyoruz.
           </p>
@@ -59,13 +75,13 @@ export default function WhyUs() {
             const Icon = item.icon;
 
             return (
-              <div key={item.title} className="card-surface p-7 flex flex-col gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-surface-2 shrink-0">
-                  <Icon className="w-6 h-6 text-fg-soft" strokeWidth={1.5} />
+              <div key={item.title} className="bg-graphite-base border border-border-hairline rounded-xl p-7 flex flex-col gap-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-graphite-elevated shrink-0">
+                  <Icon className="w-6 h-6 text-text-secondary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-fg mb-2">{item.title}</h3>
-                  <p className="text-sm text-fg-soft leading-relaxed">{item.description}</p>
+                  <h3 className="font-saira text-base font-semibold text-text-primary mb-2">{item.title}</h3>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.description}</p>
                 </div>
               </div>
             );
@@ -77,13 +93,13 @@ export default function WhyUs() {
             const Icon = item.icon;
 
             return (
-              <div key={item.title} className="card-surface p-5 flex items-start gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-2 shrink-0 mt-0.5">
-                  <Icon className="w-5 h-5 text-fg-soft" strokeWidth={1.5} />
+              <div key={item.title} className="bg-graphite-base border border-border-hairline rounded-xl p-5 flex items-start gap-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-graphite-elevated shrink-0 mt-0.5">
+                  <Icon className="w-5 h-5 text-text-secondary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-fg mb-1">{item.title}</h3>
-                  <p className="text-xs text-fg-soft leading-relaxed">{item.description}</p>
+                  <h3 className="font-saira text-sm font-semibold text-text-primary mb-1">{item.title}</h3>
+                  <p className="font-saira text-xs text-text-secondary leading-relaxed">{item.description}</p>
                 </div>
               </div>
             );

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HomePageSections from '@/components/HomePageSections';
+import { SymptomProvider } from '@/contexts/SymptomContext';
 
 export const dynamic = 'force-static';
 
@@ -24,33 +25,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative">
-      {/* Ambient sky glow — fixed behind all content */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          background: [
-            'radial-gradient(ellipse 90% 60% at 80% 5%, rgba(56,189,248,0.22) 0%, transparent 50%)',
-            'radial-gradient(ellipse 70% 55% at 10% 90%, rgba(2,132,199,0.18) 0%, transparent 55%)',
-            'radial-gradient(ellipse 60% 40% at 45% 50%, rgba(56,189,248,0.07) 0%, transparent 60%)',
-          ].join(', '),
-        }}
-      />
-      {/* Grid texture */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          backgroundImage: [
-            'linear-gradient(rgba(160,200,230,0.022) 1px, transparent 1px)',
-            'linear-gradient(90deg, rgba(160,200,230,0.022) 1px, transparent 1px)',
-          ].join(', '),
-          backgroundSize: '64px 64px',
-        }}
-      />
-      <div className="relative z-[1]">
+      <SymptomProvider>
         <HomePageSections />
-      </div>
+      </SymptomProvider>
     </main>
   );
 }

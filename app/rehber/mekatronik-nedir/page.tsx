@@ -176,52 +176,50 @@ export default function MekatronikNedirPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-[#070B11]">
+      <main className="min-h-screen bg-graphite-base">
 
         {/* ── HERO ─────────────────────────────────────────────────────── */}
-        <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
+        <section className="bg-graphite-base px-4 pt-28 pb-12">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
-              <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
+            <nav className="text-xs text-text-secondary mb-6 flex items-center gap-2">
+              <Link href="/" className="hover:text-text-primary transition-colors">Ana Sayfa</Link>
               <span>/</span>
-              <a href="/rehber" className="hover:text-zinc-300 transition-colors">Rehber</a>
+              <a href="/rehber" className="hover:text-text-primary transition-colors">Rehber</a>
               <span>/</span>
-              <span className="text-zinc-400">Mekatronik Nedir</span>
+              <span className="text-text-secondary">Mekatronik Nedir</span>
             </nav>
 
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-amber-400 mb-4">
+            <span className="font-jetbrains inline-block text-[10px] font-semibold tracking-[0.22em] uppercase text-brass mb-4">
               Teknik Rehber
             </span>
 
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+            <h1 className="font-saira text-3xl sm:text-4xl font-semibold text-text-primary leading-tight mb-4">
               Mekatronik Nedir? DSG Şanzımandaki Görevi ve Arıza Belirtileri
             </h1>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-8">
+            <p className="font-saira text-text-secondary text-lg leading-relaxed mb-8">
               Mekatronik ünitesi, DSG şanzımanların hem beyni hem de kası görevini
               üstlenen, vites geçişlerini milisaniyeler içinde yöneten en kritik kontrol
               merkezidir. Bu ünitede meydana gelen elektronik veya hidrolik aksamalar
               aracın tüm yürüyen sistemini doğrudan etkiler.
             </p>
 
-            <div className="grid grid-cols-3 gap-3 border-t border-zinc-800 pt-8">
+            <div className="grid grid-cols-3 gap-3 border-t border-border-hairline pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">45 DK</div>
-                <div className="text-xs text-zinc-400 mt-1">Arıza tespiti</div>
+                <div className="font-saira text-2xl font-semibold text-brass">45 DK</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Arıza tespiti</div>
               </div>
-              <div className="text-center border-x border-zinc-800">
-                <div className="text-2xl font-bold text-amber-400">%98</div>
-                <div className="text-xs text-zinc-400 mt-1">Tamir başarı oranı</div>
+              <div className="text-center border-x border-border-hairline">
+                <div className="font-saira text-2xl font-semibold text-brass">%98</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Tamir başarı oranı</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">1 Yıl</div>
-                <div className="text-xs text-zinc-400 mt-1">İşçilik garantisi</div>
+                <div className="font-saira text-2xl font-semibold text-brass">1 Yıl</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">İşçilik garantisi</div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* ── GÜVEN ŞERİDİ ─────────────────────────────────────────────── */}
 
         {/* ── GİRİŞ + HIZLI CEVAP ─────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
@@ -242,24 +240,24 @@ export default function MekatronikNedirPage() {
             </p>
           </div>
 
-          <p className="text-slate-300 text-base leading-relaxed mb-4">
+          <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             Çift kavramalı (DSG) şanzımanların kalbi olarak kabul edilen mekatronik
             ünitesi, aracın sürüş dinamiklerini belirleyen temel unsurdur. Hem yazılımsal
             hem de mekanik bir yapıda olması, arızaların teşhisinde uzmanlık ve profesyonel
             ekipman gerektirir.
           </p>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="font-saira text-text-secondary text-base leading-relaxed">
             Bostancı&apos;daki servisimizde Volkswagen, Audi, Seat ve Skoda grubu araçlarda
             sıkça karşılaşılan mekatronik arızalarını, orijinal yedek parça ve ileri
             teknoloji diyagnoz cihazları ile çözüme kavuşturuyoruz.
           </p>
 
-          <div className="mt-6 p-4 bg-[#0C1219] border border-white/8 rounded-lg">
-            <p className="text-sm text-slate-300">
+          <div className="mt-6 p-4 bg-graphite-surface border border-border-hairline rounded-xl">
+            <p className="font-saira text-sm text-text-primary">
               Mekatronik arızası mı şüpheleniyorsunuz?{" "}
               <a
                 href="/hizmetler/dsg-mekatronik-kart"
-                className="text-amber-600 underline underline-offset-2 hover:text-amber-800 transition-colors"
+                className="text-brass underline underline-offset-2 hover:text-brass/80 transition-colors"
               >
                 DSG mekatronik kart değişimi fiyatlarını görün →
               </a>
@@ -268,31 +266,31 @@ export default function MekatronikNedirPage() {
         </section>
 
         {/* ── MEKATRONİK İÇİNDEKİ PARÇALAR ────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-2">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
               DSG Mekatronik Ünitesi İçindeki Parçalar
             </h2>
-            <p className="text-slate-500 text-sm mb-8">
+            <p className="font-saira text-text-secondary text-sm mb-8">
               Mekatronik tek bir parça değil, birlikte çalışan bir sistemdir.
             </p>
 
             <div className="space-y-4">
               {parcalar.map((p) => (
-                <div key={p.baslik} className="bg-[#070B11] border border-white/8 rounded-xl p-5">
+                <div key={p.baslik} className="bg-graphite-base border border-border-hairline rounded-xl p-5">
                   <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="font-semibold text-slate-100">{p.baslik}</h3>
+                    <h3 className="font-saira font-semibold text-text-primary">{p.baslik}</h3>
                     <span
-                      className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full ${
+                      className={`shrink-0 font-jetbrains text-xs font-medium px-2 py-0.5 rounded-full ${
                         p.onem === "yüksek"
-                          ? "bg-amber-100 text-amber-700"
-                          : "bg-[#0F1923] text-slate-400"
+                          ? "bg-brass/8 text-brass"
+                          : "bg-graphite-elevated text-text-secondary"
                       }`}
                     >
                       {p.onem === "yüksek" ? "Kritik parça" : "Destek parçası"}
                     </span>
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed">{p.aciklama}</p>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed">{p.aciklama}</p>
                 </div>
               ))}
             </div>
@@ -301,10 +299,10 @@ export default function MekatronikNedirPage() {
 
         {/* ── ARIZA NEDENLERİ ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-2">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
             Mekatronik Kart Neden Arızalanır?
           </h2>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="font-saira text-text-secondary text-sm mb-8">
             Her nedenin aciliyeti farklıdır — senaryonuzu tanıyın.
           </p>
 
@@ -314,12 +312,12 @@ export default function MekatronikNedirPage() {
               return (
                 <div key={n.baslik} className={`border rounded-xl p-5 ${stil.kart}`}>
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-semibold text-slate-100">{n.baslik}</h3>
-                    <span className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full ${stil.etiket}`}>
+                    <h3 className="font-saira font-semibold text-slate-800">{n.baslik}</h3>
+                    <span className={`shrink-0 font-jetbrains text-xs font-medium px-2 py-0.5 rounded-full ${stil.etiket}`}>
                       {stil.etiketMetin}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed text-slate-300">{n.aciklama}</p>
+                  <p className="font-saira text-sm leading-relaxed text-slate-700">{n.aciklama}</p>
                 </div>
               );
             })}
@@ -327,9 +325,9 @@ export default function MekatronikNedirPage() {
         </section>
 
         {/* ── ERKEN / GEÇ KARŞILAŞTIRMA ────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-8">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">
               Erken mi Geç mi Müdahale?
             </h2>
 
@@ -338,7 +336,7 @@ export default function MekatronikNedirPage() {
                 <div className="text-xs font-bold tracking-widest uppercase text-green-700 mb-3">
                   Erken Müdahale
                 </div>
-                <ul className="text-sm text-slate-300 space-y-2 mb-4">
+                <ul className="text-sm text-slate-700 space-y-2 mb-4">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-0.5 shrink-0">✓</span>
                     Sadece basınç tüpü veya conta değişimi
@@ -352,14 +350,14 @@ export default function MekatronikNedirPage() {
                     Dişli grubunun zarar görmemesi
                   </li>
                 </ul>
-                <div className="text-sm font-bold text-green-700">15.000–25.000 TL</div>
+                <div className="font-saira text-sm font-semibold text-green-700">15.000–25.000 TL</div>
               </div>
 
               <div className="bg-red-50 border border-red-200 rounded-xl p-5">
                 <div className="text-xs font-bold tracking-widest uppercase text-red-700 mb-3">
                   Geç Müdahale
                 </div>
-                <ul className="text-sm text-slate-300 space-y-2 mb-4">
+                <ul className="text-sm text-slate-700 space-y-2 mb-4">
                   <li className="flex items-start gap-2">
                     <span className="text-red-400 mt-0.5 shrink-0">✗</span>
                     Komple mekatronik ünitesi değişimi
@@ -373,7 +371,7 @@ export default function MekatronikNedirPage() {
                     Yolda kalma ve çekici maliyetleri
                   </li>
                 </ul>
-                <div className="text-sm font-bold text-red-700">35.000–65.000 TL</div>
+                <div className="font-saira text-sm font-semibold text-red-700">35.000–65.000 TL</div>
               </div>
             </div>
           </div>
@@ -381,63 +379,63 @@ export default function MekatronikNedirPage() {
 
         {/* ── DQ200 vs DQ250 ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-2">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
             Modelinize Göre Mekatronik Farklı Davranır
           </h2>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="font-saira text-text-secondary text-sm mb-8">
             Aynı arıza tipi, farklı şanzımanda farklı anlam taşır.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
-              <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
+            <div className="bg-graphite-surface border border-border-hairline rounded-xl p-5">
+              <div className="font-jetbrains text-xs font-semibold uppercase tracking-widest text-iron-light mb-3">
                 DQ200 — Kuru Kavrama
               </div>
-              <div className="text-sm font-semibold text-slate-200 mb-3">
+              <div className="font-saira text-sm font-semibold text-text-primary mb-3">
                 Golf 5/6/7, Polo, A3, Leon, Fabia
               </div>
-              <ul className="text-sm text-slate-400 space-y-2">
+              <ul className="font-saira text-sm text-text-secondary space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   7 ileri kuru tip şanzımanlarda basınç tüpü gevşemesi kroniktir
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   P17BF arıza kodu mekatronik gövde çatlağına işaret eder
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   Viteslerde anahtar işareti yanıp sönmesi ilk belirtidir
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   Geri viteste sarsıntı mekatronik kontrol hatası olabilir
                 </li>
               </ul>
             </div>
 
-            <div className="bg-[#0C1219] border border-white/8 rounded-xl p-5">
-              <div className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-3">
+            <div className="bg-graphite-surface border border-border-hairline rounded-xl p-5">
+              <div className="font-jetbrains text-xs font-semibold uppercase tracking-widest text-iron-light mb-3">
                 DQ250 — Islak Kavrama
               </div>
-              <div className="text-sm font-semibold text-slate-200 mb-3">
+              <div className="font-saira text-sm font-semibold text-text-primary mb-3">
                 Passat, A4/A5, Tiguan, Octavia, Superb
               </div>
-              <ul className="text-sm text-slate-400 space-y-2">
+              <ul className="font-saira text-sm text-text-secondary space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   6 ileri ıslak tip şanzımanlarda yağ bakımı gecikirse mekatronik tıkanır
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   Vites geçişlerinde vuruntu ve sertlik gözlemlenir
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   PRND yanıp sönme modu (Limp Mode) sık görülen belirtidir
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5 shrink-0">›</span>
+                  <span className="text-brass mt-0.5 shrink-0">›</span>
                   Solenoidlerin kirlenmesi viteslerin seçilememesine neden olur
                 </li>
               </ul>
@@ -446,9 +444,9 @@ export default function MekatronikNedirPage() {
         </section>
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-8">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">
               Sık Sorulan Sorular
             </h2>
             <TransmissionFaq slug="mekatronik-nedir" />
@@ -457,25 +455,25 @@ export default function MekatronikNedirPage() {
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-10">
-          <h2 className="text-base font-semibold text-slate-100 mb-4">
+          <h2 className="font-saira text-base font-semibold text-text-primary mb-4">
             İlgili Rehberler
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             <a
               href="/rehber/dsg-kavrama-ariza-belirtileri"
-              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="block border border-border-hairline rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
-              <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Rehber</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Kavrama Arızası Belirtileri →
               </div>
             </a>
             <a
               href="/hizmetler/dsg-mekatronik-kart"
-              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="block border border-border-hairline rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
-              <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Hizmet</div>
-              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Hizmet</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Mekatronik Kart Fiyatı 2026 →
               </div>
             </a>
@@ -484,27 +482,24 @@ export default function MekatronikNedirPage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <div className="bg-zinc-950 text-white rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-3">
+          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-8 text-center">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">
               Mekatronik Arızasından mı Şüpheleniyorsunuz?
             </h2>
-            <p className="text-zinc-300 text-sm mb-6 leading-relaxed">
+            <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed">
               Bostancı Eren Servis&apos;te DSG uzmanlarımızla 45 dakikada arıza tespiti
               yapıyoruz. Arızayı büyümeden yakalamak için hemen randevu alın.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+905327153751"
-                className="inline-block bg-amber-400 text-zinc-950 font-semibold
-                           px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors"
+                className="inline-block bg-brass-bright text-graphite-base font-saira font-semibold px-6 py-3 rounded-full hover:bg-brass transition-colors"
               >
                 0532 715 37 51
               </a>
               <a
                 href="/hizmetler/dsg-mekatronik-kart"
-                className="inline-block border border-zinc-700 text-zinc-300 font-medium
-                           px-6 py-3 rounded-xl hover:border-zinc-500 hover:text-white
-                           transition-colors"
+                className="inline-block border border-border-subtle text-text-secondary font-saira font-medium px-6 py-3 rounded-full hover:border-brass hover:text-text-primary transition-colors"
               >
                 Mekatronik kart fiyatları →
               </a>
@@ -514,7 +509,7 @@ export default function MekatronikNedirPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-slate-100 mb-6">
+          <h2 className="font-saira text-xl font-semibold text-text-primary mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

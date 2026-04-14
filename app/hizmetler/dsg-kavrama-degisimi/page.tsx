@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from 'next/image';
 import Link from 'next/link';
 import ContactForm from "@/components/interactive/ContactForm";
 import TransmissionFaq from "@/components/sanziman/TransmissionFaq";
@@ -14,7 +15,7 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 export const metadata: Metadata = {
   title: "DSG Kavrama Değişimi Fiyatı 2026 | Eren Servis Bostancı",
   description:
-    "DQ200 kavrama değişimi 18.000–28.000 TL, DQ250 22.000–35.000 TL. " +
+    "DQ200 kavrama değişimi 55.000–65.000 TL, DQ250 62.000–72.000 TL. " +
     "Bostancı'da garantili DSG kavrama değişimi. Ücretsiz ön tanı — Eren Servis.",
   keywords: [
     "dsg kavrama değişimi fiyatı",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DSG Kavrama Değişimi Fiyatı 2026 | Eren Servis Bostancı",
     description:
-      "DQ200 ve DQ250 için net fiyat tablosu. Garantili işlem, ücretsiz ön tanı. " +
+      "DQ200 ve DQ250 için net fiyat tablosu. Nisan 2026 güncel. Garantili işlem, ücretsiz ön tanı. " +
       "Bostancı DSG uzmanı Eren Servis.",
     url: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
     type: "website",
@@ -55,7 +56,7 @@ const serviceSchema = buildServiceSchema({
     "DQ200 ve DQ250 DSG şanzıman kavrama seti değişimi. Orijinal ve muadil " +
     "parça seçeneği, garantili işlem, ücretsiz ön tanı.",
   url: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
-  priceRange: "18.000 – 35.000 TL",
+  priceRange: "55.000 – 72.000 TL",
   areaServed: ["Bostancı", "Kadıköy", "Üsküdar", "Maltepe", "İstanbul"],
 });
 
@@ -76,30 +77,30 @@ const fiyatTablosu = [
     model: "DQ200",
     tip: "7 ileri kuru kavrama",
     araclar: "Golf 6/7, Polo, A3 8V, Fabia, Leon",
-    orijinal: "24.000 – 28.000",
-    muadil: "18.000 – 22.000",
+    orijinal: "55.000 – 65.000",
+    muadil: "38.000 – 46.000",
     sure: "1 gün",
-    garanti: "12 ay",
+    garanti: "6 ay",
     vurgu: false,
   },
   {
     model: "DQ250",
     tip: "6 ileri ıslak kavrama",
     araclar: "Passat B7/B8, A4, Tiguan, Octavia, Superb",
-    orijinal: "30.000 – 35.000",
-    muadil: "22.000 – 27.000",
+    orijinal: "62.000 – 72.000",
+    muadil: "46.000 – 54.000",
     sure: "1–2 gün",
-    garanti: "12 ay",
+    garanti: "6 ay",
     vurgu: true,
   },
   {
     model: "DQ200 + Volant",
     tip: "Kavrama + çift kütleli volan",
     araclar: "Volant hasarı varsa eklenir",
-    orijinal: "38.000 – 48.000",
-    muadil: "28.000 – 36.000",
+    orijinal: "80.000 – 95.000",
+    muadil: "62.000 – 72.000",
     sure: "1–2 gün",
-    garanti: "12 ay",
+    garanti: "6 ay",
     vurgu: false,
   },
 ];
@@ -121,72 +122,85 @@ export default function DsgKavramaDegisimiPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-[#070B11]">
+      <main className="min-h-screen bg-graphite-base">
 
         {/* ── HERO — fiyat ilk ekranda ─────────────────────────────────── */}
-        <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
+        <section className="bg-graphite-surface text-text-primary px-4 pt-16 pb-12 border-b border-white/5">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
-              <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
+            <nav className="font-jetbrains text-xs text-iron-light mb-6 flex items-center gap-2">
+              <Link href="/" className="hover:text-text-secondary transition-colors">Ana Sayfa</Link>
               <span>/</span>
-              <a href="/hizmetler" className="hover:text-zinc-300 transition-colors">Hizmetler</a>
+              <a href="/hizmetler" className="hover:text-text-secondary transition-colors">Hizmetler</a>
               <span>/</span>
-              <span className="text-zinc-400">DSG Kavrama Değişimi</span>
+              <span className="text-text-secondary">DSG Kavrama Değişimi</span>
             </nav>
 
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-amber-400 mb-4">
+            <span className="font-jetbrains inline-block text-[10px] font-medium tracking-[0.22em] uppercase text-brass mb-4">
               Hizmet — Nisan 2026 Güncel Fiyat
             </span>
 
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+            <h1 className="font-saira text-3xl sm:text-4xl font-semibold text-text-primary leading-tight mb-4">
               DSG Kavrama Değişimi Fiyatı 2026
             </h1>
 
             {/* Fiyat aralığı — ilk ekranda net görünsün */}
             <div className="flex items-baseline gap-3 mb-4">
-              <span className="text-4xl font-bold text-amber-400">18.000</span>
-              <span className="text-xl text-zinc-400">–</span>
-              <span className="text-4xl font-bold text-amber-400">35.000</span>
-              <span className="text-lg text-zinc-400">TL</span>
+              <span className="text-4xl font-bold text-brass">55.000</span>
+              <span className="text-xl text-text-secondary">–</span>
+              <span className="text-4xl font-bold text-brass">72.000</span>
+              <span className="font-saira text-lg text-text-secondary">TL</span>
             </div>
-            <p className="text-zinc-400 text-sm mb-8">
+            <p className="font-saira text-text-secondary text-sm mb-8">
               Model ve parça seçimine göre değişir. Ücretsiz ön tanı sonrası
               net fiyat verilir — sürpriz fatura yok.
             </p>
 
             {/* Hızlı özellikler */}
-            <div className="grid grid-cols-3 gap-3 border-t border-zinc-800 pt-8">
+            <div className="grid grid-cols-3 gap-3 border-t border-border-hairline pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">1–2 gün</div>
-                <div className="text-xs text-zinc-400 mt-1">Teslim süresi</div>
+                <div className="font-jetbrains text-2xl font-bold text-brass">1–2 gün</div>
+                <div className="font-jetbrains text-xs text-iron-light mt-1">Teslim süresi</div>
               </div>
-              <div className="text-center border-x border-zinc-800">
-                <div className="text-2xl font-bold text-amber-400">12 ay</div>
-                <div className="text-xs text-zinc-400 mt-1">Garanti</div>
+              <div className="text-center border-x border-border-hairline">
+                <div className="font-jetbrains text-2xl font-bold text-brass">12 ay</div>
+                <div className="font-jetbrains text-xs text-iron-light mt-1">Garanti</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">Ücretsiz</div>
-                <div className="text-xs text-zinc-400 mt-1">Ön tanı</div>
+                <div className="font-jetbrains text-2xl font-bold text-brass">Ücretsiz</div>
+                <div className="font-jetbrains text-xs text-iron-light mt-1">Ön tanı</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── GÜVEN ŞERİDİ ─────────────────────────────────────────────── */}
+        {/* ── GÖRSEL — Atmosfer / kanıt katmanı ───────────────────────── */}
+        <div className="mt-8 relative w-full h-72 sm:h-96 overflow-hidden bg-graphite-elevated">
+          <Image
+            src="/images/part2/Screenshot_85.webp"
+            alt="DSG kavrama diski ve piston montajı — Eren Servis Bostancı DQ200 kavrama değişimi"
+            fill
+            className="object-cover brightness-[0.73] saturate-[0.6]"
+            style={{ objectPosition: '50% 30%' }}
+            sizes="100vw"
+            priority
+          />
+          <div aria-hidden="true" className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.25))' }} />
+        </div>
 
         {/* ── STICKY CTA — mobilde her zaman görünür ───────────────────── */}
-        <div className="sticky top-0 z-40 bg-[#070B11] border-b border-white/8
+        <div className="sticky top-0 z-40 bg-graphite-base border-b border-border-hairline
                         px-4 py-3 flex items-center justify-between
                         shadow-sm sm:hidden">
           <div>
-            <div className="text-xs text-slate-500">DSG Kavrama Değişimi</div>
-            <div className="text-sm font-bold text-slate-100">18.000 – 35.000 TL</div>
+            <div className="font-jetbrains text-xs text-iron-light">DSG Kavrama Değişimi</div>
+            <div className="font-saira text-sm font-semibold text-text-primary">55.000 – 72.000 TL</div>
           </div>
           <a
             href="tel:+905327153751"
-            className="bg-amber-400 text-zinc-950 text-sm font-semibold
-                       px-4 py-2 rounded-lg"
+            className="bg-brass-bright text-graphite-base font-saira font-semibold
+                       text-sm px-4 py-2 rounded-full hover:bg-brass transition-colors"
           >
             Ara
           </a>
@@ -194,63 +208,63 @@ export default function DsgKavramaDegisimiPage() {
 
         {/* ── FİYAT TABLOSU ────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-2">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
             Model Bazlı Fiyat Tablosu
           </h2>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="font-saira text-text-secondary text-sm mb-8">
             Orijinal ve muadil parça seçeneği mevcuttur.
-            Her ikisi de 12 ay garanti kapsamındadır.
+            Her ikisi de 6 ay garanti kapsamındadır.
           </p>
 
           <div className="space-y-4">
             {fiyatTablosu.map((row) => (
               <div
                 key={row.model}
-                className={`rounded-xl border overflow-hidden ${
+                className={`rounded-xl border overflow-hidden bg-graphite-elevated ${
                   row.vurgu
-                    ? "border-amber-300 ring-1 ring-amber-200"
-                    : "border-white/8"
+                    ? "border-border-brass ring-1 ring-brass/20"
+                    : "border-border-hairline"
                 }`}
               >
                 {row.vurgu && (
-                  <div className="bg-amber-400 text-zinc-950 text-xs font-bold
-                                  text-center py-1.5 uppercase tracking-wider">
+                  <div className="bg-brass-bright text-graphite-base font-jetbrains text-[10px] font-bold
+                                  text-center py-1.5 uppercase tracking-[0.22em]">
                     En çok sorulan
                   </div>
                 )}
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
-                      <div className="font-bold text-slate-100 text-base">
+                      <div className="font-saira font-semibold text-base text-text-primary">
                         {row.model}
                       </div>
-                      <div className="text-xs text-slate-500 mt-0.5">{row.tip}</div>
-                      <div className="text-xs text-zinc-400 mt-1">{row.araclar}</div>
+                      <div className="font-jetbrains text-xs text-iron-light mt-0.5">{row.tip}</div>
+                      <div className="font-saira text-xs text-text-secondary mt-1">{row.araclar}</div>
                     </div>
                     <div className="text-right shrink-0">
-                      <div className="text-xs text-zinc-400 mb-0.5">Muadil</div>
-                      <div className="text-base font-bold text-slate-100">
+                      <div className="font-jetbrains text-xs text-iron-light mb-0.5">Muadil</div>
+                      <div className="font-saira font-semibold text-base text-text-primary">
                         {row.muadil} TL
                       </div>
                     </div>
                   </div>
 
-                  <div className="border-t border-white/8 pt-4 grid grid-cols-3 gap-3 text-center">
+                  <div className="border-t border-border-hairline pt-4 grid grid-cols-3 gap-3 text-center">
                     <div>
-                      <div className="text-xs text-zinc-400">Orijinal</div>
-                      <div className="text-sm font-semibold text-slate-300 mt-0.5">
+                      <div className="font-jetbrains text-xs text-iron-light">Orijinal</div>
+                      <div className="font-saira text-sm font-semibold text-text-secondary mt-0.5">
                         {row.orijinal} TL
                       </div>
                     </div>
-                    <div className="border-x border-white/8">
-                      <div className="text-xs text-zinc-400">Süre</div>
-                      <div className="text-sm font-semibold text-slate-300 mt-0.5">
+                    <div className="border-x border-border-hairline">
+                      <div className="font-jetbrains text-xs text-iron-light">Süre</div>
+                      <div className="font-saira text-sm font-semibold text-text-secondary mt-0.5">
                         {row.sure}
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs text-zinc-400">Garanti</div>
-                      <div className="text-sm font-semibold text-amber-600 mt-0.5">
+                      <div className="font-jetbrains text-xs text-iron-light">Garanti</div>
+                      <div className="font-saira text-sm font-semibold text-brass mt-0.5">
                         {row.garanti}
                       </div>
                     </div>
@@ -260,7 +274,7 @@ export default function DsgKavramaDegisimiPage() {
             ))}
           </div>
 
-          <p className="text-xs text-zinc-400 mt-4 leading-relaxed">
+          <p className="font-jetbrains text-xs text-iron-light mt-4 leading-relaxed">
             * Fiyatlar Nisan 2026 itibarıyla geçerlidir. Döviz kuru ve parça
             temin koşullarına göre değişebilir. Kesin fiyat ücretsiz ön tanı
             sonrası yazılı olarak bildirilir.
@@ -268,9 +282,9 @@ export default function DsgKavramaDegisimiPage() {
         </section>
 
         {/* ── SÜREÇ ────────────────────────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-8">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">
               Nasıl Çalışıyoruz?
             </h2>
 
@@ -301,26 +315,26 @@ export default function DsgKavramaDegisimiPage() {
                   no: "04",
                   baslik: "Test ve teslim",
                   detay:
-                    "İşlem sonrası test sürüşü yapıyoruz. 12 ay garanti belgesiyle " +
+                    "İşlem sonrası test sürüşü yapıyoruz. 6 ay garanti belgesiyle " +
                     "aracınızı teslim ediyoruz.",
                 },
               ].map((adim, i, arr) => (
                 <div key={adim.no} className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-amber-400 text-zinc-950
-                                    text-xs font-bold flex items-center justify-center
+                    <div className="w-8 h-8 rounded-full bg-brass-bright text-graphite-base
+                                    font-jetbrains text-xs font-bold flex items-center justify-center
                                     shrink-0">
                       {adim.no}
                     </div>
                     {i < arr.length - 1 && (
-                      <div className="w-px flex-1 bg-slate-800 my-1" />
+                      <div className="w-px flex-1 bg-white/10 my-1" />
                     )}
                   </div>
                   <div className={`pb-8 ${i === arr.length - 1 ? "pb-0" : ""}`}>
-                    <div className="font-semibold text-slate-100 text-sm mb-1">
+                    <div className="font-saira font-semibold text-text-primary text-sm mb-1">
                       {adim.baslik}
                     </div>
-                    <div className="text-sm text-slate-400 leading-relaxed">
+                    <div className="font-saira text-sm text-text-secondary leading-relaxed">
                       {adim.detay}
                     </div>
                   </div>
@@ -332,16 +346,16 @@ export default function DsgKavramaDegisimiPage() {
 
         {/* ── NE DEĞİŞTİRİLİR ──────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-2">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
             Kavrama Değişiminde Neler Yapılır?
           </h2>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="font-saira text-text-secondary text-sm mb-8">
             Sadece aşınan parçayı değiştiriyoruz — gerekmeyeni değil.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <div className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">
+              <div className="font-jetbrains text-xs font-bold text-iron-light uppercase tracking-wider mb-3">
                 Her değişimde yapılanlar
               </div>
               <ul className="space-y-2">
@@ -350,9 +364,9 @@ export default function DsgKavramaDegisimiPage() {
                   "Kavrama adaptasyon sıfırlama",
                   "Hata kodları temizleme",
                   "Test sürüşü ve geçiş kalite kontrolü",
-                  "12 ay garanti belgesi",
+                  "6 ay garanti belgesi",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
+                  <li key={item} className="flex items-start gap-2 font-saira text-sm text-text-primary">
                     <span className="text-green-500 mt-0.5 shrink-0 font-bold">✓</span>
                     {item}
                   </li>
@@ -361,7 +375,7 @@ export default function DsgKavramaDegisimiPage() {
             </div>
 
             <div>
-              <div className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">
+              <div className="font-jetbrains text-xs font-bold text-iron-light uppercase tracking-wider mb-3">
                 Tanı sonucu gerekliyse eklenenler
               </div>
               <ul className="space-y-2">
@@ -371,8 +385,8 @@ export default function DsgKavramaDegisimiPage() {
                   "Basınç tüpü değişimi",
                   "DSG şanzıman yağı değişimi",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-slate-500">
-                    <span className="text-zinc-300 mt-0.5 shrink-0">+</span>
+                  <li key={item} className="flex items-start gap-2 font-saira text-sm text-text-secondary">
+                    <span className="text-text-secondary mt-0.5 shrink-0">+</span>
                     {item}
                   </li>
                 ))}
@@ -382,24 +396,25 @@ export default function DsgKavramaDegisimiPage() {
         </section>
 
         {/* ── ERKEN VS GEÇ ─────────────────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">
               Ne Kadar Erken, O Kadar Az Masraf
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-[#070B11] border border-green-200 rounded-xl p-5">
+              {/* Preserve semantic green/red comparison borders */}
+              <div className="bg-graphite-elevated border border-green-200 rounded-xl p-5">
                 <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-3">
                   Erken müdahale
                 </div>
                 <div className="text-2xl font-bold text-green-600 mb-1">
-                  18–28K TL
+                  55–65K TL
                 </div>
-                <div className="text-sm text-slate-400 mb-4">
+                <div className="font-saira text-sm text-text-secondary mb-4">
                   Sadece kavrama seti
                 </div>
-                <ul className="text-sm text-slate-400 space-y-1.5">
+                <ul className="font-saira text-sm text-text-secondary space-y-1.5">
                   <li className="flex items-center gap-2">
                     <span className="text-green-500 font-bold">✓</span>
                     Volant sağlam
@@ -415,17 +430,17 @@ export default function DsgKavramaDegisimiPage() {
                 </ul>
               </div>
 
-              <div className="bg-[#070B11] border border-red-200 rounded-xl p-5">
+              <div className="bg-graphite-elevated border border-red-200 rounded-xl p-5">
                 <div className="text-xs font-bold text-red-600 uppercase tracking-wider mb-3">
                   Geç müdahale
                 </div>
                 <div className="text-2xl font-bold text-red-600 mb-1">
-                  45–80K TL
+                  80–130K TL
                 </div>
-                <div className="text-sm text-slate-400 mb-4">
+                <div className="font-saira text-sm text-text-secondary mb-4">
                   Kavrama + volant + mekatronik
                 </div>
-                <ul className="text-sm text-slate-400 space-y-1.5">
+                <ul className="font-saira text-sm text-text-secondary space-y-1.5">
                   <li className="flex items-center gap-2">
                     <span className="text-red-400">✗</span>
                     Volant hasar görmüş
@@ -446,36 +461,36 @@ export default function DsgKavramaDegisimiPage() {
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-8">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">
             Sık Sorulan Sorular
           </h2>
           <TransmissionFaq slug="dsg-kavrama-degisimi" />
         </section>
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-10">
+        <section className="bg-graphite-surface px-4 py-10">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-base font-semibold text-slate-100 mb-4">
+            <h2 className="font-saira font-semibold text-text-primary mb-4">
               Karar vermeden önce
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
               <a
                 href="/rehber/dsg-kavrama-ariza-belirtileri"
-                className="block bg-[#070B11] border border-white/8 rounded-xl p-4
-                           hover:border-amber-300 hover:bg-amber-50 transition-all group"
+                className="block bg-graphite-elevated border border-border-hairline rounded-xl p-4
+                           hover:border-border-brass transition-all group"
               >
-                <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-                <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+                <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Rehber</div>
+                <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                   Kavrama arızası belirtileri →
                 </div>
               </a>
               <a
                 href="/rehber/dsg-vuruntu-semptomlari"
-                className="block bg-[#070B11] border border-white/8 rounded-xl p-4
-                           hover:border-amber-300 hover:bg-amber-50 transition-all group"
+                className="block bg-graphite-elevated border border-border-hairline rounded-xl p-4
+                           hover:border-border-brass transition-all group"
               >
-                <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-                <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+                <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Rehber</div>
+                <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                   DSG vuruntu neden olur? →
                 </div>
               </a>
@@ -485,45 +500,45 @@ export default function DsgKavramaDegisimiPage() {
 
         {/* ── ANA CTA ──────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
-          <div className="bg-zinc-950 text-white rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-3 text-center">
+          <div className="bg-graphite-elevated border border-border-subtle text-text-primary rounded-2xl p-8">
+            <h2 className="font-saira text-2xl font-semibold mb-3 text-center text-text-primary">
               Fiyat almak için getirin
             </h2>
-            <p className="text-zinc-300 text-sm mb-6 leading-relaxed text-center">
+            <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed text-center">
               Önce ücretsiz ön tanı, sonra net fiyat. Onay vermeden
               hiçbir işlem başlamaz.
             </p>
 
             {/* Öne çıkan bilgiler */}
             <div className="grid grid-cols-3 gap-3 mb-6 text-center">
-              <div className="bg-zinc-900 rounded-lg p-3">
-                <div className="text-amber-400 font-bold text-sm">Ücretsiz</div>
-                <div className="text-zinc-400 text-xs mt-0.5">Ön tanı</div>
+              <div className="bg-graphite-surface border border-border-hairline rounded-lg p-3">
+                <div className="font-jetbrains text-sm font-bold text-brass">Ücretsiz</div>
+                <div className="font-jetbrains text-xs text-iron-light mt-0.5">Ön tanı</div>
               </div>
-              <div className="bg-zinc-900 rounded-lg p-3">
-                <div className="text-amber-400 font-bold text-sm">1–2 gün</div>
-                <div className="text-zinc-400 text-xs mt-0.5">Teslim</div>
+              <div className="bg-graphite-surface border border-border-hairline rounded-lg p-3">
+                <div className="font-jetbrains text-sm font-bold text-brass">1–2 gün</div>
+                <div className="font-jetbrains text-xs text-iron-light mt-0.5">Teslim</div>
               </div>
-              <div className="bg-zinc-900 rounded-lg p-3">
-                <div className="text-amber-400 font-bold text-sm">12 ay</div>
-                <div className="text-zinc-400 text-xs mt-0.5">Garanti</div>
+              <div className="bg-graphite-surface border border-border-hairline rounded-lg p-3">
+                <div className="font-jetbrains text-sm font-bold text-brass">12 ay</div>
+                <div className="font-jetbrains text-xs text-iron-light mt-0.5">Garanti</div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+905327153751"
-                className="inline-block bg-amber-400 text-zinc-950 font-semibold
-                           px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors
+                className="inline-block bg-brass-bright text-graphite-base font-saira font-semibold
+                           px-6 py-3 rounded-full hover:bg-brass transition-colors
                            text-center"
               >
                 0532 715 37 51 — Hemen Ara
               </a>
               <a
                 href="/iletisim"
-                className="inline-block border border-zinc-700 text-zinc-300
-                           font-medium px-6 py-3 rounded-xl hover:border-zinc-500
-                           hover:text-white transition-colors text-center"
+                className="inline-block border border-border-subtle text-text-secondary
+                           font-saira px-6 py-3 rounded-full hover:border-brass
+                           hover:text-text-primary transition-colors text-center"
               >
                 Mesaj gönder →
               </a>
@@ -533,7 +548,7 @@ export default function DsgKavramaDegisimiPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-slate-100 mb-6">
+          <h2 className="font-saira text-xl font-semibold text-text-primary mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

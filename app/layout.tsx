@@ -70,7 +70,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Eren Servis | Bostancı Otomatik Şanzıman Servisi",
   description:
-    "Bostancı'da DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. 15 yılı aşkın deneyim, orijinal parça, 2 yıl garanti.",
+    "Bostancı'da DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. 15 yılı aşkın deneyim, orijinal parça, 6 ay garanti.",
   keywords: [
     "otomatik şanzıman tamiri bostancı",
     "dsg tamiri bostancı",
@@ -142,7 +142,8 @@ export default function RootLayout({
         />
         <ScrollProgress />
         <Header />
-        {children}
+        <div className="pt-24">
+        {children}</div>
         <Footer />
         <MobileCtaBar />
         <FloatingCTA />

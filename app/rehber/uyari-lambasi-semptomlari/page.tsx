@@ -190,21 +190,21 @@ export default function UyariLambasiSemptomlariPage() {
         dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
       />
 
-      <main className="min-h-screen bg-[#070B11]">
+      <main className="min-h-screen bg-graphite-base">
 
         {/* ── HERO — kırmızı ton, acil his ─────────────────────────────── */}
-        <section className="bg-zinc-950 text-white px-4 pt-16 pb-12">
+        <section className="bg-graphite-base px-4 pt-28 pb-12">
           <div className="max-w-2xl mx-auto">
 
-            <nav className="text-xs text-slate-500 mb-6 flex items-center gap-2">
-              <Link href="/" className="hover:text-zinc-300 transition-colors">Ana Sayfa</Link>
+            <nav className="text-xs text-text-secondary mb-6 flex items-center gap-2">
+              <Link href="/" className="hover:text-text-primary transition-colors">Ana Sayfa</Link>
               <span>/</span>
-              <a href="/rehber" className="hover:text-zinc-300 transition-colors">Rehber</a>
+              <a href="/rehber" className="hover:text-text-primary transition-colors">Rehber</a>
               <span>/</span>
-              <span className="text-zinc-400">DSG Uyarı Lambası</span>
+              <span className="text-text-secondary">DSG Uyarı Lambası</span>
             </nav>
 
-            {/* Acil uyarı bandı */}
+            {/* Acil uyarı bandı — PRESERVED semantic emergency */}
             <div className="inline-flex items-center gap-2 bg-red-900/40 border border-red-700/50 rounded-lg px-3 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
               <span className="text-xs text-red-300 font-medium">
@@ -212,50 +212,48 @@ export default function UyariLambasiSemptomlariPage() {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+            <h1 className="font-saira text-3xl sm:text-4xl font-semibold text-text-primary leading-tight mb-4">
               DSG Uyarı Lambası Yandı — Ne Yapmalısınız?
             </h1>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-8">
+            <p className="font-saira text-text-secondary text-lg leading-relaxed mb-8">
               Anahtar işareti, P sembolü veya vites göstergesi yanıp sönüyorsa
               her biri farklı anlam taşır. Hangi lamba yandığını bulun,
               ne yapacağınızı öğrenin.
             </p>
 
-            {/* Hızlı özet */}
-            <div className="grid grid-cols-3 gap-3 border-t border-zinc-800 pt-8">
+            <div className="grid grid-cols-3 gap-3 border-t border-border-hairline pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">4</div>
-                <div className="text-xs text-zinc-400 mt-1">Uyarı tipi</div>
+                <div className="font-saira text-2xl font-semibold text-brass">4</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Uyarı tipi</div>
               </div>
-              <div className="text-center border-x border-zinc-800">
-                <div className="text-2xl font-bold text-red-400">1</div>
-                <div className="text-xs text-zinc-400 mt-1">Acil senaryo</div>
+              <div className="text-center border-x border-border-hairline">
+                {/* PRESERVED — semantic emergency red stat */}
+                <div className="font-saira text-2xl font-semibold text-red-400">1</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Acil senaryo</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-400">Ücretsiz</div>
-                <div className="text-xs text-zinc-400 mt-1">Hata kodu okuma</div>
+                <div className="font-saira text-2xl font-semibold text-brass">Ücretsiz</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Hata kodu okuma</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── GÜVEN ŞERİDİ ─────────────────────────────────────────────── */}
-
         {/* ── HIZLI CEVAP BLOĞU ────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-10">
-          <div className="border border-white/8 bg-[#0C1219] rounded-xl p-5 mb-6">
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
+          <div className="border border-border-hairline bg-graphite-surface rounded-xl p-5 mb-6">
+            <div className="font-jetbrains text-xs text-iron-light uppercase tracking-wider mb-3">
               Kısa cevap
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="font-saira text-sm text-text-secondary leading-relaxed">
               DSG uyarı lambaları mekatronik kartın kaydettiği hata kodlarını
-              tetikler. <strong>Lamba yandığında araç sürülebilir olsa da
+              tetikler. <strong className="text-text-primary">Lamba yandığında araç sürülebilir olsa da
               hata kodu okutulmadan nedenini söylemek mümkün değil.</strong>{" "}
               Araç hareket etmiyorsa çekici — hareket ediyorsa aynı gün servis.
             </p>
           </div>
 
-          {/* Acil durum kutusu */}
+          {/* Acil durum kutusu — PRESERVED semantic emergency */}
           <div className="border-2 border-red-200 bg-red-50 rounded-xl p-5">
             <div className="flex items-center gap-2 mb-3">
               <span className="w-3 h-3 rounded-full bg-red-500" />
@@ -279,10 +277,10 @@ export default function UyariLambasiSemptomlariPage() {
 
         {/* ── LAMBA KARTLARI ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-100 mb-2">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-2">
             Hangi Lamba Yandı?
           </h2>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="font-saira text-text-secondary text-sm mb-8">
             Sembolü veya rengi tanıyın — yapılacaklar aşağıda.
           </p>
 
@@ -299,9 +297,9 @@ export default function UyariLambasiSemptomlariPage() {
                     <div className="flex items-center gap-3">
                       <div className="flex items-center gap-1.5">
                         <span className={`w-2.5 h-2.5 rounded-full ${stil.nokta}`} />
-                        <span className="text-xs text-slate-500">{l.renk}</span>
+                        <span className="font-jetbrains text-xs text-slate-600">{l.renk}</span>
                       </div>
-                      <h3 className="font-semibold text-sm sm:text-base text-slate-100">
+                      <h3 className="font-saira font-semibold text-sm sm:text-base text-slate-800">
                         {l.baslik}
                       </h3>
                     </div>
@@ -312,32 +310,32 @@ export default function UyariLambasiSemptomlariPage() {
 
                   {/* Kısa cevap */}
                   <div className="px-5 pb-3">
-                    <p className="text-sm font-medium text-slate-200">{l.kisa}</p>
+                    <p className="font-saira text-sm font-medium text-slate-800">{l.kisa}</p>
                   </div>
 
                   {/* Açıklama */}
                   <div className="px-5 pb-3">
-                    <p className="text-sm text-slate-400 leading-relaxed">
+                    <p className="font-saira text-sm text-slate-700 leading-relaxed">
                       {l.aciklama}
                     </p>
                   </div>
 
                   {/* Yapılacaklar */}
                   <div className="px-5 pb-5">
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">
+                    <div className="font-jetbrains text-xs text-slate-600 uppercase tracking-wide mb-2">
                       Ne yapmalısınız?
                     </div>
                     <ol className="space-y-1.5">
                       {l.yapilacak.map((adim, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                          <span className="shrink-0 font-mono text-xs font-bold opacity-40 mt-0.5">
+                        <li key={i} className="flex items-start gap-2 font-saira text-sm text-slate-700">
+                          <span className="shrink-0 font-jetbrains text-xs font-bold opacity-40 mt-0.5">
                             {i + 1}.
                           </span>
                           {adim}
                         </li>
                       ))}
                     </ol>
-                    <div className="mt-3 text-xs text-zinc-400">
+                    <div className="mt-3 font-jetbrains text-xs text-slate-600">
                       Etkilenen araçlar: {l.araclar}
                     </div>
                   </div>
@@ -348,18 +346,18 @@ export default function UyariLambasiSemptomlariPage() {
         </section>
 
         {/* ── HATA KODU OLMADAN YORUM YAPILMAZ ─────────────────────────── */}
-        <section className="bg-[#0C1219] px-4 py-12">
+        <section className="bg-graphite-surface px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">
               Hata Kodu Okutulmadan Parça Değiştirmeyin
             </h2>
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="font-saira text-text-secondary text-sm leading-relaxed mb-4">
               DSG uyarı lambası onlarca farklı hata kodu tarafından
               tetiklenebilir. Aynı P lambası bir gün sadece sensör
               temizliğiyle geçerken başka bir araçta mekatronik kart
               değişimi gerektirebilir.
             </p>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <p className="font-saira text-text-secondary text-sm leading-relaxed mb-6">
               &quot;DSG&apos;niz bozulmuş, mekatronik kart lazım&quot; diyen ama hata kodu
               okumayan servise dikkat edin. Eren Servis&apos;te her kontrol
               önce hata kodu okumasıyla başlar — tanı olmadan teklif verilmez.
@@ -374,15 +372,15 @@ export default function UyariLambasiSemptomlariPage() {
               ].map((adim) => (
                 <div
                   key={adim.no}
-                  className="bg-[#070B11] border border-white/8 rounded-xl p-4"
+                  className="bg-graphite-base border border-border-hairline rounded-xl p-4"
                 >
-                  <div className="text-2xl font-bold text-zinc-200 mb-1">
+                  <div className="font-saira text-2xl font-semibold text-text-primary mb-1">
                     {adim.no}
                   </div>
-                  <div className="text-xs font-semibold text-slate-200 mb-0.5">
+                  <div className="font-saira text-xs font-semibold text-text-primary mb-0.5">
                     {adim.baslik}
                   </div>
-                  <div className="text-xs text-amber-600 font-medium">
+                  <div className="font-saira text-xs text-brass font-medium">
                     {adim.alt}
                   </div>
                 </div>
@@ -392,9 +390,9 @@ export default function UyariLambasiSemptomlariPage() {
         </section>
 
         {/* ── SSS ──────────────────────────────────────────────────────── */}
-        <section className="bg-[#070B11] px-4 py-12">
+        <section className="bg-graphite-base px-4 py-12">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-100 mb-8">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8">
               Sık Sorulan Sorular
             </h2>
             <TransmissionFaq slug="uyari-lambasi-semptomlari" />
@@ -403,47 +401,43 @@ export default function UyariLambasiSemptomlariPage() {
 
         {/* ── İÇ LİNKLER ──────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-10">
-          <h2 className="text-base font-semibold text-slate-100 mb-4">
+          <h2 className="font-saira text-base font-semibold text-text-primary mb-4">
             İlgili Rehberler
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             <a
               href="/rehber/dsg-kavrama-ariza-belirtileri"
-              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300
-                         hover:bg-amber-50 transition-all group"
+              className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
-              <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Rehber</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Kavrama Arızası Belirtileri →
               </div>
             </a>
             <a
               href="/rehber/dsg-vuruntu-semptomlari"
-              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300
-                         hover:bg-amber-50 transition-all group"
+              className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
-              <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Rehber</div>
-              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Rehber</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Vuruntu Neden Olur? →
               </div>
             </a>
             <a
               href="/hizmetler/dsg-kavrama-degisimi"
-              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300
-                         hover:bg-amber-50 transition-all group"
+              className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
-              <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">Hizmet</div>
-              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Hizmet</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Kavrama Değişimi Fiyatı 2026 →
               </div>
             </a>
             <a
               href="/iletisim"
-              className="block border border-white/8 rounded-xl p-4 hover:border-amber-300
-                         hover:bg-amber-50 transition-all group"
+              className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
-              <div className="text-xs text-zinc-400 mb-1 uppercase tracking-wide">İletişim</div>
-              <div className="text-sm font-semibold text-slate-200 group-hover:text-amber-700 transition-colors">
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">İletişim</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 Ücretsiz Ön Tanı İçin Ara →
               </div>
             </a>
@@ -452,26 +446,26 @@ export default function UyariLambasiSemptomlariPage() {
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <div className="bg-zinc-950 text-white rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-3">
+          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-8 text-center">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">
               Lamba yandı, ne yapacağınızı bilmiyorsunuz?
             </h2>
-            <p className="text-zinc-300 text-sm mb-6 leading-relaxed">
+            <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed">
               Getirin, hata kodunu ücretsiz okuyalım. Nedenini net söyleriz —
               onayınız olmadan hiçbir işlem yapılmaz.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+905327153751"
-                className="inline-block bg-amber-400 text-zinc-950 font-semibold
-                           px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors"
+                className="inline-block bg-brass-bright text-graphite-base font-saira font-semibold
+                           px-6 py-3 rounded-full hover:bg-brass transition-colors"
               >
                 0532 715 37 51
               </a>
               <a
                 href="/iletisim"
-                className="inline-block border border-zinc-700 text-zinc-300 font-medium
-                           px-6 py-3 rounded-xl hover:border-zinc-500 hover:text-white
+                className="inline-block border border-border-subtle text-text-secondary font-saira font-medium
+                           px-6 py-3 rounded-full hover:border-brass hover:text-text-primary
                            transition-colors"
               >
                 Mesaj gönder →
@@ -482,7 +476,7 @@ export default function UyariLambasiSemptomlariPage() {
 
         {/* ── İLETİŞİM FORMU ───────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-16">
-          <h2 className="text-xl font-bold text-slate-100 mb-6">
+          <h2 className="font-saira text-xl font-semibold text-text-primary mb-6">
             Randevu veya Soru
           </h2>
           <ContactForm />

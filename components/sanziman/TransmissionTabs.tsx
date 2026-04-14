@@ -253,7 +253,7 @@ export default function TransmissionTabs({ data }: { data: TransmissionType }) {
                   'Şanzıman demontajı ve görsel muayene',
                   'Hasar tespiti ve yazılı fiyat teklifi',
                   'Orijinal veya OEM yedek parça ile onarım',
-                  'Test sürüşü ve 2 yıl garanti belgesi',
+                  'Test sürüşü ve 6 ay garanti belgesi',
                 ].map((step, i) => (
                   <li key={step} className="flex items-start gap-3 text-sm text-fg-soft">
                     <span className="flex items-center justify-center w-5 h-5 rounded-full bg-accent/20 text-accent text-[11px] font-bold shrink-0 mt-0.5">

@@ -2,11 +2,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'gold-action': 'var(--color-gold-action)',
-        'gold-info': 'var(--color-gold-info)',
-        'risk-high': 'var(--color-risk-high)',
-        'risk-medium': 'var(--color-risk-medium)',
-        'risk-low': 'var(--color-risk-low)',
         dark: {
           50: '#0F0F10',
           100: '#131313',
@@ -31,14 +26,7 @@ module.exports = {
           dim:     'var(--color-brass-dim)',
         },
       },
-      boxShadow: {
-        'glow-sky': '0 0 32px rgba(56, 189, 248, 0.3)',
-        'glow-sky-strong': '0 0 44px rgba(56, 189, 248, 0.45)',
-        'panel': '0 0 80px rgba(56, 189, 248, 0.10), 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
-        'cta': '0 0 0 1px rgba(56, 189, 248, 0.2), 0 0 32px rgba(56, 189, 248, 0.3), 0 8px 24px rgba(2, 132, 199, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
-        'cta-hover': '0 0 0 1px rgba(56, 189, 248, 0.3), 0 0 44px rgba(56, 189, 248, 0.45), 0 12px 30px rgba(2, 132, 199, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
-      },
-      backdropBlur: {
+backdropBlur: {
         'panel': '24px',
         'card': '20px',
         'nav': '12px',

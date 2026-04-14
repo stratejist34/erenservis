@@ -19,6 +19,22 @@ export const metadata: Metadata = {
     siteName: 'Eren Servis',
     locale: 'tr_TR',
     type: 'website',
+    images: [
+      {
+        url: 'https://erenservis.net/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Eren Otomatik Şanzıman Servisi — Bostancı',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bostancı Otomatik Şanzıman Tamiri | Eren Servis',
+    description:
+      'Bostancı\'nın DSG ve kavrama uzmanı. DQ200, DQ250, DQ381 mekatronik tamiri, ücretsiz ön tanı.',
+    images: ['https://erenservis.net/og-image.jpg'],
   },
 };
 

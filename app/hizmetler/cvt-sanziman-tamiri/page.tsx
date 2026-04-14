@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'cvt yağ değişimi',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/cvt-sanziman-tamiri/',
+    canonical: 'https://erenservis.vercel.app/hizmetler/cvt-sanziman-tamiri/',
   },
 };
 

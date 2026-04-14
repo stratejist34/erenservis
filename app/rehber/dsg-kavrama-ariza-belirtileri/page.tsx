@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "Aracınız vuruntu yapıyor, geç geçiş mi yapıyor? DSG kavrama arızasının " +
       "7 kritik belirtisini öğrenin. Eren Servis Bostancı'da ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/dsg-kavrama-ariza-belirtileri",
+    url: "https://erenservis.vercel.app/rehber/dsg-kavrama-ariza-belirtileri",
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/images/og/dsg-kavrama-ariza.jpg",
+        url: "https://erenservis.vercel.app/images/og/dsg-kavrama-ariza.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Kavrama Arızası Belirtileri",
@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/dsg-kavrama-ariza-belirtileri",
+    canonical: "https://erenservis.vercel.app/rehber/dsg-kavrama-ariza-belirtileri",
   },
 };
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
-const PAGE_URL = "https://erenservis.net/rehber/dsg-kavrama-ariza-belirtileri";
+const PAGE_URL = "https://erenservis.vercel.app/rehber/dsg-kavrama-ariza-belirtileri";
 
 const articleSchema = buildArticleSchema({
   title: "DSG Kavrama Arızası Belirtileri: 7 Kritik Uyarı İşareti",
@@ -62,8 +62,8 @@ const faqItems = TRANSMISSION_FAQS["dsg-kavrama-ariza-belirtileri"] ?? [];
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://erenservis.vercel.app" },
+  { name: "Rehber", url: "https://erenservis.vercel.app/rehber" },
   { name: "DSG Kavrama Arızası Belirtileri", url: PAGE_URL },
 ]);
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'dsg vuruntu çözümü',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-vuruntu-semptomlari/',
+    canonical: 'https://erenservis.vercel.app/blog/dsg-vuruntu-semptomlari/',
   },
 };
 

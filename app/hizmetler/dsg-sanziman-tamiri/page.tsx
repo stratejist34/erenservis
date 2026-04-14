@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'dsg kart tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+    canonical: 'https://erenservis.vercel.app/hizmetler/dsg-sanziman-tamiri/',
   },
 };
 

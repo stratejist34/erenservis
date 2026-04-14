@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Otomatik şanzıman bakımı, DSG tamiri ve CVT hakkında uzman ipuçları ve rehber yazılar.',
   alternates: {
-    canonical: 'https://erenservis.net/blog/',
+    canonical: 'https://erenservis.vercel.app/blog/',
   },
 };
 

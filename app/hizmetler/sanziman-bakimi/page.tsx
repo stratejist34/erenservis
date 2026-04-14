@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'şanzıman periyodik bakım',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+    canonical: 'https://erenservis.vercel.app/hizmetler/sanziman-bakimi/',
   },
 };
 

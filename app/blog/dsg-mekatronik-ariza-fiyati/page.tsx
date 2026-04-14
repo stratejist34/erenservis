@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'dsg şanzıman beyin fiyatı',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-mekatronik-ariza-fiyati/',
+    canonical: 'https://erenservis.vercel.app/blog/dsg-mekatronik-ariza-fiyati/',
   },
 };
 
@@ -56,9 +56,9 @@ export default function DSGMekatronikArızaFiyatiPage() {
     headline: 'DSG Mekatronik Arıza Fiyatı 2026: Tamir mi, Değişim mi?',
     description: 'DQ200 ve DQ250 mekatronik arıza fiyatları 2026 güncel listesi. Kart tamiri, hidrolik ünite revizyonu ve güçlendirilmiş basınç tüpü maliyetleri.',
     datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/dsg-mekatronik-ariza-fiyati/' },
+    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.vercel.app/blog/dsg-mekatronik-ariza-fiyati/' },
   };
 
   const faqSchema = faqItems.length > 0 ? {

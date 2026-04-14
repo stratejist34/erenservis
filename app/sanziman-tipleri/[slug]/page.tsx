@@ -47,12 +47,12 @@ export async function generateMetadata({
     title: data.metaTitle,
     description: data.metaDescription,
     alternates: {
-      canonical: `https://www.erenservis.net/sanziman-tipleri/${data.slug}/`,
+      canonical: `https://www.erenservis.vercel.app/sanziman-tipleri/${data.slug}/`,
     },
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,
-      url: `https://www.erenservis.net/sanziman-tipleri/${data.slug}/`,
+      url: `https://www.erenservis.vercel.app/sanziman-tipleri/${data.slug}/`,
     },
   };
 }

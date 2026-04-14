@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "Solenoid valf arızasının 7 kritik belirtisi. " +
       "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+    url: "https://erenservis.vercel.app/rehber/solenoid-valf-ariza-belirtileri",
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/images/og/solenoid-valf-ariza.jpg",
+        url: "https://erenservis.vercel.app/images/og/solenoid-valf-ariza.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Solenoid Valf Arıza Belirtileri",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+    canonical: "https://erenservis.vercel.app/rehber/solenoid-valf-ariza-belirtileri",
   },
 };
 
@@ -56,18 +56,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzımanda solenoid valf arızasının belirtileri, nedenleri ve " +
     "tamir vs. değişim kararı için kapsamlı rehber.",
-  url: "https://erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+  url: "https://erenservis.vercel.app/rehber/solenoid-valf-ariza-belirtileri",
   datePublished: "2026-04-10",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://erenservis.vercel.app" },
+  { name: "Rehber", url: "https://erenservis.vercel.app/rehber" },
   {
     name: "Solenoid Valf Arıza Belirtileri",
-    url: "https://erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+    url: "https://erenservis.vercel.app/rehber/solenoid-valf-ariza-belirtileri",
   },
 ]);
 

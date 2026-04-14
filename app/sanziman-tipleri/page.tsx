@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman türlerini karşılaştırın. Kronik arızalar, bakım aralıkları ve Bostancı Eren Servis uzman bilgisi.',
   alternates: {
-    canonical: 'https://www.erenservis.net/sanziman-tipleri/',
+    canonical: 'https://www.erenservis.vercel.app/sanziman-tipleri/',
   },
   openGraph: {
     title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Servis',
     description:
       'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman türleri. Arızalar, bakım ve uzman bilgisi.',
-    url: 'https://www.erenservis.net/sanziman-tipleri/',
+    url: 'https://www.erenservis.vercel.app/sanziman-tipleri/',
   },
 };
 

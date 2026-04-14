@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'dsg şanzıman solenoid fiyatı',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/solenoid-valf-ariza-belirtileri/',
+    canonical: 'https://erenservis.vercel.app/blog/solenoid-valf-ariza-belirtileri/',
   },
 };
 
@@ -64,9 +64,9 @@ export default function SolenoidValfArızaBelirtileriPage() {
     headline: 'Solenoid Valf Arıza Belirtileri | DSG Solenoid Değişimi',
     description: 'DSG solenoid valf arıza belirtileri ve çözümü. DQ200 ve DQ250 solenoid farkları, temizlik mi değişim mi?',
     datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/solenoid-valf-ariza-belirtileri/' },
+    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.vercel.app/blog/solenoid-valf-ariza-belirtileri/' },
   };
 
   const faqSchema = faqItems.length > 0 ? {

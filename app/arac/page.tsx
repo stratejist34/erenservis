@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Volkswagen, BMW, Mercedes, Audi, Renault, Ford, Fiat ve daha fazlası. 20 marka için DSG, ZF 8HP, EDC, PowerShift, Aisin EAT şanzıman tamiri Bostancı.',
   alternates: {
-    canonical: 'https://erenservis.net/arac/',
+    canonical: 'https://erenservis.vercel.app/arac/',
   },
 };
 

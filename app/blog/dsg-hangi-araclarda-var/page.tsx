@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'dsg olan arabalar 2026',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-hangi-araclarda-var/',
+    canonical: 'https://erenservis.vercel.app/blog/dsg-hangi-araclarda-var/',
   },
 };
 
@@ -98,9 +98,9 @@ export default function DSGHangiAraclarPage() {
     headline: 'DSG Hangi Araçlarda Var? 2026 Tam Liste',
     description: 'DSG şanzıman hangi araçlarda var? VW, Audi, Seat, Skoda için DQ200, DQ250, DQ381, DQ500 model listesi.',
     datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/dsg-hangi-araclarda-var/' },
+    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.vercel.app/blog/dsg-hangi-araclarda-var/' },
   };
 
   return (

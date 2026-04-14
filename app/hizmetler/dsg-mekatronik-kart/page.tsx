@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     description:
       "DQ200 ve DQ250 mekatronik kart 2026 fiyat tablosu. " +
       "Tamir mi, değişim mi? Ücretsiz tanı ile net karar — Eren Servis Bostancı.",
-    url: "https://erenservis.net/hizmetler/dsg-mekatronik-kart",
+    url: "https://erenservis.vercel.app/hizmetler/dsg-mekatronik-kart",
     type: "website",
     images: [
       {
-        url: "https://erenservis.net/images/og/dsg-mekatronik-kart.jpg",
+        url: "https://erenservis.vercel.app/images/og/dsg-mekatronik-kart.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Mekatronik Kart Fiyatı 2026",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/hizmetler/dsg-mekatronik-kart",
+    canonical: "https://erenservis.vercel.app/hizmetler/dsg-mekatronik-kart",
   },
 };
 
@@ -55,7 +55,7 @@ const serviceSchema = buildServiceSchema({
   description:
     "DQ200 ve DQ250 DSG şanzıman mekatronik kart değişimi ve tamiri. " +
     "Hata kodu bazlı tanı, orijinal ve muadil parça seçeneği, garantili işlem.",
-  url: "https://erenservis.net/hizmetler/dsg-mekatronik-kart",
+  url: "https://erenservis.vercel.app/hizmetler/dsg-mekatronik-kart",
   priceRange: "45.000 – 68.000 TL",
   areaServed: ["Bostancı", "Kadıköy", "Üsküdar", "Maltepe", "İstanbul"],
 });
@@ -63,11 +63,11 @@ const serviceSchema = buildServiceSchema({
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Hizmetler", url: "https://erenservis.net/hizmetler" },
+  { name: "Ana Sayfa", url: "https://erenservis.vercel.app" },
+  { name: "Hizmetler", url: "https://erenservis.vercel.app/hizmetler" },
   {
     name: "DSG Mekatronik Kart",
-    url: "https://erenservis.net/hizmetler/dsg-mekatronik-kart",
+    url: "https://erenservis.vercel.app/hizmetler/dsg-mekatronik-kart",
   },
 ]);
 

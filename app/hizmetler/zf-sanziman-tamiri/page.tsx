@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'zf sanziman revizyonu',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/zf-sanziman-tamiri/',
+    canonical: 'https://erenservis.vercel.app/hizmetler/zf-sanziman-tamiri/',
   },
 };
 

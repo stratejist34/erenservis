@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'eat mekatronik onarım',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/eat-sanziman-tamiri/',
+    canonical: 'https://erenservis.vercel.app/hizmetler/eat-sanziman-tamiri/',
   },
 };
 

@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "Vites geçişinde vuruntu veya sarsıntı yaşıyorsanız ertelemeyin. " +
       "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/dsg-vuruntu-semptomlari",
+    url: "https://erenservis.vercel.app/rehber/dsg-vuruntu-semptomlari",
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/images/og/dsg-vuruntu.jpg",
+        url: "https://erenservis.vercel.app/images/og/dsg-vuruntu.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Vuruntu Semptomu",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/dsg-vuruntu-semptomlari",
+    canonical: "https://erenservis.vercel.app/rehber/dsg-vuruntu-semptomlari",
   },
 };
 
@@ -54,18 +54,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzımanda vuruntu yaşıyorsanız kavrama arızasının erken işareti olabilir. " +
     "Model bazında nedenler ve çözüm.",
-  url: "https://erenservis.net/rehber/dsg-vuruntu-semptomlari",
+  url: "https://erenservis.vercel.app/rehber/dsg-vuruntu-semptomlari",
   datePublished: "2026-03-30",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://erenservis.vercel.app" },
+  { name: "Rehber", url: "https://erenservis.vercel.app/rehber" },
   {
     name: "DSG Vuruntu Semptomu",
-    url: "https://erenservis.net/rehber/dsg-vuruntu-semptomlari",
+    url: "https://erenservis.vercel.app/rehber/dsg-vuruntu-semptomlari",
   },
 ]);
 

@@ -68,7 +68,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://erenservis.net"),
+  metadataBase: new URL("https://erenservis.vercel.app"),
   title: "Eren Servis | Bostancı Otomatik Şanzıman Servisi",
   description:
     "Bostancı'da DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. 15 yılı aşkın deneyim, orijinal parça, 6 ay garanti.",
@@ -82,13 +82,13 @@ export const metadata: Metadata = {
     "eren servis",
   ],
   alternates: {
-    canonical: "https://erenservis.net",
+    canonical: "https://erenservis.vercel.app",
   },
   openGraph: {
     title: "Eren Servis | Bostancı Otomatik Şanzıman Servisi",
     description:
       "Bostancı'da DSG, ZF ve CVT otomatik şanzıman tamiri. 15+ yıl deneyim, garantili servis.",
-    url: "https://erenservis.net",
+    url: "https://erenservis.vercel.app",
     siteName: "Eren Servis",
     locale: "tr_TR",
     type: "website",
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessSchema = buildLocalBusinessSchema({ url: "https://erenservis.net" });
+const localBusinessSchema = buildLocalBusinessSchema({ url: "https://erenservis.vercel.app" });
 
 export default function RootLayout({
   children,

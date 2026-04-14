@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'dsg ne kadar dayanır',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-sanziman-omru-bakimi/',
+    canonical: 'https://erenservis.vercel.app/blog/dsg-sanziman-omru-bakimi/',
   },
 };
 
@@ -70,9 +70,9 @@ export default function DSGSanzimanOmruBakimiPage() {
     headline: 'DSG Şanzıman Ömrü ve Bakımı | DQ200 DQ250 Bakım Takvimi',
     description: 'DSG şanzıman kaç km dayanır? DQ200 ve DQ250 bakım aralıkları ve ömrü uzatan kurallar.',
     datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/dsg-sanziman-omru-bakimi/' },
+    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.vercel.app/blog/dsg-sanziman-omru-bakimi/' },
   };
 
   const faqSchema = faqItems.length > 0 ? {

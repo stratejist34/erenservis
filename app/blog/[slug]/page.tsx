@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: `https://erenservis.net/blog/${slug}/`,
+      canonical: `https://erenservis.vercel.app/blog/${slug}/`,
     },
     openGraph: {
       title,
       description,
-      url: `https://erenservis.net/blog/${slug}/`,
+      url: `https://erenservis.vercel.app/blog/${slug}/`,
       siteName: 'Eren Servis',
       locale: 'tr_TR',
       type: 'article',
@@ -53,16 +53,16 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       '@type': 'Organization',
       name: 'Eren Servis',
-      url: 'https://erenservis.net',
+      url: 'https://erenservis.vercel.app',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Eren Servis',
-      url: 'https://erenservis.net',
+      url: 'https://erenservis.vercel.app',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://erenservis.net/blog/${slug}/`,
+      '@id': `https://erenservis.vercel.app/blog/${slug}/`,
     },
   };
 

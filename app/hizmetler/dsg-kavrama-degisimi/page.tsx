@@ -163,7 +163,7 @@ export default function DsgKavramaDegisimiPage() {
                 <div className="font-jetbrains text-xs text-iron-light mt-1">Teslim süresi</div>
               </div>
               <div className="text-center border-x border-border-hairline">
-                <div className="font-jetbrains text-2xl font-bold text-brass">12 ay</div>
+                <div className="font-jetbrains text-2xl font-bold text-brass">6 ay</div>
                 <div className="font-jetbrains text-xs text-iron-light mt-1">Garanti</div>
               </div>
               <div className="text-center">
@@ -177,7 +177,7 @@ export default function DsgKavramaDegisimiPage() {
         {/* ── GÖRSEL — Atmosfer / kanıt katmanı ───────────────────────── */}
         <div className="mt-8 relative w-full h-72 sm:h-96 overflow-hidden bg-graphite-elevated">
           <Image
-            src="/images/part2/Screenshot_85.webp"
+            src="/images/part2/Screenshot_83.webp"
             alt="DSG kavrama diski ve piston montajı — Eren Servis Bostancı DQ200 kavrama değişimi"
             fill
             className="object-cover brightness-[0.73] saturate-[0.6]"
@@ -520,7 +520,7 @@ export default function DsgKavramaDegisimiPage() {
                 <div className="font-jetbrains text-xs text-iron-light mt-0.5">Teslim</div>
               </div>
               <div className="bg-graphite-surface border border-border-hairline rounded-lg p-3">
-                <div className="font-jetbrains text-sm font-bold text-brass">12 ay</div>
+                <div className="font-jetbrains text-sm font-bold text-brass">6 ay</div>
                 <div className="font-jetbrains text-xs text-iron-light mt-0.5">Garanti</div>
               </div>
             </div>

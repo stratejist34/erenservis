@@ -491,4 +491,73 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         'Adaptasyon kalibrasyonu da kritik bir bakım adımıdır.',
     },
   ],
+
+  'en-iyi-sanziman-yagi': [
+    {
+      q: 'DSG şanzıman için en iyi yağ hangisi?',
+      a:
+        'DQ200 için VW G055529A2 hidrolik sıvısı veya Pentosin CHF 202 kullanılır. ' +
+        'DQ250 için VW G052182A2 veya Pentosin FFL-2 uygundur. ' +
+        'Orijinal şartnameye uymayan yağlar mekatronik ve kavrama hasarına zemin hazırlar.',
+    },
+    {
+      q: 'CVT şanzımana normal ATF yağı konulur mu?',
+      a:
+        'Kesinlikle hayır. CVT şanzımanlar üreticinin onayladığı özel CVT Fluid gerektirir. ' +
+        'Normal ATF, metal kayış ve kasnak yüzeyine kalıcı hasar vererek çok pahalı revizyona neden olur.',
+    },
+    {
+      q: 'DSG yağı ne zaman değiştirilmeli?',
+      a:
+        'DQ250 şanzımanda yağ ve filtre her 60.000 km\'de değiştirilmelidir. ' +
+        'DQ200\'de mekatronik hidrolik sıvısı 40.000 km\'de kontrol edilir. ' +
+        'Yağ değişimiyle birlikte adaptasyon kalibrasyonu da yapılmalıdır.',
+    },
+    {
+      q: 'ZF şanzımanda yaşam boyu yağ gerçek mi?',
+      a:
+        'Hayır, yanıltıcıdır. ZF 8HP şanzımanlarda 80.000 km sonrası yağ değişimi önerilir. ' +
+        'Yüksek km ve zorlu kullanımda yağ bozunur; değiştirilmezse solenoidler ve kavrama hasarı gelişir.',
+    },
+    {
+      q: 'Şanzıman yağı değiştirilmezse ne olur?',
+      a:
+        'Kirli yağdaki metal partiküller solenoidleri tıkar, kavramayı ve mekatroniği erken aşındırır. ' +
+        '60.000 km\'de yapılmayan yağ değişimi 150.000 km\'de 50.000+ TL şanzıman revizyonuna dönüşebilir.',
+    },
+  ],
+
+  'sanziman-yag-degisimi-fiyat-2026': [
+    {
+      q: 'DSG yağ değişimi 2026\'da ne kadar tutar?',
+      a:
+        'DQ250 şanzımanda yağ + filtre + adaptasyon paketi 2026\'da 10.000–14.000 TL arasındadır. ' +
+        'DQ200 mekatronik sıvısı değişimi 5.000–8.000 TL\'dir. Fiyatlar araca ve işçiliğe göre değişir.',
+    },
+    {
+      q: 'CVT şanzıman yağ değişimi ne kadar?',
+      a:
+        'CVT yağ değişimi 2026 fiyatlarıyla 6.000–10.000 TL arasındadır. ' +
+        'Üreticinin onaylı CVT Fluid kullanılmalı; normal ATF CVT\'ye ciddi hasar verir.',
+    },
+    {
+      q: 'Şanzıman yağ değişiminde adaptasyon kalibrasyonu gerekli mi?',
+      a:
+        'DQ250 DSG şanzımanlarda evet, zorunludur. Adaptasyon sıfırlanmazsa şanzıman eski yağa göre ' +
+        'öğrenilmiş değerlerle çalışır; vuruntu ve sert geçişler başlar. ' +
+        'Bostancı servisimizde yağ değişimiyle birlikte standart uygulanır.',
+    },
+    {
+      q: 'Sadece yağ mı değiştirilmeli, filtre de mi?',
+      a:
+        'Filtre değişimi zorunludur. Doymuş bir filtre yeni temiz yağı da kirletir ve solenoid basıncını düşürür. ' +
+        'Yağ değişimini filtresiz yapmak yarım bir bakımdır — uzun vadede daha pahalıya mal olur.',
+    },
+    {
+      q: 'ZF şanzıman yağ değişimi ne zaman yapılmalı?',
+      a:
+        '"Yaşam boyu yağ" ifadesine rağmen ZF 8HP şanzımanlarda 80.000 km sonrası değişim önerilir. ' +
+        '2026\'da ZF yağ değişimi fiyatı 10.000–16.000 TL arasındadır.',
+    },
+  ],
 };

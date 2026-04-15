@@ -492,6 +492,44 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
   ],
 
+  'dsg-volant-kavrama-paketi': [
+    {
+      q: 'Kavrama değişirken volant da değiştirilmeli mi?',
+      a:
+        'Şanzıman sökülmüşken volantın kontrol edilmesi zorunludur. ' +
+        'Kavrama aşınması sırasında dökülen metal tozlar volant yüzeyini çizer. ' +
+        'Hasarlı volantla yeni kavrama takılırsa 3 ayda aynı sorun tekrarlar. ' +
+        'İkisini aynı anda değiştirmek tek seferlik işçilikle tasarruf sağlar.',
+    },
+    {
+      q: 'DSG volant + kavrama paketi 2026\'da ne kadar tutar?',
+      a:
+        'DQ200 için volant + kavrama kombo paketi 2026\'da muadil parçayla 62.000–72.000 TL, ' +
+        'orijinal parçayla 80.000–95.000 TL arasındadır. ' +
+        'İkisi ayrı yapılsaydı işçilik iki kez ödenirdi — paket her zaman daha avantajlıdır.',
+    },
+    {
+      q: 'Volant hasarı nasıl anlaşılır?',
+      a:
+        'En belirgin belirtiler şunlardır: kalkışta titreme, rölantide şanzımandan gelen vuruntu, ' +
+        'kavrama baskısında metalik ses ve vites geçişlerinde darbe hissi. ' +
+        'Cihazlı tanı ve test sürüşüyle kesin teşhis konulur.',
+    },
+    {
+      q: 'DQ200 ve DQ250\'de volant sorunu farkı nedir?',
+      a:
+        'DQ200 kuru kavramalı olduğu için metal toz birikmesi volant hasarını hızlandırır — ' +
+        'en sık volant sorunu bu modelde görülür. ' +
+        'DQ250\'de ıslak kavrama yağ banyosunda çalıştığından volant hasarı daha nadirdir.',
+    },
+    {
+      q: 'Volant + kavrama değişimi kaç gün sürer?',
+      a:
+        'Bostancı servisimizde DQ200 volant + kavrama paketi genellikle 1–2 iş günü içinde tamamlanır. ' +
+        'Şanzıman sökme-takma, parça değişimi, adaptasyon kalibrasyonu ve test sürüşü bu süreye dahildir.',
+    },
+  ],
+
   'en-iyi-sanziman-yagi': [
     {
       q: 'DSG şanzıman için en iyi yağ hangisi?',

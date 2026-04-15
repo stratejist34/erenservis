@@ -420,26 +420,28 @@ body {
 }
 
 
-/* Diagnostic bar fill */
+/* Diagnostic bar fill — scaleX GPU-composited (width yerine) */
 @keyframes fill-bar {
-  from { width: 0%; }
-  to   { width: var(--bar-target, 100%); }
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
-/* Scan reveal — yukarıdan aşağı */
+.animate-fill-bar {
+  transform-origin: left;
+  width: var(--bar-target, 100%);
+  animation: fill-bar 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scan reveal — opacity+translateY GPU-composited (clip-path yerine) */
 @keyframes scan-reveal {
-  from { clip-path: inset(0 0 100% 0); }
-  to   { clip-path: inset(0 0 0% 0); }
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Hero cursor blink */
 @keyframes hero-cursor-blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
-}
-
-.animate-fill-bar {
-  animation: fill-bar 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-scan-reveal {

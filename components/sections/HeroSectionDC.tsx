@@ -138,9 +138,9 @@ export default function HeroSectionDC({
           priority
           fetchPriority="high"
           sizes="100vw"
-          quality={60}
+          quality={35}
           className="object-cover object-center"
-          style={{ filter: 'blur(2px) saturate(0.55) brightness(0.65)' }}
+          style={{ filter: 'saturate(0.45) brightness(0.55)' }}
         />
       </div>
 

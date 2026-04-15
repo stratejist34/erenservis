@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import BlogSchema from '@/components/schema/BlogSchema';
 import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
@@ -63,34 +64,15 @@ const OMUR_KURALLARI = [
 
 export default function DSGSanzimanOmruBakimiPage() {
   const faqItems = TRANSMISSION_FAQS['dsg-sanziman-omru-bakimi'] ?? [];
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'DSG Şanzıman Ömrü ve Bakımı | DQ200 DQ250 Bakım Takvimi',
-    description: 'DSG şanzıman kaç km dayanır? DQ200 ve DQ250 bakım aralıkları ve ömrü uzatan kurallar.',
-    datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/dsg-sanziman-omru-bakimi/' },
-  };
-
-  const faqSchema = faqItems.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  } : null;
-
   return (
-    <main className="bg-graphite-base">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+    <>
+      <BlogSchema
+        slug="dsg-sanziman-omru-bakimi"
+        title="DSG Şanzıman Ömrü ve Bakımı | DQ200 DQ250 Bakım Takvimi — Eren Servis"
+        description="DSG şanzıman kaç km dayanır? DQ200 ve DQ250 bakım aralıkları, yağ değişimi zamanı ve ömrü uzatan 5 kural. Bostancı uzman servis rehberi."
+        datePublished="2026-04-11"
+      />
+      <main className="bg-graphite-base">
 
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
@@ -260,5 +242,6 @@ export default function DSGSanzimanOmruBakimiPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

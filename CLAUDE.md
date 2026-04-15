@@ -168,6 +168,36 @@ Aisin ve EAT şanzıman aileleri için ayrı hizmet yüzleri oluşturuldu.
 - Konum: Bostancı (Tuzla YAZMA)
 - Minimum içerik: 800 kelime, H2/H3 hiyerarşisi, FAQ bölümü
 
+## Yeni İçerik Ekleme — Zorunlu Kontrol Listesi
+
+### Blog Yazısı (posts.json → /blog/[slug] dynamic route)
+1. `data/posts.json`'a kayıt ekle — title, slug, date, excerpt, yoastTitle, yoastDescription
+2. Sayfa dosyası OLUŞTURMA — `/blog/[slug]` dynamic route otomatik halleder
+3. FAQ varsa `lib/sanziman-faq.ts`'e aynı slug ile giriş ekle → BlogSchema otomatik çeker
+
+### Blog Static TSX Sayfası (/blog/slug/page.tsx — özel tasarım gerekiyorsa)
+1. Dosya oluştur
+2. İmport ekle: `import BlogSchema from '@/components/schema/BlogSchema';`
+3. `return` içinde `<main>`den önce:
+   ```tsx
+   <BlogSchema slug="sayfa-slug" title="..." description="..." datePublished="YYYY-MM-DD" />
+   ```
+4. Return'ü Fragment ile sar: `return ( <> <BlogSchema ... /> <main>...</main> </> );`
+5. FAQ varsa `lib/sanziman-faq.ts`'e slug ile ekle → BlogSchema otomatik çeker
+
+### Hizmet Sayfası (/hizmetler/slug/page.tsx)
+1. Dosya oluştur
+2. `lib/schema.ts`'den `buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema, schemaToString` import et
+3. Sayfa başında schema script'leri ekle (mevcut hizmetler sayfalarını örnek al)
+4. FAQ varsa `lib/sanziman-faq.ts`'e slug ile ekle
+
+### Her Sayfa İçin Evrensel Kontrol
+- [ ] `metadata.title` + `description` + `canonical` + `openGraph` tanımlı mı?
+- [ ] Schema component eklendi mi? (BlogSchema / buildServiceSchema)
+- [ ] FAQ varsa `lib/sanziman-faq.ts`'e slug ile girildi mi?
+- [ ] `npx tsc --noEmit` hatasız mı?
+- [ ] Rich snippet doğrulama: https://search.google.com/test/rich-results
+
 
 
 

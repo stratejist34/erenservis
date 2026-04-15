@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import BlogSchema from '@/components/schema/BlogSchema';
 
 export const dynamic = 'force-static';
 
@@ -92,20 +93,15 @@ const DIKKAT_NOKTALARI = [
 ];
 
 export default function DSGHangiAraclarPage() {
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'DSG Hangi Araçlarda Var? 2026 Tam Liste',
-    description: 'DSG şanzıman hangi araçlarda var? VW, Audi, Seat, Skoda için DQ200, DQ250, DQ381, DQ500 model listesi.',
-    datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/dsg-hangi-araclarda-var/' },
-  };
-
   return (
-    <main className="bg-graphite-base">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+    <>
+      <BlogSchema
+        slug="dsg-hangi-araclarda-var"
+        title="DSG Hangi Araçlarda Var? 2026 Tam Liste | Eren Servis"
+        description="DSG şanzıman hangi araçlarda var? VW, Audi, Seat, Skoda, BMW ve diğer markalar için DQ200, DQ250, DQ381 model listesi. Araçlarda DSG var mı öğren."
+        datePublished="2026-04-11"
+      />
+      <main className="bg-graphite-base">
 
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
@@ -230,5 +226,6 @@ export default function DSGHangiAraclarPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

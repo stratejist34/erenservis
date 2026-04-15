@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import BlogSchema from '@/components/schema/BlogSchema';
 import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
@@ -57,34 +58,15 @@ const NEDEN_ONEMLI = [
 
 export default function SolenoidValfArızaBelirtileriPage() {
   const faqItems = TRANSMISSION_FAQS['solenoid-valf-ariza-belirtileri'] ?? [];
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Solenoid Valf Arıza Belirtileri | DSG Solenoid Değişimi',
-    description: 'DSG solenoid valf arıza belirtileri ve çözümü. DQ200 ve DQ250 solenoid farkları, temizlik mi değişim mi?',
-    datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/solenoid-valf-ariza-belirtileri/' },
-  };
-
-  const faqSchema = faqItems.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  } : null;
-
   return (
-    <main className="bg-graphite-base">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+    <>
+      <BlogSchema
+        slug="solenoid-valf-ariza-belirtileri"
+        title="Solenoid Valf Arıza Belirtileri | DSG Solenoid Değişimi — Eren Servis"
+        description="DSG solenoid valf arıza belirtileri: sarsıntı, vites kaçırma, P17xx kodları. DQ200 ve DQ250 solenoid farkları, temizlik mi değişim mi? Bostancı uzman servis."
+        datePublished="2026-04-11"
+      />
+      <main className="bg-graphite-base">
 
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
@@ -242,5 +224,6 @@ export default function SolenoidValfArızaBelirtileriPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

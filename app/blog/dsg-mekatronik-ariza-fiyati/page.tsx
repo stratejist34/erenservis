@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import BlogSchema from '@/components/schema/BlogSchema';
 import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
@@ -49,34 +50,15 @@ const ADIMLAR = [
 
 export default function DSGMekatronikArızaFiyatiPage() {
   const faqItems = TRANSMISSION_FAQS['dsg-mekatronik-ariza-fiyati'] ?? [];
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'DSG Mekatronik Arıza Fiyatı 2026: Tamir mi, Değişim mi?',
-    description: 'DQ200 ve DQ250 mekatronik arıza fiyatları 2026 güncel listesi. Kart tamiri, hidrolik ünite revizyonu ve güçlendirilmiş basınç tüpü maliyetleri.',
-    datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/dsg-mekatronik-ariza-fiyati/' },
-  };
-
-  const faqSchema = faqItems.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  } : null;
-
   return (
-    <main className="bg-graphite-base">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+    <>
+      <BlogSchema
+        slug="dsg-mekatronik-ariza-fiyati"
+        title="DSG Mekatronik Arıza Fiyatı 2026 | Tamir & Revizyon — Eren Servis"
+        description="DSG mekatronik arıza fiyatları 2026. DQ200 ve DQ250 kart tamiri, güçlendirilmiş tüp ve revizyon maliyetleri. 6 ay garantili uzman servis."
+        datePublished="2026-04-11"
+      />
+      <main className="bg-graphite-base">
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-28 pb-16">
@@ -291,5 +273,6 @@ export default function DSGMekatronikArızaFiyatiPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

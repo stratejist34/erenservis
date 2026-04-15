@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import BlogSchema from '@/components/schema/BlogSchema';
 import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
@@ -73,34 +74,15 @@ const REVIZYON_AVANTAJLARI = [
 
 export default function OtomatikSanzimanTamiriFiyatPage() {
   const faqItems = TRANSMISSION_FAQS['otomatik-sanziman-tamiri-fiyat'] ?? [];
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Otomatik Şanzıman Tamiri Ne Kadar? 2026 Güncel Maliyet Analizi',
-    description: 'Otomatik şanzıman tamir fiyatları 2026 rehberi. DSG, CVT, ZF ve Aisin şanzımanlarda revizyon maliyetleri, parça fiyatları ve işçilik bedelleri.',
-    datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/otomatik-sanziman-tamiri-fiyat/' },
-  };
-
-  const faqSchema = faqItems.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  } : null;
-
   return (
-    <main className="bg-graphite-base">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+    <>
+      <BlogSchema
+        slug="otomatik-sanziman-tamiri-fiyat"
+        title="Otomatik Şanzıman Tamiri Ne Kadar? 2026 Fiyat Listesi"
+        description="2026 otomatik şanzıman tamiri fiyatları. DSG, CVT, ZF ve Aisin tamir, revizyon ve işçilik maliyetleri. Ücretsiz ön tanı ve garantili onarım."
+        datePublished="2026-04-11"
+      />
+      <main className="bg-graphite-base">
 
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
@@ -269,5 +251,6 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

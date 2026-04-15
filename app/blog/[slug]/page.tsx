@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPosts, getPostBySlug } from '@/lib/data';
+import BlogSchema from '@/components/schema/BlogSchema';
 
 export const dynamic = 'force-static';
 
@@ -44,34 +45,15 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: {
-      '@type': 'Organization',
-      name: 'Eren Servis',
-      url: 'https://erenservis.net',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Eren Servis',
-      url: 'https://erenservis.net',
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://erenservis.net/blog/${slug}/`,
-    },
-  };
-
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+    <>
+      <BlogSchema
+        slug={post.slug}
+        title={post.title}
+        description={post.yoastDescription || post.excerpt}
+        datePublished={post.date}
       />
+      <main>
 
       {/* Post Hero */}
       <section className="bg-graphite-base pt-28 pb-14 text-center">
@@ -97,5 +79,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </section>
     </main>
+    </>
   );
 }

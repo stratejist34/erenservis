@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import BlogSchema from '@/components/schema/BlogSchema';
 import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
@@ -59,34 +60,15 @@ const ERKEN_TESHIS = [
 
 export default function MekatronikNedirPage() {
   const faqItems = TRANSMISSION_FAQS['mekatronik-nedir'] ?? [];
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Mekatronik Nedir? DSG Şanzıman Mekatronik Kart Rehberi',
-    description: 'DSG mekatronik nedir, ne işe yarar, nasıl arızalanır? DQ200 ve DQ250 mekatronik kart farkları ve arıza belirtileri.',
-    datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/mekatronik-nedir/' },
-  };
-
-  const faqSchema = faqItems.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  } : null;
-
   return (
-    <main className="bg-graphite-base">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+    <>
+      <BlogSchema
+        slug="mekatronik-nedir"
+        title="Mekatronik Nedir? DSG Şanzıman Mekatronik Kart Rehberi | Eren Servis"
+        description="DSG mekatronik nedir, ne işe yarar, nasıl arızalanır? DQ200 ve DQ250 mekatronik kart farkları, arıza belirtileri ve tamir süreci. Bostancı uzman servis rehberi."
+        datePublished="2026-04-11"
+      />
+      <main className="bg-graphite-base">
 
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
@@ -245,5 +227,6 @@ export default function MekatronikNedirPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

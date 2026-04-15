@@ -7,9 +7,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { SYMPTOMS } from '@/data/symptoms';
 import { useSymptom } from '@/contexts/SymptomContext';
 import LiveDiagnosedFeed from '@/components/LiveDiagnosedFeed';
+import { trackPhoneCall, trackWhatsappClick } from '@/lib/analytics';
 
 /* ── INTERNAL DEFAULTS (homepage için sabit veri) ───────────────────────── */
 
@@ -95,6 +97,7 @@ export default function HeroSectionDC({
   showDiagnosticPanel = true,
 }: HeroSectionDCProps) {
   const phoneHref = `tel:${ctaPhone.number.replace(/\s/g, '')}`;
+  const pathname = usePathname() ?? '/';
   const { selectedId, setSelectedId } = useSymptom();
   const selected = SYMPTOMS.find((s) => s.id === selectedId)!;
 
@@ -240,6 +243,12 @@ export default function HeroSectionDC({
           <a
             href={phoneHref}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-brass-bright px-7 py-4 font-saira text-base font-semibold text-graphite-base transition-colors hover:bg-brass"
+            onClick={() => trackPhoneCall({
+              kaynak: 'hero',
+              sayfa: pathname,
+              semptom: selected?.id,
+              semptomEtiket: selected?.shortLabel,
+            })}
           >
             <Phone className="h-4.5 w-4.5" strokeWidth={2.5} />
             {ctaPhone.label}
@@ -249,6 +258,13 @@ export default function HeroSectionDC({
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-border-subtle px-6 py-4 font-saira text-base font-medium text-text-secondary transition hover:border-brass hover:text-text-primary"
+            onClick={() => trackWhatsappClick({
+              kaynak: 'hero',
+              sayfa: pathname,
+              semptom: selected?.id,
+              semptomEtiket: selected?.shortLabel,
+              mesajOnizleme: preDiagWaHref,
+            })}
           >
             <MessageCircle className="h-4.5 w-4.5" strokeWidth={2} />
             {ctaWhatsApp.label}

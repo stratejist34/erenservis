@@ -1,5 +1,5 @@
 /**
- * GA4 event tracking — BrandSection conversion funnel
+ * GA4 event tracking — BrandSection conversion funnel + CTA iletişim
  *
  * Tüm fonksiyonlar window.gtag yoksa sessizce çıkar (SSR-safe).
  */
@@ -67,4 +67,49 @@ export function trackCatalogReached(symptom: string) {
 /** "Markanızı seçin" micro CTA tıklaması */
 export function trackMicroCtaClick(symptom: string) {
   track('brand_micro_cta_click', { symptom });
+}
+
+/**
+ * Telefon numarasına tıklama
+ * @param kaynak  - nereden tıklandı: 'hero' | 'mobile_bar' | 'floating_cta' | 'sayfa_cta' | 'footer'
+ * @param sayfa   - pathname (örn. '/hizmetler/dsg-kavrama-degisimi/')
+ * @param semptom - seçili semptom ID (sadece hero'da mevcut, yoksa '')
+ * @param semptomEtiket - semptom türkçe adı (yoksa '')
+ */
+export function trackPhoneCall(params: {
+  kaynak: string;
+  sayfa: string;
+  semptom?: string;
+  semptomEtiket?: string;
+}) {
+  track('telefon_aramalari', {
+    kaynak: params.kaynak,
+    sayfa: params.sayfa,
+    semptom: params.semptom ?? '',
+    semptom_etiket: params.semptomEtiket ?? '',
+  });
+}
+
+/**
+ * WhatsApp linkine tıklama
+ * @param kaynak  - nereden tıklandı: 'hero' | 'mobile_bar' | 'sayfa_cta' | 'footer'
+ * @param sayfa   - pathname
+ * @param semptom - seçili semptom ID
+ * @param semptomEtiket - semptom türkçe adı
+ * @param mesajOnizleme - pre-filled WA mesajının ilk 80 karakteri
+ */
+export function trackWhatsappClick(params: {
+  kaynak: string;
+  sayfa: string;
+  semptom?: string;
+  semptomEtiket?: string;
+  mesajOnizleme?: string;
+}) {
+  track('whatsapp_yazanlar', {
+    kaynak: params.kaynak,
+    sayfa: params.sayfa,
+    semptom: params.semptom ?? '',
+    semptom_etiket: params.semptomEtiket ?? '',
+    mesaj_onizleme: (params.mesajOnizleme ?? '').slice(0, 80),
+  });
 }

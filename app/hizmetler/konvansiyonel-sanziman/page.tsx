@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { CheckCircle2, Clock, MessageCircle, Phone, Settings, ShieldCheck, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -56,9 +61,28 @@ const HIZMET_ADIMLAR = [
   { icon: Clock, baslik: 'Adaptasyon & Test', aciklama: 'Montaj sonrasi yag degisimi, adaptasyon ve kapsamli yol testi uygulanir.' },
 ] as const;
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const serviceSchema = buildServiceSchema({
+  name: 'Konvansiyonel Otomatik Şanzıman Tamiri',
+  description:
+    'Aisin, EAT6, EAT8 ve tam otomatik şanzıman tamiri. Peugeot, Citroen, Opel, Toyota, Ford ' +
+    've klasik hidrolik otomatik ailelerde revizyon, tork konvertörü ve valf gövdesi hizmeti.',
+  url: 'https://erenservis.net/hizmetler/konvansiyonel-sanziman/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'Konvansiyonel Şanzıman', url: 'https://erenservis.net/hizmetler/konvansiyonel-sanziman/' },
+]);
+
 export default function KonvansiyonelSanzimanPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
       <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-brass bg-brass/8 mb-6">
@@ -188,5 +212,6 @@ export default function KonvansiyonelSanzimanPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

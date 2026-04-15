@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildArticleSchema,
+  buildFAQSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 
 export const dynamic = 'force-static';
@@ -48,9 +55,33 @@ const FAQ = [
   { soru: 'Çözüm pahalı mı?', cevap: 'Erken teşhis genellikle daha ekonomiktir. Gecikirse kavrama, mekatronik ve volan masrafı artar.' },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const faqItems = TRANSMISSION_FAQS['dsg-vuruntu-semptomlari'] ?? [];
+
+const articleSchema = buildArticleSchema({
+  title: 'DSG Vuruntu Belirtileri | 1→2 ve 2→3 Vuruntu Nedenleri',
+  description:
+    'DSG vuruntu belirtileri ve çözümü. VW, Audi, Seat, Skoda modellerinde 1den 2ye, 2den 3e vuruntu. DQ200/DQ250 erken teşhis ve tedavi.',
+  url: 'https://erenservis.net/blog/dsg-vuruntu-semptomlari/',
+  datePublished: '2025-03-01',
+  imageUrl: 'https://erenservis.net/og-image.jpg',
+});
+
+const faqSchema = buildFAQSchema(faqItems);
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Blog', url: 'https://erenservis.net/blog/' },
+  { name: 'DSG Vuruntu Belirtileri', url: 'https://erenservis.net/blog/dsg-vuruntu-semptomlari/' },
+]);
+
 export default function DSGVuruntuPage() {
   return (
-    <main className="bg-graphite-base">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main className="bg-graphite-base">
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -204,5 +235,6 @@ export default function DSGVuruntuPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

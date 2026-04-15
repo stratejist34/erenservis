@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, Gauge, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -66,9 +71,28 @@ const NEDEN_BAKIM = [
   { baslik: 'Yakıt verimliliğini artırır', aciklama: 'Temiz ve doğru viskozitede yağ, şanzıman iç sürtünmesini azaltır.' },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const serviceSchema = buildServiceSchema({
+  name: 'Şanzıman Bakımı ve Kontrolü',
+  description:
+    "Otomatik şanzıman yağı değişimi, filtre temizliği ve bilgisayar diagnostik. Bostancı'da " +
+    'erken arıza tespiti ve şanzıman koruma bakımı.',
+  url: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'Şanzıman Bakımı', url: 'https://erenservis.net/hizmetler/sanziman-bakimi/' },
+]);
+
 export default function SanzımanBakımıPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
 
         {/* Hero */}
         <section className="bg-graphite-base pt-28 pb-16">
@@ -201,5 +225,6 @@ export default function SanzımanBakımıPage() {
         </section>
 
     </main>
+    </>
   );
 }

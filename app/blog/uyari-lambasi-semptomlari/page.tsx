@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildArticleSchema,
+  buildFAQSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 
 export const dynamic = 'force-static';
@@ -54,9 +61,33 @@ const FAQ = [
   { soru: 'Bostancı İstanbul\'da hızlı teşhis mümkün mü?', cevap: 'Evet, uzman DSG kontrolüyle sorun netleşir.' },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const faqItems = TRANSMISSION_FAQS['uyari-lambasi-semptomlari'] ?? [];
+
+const articleSchema = buildArticleSchema({
+  title: 'DSG Uyarı Lambası | P Işığı ve Anahtar İşareti Yanıyor',
+  description:
+    'DSG şanzıman uyarı lambası belirtileri. P ışığı yanıyor, anahtar işareti yanıyor ne demek? Mekatronik, sensör ve kavrama arızaları.',
+  url: 'https://erenservis.net/blog/uyari-lambasi-semptomlari/',
+  datePublished: '2025-03-10',
+  imageUrl: 'https://erenservis.net/og-image.jpg',
+});
+
+const faqSchema = buildFAQSchema(faqItems);
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Blog', url: 'https://erenservis.net/blog/' },
+  { name: 'DSG Uyarı Lambası Belirtileri', url: 'https://erenservis.net/blog/uyari-lambasi-semptomlari/' },
+]);
+
 export default function UyariLambasiPage() {
   return (
-    <main className="bg-graphite-base">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main className="bg-graphite-base">
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -240,5 +271,6 @@ export default function UyariLambasiPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

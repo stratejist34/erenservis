@@ -247,7 +247,7 @@ export default function HeroSectionDC({
             onClick={() => trackPhoneCall({
               kaynak: 'hero',
               sayfa: pathname,
-              semptom: selected?.id,
+              semptom: selected?.id != null ? String(selected.id) : undefined,
               semptomEtiket: selected?.shortLabel,
             })}
           >
@@ -263,7 +263,7 @@ export default function HeroSectionDC({
             onClick={() => trackWhatsappClick({
               kaynak: 'hero',
               sayfa: pathname,
-              semptom: selected?.id,
+              semptom: selected?.id != null ? String(selected.id) : undefined,
               semptomEtiket: selected?.shortLabel,
               mesajOnizleme: preDiagWaHref,
             })}

@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, ShieldCheck, Wrench, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -67,9 +72,28 @@ const SEMPTOMLAR = [
   'DSG yağ seviyesi normal olmasına rağmen titreme sürmesi',
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const serviceSchema = buildServiceSchema({
+  name: 'DSG Basınç Tüpü Değişimi',
+  description:
+    'DQ200 DSG şanzıman basınç tüpü değişimi ve yükseltmesi. OEM orijinal veya ' +
+    "WT Wolf's Tech güçlendirilmiş seçenek. Montaj, adaptasyon ve garanti dahil.",
+  url: 'https://erenservis.net/hizmetler/dsg-basinc-tupu/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'DSG Basınç Tüpü', url: 'https://erenservis.net/hizmetler/dsg-basinc-tupu/' },
+]);
+
 export default function DsgBasincTupuPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-28 pb-16">
@@ -274,5 +298,6 @@ export default function DsgBasincTupuPage() {
         </section>
 
     </main>
+    </>
   );
 }

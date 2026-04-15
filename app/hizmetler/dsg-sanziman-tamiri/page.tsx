@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench, Clock, ShieldCheck, Settings } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -77,9 +82,28 @@ const HIZMET_ADIMLAR = [
   },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const serviceSchema = buildServiceSchema({
+  name: 'DSG Şanzıman Tamiri',
+  description:
+    "Bostancı'da DSG şanzıman tamiri ve bakımı. DQ200, DQ250, DQ381 ve tüm DSG modelleri. " +
+    'Sertifikalı teknisyen, orijinal parça, 6 ay garanti.',
+  url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'DSG Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/' },
+]);
+
 export default function DsgSanzımanTamiriPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-28 pb-16">
@@ -236,5 +260,6 @@ export default function DsgSanzımanTamiriPage() {
         </section>
 
     </main>
+    </>
   );
 }

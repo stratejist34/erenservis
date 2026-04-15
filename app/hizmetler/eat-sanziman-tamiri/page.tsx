@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { CheckCircle2, Clock, MessageCircle, Phone, Settings, ShieldCheck, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -56,9 +61,28 @@ const HIZMET_ADIMLAR = [
   { icon: Clock, baslik: 'Adaptasyon & Test', aciklama: 'Fabrika adaptasyon prosedürü ve kapsamlı yol testi ile vites kalitesi doğrulanır.' },
 ] as const;
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const serviceSchema = buildServiceSchema({
+  name: 'EAT6 / EAT8 Şanzıman Tamiri',
+  description:
+    'EAT6 ve EAT8 şanzıman tamiri, valf gövdesi revizyonu, mekatronik onarım. ' +
+    'Peugeot, Citroen, Opel, Ford modellerinde uzman servis. Garantili işçilik.',
+  url: 'https://erenservis.net/hizmetler/eat-sanziman-tamiri/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'EAT Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/eat-sanziman-tamiri/' },
+]);
+
 export default function EATSanzimanTamiriPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
       <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-brass bg-brass/8 mb-6">
@@ -188,5 +212,6 @@ export default function EATSanzimanTamiriPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

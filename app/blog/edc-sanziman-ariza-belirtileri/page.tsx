@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
 
 
 export const dynamic = 'force-static';
@@ -45,9 +50,28 @@ const MODELLER = [
   { model: 'Dacia Sandero', sanziman: 'EDC', belirti: 'Ekonomik kullanımda erken aşınma' },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const articleSchema = buildArticleSchema({
+  title: 'EDC Şanzıman Arıza Belirtileri | Renault Clio Megane',
+  description:
+    'Renault ve Dacia EDC7/EDC8 şanzıman arıza belirtileri. Vuruntu, titreme, geçiş gecikmesi. Clio ve Megane modellerinde erken teşhis ve tedavi.',
+  url: 'https://erenservis.net/blog/edc-sanziman-ariza-belirtileri/',
+  datePublished: '2025-03-15',
+  imageUrl: 'https://erenservis.net/og-image.jpg',
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Blog', url: 'https://erenservis.net/blog/' },
+  { name: 'EDC Şanzıman Arıza Belirtileri', url: 'https://erenservis.net/blog/edc-sanziman-ariza-belirtileri/' },
+]);
+
 export default function EDCArizaPage() {
   return (
-    <main className="bg-graphite-base">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main className="bg-graphite-base">
       {/* Hero */}
       <section className="bg-graphite-base pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -205,5 +229,6 @@ export default function EDCArizaPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

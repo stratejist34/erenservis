@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, Wrench, Clock, ShieldCheck, Settings } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildFAQSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
 
@@ -81,9 +88,33 @@ const HIZMET_ADIMLAR = [
   },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const faqItems = TRANSMISSION_FAQS['zf-otomatik'] ?? [];
+
+const serviceSchema = buildServiceSchema({
+  name: 'ZF Şanzıman Tamiri',
+  description:
+    "Bostancı'da ZF şanzıman tamiri ve revizyonu. ZF 8HP, ZF 6HP ve tüm ZF otomatik şanzıman " +
+    'modelleri. BMW, Mercedes, Audi, Land Rover. 6 ay garanti.',
+  url: 'https://erenservis.net/hizmetler/zf-sanziman-tamiri/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const faqSchema = buildFAQSchema(faqItems);
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'ZF Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/zf-sanziman-tamiri/' },
+]);
+
 export default function ZfSanzımanTamiriPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
 
         {/* Hero */}
         <section className="bg-graphite-base pt-28 pb-16">
@@ -224,5 +255,6 @@ export default function ZfSanzımanTamiriPage() {
         </section>
 
     </main>
+    </>
   );
 }

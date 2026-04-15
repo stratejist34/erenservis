@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
 import { Phone, MessageCircle, CheckCircle2, AlertTriangle, Wrench, Clock, ShieldCheck, Settings } from 'lucide-react';
 import Link from 'next/link';
+import {
+  buildServiceSchema,
+  buildFAQSchema,
+  buildBreadcrumbSchema,
+  schemaToString,
+} from '@/lib/schema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
 
@@ -74,9 +81,33 @@ const HIZMET_ADIMLAR = [
   { icon: Clock, baslik: 'Kalibrasyon & Test', aciklama: 'Onarım sonrası CVT öğrenme sıfırlaması, adaptasyon ve yol testi yapılır.' },
 ];
 
+// ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const faqItems = TRANSMISSION_FAQS['cvt-sanziman'] ?? [];
+
+const serviceSchema = buildServiceSchema({
+  name: 'CVT Şanzıman Tamiri',
+  description:
+    "Bostancı'da CVT şanzıman tamiri ve revizyonu. Nissan, Toyota, Honda, Hyundai, Kia CVT " +
+    'şanzıman kayış/zincir değişimi, yağ ve elektronik kalibrasyon. Garantili servis.',
+  url: 'https://erenservis.net/hizmetler/cvt-sanziman-tamiri/',
+  areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+});
+
+const faqSchema = buildFAQSchema(faqItems);
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
+  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+  { name: 'CVT Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/cvt-sanziman-tamiri/' },
+]);
+
 export default function CvtSanzımanTamiriPage() {
   return (
-    <main>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      <main>
 
         {/* Hero */}
         <section className="bg-graphite-base pt-28 pb-16">
@@ -206,5 +237,6 @@ export default function CvtSanzımanTamiriPage() {
         </section>
 
     </main>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getPosts } from '@/lib/data';
-import { REHBER_POSTS } from '@/data/rehber-posts';
+import { STATIC_BLOG_POSTS } from '@/data/static-blog-registry';
 import Link from 'next/link';
 import { Calendar, ArrowRight } from 'lucide-react';
 
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const jsonPosts = await getPosts();
 
-  // Rehber yazıları + JSON posts birleştir, date'e göre desc sort
+  // Static TSX blog sayfaları + JSON posts birleştir, date'e göre desc sort
   const allPosts = [
-    ...REHBER_POSTS.map((p) => ({
+    ...STATIC_BLOG_POSTS.map((p) => ({
       id: p.slug,
       slug: p.slug,
       title: p.title,

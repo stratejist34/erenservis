@@ -35,7 +35,7 @@ export default function ScrollProgress() {
       {showTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-24 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-xl border border-border-hairline bg-graphite-elevated text-text-secondary shadow-lg transition-colors hover:bg-graphite-surface hover:text-text-primary md:bottom-6 md:right-[13rem]"
+          className="fixed bottom-24 right-5 z-40 flex h-10 w-10 items-center justify-center rounded-xl border border-border-hairline bg-graphite-elevated text-text-secondary shadow-lg transition-colors hover:bg-graphite-surface hover:text-text-primary md:bottom-20"
           aria-label="Sayfanin basina don"
         >
           <ArrowUp className="h-4 w-4" strokeWidth={2.5} />

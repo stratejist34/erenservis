@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: data.description,
     keywords: data.keywords,
     alternates: {
-      canonical: `https://erenservis.vercel.app/arac/${marka}/`,
+      canonical: `https://erenservis.net/arac/${marka}/`,
     },
   };
 }
@@ -115,7 +115,7 @@ export default async function MarkaPage({ params }: Props) {
     ? buildServiceSchema({
         name: buildBrandTransmissionTitle(brand),
         description: primary.description,
-        url: `https://erenservis.vercel.app/arac/${marka}/`,
+        url: `https://erenservis.net/arac/${marka}/`,
         areaServed: ['Bostancı', 'Kadıköy', 'İstanbul'],
       })
     : null;

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'aisin tf80 tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.vercel.app/hizmetler/aisin-sanziman-tamiri/',
+    canonical: 'https://erenservis.net/hizmetler/aisin-sanziman-tamiri/',
   },
 };
 

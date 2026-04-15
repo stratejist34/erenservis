@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'dsg p lambası nedir',
   ],
   alternates: {
-    canonical: 'https://erenservis.vercel.app/blog/uyari-lambasi-semptomlari/',
+    canonical: 'https://erenservis.net/blog/uyari-lambasi-semptomlari/',
   },
 };
 

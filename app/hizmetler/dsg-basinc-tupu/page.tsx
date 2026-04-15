@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'dsg basınç sorunu bostancı',
   ],
   alternates: {
-    canonical: 'https://erenservis.vercel.app/hizmetler/dsg-basinc-tupu/',
+    canonical: 'https://erenservis.net/hizmetler/dsg-basinc-tupu/',
   },
 };
 

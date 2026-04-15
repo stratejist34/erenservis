@@ -9,19 +9,19 @@ export const metadata: Metadata = {
   description:
     'Bostancı\'nın DSG ve kavrama uzmanı. DQ200, DQ250, DQ381 mekatronik tamiri, CVT resetleme, ZF ve konvansiyonel şanzıman revizyonu. Ücretsiz ön tanı.',
   alternates: {
-    canonical: 'https://erenservis.vercel.app/',
+    canonical: 'https://erenservis.net/',
   },
   openGraph: {
     title: 'Bostancı Otomatik Şanzıman Tamiri | Eren Servis',
     description:
       'Bostancı\'nın DSG ve kavrama uzmanı. DQ200, DQ250, DQ381 mekatronik, CVT resetleme, ZF şanzıman tamiri. 15+ yıl, garantili servis.',
-    url: 'https://erenservis.vercel.app/',
+    url: 'https://erenservis.net/',
     siteName: 'Eren Servis',
     locale: 'tr_TR',
     type: 'website',
     images: [
       {
-        url: 'https://erenservis.vercel.app/og-image.jpg',
+        url: 'https://erenservis.net/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Eren Otomatik Şanzıman Servisi — Bostancı',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Bostancı Otomatik Şanzıman Tamiri | Eren Servis',
     description:
       'Bostancı\'nın DSG ve kavrama uzmanı. DQ200, DQ250, DQ381 mekatronik tamiri, ücretsiz ön tanı.',
-    images: ['https://erenservis.vercel.app/og-image.jpg'],
+    images: ['https://erenservis.net/og-image.jpg'],
   },
 };
 

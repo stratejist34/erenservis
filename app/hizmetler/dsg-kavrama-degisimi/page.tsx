@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     description:
       "DQ200 ve DQ250 için net fiyat tablosu. Nisan 2026 güncel. Garantili işlem, ücretsiz ön tanı. " +
       "Bostancı DSG uzmanı Eren Servis.",
-    url: "https://erenservis.vercel.app/hizmetler/dsg-kavrama-degisimi",
+    url: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
     type: "website",
     images: [
       {
-        url: "https://erenservis.vercel.app/images/og/dsg-kavrama-degisimi.jpg",
+        url: "https://erenservis.net/images/og/dsg-kavrama-degisimi.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Kavrama Değişimi Fiyatı 2026",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.vercel.app/hizmetler/dsg-kavrama-degisimi",
+    canonical: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
   },
 };
 
@@ -55,7 +55,7 @@ const serviceSchema = buildServiceSchema({
   description:
     "DQ200 ve DQ250 DSG şanzıman kavrama seti değişimi. Orijinal ve muadil " +
     "parça seçeneği, garantili işlem, ücretsiz ön tanı.",
-  url: "https://erenservis.vercel.app/hizmetler/dsg-kavrama-degisimi",
+  url: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
   priceRange: "55.000 – 72.000 TL",
   areaServed: ["Bostancı", "Kadıköy", "Üsküdar", "Maltepe", "İstanbul"],
 });
@@ -63,11 +63,11 @@ const serviceSchema = buildServiceSchema({
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.vercel.app" },
-  { name: "Hizmetler", url: "https://erenservis.vercel.app/hizmetler" },
+  { name: "Ana Sayfa", url: "https://erenservis.net" },
+  { name: "Hizmetler", url: "https://erenservis.net/hizmetler" },
   {
     name: "DSG Kavrama Değişimi",
-    url: "https://erenservis.vercel.app/hizmetler/dsg-kavrama-degisimi",
+    url: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
   },
 ]);
 

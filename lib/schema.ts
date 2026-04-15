@@ -38,12 +38,12 @@ export interface BreadcrumbItem {
 
 const BUSINESS_NODE = {
   '@type': 'AutoRepair' as const,
-  '@id': 'https://erenservis.vercel.app/#business',
+  '@id': 'https://erenservis.net/#business',
   name: 'Eren Servis',
   description:
     "Bostancı'nın DSG ve otomatik şanzıman uzmanı. DQ200, DQ250, DQ381 " +
     'mekatronik, kavrama ve CVT tamiri.',
-  url: 'https://erenservis.vercel.app',
+  url: 'https://erenservis.net',
   telephone: '+90 532 715 37 51',
   address: {
     '@type': 'PostalAddress' as const,
@@ -74,9 +74,9 @@ const BUSINESS_NODE = {
 /** Lightweight reference to Eren Servis for use inside other schemas. */
 export const BUSINESS_REF = {
   '@type': 'AutoRepair' as const,
-  '@id': 'https://erenservis.vercel.app/#business',
+  '@id': 'https://erenservis.net/#business',
   name: 'Eren Servis',
-  url: 'https://erenservis.vercel.app',
+  url: 'https://erenservis.net',
 };
 
 /* ── LOCAL BUSINESS (site geneli — layout'a bir kez eklenir) ────────────── */
@@ -145,12 +145,12 @@ export function buildArticleSchema(params: ArticleParams) {
     author: {
       '@type': 'Organization',
       name: 'Eren Servis',
-      url: 'https://erenservis.vercel.app',
+      url: 'https://erenservis.net',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Eren Servis',
-      url: 'https://erenservis.vercel.app',
+      url: 'https://erenservis.net',
     },
     ...(params.imageUrl && {
       image: {
@@ -191,7 +191,7 @@ export function buildBrandListSchema() {
         name: buildBrandTransmissionTitle(brand),
         serviceType: 'Şanzıman Tamiri',
         provider: BUSINESS_REF,
-        url: `https://erenservis.vercel.app/arac/${brand.slug}/`,
+        url: `https://erenservis.net/arac/${brand.slug}/`,
       },
     })),
   };

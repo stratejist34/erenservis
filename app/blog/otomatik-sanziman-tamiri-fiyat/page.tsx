@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'şanzıman işçilik ücreti',
   ],
   alternates: {
-    canonical: 'https://erenservis.vercel.app/blog/otomatik-sanziman-tamiri-fiyat/',
+    canonical: 'https://erenservis.net/blog/otomatik-sanziman-tamiri-fiyat/',
   },
 };
 
@@ -80,9 +80,9 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
     headline: 'Otomatik Şanzıman Tamiri Ne Kadar? 2026 Güncel Maliyet Analizi',
     description: 'Otomatik şanzıman tamir fiyatları 2026 rehberi. DSG, CVT, ZF ve Aisin şanzımanlarda revizyon maliyetleri, parça fiyatları ve işçilik bedelleri.',
     datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.vercel.app/blog/otomatik-sanziman-tamiri-fiyat/' },
+    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
+    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/otomatik-sanziman-tamiri-fiyat/' },
   };
 
   const faqSchema = faqItems.length > 0 ? {

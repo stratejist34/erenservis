@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'opel otomatik sanziman tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.vercel.app/hizmetler/konvansiyonel-sanziman/',
+    canonical: 'https://erenservis.net/hizmetler/konvansiyonel-sanziman/',
   },
 };
 

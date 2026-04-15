@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'mekatronik arıza belirtileri',
   ],
   alternates: {
-    canonical: 'https://erenservis.vercel.app/blog/mekatronik-nedir/',
+    canonical: 'https://erenservis.net/blog/mekatronik-nedir/',
   },
 };
 
@@ -66,9 +66,9 @@ export default function MekatronikNedirPage() {
     headline: 'Mekatronik Nedir? DSG Şanzıman Mekatronik Kart Rehberi',
     description: 'DSG mekatronik nedir, ne işe yarar, nasıl arızalanır? DQ200 ve DQ250 mekatronik kart farkları ve arıza belirtileri.',
     datePublished: '2026-04-11',
-    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
-    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.vercel.app' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.vercel.app/blog/mekatronik-nedir/' },
+    author: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
+    publisher: { '@type': 'Organization', name: 'Eren Servis', url: 'https://erenservis.net' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://erenservis.net/blog/mekatronik-nedir/' },
   };
 
   const faqSchema = faqItems.length > 0 ? {

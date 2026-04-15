@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     'Bostancı\'da 15 yılı aşkın deneyimle otomatik şanzıman servisi. Eren Servis hakkında bilgi edinin.',
   alternates: {
-    canonical: 'https://erenservis.vercel.app/hakkimizda/',
+    canonical: 'https://erenservis.net/hakkimizda/',
   },
   openGraph: {
     title: 'Hakkımızda | Eren Servis — Bostancı Otomatik Şanzıman',
     description:
       'Bostancı\'da 15 yılı aşkın deneyimle DSG, ZF, CVT otomatik şanzıman tamiri. Garantili servis, uzman kadro.',
-    url: 'https://erenservis.vercel.app/hakkimizda/',
+    url: 'https://erenservis.net/hakkimizda/',
     siteName: 'Eren Servis',
     locale: 'tr_TR',
     type: 'website',

@@ -41,12 +41,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://erenservis.vercel.app${buildTransmissionUrl(id)}`,
+      url: `https://erenservis.net${buildTransmissionUrl(id)}`,
       siteName: 'Eren Servis',
       locale: 'tr_TR',
       type: 'website',
     },
-    alternates: { canonical: `https://erenservis.vercel.app${buildTransmissionUrl(id)}` },
+    alternates: { canonical: `https://erenservis.net${buildTransmissionUrl(id)}` },
   };
 }
 
@@ -61,14 +61,14 @@ export default async function TransmissionPage({ params }: PageProps) {
   const transmissionSchema = buildTransmissionSchema({
     transmission: t,
     relatedBrands,
-    url: `https://erenservis.vercel.app${buildTransmissionUrl(id)}`,
+    url: `https://erenservis.net${buildTransmissionUrl(id)}`,
   });
   const breadcrumbSchema = buildBreadcrumbSchema([
-    { name: 'Ana Sayfa', url: 'https://erenservis.vercel.app/' },
-    { name: 'Şanzıman Tipleri', url: 'https://erenservis.vercel.app/sanziman/' },
+    { name: 'Ana Sayfa', url: 'https://erenservis.net/' },
+    { name: 'Şanzıman Tipleri', url: 'https://erenservis.net/sanziman/' },
     {
       name: t.shortName ?? t.displayName,
-      url: `https://erenservis.vercel.app${buildTransmissionUrl(id)}`,
+      url: `https://erenservis.net${buildTransmissionUrl(id)}`,
     },
   ]);
   const faqSchema =

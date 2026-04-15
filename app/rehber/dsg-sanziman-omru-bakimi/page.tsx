@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "DQ200 ve DQ250 ömür karşılaştırması, bakım aralıkları ve ömrü uzatmanın 3 yolu. " +
       "Bostancı'da ücretsiz ön tanı.",
-    url: "https://erenservis.vercel.app/rehber/dsg-sanziman-omru-bakimi",
+    url: "https://erenservis.net/rehber/dsg-sanziman-omru-bakimi",
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.vercel.app/images/og/dsg-sanziman-omru.jpg",
+        url: "https://erenservis.net/images/og/dsg-sanziman-omru.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Şanzıman Ömrü ve Bakım Rehberi",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.vercel.app/rehber/dsg-sanziman-omru-bakimi",
+    canonical: "https://erenservis.net/rehber/dsg-sanziman-omru-bakimi",
   },
 };
 
@@ -56,18 +56,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzıman ömrünü belirleyen faktörler, DQ200 vs DQ250 karşılaştırması, " +
     "bakım takvimi ve ömrü uzatmanın yolları.",
-  url: "https://erenservis.vercel.app/rehber/dsg-sanziman-omru-bakimi",
+  url: "https://erenservis.net/rehber/dsg-sanziman-omru-bakimi",
   datePublished: "2026-04-10",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.vercel.app" },
-  { name: "Rehber", url: "https://erenservis.vercel.app/rehber" },
+  { name: "Ana Sayfa", url: "https://erenservis.net" },
+  { name: "Rehber", url: "https://erenservis.net/rehber" },
   {
     name: "DSG Şanzıman Ömrü ve Bakım",
-    url: "https://erenservis.vercel.app/rehber/dsg-sanziman-omru-bakimi",
+    url: "https://erenservis.net/rehber/dsg-sanziman-omru-bakimi",
   },
 ]);
 

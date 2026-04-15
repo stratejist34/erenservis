@@ -47,7 +47,7 @@ const BLOCKS: Record<string, PostServiceBlock> = {
     risks: [
       'Yanlış yağ → solenoid ve kavrama hasarı',
       'Gecikmiş değişim → mekatronik filtre kirliliği',
-      'CVT'de standart ATF kullanımı → kayış çizilmesi',
+      "CVT'de standart ATF kullanımı → kayış çizilmesi",
     ],
     duration: '45 – 90 dakika',
     warranty: 'Üretici onaylı veya eşdeğer spesifikasyonlu yağ',

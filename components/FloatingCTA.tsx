@@ -16,6 +16,7 @@ export default function FloatingCTA() {
   return (
     <a
       href={PHONE_HREF}
+      data-tracked="true"
       className="fixed bottom-6 right-5 z-40 hidden items-center gap-2.5 rounded-full bg-brass-bright px-5 py-3 font-saira text-sm font-semibold text-graphite-base shadow-lg transition hover:bg-brass md:inline-flex"
       aria-label="Ücretsiz ön tanı için bizi arayın"
       onClick={() => trackPhoneCall({ kaynak: 'floating_cta', sayfa: pathname })}

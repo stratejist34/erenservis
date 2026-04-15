@@ -14,6 +14,7 @@ export default function MobileCtaBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 flex h-16 border-t border-iron-deep bg-graphite-surface md:hidden">
       <a
         href={PHONE_HREF}
+        data-tracked="true"
         className="flex flex-1 items-center justify-center gap-2 bg-brass-bright font-saira text-sm font-semibold text-graphite-base transition hover:bg-brass"
         aria-label="Bizi Arayın"
         onClick={() => trackPhoneCall({ kaynak: 'mobile_bar', sayfa: pathname })}
@@ -26,6 +27,7 @@ export default function MobileCtaBar() {
 
       <a
         href={WHATSAPP_HREF}
+        data-tracked="true"
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-1 items-center justify-center gap-2 font-saira text-sm font-medium text-text-secondary transition hover:text-brass"

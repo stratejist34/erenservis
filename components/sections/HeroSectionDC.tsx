@@ -242,6 +242,7 @@ export default function HeroSectionDC({
         <div className="hero-item-4 mt-8 flex flex-col gap-3 sm:flex-row">
           <a
             href={phoneHref}
+            data-tracked="true"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-brass-bright px-7 py-4 font-saira text-base font-semibold text-graphite-base transition-colors hover:bg-brass"
             onClick={() => trackPhoneCall({
               kaynak: 'hero',
@@ -255,6 +256,7 @@ export default function HeroSectionDC({
           </a>
           <a
             href={ctaWhatsApp.href}
+            data-tracked="true"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-border-subtle px-6 py-4 font-saira text-base font-medium text-text-secondary transition hover:border-brass hover:text-text-primary"

@@ -8,6 +8,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
+import GlobalClickTracker from '@/components/tracking/GlobalClickTracker';
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -152,6 +153,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <ScrollProgress />
+        <GlobalClickTracker />
         <Header />
         <div className="pt-24">
         {children}</div>

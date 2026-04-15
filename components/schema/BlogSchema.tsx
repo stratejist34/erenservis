@@ -24,6 +24,8 @@ export interface BlogSchemaProps {
   datePublished: string;
   dateModified?: string;
   imageUrl?: string;
+  /** İçerikten otomatik parse edilen FAQ — sanziman-faq.ts boşsa devreye girer */
+  contentFaqItems?: { q: string; a: string }[];
 }
 
 export default function BlogSchema({
@@ -33,9 +35,15 @@ export default function BlogSchema({
   datePublished,
   dateModified,
   imageUrl,
+  contentFaqItems,
 }: BlogSchemaProps) {
   const url = `https://erenservis.net/blog/${slug}/`;
-  const faqItems = TRANSMISSION_FAQS[slug] ?? [];
+  // sanziman-faq.ts öncelikli; yoksa içerikten parse edilen FAQ kullanılır
+  const staticItems = TRANSMISSION_FAQS[slug] ?? [];
+  const faqItems =
+    staticItems.length > 0
+      ? staticItems
+      : (contentFaqItems ?? []).map((i) => ({ q: i.q, a: i.a }));
 
   const articleSchema = buildArticleSchema({
     title,

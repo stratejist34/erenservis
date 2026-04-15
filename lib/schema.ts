@@ -241,6 +241,38 @@ export function buildTransmissionSchema(params: TransmissionSchemaParams) {
   };
 }
 
+/* ── HOW TO ──────────────────────────────────────────────────────────────── */
+
+export interface HowToSchemaParams {
+  name: string;
+  description: string;
+  totalTime: string;
+  estimatedCostValue: string;
+  estimatedCostCurrency: string;
+  steps: { name: string; text: string }[];
+}
+
+export function buildHowToSchema(params: HowToSchemaParams) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: params.name,
+    description: params.description,
+    totalTime: params.totalTime,
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      value: params.estimatedCostValue,
+      currency: params.estimatedCostCurrency,
+    },
+    step: params.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 /* ── HELPER ──────────────────────────────────────────────────────────────── */
 
 export function schemaToString(schema: object): string {

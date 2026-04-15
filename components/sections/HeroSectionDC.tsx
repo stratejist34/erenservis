@@ -5,6 +5,7 @@
  */
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 import { SYMPTOMS } from '@/data/symptoms';
 import { useSymptom } from '@/contexts/SymptomContext';
@@ -129,17 +130,19 @@ export default function HeroSectionDC({
     <section className="relative overflow-hidden">
 
       {/* ===== LAYER 1: Gerçek servis görüntüsü — FULL WIDTH ===== */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/images/part2/Screenshot_57.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(2px) saturate(0.55) brightness(0.65)',
-          opacity: 1,
-        }}
-      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/part2/Screenshot_57.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={60}
+          className="object-cover object-center"
+          style={{ filter: 'blur(2px) saturate(0.55) brightness(0.65)' }}
+        />
+      </div>
 
       {/* ===== LAYER 2: Gradient overlay ===== */}
       <div

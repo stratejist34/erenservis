@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NextImage from 'next/image';
 import { BRANDS } from '@/lib/brands';
 import type { Brand } from '@/lib/brands';
 
@@ -20,26 +21,23 @@ const ROW1 = BRANDS.slice(0, 10);
 const ROW2 = BRANDS.slice(10);
 
 function LogoItem({ brand }: { brand: Brand }) {
-  const img = (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={brand.logo.src}
-      alt={brand.displayName ?? brand.name}
-      loading="lazy"
-      width={80}
-      height={32}
-      style={{ filter: getLogoFilter(brand.logo.filter), opacity: 0.5 }}
-      className="h-10 w-auto object-contain flex-shrink-0 transition-opacity duration-300 hover:opacity-85"
-    />
-  );
-
   return (
     <Link
       href={`/arac/${brand.slug}/`}
       title={`${brand.displayName ?? brand.name} şanzıman tamiri`}
       className="flex-shrink-0"
+      tabIndex={-1}
+      aria-hidden="true"
     >
-      {img}
+      <NextImage
+        src={brand.logo.src}
+        alt=""
+        width={80}
+        height={40}
+        sizes="80px"
+        style={{ filter: getLogoFilter(brand.logo.filter), opacity: 0.5 }}
+        className="h-10 w-auto object-contain flex-shrink-0 transition-opacity duration-300 hover:opacity-85"
+      />
     </Link>
   );
 }

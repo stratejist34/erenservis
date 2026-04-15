@@ -10,7 +10,7 @@ export default function SectionMarker({ index, label, className = '' }: SectionM
       <div className="flex items-center gap-4">
         <div className="flex-1 h-px" style={{ background: 'var(--color-border-hairline)' }} />
         <span className="flex items-center gap-2 font-jetbrains text-[10px] tracking-[0.16em] whitespace-nowrap">
-          <span className="text-brass/50">{index}</span>
+          <span className="text-brass/75">{index}</span>
           <span className="text-text-tertiary">/</span>
           <span className="text-iron-light">{label}</span>
         </span>

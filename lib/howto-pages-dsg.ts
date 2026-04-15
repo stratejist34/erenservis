@@ -64,7 +64,7 @@ export const HOWTO_PAGES: Record<string, HowToData> = {
       },
       {
         name: 'Eski yağ ve filtre boşaltma',
-        text: 'Yağ boşaltma tapaları açılır; DSG ve CVT'de filtre de eş zamanlı çıkarılır. Filtre olmadan yapılan yağ değişimi eksik bir işlemdir.',
+        text: "Yağ boşaltma tapaları açılır; DSG ve CVT'de filtre de eş zamanlı çıkarılır. Filtre olmadan yapılan yağ değişimi eksik bir işlemdir.",
       },
       {
         name: 'Doğru yağ ve filtrenin montajı',
@@ -72,7 +72,7 @@ export const HOWTO_PAGES: Record<string, HowToData> = {
       },
       {
         name: 'Adaptasyon kalibrasyonu',
-        text: 'Şanzıman ECU'su yeni yağa alıştırılır. DQ250 ve CVT için bu adım zorunludur; atlanırsa değişim sonrası sarsıntı şikayeti başlar.',
+        text: "Şanzıman ECU'su yeni yağa alıştırılır. DQ250 ve CVT için bu adım zorunludur; atlanırsa değişim sonrası sarsıntı şikayeti başlar.",
       },
       {
         name: 'Test sürüşü ve kontrol',

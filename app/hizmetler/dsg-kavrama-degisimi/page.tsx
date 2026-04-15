@@ -57,6 +57,8 @@ const serviceSchema = buildServiceSchema({
     "parça seçeneği, garantili işlem, ücretsiz ön tanı.",
   url: "https://erenservis.net/hizmetler/dsg-kavrama-degisimi",
   priceRange: "55.000 – 72.000 TL",
+  minPrice: 55000,
+  maxPrice: 72000,
   areaServed: ["Bostancı", "Kadıköy", "Üsküdar", "Maltepe", "İstanbul"],
 });
 

@@ -57,6 +57,8 @@ const serviceSchema = buildServiceSchema({
     "Hata kodu bazlı tanı, orijinal ve muadil parça seçeneği, garantili işlem.",
   url: "https://erenservis.net/hizmetler/dsg-mekatronik-kart",
   priceRange: "45.000 – 68.000 TL",
+  minPrice: 45000,
+  maxPrice: 68000,
   areaServed: ["Bostancı", "Kadıköy", "Üsküdar", "Maltepe", "İstanbul"],
 });
 

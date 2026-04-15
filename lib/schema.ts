@@ -16,7 +16,12 @@ export interface ServiceParams {
   name: string;
   description: string;
   url: string;
-  priceRange?: string;       // örn: "18000-42000 TL"
+  /** Görüntüleme için metin ("55.000 – 72.000 TL") — sadece description'da kullanılır */
+  priceRange?: string;
+  /** Numeric min fiyat (TRY) — Google rich snippet için */
+  minPrice?: number;
+  /** Numeric max fiyat (TRY) — Google rich snippet için */
+  maxPrice?: number;
   areaServed?: string[];     // örn: ["Bostancı", "Kadıköy", "İstanbul"]
 }
 
@@ -68,6 +73,13 @@ const BUSINESS_NODE = {
   ],
   priceRange: '₺₺',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
+  aggregateRating: {
+    '@type': 'AggregateRating' as const,
+    ratingValue: '4.6',
+    reviewCount: '35',
+    bestRating: '5',
+    worstRating: '1',
+  },
   sameAs: ['https://www.google.com/maps/place/Eren+Volkswagen+Servis+Bostanc%C4%B1/@40.9656025,29.1093912'],
 };
 
@@ -118,14 +130,13 @@ export function buildServiceSchema(params: ServiceParams) {
     url: params.url,
     provider: BUSINESS_REF,
     areaServed: params.areaServed ?? ['Bostancı', 'İstanbul'],
-    ...(params.priceRange && {
+    ...((params.minPrice != null || params.priceRange) && {
       offers: {
         '@type': 'Offer',
-        priceSpecification: {
-          '@type': 'PriceSpecification',
-          priceCurrency: 'TRY',
-          description: params.priceRange,
-        },
+        priceCurrency: 'TRY',
+        ...(params.minPrice != null && { minPrice: params.minPrice }),
+        ...(params.maxPrice != null && { maxPrice: params.maxPrice }),
+        ...(params.priceRange && { description: params.priceRange }),
       },
     }),
   };

@@ -711,4 +711,47 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         'için 0532 715 37 51 numaradan randevu alabilirsiniz.',
     },
   ],
+
+  'otomatik-sanziman-vuruntu': [
+    {
+      q: 'Otomatik şanzımanda vuruntu ne anlama gelir?',
+      a:
+        'Vites geçişinde hissedilen ani darbe veya sarsıntıya "vuruntu" denir. ' +
+        'En yaygın neden kavrama sistemi arızasıdır. DSG ve PowerShift gibi çift ' +
+        'kavramalı şanzımanlarda daha sık görülür; tork konvertörlü ZF ve Aisin ' +
+        'şanzımanlarda ise oldukça nadirdir.',
+    },
+    {
+      q: 'Hangi şanzıman tipi en çok vuruntu yapar?',
+      a:
+        'Kuru kavramalı DSG (DQ200) en sık vuruntu yapan tiptir — özellikle 1→2 geçişte. ' +
+        'Ford PowerShift (DPS6) ve Renault EDC7 de kavrama mekanizmaları nedeniyle vuruntya ' +
+        'yatkındır. Tork konvertörlü şanzımanlar (Mercedes 7G, BMW ZF 8HP) bu sorundan ' +
+        'büyük ölçüde muaftır.',
+    },
+    {
+      q: 'Vuruntu tehlikeli mi, sürmeye devam edebilir miyim?',
+      a:
+        'Başlangıçta tehlike oluşturmaz, ancak ertelendikçe masraf katlanır. Kavrama ' +
+        'aşınması ilerledikçe metal toz birikimi mekatronik karta zarar verir. ' +
+        'İlk belirtiden sonraki 1–2 ay içinde servis kontrolü, toplam maliyeti ' +
+        '3–5 kat azaltabilir.',
+    },
+    {
+      q: 'Vuruntu ile titreşim arasındaki fark nedir?',
+      a:
+        'Vuruntu: Vites geçişi sırasında yaşanan kısa, ani bir darbe hissidir — araç ' +
+        'bir an ileri atlar veya sarsılır. Titreşim: Rölantide veya sabit hızda sürekli ' +
+        'hissedilen salınımdır. Titreşim genellikle volant veya motor takozlarını işaret ' +
+        'eder; vuruntu ise kavrama veya solenoid sistemini.',
+    },
+    {
+      q: 'Şanzıman vuruntusu için ne kadar ödenir 2026?',
+      a:
+        'Maliyet arıza tipine ve ne kadar geciktirildiğine bağlıdır. DSG kavrama ' +
+        'değişimi 55.000–72.000 TL, PowerShift DPS6 kavrama kiti 45.000–65.000 TL, ' +
+        'solenoid valf tamiri 8.000–15.000 TL aralığındadır. Ücretsiz ön tanı sonrası ' +
+        'net fiyat verilir.',
+    },
+  ],
 };

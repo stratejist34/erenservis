@@ -159,7 +159,7 @@ export default function BrandSection() {
       {/* Divider */}
       <div className="mb-8 flex items-center gap-4">
         <div className="h-px flex-1 bg-border-hairline" />
-        <span className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-iron-light/50">Tüm servis verilen markalar</span>
+        <span className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-iron-light/50">Markanız yukarıda yoksa — biz yine de buradayız</span>
         <div className="h-px flex-1 bg-border-hairline" />
       </div>
 

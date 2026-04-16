@@ -446,6 +446,15 @@ export default function DsgVuruntuSemptomlariPage() {
                 DSG Kavrama Değişimi Fiyatı 2026 →
               </div>
             </a>
+            <a
+              href="/rehber/otomatik-sanziman-vuruntu"
+              className="block border border-border-hairline rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group sm:col-span-2"
+            >
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Genel Rehber</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
+                Otomatik şanzımanda vuruntunun genel nedenleri (tüm tipler) →
+              </div>
+            </a>
           </div>
         </section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Phone, MessageCircle, CheckCircle2, ShieldCheck, Wrench, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import {
@@ -101,17 +102,17 @@ export default function DsgBasincTupuPage() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(/images/part2/Screenshot_75.webp)',
+              backgroundImage: 'url(/images/part2/sanziman-basinc-testi.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: 'blur(6px) saturate(0.5) brightness(0.5)',
+              filter: 'blur(3px) saturate(0.6) brightness(0.7)',
             }}
           />
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 z-[1]"
             style={{
-              background: 'linear-gradient(to bottom, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.90) 100%)',
+              background: 'linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.72) 100%)',
             }}
           />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -222,7 +223,15 @@ export default function DsgBasincTupuPage() {
         {/* Montaj Süreci */}
         <section className="py-16 bg-graphite-base">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Montaj Süreci</h2>
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-8">Montaj Süreci</h2>
+            <div className="relative w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-border-hairline mb-8">
+              <Image
+                src="/images/part2/basic_tupu_yag_kacirma2.webp"
+                alt="Basınç tüpü montajı — Eren Servis atölyesi"
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-col gap-4">
               {MONTAJ_SURECI.map((item, i) => (
                 <div key={item.adim} className="flex gap-4 p-5 rounded-xl bg-graphite-surface border border-border-hairline">

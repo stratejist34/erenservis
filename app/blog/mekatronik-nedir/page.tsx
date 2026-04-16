@@ -7,9 +7,9 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Mekatronik Nedir? DSG Şanzıman Mekatronik Kart Rehberi | Eren Servis',
+  title: 'DSG Mekatronik Nedir? Arıza Belirtileri ve 2026 Tamir Maliyeti',
   description:
-    'DSG mekatronik nedir, ne işe yarar, nasıl arızalanır? DQ200 ve DQ250 mekatronik kart farkları, arıza belirtileri ve tamir süreci. Bostancı uzman servis rehberi.',
+    'Vuruntu, anahtar simgesi, tek viteste kalma — mekatronik arızasının 5 belirtisi. DQ200/DQ250 farkı, tamir mi değişim mi ve 2026 maliyet rehberi. Bostancı ücretsiz ön tanı.',
   keywords: [
     'mekatronik nedir',
     'dsg mekatronik ne işe yarar',
@@ -64,9 +64,10 @@ export default function MekatronikNedirPage() {
     <>
       <BlogSchema
         slug="mekatronik-nedir"
-        title="Mekatronik Nedir? DSG Şanzıman Mekatronik Kart Rehberi | Eren Servis"
-        description="DSG mekatronik nedir, ne işe yarar, nasıl arızalanır? DQ200 ve DQ250 mekatronik kart farkları, arıza belirtileri ve tamir süreci. Bostancı uzman servis rehberi."
+        title="DSG Mekatronik Nedir? Arıza Belirtileri ve 2026 Tamir Maliyeti"
+        description="Vuruntu, anahtar simgesi, tek viteste kalma — mekatronik arızasının 5 belirtisi. DQ200/DQ250 farkı, tamir mi değişim mi ve 2026 maliyet rehberi. Bostancı ücretsiz ön tanı."
         datePublished="2026-04-11"
+        dateModified="2026-04-16"
       />
       <main className="bg-graphite-base">
 
@@ -119,6 +120,35 @@ export default function MekatronikNedirPage() {
           </p>
         </div>
 
+        {/* Nasıl Çalışır */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Mekatronik Nasıl Çalışır?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+              <h3 className="font-saira font-semibold text-text-primary mb-2">Elektronik Kontrol Kartı</h3>
+              <p className="font-saira text-sm text-text-secondary leading-relaxed">
+                Hız, devir ve yük sensörlerinden gelen verileri milisaniyeler içinde işler. Hangi
+                vitese geçileceğine, kavramanın ne zaman ve ne kadar baskılanacağına bu kart karar
+                verir. Yazılım güncelleme ya da kart tamiri bu katmanı etkiler.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+              <h3 className="font-saira font-semibold text-text-primary mb-2">Hidrolik Ünite</h3>
+              <p className="font-saira text-sm text-text-secondary leading-relaxed">
+                Kartın verdiği kararı fiziksel harekete çevirir. Solenoid valfler, basınç tüpü ve
+                pompa bu katmanda yer alır. Yağ kirliliği veya basınç kaybı önce burada belirir;
+                karta zarar vermeden önce müdahale edilebilir.
+              </p>
+            </div>
+          </div>
+          <p className="font-saira text-sm text-text-secondary leading-relaxed mt-4 px-1">
+            İki katman tek bir plastik–alüminyum gövde içinde birleştirildiği için arızayı
+            lokalize etmek kritiktir. Yalnızca elektronik katman etkilendiyse kart tamiri yeterlidir;
+            yalnızca hidrolik katman etkilendiyse solenoid veya basınç tüpü değişimi yapılır.
+            Her iki katman da hasar görmüşse komple ünite değişimi gerekebilir.
+          </p>
+        </section>
+
         {/* Arıza Belirtileri */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Mekatronik Arıza Belirtileri</h2>
@@ -158,6 +188,41 @@ export default function MekatronikNedirPage() {
           </div>
         </section>
 
+        {/* Tamir mi Değişim mi */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Tamir mi, Değişim mi?</h2>
+          <div className="overflow-x-auto rounded-xl border border-border-hairline">
+            <table className="w-full font-saira text-sm">
+              <thead>
+                <tr className="bg-graphite-surface border-b border-border-hairline">
+                  <th className="text-left px-5 py-3 text-text-primary font-semibold">Durum</th>
+                  <th className="text-left px-5 py-3 text-brass font-semibold">Tamir</th>
+                  <th className="text-left px-5 py-3 text-text-secondary font-semibold">Değişim</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Erken dönem — P17xx hata, belirti yeni başladı', '✓', '—'],
+                  ['Solenoid ya da sensör arızası (hidrolik katman)', '✓', '—'],
+                  ['Kart iletken yolları yanmış / kırık', '—', '✓'],
+                  ['Metal toz kirliliği mekatroniğe ulaşmış', '—', '✓'],
+                  ['İlk tamir girişimi başarısız olduysa', '—', '✓'],
+                  ['Yağ kirliliği erken dönem, kart sağlam', '✓', '—'],
+                ].map(([durum, tamir, degisim]) => (
+                  <tr key={durum} className="border-b border-border-hairline last:border-0">
+                    <td className="px-5 py-3 text-text-secondary">{durum}</td>
+                    <td className="px-5 py-3 text-brass font-semibold">{tamir}</td>
+                    <td className="px-5 py-3 text-text-secondary">{degisim}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="font-saira text-xs text-text-secondary mt-3 px-1">
+            Kesin karar yalnızca diyagnoz sonrası verilir — araç görülmeden yapılan tahminler yanıltıcı olabilir.
+          </p>
+        </section>
+
         {/* Erken Teşhis */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Neden Erken Teşhis Kritik?</h2>
@@ -171,6 +236,30 @@ export default function MekatronikNedirPage() {
               ))}
             </ul>
           </div>
+        </section>
+
+        {/* 2026 Maliyet Özeti */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">2026 Maliyet Özeti</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { islem: 'Kart Tamiri', aralik: '14.000 – 25.000 TL', aciklama: 'Erken teşhis, kart sağlamsa' },
+              { islem: 'Komple Ünite Değişimi', aralik: '55.000 – 68.000 TL', aciklama: 'Orijinal yeni mekatronik set' },
+              { islem: 'Revizyonlu Ünite', aralik: '45.000 TL\'den başlar', aciklama: 'Sertifikalı yenileme' },
+            ].map((item) => (
+              <div key={item.islem} className="p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+                <p className="font-jetbrains text-xs text-iron-light mb-1">{item.islem}</p>
+                <p className="font-saira font-semibold text-brass text-lg mb-1">{item.aralik}</p>
+                <p className="font-saira text-xs text-text-secondary">{item.aciklama}</p>
+              </div>
+            ))}
+          </div>
+          <p className="font-saira text-xs text-text-secondary mt-3 px-1">
+            Fiyatlar Nisan 2026 itibarıyla geçerlidir, döviz kuruna göre değişim gösterebilir.{' '}
+            <Link href="/hizmetler/dsg-mekatronik-kart/" className="text-brass hover:underline">
+              Ayrıntılı fiyat listesi →
+            </Link>
+          </p>
         </section>
 
         {/* FAQ */}

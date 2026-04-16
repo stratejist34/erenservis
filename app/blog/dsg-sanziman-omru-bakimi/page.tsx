@@ -7,9 +7,9 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'DSG Şanzıman Ömrü ve Bakımı | DQ200 DQ250 Bakım Takvimi — Eren Servis',
+  title: 'DSG Şanzıman Kaç KM Dayanır? DQ200/DQ250 Bakım Takvimi 2026',
   description:
-    'DSG şanzıman kaç km dayanır? DQ200 ve DQ250 bakım aralıkları, yağ değişimi zamanı ve ömrü uzatan 5 kural. Bostancı uzman servis rehberi.',
+    'DQ200 kavrama 120.000 km, DQ250 180.000+ km dayanır — bakım yapılırsa. Model bazlı bakım takvimi, maliyet karşılaştırması ve 5 ömür uzatma kuralı. Bostancı.',
   keywords: [
     'dsg şanzıman ömrü',
     'dsg bakım aralığı',
@@ -68,9 +68,10 @@ export default function DSGSanzimanOmruBakimiPage() {
     <>
       <BlogSchema
         slug="dsg-sanziman-omru-bakimi"
-        title="DSG Şanzıman Ömrü ve Bakımı | DQ200 DQ250 Bakım Takvimi — Eren Servis"
-        description="DSG şanzıman kaç km dayanır? DQ200 ve DQ250 bakım aralıkları, yağ değişimi zamanı ve ömrü uzatan 5 kural. Bostancı uzman servis rehberi."
+        title="DSG Şanzıman Kaç KM Dayanır? DQ200/DQ250 Bakım Takvimi 2026"
+        description="DQ200 kavrama 120.000 km, DQ250 180.000+ km dayanır — bakım yapılırsa. Model bazlı bakım takvimi, maliyet karşılaştırması ve 5 ömür uzatma kuralı. Bostancı."
         datePublished="2026-04-11"
+        dateModified="2026-04-16"
       />
       <main className="bg-graphite-base">
 
@@ -123,6 +124,38 @@ export default function DSGSanzimanOmruBakimiPage() {
           </p>
         </div>
 
+        {/* DQ200 vs DQ250 Ömür Karşılaştırması */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DQ200 mu DQ250 mu Daha Uzun Ömürlü?</h2>
+          <div className="overflow-x-auto rounded-xl border border-border-hairline">
+            <table className="w-full font-saira text-sm">
+              <thead>
+                <tr className="bg-graphite-surface border-b border-border-hairline">
+                  <th className="text-left px-5 py-3 text-text-primary font-semibold">Kriter</th>
+                  <th className="text-left px-5 py-3 text-brass font-semibold">DQ200 (Kuru)</th>
+                  <th className="text-left px-5 py-3 text-text-secondary font-semibold">DQ250 (Islak)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Kavrama ömrü', '120.000–150.000 km', '180.000–220.000 km'],
+                  ['Şanzıman genel ömrü', '200.000+ km (bakımlı)', '250.000+ km (bakımlı)'],
+                  ['Şehir içi dayanımı', 'Orta — 1→2 geçiş kavrama yorar', 'İyi — yağ ısıyı dağıtır'],
+                  ['Bakım gereksinimi', 'Düşük (yağ yok)', 'Yüksek (60.000 km yağ)'],
+                  ['Arıza riski', 'Basınç tüpü kırılganlığı', 'Yağ kirliliği mekatroniği etkiler'],
+                  ['Tipik araçlar', 'Golf 6/7, Polo, A3, Leon', 'Passat, Tiguan, A4/A6, Octavia'],
+                ].map(([kriter, dq200, dq250]) => (
+                  <tr key={kriter} className="border-b border-border-hairline last:border-0">
+                    <td className="px-5 py-3 text-text-secondary font-medium">{kriter}</td>
+                    <td className="px-5 py-3 text-text-primary">{dq200}</td>
+                    <td className="px-5 py-3 text-text-secondary">{dq250}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Ömrü Etkileyen Faktörler */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DSG Ömrünü Kısaltan 4 Hata</h2>
@@ -173,6 +206,33 @@ export default function DSGSanzimanOmruBakimiPage() {
           </div>
         </section>
 
+        {/* Bakım vs Arıza Maliyet Karşılaştırması */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-4">Bakım mı Pahalı, Arıza mı?</h2>
+          <p className="font-saira text-sm text-text-secondary mb-6">
+            En sık sorulan soru budur. Rakamlar karşılaştırıldığında cevap nettir:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { baslik: 'DQ250 Yağ Değişimi', maliyet: '~4.500 – 6.500 TL', detay: '60.000 km\'de bir — mekatroniği ve kavramayı korur', vurgu: false },
+              { baslik: 'Mekatronik Tamiri', maliyet: '14.000 – 25.000 TL', detay: 'Yağ bakımsızlığı sonucu — önlenebilirdi', vurgu: true },
+              { baslik: 'Kavrama + Mekatronik', maliyet: '65.000 – 90.000 TL', detay: 'Geç kalınan arıza — her ikisi de etkilenmiş', vurgu: true },
+            ].map((item) => (
+              <div key={item.baslik} className={`p-5 rounded-xl border flex flex-col gap-2 ${item.vurgu ? 'bg-graphite-surface border-border-hairline' : 'bg-graphite-elevated border-border-brass'}`}>
+                <p className="font-jetbrains text-xs text-text-secondary">{item.baslik}</p>
+                <p className={`font-saira font-semibold text-xl ${item.vurgu ? 'text-text-secondary' : 'text-brass'}`}>{item.maliyet}</p>
+                <p className="font-saira text-xs text-text-secondary leading-relaxed">{item.detay}</p>
+              </div>
+            ))}
+          </div>
+          <p className="font-saira text-xs text-text-secondary mt-3 px-1">
+            Fiyatlar Nisan 2026 itibarıyla geçerlidir.{' '}
+            <Link href="/hizmetler/sanziman-bakimi/" className="text-brass hover:underline">
+              Şanzıman bakım hizmetimiz →
+            </Link>
+          </p>
+        </section>
+
         {/* Ömür Uzatan Kurallar */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DSG Ömrünü Uzatan 5 Kural</h2>
@@ -185,6 +245,32 @@ export default function DSGSanzimanOmruBakimiPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* Erken Uyarı İşaretleri */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DSG&apos;nin Sizi Uyardığı 5 İşaret</h2>
+          <p className="font-saira text-sm text-text-secondary mb-5">
+            Bu belirtilerden biri başladıysa şanzıman bakımını veya kontrolünü ertelemeyin.
+            Erken müdahale ile çözülen arıza, geç kalındığında katlanarak büyür.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { isaret: 'Soğuk harekette 1→2 vuruntsu', anlam: 'Kavrama aşınması veya adaptasyon bozulması' },
+              { isaret: 'Vites geçişlerinde hafif sarsıntı', anlam: 'Solenoid kirliliği veya yağ bozulması' },
+              { isaret: 'Göstergede şanzıman uyarısı', anlam: 'Mekatronik veya sensör arızası — hemen tanı' },
+              { isaret: 'Geri vitese geçmede gecikme', anlam: 'Hidrolik basınç sorunu veya solenoid' },
+              { isaret: 'S modunda normalden fazla devir', anlam: 'Kavrama kayması — ileri aşama aşınma' },
+            ].map((item) => (
+              <div key={item.isaret} className="flex gap-3 p-4 rounded-xl bg-graphite-surface border border-border-hairline">
+                <AlertTriangle className="w-4 h-4 text-brass shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-saira text-sm font-semibold text-text-primary">{item.isaret}</p>
+                  <p className="font-saira text-xs text-text-secondary mt-0.5">{item.anlam}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

@@ -42,7 +42,7 @@ export interface BreadcrumbItem {
 /* ── BUSINESS IDENTITY (tek kaynak) ─────────────────────────────────────── */
 
 const BUSINESS_NODE = {
-  '@type': 'AutoRepair' as const,
+  '@type': ['LocalBusiness', 'AutoRepair', 'Organization'] as const,
   '@id': 'https://erenservis.net/#business',
   name: 'Eren Servis',
   description:
@@ -145,29 +145,36 @@ export function buildServiceSchema(params: ServiceParams) {
 /* ── ARTICLE ─────────────────────────────────────────────────────────────── */
 
 export function buildArticleSchema(params: ArticleParams) {
+  const articleId = `${params.url}#article`;
+  const imageId = `${params.url}#primaryimage`;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': articleId,
     headline: params.title,
     description: params.description,
     url: params.url,
     datePublished: params.datePublished,
     dateModified: params.dateModified ?? params.datePublished,
     author: {
-      '@type': 'Organization',
-      name: 'Eren Servis',
-      url: 'https://erenservis.net',
+      '@type': 'Person',
+      '@id': 'https://erenservis.net/#author',
+      name: 'Eren Servis Teknik Ekibi',
+      url: 'https://erenservis.net/hakkimizda/',
+      worksFor: { '@id': 'https://erenservis.net/#business' },
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Eren Servis',
-      url: 'https://erenservis.net',
-    },
+    publisher: { '@id': 'https://erenservis.net/#business' },
     ...(params.imageUrl && {
       image: {
         '@type': 'ImageObject',
+        '@id': imageId,
         url: params.imageUrl,
+        width: 1200,
+        height: 630,
+        caption: params.title,
       },
+      primaryImageOfPage: { '@id': imageId },
     }),
   };
 }

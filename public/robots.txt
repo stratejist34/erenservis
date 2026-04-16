@@ -1,15 +1,25 @@
-# *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /*?*
 
-# *
-User-agent: *
-Disallow: /v1/
-Disallow: /v2/
-Disallow: /v4/
+User-agent: GPTBot
+Allow: /
 
-# Host
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
 Host: https://erenservis.net
-
-# Sitemaps
 Sitemap: https://erenservis.net/sitemap.xml

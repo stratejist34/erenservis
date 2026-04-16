@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /icon.png
+Allow: /apple-icon.png
+Allow: /favicon-32.png
+Allow: /favicon-512.png
 Disallow: /api/
 Disallow: /*?*
 

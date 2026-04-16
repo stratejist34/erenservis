@@ -110,6 +110,15 @@ export const metadata: Metadata = {
       "Bostancı'da DSG, ZF ve CVT otomatik şanzıman tamiri. 15+ yıl deneyim, garantili servis.",
     images: ["/og-image.jpg"],
   },
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

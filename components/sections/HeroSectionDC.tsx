@@ -132,9 +132,9 @@ export default function HeroSectionDC({
           priority
           fetchPriority="high"
           sizes="100vw"
-          quality={35}
+          quality={75}
           className="object-cover object-center"
-          style={{ filter: 'saturate(0.45) brightness(0.55)' }}
+          style={{ filter: 'saturate(0.7)' }}
         />
       </div>
 
@@ -145,10 +145,10 @@ export default function HeroSectionDC({
         style={{
           background: `linear-gradient(
             to right,
-            rgba(10,10,10,0.88) 0%,
-            rgba(10,10,10,0.74) 38%,
-            rgba(10,10,10,0.62) 68%,
-            rgba(10,10,10,0.50) 100%
+            rgba(10,10,10,0.82) 0%,
+            rgba(10,10,10,0.62) 38%,
+            rgba(10,10,10,0.40) 68%,
+            rgba(10,10,10,0.22) 100%
           )`,
         }}
       />
@@ -378,24 +378,7 @@ export default function HeroSectionDC({
       )}
 
       {/* ===== HERO ALT CTA BANDI ===== */}
-      <div className="relative z-10 col-span-full mt-16 overflow-hidden rounded-2xl">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url(/images/part2/Screenshot_57.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.15,
-            filter: 'blur(3px) saturate(0.65) brightness(0.7)',
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(90deg, rgba(21,19,15,0.9) 0%, rgba(21,19,15,0.7) 50%, rgba(21,19,15,0.9) 100%)',
-          }}
-        />
+      <div className="relative z-10 col-span-full mt-16 overflow-hidden rounded-2xl border border-border-hairline bg-graphite-surface/70 backdrop-blur-sm">
         <div className="relative grid grid-cols-1 items-center gap-8 px-8 py-8 sm:grid-cols-[auto_1fr_auto]">
           {/* Sol — bağlam */}
           <div className="sm:max-w-[200px]">

@@ -89,6 +89,12 @@ const BUSINESS_NODE = {
     url: 'https://erenservis.net/images/erenlogo.webp',
     contentUrl: 'https://erenservis.net/images/erenlogo.webp',
   },
+  image: {
+    '@type': 'ImageObject' as const,
+    url: 'https://erenservis.net/og-image.jpg',
+    width: 1200,
+    height: 630,
+  },
 };
 
 /** Pure @id pointer — entity tam tanımı BUSINESS_NODE'da, her yerde bu kullanılır. */

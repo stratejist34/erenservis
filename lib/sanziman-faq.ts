@@ -712,6 +712,40 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
   ],
 
+  'cvt-vuruntu': [
+    {
+      q: 'CVT şanzımanda vuruntu neden olur?',
+      a:
+        'CVT vuruntusunun en yaygın nedeni metal kayış veya pully aşınmasıdır. ' +
+        'Kayış, vites basamağı yerine iki pully arasında kademesiz geçiş yapar; ' +
+        'aşındığında sabit bir hız bandında (genellikle 40–70 km/s) titreşim oluşur. ' +
+        'Kontrol birimi hatası ve bozulmuş CVT yağı da aynı belirtiyi verebilir.',
+    },
+    {
+      q: 'CVT şanzımanda vuruntu ciddi midir?',
+      a:
+        'CVT\'de vuruntu nadirdir — ama olduğunda ciddiye alınmalıdır. Kayış aşınması ' +
+        'erken dönemde yağ değişimi veya adaptasyon kalibrasyonuyla durdurulabilir; ' +
+        'ileri evrede kayış ve pully seti birlikte değişmek zorunda kalır. ' +
+        'Bu onarım tork konvertörlü şanzımana göre daha pahalıdır.',
+    },
+    {
+      q: 'CVT şanzıman yağı değişimi vuruntunu çözer mi?',
+      a:
+        'Erken evrede evet — bozulmuş CVT yağı kayış sürtünme katsayısını düşürür ' +
+        've titreşime neden olur. Doğru viskozitede orijinal CVT yağıyla değişim bu ' +
+        'durumu giderebilir. Kayış veya pully mekanik olarak hasar gördüyse yağ ' +
+        'değişimi tek başına yeterli olmaz.',
+    },
+    {
+      q: 'Hangi araçlarda CVT şanzıman vuruntu görülür?',
+      a:
+        'CVT vuruntu en çok Toyota (Corolla, Auris, C-HR), Honda (Jazz, Civic, HR-V), ' +
+        'Nissan (Qashqai, X-Trail, Note) ve Subaru modellerinde bildirilmiştir. ' +
+        '150.000 km üzeri ve CVT yağı hiç değiştirilmemiş araçlarda risk daha yüksektir.',
+    },
+  ],
+
   'edc-vuruntu': [
     {
       q: 'Renault EDC şanzımanda vuruntu neden olur?',

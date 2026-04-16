@@ -18,6 +18,15 @@ export const REHBER_POSTS: RehberPost[] = [
     categories: ['genel', 'vuruntu'],
   },
   {
+    slug: 'cvt-vuruntu',
+    title: 'CVT Şanzımanda Vuruntu',
+    excerpt:
+      "CVT'de vuruntu nadirdir ama olduğunda ciddidir. Kayış aşınması, pully ve kontrol ünitesi — Toyota, Honda, Nissan rehberi.",
+    date: '2026-04-17',
+    href: '/rehber/cvt-vuruntu/',
+    categories: ['cvt', 'vuruntu'],
+  },
+  {
     slug: 'edc-vuruntu',
     title: 'Renault EDC Vuruntu Belirtileri',
     excerpt:

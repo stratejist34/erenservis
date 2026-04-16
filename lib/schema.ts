@@ -83,6 +83,12 @@ const BUSINESS_NODE = {
     worstRating: '1',
   },
   sameAs: ['https://www.google.com/maps/place/Eren+Volkswagen+Servis+Bostanc%C4%B1/@40.9656025,29.1093912'],
+  logo: {
+    '@type': 'ImageObject' as const,
+    '@id': 'https://erenservis.net/#logo',
+    url: 'https://erenservis.net/images/erenlogo.webp',
+    contentUrl: 'https://erenservis.net/images/erenlogo.webp',
+  },
 };
 
 /** Pure @id pointer — entity tam tanımı BUSINESS_NODE'da, her yerde bu kullanılır. */

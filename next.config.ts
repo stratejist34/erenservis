@@ -23,10 +23,6 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
   async headers() {
     return [
       {

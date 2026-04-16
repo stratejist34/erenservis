@@ -598,4 +598,40 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         '2026\'da ZF yağ değişimi fiyatı 10.000–16.000 TL arasındadır.',
     },
   ],
+  'dsg-sanziman-tamiri': [
+    {
+      q: 'DSG şanzıman tamiri ne kadar sürer?',
+      a:
+        'Arızanın boyutuna göre değişir. Mekatronik kart tamiri genellikle 1 iş günü, ' +
+        'kavrama paketi değişimi 2–3 iş günü, komple revizyon ise 3–5 iş günü sürer. ' +
+        'Parça temin süreleri önceden bildirilir.',
+    },
+    {
+      q: 'DSG tamiri garantili mi?',
+      a:
+        'Evet. Eren Servis\'te yapılan tüm DSG şanzıman onarım ve parça değişim işlemleri ' +
+        '12 ay veya 20.000 km garanti kapsamındadır. Garanti belgesi yazılı olarak teslim edilir.',
+    },
+    {
+      q: 'DQ200 şanzıman tamiri 2026 fiyatı nedir?',
+      a:
+        'Arıza tipine göre: Mekatronik kart tamiri 14.000–25.000 TL, kavrama paketi değişimi ' +
+        '55.000–72.000 TL, basınç tüpü değişimi 8.000–12.000 TL aralığındadır. ' +
+        'Net fiyat ücretsiz ön tanı sonrası yazılı olarak sunulur.',
+    },
+    {
+      q: 'DSG tamirinde orijinal parça mı kullanılıyor?',
+      a:
+        'Evet, OEM veya orijinal eşdeğer (OE) parça kullanılmaktadır. Müşterinin talebiyle ' +
+        'revizyonlu ünite de tercih edilebilir. Kullanılan tüm parçalar faturada detaylı ' +
+        'olarak belirtilir.',
+    },
+    {
+      q: 'DSG arızası erken teşhis edilirse fark yapar mı?',
+      a:
+        'Kesinlikle. Vuruntu başladığında sadece kavrama temizliği veya kart tamiri ile ' +
+        'çözülebilecek arıza, 3 ay beklendiğinde kavrama + mekatronik birlikte etkilenip ' +
+        'maliyet 3–5 kat artabilir. İlk belirtide ücretsiz ön tanı için gelin.',
+    },
+  ],
 };

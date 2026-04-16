@@ -4,15 +4,17 @@ import Link from 'next/link';
 import {
   buildServiceSchema,
   buildBreadcrumbSchema,
+  buildFAQSchema,
   schemaToString,
 } from '@/lib/schema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'DSG Şanzıman Tamiri Bostancı | Eren Servis',
+  title: 'DSG Şanzıman Tamiri Bostancı | DQ200 DQ250 DQ381 | Eren Servis',
   description:
-    'Bostancı\'da DSG şanzıman tamiri ve bakımı. DQ200, DQ250, DQ381 ve tüm DSG modelleri. Sertifikalı teknisyen, orijinal parça, 6 ay garanti.',
+    'Bostancı\'da DSG şanzıman tamiri. DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 12 ay garanti, ücretsiz ön tanı, orijinal parça.',
   keywords: [
     'dsg şanzıman tamiri',
     'dsg şanzıman servisi bostancı',
@@ -24,6 +26,12 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+  },
+  openGraph: {
+    title: 'DSG Şanzıman Tamiri Bostancı | Eren Servis',
+    description: 'DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 12 ay garanti, ücretsiz ön tanı.',
+    url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+    images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
 };
 
@@ -83,12 +91,16 @@ const HIZMET_ADIMLAR = [
 ];
 
 // ─── SCHEMA ──────────────────────────────────────────────────────────────────
+const faqItems = TRANSMISSION_FAQS['dsg-sanziman-tamiri'] ?? [];
+
 const serviceSchema = buildServiceSchema({
   name: 'DSG Şanzıman Tamiri',
   description:
     "Bostancı'da DSG şanzıman tamiri ve bakımı. DQ200, DQ250, DQ381 ve tüm DSG modelleri. " +
-    'Sertifikalı teknisyen, orijinal parça, 6 ay garanti.',
+    'Sertifikalı teknisyen, orijinal parça, 12 ay garanti.',
   url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+  minPrice: 14000,
+  maxPrice: 90000,
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
@@ -103,6 +115,9 @@ export default function DsgSanzımanTamiriPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      {faqItems.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(buildFAQSchema(faqItems)) }} />
+      )}
       <main>
 
         {/* Hero */}
@@ -114,14 +129,14 @@ export default function DsgSanzımanTamiriPage() {
               backgroundImage: 'url(/images/mechanic-close.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: 'blur(6px) saturate(0.5) brightness(0.55)',
+              filter: 'blur(3px) saturate(0.6) brightness(0.7)',
             }}
           />
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 z-[1]"
             style={{
-              background: 'linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.88) 100%)',
+              background: 'linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.72) 100%)',
             }}
           />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -233,6 +248,64 @@ export default function DsgSanzımanTamiriPage() {
             </div>
           </div>
         </section>
+
+        {/* Neden Eren Servis */}
+        <section className="py-16 bg-graphite-surface">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Neden Eren Servis?</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                { rakam: '15+', etiket: 'Yıl Deneyim', aciklama: 'Sadece DSG ve otomatik şanzıman — genel oto servis değil' },
+                { rakam: '12 Ay', etiket: 'Garanti', aciklama: 'Tüm işçilik ve parça değişimlerinde yazılı garanti' },
+                { rakam: 'OEM', etiket: 'Orijinal Parça', aciklama: 'VW Grup orijinal veya OE eşdeğer parça kullanımı' },
+                { rakam: '0 ₺', etiket: 'Ön Tanı', aciklama: 'Hata kodu okuma ve temel analiz ücretsizdir' },
+              ].map((item) => (
+                <div key={item.etiket} className="p-6 rounded-xl bg-graphite-elevated border border-border-hairline text-center">
+                  <p className="font-saira font-bold text-3xl text-brass mb-1">{item.rakam}</p>
+                  <p className="font-jetbrains text-xs font-semibold text-text-primary uppercase tracking-widest mb-2">{item.etiket}</p>
+                  <p className="font-saira text-xs text-text-secondary leading-relaxed">{item.aciklama}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* İlgili Hizmetler */}
+        <section className="py-12 bg-graphite-base border-t border-border-hairline">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-lg font-semibold text-text-primary mb-6 text-center">İlgili DSG Hizmetleri</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { href: '/hizmetler/dsg-mekatronik-kart/', label: 'Mekatronik Kart' },
+                { href: '/hizmetler/dsg-kavrama-degisimi/', label: 'Kavrama Değişimi' },
+                { href: '/hizmetler/dsg-basinc-tupu/', label: 'Basınç Tüpü' },
+                { href: '/hizmetler/sanziman-bakimi/', label: 'Şanzıman Bakımı' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href}
+                  className="flex items-center justify-center px-4 py-3 rounded-xl border border-border-hairline text-text-secondary font-saira text-sm font-semibold hover:border-brass hover:text-text-primary transition-colors text-center">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        {faqItems.length > 0 && (
+          <section className="py-16 bg-graphite-surface">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8 text-center">Sık Sorulan Sorular</h2>
+              <div className="space-y-4">
+                {faqItems.map((item) => (
+                  <div key={item.q} className="p-5 rounded-xl bg-graphite-elevated border border-border-hairline">
+                    <h3 className="font-saira font-semibold text-text-primary mb-2">{item.q}</h3>
+                    <p className="font-saira text-text-secondary text-sm leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Alt CTA */}
         <section className="bg-graphite-base py-14 text-center">

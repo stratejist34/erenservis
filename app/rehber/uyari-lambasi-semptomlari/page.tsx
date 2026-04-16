@@ -6,7 +6,7 @@ import {
   buildArticleSchema,
   buildFAQSchema,
   buildBreadcrumbSchema,
-  schemaToString,
+  buildServiceSchema,
 } from "@/lib/schema";
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
@@ -70,6 +70,13 @@ const breadcrumbSchema = buildBreadcrumbSchema([
     url: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
   },
 ]);
+
+const serviceSchema = buildServiceSchema({
+  name: "DSG Uyarı Lambası Teşhis",
+  description:
+    "P ışığı ve şanzıman uyarı lambası teşhisi, hata kodu okuma ve mekatronik onarımı. Bostancı, İstanbul.",
+  url: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
+});
 
 // ─── VERİ ─────────────────────────────────────────────────────────────────────
 const lambalar = [
@@ -179,15 +186,12 @@ export default function UyariLambasiSemptomlariPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToString(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [articleSchema, faqSchema, breadcrumbSchema, serviceSchema],
+          }),
+        }}
       />
 
       <main className="min-h-screen bg-graphite-base">

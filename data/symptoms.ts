@@ -1,5 +1,6 @@
 export interface Symptom {
   id: number;
+  slug: string;
   severity: 'high' | 'medium';
   /** Hero pill buton için kısa etiket */
   shortLabel: string;
@@ -20,11 +21,17 @@ export interface Symptom {
    * reason: BrandSection kartında gösterilen kısa teknik neden (≤6 kelime)
    */
   topBrandGroups: { label: string; slugs: string[]; reason: string }[];
+  costProfile: {
+    optimal: { range: string; label: string; caption: string };
+    risky:   { range: string; label: string; caption: string };
+    critical:{ range: string; label: string; caption: string };
+  };
 }
 
 export const SYMPTOMS: Symptom[] = [
   {
     id: 1,
+    slug: 'vuruntu',
     severity: 'high',
     shortLabel: 'Vuruntu',
     title: 'Vites geçişte vuruntu',
@@ -39,9 +46,15 @@ export const SYMPTOMS: Symptom[] = [
       { label: 'DSG / DCT araçları', slugs: ['volkswagen', 'audi', 'skoda', 'seat'], reason: 'Kavrama balatası aşınması riski' },
       { label: 'Aisin / EAT araçları', slugs: ['peugeot', 'citroen'], reason: 'Solenoid valf veya kavrama paketi sorunu' },
     ],
+    costProfile: {
+      optimal:  { range: '8–15K ₺',  label: 'Erken Teşhis', caption: 'Kavrama balata değişimi' },
+      risky:    { range: '35–80K ₺', label: 'Geç Müdahale', caption: 'Kavrama + mekatronik' },
+      critical: { range: '120K+ ₺',  label: 'İhmâl',        caption: 'Komple şanzıman' },
+    },
   },
   {
     id: 2,
+    slug: 'uyari-lambasi',
     severity: 'high',
     shortLabel: 'Uyarı Lambası',
     title: 'DSG uyarı lambası',
@@ -57,9 +70,15 @@ export const SYMPTOMS: Symptom[] = [
       { label: 'CVT araçları', slugs: ['toyota', 'honda', 'nissan'], reason: 'Basınç sensörü veya kontrol ünitesi' },
       { label: 'Aisin / EAT araçları', slugs: ['peugeot', 'citroen'], reason: 'EAT modül hata kodu' },
     ],
+    costProfile: {
+      optimal:  { range: '5–12K ₺',  label: 'Erken Teşhis', caption: 'Kalibrasyon / yazılım' },
+      risky:    { range: '20–60K ₺', label: 'Geç Müdahale', caption: 'Mekatronik kart tamiri' },
+      critical: { range: '80K+ ₺',   label: 'İhmâl',        caption: 'Mekatronik değişimi' },
+    },
   },
   {
     id: 3,
+    slug: 'kayma',
     severity: 'high',
     shortLabel: 'Kayma',
     title: 'Kayma ve devir atlama',
@@ -74,9 +93,15 @@ export const SYMPTOMS: Symptom[] = [
       { label: 'DSG / DCT araçları', slugs: ['volkswagen', 'ford', 'renault'], reason: 'Kavrama balatası sıfırlanmış' },
       { label: 'CVT araçları', slugs: ['toyota', 'honda', 'nissan'], reason: 'Kayış / pully aşınması' },
     ],
+    costProfile: {
+      optimal:  { range: '10–20K ₺', label: 'Erken Teşhis', caption: 'Basınç tüpü / kavrama' },
+      risky:    { range: '40–90K ₺', label: 'Geç Müdahale', caption: 'Şanzıman revizyonu' },
+      critical: { range: '120K+ ₺',  label: 'İhmâl',        caption: 'Komple değişim' },
+    },
   },
   {
     id: 4,
+    slug: 'gecikme',
     severity: 'medium',
     shortLabel: 'Gecikme',
     title: 'Geç vites değişimi',
@@ -92,9 +117,15 @@ export const SYMPTOMS: Symptom[] = [
       { label: 'Aisin / EAT araçları', slugs: ['peugeot', 'citroen', 'toyota'], reason: 'Yağ basıncı düşüklüğü' },
       { label: 'CVT araçları', slugs: ['honda', 'nissan'], reason: 'Kayış aşınması veya kontrol birimi hatası' },
     ],
+    costProfile: {
+      optimal:  { range: '8–18K ₺',  label: 'Erken Teşhis', caption: 'Solenoid valf temizlik' },
+      risky:    { range: '30–70K ₺', label: 'Geç Müdahale', caption: 'Valf + yağ sistemi' },
+      critical: { range: '100K+ ₺',  label: 'İhmâl',        caption: 'Şanzıman revizyonu' },
+    },
   },
   {
     id: 5,
+    slug: 'titresim',
     severity: 'medium',
     shortLabel: 'Titreşim',
     title: 'Rölantide titreşim',
@@ -109,6 +140,11 @@ export const SYMPTOMS: Symptom[] = [
       { label: 'DSG / DCT araçları', slugs: ['volkswagen', 'audi', 'skoda', 'seat'], reason: 'Çift kütleli volant aşınması' },
       { label: 'Aisin / EAT araçları', slugs: ['peugeot', 'citroen', 'toyota'], reason: 'Tork konvertör titreşimi' },
     ],
+    costProfile: {
+      optimal:  { range: '12–25K ₺', label: 'Erken Teşhis', caption: 'Volant balata paketi' },
+      risky:    { range: '40–85K ₺', label: 'Geç Müdahale', caption: 'Volant + kavrama seti' },
+      critical: { range: '120K+ ₺',  label: 'İhmâl',        caption: 'Komple revizyon' },
+    },
   },
 ];
 

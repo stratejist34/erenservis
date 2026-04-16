@@ -27,38 +27,29 @@ const STATS = [
   { value: '6 Ay', label: 'Garanti' },
 ] as const;
 
-const COST_BARS = [
-  {
-    label: 'Erken Teşhis',
-    range: '8–15K ₺',
-    pct: '14%',
+const BAR_STYLES = {
+  optimal: {
     color: '#10B981',
     bgColor: 'rgba(16,185,129,0.12)',
     borderColor: 'rgba(16,185,129,0.35)',
+    pct: '14%',
     status: 'OPTİMAL',
-    note: 'Kavrama / mekatronik',
   },
-  {
-    label: 'Geç Müdahale',
-    range: '35–80K ₺',
-    pct: '62%',
+  risky: {
     color: '#F59E0B',
     bgColor: 'rgba(245,158,11,0.12)',
     borderColor: 'rgba(245,158,11,0.40)',
+    pct: '62%',
     status: 'RİSKLİ',
-    note: 'Şanzıman revizyonu',
   },
-  {
-    label: 'İhmâl',
-    range: '120K+ ₺',
-    pct: '100%',
+  critical: {
     color: '#F43F5E',
     bgColor: 'rgba(244,63,94,0.12)',
     borderColor: 'rgba(244,63,94,0.35)',
+    pct: '100%',
     status: 'KRİTİK',
-    note: 'Komple değişim',
   },
-] as const;
+} as const;
 
 /* ── TYPES ──────────────────────────────────────────────────────────────── */
 
@@ -333,33 +324,37 @@ export default function HeroSectionDC({
             </div>
 
             <div className="mt-5 space-y-3">
-              {COST_BARS.map((bar, i) => (
-                <div key={bar.label}>
-                  <div className="mb-1.5 flex items-baseline justify-between">
-                    <span className="font-jetbrains text-[11px] text-iron-light">{bar.label}</span>
-                    <span className="font-jetbrains text-[11px] font-semibold" style={{ color: bar.color }}>
-                      {bar.status}
-                    </span>
-                  </div>
-                  <div className="relative h-8 overflow-hidden rounded-lg border border-border-hairline bg-graphite-elevated">
-                    <div
-                      className="animate-fill-bar absolute inset-y-0 left-0 rounded-lg"
-                      style={{
-                        '--bar-target': bar.pct,
-                        background: bar.bgColor,
-                        borderRight: `2px solid ${bar.borderColor}`,
-                        animationDelay: `${0.5 + i * 0.15}s`,
-                      } as React.CSSProperties}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-between px-3">
-                      <span className="font-jetbrains text-sm font-semibold" style={{ color: bar.color }}>
-                        {bar.range}
+              {((['optimal', 'risky', 'critical'] as const)).map((key, i) => {
+                const style = BAR_STYLES[key];
+                const data = selected.costProfile[key];
+                return (
+                  <div key={key}>
+                    <div className="mb-1.5 flex items-baseline justify-between">
+                      <span className="font-jetbrains text-[11px] text-iron-light">{data.label}</span>
+                      <span className="font-jetbrains text-[11px] font-semibold" style={{ color: style.color }}>
+                        {style.status}
                       </span>
-                      <span className="font-jetbrains text-[10px] text-text-tertiary">{bar.note}</span>
+                    </div>
+                    <div className="relative h-8 overflow-hidden rounded-lg border border-border-hairline bg-graphite-elevated">
+                      <div
+                        className="animate-fill-bar absolute inset-y-0 left-0 rounded-lg"
+                        style={{
+                          '--bar-target': style.pct,
+                          background: style.bgColor,
+                          borderRight: `2px solid ${style.borderColor}`,
+                          animationDelay: `${0.5 + i * 0.15}s`,
+                        } as React.CSSProperties}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-between px-3">
+                        <span className="font-jetbrains text-sm font-semibold" style={{ color: style.color }}>
+                          {data.range}
+                        </span>
+                        <span className="font-jetbrains text-[10px] text-text-tertiary">{data.caption}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

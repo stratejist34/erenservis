@@ -6,6 +6,7 @@ import {
   buildArticleSchema,
   buildFAQSchema,
   buildBreadcrumbSchema,
+  buildServiceSchema,
 } from "@/lib/schema";
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
@@ -66,6 +67,13 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Rehber", url: "https://erenservis.net/rehber" },
   { name: "DSG Kavrama Arızası Belirtileri", url: PAGE_URL },
 ]);
+
+const serviceSchema = buildServiceSchema({
+  name: "DSG Kavrama Arızası Onarımı",
+  description:
+    "Kavrama balatası değişimi ve DSG revizyonu. Bostancı, İstanbul.",
+  url: PAGE_URL,
+});
 
 // ─── BELİRTİ VERİSİ ──────────────────────────────────────────────────────────
 const belirtiler = [
@@ -145,18 +153,14 @@ const aciliyetEtiket: Record<string, string> = {
 export default function DsgKavramaArizaBelirtileriPage() {
   return (
     <>
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [articleSchema, faqSchema, breadcrumbSchema, serviceSchema],
+          }),
+        }}
       />
 
       <main className="min-h-screen bg-graphite-base">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import HomePageSections from '@/components/HomePageSections';
 import { SymptomProvider } from '@/contexts/SymptomContext';
 
@@ -41,9 +42,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative">
-      <SymptomProvider>
-        <HomePageSections />
-      </SymptomProvider>
+      <Suspense>
+        <SymptomProvider>
+          <HomePageSections />
+        </SymptomProvider>
+      </Suspense>
     </main>
   );
 }

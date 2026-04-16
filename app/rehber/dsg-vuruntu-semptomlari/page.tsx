@@ -6,7 +6,7 @@ import {
   buildArticleSchema,
   buildFAQSchema,
   buildBreadcrumbSchema,
-  schemaToString,
+  buildServiceSchema,
 } from "@/lib/schema";
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
@@ -68,6 +68,13 @@ const breadcrumbSchema = buildBreadcrumbSchema([
     url: "https://erenservis.net/rehber/dsg-vuruntu-semptomlari",
   },
 ]);
+
+const serviceSchema = buildServiceSchema({
+  name: "DSG Vuruntu Teşhis ve Onarım",
+  description:
+    "DSG vuruntu ve sarsıntı arızası teşhisi, kavrama bakımı ve mekatronik onarımı. Bostancı, İstanbul.",
+  url: "https://erenservis.net/rehber/dsg-vuruntu-semptomlari",
+});
 
 const senaryolar = [
   {
@@ -145,15 +152,12 @@ export default function DsgVuruntuSemptomlariPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToString(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [articleSchema, faqSchema, breadcrumbSchema, serviceSchema],
+          }),
+        }}
       />
 
       <main className="min-h-screen bg-graphite-base">

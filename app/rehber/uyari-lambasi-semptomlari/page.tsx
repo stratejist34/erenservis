@@ -445,6 +445,15 @@ export default function UyariLambasiSemptomlariPage() {
                 Ücretsiz Ön Tanı İçin Ara →
               </div>
             </a>
+            <a
+              href="/rehber/otomatik-sanziman-ariza-lambasi"
+              className="sm:col-span-2 block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
+            >
+              <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Genel Rehber</div>
+              <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
+                Tüm şanzıman tiplerinde arıza lambası anlamları →
+              </div>
+            </a>
           </div>
         </section>
 

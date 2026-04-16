@@ -411,6 +411,44 @@ export default function DsgKavramaArizaBelirtileriPage() {
           </div>
         </section>
 
+        {/* ── İLGİLİ REHBERLER ─────────────────────────────────────────── */}
+        <section className="bg-graphite-base px-4 py-10">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-saira text-base font-semibold text-text-primary mb-4">
+              İlgili Rehberler
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <a
+                href="/rehber/otomatik-sanziman-sarsinti"
+                className="sm:col-span-2 block border border-border-hairline rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
+              >
+                <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Genel Rehber</div>
+                <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
+                  Otomatik Şanzımanda Sarsıntı: 4 Kaynak ve Ayırt Etme →
+                </div>
+              </a>
+              <a
+                href="/rehber/volant-titresim"
+                className="block border border-border-hairline rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
+              >
+                <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Volant</div>
+                <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
+                  Çift Kütleli Volant Titreşimi Detayı →
+                </div>
+              </a>
+              <a
+                href="/rehber/otomatik-sanziman-vuruntu"
+                className="block border border-border-hairline rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
+              >
+                <div className="font-jetbrains text-xs text-iron-light mb-1 uppercase tracking-wide">Vuruntu</div>
+                <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
+                  Otomatik Şanzımanda Vuruntu Rehberi →
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-12">
           <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-8 text-center">

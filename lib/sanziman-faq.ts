@@ -205,6 +205,177 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
   ],
 
+  'otomatik-sanziman-sarsinti': [
+    {
+      q: 'Şanzıman sarsıntısı ile vuruntu aynı şey mi?',
+      a:
+        'Hayır. Vuruntu vites geçişinde ani bir darbe hissidir; sarsıntı ise sürekli ' +
+        'veya rölantide süren bir titreşimdir. Vuruntu kavrama balatası, sarsıntı ise ' +
+        'daha çok volant veya tork konvertör arızasını işaret eder. İkisi birlikte görülebilir.',
+    },
+    {
+      q: 'Rölantide sarsıntı varsa hangi parça şüphelenilir?',
+      a:
+        'Rölantide (D vitesinde dururken) sarsıntının en yaygın kaynağı çift kütleli ' +
+        'volanttır. Volantın iç yayları yorulur, rölantide motor tork dalgalanmasını ' +
+        'sönümleyemez. Kavrama balatası aşınması da bu şekilde başlayabilir.',
+    },
+    {
+      q: 'Klima açılınca sarsıntı artıyor — sebebi ne?',
+      a:
+        'Klima kompresörü rölantide motora yük bindirir. Volant veya kavrama paketi ' +
+        'yorgunsa bu yük dalgalanması direkt şanzımana geçer ve sarsıntı belirginleşir. ' +
+        '"Klima açınca artan sarsıntı" genellikle volant aşınmasının erken belirtisidir.',
+    },
+    {
+      q: 'Sarsıntı kendi geçer mi, yoksa büyür mü?',
+      a:
+        'Kendi geçmez — büyür. Volant veya kavrama aşınması geri dönüşsüzdür. ' +
+        'Erken evrede yalnızca balata değişimi yeterlidir; geç kalındığında volant ' +
+        'da değişir, maliyet 3–4 kat artar.',
+    },
+    {
+      q: 'Tork konvertörlü şanzımanda sarsıntı olur mu?',
+      a:
+        'Olur. ZF ve Aisin tork konvertörlü şanzımanlarda "lockup" titreşimi ' +
+        'görülebilir. Tork konvertör kilitleme kavraması aşınırsa belirli hızlarda ' +
+        '(genellikle 60-80 km/h) sürekli sarsıntı hissedilir. Solenoid temizliği veya ' +
+        'tork konvertör revizyonu gerekir.',
+    },
+  ],
+
+  'volant-titresim': [
+    {
+      q: 'Çift kütleli volant nedir, neden önemli?',
+      a:
+        'Çift kütleli volant (DMF), motor titreşimlerini sönümleyen yay mekanizmalı ' +
+        'ağır bir disktir. DSG ve modern manuel şanzımanlarda standarttır. İç yayları ' +
+        'yorulduğunda motor titreşimi direkt şanzımana iletilir — rölantide ve düşük ' +
+        'devirde sarsıntı başlar.',
+    },
+    {
+      q: 'Volant değişimi zorunlu mu, tamir olur mu?',
+      a:
+        'Çift kütleli volant tamiri genellikle yapılmaz — yay mekanizması bir kez ' +
+        'bozulduğunda yeniden güvenli biçimde çalışmaz. Kavrama paketi değişimiyle ' +
+        'birlikte volantın da değişmesi önerilir; ayrı ayrı değişim daha maliyetli olur.',
+    },
+    {
+      q: 'Volant ömrü kaç kilometre?',
+      a:
+        'Normal kullanımda 150.000–250.000 km arası beklenir. Yoğun şehir trafiği, ' +
+        'dur-kalkın çok olduğu kullanım veya düşük devirde sürüş (lugging) ömrü ' +
+        'ciddi kısaltır. 2.0 TDI motorlu DSG araçlarda 150.000 km sınırı önemlidir.',
+    },
+    {
+      q: 'Volant arızasının ilk belirtisi nedir?',
+      a:
+        'En erken belirti rölantide "dişli zincir" gibi metalik takırtı ve kliması ' +
+        'açıldığında artan titreşimdir. Aracı çalıştırır çalıştırmaz duyulan kısa ' +
+        'metalik ses de volant yay yorulmasının ilk işaretidir.',
+    },
+  ],
+
+  'otomatik-sanziman-ariza-lambasi': [
+    {
+      q: 'Şanzıman arıza lambası yandığında araç sürülür mü?',
+      a:
+        'Sarı arıza lambası yandıysa dikkatli biçimde en yakın servise gidebilirsiniz. ' +
+        'Ancak kırmızı ışık, yanıp sönen lamba veya kayma/vuruntu eşlik ediyorsa aracı durdurun. ' +
+        'Limp mode devreye girmiş olabilir — zorla sürmek mekatronik kartı kalıcı olarak bozabilir.',
+    },
+    {
+      q: 'Arıza lambası hangi durumlarda kendi söner?',
+      a:
+        'Geçici bir voltaj düşüşü veya sensör titremesi lambayı tetikleyebilir, motor yeniden ' +
+        'başlatılınca söner. Ancak hata kodu mekatronik kartta kayıtlı kalır. Lamba söndü diye ' +
+        'geçtiğini düşünmeyin — hata kodu okutmadan sorunun gerçekten geçip geçmediği bilinemez.',
+    },
+    {
+      q: 'Sarı ile kırmızı arıza lambası arasındaki fark nedir?',
+      a:
+        'Sarı (amber) lamba "uyarı" anlamına gelir: sürüş devam edebilir ama servis gereklidir. ' +
+        'Kırmızı lamba "acil durdur" anlamına gelir: sürüşü sonlandırın. ' +
+        'Bazı şanzıman tiplerinde (DSG, EDC) sarı sürekli yanıyorsa 48 saat, yanıp sönüyorsa aynı gün servise gidin.',
+    },
+    {
+      q: 'Hata kodu okumadan parça değiştirilmeli mi?',
+      a:
+        'Hayır. Arıza lambası onlarca farklı hata kodu tarafından tetiklenebilir. ' +
+        'Sensör temizliğiyle geçen bir sorun mekatronik kart değişimiyle aynı lambayla sonuçlanır. ' +
+        'Eren Servis\'te KDS ile hata kodu okuma ücretsizdir — onaysız hiçbir işlem yapılmaz.',
+    },
+    {
+      q: 'Renault EDC ile DSG arıza lambası aynı mı?',
+      a:
+        'Hayır. DSG genellikle "P" veya anahtar simgesi gösterir; EDC ise sarı dişli simgesiyle uyarır. ' +
+        'Her iki sistemin hata kodu mantığı ve teşhis yöntemi birbirinden farklıdır. ' +
+        'Model bazında doğru teşhis için marka uyumlu teşhis cihazı gereklidir.',
+    },
+  ],
+
+  'edc-ariza-lambasi': [
+    {
+      q: 'Renault EDC\'de sarı dişli ışığı ne zaman söner?',
+      a:
+        'Lamba kendiliğinden sönebilir ama bu sorunun geçtiği anlamına gelmez. ' +
+        'Hata kodu EDC kontrol ünitesinde kayıtlı kalır. ' +
+        'Lamba söndükten sonra da en kısa sürede hata kodu okutmanızı öneririz.',
+    },
+    {
+      q: 'EDC şanzımanda sarı ışık yandı, araç sürülür mü?',
+      a:
+        'Lamba sürekli yanıyorsa ve başka belirti yoksa kısa mesafe sürülebilir. ' +
+        'Yanıp sönüyorsa, vuruntu veya gecikmeli geçiş eşlik ediyorsa sürüşü kısaltın. ' +
+        'Araç hareket etmiyorsa çekici çağırın.',
+    },
+    {
+      q: 'EDC arıza lambasını standart OBD cihazı okuyabilir mi?',
+      a:
+        'Temel hata kodlarını okuyabilir ama EDC\'nin tüm parametrelerini görmek için ' +
+        'Renault/Nissan uyumlu teşhis cihazı gereklidir. ' +
+        'Eksik teşhis gereksiz parça değişimine yol açabilir.',
+    },
+    {
+      q: 'EDC solenoid valf değişimi zorunlu mu, temizleme yeterli mi?',
+      a:
+        'Tıkanıklık düzeyi ve valf durumuna göre değişir. ' +
+        'Erken evrede temizleme yeterli olabilir. İleri tıkanıklıkta değişim gerekir. ' +
+        'Eren Servis\'te teşhis sonrası en uygun seçenek belirlenir.',
+    },
+  ],
+
+  'cvt-ariza-lambasi': [
+    {
+      q: 'CVT arıza lambası yandığında ne yapmalıyım?',
+      a:
+        'Hemen durmak şart değildir ama aynı gün servise gitmenizi öneririz. ' +
+        'CVT\'de lamba nadiren yanar ve yandığında genellikle ciddi bir sorunu işaret eder. ' +
+        'Sürüşe zorla devam etmek kayış hasarını büyütür.',
+    },
+    {
+      q: 'CVT arıza lambası yağ değişimiyle söner mi?',
+      a:
+        'Yağ kalitesi düşüklüğünden kaynaklanan lambalar yağ değişimi sonrası söner. ' +
+        'Ama önce hata kodu okutmadan yalnızca yağ değişimi yapmak körleme bir yaklaşımdır. ' +
+        'Asıl neden kayış veya kontrol ünitesiyse yağ değişimi lambayla etkisi olmaz.',
+    },
+    {
+      q: 'CVT şanzımana yanlış yağ konursa ne olur?',
+      a:
+        'CVT, özgün CVTF (Continuously Variable Transmission Fluid) gerektirir. ' +
+        'Yanlış tip yağ kayış sürtünme katsayısını bozar, kontrol ünitesi anomali tespit eder. ' +
+        'Kısa sürede arıza lambası yanar ve kayma başlar.',
+    },
+    {
+      q: 'CVT tamiri mi, değişim mi daha avantajlı?',
+      a:
+        'Kayış veya pully erken aşamada yakalanırsa tamir mümkün ve çok daha ucuzdur. ' +
+        'İleri hasar durumunda komple revizyon gerekebilir. ' +
+        'Eren Servis\'te teşhis sonrası net karar verilir — gereksiz tamir veya değişim önerilmez.',
+    },
+  ],
+
   'uyari-lambasi-semptomlari': [
     {
       q: "DSG'de anahtar işareti yanıp sönüyor — araç sürülür mü?",
@@ -866,6 +1037,167 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         'değişimi 55.000–72.000 TL, PowerShift DPS6 kavrama kiti 45.000–65.000 TL, ' +
         'solenoid valf tamiri 8.000–15.000 TL aralığındadır. Ücretsiz ön tanı sonrası ' +
         'net fiyat verilir.',
+    },
+  ],
+
+  'otomatik-sanziman-kayma': [
+    {
+      q: 'Otomatik şanzımanda kayma nedir?',
+      a:
+        'Motor devri yükselirken aracın hızlanmaması veya yeterince ivmelenmemesidir. ' +
+        'Şanzıman içinde kavrama (DSG) ya da kayış (CVT) tork aktarımını tam yapamaz — ' +
+        'gaza basıldığında motor bağırır ama araç gecikmeli ilerler.',
+    },
+    {
+      q: 'Kayma ile vites atlama aynı şey mi?',
+      a:
+        'Halk dilinde ikisi aynı anlamda kullanılır. Teknik olarak "vites atlama" ' +
+        'motor devrinin ani yükselmesi ve aracın ivmelenmemesi, "kayma" ise tork ' +
+        'transferinin zayıflamasıdır. Vites atlama → kaymanın sonucudur.',
+    },
+    {
+      q: 'DSG kayması düzelir mi?',
+      a:
+        'Düzeltilebilir — ancak nedenine bağlıdır. Mekatronik basınç tüpü sorunu, ' +
+        'solenoid kirliliği veya yazılım hatası kaynaklıysa revizyonla çözülür. ' +
+        'Kavrama balatası aşınmışsa kavrama değişimi gerekir. Yoksaymak hasarı derinleştirir.',
+    },
+    {
+      q: 'CVT kayması neden tehlikeli?',
+      a:
+        "CVT'de kayış aşınması geri dönüşsüzdür. Kayışın çelik lamelleri pully " +
+        'yüzeyinde iz bırakır; erken müdahale edilmezse kayış + pully seti birlikte ' +
+        'değişir ve maliyet 3-4 katına çıkar.',
+    },
+    {
+      q: 'Kayma yaparken aracı kullanmaya devam edebilir miyim?',
+      a:
+        'Kısa mesafede güvenlik için kullanılabilir ama uzun sürüş yapılmamalıdır. ' +
+        'Kayma arttıkça kavrama/kayış aşınması hızlanır ve yağ ısısı yükselir — ' +
+        'mekatronik karta ve iç dişlilere zarar verir.',
+    },
+  ],
+
+  'dsg-kayma-vites-atlama': [
+    {
+      q: 'DSG kayması nasıl anlaşılır?',
+      a:
+        'Gaza basıldığında motor devrinin aniden yükselmesi ama aracın aynı hızla ' +
+        'ivmelenmemesidir. Özellikle rampada belirginleşir. Kuru kavramalı DQ200\'de ' +
+        'balata aşınması, ıslak kavramalı DQ250/DQ381\'de basınç kaybı ana nedendir.',
+    },
+    {
+      q: 'DQ200 kuru kavramada kayma neden olur?',
+      a:
+        'Balata kompozit katmanı aşındığında kavrama diskleri yeterli sürtünme ' +
+        'üretemez. Özellikle yoğun şehir trafiğinde 80.000-120.000 km arasında ' +
+        'başlar. Isı artışı ve koku (yanık kavrama) eşlik eder.',
+    },
+    {
+      q: 'DQ250 ıslak kavramada basınç tüpü kayma yapar mı?',
+      a:
+        "DQ250 mekatronik basınç tüpü (akümülatör) zamanla delinir. İç yağ basıncı " +
+        'düşer; kavrama balatası sağlam olsa bile yeterli sıkışma olmaz ve kayma ' +
+        'başlar. Genellikle 150.000 km üzeri araçlarda görülür.',
+    },
+    {
+      q: 'DSG kaymasının çözümü ne?',
+      a:
+        'Teşhis sonucu belirler. Basınç tüpü sorunuysa 15.000-25.000 TL, solenoid ' +
+        'kirliliği için revizyon 8.000-15.000 TL, kavrama paketi değişimi 55.000-' +
+        '72.000 TL aralığındadır. Ücretsiz ön tanıda net rakam veririz.',
+    },
+  ],
+
+  'otomatik-sanziman-gecikme': [
+    {
+      q: 'Otomatik şanzımanda vites geçişi neden gecikiyor?',
+      a:
+        'Ana nedenler: solenoid valf kirliliği, yağ basıncı düşüklüğü, kavrama ' +
+        'adaptasyon bozulması ve ECU yazılım sorunu. Hata kodu okumadan hangisi ' +
+        'olduğunu anlamak mümkün değildir — ücretsiz OBD teşhisi ile net söylenir.',
+    },
+    {
+      q: 'Normal vites geçişi kaç saniye olmalı?',
+      a:
+        'DSG/DCT şanzımanlarda 0,3-0,5 saniye, ZF 8HP\'de 0,2 saniye, klasik ' +
+        'tork konvertörde 0,6-1 saniyedir. CVT\'de kademe yoktur ama devir geçişi ' +
+        'pürüzsüz olmalıdır. Bundan uzun süreler arızaya işarettir.',
+    },
+    {
+      q: 'Gecikme kendi düzelir mi?',
+      a:
+        "Hayır. Gecikme genellikle solenoid kirliliği, yağ dejenerasyonu veya " +
+        'adaptasyon bozulmasından çıkar; bunların hiçbiri kendi iyileşmez. ' +
+        'Sadece ECU adaptasyon sıfırlama geçici iyileşme sağlayabilir.',
+    },
+    {
+      q: 'Gecikme büyük arızanın habercisi mi?',
+      a:
+        'Evet — gecikme genellikle solenoid valfin bir sonraki aşamada tamamen ' +
+        'tıkanması, kavrama balatasının aşınmaya başlaması veya mekatronik kart ' +
+        'yazılımının bozulmasıyla sonuçlanır. Erken müdahale maliyeti düşürür.',
+    },
+  ],
+
+  'zf-aisin-gecikme': [
+    {
+      q: 'ZF 8HP şanzımanda gecikme neden olur?',
+      a:
+        "ZF 8HP'de gecikme ana nedenleri: mekatronik valve body solenoid " +
+        'tıkanması, yağ dejenerasyonu ve ECU adaptasyon bozukluğu. Mercedes 9G-Tronic ' +
+        've BMW ZF 8HP aynı temel sorunu paylaşır — 100.000 km üzeri servislerde sık görülür.',
+    },
+    {
+      q: 'Mercedes 7G/9G-Tronic\'te vites geçişi yavaşlarsa ne yapılır?',
+      a:
+        'İlk adım yağ + filtre değişimi + adaptasyon sıfırlama. Düzelme yoksa ' +
+        'valve body (mekatronik) revizyonu gerekir. Mercedes spesifik yağ ' +
+        '(MB 236.15) zorunludur — yanlış yağ problemi derinleştirir.',
+    },
+    {
+      q: 'Aisin TF-80SC Peugeot/Citroen gecikmesi normal mi?',
+      a:
+        "Hayır, normal değil. Aisin TF-80SC (Peugeot 3008, 5008, Citroen C5, Volvo V40) " +
+        'gecikmede en yaygın sorun solenoid arızasıdır. Hata kodu okumadan ' +
+        'parça değişimine gidilmez.',
+    },
+    {
+      q: 'BMW ZF 8HP şanzımanda adaptasyon sıfırlama nasıl yapılır?',
+      a:
+        "ISTA veya ODIS cihazıyla adaptasyon sıfırlanır. Ardından 50-80 km'lik " +
+        'test sürüşü yapılır — şanzıman yeni sürüş stilinizi öğrenir. Sadece ' +
+        'OBD\'yle sıfırlama yarım çözümdür, profesyonel teşhis gereklidir.',
+    },
+  ],
+
+  'cvt-kayma': [
+    {
+      q: 'CVT kaymasının ilk belirtisi nedir?',
+      a:
+        "Gaza basıldığında motor devrinin hızla 4.000-5.000 rpm'e fırlaması ama " +
+        'aracın normal ivmelenmemesidir. Özellikle yokuşta ve soğuk havada ' +
+        "belirginleşir. Metalik inleme sesi eşlik edebilir.",
+    },
+    {
+      q: 'CVT kayış değişir mi yoksa tüm şanzıman mı değişir?',
+      a:
+        "CVT kayışı tek başına değiştirilebilir — ancak pully yüzeyinde iz varsa " +
+        'pully seti de değiştirilmelidir. Geç müdahalede komple set zorunlu olur.',
+    },
+    {
+      q: 'Toyota, Honda, Nissan CVT\'de kayma farkları nedir?',
+      a:
+        "Toyota CVT'de (Multidrive) kontrol ünitesi sık arıza yapar; yazılım " +
+        "güncellemesi çözüm olabilir. Honda CVT'de kayış tipik zayıflıktır. " +
+        "Nissan CVT'de (JATCO) yağ kalitesi kritik — yanlış yağ erken arızaya yol açar.",
+    },
+    {
+      q: 'CVT yağ değişimi kaymayı durdurur mu?',
+      a:
+        'Erken evrede yağ + filtre değişimi + adaptasyon kaymayı durdurabilir. ' +
+        'Ancak kayış aşınması başlamışsa yağ değişimi semptomu geçici maskeler, ' +
+        'kalıcı çözüm değildir.',
     },
   ],
 };

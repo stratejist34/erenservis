@@ -9,28 +9,132 @@ const DURATION_MS = 500;
 const MAX_VISIBLE = 3;
 const PULSE_MS = 800;
 
+type FeedRaw = { text: string; offsetMin: number; match: number[] };
 type FeedItem = { text: string; time: string; match: number[] };
 
-const FEED: FeedItem[] = [
-  { text: 'DSG mekatronik arızası — Pendik',      time: '12 dk önce',      match: [2] },
-  { text: 'CVT kayma problemi — Kartal',           time: '27 dk önce',      match: [3] },
-  { text: 'ZF valf body sorunu — Tuzla',           time: '55 dk önce',      match: [4] },
-  { text: 'DQ200 geçiş sertliği — Maltepe',        time: '1 sa 35 dk önce', match: [1] },
-  { text: 'DQ250 kavrama aşınması — Ümraniye',     time: '2 sa 20 dk önce', match: [1, 5] },
-  { text: 'Aisin TF-80SC valf gövdesi — Ataşehir', time: '3 sa 50 dk önce', match: [4] },
-  { text: '7G-Tronic yağ sızıntısı — Kadıköy',     time: '5 sa 10 dk önce', match: [5] },
-  { text: 'EDC7 vuruntu — Sancaktepe',             time: '6 sa 40 dk önce', match: [1] },
+const FEED_RAW: FeedRaw[] = [
+  { text: 'DSG mekatronik arızası — Pendik',      offsetMin: 12,  match: [2] },
+  { text: 'CVT kayma problemi — Kartal',           offsetMin: 27,  match: [3] },
+  { text: 'ZF valf body sorunu — Tuzla',           offsetMin: 55,  match: [4] },
+  { text: 'DQ200 geçiş sertliği — Maltepe',        offsetMin: 95,  match: [1] },
+  { text: 'DQ250 kavrama aşınması — Ümraniye',     offsetMin: 140, match: [1, 5] },
+  { text: 'Aisin TF-80SC valf gövdesi — Ataşehir', offsetMin: 230, match: [4] },
+  { text: '7G-Tronic yağ sızıntısı — Kadıköy',     offsetMin: 310, match: [5] },
+  { text: 'EDC7 vuruntu — Sancaktepe',             offsetMin: 400, match: [1] },
 ];
+
+// Eren Servis mesai: Pzt-Cmt 09:00-18:30, Pazar kapalı
+const OPEN_HOUR = 9;
+const CLOSE_HOUR = 18;
+const CLOSE_MIN = 30;
+const DAY_WINDOW_MIN = (CLOSE_HOUR * 60 + CLOSE_MIN) - OPEN_HOUR * 60; // 570
+const DAY_NAMES = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+
+function isBusinessOpen(d: Date): boolean {
+  if (d.getDay() === 0) return false;
+  const total = d.getHours() * 60 + d.getMinutes();
+  return total >= OPEN_HOUR * 60 && total <= CLOSE_HOUR * 60 + CLOSE_MIN;
+}
+
+function previousBusinessClose(ref: Date): Date {
+  const d = new Date(ref);
+  d.setDate(d.getDate() - 1);
+  while (d.getDay() === 0) d.setDate(d.getDate() - 1);
+  d.setHours(CLOSE_HOUR, CLOSE_MIN, 0, 0);
+  return d;
+}
+
+function getAnchor(now: Date): Date {
+  if (isBusinessOpen(now)) return now;
+  const total = now.getHours() * 60 + now.getMinutes();
+  const closeTotal = CLOSE_HOUR * 60 + CLOSE_MIN;
+  // Mesai sonrası aynı gün → bugünün kapanışı
+  if (now.getDay() !== 0 && total > closeTotal) {
+    const a = new Date(now);
+    a.setHours(CLOSE_HOUR, CLOSE_MIN, 0, 0);
+    return a;
+  }
+  // Pazar veya mesai öncesi → önceki iş günü kapanışı
+  return previousBusinessClose(now);
+}
+
+// offsetMin'i anchor'dan geriye sayarak hesaplar; mesai penceresinden
+// taşarsa önceki iş gününe sarar (02:15 gibi imkansız saatler oluşmaz)
+function computeItemTime(offsetMin: number, anchor: Date): Date {
+  let remaining = offsetMin;
+  let cursor = new Date(anchor);
+  const cursorOpen = new Date(cursor);
+  cursorOpen.setHours(OPEN_HOUR, 0, 0, 0);
+
+  const windowMin = Math.max(0, (cursor.getTime() - cursorOpen.getTime()) / 60000);
+
+  if (remaining <= windowMin) {
+    return new Date(cursor.getTime() - remaining * 60000);
+  }
+
+  remaining -= windowMin;
+  cursor = previousBusinessClose(cursorOpen);
+
+  while (remaining > DAY_WINDOW_MIN) {
+    remaining -= DAY_WINDOW_MIN;
+    cursor = previousBusinessClose(cursor);
+  }
+
+  return new Date(cursor.getTime() - remaining * 60000);
+}
+
+function formatTime(itemTime: Date, now: Date, open: boolean): string {
+  const sameDay = itemTime.toDateString() === now.toDateString();
+  const yest = new Date(now);
+  yest.setDate(now.getDate() - 1);
+  const isYesterday = itemTime.toDateString() === yest.toDateString();
+  const hh = String(itemTime.getHours()).padStart(2, '0');
+  const mm = String(itemTime.getMinutes()).padStart(2, '0');
+
+  if (sameDay && open) {
+    const diffMin = Math.max(1, Math.floor((now.getTime() - itemTime.getTime()) / 60000));
+    if (diffMin < 60) return `${diffMin} dk önce`;
+    if (diffMin < 180) {
+      const hr = Math.floor(diffMin / 60);
+      const m = diffMin % 60;
+      return m === 0 ? `${hr} sa önce` : `${hr} sa ${m} dk önce`;
+    }
+    return `Bugün ${hh}:${mm}`;
+  }
+  if (sameDay) return `Bugün ${hh}:${mm}`;
+  if (isYesterday) return `Dün ${hh}:${mm}`;
+  return `${DAY_NAMES[itemTime.getDay()]} ${hh}:${mm}`;
+}
+
+function buildFeed(): FeedItem[] {
+  const now = new Date();
+  const open = isBusinessOpen(now);
+  const anchor = getAnchor(now);
+  return FEED_RAW.map((r) => {
+    const t = computeItemTime(r.offsetMin, anchor);
+    return { text: r.text, time: formatTime(t, now, open), match: r.match };
+  });
+}
+
+// SSR / ilk hydration için zaman damgası boş — mount'ta doldurulur
+const EMPTY_FEED: FeedItem[] = FEED_RAW.map((r) => ({ text: r.text, time: '', match: r.match }));
 
 export default function LiveDiagnosedFeed() {
   const { selectedId } = useSymptom();
-  const [buffer, setBuffer] = useState<FeedItem[]>(() => FEED.slice(0, MAX_VISIBLE + 1));
+  const feedRef = useRef<FeedItem[]>(EMPTY_FEED);
+  const [buffer, setBuffer] = useState<FeedItem[]>(() => EMPTY_FEED.slice(0, MAX_VISIBLE + 1));
   const [animating, setAnimating] = useState(false);
   const [visible, setVisible] = useState(MAX_VISIBLE);
   const [pulsing, setPulsing] = useState(false);
   const [smoothOff, setSmoothOff] = useState(false);
   const cursor = useRef(MAX_VISIBLE + 1);
   const firstRun = useRef(true);
+
+  useEffect(() => {
+    const live = buildFeed();
+    feedRef.current = live;
+    setBuffer(live.slice(0, MAX_VISIBLE + 1));
+  }, []);
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 767px)');
@@ -46,7 +150,7 @@ export default function LiveDiagnosedFeed() {
       setTimeout(() => {
         setBuffer((prev) => [
           ...prev.slice(1),
-          FEED[cursor.current % FEED.length],
+          feedRef.current[cursor.current % feedRef.current.length],
         ]);
         cursor.current += 1;
         setAnimating(false);

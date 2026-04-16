@@ -18,6 +18,15 @@ export const REHBER_POSTS: RehberPost[] = [
     categories: ['genel', 'vuruntu'],
   },
   {
+    slug: 'powershift-vuruntu',
+    title: 'Ford PowerShift Vuruntu Belirtileri',
+    excerpt:
+      'Ford Focus ve Fiesta DPS6 şanzımanda vuruntunun 5 belirtisi, nedenleri ve kavrama seti değişimi fiyatı 2026.',
+    date: '2026-04-17',
+    href: '/rehber/powershift-vuruntu/',
+    categories: ['powershift', 'ford', 'vuruntu'],
+  },
+  {
     slug: 'dsg-kavrama-ariza-belirtileri',
     title: 'DSG Kavrama Arızası Belirtileri',
     excerpt:

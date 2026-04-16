@@ -712,6 +712,46 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
   ],
 
+  'powershift-vuruntu': [
+    {
+      q: 'Ford Focus PowerShift vuruntu neden olur?',
+      a:
+        'DPS6 şanzımandaki vuruntunun ana nedeni kavrama paketi aşınması veya ' +
+        'kavrama adaptasyonunun bozulmasıdır. Soğuk havalarda ve düşük hızlarda ' +
+        '(10–30 km/s) belirginleşen titreme, erken dönemde adaptasyon sıfırlaması ' +
+        'veya yazılım güncellemesiyle geçebilir; ileri evrede kavrama seti değişimi gerekir.',
+    },
+    {
+      q: 'PowerShift DPS6 kavrama değişimi fiyatı 2026?',
+      a:
+        'Nisan 2026 itibarıyla Ford DPS6 kavrama seti değişimi 45.000–65.000 TL ' +
+        'aralığındadır. İşçilik dahil fiyat, aracın modeline ve hasarın boyutuna ' +
+        'göre değişir. Net fiyat ücretsiz ön tanı sonrası verilir.',
+    },
+    {
+      q: 'PowerShift adaptasyon sıfırlama ne işe yarar?',
+      a:
+        'DPS6 kontrol birimi, kavrama tutma noktasını ve geçiş zamanlamasını ' +
+        'öğrenerek çalışır. Adaptasyon bozulduğunda geçişler kaba ve vuruntulu olur. ' +
+        'Sıfırlama işlemi bu öğrenmeyi temizler ve şanzımanın yeniden kalibrasyon ' +
+        'yapmasını sağlar. Erken evrede tek başına çözüm olabilir.',
+    },
+    {
+      q: 'Hangi Ford modellerinde PowerShift vuruntu görülür?',
+      a:
+        'DPS6 şanzıman; Focus (2012–2018), Fiesta (2013–2019), Kuga (2013–2016), ' +
+        'C-Max ve EcoSport modellerinde kullanılmıştır. 1.0 EcoBoost ve 1.6 Ti-VCT ' +
+        'motorlu versiyonlarda şikayet en sık görülür.',
+    },
+    {
+      q: 'PowerShift vuruntusunu ihmal edersem ne olur?',
+      a:
+        'Kavrama paket aşınması ilerledikçe kontrol ünitesi (TCM) ve solenoid valfler ' +
+        'de etkilenir. Bu aşamada yalnızca kavrama seti değil TCM tamiri veya değişimi ' +
+        'de gerekebilir — toplam maliyet 2–3 kat artar.',
+    },
+  ],
+
   'otomatik-sanziman-vuruntu': [
     {
       q: 'Otomatik şanzımanda vuruntu ne anlama gelir?',

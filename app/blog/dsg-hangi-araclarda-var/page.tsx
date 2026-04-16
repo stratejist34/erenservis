@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
-import { Phone, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle2, AlertTriangle, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import BlogSchema from '@/components/schema/BlogSchema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'DSG Hangi Araçlarda Var? 2026 Tam Liste | Eren Servis',
+  title: 'DSG Hangi Araçlarda Var? DQ200/DQ381 Tam Liste 2026',
   description:
-    'DSG şanzıman hangi araçlarda var? VW, Audi, Seat, Skoda, BMW ve diğer markalar için DQ200, DQ250, DQ381 model listesi. Araçlarda DSG var mı öğren.',
+    'DSG şanzıman hangi araçlarda var? VW Golf, Audi A3, Seat Leon için DQ200, DQ250, DQ381 model listesi + araçta DSG var mı nasıl anlarım. Bostancı DSG servisi.',
   keywords: [
     'dsg hangi araçlarda var',
     'dsg şanzıman hangi arabada var',
@@ -20,6 +21,14 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://erenservis.net/blog/dsg-hangi-araclarda-var/',
+  },
+  openGraph: {
+    title: 'DSG Hangi Araçlarda Var? DQ200/DQ381 Tam Liste 2026',
+    description:
+      'VW, Audi, Seat, Skoda için DSG model listesi. DQ200 kuru mu DQ250 ıslak mı? Araçta DSG var mı nasıl anlarım.',
+    url: 'https://erenservis.net/blog/dsg-hangi-araclarda-var/',
+    type: 'article',
+    images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
 };
 
@@ -92,14 +101,44 @@ const DIKKAT_NOKTALARI = [
   'DSG olan araçlar otomatik vites konumlarına (P/R/N/D) ek olarak genellikle "S" ve paddle shifter\'a sahiptir',
 ];
 
+const NASIL_ANLARIM = [
+  {
+    baslik: 'Ruhsat Kodu',
+    aciklama: 'Araç ruhsatının şanzıman/vites bölümünde "DSG", "S-tronic" veya "DCT" yazar. OEM kodu DQ ile başlar.',
+  },
+  {
+    baslik: 'Paddle Shifter',
+    aciklama: 'Direksiyon arkasında sağ (+) ve sol (-) kulak vites kolları DSG\'nin tipik göstergesidir.',
+  },
+  {
+    baslik: 'Vites Konumları',
+    aciklama: 'P-R-N-D sıralamasına ek olarak "S" (Sport) konumu veya "M" (Manual) modu çoğunlukla DSG\'ye işaret eder.',
+  },
+  {
+    baslik: 'OBD Okuma',
+    aciklama: 'Servis bağlantısıyla saniyeler içinde şanzıman tipi ve kodu tespit edilir. Biz ücretsiz yapıyoruz.',
+  },
+];
+
+const KARSILASTIRMA = [
+  { ozellik: 'Kavrama Tipi',       dq200: 'Kuru (2 kavrama)',  dq250: 'Islak (2 kavrama)',  dq381: 'Kuru (yeni nesil)' },
+  { ozellik: 'Vites Sayısı',       dq200: '7 ileri',          dq250: '6 ileri',            dq381: '7 ileri' },
+  { ozellik: 'Maks. Tork',         dq200: '250 Nm',           dq250: '350 Nm',             dq381: '450 Nm' },
+  { ozellik: 'Tipik Araç',         dq200: 'Golf 7 1.0–1.6',   dq250: 'Passat B8, TT',      dq381: 'Golf 8, Tiguan 2' },
+  { ozellik: 'Yağ Değişimi',       dq200: 'Tavsiye edilmez',  dq250: '60.000 km',          dq381: '60.000 km' },
+  { ozellik: 'Soğuk Titreme Riski',dq200: 'Yüksek',          dq250: 'Düşük',              dq381: 'Orta' },
+  { ozellik: 'Tipik Ömür',         dq200: '80–150 k km',      dq250: '150–250 k km',       dq381: '150–200 k km' },
+];
+
 export default function DSGHangiAraclarPage() {
   return (
     <>
       <BlogSchema
         slug="dsg-hangi-araclarda-var"
-        title="DSG Hangi Araçlarda Var? 2026 Tam Liste | Eren Servis"
-        description="DSG şanzıman hangi araçlarda var? VW, Audi, Seat, Skoda, BMW ve diğer markalar için DQ200, DQ250, DQ381 model listesi. Araçlarda DSG var mı öğren."
+        title="DSG Hangi Araçlarda Var? DQ200/DQ381 Tam Liste 2026"
+        description="DSG şanzıman hangi araçlarda var? VW, Audi, Seat, Skoda için DQ200, DQ250, DQ381 model listesi. Araçta DSG var mı nasıl anlarım."
         datePublished="2026-04-11"
+        dateModified="2026-04-16"
       />
       <main className="bg-graphite-base">
 
@@ -186,6 +225,95 @@ export default function DSGHangiAraclarPage() {
             </ul>
           </div>
         </section>
+
+        {/* DSG Var Mı Nasıl Anlarım */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">
+            Aracımda DSG Var mı? Nasıl Anlarım?
+          </h2>
+          <p className="font-saira text-text-secondary text-base leading-relaxed mb-6">
+            DSG, dışarıdan bakıldığında klasik otomatik şanzımana çok benzer. Ancak birkaç pratik
+            yöntemle aracınızın DSG kullanıp kullanmadığını kolayca öğrenebilirsiniz:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {NASIL_ANLARIM.map((item) => (
+              <div
+                key={item.baslik}
+                className="bg-graphite-elevated border border-border-hairline rounded-xl p-5"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <ChevronRight className="w-4 h-4 text-brass shrink-0" />
+                  <span className="font-saira font-semibold text-text-primary text-sm">{item.baslik}</span>
+                </div>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.aciklama}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 flex items-start gap-3 bg-brass/8 border border-border-brass rounded-xl p-4">
+            <AlertTriangle className="w-5 h-5 text-brass shrink-0 mt-0.5" />
+            <p className="font-saira text-sm text-text-secondary">
+              <strong className="text-text-primary">Not:</strong> Aynı model aracın farklı model yılları
+              veya motor seçenekleri farklı DSG kullanabilir. En kesin yöntem, OBD okuma veya Eren
+              Servis&apos;te ücretsiz ön tanıdır.
+            </p>
+          </div>
+        </section>
+
+        {/* Karşılaştırma Tablosu */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-4">
+            DQ200, DQ250 ve DQ381 Karşılaştırması
+          </h2>
+          <p className="font-saira text-text-secondary text-base leading-relaxed mb-6">
+            Hangi DSG modelinin hangi araçta kullanıldığını anlamak, arıza türünü ve tamir maliyetini
+            öngörmek açısından kritiktir. En yaygın üç modelin temel farklılıkları:
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-border-hairline">
+            <table className="w-full text-sm font-saira">
+              <thead>
+                <tr className="bg-graphite-elevated border-b border-border-hairline">
+                  <th className="text-left px-4 py-3 text-text-secondary font-semibold">Özellik</th>
+                  <th className="px-4 py-3 text-sky-500 font-semibold text-center">DQ200</th>
+                  <th className="px-4 py-3 text-emerald-500 font-semibold text-center">DQ250</th>
+                  <th className="px-4 py-3 text-violet-400 font-semibold text-center">DQ381</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border-hairline">
+                {KARSILASTIRMA.map((row, i) => (
+                  <tr key={row.ozellik} className={i % 2 === 0 ? 'bg-transparent' : 'bg-graphite-elevated/40'}>
+                    <td className="px-4 py-3 text-text-secondary font-medium">{row.ozellik}</td>
+                    <td className="px-4 py-3 text-text-primary text-center">{row.dq200}</td>
+                    <td className="px-4 py-3 text-text-primary text-center">{row.dq250}</td>
+                    <td className="px-4 py-3 text-text-primary text-center">{row.dq381}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="font-saira text-xs text-text-tertiary mt-3 px-1">
+            * DQ200 kuru kavrama modeli soğuk havalarda titreme ve erken aşınmaya daha yatkındır.
+            DQ250 ıslak kavramada yağ değişimi kritik bakım adımıdır.
+          </p>
+        </section>
+
+        {/* FAQ Section */}
+        {TRANSMISSION_FAQS['dsg-hangi-araclarda-var'] && (
+          <section className="mb-12">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">
+              Sık Sorulan Sorular
+            </h2>
+            <div className="space-y-4">
+              {TRANSMISSION_FAQS['dsg-hangi-araclarda-var'].map((faq, i) => (
+                <div key={i} className="bg-graphite-elevated border border-border-hairline rounded-xl p-5">
+                  <h3 className="font-saira font-semibold text-text-primary text-base mb-2">
+                    {faq.q}
+                  </h3>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* İç Linkler */}
         <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-border-hairline">

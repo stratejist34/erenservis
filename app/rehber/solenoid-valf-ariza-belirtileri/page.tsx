@@ -211,8 +211,8 @@ export default function SolenoidValfArizaBelirtileriPage() {
                 <div className="font-jetbrains text-xs text-text-secondary mt-1">Hassas teşhis</div>
               </div>
               <div className="text-center border-x border-border-hairline">
-                <div className="font-saira text-2xl font-semibold text-brass">12 Ay</div>
-                <div className="font-jetbrains text-xs text-text-secondary mt-1">Parça garantisi</div>
+                <div className="font-saira text-2xl font-semibold text-brass">6 Ay</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">İşçilik garantisi</div>
               </div>
               <div className="text-center">
                 <div className="font-saira text-2xl font-semibold text-brass">Ücretsiz</div>

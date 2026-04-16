@@ -214,7 +214,7 @@ export default function MekatronikNedirPage() {
                 <div className="font-jetbrains text-xs text-text-secondary mt-1">Tamir başarı oranı</div>
               </div>
               <div className="text-center">
-                <div className="font-saira text-2xl font-semibold text-brass">1 Yıl</div>
+                <div className="font-saira text-2xl font-semibold text-brass">6 Ay</div>
                 <div className="font-jetbrains text-xs text-text-secondary mt-1">İşçilik garantisi</div>
               </div>
             </div>

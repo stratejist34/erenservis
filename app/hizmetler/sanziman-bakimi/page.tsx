@@ -4,15 +4,17 @@ import Link from 'next/link';
 import {
   buildServiceSchema,
   buildBreadcrumbSchema,
+  buildFAQSchema,
   schemaToString,
 } from '@/lib/schema';
+import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Şanzıman Bakımı ve Kontrolü | Eren Servis Bostancı',
+  title: 'Şanzıman Yağı Değişimi ve Bakım | DSG CVT Bostancı 2026',
   description:
-    'Otomatik şanzıman yağı değişimi, filtre temizliği ve bilgisayar diagnostik. Bostancı\'da erken arıza tespiti ve şanzıman koruma bakımı.',
+    'DSG, CVT ve konvansiyonel otomatik şanzıman yağı değişimi, filtre ve OBD diagnostik. Bostancı\'da erken arıza tespiti, aynı gün servis. 0532 715 37 51',
   keywords: [
     'şanzıman yağı değişimi',
     'otomatik şanzıman bakımı',
@@ -23,6 +25,14 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+  },
+  openGraph: {
+    title: 'Şanzıman Yağı Değişimi ve Bakım | DSG CVT Bostancı 2026',
+    description:
+      'DSG, CVT ve otomatik şanzıman yağı değişimi + OBD diagnostik. Bostancı\'da aynı gün servis.',
+    url: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+    type: 'website',
+    images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
 };
 
@@ -87,11 +97,15 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Şanzıman Bakımı', url: 'https://erenservis.net/hizmetler/sanziman-bakimi/' },
 ]);
 
+const bakimFaqItems = TRANSMISSION_FAQS['sanziman-bakimi'] ?? [];
+const faqSchema = bakimFaqItems.length > 0 ? buildFAQSchema(bakimFaqItems) : null;
+
 export default function SanzımanBakımıPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(breadcrumbSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaToString(faqSchema) }} />}
       <main>
 
         {/* Hero */}
@@ -202,6 +216,45 @@ export default function SanzımanBakımıPage() {
             </div>
           </div>
         </section>
+
+        {/* İç Linkler */}
+        <section className="py-10 bg-graphite-base">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link href="/hizmetler/dsg-sanziman-tamiri/"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-sm hover:border-brass hover:text-text-primary transition-all">
+                DSG Şanzıman Tamiri
+              </Link>
+              <Link href="/hizmetler/cvt-sanziman-tamiri/"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-sm hover:border-brass hover:text-text-primary transition-all">
+                CVT Şanzıman Tamiri
+              </Link>
+              <Link href="/hizmetler/dsg-mekatronik-kart/"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold text-sm hover:border-brass hover:text-text-primary transition-all">
+                Mekatronik Kart Fiyatları
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        {bakimFaqItems.length > 0 && (
+          <section className="py-16 bg-graphite-surface">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8 text-center">
+                Sık Sorulan Sorular
+              </h2>
+              <div className="space-y-4">
+                {bakimFaqItems.map((faq, i) => (
+                  <div key={i} className="bg-graphite-elevated border border-border-hairline rounded-xl p-5">
+                    <h3 className="font-saira font-semibold text-text-primary text-base mb-2">{faq.q}</h3>
+                    <p className="font-saira text-sm text-text-secondary leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Alt CTA */}
         <section className="bg-graphite-base py-14 text-center">

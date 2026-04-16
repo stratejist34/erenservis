@@ -634,4 +634,81 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         'maliyet 3–5 kat artabilir. İlk belirtide ücretsiz ön tanı için gelin.',
     },
   ],
+
+  'sanziman-bakimi': [
+    {
+      q: 'Şanzıman yağı ne sıklıkla değiştirilmeli?',
+      a:
+        'Şanzıman tipine göre değişir: DSG (DQ200/DQ250/DQ381) her 60.000 km, CVT her ' +
+        '40.000 km, konvansiyonel otomatik her 60.000–80.000 km yağ değişimi önerilir. ' +
+        'Yoğun şehir trafiği veya çekici kullanımı bu aralığı kısaltabilir.',
+    },
+    {
+      q: 'Şanzıman bakımı ne kadar sürer?',
+      a:
+        'Temel yağ değişimi genellikle 1–2 saat, kapsamlı bakım + tanı paketi ise ' +
+        '2–3 saat sürer. Araç aynı gün teslim edilir. Bekleme salonumuz mevcuttur.',
+    },
+    {
+      q: 'Şanzıman yağı değişimi olmadan ne olur?',
+      a:
+        'Zamanla yağ oksitlenir, viskozitesi düşer ve içindeki metal partiküller birikir. ' +
+        'Bu durum solenoid valfler ve kavrama disklerinde hızlı aşınmaya yol açar. ' +
+        '100.000 km yağ değiştirilmeyen bir DSG\'de kavrama tamiri kaçınılmaz hale gelir.',
+    },
+    {
+      q: 'Bakım sırasında hangi sorunlar tespit edilebilir?',
+      a:
+        'OBD tanı taraması; mekatronik kart arıza kodları, solenoid valf hataları, ' +
+        'adaptasyon kayması ve kavrama slipajını erken aşamada tespit eder. Elektrik ' +
+        'yokken mekanik inceleme de paralel olarak yapılır.',
+    },
+    {
+      q: 'Şanzıman bakımında 6 ay garanti var mı?',
+      a:
+        'Yapılan tüm bakım ve parça değişim işlemleri 6 ay işçilik garantisi kapsamındadır. ' +
+        'Garanti belgesi yazılı olarak teslim edilir.',
+    },
+  ],
+
+  'dsg-hangi-araclarda-var': [
+    {
+      q: 'Aracımda DSG var mı nasıl anlarım?',
+      a:
+        'En kolay yöntem araç ruhsatındaki şanzıman koduna bakmaktır. Direksiyon ' +
+        'arkasında paddle shifter (kulak vites kolu) varsa büyük ihtimalle DSG\'dir. ' +
+        'OBD okuma cihazıyla da saniyeler içinde teyit edilir. Bizim servisimizde ' +
+        'ücretsiz ön tanı sırasında şanzıman tipi belirlenir.',
+    },
+    {
+      q: 'DQ200 ile DQ250 arasındaki fark nedir?',
+      a:
+        'DQ200, 7 ileri kuru kavramalı DSG modelidir — küçük motorlu araçlarda (1.0–1.6) ' +
+        'kullanılır, yakıt ekonomisi yüksektir. DQ250, 6 ileri ıslak kavramalıdır — daha ' +
+        'güçlü ve quattro sistemli araçlarda tercih edilir. Kuru kavrama soğuk başlangıçta ' +
+        'titremeye daha yatkındır; ıslak kavrama ise daha uzun ömürlüdür.',
+    },
+    {
+      q: 'DSG olan araçlarda tamir ne zaman gerekir?',
+      a:
+        'DQ200\'de 60.000–120.000 km arasında kavrama aşınması başlayabilir. DQ250\'de ' +
+        '80.000–150.000 km yağ değişimi yapılmazsa içsel hasara yol açar. DQ381 ve DQ500 ' +
+        '150.000 km\'ye kadar sorunsuz çalışabilir — ancak düzenli yağ değişimi şarttır. ' +
+        'Vuruntu, titreme veya vites geçiş gecikmesi ilk uyarı işaretleridir.',
+    },
+    {
+      q: 'Audi S-tronic ile VW DSG aynı şey mi?',
+      a:
+        'Evet, teknik olarak aynı donanım grubudur. Audi\'nin "S-tronic" ismiyle sattığı ' +
+        'şanzıman, Volkswagen\'in "DSG" olarak pazarladığı ile aynı mekanik temele dayanır. ' +
+        'Örneğin Audi A3 8V\'deki DQ200, VW Golf 7 1.4 TSI\'daki ile özdeştir.',
+    },
+    {
+      q: 'DSG şanzıman tamiri Bostancı\'da nerede yaptırılır?',
+      a:
+        'Eren Servis, Bostancı Oto Sanayi Sitesi\'nde DSG mekatronik kart tamiri, kavrama ' +
+        'değişimi ve DQ200/DQ250/DQ381 revizyonu konusunda uzmanlaşmıştır. Ücretsiz ön tanı ' +
+        'için 0532 715 37 51 numaradan randevu alabilirsiniz.',
+    },
+  ],
 };

@@ -7,9 +7,9 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Solenoid Valf Arıza Belirtileri | DSG Solenoid Değişimi — Eren Servis',
+  title: 'DSG Solenoid Valf Arıza Belirtileri: 5 İşaret + Tamir 2026',
   description:
-    'DSG solenoid valf arıza belirtileri: sarsıntı, vites kaçırma, P17xx kodları. DQ200 ve DQ250 solenoid farkları, temizlik mi değişim mi? Bostancı uzman servis.',
+    'Sarsıntı, limp mode, P17xx kodu — DSG solenoid arızasının 5 belirtisi. Temizlik mi değişim mi karar tablosu ve 2026 maliyet rehberi. Bostancı\'da ücretsiz tanı.',
   keywords: [
     'solenoid valf arıza belirtileri',
     'dsg solenoid arızası',
@@ -62,9 +62,10 @@ export default function SolenoidValfArızaBelirtileriPage() {
     <>
       <BlogSchema
         slug="solenoid-valf-ariza-belirtileri"
-        title="Solenoid Valf Arıza Belirtileri | DSG Solenoid Değişimi — Eren Servis"
-        description="DSG solenoid valf arıza belirtileri: sarsıntı, vites kaçırma, P17xx kodları. DQ200 ve DQ250 solenoid farkları, temizlik mi değişim mi? Bostancı uzman servis."
+        title="DSG Solenoid Valf Arıza Belirtileri: 5 İşaret + Tamir 2026"
+        description="Sarsıntı, limp mode, P17xx kodu — DSG solenoid arızasının 5 belirtisi. Temizlik mi değişim mi karar tablosu ve 2026 maliyet rehberi. Bostancı'da ücretsiz tanı."
         datePublished="2026-04-11"
+        dateModified="2026-04-16"
       />
       <main className="bg-graphite-base">
 
@@ -117,6 +118,28 @@ export default function SolenoidValfArızaBelirtileriPage() {
           </p>
         </div>
 
+        {/* Solenoid Nasıl Çalışır */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Solenoid Valf Nasıl Çalışır?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { baslik: 'Elektrik Sinyali', aciklama: 'Mekatronik kartı, hangi kavramanın baskılanacağını hesaplar ve ilgili solenoid bobinine akım gönderir.' },
+              { baslik: 'Manyetik Anahtarlama', aciklama: 'Bobin manyetik alan oluşturur, küçük metal piston hareket eder ve yağ kanalını açar ya da kapatır — milisaniyeler içinde.' },
+              { baslik: 'Hidrolik Basınç', aciklama: 'Açılan kanal, kavrama pistoncuğuna basınç iletir. Doğru basınç = pürüzsüz vites geçişi. Solenoid tıkandığında basınç tutarsızlaşır.' },
+            ].map((item) => (
+              <div key={item.baslik} className="p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+                <h3 className="font-saira font-semibold text-text-primary mb-2 text-sm">{item.baslik}</h3>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.aciklama}</p>
+              </div>
+            ))}
+          </div>
+          <p className="font-saira text-sm text-text-secondary leading-relaxed mt-4 px-1">
+            DQ200 şanzımanda 6, DQ250 şanzımanda 7 solenoid valf bulunur. Bir solenoidin arızalanması
+            yalnızca o valfin kontrol ettiği kavramayı etkiler — bu yüzden <strong className="text-text-primary">hangi
+            solenoidin arızalı olduğu</strong> tanı sırasında tespit edilir ve gereksiz komple değişimden kaçınılır.
+          </p>
+        </section>
+
         {/* Arıza Belirtileri */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Solenoid Valf Arıza Belirtileri</h2>
@@ -155,6 +178,41 @@ export default function SolenoidValfArızaBelirtileriPage() {
           </div>
         </section>
 
+        {/* Temizlik mi Değişim mi */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Temizlik mi, Değişim mi?</h2>
+          <div className="overflow-x-auto rounded-xl border border-border-hairline">
+            <table className="w-full font-saira text-sm">
+              <thead>
+                <tr className="bg-graphite-surface border-b border-border-hairline">
+                  <th className="text-left px-5 py-3 text-text-primary font-semibold">Durum</th>
+                  <th className="text-left px-5 py-3 text-brass font-semibold">Temizlik</th>
+                  <th className="text-left px-5 py-3 text-text-secondary font-semibold">Değişim</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Yağ kirliliği — solenoid mekanik sağlam', '✓', '—'],
+                  ['Hata kodu var ama belirti yeni başladı', '✓ (dene)', '—'],
+                  ['Bobinde elektriksel hasar (ölçüm ile)', '—', '✓'],
+                  ['Pistoncuk mekanik olarak aşınmış', '—', '✓'],
+                  ['Temizlik sonrası hata kodu tekrar dönmüş', '—', '✓'],
+                  ['DQ200 basınç tüpü sorunuyla birlikte', '—', '✓ + tüp'],
+                ].map(([durum, temizlik, degisim]) => (
+                  <tr key={durum} className="border-b border-border-hairline last:border-0">
+                    <td className="px-5 py-3 text-text-secondary">{durum}</td>
+                    <td className="px-5 py-3 text-brass font-semibold">{temizlik}</td>
+                    <td className="px-5 py-3 text-text-secondary">{degisim}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="font-saira text-xs text-text-secondary mt-3 px-1">
+            Sadece hata koduna bakarak temizlik/değişim kararı verilmez — solenoid bobini mutlaka multimetre ile ölçülmelidir.
+          </p>
+        </section>
+
         {/* Neden Önemli */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Neden Ertelenmemeli?</h2>
@@ -167,6 +225,30 @@ export default function SolenoidValfArızaBelirtileriPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* Teşhis ve Tamir Süreci */}
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Teşhis ve Tamir Süreci</h2>
+          <div className="flex flex-col gap-3">
+            {[
+              { adim: '1', baslik: 'Hata Kodu Okuma', detay: 'OBD cihazı ile P17xx serisi kodlar tespit edilir. Hangi solenoidin arızalı olduğu koda göre daraltılır.' },
+              { adim: '2', baslik: 'Elektriksel Ölçüm', detay: 'Solenoid bobininin direnç değeri multimetre ile ölçülür. Spesifikasyon dışı değer = değişim, normal = temizlik dene.' },
+              { adim: '3', baslik: 'Basınç Testi (DQ200)', detay: 'Kuru tip şanzımanda solenoid testi öncesi basınç tüpü kontrol edilir — tüp arızası solenoid belirtisi verir.' },
+              { adim: '4', baslik: 'Temizlik veya Değişim', detay: 'Tanı sonucuna göre ultrasonik temizlik ya da yeni solenoid takılır, TCU adaptasyonu yapılır.' },
+              { adim: '5', baslik: 'Yol Testi', detay: 'Vites geçişleri kontrol edilir, hata kodu dönmediği doğrulanır ve araç teslim edilir.' },
+            ].map((item) => (
+              <div key={item.adim} className="flex gap-4 p-5 rounded-xl bg-graphite-surface border border-border-hairline">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brass text-graphite-base font-jetbrains text-xs font-bold shrink-0">
+                  {item.adim}
+                </div>
+                <div>
+                  <h3 className="font-saira font-semibold text-sm text-text-primary mb-1">{item.baslik}</h3>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.detay}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

@@ -32,6 +32,8 @@ export interface ArticleParams {
   datePublished: string;
   dateModified?: string;
   imageUrl?: string;
+  /** AIO: AI'ın okuyacağı bölümleri işaret eden CSS seçiciler */
+  speakableCssSelectors?: string[];
 }
 
 export interface BreadcrumbItem {
@@ -83,13 +85,8 @@ const BUSINESS_NODE = {
   sameAs: ['https://www.google.com/maps/place/Eren+Volkswagen+Servis+Bostanc%C4%B1/@40.9656025,29.1093912'],
 };
 
-/** Lightweight reference to Eren Servis for use inside other schemas. */
-export const BUSINESS_REF = {
-  '@type': 'AutoRepair' as const,
-  '@id': 'https://erenservis.net/#business',
-  name: 'Eren Servis',
-  url: 'https://erenservis.net',
-};
+/** Pure @id pointer — entity tam tanımı BUSINESS_NODE'da, her yerde bu kullanılır. */
+export const BUSINESS_REF = { '@id': 'https://erenservis.net/#business' } as const;
 
 /* ── LOCAL BUSINESS (site geneli — layout'a bir kez eklenir) ────────────── */
 
@@ -165,6 +162,15 @@ export function buildArticleSchema(params: ArticleParams) {
       worksFor: { '@id': 'https://erenservis.net/#business' },
     },
     publisher: { '@id': 'https://erenservis.net/#business' },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: params.speakableCssSelectors ?? [
+        'h1',
+        '.prose > p:first-of-type',
+        '.prose h2',
+        '.faq-section h3',
+      ],
+    },
     ...(params.imageUrl && {
       image: {
         '@type': 'ImageObject',

@@ -18,6 +18,15 @@ export const REHBER_POSTS: RehberPost[] = [
     categories: ['genel', 'vuruntu'],
   },
   {
+    slug: 'edc-vuruntu',
+    title: 'Renault EDC Vuruntu Belirtileri',
+    excerpt:
+      'EDC7 ve EDC8 şanzımanlarda vuruntu neden olur? Clio, Captur, Megane ve Nissan Juke sahipleri için rehber.',
+    date: '2026-04-17',
+    href: '/rehber/edc-vuruntu/',
+    categories: ['edc', 'renault', 'vuruntu'],
+  },
+  {
     slug: 'powershift-vuruntu',
     title: 'Ford PowerShift Vuruntu Belirtileri',
     excerpt:

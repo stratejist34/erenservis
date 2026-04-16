@@ -712,6 +712,46 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
   ],
 
+  'edc-vuruntu': [
+    {
+      q: 'Renault EDC şanzımanda vuruntu neden olur?',
+      a:
+        'EDC şanzımandaki vuruntunun başlıca nedeni kavrama adaptasyonunun kayması veya ' +
+        'solenoid valf kirliliğidir. Özellikle yavaş trafik akışında ve frenden çıkarken ' +
+        'belirginleşen titreme, erken evrede adaptasyon sıfırlaması ile geçebilir; ' +
+        'ileri evrede kavrama paketi değişimi gerekir.',
+    },
+    {
+      q: 'EDC şanzıman adaptasyon sıfırlama ne kadar tutar?',
+      a:
+        'Adaptasyon sıfırlama işlemi; diyagnoz ve yazılım kalibrasyonunu kapsar. ' +
+        'Kavrama mekanik olarak sağlamsa bu işlem tek başına vuruntunun büyük bölümünü ' +
+        'giderebilir. Net ücret ücretsiz ön tanı sonrası belirlenir.',
+    },
+    {
+      q: 'Hangi Renault modellerinde EDC vuruntu görülür?',
+      a:
+        'EDC şanzıman; Clio IV (2012–2019, 0.9 TCe / 1.2 TCe), Captur (2013–2019, 1.2 TCe), ' +
+        'Megane IV (2016–2020, 1.2 TCe), Kadjar (1.2 TCe) ve Nissan Juke (2010–2019, 1.6 DIG-T) ' +
+        'modellerinde kullanılmıştır. 1.2 TCe motorla eşleşen EDC versiyonunda şikayet en sık görülür.',
+    },
+    {
+      q: 'EDC ile DSG vuruntusunun farkı nedir?',
+      a:
+        'Her ikisi de çift kavramalı şanzımandır. EDC ıslak kavrama kullanır, ' +
+        'bu nedenle DQ200 kuru kavramanın soğuk hassasiyeti EDC\'de görülmez. ' +
+        'EDC vuruntusunun özü daha çok adaptasyon kayması ve solenoid kirliliğidir; ' +
+        'DSG\'de ise kavrama plaket aşınması öne çıkar.',
+    },
+    {
+      q: 'EDC vuruntusunu ihmal edersem ne olur?',
+      a:
+        'Kavrama paketi aşınması ilerledikçe solenoid valfler ve kontrol birimi de etkilenir. ' +
+        'Bu aşamada yalnızca kavrama değil, tüm mekatronik grup yenilenmek zorunda kalabilir. ' +
+        'Erken teşhis toplam maliyeti 3–4 kat azaltır.',
+    },
+  ],
+
   'powershift-vuruntu': [
     {
       q: 'Ford Focus PowerShift vuruntu neden olur?',

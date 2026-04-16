@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'DSG Şanzıman Tamiri Bostancı | DQ200 DQ250 DQ381 | Eren Servis',
   description:
-    'Bostancı\'da DSG şanzıman tamiri. DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 12 ay garanti, ücretsiz ön tanı, orijinal parça.',
+    'Bostancı\'da DSG şanzıman tamiri. DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 6 ay garanti, ücretsiz ön tanı, orijinal parça.',
   keywords: [
     'dsg şanzıman tamiri',
     'dsg şanzıman servisi bostancı',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'DSG Şanzıman Tamiri Bostancı | Eren Servis',
-    description: 'DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 12 ay garanti, ücretsiz ön tanı.',
+    description: 'DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 6 ay garanti, ücretsiz ön tanı.',
     url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
     images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -97,7 +97,7 @@ const serviceSchema = buildServiceSchema({
   name: 'DSG Şanzıman Tamiri',
   description:
     "Bostancı'da DSG şanzıman tamiri ve bakımı. DQ200, DQ250, DQ381 ve tüm DSG modelleri. " +
-    'Sertifikalı teknisyen, orijinal parça, 12 ay garanti.',
+    'Sertifikalı teknisyen, orijinal parça, 6 ay garanti.',
   url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
   minPrice: 14000,
   maxPrice: 90000,
@@ -256,7 +256,7 @@ export default function DsgSanzımanTamiriPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { rakam: '15+', etiket: 'Yıl Deneyim', aciklama: 'Sadece DSG ve otomatik şanzıman — genel oto servis değil' },
-                { rakam: '12 Ay', etiket: 'Garanti', aciklama: 'Tüm işçilik ve parça değişimlerinde yazılı garanti' },
+                { rakam: '6 Ay', etiket: 'Garanti', aciklama: 'Tüm işçilik ve parça değişimlerinde yazılı garanti' },
                 { rakam: 'OEM', etiket: 'Orijinal Parça', aciklama: 'VW Grup orijinal veya OE eşdeğer parça kullanımı' },
                 { rakam: '0 ₺', etiket: 'Ön Tanı', aciklama: 'Hata kodu okuma ve temel analiz ücretsizdir' },
               ].map((item) => (

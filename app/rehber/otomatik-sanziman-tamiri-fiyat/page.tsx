@@ -388,7 +388,7 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
                 <div className="font-jetbrains text-xs text-text-secondary">ZF / CVT Revizyon</div>
               </div>
               <div className="bg-graphite-base border border-border-hairline rounded-xl p-4 text-center">
-                <div className="font-saira text-2xl font-semibold text-brass mb-1">12ay</div>
+                <div className="font-saira text-2xl font-semibold text-brass mb-1">6 ay</div>
                 <div className="font-jetbrains text-xs text-text-secondary">Garanti</div>
               </div>
             </div>

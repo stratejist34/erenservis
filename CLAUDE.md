@@ -1,5 +1,21 @@
 # Eren Servis — Proje Hafızası ve İçerik Mimarisi
 
+## ⛔ KRİTİK KURAL — GARANTİ SÜRESİ (ASLA İHLAL EDİLEMEZ)
+
+**Eren Servis'te tüm hizmetler için garanti süresi: 6 AY**
+
+- Sitede HİÇBİR YERDE "12 ay", "1 yıl", "24 ay", "2 yıl" garanti yazılmaz
+- Garanti süresi her zaman ve yalnızca **"6 ay"** olarak ifade edilir
+- Bu kural metadata, description, schema, FAQ, görsel badge, hero metin — HER YERDE geçerlidir
+- Yeni içerik yazarken garanti ibaresi eklenmeden önce bu kural kontrol edilir
+- Kural ihlali → hukuki yükümlülük yaratır, müşteriyle sonu olmayan süreçlere neden olur
+- Bu kuralı değiştirme yetkisi YALNIZCA Emrah'a aittir
+
+**Her yeni içerik/kod yazılmadan önce kontrol listesi:**
+- [ ] "12 ay" var mı? → VARSA SİL, "6 ay" yaz
+- [ ] "1 yıl garanti" var mı? → VARSA SİL, "6 ay" yaz
+- [ ] "garanti" kelimesi geçiyor mu? → süreyi kontrol et, sadece "6 ay" kabul edilir
+
 ## Proje Kimliği
 - Site: erenservis.net
 - İşletme: Eren Otomatik Şanzıman Servisi

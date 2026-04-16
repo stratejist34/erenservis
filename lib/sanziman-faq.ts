@@ -372,7 +372,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
     {
       q: 'Tamir edilen şanzıman ne kadar süre garantilidir?',
-      a: 'Yaptığımız tüm şanzıman revizyon ve parça değişim işlemleri 12 ay veya 20.000 km (hangisi önce dolarsa) Eren Servis garantisi altındadır.',
+      a: 'Yaptığımız tüm şanzıman revizyon ve parça değişim işlemleri 6 ay garanti kapsamındadır. Garanti belgesi yazılı olarak teslim edilir.',
     },
     {
       q: 'Fiyatlar neden bu kadar değişken?',
@@ -610,7 +610,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       q: 'DSG tamiri garantili mi?',
       a:
         'Evet. Eren Servis\'te yapılan tüm DSG şanzıman onarım ve parça değişim işlemleri ' +
-        '12 ay veya 20.000 km garanti kapsamındadır. Garanti belgesi yazılı olarak teslim edilir.',
+        '6 ay garanti kapsamındadır. Garanti belgesi yazılı olarak teslim edilir.',
     },
     {
       q: 'DQ200 şanzıman tamiri 2026 fiyatı nedir?',

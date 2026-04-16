@@ -169,7 +169,7 @@ export default function DsgMekatronikKartPage() {
                 <div className="font-jetbrains text-xs text-iron-light mt-1">Mümkünse önce dene</div>
               </div>
               <div className="text-center border-x border-border-hairline">
-                <div className="font-jetbrains text-lg font-bold text-brass">12 ay</div>
+                <div className="font-jetbrains text-lg font-bold text-brass">6 ay</div>
                 <div className="font-jetbrains text-xs text-iron-light mt-1">Garanti</div>
               </div>
               <div className="text-center">
@@ -532,7 +532,7 @@ export default function DsgMekatronikKartPage() {
                 <div className="font-jetbrains text-xs text-iron-light mt-0.5">Sürpriz yok</div>
               </div>
               <div className="bg-graphite-surface border border-border-hairline rounded-lg p-3">
-                <div className="font-jetbrains text-sm font-bold text-brass">12 ay</div>
+                <div className="font-jetbrains text-sm font-bold text-brass">6 ay</div>
                 <div className="font-jetbrains text-xs text-iron-light mt-0.5">Garanti</div>
               </div>
             </div>

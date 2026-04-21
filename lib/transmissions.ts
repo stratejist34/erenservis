@@ -481,8 +481,33 @@ export function getTransmissionById(id: string): TransmissionFamily | undefined 
   return TRANSMISSIONS[id];
 }
 
+// Granüler familyId (lib/transmissions.ts) → toplu sanziman-tipleri slug (lib/sanziman.ts)
+const FAMILY_TO_TIPLERI_SLUG: Record<string, string> = {
+  'dsg-dq200': 'dsg-s-tronic',
+  'dsg-dq250': 'dsg-s-tronic',
+  'dsg-dq381': 'dsg-s-tronic',
+  'dsg-dq400e': 'dsg-s-tronic',
+  'dsg-dq500': 'dsg-s-tronic',
+  's-tronic-dl382': 'dsg-s-tronic',
+  's-tronic-dl501': 'dsg-s-tronic',
+  'zf-8hp': 'zf-otomatik',
+  'zf-8hp-phev': 'zf-otomatik',
+  'renault-edc': 'renault-edc',
+  'ford-powershift': 'ford-powershift',
+  'aisin-eat': 'aisin-eat',
+  'mercedes-7g-tronic': 'mercedes-7g-9g-tronic',
+  'mercedes-9g-tronic': 'mercedes-7g-9g-tronic',
+  'fiat-dct': 'dsg-s-tronic',
+  'hyundai-kia-dct': 'dsg-s-tronic',
+  'hyundai-kia-dct8': 'dsg-s-tronic',
+  'honda-cvt': 'cvt-sanziman',
+  'toyota-cvt': 'cvt-sanziman',
+  'nissan-jatco-cvt': 'cvt-sanziman',
+};
+
 export function buildTransmissionUrl(id: string): string {
-  return `/sanziman/${id}/`;
+  const slug = FAMILY_TO_TIPLERI_SLUG[id] ?? 'dsg-s-tronic';
+  return `/sanziman-tipleri/${slug}/`;
 }
 
 export function getTransmissionsByType(type: TransmissionType): TransmissionFamily[] {

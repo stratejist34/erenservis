@@ -5,6 +5,7 @@ Allow: /apple-icon.png
 Allow: /favicon-32.png
 Allow: /favicon-512.png
 Disallow: /api/
+Disallow: /sanziman/
 Disallow: /*?*
 
 User-agent: GPTBot

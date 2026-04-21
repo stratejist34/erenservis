@@ -6,14 +6,14 @@ import { transmissions } from '@/lib/sanziman';
 export const metadata: Metadata = {
   title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Servis Bostancı',
   description:
-    'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman türlerini karşılaştırın. Kronik arızalar, bakım aralıkları ve Bostancı Eren Servis uzman bilgisi.',
+    'DSG, ZF, CVT, Mercedes 7G/9G, Aisin EAT, Renault EDC, Ford PowerShift — 7 otomatik şanzıman ailesi. Kronik arızalar, bakım aralıkları ve Bostancı Eren Servis uzman bilgisi.',
   alternates: {
     canonical: 'https://www.erenservis.net/sanziman-tipleri/',
   },
   openGraph: {
     title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Servis',
     description:
-      'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman türleri. Arızalar, bakım ve uzman bilgisi.',
+      'DSG, ZF, CVT, Mercedes 7G/9G, Aisin, EDC ve PowerShift şanzıman aileleri. Arızalar, bakım ve uzman bilgisi.',
     url: 'https://www.erenservis.net/sanziman-tipleri/',
   },
 };
@@ -23,7 +23,7 @@ const STATS = [
     icon: <Layers className="w-4 h-4" strokeWidth={2.5} />,
     value: `${transmissions.length}`,
     label: 'Şanzıman Tipi',
-    sub: 'DSG, ZF, CVT, Konvansiyonel',
+    sub: 'DSG, ZF, CVT, Mercedes, Aisin, EDC, PowerShift',
   },
   {
     icon: <AlertTriangle className="w-4 h-4" strokeWidth={2.5} />,

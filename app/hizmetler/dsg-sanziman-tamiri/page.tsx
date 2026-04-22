@@ -67,6 +67,24 @@ const BELIRTILER = [
   'DSG yağ sızıntısı',
 ];
 
+const DSG_KARSILASTIRMA = [
+  { ozellik: 'Vites Sayısı', dq200: '7 ileri', dq250: '6 ileri', dq381: '7 ileri' },
+  { ozellik: 'Kavrama Tipi', dq200: 'Kuru çift kavrama', dq250: 'Islak çift kavrama', dq381: 'Islak çift kavrama' },
+  { ozellik: 'Maks. Tork', dq200: '250 Nm', dq250: '350 Nm', dq381: '420 Nm' },
+  { ozellik: 'Uygulama', dq200: '1.0–1.4 TSI, 1.6 TDI', dq250: '1.8–2.0 TSI/TDI', dq381: '2.0 TFSI yüksek tork' },
+  { ozellik: 'Yaygın Arıza', dq200: 'Mekatronik, basınç tüpü, kavrama aşınması', dq250: 'Solenoid tıkanma, yağ kokusu', dq381: 'Valf gövdesi, TCU yazılım' },
+  { ozellik: 'Yağ Aralığı', dq200: 'Kuru — yalnız mekatronik yağı', dq250: '60.000 km', dq381: '60.000 km' },
+];
+
+const ARIZA_KODLARI = [
+  { kod: 'P17BF', ad: 'Mekatronik Basınç Tüpü Kaçağı', aciklama: 'DQ200 kuru kavrama — basınç tüpü çatlağı. Parça değişimi ile çözülür.' },
+  { kod: 'P189C', ad: 'Kavrama A Bağlantı', aciklama: 'Kavrama 1 bağlantı hatası. Kavrama paketi veya solenoid kontrolü gerekir.' },
+  { kod: 'P0841', ad: 'Şanzıman Sıvı Basınç Sensörü', aciklama: "Yağ basınç sensörü veya valf gövdesi hatası. DQ250/DQ381'de sık görülür." },
+  { kod: 'P173E', ad: 'Mekatronik Yazılım', aciklama: 'TCU yazılım uyumsuzluğu — güncelleme veya programlama çözer.' },
+  { kod: 'P0810', ad: 'Kavrama Pozisyon Hatası', aciklama: 'Kavrama sensörü veya mekanik aşınma. Road test + canlı veri ile ayrıştırılır.' },
+  { kod: 'P070D', ad: 'Vites Seçici Sensör', aciklama: 'Selector kol sensörü veya TCU haberleşmesi. Elektronik ağırlıklı arıza.' },
+];
+
 const HIZMET_ADIMLAR = [
   {
     icon: Settings,
@@ -175,6 +193,66 @@ export default function DsgSanzımanTamiriPage() {
           </div>
         </section>
 
+        {/* DSG Nedir */}
+        <section className="py-16 bg-graphite-surface">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DSG Şanzıman Nedir, Nasıl Çalışır?</h2>
+            <div className="flex flex-col gap-4 font-saira text-text-secondary leading-relaxed">
+              <p>
+                DSG (Direct-Shift Gearbox — Direkt Geçişli Şanzıman), Volkswagen Grubu&apos;nun geliştirdiği
+                <strong className="text-text-primary font-medium"> çift kavramalı otomatik şanzıman</strong> teknolojisidir.
+                Tek kavrama yerine iki ayrı kavrama grubu kullanır: biri tek numaralı vitesleri (1, 3, 5, 7),
+                diğeri çift numaralı vitesleri (2, 4, 6, R) taşır. Bir vites dahil iken bir sonraki vites
+                zaten hazır durumdadır — geçiş milisaniyeler içinde ve güç kesilmeden gerçekleşir.
+              </p>
+              <p>
+                DSG&apos;nin iki temel varyantı vardır: <strong className="text-text-primary font-medium">DQ200 (kuru çift kavrama)</strong> düşük
+                torklu 1.0–1.4 TSI motorlarda, <strong className="text-text-primary font-medium">DQ250 ve DQ381 (ıslak çift kavrama)</strong> ise
+                yüksek torklu motorlarda kullanılır. Audi&apos;de bu sistem
+                <strong className="text-text-primary font-medium"> S-Tronic</strong> adıyla satılır — donanım neredeyse aynıdır.
+              </p>
+              <p>
+                DSG&apos;nin beyni <strong className="text-text-primary font-medium">mekatronik ünitesi</strong>dir — yazılım, solenoid
+                valfler ve hidrolik kontrolü bir arada tutan kompakt bir ECU+hidrolik paket. Sarsıntı, gecikme
+                ve vuruntu gibi DSG arızalarının büyük çoğunluğu bu ünitenin kendisinden veya onu besleyen
+                basınç sistemiden kaynaklanır.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* DQ200 vs DQ250 vs DQ381 */}
+        <section className="py-16 bg-graphite-base">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3 text-center">DQ200 vs DQ250 vs DQ381 Karşılaştırma</h2>
+            <p className="font-saira text-text-secondary text-center mb-8 max-w-2xl mx-auto">
+              Hangi DSG tipinin arızası farklı yaklaşım gerektirir — motor kodunuz ve vites sayınız hangi gruba girdiğinizi belirler.
+            </p>
+            <div className="overflow-x-auto border border-border-hairline rounded-xl">
+              <table className="w-full font-saira text-sm">
+                <thead className="bg-graphite-surface">
+                  <tr>
+                    <th className="text-left px-4 py-3 font-semibold text-text-primary">Özellik</th>
+                    <th className="text-left px-4 py-3 font-semibold text-brass">DQ200</th>
+                    <th className="text-left px-4 py-3 font-semibold text-brass">DQ250</th>
+                    <th className="text-left px-4 py-3 font-semibold text-brass">DQ381</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DSG_KARSILASTIRMA.map((row, i) => (
+                    <tr key={row.ozellik} className={i % 2 === 0 ? 'bg-graphite-elevated' : 'bg-graphite-surface'}>
+                      <td className="px-4 py-3 text-text-primary font-medium">{row.ozellik}</td>
+                      <td className="px-4 py-3 text-text-secondary text-xs sm:text-sm">{row.dq200}</td>
+                      <td className="px-4 py-3 text-text-secondary text-xs sm:text-sm">{row.dq250}</td>
+                      <td className="px-4 py-3 text-text-secondary text-xs sm:text-sm">{row.dq381}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* Hizmet Adımları */}
         <section className="py-16 bg-graphite-base">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -246,6 +324,106 @@ export default function DsgSanzımanTamiriPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Sık Arıza Kodları */}
+        <section className="py-16 bg-graphite-surface">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">Sık Karşılaşılan DSG Arıza Kodları</h2>
+            <p className="font-saira text-text-secondary mb-8 max-w-2xl">
+              OBD tarayıcıda gördüğünüz kod hangi parçanın suçlandığını söyler — ama her kod mekanik arıza
+              anlamına gelmez. Bazı kodlar yalnızca elektronik veya yazılım kaynaklıdır.
+            </p>
+            <div className="flex flex-col gap-3">
+              {ARIZA_KODLARI.map((k) => (
+                <div key={k.kod} className="flex flex-col sm:flex-row sm:items-start gap-3 p-4 rounded-xl bg-graphite-elevated border border-border-hairline">
+                  <div className="font-jetbrains text-sm font-bold text-brass sm:w-20 shrink-0">{k.kod}</div>
+                  <div className="flex-1">
+                    <h3 className="font-saira font-semibold text-text-primary text-sm mb-1">{k.ad}</h3>
+                    <p className="font-saira text-sm text-text-secondary leading-relaxed">{k.aciklama}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="font-saira text-xs text-text-secondary mt-6 italic">
+              Liste özet geçer — detaylı canlı veri (live data) analizi olmadan arıza kodu tek başına
+              kesin teşhis koymaz. Aynı kod farklı araçta farklı parça hatasına işaret edebilir.
+            </p>
+          </div>
+        </section>
+
+        {/* Fiyat Şeffaflığı */}
+        <section className="py-16 bg-graphite-base">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-8 text-center">DSG Tamiri Fiyat Aralığı</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="p-6 rounded-xl bg-graphite-elevated border border-border-hairline">
+                <div className="font-jetbrains text-[10px] font-bold text-brass uppercase tracking-[0.2em] mb-2">Hafif</div>
+                <h3 className="font-saira font-semibold text-text-primary mb-3">Yağ + Filtre + Adaptasyon</h3>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed mb-3">
+                  DQ250/DQ381 ıslak kavrama için 60 bin km periyodik bakım penceresi.
+                </p>
+                <p className="font-jetbrains text-xs text-text-primary font-semibold">₺ 14.000 – 22.000</p>
+              </div>
+              <div className="p-6 rounded-xl bg-graphite-elevated border border-brass/30">
+                <div className="font-jetbrains text-[10px] font-bold text-brass uppercase tracking-[0.2em] mb-2">Orta</div>
+                <h3 className="font-saira font-semibold text-text-primary mb-3">Mekatronik / Basınç Tüpü / Solenoid</h3>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed mb-3">
+                  DQ200&apos;de P17BF hata kodu, mekatronik kart veya basınç tüpü onarımı.
+                </p>
+                <p className="font-jetbrains text-xs text-text-primary font-semibold">₺ 28.000 – 52.000</p>
+              </div>
+              <div className="p-6 rounded-xl bg-graphite-elevated border border-border-hairline">
+                <div className="font-jetbrains text-[10px] font-bold text-brass uppercase tracking-[0.2em] mb-2">Ağır</div>
+                <h3 className="font-saira font-semibold text-text-primary mb-3">Kavrama Paketi / Komple Revizyon</h3>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed mb-3">
+                  Kavrama aşınması, volant titremesi veya tam demontaj gerektiren arızalar.
+                </p>
+                <p className="font-jetbrains text-xs text-text-primary font-semibold">₺ 55.000 – 90.000</p>
+              </div>
+            </div>
+            <p className="font-saira text-xs text-text-secondary text-center mt-6 italic max-w-2xl mx-auto">
+              Fiyatlar 2026 yılı Bostancı ortalamasıdır, araç modeli ve arıza durumuna göre değişir.
+              Kesin fiyat ücretsiz ön tanı sonrasında belirlenir.
+            </p>
+          </div>
+        </section>
+
+        {/* Bakım Periyodu */}
+        <section className="py-16 bg-graphite-surface">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">DSG Bakım Periyodu</h2>
+            <ul className="flex flex-col gap-4 font-saira">
+              <li className="flex items-start gap-3">
+                <span className="font-jetbrains text-xs font-bold text-brass mt-1 shrink-0">60k</span>
+                <span className="text-text-secondary text-sm leading-relaxed">
+                  <strong className="text-text-primary font-medium">DQ250 / DQ381 — yağ + filtre değişimi.</strong>{' '}
+                  Islak kavramalı DSG&apos;de yağ kavrama ile temas halindedir; aşınma metal talaşı yağa karışır.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="font-jetbrains text-xs font-bold text-brass mt-1 shrink-0">DQ200</span>
+                <span className="text-text-secondary text-sm leading-relaxed">
+                  <strong className="text-text-primary font-medium">Kuru kavrama — yalnız mekatronik yağı 60k&apos;da.</strong>{' '}
+                  Kavrama yağlı değildir, sadece hidrolik besleme yağı değişir.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="font-jetbrains text-xs font-bold text-brass mt-1 shrink-0">80k</span>
+                <span className="text-text-secondary text-sm leading-relaxed">
+                  <strong className="text-text-primary font-medium">Kontrol taraması.</strong>{' '}
+                  Hata kodları, kavrama aşınma yüzdesi ve basınç sensörü değerleri ölçülür.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="font-jetbrains text-xs font-bold text-brass mt-1 shrink-0">120k+</span>
+                <span className="text-text-secondary text-sm leading-relaxed">
+                  <strong className="text-text-primary font-medium">Önleyici kavrama değerlendirmesi.</strong>{' '}
+                  DQ200&apos;de bu aralıkta kavrama aşınması kritik seviyeye yaklaşır, adaptasyon verisi izlenmeli.
+                </span>
+              </li>
+            </ul>
           </div>
         </section>
 

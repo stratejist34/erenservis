@@ -101,6 +101,7 @@ export default function HeroSectionDC({
   const [delayedId, setDelayedId] = useState(selectedId);
   const [ctaFading, setCtaFading] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [liveFeedReady, setLiveFeedReady] = useState(false);
   const [prevSelectedId, setPrevSelectedId] = useState(selectedId);
 
   // selectedId değişince fade + interaction flag'ini render sırasında tetikle —
@@ -119,6 +120,40 @@ export default function HeroSectionDC({
     }, 120);
     return () => clearTimeout(t);
   }, [ctaFading, selectedId]);
+
+  useEffect(() => {
+    let timeoutId: number | null = null;
+    let idleId: number | null = null;
+
+    const mountLiveFeed = () => setLiveFeedReady(true);
+
+    const scheduleMount = () => {
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(mountLiveFeed, { timeout: 1500 });
+        return;
+      }
+
+      timeoutId = window.setTimeout(mountLiveFeed, 1500);
+    };
+
+    if (document.readyState === 'complete') {
+      scheduleMount();
+    } else {
+      window.addEventListener('load', scheduleMount, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener('load', scheduleMount);
+
+      if (idleId !== null && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId);
+      }
+
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
 
   const delayed = SYMPTOMS.find((s) => s.id === delayedId) ?? SYMPTOMS[0];
   const preDiagLabel = `${delayed.shortLabel} için ön teşhis al`;
@@ -193,7 +228,7 @@ export default function HeroSectionDC({
           {subtitle}
         </p>
 
-        <p className="hero-item-3 mt-3 font-jetbrains text-[11px] uppercase tracking-widest text-[#64748B]">
+        <p className="hero-item-3 mt-3 font-jetbrains text-[11px] uppercase tracking-widest text-iron-light">
           DSG · ZF · CVT · Aisin şanzımanlarda uzman teşhis
         </p>
 
@@ -346,7 +381,7 @@ export default function HeroSectionDC({
                         <span className="font-jetbrains text-sm font-semibold" style={{ color: style.color }}>
                           {data.range}
                         </span>
-                        <span className="font-jetbrains text-[10px] text-text-tertiary">{data.caption}</span>
+                        <span className="font-jetbrains text-[10px] text-iron-light">{data.caption}</span>
                       </div>
                     </div>
                   </div>
@@ -385,7 +420,7 @@ export default function HeroSectionDC({
 
           {/* Orta — canlı liste */}
           <div className="w-full sm:max-w-[560px]">
-            <LiveDiagnosedFeed />
+            {liveFeedReady ? <LiveDiagnosedFeed /> : <div className="h-[156px]" aria-hidden="true" />}
           </div>
 
           {/* Sağ — aksiyon */}

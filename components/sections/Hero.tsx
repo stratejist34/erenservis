@@ -160,9 +160,9 @@ function RiskCurveChart() {
         <circle cx="380" cy="8" r="4" fill="#070B11" stroke="#38BDF8" strokeWidth="2" />
 
         {/* Labels */}
-        <text x="20" y="135" fill="#64748B" fontSize="9" fontFamily="var(--font-geist-mono, monospace)" textAnchor="start" letterSpacing="0.05em">HAFTA 1</text>
-        <text x="200" y="135" fill="#64748B" fontSize="9" fontFamily="var(--font-geist-mono, monospace)" textAnchor="middle" letterSpacing="0.05em">AY 1-3</text>
-        <text x="380" y="135" fill="#64748B" fontSize="9" fontFamily="var(--font-geist-mono, monospace)" textAnchor="end" letterSpacing="0.05em">AY 6+</text>
+        <text x="20" y="135" fill="#64748B" fontSize="9" fontFamily="var(--font-jetbrains, monospace)" textAnchor="start" letterSpacing="0.05em">HAFTA 1</text>
+        <text x="200" y="135" fill="#64748B" fontSize="9" fontFamily="var(--font-jetbrains, monospace)" textAnchor="middle" letterSpacing="0.05em">AY 1-3</text>
+        <text x="380" y="135" fill="#64748B" fontSize="9" fontFamily="var(--font-jetbrains, monospace)" textAnchor="end" letterSpacing="0.05em">AY 6+</text>
       </svg>
     </div>
   );

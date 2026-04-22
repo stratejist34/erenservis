@@ -34,14 +34,6 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/mekatronik-nedir.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Mekatronik Nedir",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/mekatronik-nedir/",

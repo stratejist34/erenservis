@@ -34,14 +34,6 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/dsg-sanziman-omru.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Şanzıman Ömrü ve Bakım Rehberi",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",

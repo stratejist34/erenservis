@@ -33,14 +33,6 @@ export const metadata: Metadata = {
       "Bostancı DSG uzmanı Eren Servis.",
     url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi/",
     type: "website",
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/dsg-kavrama-degisimi.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Kavrama Değişimi Fiyatı 2026",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi/",

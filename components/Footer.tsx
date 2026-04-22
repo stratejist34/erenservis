@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MessageCircle, Phone, MapPin } from 'lucide-react';
 import { BRANDS } from '@/lib/brands';
+import { BUSINESS_HOURS } from '@/lib/constants';
 
 const PHONE_HREF = 'tel:+905327153751';
 const WHATSAPP_HREF = 'https://wa.me/905327153751';
@@ -112,7 +113,7 @@ export default function Footer() {
               </div>
               <div className="mt-3 font-saira text-sm text-text-tertiary">
                 <span className="font-medium text-text-secondary">Çalışma Saatleri</span><br />
-                Pzt-Cmt: 08:00–18:00 · Pazar: Kapalı
+                {BUSINESS_HOURS.displayWeekdays} · {BUSINESS_HOURS.displaySunday}
               </div>
             </div>
 

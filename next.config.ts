@@ -231,6 +231,27 @@ const nextConfig: NextConfig = {
         destination: '/rehber/dsg-kavrama-ariza-belirtileri/',
         permanent: true,
       },
+      // Kırık slug savunması — yazılmamış dsg-mekatronik-ariza-belirtileri
+      {
+        source: '/rehber/dsg-mekatronik-ariza-belirtileri',
+        destination: '/rehber/solenoid-valf-ariza-belirtileri/',
+        permanent: true,
+      },
+      {
+        source: '/rehber/dsg-mekatronik-ariza-belirtileri/',
+        destination: '/rehber/solenoid-valf-ariza-belirtileri/',
+        permanent: true,
+      },
+      {
+        source: '/blog/dsg-mekatronik-ariza-belirtileri',
+        destination: '/hizmetler/dsg-mekatronik-kart/',
+        permanent: true,
+      },
+      {
+        source: '/blog/dsg-mekatronik-ariza-belirtileri/',
+        destination: '/hizmetler/dsg-mekatronik-kart/',
+        permanent: true,
+      },
       // === Eski /sanziman/:slug → yeni /sanziman-tipleri/:slug ===
       { source: '/sanziman/aisin-eat', destination: '/sanziman-tipleri/aisin-eat/', permanent: true },
       { source: '/sanziman/aisin-eat/', destination: '/sanziman-tipleri/aisin-eat/', permanent: true },

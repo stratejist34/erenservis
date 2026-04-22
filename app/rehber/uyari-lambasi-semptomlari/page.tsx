@@ -34,14 +34,6 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/dsg-uyari-lambasi.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Uyarı Lambası Semptomu",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari/",

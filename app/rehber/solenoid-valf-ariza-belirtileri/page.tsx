@@ -34,14 +34,6 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/solenoid-valf-ariza.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Solenoid Valf Arıza Belirtileri",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",

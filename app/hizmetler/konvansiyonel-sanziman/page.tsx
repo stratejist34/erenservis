@@ -195,7 +195,7 @@ export default function KonvansiyonelSanzimanPage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <h2 className="font-saira text-2xl sm:text-3xl font-semibold text-text-primary mb-4">Aisin ve Tam Otomatik Icin Bizi Arayin</h2>
           <p className="font-saira text-text-secondary mb-8">
-            Bostanci Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 - Pazartesi-Cumartesi 08:00-18:00
+            Bostanci Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 - Pazartesi-Cumartesi 08:30-18:30
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href={PHONE_HREF} className="bg-brass-bright text-graphite-base rounded-full font-saira font-semibold hover:bg-brass flex items-center gap-2 px-7 py-3.5 transition-colors">

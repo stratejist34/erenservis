@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { buildLocalBusinessSchema } from "@/lib/schema";
-import { Archivo, IBM_Plex_Sans, Geist, Geist_Mono, Saira_Semi_Condensed, JetBrains_Mono, Fraunces } from "next/font/google";
+import { Geist, Saira_Semi_Condensed, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import MobileCtaBar from "@/components/MobileCtaBar";
@@ -10,33 +10,10 @@ import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 import GlobalClickTracker from '@/components/tracking/GlobalClickTracker';
 
-const archivo = Archivo({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-archivo",
-  display: "swap",
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  variable: "--font-plex",
-  display: "swap",
-  fallback: ["system-ui", "sans-serif"],
-});
-
 const geistSans = Geist({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-geist-sans",
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -51,14 +28,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-jetbrains",
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  style: ["italic"],
-  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -138,12 +107,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-CPHJ4QL322";
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
     <html
       lang="tr"
-      className={`${archivo.variable} ${ibmPlexSans.variable} ${geistSans.variable} ${geistMono.variable} ${sairaSemiCondensed.variable} ${jetbrainsMono.variable} ${fraunces.variable}`}
+      className={`${geistSans.variable} ${sairaSemiCondensed.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased pb-16 md:pb-0">
         {GA_ID && (

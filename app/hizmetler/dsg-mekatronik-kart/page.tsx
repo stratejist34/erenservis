@@ -33,14 +33,6 @@ export const metadata: Metadata = {
       "Tamir mi, değişim mi? Ücretsiz tanı ile net karar — Eren Servis Bostancı.",
     url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
     type: "website",
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/dsg-mekatronik-kart.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Mekatronik Kart Fiyatı 2026",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
@@ -471,9 +463,9 @@ export default function DsgMekatronikKartPage() {
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 {
-                  href: "/rehber/dsg-mekatronik-ariza-belirtileri",
+                  href: "/rehber/solenoid-valf-ariza-belirtileri/",
                   tip: "Rehber",
-                  baslik: "Mekatronik arıza belirtileri →",
+                  baslik: "Solenoid valf arıza belirtileri →",
                 },
                 {
                   href: "/hizmetler/dsg-kavrama-degisimi",

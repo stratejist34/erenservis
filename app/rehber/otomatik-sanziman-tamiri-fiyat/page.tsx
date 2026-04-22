@@ -33,14 +33,6 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-04-01",
     authors: ["Eren Servis"],
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/otomatik-sanziman-tamiri-fiyat.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Otomatik Şanzıman Tamiri Fiyatı 2026",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat/",

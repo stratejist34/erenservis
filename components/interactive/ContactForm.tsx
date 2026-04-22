@@ -2,14 +2,17 @@
 
 import { useState } from 'react';
 import { Phone, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
+import { BUSINESS_HOURS, CONTACT } from '@/lib/constants';
 
-const PHONE = '0532 715 37 51';
-const PHONE_HREF = 'tel:+905327153751';
-const WHATSAPP_HREF = 'https://wa.me/905327153751';
+const PHONE = CONTACT.phoneDisplay;
+const PHONE_HREF = CONTACT.phoneHref;
+const WHATSAPP_HREF = CONTACT.whatsappHref;
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
+  const [honeypot, setHoneypot] = useState('');
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -17,29 +20,39 @@ export default function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setError(null);
 
-    // Sheets'e kaydet (hata olursa sessizce geç)
+    let savedToSheets = false;
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
+          company: honeypot,
           page: typeof window !== 'undefined' ? window.location.pathname : '',
         }),
       });
+      savedToSheets = res.ok;
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        setError(data.error ?? 'Kayıt oluşturulamadı. WhatsApp üzerinden devam edin.');
+      }
     } catch {
-      // API hatası kullanıcıyı etkilemez
+      setError('Bağlantı hatası. WhatsApp üzerinden iletişime geçin.');
     }
 
-    // WhatsApp'ı aç
+    // WhatsApp her durumda açılsın — kullanıcı kaybolmasın
     const text = encodeURIComponent(
       `Merhaba, ${form.name} adına randevu almak istiyorum.\nTelefon: ${form.phone}\nMesaj: ${form.message}`
     );
-    window.open(`https://wa.me/905327153751?text=${text}`, '_blank');
+    window.open(`${WHATSAPP_HREF}?text=${text}`, '_blank');
 
-    setSent(true);
-    setTimeout(() => setSent(false), 5000);
+    if (savedToSheets) setSent(true);
+    setTimeout(() => {
+      setSent(false);
+      setError(null);
+    }, 5000);
   }
 
   return (
@@ -58,6 +71,17 @@ export default function ContactForm() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            {/* Honeypot — botlar için görünmez tuzak alan */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              aria-hidden="true"
+              style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+            />
             <div>
               <label htmlFor="name" className="block font-saira text-sm font-medium text-text-primary mb-1.5">
                 Adınız Soyadınız <span className="text-brass">*</span>
@@ -104,6 +128,15 @@ export default function ContactForm() {
                 className="w-full px-4 py-3 rounded-xl border border-border-subtle bg-graphite-elevated font-saira text-text-primary text-sm placeholder:text-iron-light focus:outline-none focus:ring-2 focus:ring-brass/25 focus:border-brass transition-all resize-none"
               />
             </div>
+
+            {error && (
+              <div
+                role="alert"
+                className="rounded-xl border border-red-500/30 bg-red-500/5 px-4 py-3 font-saira text-sm text-red-200"
+              >
+                {error}
+              </div>
+            )}
 
             <button
               type="submit"
@@ -153,8 +186,7 @@ export default function ContactForm() {
           </h4>
           <div className="flex flex-col gap-2">
             {[
-              { day: 'Pazartesi - Cuma', hours: '08:00 - 18:00' },
-              { day: 'Cumartesi', hours: '08:00 - 16:00' },
+              { day: 'Pazartesi - Cumartesi', hours: `${BUSINESS_HOURS.opens} - ${BUSINESS_HOURS.closes}` },
               { day: 'Pazar', hours: 'Kapalı' },
             ].map(({ day, hours }) => (
               <div key={day} className="flex justify-between font-saira text-sm">

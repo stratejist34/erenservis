@@ -155,7 +155,7 @@ function InlineCTA() {
         Şanzımanınızla ilgili sorunuzu hemen cevaplayalım
       </p>
       <p className="font-saira text-sm text-text-secondary mb-5">
-        Bostancı — Pazartesi&ndash;Cumartesi 08:00&ndash;18:00
+        Bostancı — Pazartesi&ndash;Cumartesi 08:30&ndash;18:30
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
         <a
@@ -416,7 +416,7 @@ export default async function BlogPostPage({ params }: Props) {
               Şanzıman Sorununuzu Konuşalım
             </h2>
             <p className="font-saira text-text-secondary mb-8">
-              Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi-Cumartesi 08:00-18:00
+              Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi-Cumartesi 08:30-18:30
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a

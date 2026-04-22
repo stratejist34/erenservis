@@ -261,7 +261,7 @@ export default function SanzımanBakımıPage() {
           <div className="max-w-2xl mx-auto px-4 sm:px-6">
             <h2 className="font-saira text-2xl sm:text-3xl font-semibold text-text-primary mb-4">Şanzıman Bakımı İçin Randevu Alın</h2>
             <p className="font-saira text-text-secondary mb-8">
-              Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi–Cumartesi 08:00–18:00
+              Bostancı Oto Sanayi Sitesi, Orkide Sokak G Blok No:4 — Pazartesi–Cumartesi 08:30–18:30
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href={PHONE_HREF}

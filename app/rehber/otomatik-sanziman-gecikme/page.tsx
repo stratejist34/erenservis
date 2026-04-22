@@ -418,9 +418,9 @@ export default function OtomatikSanzımanGecikmePage() {
                   baslik: "DSG Mekatronik Kart Fiyatı →",
                 },
                 {
-                  href: "/blog/dsg-mekatronik-ariza-belirtileri",
-                  tip: "İlgili Yazı",
-                  baslik: "DSG Mekatronik Arıza Belirtileri →",
+                  href: "/hizmetler/dsg-mekatronik-kart/",
+                  tip: "Hizmet",
+                  baslik: "DSG Mekatronik Kart Fiyatı →",
                 },
               ].map((r) => (
                 <Link

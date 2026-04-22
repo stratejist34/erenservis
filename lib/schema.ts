@@ -5,6 +5,7 @@ import type { FaqItem } from './sanziman-faq';
 import { BRANDS, buildBrandTransmissionTitle } from './brands';
 import type { TransmissionFamily } from './transmissions';
 import type { Brand } from './brands';
+import { BUSINESS_HOURS } from './constants';
 
 /* ── TYPES ───────────────────────────────────────────────────────────────── */
 
@@ -68,9 +69,9 @@ const BUSINESS_NODE = {
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification' as const,
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '08:30',
-      closes: '18:30',
+      dayOfWeek: [...BUSINESS_HOURS.days],
+      opens: BUSINESS_HOURS.opens,
+      closes: BUSINESS_HOURS.closes,
     },
   ],
   priceRange: '₺₺',

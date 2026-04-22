@@ -31,10 +31,10 @@
 
 @theme inline {
   /* Fonts */
-  --font-display: var(--font-geist-sans), var(--font-archivo), 'Archivo', system-ui, sans-serif;
-  --font-body: var(--font-geist-sans), var(--font-plex), 'IBM Plex Sans', system-ui, sans-serif;
-  --font-sans: var(--font-geist-sans), var(--font-plex), 'IBM Plex Sans', system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-display: var(--font-geist-sans), system-ui, sans-serif;
+  --font-body: var(--font-geist-sans), system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'Courier New', monospace;
 
   /* Sanziman semantic surfaces (legacy alias → Cold Brass Hybrid) */
   --color-surface-0: #15130F;
@@ -97,7 +97,7 @@
   /* Font Families */
   --font-display-cb:      var(--font-saira), system-ui, sans-serif;
   --font-mono-cb:         var(--font-jetbrains), 'Courier New', monospace;
-  --font-display-italic:  var(--font-fraunces), Georgia, serif;
+  --font-display-italic:  var(--font-saira), system-ui, sans-serif;
 
   /* SURFACES */
   --color-graphite-base:     #15130F;

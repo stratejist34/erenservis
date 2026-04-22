@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useSymptom } from '@/contexts/SymptomContext';
+import { BUSINESS_HOURS } from '@/lib/constants';
 
 const ROW_H = 52;
 const INTERVAL_MS = 3000;
@@ -23,17 +24,18 @@ const FEED_RAW: FeedRaw[] = [
   { text: 'EDC7 vuruntu — Sancaktepe',             offsetMin: 400, match: [1] },
 ];
 
-// Eren Servis mesai: Pzt-Cmt 09:00-18:30, Pazar kapalı
-const OPEN_HOUR = 9;
-const CLOSE_HOUR = 18;
-const CLOSE_MIN = 30;
-const DAY_WINDOW_MIN = (CLOSE_HOUR * 60 + CLOSE_MIN) - OPEN_HOUR * 60; // 570
+// Mesai saatleri — lib/constants.ts tek kaynak
+const OPEN_HOUR = BUSINESS_HOURS.opensHour;
+const OPEN_MIN = BUSINESS_HOURS.opensMinute;
+const CLOSE_HOUR = BUSINESS_HOURS.closesHour;
+const CLOSE_MIN = BUSINESS_HOURS.closesMinute;
+const DAY_WINDOW_MIN = (CLOSE_HOUR * 60 + CLOSE_MIN) - (OPEN_HOUR * 60 + OPEN_MIN);
 const DAY_NAMES = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
 
 function isBusinessOpen(d: Date): boolean {
   if (d.getDay() === 0) return false;
   const total = d.getHours() * 60 + d.getMinutes();
-  return total >= OPEN_HOUR * 60 && total <= CLOSE_HOUR * 60 + CLOSE_MIN;
+  return total >= OPEN_HOUR * 60 + OPEN_MIN && total <= CLOSE_HOUR * 60 + CLOSE_MIN;
 }
 
 function previousBusinessClose(ref: Date): Date {
@@ -64,7 +66,7 @@ function computeItemTime(offsetMin: number, anchor: Date): Date {
   let remaining = offsetMin;
   let cursor = new Date(anchor);
   const cursorOpen = new Date(cursor);
-  cursorOpen.setHours(OPEN_HOUR, 0, 0, 0);
+  cursorOpen.setHours(OPEN_HOUR, OPEN_MIN, 0, 0);
 
   const windowMin = Math.max(0, (cursor.getTime() - cursorOpen.getTime()) / 60000);
 

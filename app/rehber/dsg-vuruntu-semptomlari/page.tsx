@@ -33,14 +33,6 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
-    images: [
-      {
-        url: "https://www.erenservis.net/images/og/dsg-vuruntu.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DSG Vuruntu Semptomu",
-      },
-    ],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",

@@ -53,11 +53,11 @@ export async function getPageBySlug(slug: string): Promise<Page | undefined> {
 
 export async function getPostsByCategory(categorySlug: string): Promise<Post[]> {
   const posts = await getPosts();
+  const target = categorySlug.toLocaleLowerCase('tr-TR');
   return posts.filter((p) =>
-    p.categories.some(
-      (cat) =>
-        cat.toLowerCase() === categorySlug.toLowerCase() ||
-        cat.toLowerCase().replace(/\s+/g, '-') === categorySlug.toLowerCase()
-    )
+    p.categories.some((cat) => {
+      const lower = cat.toLocaleLowerCase('tr-TR');
+      return lower === target || lower.replace(/\s+/g, '-') === target;
+    })
   );
 }

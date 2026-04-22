@@ -506,7 +506,13 @@ const FAMILY_TO_TIPLERI_SLUG: Record<string, string> = {
 };
 
 export function buildTransmissionUrl(id: string): string {
-  const slug = FAMILY_TO_TIPLERI_SLUG[id] ?? 'dsg-s-tronic';
+  const slug = FAMILY_TO_TIPLERI_SLUG[id];
+  if (!slug) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(`[transmissions] buildTransmissionUrl: bilinmeyen familyId "${id}" — /sanziman-tipleri/'e yönlendiriliyor`);
+    }
+    return '/sanziman-tipleri/';
+  }
   return `/sanziman-tipleri/${slug}/`;
 }
 

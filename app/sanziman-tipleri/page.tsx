@@ -225,10 +225,10 @@ export default function SanzimanTipleriPage() {
               <tbody>
                 {OIL_DATA.flatMap((t, ti) =>
                   t.maintenance
-                    .filter((m) =>
-                      m.task.toLowerCase().includes('yağ') ||
-                      m.task.toLowerCase().includes('filtre')
-                    )
+                    .filter((m) => {
+                      const task = m.task.toLocaleLowerCase('tr-TR');
+                      return task.includes('yağ') || task.includes('filtre');
+                    })
                     .map((m, mi) => (
                       <tr
                         key={`${t.slug}-${mi}`}

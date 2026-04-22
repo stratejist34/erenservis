@@ -243,7 +243,7 @@ export default function TransmissionTabs({ data }: { data: TransmissionType }) {
                 Eren Servis&apos;te {data.title} Revizyonu
               </h3>
               <p className="text-sm text-fg-soft leading-relaxed mb-4">
-                Atölyemizde {data.title.toLowerCase()} şanzımanlar için tam teşekküllü
+                Atölyemizde {data.title.toLocaleLowerCase('tr-TR')} şanzımanlar için tam teşekküllü
                 diagnostik sürecini uygularız: önce hata kodlarını okur, ardından mekanik
                 kontrol yapar, tahmini hasar raporunu yazılı olarak sunarız.
               </p>

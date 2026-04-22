@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "node -e \"require('fs').rmSync('.next', {recursive:true,force:true})\" && next dev",
-    "prebuild": "node tools/check-duplicate-slugs.mjs",
+    "prebuild": "node tools/check-duplicate-slugs.mjs && node tools/validate-data-integrity.mjs",
     "check:slugs": "node tools/check-duplicate-slugs.mjs",
+    "check:data": "node tools/validate-data-integrity.mjs",
     "build": "cross-env \"NODE_OPTIONS=--max-old-space-size=8192 --max-semi-space-size=256\" next build",
     "analyze": "npm run build && next experimental-analyze",
     "analyze:output": "npm run build && next experimental-analyze -o",

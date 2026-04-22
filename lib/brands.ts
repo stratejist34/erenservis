@@ -613,8 +613,8 @@ export function buildBrandTransmissionTitle(brand: Brand): string {
   const transmissionLabel = primary.displayName;
 
   const startsWithBrand = transmissionLabel
-    .toLowerCase()
-    .startsWith(brand.name.toLowerCase());
+    .toLocaleLowerCase('tr-TR')
+    .startsWith(brand.name.toLocaleLowerCase('tr-TR'));
 
   if (startsWithBrand) {
     // Şanzıman adı zaten marka adını içeriyor → önüne displayName ekle (farklıysa)
@@ -636,8 +636,8 @@ export function buildBrandTransmissionAnchor(brand: Brand): string {
 
   const transmissionLabel = primary.displayName;
   const startsWithBrand = transmissionLabel
-    .toLowerCase()
-    .startsWith(brand.name.toLowerCase());
+    .toLocaleLowerCase('tr-TR')
+    .startsWith(brand.name.toLocaleLowerCase('tr-TR'));
 
   if (startsWithBrand) {
     if (brand.displayName && brand.displayName !== brand.name) {

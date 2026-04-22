@@ -118,7 +118,7 @@ export default function HeroSectionDC({
   const preDiagLabel = `${delayed.shortLabel} için ön teşhis al`;
   const preDiagContext = `Muhtemel: ${delayed.label} — ${delayed.severity === 'high' ? 'Yüksek risk' : 'Orta risk'}`;
   const preDiagWaHref = `https://wa.me/905327153751?text=${encodeURIComponent(
-    `Merhaba, aracımda ${delayed.shortLabel.toLowerCase()} problemi var. Ön teşhis için bilgi almak istiyorum.`
+    `Merhaba, aracımda ${delayed.shortLabel.toLocaleLowerCase('tr-TR')} problemi var. Ön teşhis için bilgi almak istiyorum.`
   )}`;
 
   return (

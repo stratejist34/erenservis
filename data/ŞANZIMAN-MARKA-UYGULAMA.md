@@ -100,7 +100,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
   'dsg-dq250': {
     id: 'dsg-dq250',
     displayName: 'DSG DQ250',
-    fullName: 'DSG DQ250 Yaş Kavramalı Şanzıman',
+    fullName: 'DSG DQ250 Islak Kavramalı Şanzıman',
     shortName: 'DQ250',
     type: 'dct-wet',
     codes: ['DQ250', '02E'],
@@ -108,10 +108,10 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2003,
     serviceStatus: 'active',
     tier: 1,
-    description: '6 ileri yaş çift kavramalı, VW Grubunun ilk DSG nesli. Golf GTI, Tiguan, Passat ve Audi A3/TT gibi 2.0 TSI ve 2.0 TDI motorlarda kullanılır. Yaş kavrama yapısı sayesinde DQ200\'den daha dayanıklı ama yine de mekatronik ve solenoid sorunları görülür.',
+    description: '6 ileri ıslak çift kavramalı, VW Grubunun ilk DSG nesli. Golf GTI, Tiguan, Passat ve Audi A3/TT gibi 2.0 TSI ve 2.0 TDI motorlarda kullanılır. Islak Kavrama yapısı sayesinde DQ200\'den daha dayanıklı ama yine de mekatronik ve solenoid sorunları görülür.',
     commonFaults: [
       'Mekatronik solenoid arızası',
-      'Yaş kavrama paketi aşınması',
+      'Islak Kavrama paketi aşınması',
       'Sıcak halde vites kayması',
       'Şanzıman yağı kirlenmesi',
     ],
@@ -120,7 +120,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
   'dsg-dq381': {
     id: 'dsg-dq381',
     displayName: 'DSG DQ381',
-    fullName: 'DSG DQ381 Yaş Kavramalı Şanzıman',
+    fullName: 'DSG DQ381 Islak Kavramalı Şanzıman',
     shortName: 'DQ381',
     type: 'dct-wet',
     codes: ['DQ381', '0GC'],
@@ -128,13 +128,13 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2016,
     serviceStatus: 'active',
     tier: 1,
-    description: 'DQ250\'nin yerine geliştirilen 7 ileri yaş çift kavramalı şanzıman. Yeni nesil Golf, Tiguan, Passat, Octavia ve Cupra Formentor gibi modellerde kullanılır. 1.5 ton üstü araçlarda standart hâle geldi.',
+    description: 'DQ250\'nin yerine geliştirilen 7 ileri ıslak çift kavramalı şanzıman. Yeni nesil Golf, Tiguan, Passat, Octavia ve Cupra Formentor gibi modellerde kullanılır. 1.5 ton üstü araçlarda standart hâle geldi.',
   },
 
   'dsg-dq500': {
     id: 'dsg-dq500',
     displayName: 'DSG DQ500',
-    fullName: 'DSG DQ500 Yüksek Tork Yaş Kavramalı Şanzıman',
+    fullName: 'DSG DQ500 Yüksek Tork Islak Kavramalı Şanzıman',
     shortName: 'DQ500',
     type: 'dct-wet',
     codes: ['DQ500', '0BH', '0BT'],
@@ -142,7 +142,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2009,
     serviceStatus: 'active',
     tier: 2,
-    description: 'Yüksek tork dayanımı için geliştirilen 7 ileri yaş çift kavramalı şanzıman. VW Amarok V6, Touareg eski nesil, Audi RS3, TT-RS ve Cupra Ateca/Formentor 4Drive gibi performans ve prestij modellerinde kullanılır.',
+    description: 'Yüksek tork dayanımı için geliştirilen 7 ileri ıslak çift kavramalı şanzıman. VW Amarok V6, Touareg eski nesil, Audi RS3, TT-RS ve Cupra Ateca/Formentor 4Drive gibi performans ve prestij modellerinde kullanılır.',
   },
 
   'dsg-dq400e': {
@@ -156,13 +156,13 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2014,
     serviceStatus: 'forward-looking',
     tier: 2,
-    description: 'Plug-in hibrit araçlar için geliştirilen 6 ileri yaş çift kavramalı şanzıman. Golf eHybrid, Passat GTE, Tiguan eHybrid, Audi A3 e-tron ve Cupra Formentor PHEV modellerinde kullanılır. Elektrik motoru şanzıman içine entegre.',
+    description: 'Plug-in hibrit araçlar için geliştirilen 6 ileri ıslak çift kavramalı şanzıman. Golf eHybrid, Passat GTE, Tiguan eHybrid, Audi A3 e-tron ve Cupra Formentor PHEV modellerinde kullanılır. Elektrik motoru şanzıman içine entegre.',
   },
 
   's-tronic-dl382': {
     id: 's-tronic-dl382',
     displayName: 'S-Tronic DL382',
-    fullName: 'Audi S-Tronic DL382 Yaş Kavramalı Şanzıman',
+    fullName: 'Audi S-Tronic DL382 Islak Kavramalı Şanzıman',
     shortName: 'DL382',
     type: 'dct-wet',
     codes: ['DL382', '0CK'],
@@ -170,13 +170,13 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2015,
     serviceStatus: 'active',
     tier: 2,
-    description: 'Audi\'nin enine motor yerleşimli ön çekiş ve quattro modelleri için 7 ileri yaş çift kavramalı şanzıman. A3, A4, A5, Q3, Q5 modellerinde standart.',
+    description: 'Audi\'nin enine motor yerleşimli ön çekiş ve quattro modelleri için 7 ileri ıslak çift kavramalı şanzıman. A3, A4, A5, Q3, Q5 modellerinde standart.',
   },
 
   's-tronic-dl501': {
     id: 's-tronic-dl501',
     displayName: 'S-Tronic DL501',
-    fullName: 'Audi S-Tronic DL501 Yaş Kavramalı Şanzıman',
+    fullName: 'Audi S-Tronic DL501 Islak Kavramalı Şanzıman',
     shortName: 'DL501',
     type: 'dct-wet',
     codes: ['DL501', '0B5'],
@@ -184,7 +184,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2008,
     serviceStatus: 'active',
     tier: 2,
-    description: '7 ileri yaş çift kavramalı, Audi\'nin uzunlamasına motor yerleşimli quattro modelleri için. A4, A5, A6, A7, Q5 ve S/RS modellerinde kullanılır.',
+    description: '7 ileri ıslak çift kavramalı, Audi\'nin uzunlamasına motor yerleşimli quattro modelleri için. A4, A5, A6, A7, Q5 ve S/RS modellerinde kullanılır.',
   },
 
   'zf-8hp': {
@@ -362,7 +362,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
     yearStart: 2020,
     serviceStatus: 'forward-looking',
     tier: 3,
-    description: 'Hyundai-Kia\'nın yeni nesil 8 ileri yaş çift kavramalı şanzımanı. Yeni Tucson, Kona, Sportage ve Ioniq modellerinde kullanılmaya başlandı.',
+    description: 'Hyundai-Kia\'nın yeni nesil 8 ileri ıslak çift kavramalı şanzımanı. Yeni Tucson, Kona, Sportage ve Ioniq modellerinde kullanılmaya başlandı.',
   },
 
   'honda-cvt': {

@@ -74,10 +74,14 @@ export default function Header() {
     };
   }, [aracMenuOpen]);
 
-  useEffect(() => {
+  // Pathname değişiminde menüleri kapat — React 19 önerilen pattern: render sırasında
+  // önceki değeri karşılaştır, değiştiyse state'i güncelle (useEffect yerine).
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setAracMenuOpen(false);
     setMobileMenuOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <div className="fixed left-0 right-0 top-4 z-50 px-4 sm:px-6">

@@ -144,8 +144,16 @@ export function buildServiceSchema(params: ServiceParams) {
       offers: {
         '@type': 'Offer',
         priceCurrency: 'TRY',
-        ...(params.minPrice != null && { minPrice: params.minPrice }),
-        ...(params.maxPrice != null && { maxPrice: params.maxPrice }),
+        // Offer üzerinde minPrice/maxPrice Schema.org'da geçerli değil —
+        // price aralığı PriceSpecification ile ifade edilir.
+        ...(params.minPrice != null && {
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'TRY',
+            minPrice: params.minPrice,
+            ...(params.maxPrice != null && { maxPrice: params.maxPrice }),
+          },
+        }),
         ...(params.priceRange && { description: params.priceRange }),
       },
     }),

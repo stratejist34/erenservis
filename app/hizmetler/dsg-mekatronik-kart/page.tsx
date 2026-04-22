@@ -175,7 +175,7 @@ export default function DsgMekatronikKartPage() {
         {/* ── GÖRSEL — Atmosfer / kanıt katmanı ───────────────────────── */}
         <div className="mt-8 relative w-full h-72 sm:h-96 overflow-hidden bg-graphite-elevated">
           <Image
-            src="/images/part2/Screenshot_96.webp"
+            src="/images/part2/Screenshot_83.webp"
             alt="Wolf's Tech DSG mekatronik onarım kiti ve solenoid valfi — Eren Servis Bostancı"
             fill
             className="object-cover object-top brightness-[0.73] saturate-[0.6]"

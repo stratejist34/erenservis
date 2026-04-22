@@ -62,7 +62,6 @@ export default function RehberHubPage() {
     name: PAGE_TITLE,
     description: PAGE_DESC,
     inLanguage: 'tr-TR',
-    isPartOf: { '@id': 'https://www.erenservis.net/#website' },
     hasPart: posts.map((p) => ({
       '@type': 'BlogPosting',
       '@id': `https://www.erenservis.net${p.href}#article`,

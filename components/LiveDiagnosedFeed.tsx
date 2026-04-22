@@ -16,7 +16,7 @@ type FeedItem = { text: string; time: string; match: number[] };
 const FEED_RAW: FeedRaw[] = [
   { text: 'DSG mekatronik arızası — Pendik',      offsetMin: 12,  match: [2] },
   { text: 'CVT kayma problemi — Kartal',           offsetMin: 27,  match: [3] },
-  { text: 'ZF valf body sorunu — Tuzla',           offsetMin: 55,  match: [4] },
+  { text: 'ZF valf body sorunu — Üsküdar',         offsetMin: 55,  match: [4] },
   { text: 'DQ200 geçiş sertliği — Maltepe',        offsetMin: 95,  match: [1] },
   { text: 'DQ250 kavrama aşınması — Ümraniye',     offsetMin: 140, match: [1, 5] },
   { text: 'Aisin TF-80SC valf gövdesi — Ataşehir', offsetMin: 230, match: [4] },
@@ -130,11 +130,22 @@ export default function LiveDiagnosedFeed() {
   const [pulsing, setPulsing] = useState(false);
   const [smoothOff, setSmoothOff] = useState(false);
   const cursor = useRef(MAX_VISIBLE + 1);
-  const firstRun = useRef(true);
+  const [prevSelectedId, setPrevSelectedId] = useState(selectedId);
+
+  // selectedId değiştiğinde pulse state'ini render sırasında tetikle — React 19
+  // önerilen pattern: useEffect ile sync setState yerine prev-value diff.
+  if (prevSelectedId !== selectedId) {
+    setPrevSelectedId(selectedId);
+    setSmoothOff(false);
+    setPulsing(true);
+  }
 
   useEffect(() => {
+    // Hydration'dan sonra gerçek saat damgasını hesapla — SSR'da new Date()
+    // mismatch üretir, bu yüzden mount sonrası client'ta çalışır.
     const live = buildFeed();
     feedRef.current = live;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setBuffer(live.slice(0, MAX_VISIBLE + 1));
   }, []);
 
@@ -162,12 +173,7 @@ export default function LiveDiagnosedFeed() {
   }, []);
 
   useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      return;
-    }
-    setSmoothOff(false);
-    setPulsing(true);
+    if (!pulsing) return;
     const r1 = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         setSmoothOff(true);
@@ -175,7 +181,7 @@ export default function LiveDiagnosedFeed() {
       });
     });
     return () => cancelAnimationFrame(r1);
-  }, [selectedId]);
+  }, [pulsing]);
 
   const rendered = buffer.slice(0, visible + 1);
 

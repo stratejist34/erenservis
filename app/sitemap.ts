@@ -14,13 +14,7 @@ type PostEntry = {
 const STATIC_BLOG_SLUGS = [
   'dsg-hangi-araclarda-var',
   'dsg-mekatronik-ariza-fiyati',
-  'dsg-sanziman-omru-bakimi',
-  'dsg-vuruntu-semptomlari',
   'edc-sanziman-ariza-belirtileri',
-  'mekatronik-nedir',
-  'otomatik-sanziman-tamiri-fiyat',
-  'solenoid-valf-ariza-belirtileri',
-  'uyari-lambasi-semptomlari',
 ] as const;
 
 const STATIC_REHBER_SLUGS = [

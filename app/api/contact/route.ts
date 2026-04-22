@@ -4,25 +4,15 @@ import crypto from 'crypto';
 type RateEntry = { count: number; resetAt: number };
 const RATE_LIMIT_MAX = 3;
 const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_CLEANUP_MS = 5 * 60_000;
+const RATE_LIMIT_CLEANUP_THRESHOLD = 64;
 
-// globalThis ile HMR/cold start sırasında interval'in iki kere register edilmesini engelle
+// Serverless instance'ları arası map'i paylaş (warm start'ta yeniden kullan).
 const globalStore = globalThis as unknown as {
   __contactRateLimitMap?: Map<string, RateEntry>;
-  __contactRateLimitCleanup?: NodeJS.Timeout;
 };
 
 const rateLimitMap = globalStore.__contactRateLimitMap ?? new Map<string, RateEntry>();
 globalStore.__contactRateLimitMap = rateLimitMap;
-
-if (!globalStore.__contactRateLimitCleanup) {
-  globalStore.__contactRateLimitCleanup = setInterval(() => {
-    const now = Date.now();
-    for (const [ip, entry] of rateLimitMap.entries()) {
-      if (entry.resetAt <= now) rateLimitMap.delete(ip);
-    }
-  }, RATE_LIMIT_CLEANUP_MS);
-}
 
 const MAX_NAME = 100;
 const MAX_MESSAGE = 2000;
@@ -93,6 +83,14 @@ export async function POST(req: NextRequest) {
 
   const ip = getClientIp(req);
   const now = Date.now();
+
+  // Opportunistic cleanup: map büyüdüyse expired entry'leri sil (setInterval yerine)
+  if (rateLimitMap.size > RATE_LIMIT_CLEANUP_THRESHOLD) {
+    for (const [ipKey, e] of rateLimitMap) {
+      if (e.resetAt <= now) rateLimitMap.delete(ipKey);
+    }
+  }
+
   const entry = rateLimitMap.get(ip);
 
   if (entry && entry.resetAt > now) {
@@ -126,7 +124,8 @@ export async function POST(req: NextRequest) {
 
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL ?? process.env.GOOGLE_SHEETS_WEBHOOK_URL;
   if (!webhookUrl) {
-    return NextResponse.json({ ok: true, warning: 'webhook not configured' });
+    console.error('[contact] CONTACT_WEBHOOK_URL missing — lead would be lost');
+    return genericError(503);
   }
 
   const payload = {

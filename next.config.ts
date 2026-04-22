@@ -1,13 +1,22 @@
 import type { NextConfig } from "next";
 import os from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Build-time paralelliğini makinedeki fiziksel çekirdek sayısına göre seç.
 // Hosts with very low core counts (1-2) still benefit from a minimum of 2.
 const BUILD_CPUS = Math.max(2, Math.min(os.cpus().length, 8));
+const PROJECT_ROOT = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+
+  // Turbopack workspace root inference uyarısını kilitle — monorepo olmayan bu projede
+  // root her zaman bu dosyanın bulunduğu klasördür.
+  turbopack: {
+    root: PROJECT_ROOT,
+  },
 
   typescript: { ignoreBuildErrors: false },
 
@@ -33,8 +42,9 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Statik HTML sayfaları — CDN'de 1 saat + güvenlik headerları
-        source: '/:path*',
+        // Statik HTML sayfaları — CDN'de 1 saat + güvenlik headerları.
+        // /api ve /_next hariç tutulur (negative lookahead).
+        source: '/:path((?!api/|_next/).*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -44,6 +54,15 @@ const nextConfig: NextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
+      {
+        // API rotaları — cache'lenmez (form POST'ları ve dinamik yanıtlar)
+        source: '/api/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
         ],
       },
       {
@@ -234,6 +253,16 @@ const nextConfig: NextConfig = {
         destination: '/rehber/dsg-kavrama-ariza-belirtileri/',
         permanent: true,
       },
+      {
+        source: '/blog/dsg-vuruntu-semptomlari',
+        destination: '/rehber/dsg-vuruntu-semptomlari/',
+        permanent: true,
+      },
+      {
+        source: '/blog/dsg-vuruntu-semptomlari/',
+        destination: '/rehber/dsg-vuruntu-semptomlari/',
+        permanent: true,
+      },
       // Kırık slug savunması — yazılmamış dsg-mekatronik-ariza-belirtileri
       {
         source: '/rehber/dsg-mekatronik-ariza-belirtileri',
@@ -255,6 +284,17 @@ const nextConfig: NextConfig = {
         destination: '/hizmetler/dsg-mekatronik-kart/',
         permanent: true,
       },
+      // /blog → /rehber duplicate temizliği (Sprint D, 2026-04)
+      { source: '/blog/mekatronik-nedir', destination: '/rehber/mekatronik-nedir/', permanent: true },
+      { source: '/blog/mekatronik-nedir/', destination: '/rehber/mekatronik-nedir/', permanent: true },
+      { source: '/blog/uyari-lambasi-semptomlari', destination: '/rehber/uyari-lambasi-semptomlari/', permanent: true },
+      { source: '/blog/uyari-lambasi-semptomlari/', destination: '/rehber/uyari-lambasi-semptomlari/', permanent: true },
+      { source: '/blog/solenoid-valf-ariza-belirtileri', destination: '/rehber/solenoid-valf-ariza-belirtileri/', permanent: true },
+      { source: '/blog/solenoid-valf-ariza-belirtileri/', destination: '/rehber/solenoid-valf-ariza-belirtileri/', permanent: true },
+      { source: '/blog/dsg-sanziman-omru-bakimi', destination: '/rehber/dsg-sanziman-omru-bakimi/', permanent: true },
+      { source: '/blog/dsg-sanziman-omru-bakimi/', destination: '/rehber/dsg-sanziman-omru-bakimi/', permanent: true },
+      { source: '/blog/otomatik-sanziman-tamiri-fiyat', destination: '/rehber/otomatik-sanziman-tamiri-fiyat/', permanent: true },
+      { source: '/blog/otomatik-sanziman-tamiri-fiyat/', destination: '/rehber/otomatik-sanziman-tamiri-fiyat/', permanent: true },
       // === Eski /sanziman/:slug → yeni /sanziman-tipleri/:slug ===
       { source: '/sanziman/aisin-eat', destination: '/sanziman-tipleri/aisin-eat/', permanent: true },
       { source: '/sanziman/aisin-eat/', destination: '/sanziman-tipleri/aisin-eat/', permanent: true },

@@ -421,7 +421,7 @@ export default function DsgVolantKavramaPaketiPage() {
                 </div>
               </Link>
               <Link
-                href="/blog/dsg-vuruntu-semptomlari/"
+                href="/rehber/dsg-vuruntu-semptomlari/"
                 className="block bg-graphite-elevated border border-border-hairline rounded-xl p-4
                            hover:border-border-brass transition-all group"
               >

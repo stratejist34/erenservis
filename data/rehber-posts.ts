@@ -143,4 +143,58 @@ export const REHBER_POSTS: RehberPost[] = [
     href: '/rehber/dsg-kavrama-ariza-belirtileri/',
     categories: ['dsg', 'kavrama'],
   },
+  {
+    slug: 'dsg-vuruntu-semptomlari',
+    title: 'DSG Şanzımanda Vuruntu Neden Olur?',
+    excerpt:
+      'Vites geçişinde sarsıntı veya ani ileri atma hissediyorsanız bu büyük olasılıkla kavrama arızasının erken işaretidir. 4 senaryo ve aciliyet rehberi.',
+    date: '2026-03-30',
+    href: '/rehber/dsg-vuruntu-semptomlari/',
+    categories: ['dsg', 'kavrama', 'semptom'],
+  },
+  {
+    slug: 'uyari-lambasi-semptomlari',
+    title: 'DSG Uyarı Lambası Yandı — Ne Yapmalısınız?',
+    excerpt:
+      'Anahtar işareti, P sembolü veya vites göstergesi yanıp sönüyorsa her biri farklı anlam taşır. Hangi lamba yandığını bulun, ne yapacağınızı öğrenin.',
+    date: '2026-03-30',
+    href: '/rehber/uyari-lambasi-semptomlari/',
+    categories: ['dsg', 'uyari', 'semptom'],
+  },
+  {
+    slug: 'mekatronik-nedir',
+    title: 'Mekatronik Nedir? DSG Şanzımanda Görevi ve Arıza Belirtileri',
+    excerpt:
+      'Mekatronik ünitesi DSG şanzımanın hem beyni hem de kasıdır. İçindeki parçalar, arıza nedenleri ve erken müdahalenin önemi — teknik rehber.',
+    date: '2026-04-10',
+    href: '/rehber/mekatronik-nedir/',
+    categories: ['dsg', 'mekatronik', 'teknik'],
+  },
+  {
+    slug: 'solenoid-valf-ariza-belirtileri',
+    title: 'DSG Solenoid Valf Arıza Belirtileri: 7 Kritik İşaret',
+    excerpt:
+      'Vuruntu, limp mode, geri vitese geçememe... DSG solenoid valf arızasının 7 kritik belirtisi ve DQ200/DQ250 model farklılıkları.',
+    date: '2026-04-10',
+    href: '/rehber/solenoid-valf-ariza-belirtileri/',
+    categories: ['dsg', 'mekatronik', 'semptom'],
+  },
+  {
+    slug: 'dsg-sanziman-omru-bakimi',
+    title: 'DSG Şanzıman Ömrü ve Bakımı',
+    excerpt:
+      'DSG şanzıman kaç km gider? DQ200, DQ250, DQ381 ömür farkları, bakım aralıkları ve ömrü uzatan 5 kural.',
+    date: '2026-04-10',
+    href: '/rehber/dsg-sanziman-omru-bakimi/',
+    categories: ['dsg', 'bakim'],
+  },
+  {
+    slug: 'otomatik-sanziman-tamiri-fiyat',
+    title: 'Otomatik Şanzıman Tamiri Ne Kadar Tutar? 2026 Fiyat Rehberi',
+    excerpt:
+      'DSG, ZF, Aisin, CVT ve PowerShift otomatik şanzıman tamir fiyatları 2026. Hangi arıza ne kadar, nelere dikkat edilmeli.',
+    date: '2026-04-10',
+    href: '/rehber/otomatik-sanziman-tamiri-fiyat/',
+    categories: ['genel', 'fiyat'],
+  },
 ];

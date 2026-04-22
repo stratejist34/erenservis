@@ -75,7 +75,7 @@ export default function BrandSection() {
       sectionObs.disconnect();
       catalogObs?.disconnect();
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section ref={sectionRef} className="mx-auto mt-24 max-w-7xl px-4 sm:px-6" aria-label="Araç markaları">

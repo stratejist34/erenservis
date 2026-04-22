@@ -11,6 +11,7 @@ const WHATSAPP_HREF = CONTACT.whatsappHref;
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
   const [honeypot, setHoneypot] = useState('');
 
@@ -20,9 +21,10 @@ export default function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
     setError(null);
 
-    let savedToSheets = false;
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -33,26 +35,30 @@ export default function ContactForm() {
           page: typeof window !== 'undefined' ? window.location.pathname : '',
         }),
       });
-      savedToSheets = res.ok;
+
       if (!res.ok) {
         const data = (await res.json().catch(() => ({}))) as { error?: string };
-        setError(data.error ?? 'Kayıt oluşturulamadı. WhatsApp üzerinden devam edin.');
+        setError(
+          data.error ??
+            `Kayıt oluşturulamadı. Lütfen WhatsApp butonunu kullanın: ${CONTACT.phoneDisplay}`,
+        );
+        return;
       }
+
+      // Başarılı — WhatsApp'ı aynı user-gesture içinde aç (popup blocker uyumlu)
+      const text = encodeURIComponent(
+        `Merhaba, ${form.name} adına randevu almak istiyorum.\nTelefon: ${form.phone}\nMesaj: ${form.message}`,
+      );
+      window.open(`${WHATSAPP_HREF}?text=${text}`, '_blank', 'noopener,noreferrer');
+      setSent(true);
+      setTimeout(() => setSent(false), 5000);
     } catch {
-      setError('Bağlantı hatası. WhatsApp üzerinden iletişime geçin.');
+      setError(
+        `Bağlantı hatası. WhatsApp'tan yazın veya bizi arayın: ${CONTACT.phoneDisplay}`,
+      );
+    } finally {
+      setSubmitting(false);
     }
-
-    // WhatsApp her durumda açılsın — kullanıcı kaybolmasın
-    const text = encodeURIComponent(
-      `Merhaba, ${form.name} adına randevu almak istiyorum.\nTelefon: ${form.phone}\nMesaj: ${form.message}`
-    );
-    window.open(`${WHATSAPP_HREF}?text=${text}`, '_blank');
-
-    if (savedToSheets) setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setError(null);
-    }, 5000);
   }
 
   return (
@@ -140,10 +146,11 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-brass-bright font-saira text-sm font-semibold text-graphite-base hover:bg-brass transition-all"
+              disabled={submitting}
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-brass-bright font-saira text-sm font-semibold text-graphite-base hover:bg-brass transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <Send className="w-4 h-4" strokeWidth={2.5} />
-              WhatsApp ile Gönder
+              {submitting ? 'Gönderiliyor...' : 'WhatsApp ile Gönder'}
             </button>
           </form>
         )}

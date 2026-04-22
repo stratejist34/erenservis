@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useMemo, useCallback } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { SYMPTOMS } from '@/data/symptoms';
 
@@ -17,31 +17,28 @@ const SymptomContext = createContext<SymptomContextType>({
 export function SymptomProvider({ children }: { children: React.ReactNode }) {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [selectedId, setSelectedIdState] = useState(1);
 
-  useEffect(() => {
+  // URL = tek kaynak. Effect ile sync yerine türev (derive) ederiz — React 19 önerilen pattern.
+  const selectedId = useMemo(() => {
     const slug = searchParams.get('s');
-    if (slug) {
-      const found = SYMPTOMS.find((s) => s.slug === slug);
-      if (found) setSelectedIdState(found.id);
-    }
+    if (!slug) return 1;
+    return SYMPTOMS.find((s) => s.slug === slug)?.id ?? 1;
   }, [searchParams]);
 
-  function setSelectedId(id: number) {
-    setSelectedIdState(id);
-    const symptom = SYMPTOMS.find((s) => s.id === id);
-    if (symptom) {
+  const setSelectedId = useCallback(
+    (id: number) => {
+      const symptom = SYMPTOMS.find((s) => s.id === id);
+      if (!symptom) return;
       const params = new URLSearchParams(searchParams.toString());
       params.set('s', symptom.slug);
       router.replace(`?${params.toString()}`, { scroll: false });
-    }
-  }
-
-  return (
-    <SymptomContext.Provider value={{ selectedId, setSelectedId }}>
-      {children}
-    </SymptomContext.Provider>
+    },
+    [router, searchParams],
   );
+
+  const value = useMemo(() => ({ selectedId, setSelectedId }), [selectedId, setSelectedId]);
+
+  return <SymptomContext.Provider value={value}>{children}</SymptomContext.Provider>;
 }
 
 export const useSymptom = () => useContext(SymptomContext);

@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "node -e \"require('fs').rmSync('.next', {recursive:true,force:true})\" && next dev",
+    "prebuild": "node tools/check-duplicate-slugs.mjs",
+    "check:slugs": "node tools/check-duplicate-slugs.mjs",
     "build": "cross-env \"NODE_OPTIONS=--max-old-space-size=8192 --max-semi-space-size=256\" next build",
+    "analyze": "npm run build && next experimental-analyze",
+    "analyze:output": "npm run build && next experimental-analyze -o",
     "start": "next start",
     "lint": "eslint",
     "cirak": "node tools/cirak.mjs",

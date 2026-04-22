@@ -4,7 +4,7 @@
  * Brand/servis sayfalarında title, subtitle ve CTA override edilebilir.
  */
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -95,23 +95,24 @@ export default function HeroSectionDC({
   const [delayedId, setDelayedId] = useState(selectedId);
   const [ctaFading, setCtaFading] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const firstRun = useRef(true);
-  useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      return;
-    }
+  const [prevSelectedId, setPrevSelectedId] = useState(selectedId);
+
+  // selectedId değişince fade + interaction flag'ini render sırasında tetikle —
+  // React 19 önerilen pattern (useEffect ile sync setState yerine prev-value diff).
+  if (prevSelectedId !== selectedId) {
+    setPrevSelectedId(selectedId);
     setHasInteracted(true);
-  }, [selectedId]);
+    if (delayedId !== selectedId) setCtaFading(true);
+  }
+
   useEffect(() => {
-    if (delayedId === selectedId) return;
-    setCtaFading(true);
+    if (!ctaFading) return;
     const t = setTimeout(() => {
       setDelayedId(selectedId);
       setCtaFading(false);
     }, 120);
     return () => clearTimeout(t);
-  }, [selectedId, delayedId]);
+  }, [ctaFading, selectedId]);
 
   const delayed = SYMPTOMS.find((s) => s.id === delayedId) ?? SYMPTOMS[0];
   const preDiagLabel = `${delayed.shortLabel} için ön teşhis al`;

@@ -64,7 +64,7 @@ Yeni FAQ soruları = sanziman-faq.ts'e kayıt.
 2. ~~app/iletisim ADDRESS sabiti placeholder — gerçek adres girilecek~~ ✓ TAMAMLANDI
 3. ~~app/blog/[slug]/page.tsx yok~~ ✓ TAMAMLANDI
 4. ~~OpenGraph tag'leri hizmetler, hakkımızda, iletişim sayfalarında eksik~~ ✓ TAMAMLANDI
-5. NEXT_PUBLIC_GA_ID env variable kontrol edilecek
+5. NEXT_PUBLIC_GA_ID env variable — .env.local YOK, Vercel Production env'e eklenmeli + lokal .env.local oluşturulmalı
 6. ~~MapWidget gerçek konum URL'si güncellenecek~~ ✓ TAMAMLANDI
 
 ## Keyword Stratejisi — Kaynak
@@ -138,11 +138,11 @@ Hedef: Lokal SEO × marka kombinasyonu, rakipsiz pozisyon.
 
 ## İçerik Üretim Sırası (Sprint Planı)
 
-### Sprint 1 — Hızlı kazanımlar (Hafta 1-2) ✓ TAMAMLANDI
+### Sprint 1 — Hızlı kazanımlar (Hafta 1-2) — KISMEN TAMAMLANDI
 1. ✓ /rehber/dsg-kavrama-ariza-belirtileri/ — fırsat 93 (rehber namespace'e taşındı)
-2. /blog/dsg-vuruntu-semptomlari/ — fırsat 82+79 (cluster)
-3. /blog/uyari-lambasi-semptomlari/ — fırsat 80+64
-4. /hizmetler/cvt-sanziman-tamiri/ — MEVCUT, içerik güçlendir
+2. ✓ /rehber/dsg-vuruntu-semptomlari/ — fırsat 82+79 (cluster) — rehber namespace, /blog versiyonu 301 redirect
+3. ✓ /blog/uyari-lambasi-semptomlari/ — fırsat 80+64
+4. /hizmetler/cvt-sanziman-tamiri/ — MEVCUT, içerik güçlendirme YAPILMADI
 5. ✓ Teknik borç: Tuzla→Bostancı düzeltmesi, OG tag'leri
 
 ### Sprint 2 — Fiyat sayfaları (Hafta 3-4) ✓ TAMAMLANDI
@@ -160,19 +160,19 @@ Aisin ve EAT şanzıman aileleri için ayrı hizmet yüzleri oluşturuldu.
 - ✓ /hizmetler/eat-sanziman-tamiri/ — Peugeot, Citroen, Ford EAT6/EAT8 servisi
 - Sprint 4, Aisin/EAT elevasyonu ile "marka + şanzıman ailesi matrisi" etrafında yapılandırıldı.
 
-### Sprint 3 — Pillar sayfalar (Hafta 5-8)
+### Sprint 3 — Pillar sayfalar (Hafta 5-8) — KISMEN TAMAMLANDI
 İç link gücünü dağıtır, uzun vadeli otorite.
-1. /hizmetler/dsg-sanziman-tamiri/ — MEVCUT, derinleştir
-2. /sanziman-tipleri/dsg/ — MEVCUT slug varsa güncelle
-3. /blog/mekatronik-nedir/ — 3666 gösteri, %0.1 TO
-4. /blog/solenoid-valf-ariza-belirtileri/
-5. /blog/dsg-sanziman-omru-bakimi/
+1. /hizmetler/dsg-sanziman-tamiri/ — MEVCUT, derinleştirme AUDIT bekliyor
+2. /sanziman-tipleri/dsg-s-tronic/ — canonical slug olarak kabul edildi (ayrı /dsg/ slug açılmayacak)
+3. ✓ /blog/mekatronik-nedir/ — 3666 gösteri, %0.1 TO
+4. ✓ /blog/solenoid-valf-ariza-belirtileri/
+5. ✓ /blog/dsg-sanziman-omru-bakimi/
 
-### Sprint 4 — Araç/marka genişlemesi (Hafta 9+)
-1. /arac/[marka]/ dinamik route sistemi kur
-2. VW, BMW, Opel sayfaları
-3. DQ200 model sayfası
-4. /blog/dsg-hangi-araclarda-var/
+### Sprint 4 — Araç/marka genişlemesi (Hafta 9+) ✓ TAMAMLANDI
+1. ✓ /arac/[marka]/ dinamik route sistemi — 21 marka + /arac/ liste sayfası aktif
+2. ✓ VW, BMW, Opel sayfaları — tümü mevcut
+3. ✓ /arac/dq200/ model sayfası
+4. ✓ /blog/dsg-hangi-araclarda-var/
 
 ## Sayfa Yazım Kuralları (her yeni sayfa için)
 - metadata: title | description | openGraph zorunlu
@@ -215,168 +215,10 @@ Aisin ve EAT şanzıman aileleri için ayrı hizmet yüzleri oluşturuldu.
 - [ ] Rich snippet doğrulama: https://search.google.com/test/rich-results
 
 
+## Marka Entegrasyonu ✓ TAMAMLANDI (2026-04)
 
-
-
-
-
-marka sayfaları
-
-Plan: Marka Sayfaları Site Geneli Entegrasyonu
-Context
-15 marka sayfası (/arac/[marka]/) ve 1 statik model sayfası (/arac/dq200/) tamamlandı. Ancak siteye hiçbir yerden link verilmiyor — ne header'da görünüyorlar, ne footer'da, ne anasayfada. BrandLogosStrip.tsx anasayfada mevcut ama markalar tıklanamaz, saf dekoratif.
-
-Hedef: Markalar Discovery → Trafik → Dönüşüm zinciri kurulacak.
-
-SEO: brand+servis kombinasyonu uzun kuyruk anahtar kelimeler (örn. "volkswagen dsg tamiri bostancı")
-UX: Kullanıcı kendi araç markasını görerek güven hisseder, direkt servis sayfasına ulaşır
-İç linkleme: Marka sayfaları siteye bağlanarak authority dağılımı sağlanır
-Kapsam — 4 Alan (Uygulama Sırası)
-ALAN 1 — BrandLogosStrip Tıklanabilir (En Hızlı Kazanım)
-Dosya: components/v7/BrandLogosStrip.tsx
-
-Mevcut durum: <div> elemanları, hover efekti var ama link yok. Citroen ve Toyota için /arac/[marka]/ rotası YOK.
-
-Değişiklik:
-
-BRANDS array'ine slug alanı ekle (route slug veya null link yok ise)
-<div> → <Link href={/arac/${brand.slug}/}> yalnızca slug olan markalar için
-Slugsuz markalar (Citroen, Toyota, Fiat) <div> kalır
-Türkçe karakter düzelt: "Turkiye parkinda sik gorulen platformlar" → "Türkiye Parkında Sık Görülen Şanzıman Aileleri"
-Slug eşlemesi:
-
-Volkswagen → volkswagen   Renault → renault
-Peugeot    → peugeot      Opel    → opel
-Ford       → ford         Hyundai → hyundai
-Nissan     → nissan       Skoda   → skoda
-Mercedes   → (eklenecek)  Audi    → (eklenecek)
-Citroen    → null         Toyota  → null
-Fiat       → null
-BMW, Mercedes, Audi, Seat, Kia, Honda — BrandLogosStrip'te YOK. Eklenebilir veya bu markalar Bölüm 2'deki yeni section'dan karşılanır.
-
-ALAN 2 — Anasayfa "Markanıza Göre Servis" Section
-Dosya: components/v7/BrandSectionV7.tsx (YENİ oluşturulacak) Entegrasyon: components/HomePageSections.tsx — BlogPreviewV7 öncesine eklenecek
-
-Tasarım: Dark kart grid, bg-[#0C1219] kart, border border-white/8, 4'lü veya 3'lü sütun
-
-Section başlığı: "Aracınıza Özel Şanzıman Servisi"
-Alt metin: "Hangi markayı kullandığınızı söyleyin, ne yapabileceğimizi anlatalım."
-
-Grid (responsive: 2 col mobile, 4 col desktop) — 8 kart:
-┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
-│   VW    │ │  Audi   │ │  Skoda  │ │  Seat   │
-│ DSG Uzmanı│ │S-Tronic │ │ DSG     │ │ DSG     │
-└─────────┘ └─────────┘ └─────────┘ └─────────┘
-┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
-│Mercedes │ │  BMW    │ │  Ford   │ │ Renault │
-│7G/9G    │ │ZF 8HP   │ │PowerShft│ │  EDC    │
-└─────────┘ └─────────┘ └─────────┘ └─────────┘
-
-Footer: "Tüm Markalar →" → /arac/ (liste sayfası gerekecek)
-Her kart içeriği:
-
-const BRAND_CARDS = [
-  { slug: 'volkswagen', ad: 'Volkswagen', sanziman: 'DSG DQ200 / DQ250', renk: 'text-[#4A90D9]' },
-  { slug: 'audi',       ad: 'Audi',       sanziman: 'S-Tronic / ZF 8HP', renk: 'text-[#C0C0C0]' },
-  { slug: 'skoda',      ad: 'Skoda',      sanziman: 'DSG DQ200 / DQ381', renk: 'text-[#4CAF50]' },
-  { slug: 'seat',       ad: 'Seat / Cupra', sanziman: 'DSG / DQ381',    renk: 'text-[#E84B3A]' },
-  { slug: 'mercedes',   ad: 'Mercedes',   sanziman: '7G / 9G-Tronic',   renk: 'text-[#94A3B8]' },
-  { slug: 'bmw',        ad: 'BMW',        sanziman: 'ZF 8HP / GA8HP',   renk: 'text-[#4A90D9]' },
-  { slug: 'ford',       ad: 'Ford',       sanziman: 'PowerShift DCT',   renk: 'text-[#0066CC]' },
-  { slug: 'renault',    ad: 'Renault',    sanziman: 'EDC7 / EDC8',      renk: 'text-[#FFCC00]' },
-];
-Kart markup (her biri <Link href={/arac/${brand.slug}/}>)
-
-bg-[#0C1219] border border-white/8 rounded-2xl p-5
-hover:border-[#38BDF8]/30 hover:bg-[#0F1923] transition group
-- Marka baş harfleri ikonu (2 harf, brand rengi, bg-white/5 rounded-xl)
-- Marka adı (font-semibold text-white)
-- Şanzıman tipi (text-xs text-[#64748B])
-- "Servis Detayı →" (text-xs text-[#38BDF8] group-hover:underline)
-ALAN 3 — Header "Araçlar" Dropdown
-Dosya: components/Header.tsx
-
-Mevcut durum: "Ana Sayfa" dropdown var, sade içerik. NAV_LINKS flat array.
-
-Değişiklik: NAV_LINKS'e yeni bir "Araçlar" dropdown ekle — tam yeni nav item, "Ana Sayfa" gibi dropdown menüsü olacak.
-
-Nav sırası: [Ana Sayfa ▾] [Hizmetler] [Araçlar ▾] [Şanzıman Rehberi] [Blog] [İletişim]
-Araçlar dropdown içeriği (2 sütun, 8 marka + 1 model):
-
-Markaya Göre               Şanzıman Modeline Göre
-────────────────           ──────────────────────
-Volkswagen                 DQ200 (7 ileri kuru)
-Audi
-Skoda
-Seat / Cupra
-Mercedes
-BMW
-Ford
-Renault
-Implementasyon:
-
-ARAC_LINKS array ekle:
-const ARAC_LINKS = [
-  { href: '/arac/volkswagen/', label: 'Volkswagen', sub: 'DSG DQ200 / DQ250' },
-  { href: '/arac/audi/',       label: 'Audi',       sub: 'S-Tronic / ZF' },
-  { href: '/arac/skoda/',      label: 'Skoda',      sub: 'DSG / DQ381' },
-  { href: '/arac/seat/',       label: 'Seat & Cupra', sub: 'DSG / DQ381' },
-  { href: '/arac/mercedes/',   label: 'Mercedes',   sub: '7G / 9G-Tronic' },
-  { href: '/arac/bmw/',        label: 'BMW',        sub: 'ZF 8HP' },
-  { href: '/arac/ford/',       label: 'Ford',       sub: 'PowerShift' },
-  { href: '/arac/renault/',    label: 'Renault',    sub: 'EDC7 / EDC8' },
-];
-const MODEL_LINKS = [
-  { href: '/arac/dq200/', label: 'DQ200 Tamiri', sub: '7 ileri kuru kavrama' },
-];
-Desktop: Aynı dropdown pattern, min-w 480px, 2 sütun grid içinde
-Mobile: mobileMenuOpen bloğuna ARAC_LINKS düz liste olarak eklenir (header altında "Araçlar" başlığıyla)
-State: aracMenuOpen state'i ekle, diğer dropdown pattern ile aynı
-ALAN 4 — Footer "Markalar" Kolonu
-Dosya: components/Footer.tsx
-
-Mevcut durum: 2 kolon (sm:grid-cols-2): Hizmetlerimiz + Kurumsal
-
-Değişiklik: sm:grid-cols-2 → sm:grid-cols-3 (veya mobilde 2+1 breakpoint)
-
-const MARKA_LINKS = [
-  { href: '/arac/volkswagen/', label: 'Volkswagen' },
-  { href: '/arac/audi/',       label: 'Audi' },
-  { href: '/arac/skoda/',      label: 'Skoda' },
-  { href: '/arac/mercedes/',   label: 'Mercedes' },
-  { href: '/arac/bmw/',        label: 'BMW' },
-  { href: '/arac/ford/',       label: 'Ford' },
-  { href: '/arac/renault/',    label: 'Renault' },
-  { href: '/arac/opel/',       label: 'Opel' },
-] as const;
-Yeni 3. kolon:
-
-Başlık: "Araç Markaları" (aynı uppercase tracking stil)
-+ linkler (aynı text-sm text-[#94A3B8] hover:text-white stili)
-sm:grid-cols-2 → sm:grid-cols-3 değişikliği, responsive olarak mobile'da grid-cols-2 kalır ve 3. kolon altta tam genişlik olur.
-
-Uygulama Sırası
-ALAN 1 — BrandLogosStrip.tsx (10 dk, en az risk, anında görünür kazanım)
-ALAN 4 — Footer.tsx (10 dk, statik, risk yok)
-ALAN 3 — Header.tsx (20 dk, state ekleme gerekiyor, dikkatli test)
-ALAN 2 — BrandSectionV7.tsx + HomePageSections.tsx (30 dk, yeni bileşen)
-Kritik Dosyalar
-Dosya	Değişiklik Türü
-components/v7/BrandLogosStrip.tsx	Mevcut: div → Link, slug ekleme
-components/v7/BrandSectionV7.tsx	YENİ bileşen
-components/HomePageSections.tsx	Import + <BrandSectionV7 /> ekle
-components/Header.tsx	ARAC_LINKS + dropdown state + mobile liste
-components/Footer.tsx	MARKA_LINKS + 3. kolon
-Dikkat Noktaları
-BrandLogosStrip.tsx'teki Citroen, Toyota, Fiat için /arac/ rotası yok — bu markalar link almaz, sadece dekoratif kalır
-Header dropdown blur/focus logic dikkatli — mevcut homeMenuOpen pattern referans al, çakışma olmasın
-Footer grid'i 3 kolona genişletirken küçük ekran düzeni bozulabilir — grid-cols-2 breakpoint belirle (sm:grid-cols-2 lg:grid-cols-3)
-BrandSectionV7 Server Component olacak (statik veri, no interactivity)
-BMW sayfası app/arac/bmw/page.tsx var mı kontrol et (session başında eklendi)
-Doğrulama
-localhost:3000 — BrandLogosStrip'te tıklanabilir markalar /arac/... açıyor
-localhost:3000 — Anasayfada "Markanıza Göre Servis" section görünüyor, 8 kart link çalışıyor
-Header → Araçlar → dropdown açılıyor, tüm linkler doğru adreslere gidiyor
-Mobile menü → Araçlar listesi görünüyor
-Footer → 3. kolon marka linkleri görünüyor
-npm run build hatasız tamamlanıyor
+Tüm marka sayfaları siteye bağlandı — 4 alan kapatıldı:
+- ✓ BrandLogosStrip (components/sections/BrandLogosStrip.tsx) — slug alanı + Link ile tıklanabilir, 20 marka
+- ✓ Anasayfa BrandSection — components/HomePageSections.tsx içinde render
+- ✓ Header "Markalar" dropdown (aracMenuOpen state + ARAC_LINKS, desktop + mobile)
+- ✓ Footer "Araç Markaları" kolonu (lg:grid-cols-3, tüm BRANDS)

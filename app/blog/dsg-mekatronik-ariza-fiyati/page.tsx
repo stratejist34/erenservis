@@ -66,7 +66,7 @@ export default function DSGMekatronikArızaFiyatiPage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/Screenshot_4149.webp)',
+            backgroundImage: 'url(/images/Screenshot_4148.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'blur(6px) saturate(0.5) brightness(0.5)',

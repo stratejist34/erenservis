@@ -469,7 +469,7 @@ export default function DsgKavramaDegisimiPage() {
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
               <a
-                href="/rehber/dsg-kavrama-ariza-belirtileri"
+                href="/rehber/dsg-kavrama-ariza-belirtileri/"
                 className="block bg-graphite-elevated border border-border-hairline rounded-xl p-4
                            hover:border-border-brass transition-all group"
               >
@@ -479,7 +479,7 @@ export default function DsgKavramaDegisimiPage() {
                 </div>
               </a>
               <a
-                href="/rehber/dsg-vuruntu-semptomlari"
+                href="/rehber/dsg-vuruntu-semptomlari/"
                 className="block bg-graphite-elevated border border-border-hairline rounded-xl p-4
                            hover:border-border-brass transition-all group"
               >

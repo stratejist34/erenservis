@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { MessageCircle, Phone, MapPin } from 'lucide-react';
 import { BRANDS } from '@/lib/brands';
-import { BUSINESS_HOURS } from '@/lib/constants';
+import { BUSINESS_HOURS, CONTACT } from '@/lib/constants';
 
-const PHONE_HREF = 'tel:+905327153751';
-const WHATSAPP_HREF = 'https://wa.me/905327153751';
+const PHONE_HREF = CONTACT.phoneHref;
+const WHATSAPP_HREF = CONTACT.whatsappHref;
+const MAPS_HREF = `https://maps.google.com/maps?q=${CONTACT.coords.lat},${CONTACT.coords.lng}`;
 
 const HIZMET_LINKS = [
   { href: '/hizmetler/dsg-sanziman-tamiri/', label: 'DSG Şanzıman Tamiri' },
@@ -100,9 +101,9 @@ export default function Footer() {
               </nav>
               <div className="mt-5 rounded-xl border border-border-subtle bg-graphite-elevated p-4 font-saira text-sm leading-6 text-text-tertiary">
                 <div className="mb-1 font-medium text-text-secondary">Adres</div>
-                <div className="mb-3">Bostancı Oto Sanayi Sitesi, Kadıköy / İstanbul</div>
+                <div className="mb-3">{CONTACT.addressLine}, {CONTACT.district}</div>
                 <a
-                  href="https://maps.google.com/maps?q=Bostanci+Oto+Sanayi+Sitesi+Kadikoy+Istanbul"
+                  href={MAPS_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-jetbrains text-xs text-brass transition-colors hover:text-brass-bright"

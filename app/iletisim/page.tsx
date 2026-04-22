@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       'Bostancı\'da DSG, ZF ve CVT şanzıman tamiri için bizi arayın. Ücretsiz ön tanı, hızlı randevu.',
     url: 'https://www.erenservis.net/iletisim/',
-    siteName: 'Eren Servis',
+    siteName: 'Eren Otomatik Şanzıman Servisi',
     locale: 'tr_TR',
     type: 'website',
   },

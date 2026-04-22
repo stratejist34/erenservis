@@ -213,7 +213,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `https://www.erenservis.net/blog/${slug}/`,
-      siteName: 'Eren Servis',
+      siteName: 'Eren Otomatik Şanzıman Servisi',
       locale: 'tr_TR',
       type: 'article',
       publishedTime,

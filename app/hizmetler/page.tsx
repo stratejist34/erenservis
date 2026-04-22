@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Servis.',
     url: 'https://www.erenservis.net/hizmetler/',
-    siteName: 'Eren Servis',
+    siteName: 'Eren Otomatik Şanzıman Servisi',
     locale: 'tr_TR',
     type: 'website',
   },

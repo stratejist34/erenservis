@@ -47,7 +47,8 @@ export interface BreadcrumbItem {
 const BUSINESS_NODE = {
   '@type': ['LocalBusiness', 'AutoRepair', 'Organization'] as const,
   '@id': 'https://www.erenservis.net/#business',
-  name: 'Eren Servis',
+  name: 'Eren Otomatik Şanzıman Servisi',
+  alternateName: 'Eren Servis',
   description:
     "Bostancı'nın DSG ve otomatik şanzıman uzmanı. DQ200, DQ250, DQ381 " +
     'mekatronik, kavrama ve CVT tamiri.',
@@ -108,6 +109,24 @@ export function buildLocalBusinessSchema(_params?: LocalBusinessParams) {
   return {
     '@context': 'https://schema.org',
     ...BUSINESS_NODE,
+  };
+}
+
+/* ── WEBSITE (Google "site name" sinyali — layout'a bir kez eklenir) ───── */
+// Google SERP'te site adını (breadcrumb üstünde) göstermek için WebSite schema
+// `name` + `alternateName` alanlarını okur. LocalBusiness.name da sinyal
+// katıyor ama WebSite öncelikli.
+
+export function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://www.erenservis.net/#website',
+    url: 'https://www.erenservis.net/',
+    name: 'Eren Otomatik Şanzıman Servisi',
+    alternateName: 'Eren Servis',
+    publisher: BUSINESS_REF,
+    inLanguage: 'tr-TR',
   };
 }
 

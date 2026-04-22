@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: PAGE_TITLE,
     description: PAGE_DESC,
     url: PAGE_URL,
-    siteName: 'Eren Servis',
+    siteName: 'Eren Otomatik Şanzıman Servisi',
     locale: 'tr_TR',
     type: 'website',
   },

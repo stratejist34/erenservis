@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import HomePageSections from '@/components/HomePageSections';
 import { SymptomProvider } from '@/contexts/SymptomContext';
 
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'Bostancı\'nın DSG ve kavrama uzmanı. DQ200, DQ250, DQ381 mekatronik, CVT resetleme, ZF şanzıman tamiri. 15+ yıl, garantili servis.',
     url: 'https://www.erenservis.net/',
-    siteName: 'Eren Servis',
+    siteName: 'Eren Otomatik Şanzıman Servisi',
     locale: 'tr_TR',
     type: 'website',
     images: [
@@ -58,11 +57,9 @@ export default function Home() {
         media="(min-width: 769px)"
         fetchPriority="high"
       />
-      <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
-        <SymptomProvider>
-          <HomePageSections />
-        </SymptomProvider>
-      </Suspense>
+      <SymptomProvider>
+        <HomePageSections />
+      </SymptomProvider>
     </main>
   );
 }

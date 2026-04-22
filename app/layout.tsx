@@ -1,14 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { buildLocalBusinessSchema } from "@/lib/schema";
+import { buildLocalBusinessSchema, buildWebSiteSchema } from "@/lib/schema";
 import { Geist, Saira_Semi_Condensed, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import MobileCtaBar from "@/components/MobileCtaBar";
-import FloatingCTA from "@/components/FloatingCTA";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ScrollProgress from '@/components/ScrollProgress';
-import GlobalClickTracker from '@/components/tracking/GlobalClickTracker';
+import DeferredUi from '@/components/DeferredUi';
 
 // Türkçe karakterler (ğ, ş, ç, ı, ö, ü) latin-ext subset'indedir.
 // Tek subset seçimi — preload sayısını yarıya indirir.
@@ -64,7 +61,7 @@ export const metadata: Metadata = {
     description:
       "Bostancı'da DSG, ZF ve CVT otomatik şanzıman tamiri. 15+ yıl deneyim, garantili servis.",
     url: "https://www.erenservis.net",
-    siteName: "Eren Servis",
+    siteName: "Eren Otomatik Şanzıman Servisi",
     locale: "tr_TR",
     type: "website",
     images: [
@@ -106,6 +103,7 @@ export const metadata: Metadata = {
 };
 
 const localBusinessSchema = buildLocalBusinessSchema({ url: "https://www.erenservis.net" });
+const webSiteSchema = buildWebSiteSchema();
 
 export default function RootLayout({
   children,
@@ -144,14 +142,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        <ScrollProgress />
-        <GlobalClickTracker />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        />
+        <DeferredUi />
         <Header />
         <div className="pt-24">
         {children}</div>
         <Footer />
-        <MobileCtaBar />
-        <FloatingCTA />
       </body>
     </html>
   );

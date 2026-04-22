@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "DQ200 ve DQ250 mekatronik kart 2026 fiyat tablosu. " +
       "Tamir mi, değişim mi? Ücretsiz tanı ile net karar — Eren Servis Bostancı.",
-    url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart",
+    url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
     type: "website",
     images: [
       {
@@ -55,7 +55,7 @@ const serviceSchema = buildServiceSchema({
   description:
     "DQ200 ve DQ250 DSG şanzıman mekatronik kart değişimi ve tamiri. " +
     "Hata kodu bazlı tanı, orijinal ve muadil parça seçeneği, garantili işlem.",
-  url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart",
+  url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
   priceRange: "45.000 – 68.000 TL",
   minPrice: 45000,
   maxPrice: 68000,
@@ -66,10 +66,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Hizmetler", url: "https://www.erenservis.net/hizmetler" },
+  { name: "Hizmetler", url: "https://www.erenservis.net/hizmetler/" },
   {
     name: "DSG Mekatronik Kart",
-    url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart",
+    url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
   },
 ]);
 

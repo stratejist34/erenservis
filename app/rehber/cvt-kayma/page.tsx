@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "CVT Şanzımanda Kayma ve Vites Atlama | Eren Servis",
     description:
       "Toyota, Honda, Nissan CVT kayma nedenleri ve kayış değişim maliyeti. Bostancı.",
-    url: "https://www.erenservis.net/rehber/cvt-kayma",
+    url: "https://www.erenservis.net/rehber/cvt-kayma/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -53,7 +53,7 @@ const articleSchema = buildArticleSchema({
   description:
     "Toyota, Honda, Nissan, Subaru CVT modellerinde kayma nedenleri, kayış " +
     "aşınması belirtileri ve maliyet analizi.",
-  url: "https://www.erenservis.net/rehber/cvt-kayma",
+  url: "https://www.erenservis.net/rehber/cvt-kayma/",
   datePublished: "2026-04-17",
 });
 
@@ -61,10 +61,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "CVT Kayma",
-    url: "https://www.erenservis.net/rehber/cvt-kayma",
+    url: "https://www.erenservis.net/rehber/cvt-kayma/",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "CVT Şanzıman Kayma Teşhisi ve Kayış Değişimi",
   description:
     "Toyota, Honda, Nissan, Subaru CVT modellerinde kayma teşhisi, kayış ve pully seti onarımı. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/cvt-kayma",
+  url: "https://www.erenservis.net/rehber/cvt-kayma/",
 });
 
 const markalar = [

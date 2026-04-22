@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "EDC7 / EDC8 şanzımanda sarı dişli ışığının anlamı, nedeni ve yapılması gerekenler. " +
       "Bostancı'da ücretsiz hata kodu okuma.",
-    url: "https://www.erenservis.net/rehber/edc-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/edc-ariza-lambasi/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -54,7 +54,7 @@ const articleSchema = buildArticleSchema({
   description:
     "EDC7 ve EDC8 şanzımanda sarı dişli ışığının nedenleri, aciliyet değerlendirmesi " +
     "ve Renault / Nissan modellerine göre farklılıklar.",
-  url: "https://www.erenservis.net/rehber/edc-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/edc-ariza-lambasi/",
   datePublished: "2026-04-17",
 });
 
@@ -62,10 +62,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Renault EDC Arıza Lambası",
-    url: "https://www.erenservis.net/rehber/edc-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/edc-ariza-lambasi/",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "Renault EDC Arıza Lambası Teşhis ve Onarım",
   description:
     "EDC7 / EDC8 şanzımanda arıza lambası teşhisi, hata kodu okuma ve onarım. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/edc-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/edc-ariza-lambasi/",
 });
 
 const modeller = [

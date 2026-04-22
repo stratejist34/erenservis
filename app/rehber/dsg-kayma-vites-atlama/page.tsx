@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "DSG'de Kayma ve Vites Atlama: Kuru vs Islak Kavrama | Eren Servis",
     description:
       "DQ200, DQ250, DQ381 DSG modellerinde kayma nedenleri ve çözümleri. Bostancı.",
-    url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama",
+    url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -53,7 +53,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzımanda kayma kaynakları, kuru ve ıslak kavrama farkları, " +
     "basınç tüpü ve mekatronik çözüm maliyetleri.",
-  url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama",
+  url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama/",
   datePublished: "2026-04-17",
 });
 
@@ -61,10 +61,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "DSG Kayma ve Vites Atlama",
-    url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama",
+    url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama/",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "DSG Kayma Teşhisi ve Basınç Tüpü Değişimi",
   description:
     "DQ200, DQ250, DQ381 DSG modellerinde kayma teşhisi, basınç testi ve onarım. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama",
+  url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama/",
 });
 
 const modeller = [

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Vites geçişinde vuruntu veya sarsıntı yaşıyorsanız ertelemeyin. " +
       "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari",
+    url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
@@ -54,7 +54,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzımanda vuruntu yaşıyorsanız kavrama arızasının erken işareti olabilir. " +
     "Model bazında nedenler ve çözüm.",
-  url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari",
+  url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",
   datePublished: "2026-03-30",
 });
 
@@ -62,10 +62,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "DSG Vuruntu Semptomu",
-    url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari",
+    url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "DSG Vuruntu Teşhis ve Onarım",
   description:
     "DSG vuruntu ve sarsıntı arızası teşhisi, kavrama bakımı ve mekatronik onarımı. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari",
+  url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",
 });
 
 const senaryolar = [

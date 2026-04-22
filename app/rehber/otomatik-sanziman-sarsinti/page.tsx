@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "Rölantide sarsıntı, D vitesinde titreşim ve klima ile artan sarsıntı — " +
       "nedenleri ve çözümleri. Bostancı'da ücretsiz teşhis.",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -55,7 +55,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, CVT, ZF/Aisin ve PowerShift şanzımanlarda sarsıntı nedenleri, ayırt edici " +
     "belirtiler ve aciliyet değerlendirmesi.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti/",
   datePublished: "2026-04-17",
 });
 
@@ -63,10 +63,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Otomatik Şanzımanda Sarsıntı",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti/",
   },
 ]);
 
@@ -74,7 +74,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Sarsıntı ve Titreşim Teşhisi",
   description:
     "Volant, kavrama paketi ve tork konvertör kaynaklı sarsıntıların teşhisi ve onarımı. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti/",
 });
 
 const tipler = [

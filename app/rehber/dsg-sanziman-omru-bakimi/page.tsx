@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "DQ200 ve DQ250 ömür karşılaştırması, bakım aralıkları ve ömrü uzatmanın 3 yolu. " +
       "Bostancı'da ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi",
+    url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
@@ -56,7 +56,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzıman ömrünü belirleyen faktörler, DQ200 vs DQ250 karşılaştırması, " +
     "bakım takvimi ve ömrü uzatmanın yolları.",
-  url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi",
+  url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",
   datePublished: "2026-04-10",
 });
 
@@ -64,10 +64,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "DSG Şanzıman Ömrü ve Bakım",
-    url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi",
+    url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",
   },
 ]);
 

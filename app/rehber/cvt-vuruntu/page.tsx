@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "CVT'de vuruntu nadirdir ama olduğunda ciddidir. Kayış aşınması, pully sorunu ve " +
       "CVT yağı — nedenleri, belirtileri ve maliyet. Bostancı'da ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/cvt-vuruntu",
+    url: "https://www.erenservis.net/rehber/cvt-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -54,7 +54,7 @@ const articleSchema = buildArticleSchema({
   description:
     "Toyota, Honda ve Nissan CVT şanzımanlarda vuruntunun nedenleri, " +
     "belirtileri ve onarım maliyet rehberi.",
-  url: "https://www.erenservis.net/rehber/cvt-vuruntu",
+  url: "https://www.erenservis.net/rehber/cvt-vuruntu/",
   datePublished: "2026-04-17",
 });
 
@@ -62,15 +62,15 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
-  { name: "CVT Vuruntu", url: "https://www.erenservis.net/rehber/cvt-vuruntu" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
+  { name: "CVT Vuruntu", url: "https://www.erenservis.net/rehber/cvt-vuruntu/" },
 ]);
 
 const serviceSchema = buildServiceSchema({
   name: "CVT Şanzıman Vuruntu Teşhis ve Onarım",
   description:
     "CVT şanzıman kayış aşınması teşhisi, pully seti değişimi ve CVT yağ revizyonu. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/cvt-vuruntu",
+  url: "https://www.erenservis.net/rehber/cvt-vuruntu/",
 });
 
 const modeller = [

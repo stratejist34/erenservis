@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Otomatik Şanzımanda Gecikme: Vites Geç Geçiyor | Eren Servis",
     description:
       "DSG, ZF, Aisin ve CVT'de geç vites değişimi nedenleri ve çözümleri. Bostancı.",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -53,7 +53,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, ZF, Aisin, CVT ve PowerShift şanzımanlarda vites gecikmesinin nedenleri, " +
     "ayırt edici belirtiler ve çözüm yaklaşımı.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme/",
   datePublished: "2026-04-17",
 });
 
@@ -61,10 +61,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Otomatik Şanzımanda Gecikme",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme/",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Vites Gecikmesi Teşhisi ve Onarımı",
   description:
     "DSG, ZF, Aisin ve CVT'de gecikme teşhisi, solenoid revizyonu ve adaptasyon. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme/",
 });
 
 const tipler = [

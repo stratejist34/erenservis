@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "DQ200 ve DQ250 için net fiyat tablosu. Nisan 2026 güncel. Garantili işlem, ücretsiz ön tanı. " +
       "Bostancı DSG uzmanı Eren Servis.",
-    url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi",
+    url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi/",
     type: "website",
     images: [
       {
@@ -55,7 +55,7 @@ const serviceSchema = buildServiceSchema({
   description:
     "DQ200 ve DQ250 DSG şanzıman kavrama seti değişimi. Orijinal ve muadil " +
     "parça seçeneği, garantili işlem, ücretsiz ön tanı.",
-  url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi",
+  url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi/",
   priceRange: "55.000 – 72.000 TL",
   minPrice: 55000,
   maxPrice: 72000,
@@ -66,10 +66,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Hizmetler", url: "https://www.erenservis.net/hizmetler" },
+  { name: "Hizmetler", url: "https://www.erenservis.net/hizmetler/" },
   {
     name: "DSG Kavrama Değişimi",
-    url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi",
+    url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi/",
   },
 ]);
 

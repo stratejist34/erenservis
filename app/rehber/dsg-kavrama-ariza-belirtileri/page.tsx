@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "Aracınız vuruntu yapıyor, geç geçiş mi yapıyor? DSG kavrama arızasının " +
       "7 kritik belirtisini öğrenin. Eren Servis Bostancı'da ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri",
+    url: "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri/",
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 };
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
-const PAGE_URL = "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri";
+const PAGE_URL = "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri/";
 
 const articleSchema = buildArticleSchema({
   title: "DSG Kavrama Arızası Belirtileri: 7 Kritik Uyarı İşareti",
@@ -64,7 +64,7 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   { name: "DSG Kavrama Arızası Belirtileri", url: PAGE_URL },
 ]);
 

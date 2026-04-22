@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Clio, Captur ve Megane'de EDC şanzıman vuruntusunun nedenleri, belirtileri ve " +
       "kavrama değişim fiyatı. Bostancı'da ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/edc-vuruntu",
+    url: "https://www.erenservis.net/rehber/edc-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -54,7 +54,7 @@ const articleSchema = buildArticleSchema({
   description:
     "Renault Clio, Captur, Megane ve Nissan Juke'ta EDC şanzıman vuruntusunun " +
     "nedenleri, belirti tablosu ve maliyet rehberi.",
-  url: "https://www.erenservis.net/rehber/edc-vuruntu",
+  url: "https://www.erenservis.net/rehber/edc-vuruntu/",
   datePublished: "2026-04-17",
 });
 
@@ -62,15 +62,15 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
-  { name: "EDC Vuruntu", url: "https://www.erenservis.net/rehber/edc-vuruntu" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
+  { name: "EDC Vuruntu", url: "https://www.erenservis.net/rehber/edc-vuruntu/" },
 ]);
 
 const serviceSchema = buildServiceSchema({
   name: "Renault EDC Vuruntu Teşhis ve Onarım",
   description:
     "Renault EDC şanzıman vuruntu teşhisi, kavrama paketi değişimi ve adaptasyon kalibrasyonu. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/edc-vuruntu",
+  url: "https://www.erenservis.net/rehber/edc-vuruntu/",
 });
 
 const modeller = [

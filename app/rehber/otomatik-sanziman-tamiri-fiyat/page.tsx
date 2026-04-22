@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Nisan 2026 güncel fiyatlar: DSG, CVT, ZF ve konvansiyonel şanzıman tamir fiyatları. " +
       "Ücretsiz ön tanı ile net fiyat — Eren Servis Bostancı.",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat/",
     type: "article",
     publishedTime: "2026-04-01",
     authors: ["Eren Servis"],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
-const PAGE_URL = "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat";
+const PAGE_URL = "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat/";
 
 const articleSchema = buildArticleSchema({
   title: "Otomatik Şanzıman Tamiri Ne Kadar Tutar? 2026 Fiyat Rehberi",
@@ -63,7 +63,7 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   { name: "Otomatik Şanzıman Tamiri Fiyatı", url: PAGE_URL },
 ]);
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "CVT şanzımanda uyarı ışığının nedenleri ve aciliyet değerlendirmesi. " +
       "Bostancı'da ücretsiz hata kodu okuma.",
-    url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -54,7 +54,7 @@ const articleSchema = buildArticleSchema({
   description:
     "CVT şanzımanda arıza lambası nedenleri, model bazında farklılıklar ve " +
     "aciliyet değerlendirmesi.",
-  url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi/",
   datePublished: "2026-04-17",
 });
 
@@ -62,10 +62,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "CVT Arıza Lambası",
-    url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi/",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "CVT Arıza Lambası Teşhis ve Onarım",
   description:
     "CVT şanzımanda arıza lambası teşhisi ve onarımı. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi/",
 });
 
 const modeller = [

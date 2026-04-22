@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "ZF ve Aisin Şanzımanda Gecikme | Eren Servis",
     description:
       "Mercedes, BMW, Peugeot, Volvo'da tork konvertörlü şanzıman gecikmesi. Bostancı.",
-    url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
+    url: "https://www.erenservis.net/rehber/zf-aisin-gecikme/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -53,7 +53,7 @@ const articleSchema = buildArticleSchema({
   description:
     "ZF 8HP, Mercedes 7G/9G-Tronic ve Aisin TF80-SC şanzımanlarda vites gecikmesi " +
     "nedenleri, valve body revizyonu ve adaptasyon süreci.",
-  url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
+  url: "https://www.erenservis.net/rehber/zf-aisin-gecikme/",
   datePublished: "2026-04-17",
 });
 
@@ -61,10 +61,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "ZF ve Aisin Gecikme",
-    url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
+    url: "https://www.erenservis.net/rehber/zf-aisin-gecikme/",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "ZF ve Aisin Şanzıman Valve Body Revizyonu",
   description:
     "ZF 8HP, Mercedes 7G/9G-Tronic ve Aisin TF80-SC valve body, solenoid ve adaptasyon servisi. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
+  url: "https://www.erenservis.net/rehber/zf-aisin-gecikme/",
 });
 
 const aileler = [

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "Solenoid valf arızasının 7 kritik belirtisi. " +
       "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+    url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
@@ -56,7 +56,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzımanda solenoid valf arızasının belirtileri, nedenleri ve " +
     "tamir vs. değişim kararı için kapsamlı rehber.",
-  url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+  url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",
   datePublished: "2026-04-10",
 });
 
@@ -64,10 +64,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Solenoid Valf Arıza Belirtileri",
-    url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+    url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",
   },
 ]);
 
@@ -75,7 +75,7 @@ const serviceSchema = buildServiceSchema({
   name: "Solenoid Valf Teşhis ve Değişimi",
   description:
     "Solenoid valf arızası teşhisi ve tamiri, DSG mekatronik onarımı. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri",
+  url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",
 });
 
 // ─── VERİ ─────────────────────────────────────────────────────────────────────

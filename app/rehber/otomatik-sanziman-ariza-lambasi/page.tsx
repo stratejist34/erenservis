@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "DSG, EDC, CVT şanzımanlarda arıza lambası anlamı ve yapılması gerekenler. " +
       "Bostancı'da ücretsiz hata kodu okuma — Eren Servis.",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -54,7 +54,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, EDC, CVT ve ZF şanzımanlarda arıza lambası tipleri, anlamları ve " +
     "aciliyet değerlendirmesi.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi/",
   datePublished: "2026-04-17",
 });
 
@@ -62,10 +62,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Otomatik Şanzıman Arıza Lambası",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi/",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "Şanzıman Arıza Lambası Teşhis ve Hata Kodu Okuma",
   description:
     "Tüm otomatik şanzıman tiplerinde arıza lambası teşhisi ve hata kodu okuma. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi/",
 });
 
 const tipler = [

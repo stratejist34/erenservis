@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "DSG, CVT ve tork konvertörlü şanzımanlarda kayma nedenleri ve çözümleri. " +
       "Bostancı'da ücretsiz teşhis.",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -55,7 +55,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, CVT, ZF/Aisin ve klasik otomatiklerde kayma ve vites atlama nedenleri, " +
     "ayırt edici belirtiler ve aciliyet değerlendirmesi.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma/",
   datePublished: "2026-04-17",
 });
 
@@ -63,10 +63,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Otomatik Şanzımanda Kayma",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma/",
   },
 ]);
 
@@ -74,7 +74,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Kayma ve Vites Atlama Teşhisi",
   description:
     "DSG, CVT ve tork konvertörlü şanzımanlarda kayma teşhisi, basınç testi ve onarım. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma/",
 });
 
 const tipler = [

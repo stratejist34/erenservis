@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Çift Kütleli Volant Titreşimi: DMF Yay Yorgunluğu | Eren Servis",
     description:
       "DSG araçlarda volant titreşimi belirtileri, ömrü ve değişim zamanı. Bostancı.",
-    url: "https://www.erenservis.net/rehber/volant-titresim",
+    url: "https://www.erenservis.net/rehber/volant-titresim/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -53,7 +53,7 @@ const articleSchema = buildArticleSchema({
   description:
     "Çift kütleli volant (DMF) çalışma prensibi, titreşim belirtileri, ömrü ve " +
     "DSG kavrama paketi ile birlikte değişim önerileri.",
-  url: "https://www.erenservis.net/rehber/volant-titresim",
+  url: "https://www.erenservis.net/rehber/volant-titresim/",
   datePublished: "2026-04-17",
 });
 
@@ -61,10 +61,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Çift Kütleli Volant Titreşimi",
-    url: "https://www.erenservis.net/rehber/volant-titresim",
+    url: "https://www.erenservis.net/rehber/volant-titresim/",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "DSG Çift Kütleli Volant ve Kavrama Paketi Değişimi",
   description:
     "DSG DQ200, DQ250, DQ381 için çift kütleli volant (DMF) ve kavrama paketi birlikte değişim. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/volant-titresim",
+  url: "https://www.erenservis.net/rehber/volant-titresim/",
 });
 
 const belirtiler = [

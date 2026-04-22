@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "DSG, PowerShift, EDC ve CVT şanzımanlarda vuruntu nedenleri. " +
       "Bostancı'da ücretsiz ön tanı.",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
@@ -53,7 +53,7 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, PowerShift, EDC ve CVT şanzımanlarda vuruntunun nedenleri, " +
     "davranış farkları ve tehlike sinyalleri.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu/",
   datePublished: "2026-04-17",
 });
 
@@ -61,10 +61,10 @@ const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Ana Sayfa", url: "https://www.erenservis.net" },
-  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber/" },
   {
     name: "Otomatik Şanzımanda Vuruntu",
-    url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu/",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Vuruntu Teşhis ve Onarım",
   description:
     "Tüm otomatik şanzıman tiplerinde vuruntu arızası teşhisi ve onarımı. Bostancı, İstanbul.",
-  url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu/",
 });
 
 const tipler = [

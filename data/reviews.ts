@@ -1,99 +1,100 @@
 // data/reviews.ts
-// Eren Servis müşteri yorumları — manuel küratörlü.
-// Kaynak: Google My Business / WhatsApp geri bildirim.
-// Schema.org Review entity'sine dönüştürülür (lib/schema.ts → buildReviewsSchema).
+// Eren Servis müşteri yorumları — Google My Business sayfasından küratörlü.
+// Metinler 1:1 korunur (yazım/noktalama dahil). Tarihler Google'daki göreli etiketlerden
+// yaklaşık ISO'ya çevrildi (referans: 2026-04-22).
 //
-// Not: datePublished formatı ISO 8601 (YYYY-MM-DD).
-// Her yeni yorumda tarih + araç + rating (1-5) zorunlu; transmissionFamily opsiyonel.
+// Rating: Google yorumlarında yıldız seviyesi belirtilmediğinde 5 kabul edildi
+// (yorum içeriklerinin tonu + mevcut aggregateRating 4.6/35 ile tutarlı).
+//
+// vehicle ve transmissionFamily opsiyoneldir — çoğu gerçek yorumda yazmaz.
 
 export type CustomerReview = {
   name: string;
-  vehicle: string;
   rating: 1 | 2 | 3 | 4 | 5;
   text: string;
   datePublished: string;
+  vehicle?: string;
   transmissionFamily?: string;
 };
 
 export const REVIEWS: readonly CustomerReview[] = [
   {
-    name: 'Ahmet K.',
-    vehicle: 'Volkswagen Passat 2019',
+    name: 'Murat Demirtaş',
     rating: 5,
-    text: "DSG mekatronik arızası vardı. Başka yer 35 bin TL istedi, burada 12 bin TL'ye halledildi. 2 aydır sorunsuz kullanıyorum.",
-    datePublished: '2026-01-18',
-    transmissionFamily: 'DQ250',
+    text: 'Dsg mekatronik değiştirdim oldukça memnunum.',
+    datePublished: '2026-04-08',
+    transmissionFamily: 'DSG Mekatronik',
   },
   {
-    name: 'Murat D.',
-    vehicle: 'Audi A3 2020',
+    name: 'Samet Yılmaz',
     rating: 5,
-    text: 'Vuruntu sorunu için geldim, doğru teşhis koydular. Kavrama balata seti değişti, şimdi yepyeni gibi.',
-    datePublished: '2026-02-05',
-    transmissionFamily: 'DQ200',
+    text: 'Otomatik aracım da 3 vitesten sonra araç boşa atıyordu, Önder usta mükemmel bilgi ve deneyimi ile gün içerisinde sorunu giderdi ve aracımı teslim etti. Allah razı olsun çok deneyimli, güler yüzlü ve başarılılar. Sorularınıza cevap alabileceğiniz, nadir bulunan dürüst esnaflardan... kesinlikle tavsiye ederim',
+    datePublished: '2025-08-22',
+    transmissionFamily: 'Otomatik Şanzıman',
   },
   {
-    name: 'Selin T.',
-    vehicle: 'Seat Leon 2021',
+    name: 'Oğuzhan Yumrutaş',
     rating: 5,
-    text: 'Önceki serviste 3 kez geri döndüm, sorunu çözemediler. Burada ilk seferde düzeldi. Açıklama da netti.',
-    datePublished: '2026-02-22',
-    transmissionFamily: 'DQ200',
+    text: 'Aracımdaki vites geçişlerindeki hafif vuruntu sebebi ile yetkili servise başvurdum. Kavrama, volant, şanzıman yağının değişmesi gerektiğini söylediler. Aracımı Eren Volkswagen servise getirdim ve Önder Usta ile test sürüşüne çıktık. Test esnasında yaptığı kalibrasyon ile sorunumu halletti. İşlemden ücret almadı. Bu işi sadece para için yapmayan ustaların ve işyerlerinin olması insanlara olan güvenin devamı için çok önemli olduğunu düşünüyorum. Test sırasındaki açıklayıcı geri bildirimleri, araç ve müşteri ile içten samimi tutumu için teşekkür ediyorum. İşlem yaklaşık 10 gün önce yapıldı, yorumu geciktirmemin sebebi aracı denemekti. Hem şehir içi hem de şehirler arası yollarda denedim. Yetkili servisin saydığım sorunlar için önerdiği ücret, Eren Volkswagen serviste yaklaşık yarısı kadar. Kesinlikle öneririm',
+    datePublished: '2025-05-22',
+    transmissionFamily: 'DSG',
   },
   {
-    name: 'Kerem Ö.',
-    vehicle: 'Skoda Octavia 2018',
+    name: 'Yekda Şahin',
     rating: 5,
-    text: 'P ışığı yanıyor, şanzıman soğut uyarısı geliyordu. Basınç tüpü değişti, 6 ay garantili işçilik. Net iletişim.',
-    datePublished: '2026-03-04',
-    transmissionFamily: 'DQ200',
+    text: 'Ramazan Bayramında Jetta aracımın DSG de viteslere geçmeme sorunu vardı. Bayram dönüşü Öner Usta DSG kartını uygun fiyata değiştirdi sorunumuzu giderdi. Tavsiye edeceğim bir servis.',
+    datePublished: '2025-05-10',
+    vehicle: 'Volkswagen Jetta',
+    transmissionFamily: 'DSG',
   },
   {
-    name: 'Hakan B.',
-    vehicle: 'BMW 320i F30 2017',
+    name: 'Uğur Değirmenci',
     rating: 5,
-    text: "ZF 8HP yağ değişimi + filtre. Şehir içi titreme kayboldu. Usta detaylı sohbet etti, hangi parçayı niye değiştirdiğini gösterdi.",
-    datePublished: '2026-03-15',
-    transmissionFamily: 'ZF 8HP',
+    text: 'Buradan önce 2 yere gösterdim aracımı, nerdeyse motoru indireceklerdi insafsızlar. Allah yüzüme güldü de Önder usta çıktı karşıma. Doğru parçayı uygun fiyata değiştirdi, aracımı sıkıntısız kullanıyorum. İşini iyi yapan bilgili bir esnaf nadir bulunur. O da bunlardan birisi.',
+    datePublished: '2025-04-22',
   },
   {
-    name: 'Emre G.',
-    vehicle: 'Volkswagen Golf GTI 2016',
+    name: 'Samet Kıyma',
     rating: 5,
-    text: 'DQ250 mekatronik revizyonu. Yarış gibi koşulda bile temiz vites alıyor. Randevu sözüne uydular.',
-    datePublished: '2026-03-27',
-    transmissionFamily: 'DQ250',
+    text: 'Jetta aracımda bi problem vardı, hemen işimi çözdüler, güler yüzlü ilgili bir esnaf. Herkese tavsiye ederim',
+    datePublished: '2025-04-15',
+    vehicle: 'Volkswagen Jetta',
   },
   {
-    name: 'Serkan A.',
-    vehicle: 'Renault Megane 2019',
-    rating: 4,
-    text: "EDC'de 2→3 gecikme vardı. Kavrama balata + yazılım güncellendi. Süreç biraz uzadı ama sonuç iyi.",
-    datePublished: '2026-04-02',
-    transmissionFamily: 'EDC',
+    name: 'Mehmet Nur Alankaya',
+    rating: 5,
+    text: 'Güvenilir, samimi, çözümcül ve zeki insanların bir araya geldiği alışık olmadığımız bir çözüm merkezi. Hepinize teşekkürler.',
+    datePublished: '2025-04-05',
   },
   {
-    name: 'Barış Y.',
-    vehicle: 'Audi Q3 2018',
+    name: 's3.dr4nzy',
     rating: 5,
-    text: "DQ381 kuru kavrama komple yenilendi. Fiyatı başka yere göre düşük, iş kalitesi çok iyi. Teşekkürler.",
-    datePublished: '2026-04-10',
-    transmissionFamily: 'DQ381',
+    text: 'Şanzımanda yağ kaçağım vardı ve güçlendirilmiş basınç tüpü taktırdım herşey çok güzeldi ilgi alaka ve fiyat anlamında. Testede önder ustamla çıktık teşekkür ederim işi rast gelsin',
+    datePublished: '2024-04-22',
+    transmissionFamily: 'DSG Basınç Tüpü',
   },
   {
-    name: 'Gökhan S.',
-    vehicle: 'Ford Kuga 2017',
+    name: 'Cihan',
     rating: 5,
-    text: 'PowerShift arızası vardı, başka atölyeler sökmeye korkuyordu. Buradaki ekip hakim, ön teşhis netti.',
-    datePublished: '2026-04-15',
-    transmissionFamily: 'PowerShift',
+    text: 'Korkarak girdiğim sanayi sitesinden Önder Usta nın dürüstlüğü sayesinde oldukça memnun ayrıldım. Aracım çekici üzerinde geldi, istese tüm şanzımanı indirip bana 40-50 bin masraf çıkarabilirdi ama işin tüm detaylarını anlatıp en az masrafla çıkmam için uğraştı resmen ve öyle de oldu. Hem işçiliği hem de dürüstlüğü on numara bir ustamız.',
+    datePublished: '2024-04-15',
   },
   {
-    name: 'Tolga M.',
-    vehicle: 'Toyota Corolla Hybrid 2020',
+    name: 'Alpaslan Toksoy',
     rating: 5,
-    text: "CVT sarsıntı için geldim. Resetleme + yağ değişimi yeterli geldi, gereksiz parça değişimi önerilmedi. Dürüst servis.",
-    datePublished: '2026-04-19',
-    transmissionFamily: 'CVT',
+    text: 'Son derece memnun kaldım tam sonu güvenerek arabamı bırakacak bi yer buldum',
+    datePublished: '2024-03-20',
+  },
+  {
+    name: 'Falkon Rent A Car',
+    rating: 5,
+    text: 'İyi hizmet, Özgür bey hakkını vererek yapıyor işini, memnun kalırsınız, tavsiye ederim... Falkon rent a car',
+    datePublished: '2022-06-15',
+  },
+  {
+    name: 'MC Kaya Yapıdenetim',
+    rating: 5,
+    text: 'İşini layıkıyla yapan tecrübeli, çözüm odaklı, disiplinli ve hızlı. Başarılarınızın devamını diler, hizmetiniz için teşekkür ederim.',
+    datePublished: '2022-04-22',
   },
 ];

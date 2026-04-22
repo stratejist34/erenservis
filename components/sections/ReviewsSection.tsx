@@ -11,7 +11,6 @@ export default function ReviewsSection() {
   const reviewsSchema = buildReviewsSchema(
     REVIEWS.map((r) => ({
       name: r.name,
-      vehicle: r.vehicle,
       rating: r.rating,
       text: r.text,
       datePublished: r.datePublished,
@@ -74,16 +73,21 @@ export default function ReviewsSection() {
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brass/10 font-saira text-xs font-semibold text-brass">
                   {review.name.charAt(0)}
                 </div>
-                <div className="flex-1">
-                  <div className="font-saira text-sm font-medium text-text-primary">
+                <div className="flex-1 min-w-0">
+                  <div className="font-saira text-sm font-medium text-text-primary truncate">
                     {review.name}
                   </div>
-                  <div className="font-jetbrains text-xs text-iron-light">
-                    {review.vehicle}
-                    {review.transmissionFamily && (
-                      <span className="text-brass"> · {review.transmissionFamily}</span>
-                    )}
-                  </div>
+                  {(review.vehicle || review.transmissionFamily) && (
+                    <div className="font-jetbrains text-xs text-iron-light truncate">
+                      {review.vehicle}
+                      {review.vehicle && review.transmissionFamily && (
+                        <span className="text-iron-deep"> · </span>
+                      )}
+                      {review.transmissionFamily && (
+                        <span className="text-brass">{review.transmissionFamily}</span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </article>

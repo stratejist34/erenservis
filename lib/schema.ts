@@ -279,7 +279,6 @@ export function buildTransmissionSchema(params: TransmissionSchemaParams) {
 
 export interface ReviewSchemaItem {
   name: string;
-  vehicle: string;
   rating: number;
   text: string;
   datePublished: string;

@@ -226,7 +226,15 @@ export default function ZFAisinGecikmePage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             Tork konvertörlü otomatik şanzımanlar (ZF, Mercedes, Aisin) aile
             içinde benzer çalışır ama servis prosedürleri farklılaşır. Özellikle
-            yağ spesifikasyonu ve diyagnostik cihaz seçimi kritiktir.
+            yağ spesifikasyonu ve diyagnostik cihaz seçimi kritiktir — BMW ve
+            Land Rover modellerinde gecikme tablosu çoğunlukla{" "}
+            <Link
+              href="/hizmetler/zf-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              ZF 8HP valve body revizyon hizmetimiz
+            </Link>{" "}
+            ile sonuçlanır.
           </p>
         </section>
 

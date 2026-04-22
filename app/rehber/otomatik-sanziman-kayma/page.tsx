@@ -223,7 +223,14 @@ export default function OtomatikSanzımanKaymaPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             Halk dilinde "vites atlama" veya "devir atlama", teknik dilde
             "kayma" olarak bilinen bu tablo aslında iki farklı açıdan aynı
-            olayı anlatır:
+            olayı anlatır. Balata kaynaklı olduğunda çözüm çoğunlukla{" "}
+            <Link
+              href="/hizmetler/dsg-kavrama-degisimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG kuru ve ıslak kavrama onarım hizmetine
+            </Link>{" "}
+            uzanır; aşağıda ayrımı bulacaksınız:
           </p>
 
           <div className="grid sm:grid-cols-2 gap-3 mb-6">

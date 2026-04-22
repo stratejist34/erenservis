@@ -192,7 +192,15 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Bu rehberde Nisan 2026 itibarıyla güncel fiyat aralıklarını ve
             sürelerini bulacaksınız. Net fiyat için araç getirilip hata kodu
-            okunmalıdır. Eren Servis&apos;te ön tanı ücretsizdir.
+            okunmalıdır. Eren Servis&apos;te ön tanı ücretsizdir; VAG araçlarında
+            onarım çoğunlukla{" "}
+            <Link
+              href="/hizmetler/dsg-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG şanzıman revizyon sürecimize
+            </Link>{" "}
+            bağlanır.
           </p>
         </section>
 

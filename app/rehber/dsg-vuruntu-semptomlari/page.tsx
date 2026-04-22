@@ -220,7 +220,15 @@ export default function DsgVuruntuSemptomlariPage() {
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Aşağıda 4 farklı senaryo ve her birinin ne anlama geldiğini
-            bulabilirsiniz. Senaryonuzu tanıyın, aciliyetini görün.
+            bulabilirsiniz. Senaryonuzu tanıyın, aciliyetini görün — balata
+            aşınması doğrulanırsa süreç{" "}
+            <Link
+              href="/hizmetler/dsg-kavrama-degisimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              çift kavramalı şanzıman balata onarımına
+            </Link>{" "}
+            bağlanır.
           </p>
 
           <div className="mt-6 p-4 bg-graphite-surface border border-border-hairline rounded-xl">

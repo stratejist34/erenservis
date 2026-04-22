@@ -229,7 +229,15 @@ export default function EdcVuruntuPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             EDC (Efficient Dual Clutch), Renault'nun ıslak çift kavramalı şanzımanıdır.
             Kontrol birimi kavrama tutma noktasını sürekli öğrenerek çalışır — bu
-            adaptasyon bozulduğunda geçişler kaba ve vuruntulu hale gelir.
+            adaptasyon bozulduğunda geçişler kaba ve vuruntulu hale gelir. Balata
+            bitmişse onarım{" "}
+            <Link
+              href="/hizmetler/dsg-kavrama-degisimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              ıslak kavrama seti değişimi
+            </Link>{" "}
+            aşamasına taşınır.
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Aşağıda 5 belirti ve bu belirtilerin ne anlama geldiğini bulabilirsiniz.

@@ -242,7 +242,15 @@ export default function OtomatikSanzımanGecikmePage() {
           </div>
 
           <p className="font-saira text-text-secondary text-sm leading-relaxed">
-            Bu değerlerin 2-3 katı uzun geçişler arızaya işaret eder.
+            Bu değerlerin 2-3 katı uzun geçişler arızaya işaret eder. DSG ailesinde
+            gecikme tablosu çoğunlukla{" "}
+            <Link
+              href="/hizmetler/dsg-mekatronik-kart/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG mekatronik onarım ve adaptasyon servisi
+            </Link>{" "}
+            kapsamında çözülür.
           </p>
         </section>
 

@@ -245,7 +245,15 @@ export default function UyariLambasiSemptomlariPage() {
               DSG uyarı lambaları mekatronik kartın kaydettiği hata kodlarını
               tetikler. <strong className="text-text-primary">Lamba yandığında araç sürülebilir olsa da
               hata kodu okutulmadan nedenini söylemek mümkün değil.</strong>{" "}
-              Araç hareket etmiyorsa çekici — hareket ediyorsa aynı gün servis.
+              Araç hareket etmiyorsa çekici — hareket ediyorsa aynı gün servis. Kod okutma
+              ve sonrasındaki revizyon süreci{" "}
+              <Link
+                href="/hizmetler/dsg-sanziman-tamiri/"
+                className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+              >
+                DSG arıza kodu teşhis ve mekatronik onarımı
+              </Link>{" "}
+              kapsamında ilerler.
             </p>
           </div>
 

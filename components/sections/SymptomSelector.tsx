@@ -47,7 +47,7 @@ export default function SymptomSelector() {
                 <div className="mt-1 font-saira text-xs leading-5 text-text-secondary">{s.description}</div>
               </div>
               <ChevronRight
-                className={`relative mt-0.5 h-4 w-4 shrink-0 text-text-tertiary transition-all duration-300 ${
+                className={`relative mt-0.5 h-4 w-4 shrink-0 text-iron-light transition-all duration-300 ${
                   selectedId === s.id ? 'rotate-90 text-brass' : ''
                 }`}
               />
@@ -81,7 +81,7 @@ export default function SymptomSelector() {
                 <div className="mt-1 font-saira text-xs leading-5 text-text-secondary">{s.description}</div>
               </div>
               <ChevronRight
-                className={`relative mt-0.5 h-4 w-4 shrink-0 text-text-tertiary transition-all duration-300 ${
+                className={`relative mt-0.5 h-4 w-4 shrink-0 text-iron-light transition-all duration-300 ${
                   selectedId === s.id ? 'rotate-90 text-brass' : ''
                 }`}
               />

@@ -225,7 +225,15 @@ export default function DSGKaymaVitesAtlamaPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             DSG kayması "motor bağırıyor ama gitmiyor" olarak tarif edilir.
             Motor devri ivmelenmeden yükselir; özellikle yokuşta ve kalkışta
-            belirgindir. Ancak kaynağı aracınızın DSG modeline bağlıdır.
+            belirgindir. Ancak kaynağı aracınızın DSG modeline bağlıdır —
+            kuru kavrama modellerinde doğrudan{" "}
+            <Link
+              href="/hizmetler/dsg-kavrama-degisimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG kavrama paketi değişimi
+            </Link>{" "}
+            gündeme gelir, ıslak modellerde ise önce basınç testi uygulanır.
           </p>
         </section>
 

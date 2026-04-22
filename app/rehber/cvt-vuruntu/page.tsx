@@ -210,7 +210,15 @@ export default function CvtVuruntuPage() {
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Bu farkı bilmeden "DSG arızası gibi" aramak yanlış tanıya yol açar.
-            Aşağıda CVT'ye özgü 4 neden ve tanı ipuçları bulabilirsiniz.
+            Aşağıda CVT'ye özgü 4 neden ve tanı ipuçları bulabilirsiniz — doğru
+            kaynak netleştikten sonra{" "}
+            <Link
+              href="/hizmetler/cvt-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              CVT yağ değişimi ve pully seti onarımı
+            </Link>{" "}
+            aşamasına geçmek rasyonel olur.
           </p>
         </section>
 

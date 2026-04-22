@@ -241,7 +241,15 @@ export default function MekatronikNedirPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Bostancı&apos;daki servisimizde Volkswagen, Audi, Seat ve Skoda grubu araçlarda
             sıkça karşılaşılan mekatronik arızalarını, orijinal yedek parça ve ileri
-            teknoloji diyagnoz cihazları ile çözüme kavuşturuyoruz.
+            teknoloji diyagnoz cihazları ile çözüme kavuşturuyoruz — ünite yenilenebilir
+            durumda değilse süreç{" "}
+            <Link
+              href="/hizmetler/dsg-mekatronik-kart/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG mekatronik ünite yenileme paketine
+            </Link>{" "}
+            taşınır.
           </p>
 
           <div className="mt-6 p-4 bg-graphite-surface border border-border-hairline rounded-xl">

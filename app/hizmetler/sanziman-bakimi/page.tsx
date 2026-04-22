@@ -210,7 +210,14 @@ export default function SanzımanBakımıPage() {
                   Bazı üreticiler şanzıman yağını &quot;ömür boyu&quot; olarak tanımlar. Ancak yüksek
                   sıcaklık, yoğun şehir trafiği ve uzun yolculuklar yağı bozar. Uzmanlar genel
                   olarak her 60.000–80.000 km&apos;de bir şanzıman yağı değişimini tavsiye eder.
-                  Araç kullanım alışkanlığınıza göre sizinle birlikte en doğru aralığı belirleriz.
+                  Araç kullanım alışkanlığınıza göre sizinle birlikte en doğru aralığı belirleriz —{" "}
+                  <Link
+                    href="/rehber/dsg-sanziman-omru-bakimi/"
+                    className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+                  >
+                    DSG şanzıman ömrü ve bakım rehberinden
+                  </Link>{" "}
+                  üreticiye özel aralıkları inceleyebilirsiniz.
                 </p>
               </div>
             </div>

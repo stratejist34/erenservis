@@ -233,7 +233,14 @@ export default function CVTKaymaPage() {
             CVT şanzımanın çalışma prensibi iki koni (pully) arasına gerilmiş
             bir çelik kayışa dayanır. Kayış konilerin çapını değiştirerek
             sürekli değişken vites oranı üretir. Bu sistem kayıp başladığında
-            geri dönüşsüz hasar zinciri başlar.
+            geri dönüşsüz hasar zinciri başlar — Bostancı'daki{" "}
+            <Link
+              href="/hizmetler/cvt-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              JATCO ve Multidrive CVT kayış–pully revizyonu
+            </Link>{" "}
+            erken evreyi geçmeden devreye girmeyi kolaylaştırır.
           </p>
         </section>
 

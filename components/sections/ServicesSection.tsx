@@ -115,7 +115,7 @@ export default function ServicesSection() {
                 </div>
                 <span className="font-saira text-sm text-brass transition-transform group-hover:translate-x-1">&rarr;</span>
               </div>
-              <div className="mt-3 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-text-tertiary">{card.note}</div>
+              <div className="mt-3 font-jetbrains text-[11px] uppercase tracking-[0.16em] text-iron-light">{card.note}</div>
             </Link>
           ))}
         </div>
@@ -123,9 +123,9 @@ export default function ServicesSection() {
 
       <div className="mt-6 flex flex-wrap items-center gap-4 font-saira text-sm text-text-secondary">
         <span className="font-semibold text-brass">15+ Yıl</span>
-        <span className="text-text-tertiary">·</span>
+        <span className="text-iron-light">·</span>
         <span className="font-semibold text-brass">5.000+ İş</span>
-        <span className="text-text-tertiary">·</span>
+        <span className="text-iron-light">·</span>
         <span className="font-semibold text-brass">Aisin / DSG / CVT / EDC</span>
       </div>
     </section>

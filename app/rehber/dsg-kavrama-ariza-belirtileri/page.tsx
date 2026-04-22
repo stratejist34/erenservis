@@ -218,11 +218,16 @@ export default function DsgKavramaArizaBelirtileriPage() {
             sessiz başlar ve çoğu sürücü belirtileri &ldquo;arabanın özelliği&rdquo; sanır.
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
-            Oysa erken dönemde fark edilen bir kavrama sorunu yalnızca kavrama
-            değişimiyle çözülür. Geciktirilirse kavrama aşınan metal tozları
-            mekatronik karta ulaşır — fatura iki katına çıkar. Aşağıdaki
-            belirtilerden birini yaşıyorsanız ücretsiz ön tanı için
-            getirmenizi öneririz.
+            Oysa erken dönemde fark edilen bir kavrama sorunu yalnızca{" "}
+            <Link
+              href="/hizmetler/dsg-kavrama-degisimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG kavrama seti revizyon servisiyle
+            </Link>{" "}
+            çözülür. Geciktirilirse kavrama aşınan metal tozları mekatronik
+            karta ulaşır — fatura iki katına çıkar. Aşağıdaki belirtilerden
+            birini yaşıyorsanız ücretsiz ön tanı için getirmenizi öneririz.
           </p>
 
           {/* İç link — money page */}

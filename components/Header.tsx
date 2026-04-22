@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { getLiteBrandsByTier } from '@/lib/brands-lite';
@@ -48,7 +47,25 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let ticking = false;
+    let lastScrolled = false;
+
+    const update = () => {
+      ticking = false;
+      const nextScrolled = window.scrollY > 24;
+      if (nextScrolled !== lastScrolled) {
+        lastScrolled = nextScrolled;
+        setScrolled(nextScrolled);
+      }
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -88,15 +105,15 @@ export default function Header() {
     <header className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border-hairline bg-graphite-base/98 px-4 transition-[padding] duration-300 sm:px-6 ${scrolled ? 'py-1.5' : 'py-3'}`}>
       {/* Logo */}
       <Link href="/" className="flex items-center">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/erenlogo.webp"
           alt="Eren Otomatik Şanzıman Servisi"
           width={112}
           height={31}
-          sizes="112px"
-          quality={60}
+          decoding="async"
+          fetchPriority="low"
           className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-[26px]' : 'h-[31px]'}`}
-          priority
         />
       </Link>
 

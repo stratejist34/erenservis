@@ -200,7 +200,12 @@ export default function ZfSanzımanTamiriPage() {
                 <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">ZF Şanzıman Arıza Belirtileri</h2>
                 <p className="font-saira text-sm text-text-secondary mb-6">
                   ZF şanzımanlar hassas ve sofistike yapılarıyla uzun ömürlüdür. Ancak erken belirtiler göz ardı edilirse
-                  onarım maliyeti katlanarak artar.
+                  onarım maliyeti katlanarak artar. D konumuna alınca bir–iki saniyeden uzun sürede tepki veren
+                  araçlarda{' '}
+                  <Link href="/rehber/zf-aisin-gecikme/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+                    ZF ve Aisin kaynaklı gecikmeli vites geçişi
+                  </Link>{' '}
+                  rehberimiz mekatronik mi tork konvertör mü ayrıştırmayı gösterir.
                 </p>
                 <ul className="flex flex-col gap-3">
                   {BELIRTILER.map((b) => (

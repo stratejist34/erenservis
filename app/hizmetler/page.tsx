@@ -275,7 +275,11 @@ export default function HizmetlerPage() {
               <p className="font-saira text-text-secondary text-sm leading-relaxed mb-6">
                 CVT kayma belirtileri, Renault EDC / DCT ve Ford PowerShift geçiş
                 sorunlarını tek kategoriye sıkıştırmadan platforma özel ön tanı
-                yaklaşımıyla değerlendiriyoruz.
+                yaklaşımıyla değerlendiriyoruz. Eski tip tork konvertörlü araçlar için{' '}
+                <Link href="/hizmetler/konvansiyonel-sanziman/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+                  konvansiyonel otomatik şanzıman servisimiz
+                </Link>{' '}
+                ayrı sayfada detaylanır.
               </p>
 
               <div className="border-t border-iron-deep mb-5" />

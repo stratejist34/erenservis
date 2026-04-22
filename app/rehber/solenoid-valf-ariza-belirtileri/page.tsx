@@ -245,7 +245,15 @@ export default function SolenoidValfArizaBelirtileriPage() {
             Zamanla aşınan veya kirlenen solenoidler, şanzıman beyninin
             komutlarını yerine getiremez hale gelir. Bostancı&apos;daki DSG uzmanı
             kadromuzla, arızanın sadece valfte mi yoksa genel mekatronik
-            kartında mı olduğunu gelişmiş test cihazlarıyla saptıyoruz.
+            kartında mı olduğunu gelişmiş test cihazlarıyla saptıyoruz —
+            tıkanma ileri seviyedeyse süreç{" "}
+            <Link
+              href="/hizmetler/dsg-mekatronik-kart/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              mekatronik ünite solenoid blok onarımı
+            </Link>{" "}
+            aşamasına taşınır.
           </p>
 
           <div className="mt-6 p-4 bg-graphite-surface border border-border-hairline rounded-xl">

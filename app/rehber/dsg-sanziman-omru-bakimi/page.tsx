@@ -207,7 +207,14 @@ export default function DsgSanzimanOmruBakimiPage() {
             Bostancı Eren Servis olarak, DSG şanzımanlardaki kronik sorunları
             önlemek ve mekanik ömrü maksimize etmek için uzman çözümler
             sunuyoruz. Doğru müdahalelerle şanzıman revizyonu maliyetlerinden
-            kurtulmanız mümkündür.
+            kurtulmanız mümkündür — bu disiplinin merkezinde{" "}
+            <Link
+              href="/hizmetler/sanziman-bakimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              periyodik şanzıman yağı ve filtre bakım hizmetimiz
+            </Link>{" "}
+            yer alır.
           </p>
 
           <div className="mt-6 p-4 bg-graphite-surface border border-border-hairline rounded-xl">

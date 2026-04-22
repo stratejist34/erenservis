@@ -202,7 +202,14 @@ export default function CvtArızaLambasıPage() {
             CVT'de arıza lambası; DSG veya EDC'deki kadar sık yanmaz çünkü
             CVT'nin mekanik yapısı daha basittir. Ancak bu durumu abartmamak
             gerekir — kayış veya pully sorununun geç tespiti, sistemin
-            tamamının değişimiyle sonuçlanabilir.
+            tamamının değişimiyle sonuçlanabilir. Lamba yandıysa{" "}
+            <Link
+              href="/hizmetler/cvt-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              CVT şanzıman tamir ve resetleme hizmetimiz
+            </Link>{" "}
+            kapsamında arıza kodunu okuyup aciliyeti birlikte değerlendirebiliriz.
           </p>
         </section>
 

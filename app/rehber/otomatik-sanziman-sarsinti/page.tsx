@@ -220,6 +220,15 @@ export default function OtomatikSanzımanSarsıntıPage() {
           </h2>
           <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             Bu iki terim sıklıkla karıştırılır — ama nedenleri farklıdır.
+            Solenoid basınç dalgalanması kaynaklı sarsıntılarda çözüm
+            genellikle{" "}
+            <Link
+              href="/hizmetler/dsg-mekatronik-kart/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG mekatronik kart revizyonu
+            </Link>{" "}
+            ile tamamlanır.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-3 mb-6">

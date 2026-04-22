@@ -158,7 +158,11 @@ export default function EATSanzimanTamiriPage() {
             <div className="flex-1 p-7 rounded-xl bg-graphite-surface border border-border-hairline">
               <h3 className="font-saira font-semibold text-lg text-text-primary mb-3">EAT Arıza Belirtileri</h3>
               <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">
-                EAT6 ve EAT8&apos;de sık karşılaşılan arıza işaretleri. Erken teşhis maliyeti düşürür:
+                EAT6 ve EAT8&apos;de sık karşılaşılan arıza işaretleri. Ford Mondeo ve C-Max gibi modellerde aynı şasi üzerinde PowerShift çift kavrama da görülebildiği için, vuruntu şikâyeti varsa önce{' '}
+                <Link href="/rehber/powershift-vuruntu/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+                  PowerShift vuruntu belirtileri rehberimizle
+                </Link>{' '}
+                kıyaslamak tanı yönünü belirler. Erken teşhis maliyeti düşürür:
               </p>
               <ul className="flex flex-col gap-2">
                 {[

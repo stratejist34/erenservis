@@ -202,7 +202,15 @@ export default function EdcArızaLambasıPage() {
             Renault EDC (Efficiency Dual Clutch), ıslak kavrama sistemiyle
             çalışan bir çift kavramalı otomatik şanzımandır. DSG'ye benzer
             ama özellikle EDC7 versiyonunda solenoid valf hassasiyeti
-            yüksektir — yağ değişimi gecikirse tıkanıklık riski artar.
+            yüksektir — yağ değişimi gecikirse tıkanıklık riski artar. Kod
+            çekip yapıyı doğruladıktan sonra süreç{" "}
+            <Link
+              href="/hizmetler/dsg-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              ıslak çift kavramalı şanzıman tamir servisimiz
+            </Link>{" "}
+            kapsamında ilerler.
           </p>
         </section>
 

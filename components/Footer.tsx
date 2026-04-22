@@ -99,7 +99,7 @@ export default function Footer() {
                   </Link>
                 ))}
               </nav>
-              <div className="mt-5 rounded-xl border border-border-subtle bg-graphite-elevated p-4 font-saira text-sm leading-6 text-text-tertiary">
+              <div className="mt-5 rounded-xl border border-border-subtle bg-graphite-elevated p-4 font-saira text-sm leading-6 text-text-secondary">
                 <div className="mb-1 font-medium text-text-secondary">Adres</div>
                 <div className="mb-3">{CONTACT.addressLine}, {CONTACT.district}</div>
                 <a
@@ -112,7 +112,7 @@ export default function Footer() {
                   Google Maps&apos;te Aç
                 </a>
               </div>
-              <div className="mt-3 font-saira text-sm text-text-tertiary">
+              <div className="mt-3 font-saira text-sm text-text-secondary">
                 <span className="font-medium text-text-secondary">Çalışma Saatleri</span><br />
                 {BUSINESS_HOURS.displayWeekdays} · {BUSINESS_HOURS.displaySunday}
               </div>
@@ -139,13 +139,13 @@ export default function Footer() {
 
         {/* Ticker — desktop only */}
         <div className="mt-10 hidden border-t border-iron-deep pt-5 md:block">
-          <p className="text-center font-jetbrains text-[10px] tracking-[0.2em] text-iron">
+          <p className="text-center font-jetbrains text-[10px] tracking-[0.2em] text-iron-light">
             EST. 2008 · WORKSHOP_01 · BOSTANCI_OTO_SANAYI · 40.9656°N · 29.1094°E · [ONLINE]
           </p>
         </div>
 
         {/* Copyright */}
-        <div className="mt-6 border-t border-iron-deep pt-6 text-center font-saira text-sm text-text-tertiary">
+        <div className="mt-6 border-t border-iron-deep pt-6 text-center font-saira text-sm text-text-secondary">
           &copy; {new Date().getFullYear()} Eren Servis. Tüm hakları saklıdır.
         </div>
 

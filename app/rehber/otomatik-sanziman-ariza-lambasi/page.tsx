@@ -232,7 +232,15 @@ export default function OtomatikSanzımanArızaLambasıPage() {
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Aşağıda şanzıman tipine göre lamba anlamlarını, yapılmaması gerekenleri
-            ve aciliyet değerlendirmesini bulacaksınız.
+            ve aciliyet değerlendirmesini bulacaksınız — VAG tabanlı araçlarda bu
+            kodların büyük kısmı{" "}
+            <Link
+              href="/hizmetler/dsg-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG şanzıman revizyon hizmetimiz
+            </Link>{" "}
+            ile çözüme ulaşır.
           </p>
         </section>
 

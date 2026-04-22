@@ -159,7 +159,14 @@ export default function DsgBasincTupuPage() {
                 <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">
                   Basınç tüpü zamanla yorulur, metal yorgunluğu veya ısıl döngü nedeniyle
                   mikro çatlaklar oluşabilir. Bu durum kavrama basıncının tutarsız hale gelmesine,
-                  dolayısıyla titremelere ve hata kodlarına yol açar.
+                  dolayısıyla titremelere ve hata kodlarına yol açar — vites geçişindeki{" "}
+                  <Link
+                    href="/rehber/dsg-vuruntu-semptomlari/"
+                    className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+                  >
+                    DSG vuruntu semptomlarını
+                  </Link>{" "}
+                  bu rehberden tanıyabilirsiniz.
                 </p>
                 <p className="font-saira text-sm text-text-secondary leading-relaxed">
                   Basınç tüpü değişimi genellikle kavrama paketi revizyonu veya mechatronik

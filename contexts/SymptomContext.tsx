@@ -1,6 +1,5 @@
 'use client';
-import { createContext, useContext, useMemo, useCallback } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { SYMPTOMS } from '@/data/symptoms';
 
 type SymptomContextType = {
@@ -14,27 +13,50 @@ const SymptomContext = createContext<SymptomContextType>({
   setSelectedId: () => {},
 });
 
+const DEFAULT_SELECTED_ID = 1;
+const SLUG_TO_ID = new Map(SYMPTOMS.map((symptom) => [symptom.slug, symptom.id]));
+const ID_TO_SLUG = new Map(SYMPTOMS.map((symptom) => [symptom.id, symptom.slug]));
+
+function getSelectedIdFromSearch(search: string): number {
+  const slug = new URLSearchParams(search).get('s');
+  if (!slug) return DEFAULT_SELECTED_ID;
+  return SLUG_TO_ID.get(slug) ?? DEFAULT_SELECTED_ID;
+}
+
 export function SymptomProvider({ children }: { children: React.ReactNode }) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
+  const [selectedId, setSelectedIdState] = useState(DEFAULT_SELECTED_ID);
 
-  // URL = tek kaynak. Effect ile sync yerine türev (derive) ederiz — React 19 önerilen pattern.
-  const selectedId = useMemo(() => {
-    const slug = searchParams.get('s');
-    if (!slug) return 1;
-    return SYMPTOMS.find((s) => s.slug === slug)?.id ?? 1;
-  }, [searchParams]);
+  useEffect(() => {
+    const syncFromLocation = () => {
+      const nextId = getSelectedIdFromSearch(window.location.search);
+      setSelectedIdState((current) => (current === nextId ? current : nextId));
+    };
 
-  const setSelectedId = useCallback(
-    (id: number) => {
-      const symptom = SYMPTOMS.find((s) => s.id === id);
-      if (!symptom) return;
-      const params = new URLSearchParams(searchParams.toString());
-      params.set('s', symptom.slug);
-      router.replace(`?${params.toString()}`, { scroll: false });
-    },
-    [router, searchParams],
-  );
+    syncFromLocation();
+    window.addEventListener('popstate', syncFromLocation);
+    return () => window.removeEventListener('popstate', syncFromLocation);
+  }, []);
+
+  const setSelectedId = useCallback((id: number) => {
+    const slug = ID_TO_SLUG.get(id);
+    if (!slug || typeof window === 'undefined') return;
+
+    setSelectedIdState((current) => (current === id ? current : id));
+
+    const params = new URLSearchParams(window.location.search);
+    if (id === DEFAULT_SELECTED_ID) {
+      params.delete('s');
+    } else {
+      params.set('s', slug);
+    }
+
+    const nextSearch = params.toString();
+    const nextUrl = nextSearch
+      ? `${window.location.pathname}?${nextSearch}${window.location.hash}`
+      : `${window.location.pathname}${window.location.hash}`;
+
+    window.history.replaceState(window.history.state, '', nextUrl);
+  }, []);
 
   const value = useMemo(() => ({ selectedId, setSelectedId }), [selectedId, setSelectedId]);
 

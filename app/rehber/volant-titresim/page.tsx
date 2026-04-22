@@ -240,7 +240,15 @@ export default function VolantTitresimPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Zamanla iç yaylar yorulur ve <strong>sönümleme fonksiyonu azalır</strong>.
             Artık motor titreşimi direkt kavrama paketine ve şanzımana iletilir —
-            rölantide ve düşük devirde titreşim belirginleşir.
+            rölantide ve düşük devirde titreşim belirginleşir. Bu aşamada onarım
+            çoğunlukla{" "}
+            <Link
+              href="/hizmetler/dsg-volant-kavrama-paketi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              çift kütleli volant ve kavrama seti kombo paketi
+            </Link>{" "}
+            olarak planlanır; iki parça ortak aşındığı için birlikte değiştirilmesi ekonomik olur.
           </p>
         </section>
 

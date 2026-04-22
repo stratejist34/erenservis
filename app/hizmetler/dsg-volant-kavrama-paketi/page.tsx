@@ -312,7 +312,11 @@ export default function DsgVolantKavramaPaketiPage() {
             Volant Hasarı Belirtileri
           </h2>
           <p className="font-saira text-text-secondary text-sm mb-8">
-            Bu belirtilerden birini fark ederseniz volant kontrolü zorunludur.
+            Bu belirtilerden birini fark ederseniz volant kontrolü zorunludur. Özellikle kalkışta veya rölantide hissedilen{' '}
+            <Link href="/rehber/volant-titresim/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+              çift kütleli volan titreşimi belirtileri
+            </Link>
+            , DMF yayının ömrünü tamamladığını gösterir ve yeni kavrama seti tek başına sorunu çözmez.
           </p>
 
           <div className="bg-graphite-elevated border border-border-hairline rounded-xl p-6">

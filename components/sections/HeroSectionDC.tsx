@@ -122,7 +122,7 @@ export default function HeroSectionDC({
   }, [ctaFading, selectedId]);
 
   useEffect(() => {
-    let timeoutId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let idleId: number | null = null;
 
     const mountLiveFeed = () => setLiveFeedReady(true);
@@ -133,7 +133,7 @@ export default function HeroSectionDC({
         return;
       }
 
-      timeoutId = window.setTimeout(mountLiveFeed, 1500);
+      timeoutId = setTimeout(mountLiveFeed, 1500);
     };
 
     if (document.readyState === 'complete') {
@@ -150,7 +150,7 @@ export default function HeroSectionDC({
       }
 
       if (timeoutId !== null) {
-        window.clearTimeout(timeoutId);
+        clearTimeout(timeoutId);
       }
     };
   }, []);

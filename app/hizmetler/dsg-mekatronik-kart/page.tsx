@@ -366,7 +366,11 @@ export default function DsgMekatronikKartPage() {
             DSG mekatronik kart arızalarının önemli bir kısmı doğrudan
             elektriksel değil, kavrama kökenlidir. Aşınan kavrama plaketlerinden
             çıkan metal tozları şanzıman yağına karışır ve zamanla mekatronik
-            kartın sensör ve solenoidlerine ulaşır.
+            kartın sensör ve{' '}
+            <Link href="/rehber/solenoid-valf-ariza-belirtileri/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+              solenoid valflerine
+            </Link>{' '}
+            ulaşır — bu aşamadan sonra P189C veya P0841 kodlarının çıkması şaşırtıcı değildir.
           </p>
           <p className="font-saira text-text-secondary text-sm leading-relaxed mb-6">
             Bu durumda yalnızca mekatronik kart değiştirmek sorunu çözmez —

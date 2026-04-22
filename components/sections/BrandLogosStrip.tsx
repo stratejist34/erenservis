@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import NextImage from 'next/image';
 import { BRANDS } from '@/lib/brands';
 import type { Brand } from '@/lib/brands';
 
@@ -29,12 +28,15 @@ function LogoItem({ brand }: { brand: Brand }) {
       tabIndex={-1}
       aria-hidden="true"
     >
-      <NextImage
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={brand.logo.src}
         alt=""
         width={80}
         height={40}
-        sizes="80px"
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
         style={{ filter: getLogoFilter(brand.logo.filter), opacity: 0.5, width: 'auto', height: '40px' }}
         className="object-contain flex-shrink-0 transition-opacity duration-300 hover:opacity-85"
       />

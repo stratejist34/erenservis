@@ -230,7 +230,14 @@ export default function PowershiftVuruntuPage() {
             kuru kavramasından farklı olarak ıslak kavrama kullanır — bu teoride
             daha uzun ömür demektir, ancak kontrol ünitesinin kavrama adaptasyonunu
             doğru yapması kritik öneme sahiptir. Yazılım veya mekanik sorun
-            adaptasyonu bozduğunda vuruntu başlar.
+            adaptasyonu bozduğunda vuruntu başlar; ileri evreye ulaştığında onarım{" "}
+            <Link
+              href="/hizmetler/eat-sanziman-tamiri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              Ford PowerShift ve EAT6 kavrama paketi servisi
+            </Link>{" "}
+            kapsamında yürütülür.
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Aşağıda 5 belirti ve her birinin ne anlama geldiğini bulabilirsiniz.

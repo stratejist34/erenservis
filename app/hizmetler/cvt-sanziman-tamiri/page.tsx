@@ -184,6 +184,11 @@ export default function CvtSanzımanTamiriPage() {
               <p>
                 Eren Servis&apos;te JATCO (Nissan/Mitsubishi), Toyota K-serisi, Honda, Hyundai IVT ve Subaru
                 Lineartronic dahil tüm CVT ailelerinde tanı, resetleme ve revizyon hizmeti veriyoruz.
+                CVT&apos;de vuruntu tipik bir belirti değildir; eğer vites geçişlerinde darbe hissediyorsanız{' '}
+                <Link href="/rehber/cvt-vuruntu/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+                  CVT&apos;de vuruntu neden olur
+                </Link>{' '}
+                başlıklı rehberimiz, bunun kontrol ünitesi mi yoksa mekanik bir uyarı mı olduğunu ayırt etmenize yardım eder.
               </p>
             </div>
           </div>

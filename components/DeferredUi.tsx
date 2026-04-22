@@ -26,7 +26,7 @@ export default function DeferredUi() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    let timeoutId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let idleId: number | null = null;
 
     const mountDeferredUi = () => setIsReady(true);
@@ -37,7 +37,7 @@ export default function DeferredUi() {
         return;
       }
 
-      timeoutId = window.setTimeout(mountDeferredUi, IDLE_TIMEOUT_MS);
+      timeoutId = setTimeout(mountDeferredUi, IDLE_TIMEOUT_MS);
     };
 
     if (document.readyState === 'complete') {
@@ -54,7 +54,7 @@ export default function DeferredUi() {
       }
 
       if (timeoutId !== null) {
-        window.clearTimeout(timeoutId);
+        clearTimeout(timeoutId);
       }
     };
   }, []);

@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { SYMPTOMS } from '@/data/symptoms';
 import { useSymptom } from '@/contexts/SymptomContext';
 import {
@@ -41,9 +40,20 @@ function getLogoFilter(filter?: 'default' | 'filled' | 'gradient'): string {
 export default function BrandSectionClient({ brands }: Props) {
   const { selectedId } = useSymptom();
   const symptom = SYMPTOMS.find((s) => s.id === selectedId) ?? SYMPTOMS[0];
-  const brandsBySlug = new Map(brands.map((b) => [b.slug, b]));
-  const allFeaturedSlugs = symptom.topBrandGroups.flatMap((g) => g.slugs);
-  const remainingBrands = brands.filter((b) => !allFeaturedSlugs.includes(b.slug));
+  const brandsBySlug = new Map<string, FlatBrand>();
+  const featuredSlugSet = new Set<string>();
+
+  for (const brand of brands) {
+    brandsBySlug.set(brand.slug, brand);
+  }
+
+  for (const group of symptom.topBrandGroups) {
+    for (const slug of group.slugs) {
+      featuredSlugSet.add(slug);
+    }
+  }
+
+  const remainingBrands = brands.filter((brand) => !featuredSlugSet.has(brand.slug));
   const total = String(brands.length).padStart(2, '0');
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -160,7 +170,7 @@ export default function BrandSectionClient({ brands }: Props) {
 
       <div className="mb-8 flex items-center gap-4">
         <div className="h-px flex-1 bg-border-hairline" />
-        <span className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-iron-light/50">Markanız yukarıda yoksa — biz yine de buradayız</span>
+        <span className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-iron-light">Markanız yukarıda yoksa — biz yine de buradayız</span>
         <div className="h-px flex-1 bg-border-hairline" />
       </div>
 
@@ -217,11 +227,14 @@ export default function BrandSectionClient({ brands }: Props) {
               )}
 
               <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-20 translate-x-3 translate-y-3" aria-hidden="true">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={brand.logoSrc}
                   alt=""
                   width={brand.logoWidth}
                   height={brand.logoHeight}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-contain"
                   style={{ filter: logoFilter, opacity: 0.12 }}
                 />

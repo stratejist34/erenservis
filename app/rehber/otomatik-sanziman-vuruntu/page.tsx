@@ -237,12 +237,25 @@ export default function OtomatikSanzımanVuruntuPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed mb-4">
             "Vuruntu" şikayeti her şanzıman tipinde farklı bir mekanizmadan gelir.
             DSG'deki vuruntu ile PowerShift'tekinin sebebi benzer görünse de
-            çözüm yöntemi ve maliyet önemli ölçüde ayrışır. Aracınızın şanzıman
-            tipini doğru tespit etmek, gereksiz parça değişiminin önüne geçer.
+            çözüm yöntemi ve maliyet önemli ölçüde ayrışır. Renault Clio, Megane
+            veya Captur gibi robotize vites kullanan modellerde şikâyet
+            yaşıyorsanız{' '}
+            <Link href="/rehber/edc-vuruntu/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+              EDC vuruntu nedenleri
+            </Link>{' '}
+            ayrı bir kol; ön tanıyı bu rehberle eşleştirmek gereksiz parça
+            değişiminin önüne geçer.
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Aşağıda 4 tip karşılaştırmasını ve hepsinde görülen 5 ortak nedeni
-            bulacaksınız.
+            bulacaksınız — vuruntu kavrama kaynaklıysa onarım{" "}
+            <Link
+              href="/hizmetler/dsg-kavrama-degisimi/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG kavrama grup değişimi hizmetimiz
+            </Link>{" "}
+            kapsamında yapılır.
           </p>
         </section>
 

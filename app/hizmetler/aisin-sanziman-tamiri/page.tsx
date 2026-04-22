@@ -158,7 +158,11 @@ export default function AisinSanzimanTamiriPage() {
             <div className="flex-1 p-7 rounded-xl bg-graphite-surface border border-border-hairline">
               <h3 className="font-saira font-semibold text-lg text-text-primary mb-3">Aisin Arıza Belirtileri</h3>
               <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">
-                Aisin şanzımanlarda sık karşılaşılan arıza işaretleri. Erken teşhis maliyeti düşürür:
+                Aisin şanzımanlarda sık karşılaşılan arıza işaretleri. Vites kolunu D konumuna alınca hissedilen{' '}
+                <Link href="/rehber/zf-aisin-gecikme/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+                  kısa gecikme ve sarsıntı nedenleri
+                </Link>{' '}
+                çoğunlukla tork konvertör kilitleme veya valf gövdesi solenoidlerine dayanır. Erken teşhis maliyeti düşürür:
               </p>
               <ul className="flex flex-col gap-2">
                 {[

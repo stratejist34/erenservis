@@ -206,8 +206,16 @@ export default function DsgKavramaDegisimiPage() {
             Model Bazlı Fiyat Tablosu
           </h2>
           <p className="font-saira text-text-secondary text-sm mb-8">
-            Orijinal ve muadil parça seçeneği mevcuttur.
-            Her ikisi de 6 ay garanti kapsamındadır.
+            Orijinal ve muadil parça seçeneği mevcuttur. Her ikisi de 6 ay
+            garanti kapsamındadır — aracınızda kavrama arızası olup olmadığını
+            teyit etmek için{" "}
+            <Link
+              href="/rehber/dsg-kavrama-ariza-belirtileri/"
+              className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+            >
+              DSG kavrama arızası belirtileri rehberini
+            </Link>{" "}
+            inceleyebilirsiniz.
           </p>
 
           <div className="space-y-4">

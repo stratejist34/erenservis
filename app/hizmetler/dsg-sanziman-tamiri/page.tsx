@@ -333,7 +333,11 @@ export default function DsgSanzımanTamiriPage() {
             <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">Sık Karşılaşılan DSG Arıza Kodları</h2>
             <p className="font-saira text-text-secondary mb-8 max-w-2xl">
               OBD tarayıcıda gördüğünüz kod hangi parçanın suçlandığını söyler — ama her kod mekanik arıza
-              anlamına gelmez. Bazı kodlar yalnızca elektronik veya yazılım kaynaklıdır.
+              anlamına gelmez. Bazı kodlar yalnızca elektronik veya yazılım kaynaklıdır. Kod çekmeden önce göstergedeki{' '}
+              <Link href="/rehber/uyari-lambasi-semptomlari/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
+                DSG uyarı ışığı ve P–anahtar sembollerinin anlamlarını
+              </Link>{' '}
+              doğrulamak, hangi sistemin şikâyet ettiğini daraltmanızı sağlar.
             </p>
             <div className="flex flex-col gap-3">
               {ARIZA_KODLARI.map((k) => (

@@ -158,7 +158,14 @@ export default function KonvansiyonelSanzimanPage() {
             <div className="flex-1 p-7 rounded-xl bg-graphite-surface border border-border-hairline">
               <h3 className="font-saira font-semibold text-lg text-text-primary mb-3">Revizyon mu, Komple Yenileme mi?</h3>
               <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">
-                Her sanziman arizasi komple yenileme gerektirmez. Ariza tespitinden sonra en ekonomik ve kalici cozumu birlikte degerlendiririz:
+                Her sanziman arizasi komple yenileme gerektirmez. Ariza tespitinden sonra en ekonomik ve kalici cozumu birlikte degerlendiririz — vites gecislerinde gecikme yasiyorsaniz{" "}
+                <Link
+                  href="/rehber/otomatik-sanziman-gecikme/"
+                  className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+                >
+                  otomatik sanzimanda gecikme rehberi
+                </Link>{" "}
+                ile teshis surecine hazirlanabilirsiniz:
               </p>
               <ul className="flex flex-col gap-2">
                 {[

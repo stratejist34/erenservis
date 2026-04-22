@@ -10,6 +10,7 @@ export default function ScrollProgress() {
   useEffect(() => {
     let ticking = false;
     let lastShowTop = false;
+    let lastProgress = -1;
 
     const update = () => {
       ticking = false;
@@ -19,8 +20,12 @@ export default function ScrollProgress() {
       const pct = total > 0 ? (scrolled / total) * 100 : 0;
       const bar = barRef.current;
       if (bar) {
-        bar.style.width = `${pct}%`;
-        bar.setAttribute('aria-valuenow', String(Math.round(pct)));
+        const nextProgress = Math.round(pct);
+        if (nextProgress !== lastProgress) {
+          lastProgress = nextProgress;
+          bar.style.transform = `scaleX(${pct / 100})`;
+          bar.setAttribute('aria-valuenow', String(nextProgress));
+        }
       }
       const next = scrolled > 400;
       if (next !== lastShowTop) {
@@ -44,8 +49,8 @@ export default function ScrollProgress() {
     <>
       <div
         ref={barRef}
-        className="fixed left-0 top-0 z-[60] h-[2px] bg-brass transition-[width] duration-75 ease-out"
-        style={{ width: '0%' }}
+        className="fixed left-0 top-0 z-[60] h-[2px] w-full origin-left bg-brass transition-transform duration-75 ease-out"
+        style={{ transform: 'scaleX(0)' }}
         role="progressbar"
         aria-valuenow={0}
         aria-valuemin={0}

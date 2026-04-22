@@ -7,11 +7,13 @@ import { trackWhatsappClick } from '@/lib/analytics';
 const WHATSAPP_HREF = 'https://wa.me/905327153751';
 
 const HIDDEN_PATHS = new Set(['/', '/iletisim', '/iletisim/', '/hakkimizda', '/hakkimizda/']);
+const HIDDEN_PREFIXES = ['/sanziman-tipleri/'];
 
 export default function FloatingCTA() {
   const pathname = usePathname();
 
   if (!pathname || HIDDEN_PATHS.has(pathname)) return null;
+  if (HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix) && pathname !== prefix)) return null;
 
   return (
     <a

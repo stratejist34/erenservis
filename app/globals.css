@@ -461,8 +461,8 @@ body {
   100% { transform: translateX(0); }
 }
 
-.brand-marquee        { animation: marquee        43s linear infinite; }
-.brand-marquee-rev    { animation: marqueeReverse 38s linear infinite; }
+.brand-marquee        { animation: marquee        43s linear infinite; will-change: transform; }
+.brand-marquee-rev    { animation: marqueeReverse 38s linear infinite; will-change: transform; }
 
 @media (prefers-reduced-motion: reduce) {
   .brand-marquee,

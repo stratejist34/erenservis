@@ -6,12 +6,19 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { SYMPTOMS } from '@/data/symptoms';
 import { useSymptom } from '@/contexts/SymptomContext';
-import LiveDiagnosedFeed from '@/components/LiveDiagnosedFeed';
 import { trackPhoneCall, trackWhatsappClick } from '@/lib/analytics';
+
+// setInterval + pulse chain içerdiği için SSR'dan ayrıştırılıp lazy yüklenir.
+// Hero'nun alt bandında yer alıyor; ilk paint'i bloke etmez.
+const LiveDiagnosedFeed = dynamic(() => import('@/components/LiveDiagnosedFeed'), {
+  ssr: false,
+  loading: () => <div className="h-[156px]" aria-hidden="true" />,
+});
 
 /* ── INTERNAL DEFAULTS (homepage için sabit veri) ───────────────────────── */
 
@@ -151,19 +158,6 @@ export default function HeroSectionDC({
             rgba(10,10,10,0.40) 68%,
             rgba(10,10,10,0.22) 100%
           )`,
-        }}
-      />
-
-      {/* ===== LAYER 2b: Grain overlay ===== */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[2]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '180px 180px',
-          opacity: 0.03,
-          mixBlendMode: 'overlay',
         }}
       />
 
@@ -379,7 +373,7 @@ export default function HeroSectionDC({
       )}
 
       {/* ===== HERO ALT CTA BANDI ===== */}
-      <div className="relative z-10 col-span-full mt-16 overflow-hidden rounded-2xl border border-border-hairline bg-graphite-surface/70 backdrop-blur-sm">
+      <div className="relative z-10 col-span-full mt-16 overflow-hidden rounded-2xl border border-border-hairline bg-graphite-surface/95">
         <div className="relative grid grid-cols-1 items-center gap-8 px-8 py-8 sm:grid-cols-[auto_1fr_auto]">
           {/* Sol — bağlam */}
           <div className="sm:max-w-[200px]">

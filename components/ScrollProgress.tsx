@@ -1,21 +1,41 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 
 export default function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
+  const barRef = useRef<HTMLDivElement | null>(null);
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+    let lastShowTop = false;
+
+    const update = () => {
+      ticking = false;
       const el = document.documentElement;
       const scrolled = el.scrollTop || document.body.scrollTop;
       const total = el.scrollHeight - el.clientHeight;
-      setProgress(total > 0 ? (scrolled / total) * 100 : 0);
-      setShowTop(scrolled > 400);
+      const pct = total > 0 ? (scrolled / total) * 100 : 0;
+      const bar = barRef.current;
+      if (bar) {
+        bar.style.width = `${pct}%`;
+        bar.setAttribute('aria-valuenow', String(Math.round(pct)));
+      }
+      const next = scrolled > 400;
+      if (next !== lastShowTop) {
+        lastShowTop = next;
+        setShowTop(next);
+      }
     };
 
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -23,10 +43,11 @@ export default function ScrollProgress() {
   return (
     <>
       <div
+        ref={barRef}
         className="fixed left-0 top-0 z-[60] h-[2px] bg-brass transition-[width] duration-75 ease-out"
-        style={{ width: `${progress}%` }}
+        style={{ width: '0%' }}
         role="progressbar"
-        aria-valuenow={Math.round(progress)}
+        aria-valuenow={0}
         aria-valuemin={0}
         aria-valuemax={100}
         aria-label="Sayfa ilerleme cubugu"

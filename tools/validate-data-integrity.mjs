@@ -86,6 +86,77 @@ for (const id of brandFamilyIds) {
   }
 }
 
+// ─── 4b. brands-lite.ts ↔ brands.ts + transmissions.ts senkron ────
+// brands-lite.ts, Header.tsx gibi 'use client' dosyalarına düşen minimal
+// metadata. brands.ts ile slug/tier, transmissions.ts ile displayName
+// eşleşmesi buradan doğrulanır.
+const brandsLiteSrc = read('lib/brands-lite.ts');
+const liteEntries = [
+  ...brandsLiteSrc.matchAll(
+    /slug:\s*'([a-z0-9-]+)'[^}]*?tier:\s*([123])[^}]*?primaryTransmissionLabel:\s*'([^']+)'/g,
+  ),
+].map((m) => ({ slug: m[1], tier: Number(m[2]), label: m[3] }));
+
+// brands.ts'teki her brand için: slug, tier, primary familyId
+const brandBlocks = [
+  ...brandsSrc.matchAll(
+    /\{\s*\n\s*slug:\s*'([a-z0-9-]+)',[\s\S]*?tier:\s*([123]),/g,
+  ),
+];
+const brandsMeta = new Map(
+  brandBlocks.map((m) => [m[1], { tier: Number(m[2]) }]),
+);
+// Her brand'in primary transmission familyId'sini bul
+const primaryFamilyBySlug = new Map();
+const brandSegRegex =
+  /slug:\s*'([a-z0-9-]+)',[\s\S]*?transmissions:\s*\[([\s\S]*?)\],/g;
+for (const seg of brandsSrc.matchAll(brandSegRegex)) {
+  const slug = seg[1];
+  const primaryMatch = seg[2].match(
+    /familyId:\s*'([a-z0-9-]+)',\s*isPrimary:\s*true/,
+  );
+  if (primaryMatch) primaryFamilyBySlug.set(slug, primaryMatch[1]);
+}
+
+// transmissions.ts'te her id için displayName
+const transDisplayNames = new Map(
+  [
+    ...transmissionsSrc.matchAll(
+      /id:\s*'([a-z0-9-]+)',\s*\n\s*displayName:\s*'([^']+)'/g,
+    ),
+  ].map((m) => [m[1], m[2]]),
+);
+
+for (const entry of liteEntries) {
+  const meta = brandsMeta.get(entry.slug);
+  if (!meta) {
+    errors.push(
+      `brands-lite.ts: slug "${entry.slug}" brands.ts'te yok.`,
+    );
+    continue;
+  }
+  if (meta.tier !== entry.tier) {
+    errors.push(
+      `brands-lite.ts: slug "${entry.slug}" tier=${entry.tier} ama brands.ts'te tier=${meta.tier}.`,
+    );
+  }
+  const primaryId = primaryFamilyBySlug.get(entry.slug);
+  const expectedLabel = primaryId ? transDisplayNames.get(primaryId) : null;
+  if (expectedLabel && expectedLabel !== entry.label) {
+    errors.push(
+      `brands-lite.ts: slug "${entry.slug}" primaryTransmissionLabel="${entry.label}" ama transmissions.ts displayName="${expectedLabel}".`,
+    );
+  }
+}
+
+// brands.ts'teki her slug brands-lite'ta var mı?
+const liteSlugs = new Set(liteEntries.map((e) => e.slug));
+for (const slug of brandsMeta.keys()) {
+  if (!liteSlugs.has(slug)) {
+    errors.push(`brands-lite.ts: slug "${slug}" eksik (brands.ts'te mevcut).`);
+  }
+}
+
 // ─── 5. Orphan TRANSMISSIONS (hiç brand tarafından referans edilmeyen) ─
 // Uyarı niteliğinde — fail değil
 const brandFamilySet = new Set(brandFamilyIds);

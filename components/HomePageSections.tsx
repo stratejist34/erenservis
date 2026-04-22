@@ -1,14 +1,17 @@
+import dynamic from 'next/dynamic';
 import HeroSectionDC from '@/components/sections/HeroSectionDC';
 import SymptomSelector from '@/components/sections/SymptomSelector';
 import ServicesSection from '@/components/sections/ServicesSection';
-import ServiceWorkflow from '@/components/sections/ServiceWorkflow';
-import ReviewsSection from '@/components/sections/ReviewsSection';
-import FinalCTA from '@/components/sections/FinalCTA';
 import BrandLogosStrip from '@/components/sections/BrandLogosStrip';
-import BrandSection from '@/components/sections/BrandSection';
-import BlogPreview from '@/components/sections/BlogPreview';
 import RevealSection from '@/components/RevealSection';
 import SectionMarker from '@/components/SectionMarker';
+
+// Fold-altı ağır section'lar ayrı chunk'a — ilk JS payload'u küçültür.
+const ServiceWorkflow = dynamic(() => import('@/components/sections/ServiceWorkflow'));
+const ReviewsSection = dynamic(() => import('@/components/sections/ReviewsSection'));
+const BrandSection = dynamic(() => import('@/components/sections/BrandSection'));
+const BlogPreview = dynamic(() => import('@/components/sections/BlogPreview'));
+const FinalCTA = dynamic(() => import('@/components/sections/FinalCTA'));
 
 export default function HomePageSections() {
   return (

@@ -35,8 +35,8 @@ function LogoItem({ brand }: { brand: Brand }) {
         width={80}
         height={40}
         sizes="80px"
-        style={{ filter: getLogoFilter(brand.logo.filter), opacity: 0.5 }}
-        className="h-10 w-auto object-contain flex-shrink-0 transition-opacity duration-300 hover:opacity-85"
+        style={{ filter: getLogoFilter(brand.logo.filter), opacity: 0.5, width: 'auto', height: '40px' }}
+        className="object-contain flex-shrink-0 transition-opacity duration-300 hover:opacity-85"
       />
     </Link>
   );

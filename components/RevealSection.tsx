@@ -12,6 +12,26 @@ type RevealSectionProps = {
   variant?: RevealVariant;
 };
 
+// Sayfadaki tüm Reveal elementleri tek bir IntersectionObserver paylaşır —
+// her instance için ayrı observer oluşturmak 7-9 observer demekti.
+let sharedObserver: IntersectionObserver | null = null;
+
+function getSharedObserver(): IntersectionObserver {
+  if (sharedObserver) return sharedObserver;
+  sharedObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          sharedObserver?.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.15 },
+  );
+  return sharedObserver;
+}
+
 export default function RevealSection({
   children,
   className,
@@ -24,19 +44,9 @@ export default function RevealSection({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('reveal-visible');
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15 }
-    );
-
+    const observer = getSharedObserver();
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => observer.unobserve(el);
   }, []);
 
   return (

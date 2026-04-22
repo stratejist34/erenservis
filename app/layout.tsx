@@ -19,7 +19,7 @@ const geistSans = Geist({
 
 const sairaSemiCondensed = Saira_Semi_Condensed({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-saira",
   display: "swap",
 });

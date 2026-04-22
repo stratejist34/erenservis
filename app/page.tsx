@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative">
-      <Suspense>
+      <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
         <SymptomProvider>
           <HomePageSections />
         </SymptomProvider>

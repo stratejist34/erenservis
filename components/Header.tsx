@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import { getBrandsByTier, getPrimaryTransmission } from '@/lib/brands';
+import { getLiteBrandsByTier } from '@/lib/brands-lite';
 
 const PHONE_HREF = 'tel:+905327153751';
 const PHONE = '0532 715 37 51';
@@ -27,10 +27,10 @@ const NAV_LINKS = [
   { href: '/iletisim/', label: 'İletişim' },
 ];
 
-const ARAC_LINKS = getBrandsByTier(1).map((b) => ({
+const ARAC_LINKS = getLiteBrandsByTier(1).map((b) => ({
   href: `/arac/${b.slug}/`,
   label: b.displayName ?? b.name,
-  sub: getPrimaryTransmission(b)?.displayName ?? '',
+  sub: b.primaryTransmissionLabel,
 }));
 
 function isActive(pathname: string | null, href: string): boolean {
@@ -85,7 +85,7 @@ export default function Header() {
 
   return (
     <div className="fixed left-0 right-0 top-4 z-50 px-4 sm:px-6">
-    <header className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border-hairline bg-graphite-base/92 px-4 backdrop-blur-sm transition-[padding] duration-300 sm:px-6 ${scrolled ? 'py-1.5' : 'py-3'}`}>
+    <header className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border-hairline bg-graphite-base/98 px-4 transition-[padding] duration-300 sm:px-6 ${scrolled ? 'py-1.5' : 'py-3'}`}>
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image

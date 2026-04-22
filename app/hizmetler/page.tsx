@@ -79,7 +79,7 @@ export default function HizmetlerPage() {
           <h1 className="font-saira font-semibold text-[64px] md:text-[88px] leading-[0.95] tracking-tight text-text-primary mb-2">
             Şanzıman
           </h1>
-          <p className="font-saira italic font-light text-[64px] md:text-[88px] leading-[0.95] tracking-tight text-text-primary mb-8">
+          <p className="font-saira italic font-normal text-[64px] md:text-[88px] leading-[0.95] tracking-tight text-text-primary mb-8">
             hizmetlerimiz.
           </p>
 

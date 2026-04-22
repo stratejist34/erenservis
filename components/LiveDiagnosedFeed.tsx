@@ -158,7 +158,10 @@ export default function LiveDiagnosedFeed() {
   }, []);
 
   useEffect(() => {
-    const id = setInterval(() => {
+    // Tab arka planda veya sekme gizliyken interval boşa CPU harcamasın —
+    // visibilitychange ile duraklat/sürdür.
+    let id: ReturnType<typeof setInterval> | null = null;
+    const tick = () => {
       setAnimating(true);
       setTimeout(() => {
         setBuffer((prev) => [
@@ -168,8 +171,23 @@ export default function LiveDiagnosedFeed() {
         cursor.current += 1;
         setAnimating(false);
       }, DURATION_MS);
-    }, INTERVAL_MS);
-    return () => clearInterval(id);
+    };
+    const start = () => {
+      if (id != null) return;
+      id = setInterval(tick, INTERVAL_MS);
+    };
+    const stop = () => {
+      if (id == null) return;
+      clearInterval(id);
+      id = null;
+    };
+    if (!document.hidden) start();
+    const onVisibility = () => (document.hidden ? stop() : start());
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      stop();
+    };
   }, []);
 
   useEffect(() => {

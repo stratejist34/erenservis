@@ -5,7 +5,6 @@
  */
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Phone, MessageCircle, Clock, FileText, ShieldCheck } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -131,19 +130,22 @@ export default function HeroSectionDC({
   return (
     <section className="relative overflow-hidden">
 
-      {/* ===== LAYER 1: Gerçek servis görüntüsü — FULL WIDTH ===== */}
+      {/* ===== LAYER 1: Gerçek servis görüntüsü — FULL WIDTH =====
+          Mobilde crop edilmiş küçük varyant (900x1200, ~31 KB), desktop'ta
+          orijinal 1866x1050. <picture> sayesinde tek bir LCP candidate yükleniyor. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/images/part2/Screenshot_57.webp"
-          alt=""
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          quality={75}
-          className="object-cover object-center"
-          style={{ filter: 'saturate(0.7)' }}
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet="/images/part2/Screenshot_57-mobile.webp" />
+          <img
+            src="/images/part2/Screenshot_57.webp"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            loading="eager"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            style={{ filter: 'saturate(0.7)' }}
+          />
+        </picture>
       </div>
 
       {/* ===== LAYER 2: Gradient overlay ===== */}

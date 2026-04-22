@@ -10,25 +10,30 @@ import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 import GlobalClickTracker from '@/components/tracking/GlobalClickTracker';
 
+// Türkçe karakterler (ğ, ş, ç, ı, ö, ü) latin-ext subset'indedir.
+// Tek subset seçimi — preload sayısını yarıya indirir.
 const geistSans = Geist({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-geist-sans",
   display: "swap",
 });
 
 const sairaSemiCondensed = Saira_Semi_Condensed({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-saira",
   display: "swap",
 });
 
+// JetBrains Mono yalnızca LiveDiagnosedFeed (dynamic ssr:false) ve küçük
+// JetBrains-class'lı metadata satırlarında kullanılıyor — kritik yoldan çıkar.
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-jetbrains",
   display: "swap",
+  preload: false,
 });
 
 export const viewport: Viewport = {

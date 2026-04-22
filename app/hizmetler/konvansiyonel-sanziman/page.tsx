@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'opel otomatik sanziman tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/konvansiyonel-sanziman/',
+    canonical: 'https://www.erenservis.net/hizmetler/konvansiyonel-sanziman/',
   },
 };
 
@@ -67,14 +67,14 @@ const serviceSchema = buildServiceSchema({
   description:
     'Aisin, EAT6, EAT8 ve tam otomatik şanzıman tamiri. Peugeot, Citroen, Opel, Toyota, Ford ' +
     've klasik hidrolik otomatik ailelerde revizyon, tork konvertörü ve valf gövdesi hizmeti.',
-  url: 'https://erenservis.net/hizmetler/konvansiyonel-sanziman/',
+  url: 'https://www.erenservis.net/hizmetler/konvansiyonel-sanziman/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'Konvansiyonel Şanzıman', url: 'https://erenservis.net/hizmetler/konvansiyonel-sanziman/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'Konvansiyonel Şanzıman', url: 'https://www.erenservis.net/hizmetler/konvansiyonel-sanziman/' },
 ]);
 
 export default function KonvansiyonelSanzimanPage() {

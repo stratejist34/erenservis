@@ -37,7 +37,7 @@ export default function BlogSchema({
   imageUrl,
   contentFaqItems,
 }: BlogSchemaProps) {
-  const url = `https://erenservis.net/blog/${slug}/`;
+  const url = `https://www.erenservis.net/blog/${slug}/`;
   // sanziman-faq.ts öncelikli; yoksa içerikten parse edilen FAQ kullanılır
   const staticItems = TRANSMISSION_FAQS[slug] ?? [];
   const faqItems =
@@ -55,8 +55,8 @@ export default function BlogSchema({
   });
 
   const breadcrumbSchema = buildBreadcrumbSchema([
-    { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-    { name: 'Blog', url: 'https://erenservis.net/blog/' },
+    { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+    { name: 'Blog', url: 'https://www.erenservis.net/blog/' },
     { name: title, url },
   ]);
 

@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     'dsg kart tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+    canonical: 'https://www.erenservis.net/hizmetler/dsg-sanziman-tamiri/',
   },
   openGraph: {
     title: 'DSG Şanzıman Tamiri Bostancı | Eren Servis',
     description: 'DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 6 ay garanti, ücretsiz ön tanı.',
-    url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
-    images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+    images: [{ url: 'https://www.erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
 };
 
@@ -98,16 +98,16 @@ const serviceSchema = buildServiceSchema({
   description:
     "Bostancı'da DSG şanzıman tamiri ve bakımı. DQ200, DQ250, DQ381 ve tüm DSG modelleri. " +
     'Sertifikalı teknisyen, orijinal parça, 6 ay garanti.',
-  url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/',
+  url: 'https://www.erenservis.net/hizmetler/dsg-sanziman-tamiri/',
   minPrice: 14000,
   maxPrice: 90000,
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'DSG Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/dsg-sanziman-tamiri/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'DSG Şanzıman Tamiri', url: 'https://www.erenservis.net/hizmetler/dsg-sanziman-tamiri/' },
 ]);
 
 export default function DsgSanzımanTamiriPage() {

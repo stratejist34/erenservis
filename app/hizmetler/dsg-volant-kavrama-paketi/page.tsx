@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     description:
       "DQ200 volant + kavrama kombo 80.000–95.000 TL. " +
       "İkisi ayrı yapılsaydı işçilik iki kez ödenirdi. Garantili, ücretsiz ön tanı.",
-    url: "https://erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
+    url: "https://www.erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
     type: "website",
   },
   alternates: {
-    canonical: "https://erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
+    canonical: "https://www.erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
   },
 };
 
@@ -45,7 +45,7 @@ const serviceSchema = buildServiceSchema({
   description:
     "DQ200 DSG şanzımanlarda çift kütleli volan (DMF) ve kavrama seti kombo değişimi. " +
     "Tek seferlik işçilikle her iki parça değiştirilir. Orijinal ve muadil seçeneği, 6 ay garanti.",
-  url: "https://erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
+  url: "https://www.erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
   priceRange: "62.000 – 95.000 TL",
   minPrice: 62000,
   maxPrice: 95000,
@@ -55,11 +55,11 @@ const serviceSchema = buildServiceSchema({
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Hizmetler", url: "https://erenservis.net/hizmetler/" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Hizmetler", url: "https://www.erenservis.net/hizmetler/" },
   {
     name: "DSG Volant Kavrama Paketi",
-    url: "https://erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
+    url: "https://www.erenservis.net/hizmetler/dsg-volant-kavrama-paketi/",
   },
 ]);
 

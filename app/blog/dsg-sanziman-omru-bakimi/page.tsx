@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'dsg ne kadar dayanır',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-sanziman-omru-bakimi/',
+    canonical: 'https://www.erenservis.net/blog/dsg-sanziman-omru-bakimi/',
   },
 };
 

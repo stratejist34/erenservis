@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "Mekatronik arızası varsa ertelemeyin. " +
       "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/mekatronik-nedir",
+    url: "https://www.erenservis.net/rehber/mekatronik-nedir",
     type: "article",
     publishedTime: "2026-04-10",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/images/og/mekatronik-nedir.jpg",
+        url: "https://www.erenservis.net/images/og/mekatronik-nedir.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Mekatronik Nedir",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/mekatronik-nedir",
+    canonical: "https://www.erenservis.net/rehber/mekatronik-nedir",
   },
 };
 
@@ -56,16 +56,16 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG şanzımanlarda mekatronik ünitesinin rolü, içindeki parçalar, " +
     "arıza nedenleri ve erken müdahalenin önemi.",
-  url: "https://erenservis.net/rehber/mekatronik-nedir",
+  url: "https://www.erenservis.net/rehber/mekatronik-nedir",
   datePublished: "2026-04-10",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
-  { name: "Mekatronik Nedir", url: "https://erenservis.net/rehber/mekatronik-nedir" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "Mekatronik Nedir", url: "https://www.erenservis.net/rehber/mekatronik-nedir" },
 ]);
 
 // ─── VERİ ─────────────────────────────────────────────────────────────────────

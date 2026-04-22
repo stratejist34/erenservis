@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'dsg şanzıman beyin fiyatı',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-mekatronik-ariza-fiyati/',
+    canonical: 'https://www.erenservis.net/blog/dsg-mekatronik-ariza-fiyati/',
   },
 };
 

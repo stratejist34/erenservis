@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "CVT'de vuruntu nadirdir ama olduğunda ciddidir. Kayış aşınması, pully sorunu ve " +
       "CVT yağı — nedenleri, belirtileri ve maliyet. Bostancı'da ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/cvt-vuruntu",
+    url: "https://www.erenservis.net/rehber/cvt-vuruntu",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "CVT Şanzıman Vuruntu",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/cvt-vuruntu",
+    canonical: "https://www.erenservis.net/rehber/cvt-vuruntu",
   },
 };
 
@@ -54,23 +54,23 @@ const articleSchema = buildArticleSchema({
   description:
     "Toyota, Honda ve Nissan CVT şanzımanlarda vuruntunun nedenleri, " +
     "belirtileri ve onarım maliyet rehberi.",
-  url: "https://erenservis.net/rehber/cvt-vuruntu",
+  url: "https://www.erenservis.net/rehber/cvt-vuruntu",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
-  { name: "CVT Vuruntu", url: "https://erenservis.net/rehber/cvt-vuruntu" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "CVT Vuruntu", url: "https://www.erenservis.net/rehber/cvt-vuruntu" },
 ]);
 
 const serviceSchema = buildServiceSchema({
   name: "CVT Şanzıman Vuruntu Teşhis ve Onarım",
   description:
     "CVT şanzıman kayış aşınması teşhisi, pully seti değişimi ve CVT yağ revizyonu. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/cvt-vuruntu",
+  url: "https://www.erenservis.net/rehber/cvt-vuruntu",
 });
 
 const modeller = [

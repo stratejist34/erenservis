@@ -45,14 +45,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: data.description,
     keywords: data.keywords,
     alternates: {
-      canonical: `https://erenservis.net/arac/${marka}/`,
+      canonical: `https://www.erenservis.net/arac/${marka}/`,
     },
     openGraph: {
       title: data.baslik,
       description: data.description,
-      url: `https://erenservis.net/arac/${marka}/`,
+      url: `https://www.erenservis.net/arac/${marka}/`,
       type: 'website',
-      images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
+      images: [{ url: 'https://www.erenservis.net/og-image.jpg', width: 1200, height: 630 }],
     },
   };
 }
@@ -122,7 +122,7 @@ export default async function MarkaPage({ params }: Props) {
     ? buildServiceSchema({
         name: buildBrandTransmissionTitle(brand),
         description: primary.description,
-        url: `https://erenservis.net/arac/${marka}/`,
+        url: `https://www.erenservis.net/arac/${marka}/`,
         areaServed: ['Bostancı', 'Kadıköy', 'İstanbul'],
       })
     : null;

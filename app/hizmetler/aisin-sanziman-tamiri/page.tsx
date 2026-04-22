@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'aisin tf80 tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/aisin-sanziman-tamiri/',
+    canonical: 'https://www.erenservis.net/hizmetler/aisin-sanziman-tamiri/',
   },
 };
 
@@ -67,14 +67,14 @@ const serviceSchema = buildServiceSchema({
   description:
     'Aisin şanzıman tamiri ve revizyonu. Toyota, Peugeot, Citroen, Opel, Volvo modellerinde ' +
     'valf gövdesi, tork konvertörü, yağ basıncı onarımı. Garantili işçilik.',
-  url: 'https://erenservis.net/hizmetler/aisin-sanziman-tamiri/',
+  url: 'https://www.erenservis.net/hizmetler/aisin-sanziman-tamiri/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'Aisin Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/aisin-sanziman-tamiri/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'Aisin Şanzıman Tamiri', url: 'https://www.erenservis.net/hizmetler/aisin-sanziman-tamiri/' },
 ]);
 
 export default function AisinSanzimanTamiriPage() {

@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "Clio, Captur ve Megane'de EDC şanzıman vuruntusunun nedenleri, belirtileri ve " +
       "kavrama değişim fiyatı. Bostancı'da ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/edc-vuruntu",
+    url: "https://www.erenservis.net/rehber/edc-vuruntu",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Renault EDC Şanzıman Vuruntu",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/edc-vuruntu",
+    canonical: "https://www.erenservis.net/rehber/edc-vuruntu",
   },
 };
 
@@ -54,23 +54,23 @@ const articleSchema = buildArticleSchema({
   description:
     "Renault Clio, Captur, Megane ve Nissan Juke'ta EDC şanzıman vuruntusunun " +
     "nedenleri, belirti tablosu ve maliyet rehberi.",
-  url: "https://erenservis.net/rehber/edc-vuruntu",
+  url: "https://www.erenservis.net/rehber/edc-vuruntu",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
-  { name: "EDC Vuruntu", url: "https://erenservis.net/rehber/edc-vuruntu" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
+  { name: "EDC Vuruntu", url: "https://www.erenservis.net/rehber/edc-vuruntu" },
 ]);
 
 const serviceSchema = buildServiceSchema({
   name: "Renault EDC Vuruntu Teşhis ve Onarım",
   description:
     "Renault EDC şanzıman vuruntu teşhisi, kavrama paketi değişimi ve adaptasyon kalibrasyonu. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/edc-vuruntu",
+  url: "https://www.erenservis.net/rehber/edc-vuruntu",
 });
 
 const modeller = [

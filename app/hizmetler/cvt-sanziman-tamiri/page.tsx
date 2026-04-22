@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'cvt yağ değişimi',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/cvt-sanziman-tamiri/',
+    canonical: 'https://www.erenservis.net/hizmetler/cvt-sanziman-tamiri/',
   },
 };
 
@@ -89,16 +89,16 @@ const serviceSchema = buildServiceSchema({
   description:
     "Bostancı'da CVT şanzıman tamiri ve revizyonu. Nissan, Toyota, Honda, Hyundai, Kia CVT " +
     'şanzıman kayış/zincir değişimi, yağ ve elektronik kalibrasyon. Garantili servis.',
-  url: 'https://erenservis.net/hizmetler/cvt-sanziman-tamiri/',
+  url: 'https://www.erenservis.net/hizmetler/cvt-sanziman-tamiri/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'CVT Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/cvt-sanziman-tamiri/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'CVT Şanzıman Tamiri', url: 'https://www.erenservis.net/hizmetler/cvt-sanziman-tamiri/' },
 ]);
 
 export default function CvtSanzımanTamiriPage() {

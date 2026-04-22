@@ -48,7 +48,7 @@ export default function HizmetSchema({
   minPrice,
   maxPrice,
 }: HizmetSchemaProps) {
-  const url = `https://erenservis.net/hizmetler/${slug}/`;
+  const url = `https://www.erenservis.net/hizmetler/${slug}/`;
   const faqItems = TRANSMISSION_FAQS[slug] ?? [];
 
   const serviceSchema = buildServiceSchema({
@@ -62,8 +62,8 @@ export default function HizmetSchema({
   });
 
   const breadcrumbSchema = buildBreadcrumbSchema([
-    { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-    { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
+    { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+    { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
     { name: breadcrumbLabel, url },
   ]);
 

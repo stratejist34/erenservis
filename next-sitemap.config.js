@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://erenservis.net',
+  siteUrl: 'https://www.erenservis.net',
   // robots.txt elle yönetiliyor (public/robots.txt) — üzerine yazılmasın
   generateRobotsTxt: false,
   trailingSlash: true,

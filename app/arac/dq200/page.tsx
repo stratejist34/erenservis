@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     '7 ileri dsg tamiri',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/arac/dq200/',
+    canonical: 'https://www.erenservis.net/arac/dq200/',
   },
 };
 
@@ -75,7 +75,7 @@ export default function DQ200Page() {
   const serviceSchema = buildServiceSchema({
     name: 'DQ200 DSG Şanzıman Tamiri',
     description: 'DQ200 7 ileri kuru kavramalı DSG şanzıman mekatronik, kavrama ve basınç tüpü tamiri.',
-    url: 'https://erenservis.net/arac/dq200/',
+    url: 'https://www.erenservis.net/arac/dq200/',
     areaServed: ['Bostancı', 'Kadıköy', 'İstanbul'],
   });
 

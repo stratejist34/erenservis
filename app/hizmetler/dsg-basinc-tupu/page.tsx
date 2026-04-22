@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'dsg basınç sorunu bostancı',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/dsg-basinc-tupu/',
+    canonical: 'https://www.erenservis.net/hizmetler/dsg-basinc-tupu/',
   },
 };
 
@@ -79,14 +79,14 @@ const serviceSchema = buildServiceSchema({
   description:
     'DQ200 DSG şanzıman basınç tüpü değişimi ve yükseltmesi. OEM orijinal veya ' +
     "WT Wolf's Tech güçlendirilmiş seçenek. Montaj, adaptasyon ve garanti dahil.",
-  url: 'https://erenservis.net/hizmetler/dsg-basinc-tupu/',
+  url: 'https://www.erenservis.net/hizmetler/dsg-basinc-tupu/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'DSG Basınç Tüpü', url: 'https://erenservis.net/hizmetler/dsg-basinc-tupu/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'DSG Basınç Tüpü', url: 'https://www.erenservis.net/hizmetler/dsg-basinc-tupu/' },
 ]);
 
 export default function DsgBasincTupuPage() {

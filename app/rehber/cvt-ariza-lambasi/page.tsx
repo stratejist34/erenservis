@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "CVT şanzımanda uyarı ışığının nedenleri ve aciliyet değerlendirmesi. " +
       "Bostancı'da ücretsiz hata kodu okuma.",
-    url: "https://erenservis.net/rehber/cvt-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "CVT Arıza Lambası",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/cvt-ariza-lambasi",
+    canonical: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
   },
 };
 
@@ -54,18 +54,18 @@ const articleSchema = buildArticleSchema({
   description:
     "CVT şanzımanda arıza lambası nedenleri, model bazında farklılıklar ve " +
     "aciliyet değerlendirmesi.",
-  url: "https://erenservis.net/rehber/cvt-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "CVT Arıza Lambası",
-    url: "https://erenservis.net/rehber/cvt-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "CVT Arıza Lambası Teşhis ve Onarım",
   description:
     "CVT şanzımanda arıza lambası teşhisi ve onarımı. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/cvt-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi",
 });
 
 const modeller = [

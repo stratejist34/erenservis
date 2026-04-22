@@ -24,15 +24,15 @@ export const metadata: Metadata = {
     'şanzıman periyodik bakım',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+    canonical: 'https://www.erenservis.net/hizmetler/sanziman-bakimi/',
   },
   openGraph: {
     title: 'Şanzıman Yağı Değişimi ve Bakım | DSG CVT Bostancı 2026',
     description:
       'DSG, CVT ve otomatik şanzıman yağı değişimi + OBD diagnostik. Bostancı\'da aynı gün servis.',
-    url: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+    url: 'https://www.erenservis.net/hizmetler/sanziman-bakimi/',
     type: 'website',
-    images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
 };
 
@@ -87,14 +87,14 @@ const serviceSchema = buildServiceSchema({
   description:
     "Otomatik şanzıman yağı değişimi, filtre temizliği ve bilgisayar diagnostik. Bostancı'da " +
     'erken arıza tespiti ve şanzıman koruma bakımı.',
-  url: 'https://erenservis.net/hizmetler/sanziman-bakimi/',
+  url: 'https://www.erenservis.net/hizmetler/sanziman-bakimi/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'Şanzıman Bakımı', url: 'https://erenservis.net/hizmetler/sanziman-bakimi/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'Şanzıman Bakımı', url: 'https://www.erenservis.net/hizmetler/sanziman-bakimi/' },
 ]);
 
 const bakimFaqItems = TRANSMISSION_FAQS['sanziman-bakimi'] ?? [];

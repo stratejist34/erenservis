@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'mekatronik arıza belirtileri',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/mekatronik-nedir/',
+    canonical: 'https://www.erenservis.net/blog/mekatronik-nedir/',
   },
 };
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'edc7 edc8 farkı',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/edc-sanziman-ariza-belirtileri/',
+    canonical: 'https://www.erenservis.net/blog/edc-sanziman-ariza-belirtileri/',
   },
 };
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'şanzıman işçilik ücreti',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/otomatik-sanziman-tamiri-fiyat/',
+    canonical: 'https://www.erenservis.net/blog/otomatik-sanziman-tamiri-fiyat/',
   },
 };
 

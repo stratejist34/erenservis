@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: "CVT Şanzımanda Kayma ve Vites Atlama | Eren Servis",
     description:
       "Toyota, Honda, Nissan CVT kayma nedenleri ve kayış değişim maliyeti. Bostancı.",
-    url: "https://erenservis.net/rehber/cvt-kayma",
+    url: "https://www.erenservis.net/rehber/cvt-kayma",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "CVT Şanzımanda Kayma",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/cvt-kayma",
+    canonical: "https://www.erenservis.net/rehber/cvt-kayma",
   },
 };
 
@@ -53,18 +53,18 @@ const articleSchema = buildArticleSchema({
   description:
     "Toyota, Honda, Nissan, Subaru CVT modellerinde kayma nedenleri, kayış " +
     "aşınması belirtileri ve maliyet analizi.",
-  url: "https://erenservis.net/rehber/cvt-kayma",
+  url: "https://www.erenservis.net/rehber/cvt-kayma",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "CVT Kayma",
-    url: "https://erenservis.net/rehber/cvt-kayma",
+    url: "https://www.erenservis.net/rehber/cvt-kayma",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "CVT Şanzıman Kayma Teşhisi ve Kayış Değişimi",
   description:
     "Toyota, Honda, Nissan, Subaru CVT modellerinde kayma teşhisi, kayış ve pully seti onarımı. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/cvt-kayma",
+  url: "https://www.erenservis.net/rehber/cvt-kayma",
 });
 
 const markalar = [

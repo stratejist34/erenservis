@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'zf sanziman revizyonu',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/zf-sanziman-tamiri/',
+    canonical: 'https://www.erenservis.net/hizmetler/zf-sanziman-tamiri/',
   },
 };
 
@@ -96,16 +96,16 @@ const serviceSchema = buildServiceSchema({
   description:
     "Bostancı'da ZF şanzıman tamiri ve revizyonu. ZF 8HP, ZF 6HP ve tüm ZF otomatik şanzıman " +
     'modelleri. BMW, Mercedes, Audi, Land Rover. 6 ay garanti.',
-  url: 'https://erenservis.net/hizmetler/zf-sanziman-tamiri/',
+  url: 'https://www.erenservis.net/hizmetler/zf-sanziman-tamiri/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'ZF Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/zf-sanziman-tamiri/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'ZF Şanzıman Tamiri', url: 'https://www.erenservis.net/hizmetler/zf-sanziman-tamiri/' },
 ]);
 
 export default function ZfSanzımanTamiriPage() {

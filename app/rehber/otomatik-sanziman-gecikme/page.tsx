@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: "Otomatik Şanzımanda Gecikme: Vites Geç Geçiyor | Eren Servis",
     description:
       "DSG, ZF, Aisin ve CVT'de geç vites değişimi nedenleri ve çözümleri. Bostancı.",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-gecikme",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Otomatik Şanzımanda Gecikme",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/otomatik-sanziman-gecikme",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
   },
 };
 
@@ -53,18 +53,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, ZF, Aisin, CVT ve PowerShift şanzımanlarda vites gecikmesinin nedenleri, " +
     "ayırt edici belirtiler ve çözüm yaklaşımı.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-gecikme",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "Otomatik Şanzımanda Gecikme",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-gecikme",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Vites Gecikmesi Teşhisi ve Onarımı",
   description:
     "DSG, ZF, Aisin ve CVT'de gecikme teşhisi, solenoid revizyonu ve adaptasyon. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-gecikme",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
 });
 
 const tipler = [

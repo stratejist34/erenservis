@@ -26,5 +26,5 @@ Allow: /
 User-agent: bingbot
 Allow: /
 
-Host: https://erenservis.net
-Sitemap: https://erenservis.net/sitemap.xml
+Host: https://www.erenservis.net
+Sitemap: https://www.erenservis.net/sitemap.xml

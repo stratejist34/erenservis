@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "DSG, EDC, CVT şanzımanlarda arıza lambası anlamı ve yapılması gerekenler. " +
       "Bostancı'da ücretsiz hata kodu okuma — Eren Servis.",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Otomatik Şanzıman Arıza Lambası",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
   },
 };
 
@@ -54,18 +54,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, EDC, CVT ve ZF şanzımanlarda arıza lambası tipleri, anlamları ve " +
     "aciliyet değerlendirmesi.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "Otomatik Şanzıman Arıza Lambası",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "Şanzıman Arıza Lambası Teşhis ve Hata Kodu Okuma",
   description:
     "Tüm otomatik şanzıman tiplerinde arıza lambası teşhisi ve hata kodu okuma. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
 });
 
 const tipler = [

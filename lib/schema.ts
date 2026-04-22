@@ -45,12 +45,12 @@ export interface BreadcrumbItem {
 
 const BUSINESS_NODE = {
   '@type': ['LocalBusiness', 'AutoRepair', 'Organization'] as const,
-  '@id': 'https://erenservis.net/#business',
+  '@id': 'https://www.erenservis.net/#business',
   name: 'Eren Servis',
   description:
     "Bostancı'nın DSG ve otomatik şanzıman uzmanı. DQ200, DQ250, DQ381 " +
     'mekatronik, kavrama ve CVT tamiri.',
-  url: 'https://erenservis.net',
+  url: 'https://www.erenservis.net',
   telephone: '+90 532 715 37 51',
   address: {
     '@type': 'PostalAddress' as const,
@@ -85,20 +85,20 @@ const BUSINESS_NODE = {
   sameAs: ['https://www.google.com/maps/place/Eren+Volkswagen+Servis+Bostanc%C4%B1/@40.9656025,29.1093912'],
   logo: {
     '@type': 'ImageObject' as const,
-    '@id': 'https://erenservis.net/#logo',
-    url: 'https://erenservis.net/images/erenlogo.webp',
-    contentUrl: 'https://erenservis.net/images/erenlogo.webp',
+    '@id': 'https://www.erenservis.net/#logo',
+    url: 'https://www.erenservis.net/images/erenlogo.webp',
+    contentUrl: 'https://www.erenservis.net/images/erenlogo.webp',
   },
   image: {
     '@type': 'ImageObject' as const,
-    url: 'https://erenservis.net/og-image.jpg',
+    url: 'https://www.erenservis.net/og-image.jpg',
     width: 1200,
     height: 630,
   },
 };
 
 /** Pure @id pointer — entity tam tanımı BUSINESS_NODE'da, her yerde bu kullanılır. */
-export const BUSINESS_REF = { '@id': 'https://erenservis.net/#business' } as const;
+export const BUSINESS_REF = { '@id': 'https://www.erenservis.net/#business' } as const;
 
 /* ── LOCAL BUSINESS (site geneli — layout'a bir kez eklenir) ────────────── */
 
@@ -168,12 +168,12 @@ export function buildArticleSchema(params: ArticleParams) {
     dateModified: params.dateModified ?? params.datePublished,
     author: {
       '@type': 'Person',
-      '@id': 'https://erenservis.net/#author',
+      '@id': 'https://www.erenservis.net/#author',
       name: 'Eren Servis Teknik Ekibi',
-      url: 'https://erenservis.net/hakkimizda/',
-      worksFor: { '@id': 'https://erenservis.net/#business' },
+      url: 'https://www.erenservis.net/hakkimizda/',
+      worksFor: { '@id': 'https://www.erenservis.net/#business' },
     },
-    publisher: { '@id': 'https://erenservis.net/#business' },
+    publisher: { '@id': 'https://www.erenservis.net/#business' },
     speakable: {
       '@type': 'SpeakableSpecification',
       cssSelector: params.speakableCssSelectors ?? [
@@ -227,7 +227,7 @@ export function buildBrandListSchema() {
         name: buildBrandTransmissionTitle(brand),
         serviceType: 'Şanzıman Tamiri',
         provider: BUSINESS_REF,
-        url: `https://erenservis.net/arac/${brand.slug}/`,
+        url: `https://www.erenservis.net/arac/${brand.slug}/`,
       },
     })),
   };

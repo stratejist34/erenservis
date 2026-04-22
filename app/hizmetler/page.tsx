@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Servis.',
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/',
+    canonical: 'https://www.erenservis.net/hizmetler/',
   },
   openGraph: {
     title: 'Hizmetlerimiz | Eren Servis — Bostancı Otomatik Şanzıman',
     description:
       'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Servis.',
-    url: 'https://erenservis.net/hizmetler/',
+    url: 'https://www.erenservis.net/hizmetler/',
     siteName: 'Eren Servis',
     locale: 'tr_TR',
     type: 'website',

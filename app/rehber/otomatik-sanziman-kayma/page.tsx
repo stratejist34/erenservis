@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "DSG, CVT ve tork konvertörlü şanzımanlarda kayma nedenleri ve çözümleri. " +
       "Bostancı'da ücretsiz teşhis.",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-kayma",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Otomatik Şanzıman Kayma ve Vites Atlama",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/otomatik-sanziman-kayma",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
   },
 };
 
@@ -55,18 +55,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, CVT, ZF/Aisin ve klasik otomatiklerde kayma ve vites atlama nedenleri, " +
     "ayırt edici belirtiler ve aciliyet değerlendirmesi.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-kayma",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "Otomatik Şanzımanda Kayma",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-kayma",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
   },
 ]);
 
@@ -74,7 +74,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Kayma ve Vites Atlama Teşhisi",
   description:
     "DSG, CVT ve tork konvertörlü şanzımanlarda kayma teşhisi, basınç testi ve onarım. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-kayma",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma",
 });
 
 const tipler = [

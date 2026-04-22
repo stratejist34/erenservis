@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "Rölantide sarsıntı, D vitesinde titreşim ve klima ile artan sarsıntı — " +
       "nedenleri ve çözümleri. Bostancı'da ücretsiz teşhis.",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-sarsinti",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Otomatik Şanzımanda Sarsıntı ve Titreşim",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/otomatik-sanziman-sarsinti",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
   },
 };
 
@@ -55,18 +55,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, CVT, ZF/Aisin ve PowerShift şanzımanlarda sarsıntı nedenleri, ayırt edici " +
     "belirtiler ve aciliyet değerlendirmesi.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-sarsinti",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "Otomatik Şanzımanda Sarsıntı",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-sarsinti",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
   },
 ]);
 
@@ -74,7 +74,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Sarsıntı ve Titreşim Teşhisi",
   description:
     "Volant, kavrama paketi ve tork konvertör kaynaklı sarsıntıların teşhisi ve onarımı. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-sarsinti",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti",
 });
 
 const tipler = [

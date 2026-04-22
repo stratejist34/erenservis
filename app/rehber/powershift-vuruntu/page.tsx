@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     description:
       "Focus ve Fiesta'da DPS6 vuruntusunun nedenleri, belirtileri ve kavrama seti değişim fiyatı. " +
       "Bostancı'da ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/powershift-vuruntu",
+    url: "https://www.erenservis.net/rehber/powershift-vuruntu",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Ford PowerShift DPS6 Vuruntu",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/powershift-vuruntu",
+    canonical: "https://www.erenservis.net/rehber/powershift-vuruntu",
   },
 };
 
@@ -54,18 +54,18 @@ const articleSchema = buildArticleSchema({
   description:
     "Ford Focus ve Fiesta DPS6 şanzımanda vuruntunun nedenleri, " +
     "belirti tablosu, adaptasyon sıfırlama ve kavrama seti maliyeti.",
-  url: "https://erenservis.net/rehber/powershift-vuruntu",
+  url: "https://www.erenservis.net/rehber/powershift-vuruntu",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "PowerShift Vuruntu",
-    url: "https://erenservis.net/rehber/powershift-vuruntu",
+    url: "https://www.erenservis.net/rehber/powershift-vuruntu",
   },
 ]);
 
@@ -73,7 +73,7 @@ const serviceSchema = buildServiceSchema({
   name: "Ford PowerShift DPS6 Vuruntu Teşhis ve Onarım",
   description:
     "Ford PowerShift DPS6 şanzıman vuruntu teşhisi, kavrama seti değişimi ve TCM onarımı. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/powershift-vuruntu",
+  url: "https://www.erenservis.net/rehber/powershift-vuruntu",
 });
 
 const modeller = [

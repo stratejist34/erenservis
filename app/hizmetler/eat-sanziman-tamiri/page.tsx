@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'eat mekatronik onarım',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/hizmetler/eat-sanziman-tamiri/',
+    canonical: 'https://www.erenservis.net/hizmetler/eat-sanziman-tamiri/',
   },
 };
 
@@ -67,14 +67,14 @@ const serviceSchema = buildServiceSchema({
   description:
     'EAT6 ve EAT8 şanzıman tamiri, valf gövdesi revizyonu, mekatronik onarım. ' +
     'Peugeot, Citroen, Opel, Ford modellerinde uzman servis. Garantili işçilik.',
-  url: 'https://erenservis.net/hizmetler/eat-sanziman-tamiri/',
+  url: 'https://www.erenservis.net/hizmetler/eat-sanziman-tamiri/',
   areaServed: ['Bostancı', 'Kadıköy', 'Üsküdar', 'Maltepe', 'İstanbul'],
 });
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Ana Sayfa', url: 'https://erenservis.net' },
-  { name: 'Hizmetler', url: 'https://erenservis.net/hizmetler/' },
-  { name: 'EAT Şanzıman Tamiri', url: 'https://erenservis.net/hizmetler/eat-sanziman-tamiri/' },
+  { name: 'Ana Sayfa', url: 'https://www.erenservis.net' },
+  { name: 'Hizmetler', url: 'https://www.erenservis.net/hizmetler/' },
+  { name: 'EAT Şanzıman Tamiri', url: 'https://www.erenservis.net/hizmetler/eat-sanziman-tamiri/' },
 ]);
 
 export default function EATSanzimanTamiriPage() {

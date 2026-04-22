@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "DSG'de anahtar işareti veya P lambası yanıyorsa durumu anlayın. " +
       "Bostancı'da ücretsiz hata kodu okuma — Eren Servis.",
-    url: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
+    url: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari",
     type: "article",
     publishedTime: "2026-03-30",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/images/og/dsg-uyari-lambasi.jpg",
+        url: "https://www.erenservis.net/images/og/dsg-uyari-lambasi.jpg",
         width: 1200,
         height: 630,
         alt: "DSG Uyarı Lambası Semptomu",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
+    canonical: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari",
   },
 };
 
@@ -56,18 +56,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG anahtar işareti, P sembolü veya vites göstergesi yanıyorsa ne anlama " +
     "gelir, ne yapılmalı — model bazında açıklama.",
-  url: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
+  url: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari",
   datePublished: "2026-03-30",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "DSG Uyarı Lambası",
-    url: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
+    url: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari",
   },
 ]);
 
@@ -75,7 +75,7 @@ const serviceSchema = buildServiceSchema({
   name: "DSG Uyarı Lambası Teşhis",
   description:
     "P ışığı ve şanzıman uyarı lambası teşhisi, hata kodu okuma ve mekatronik onarımı. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/uyari-lambasi-semptomlari",
+  url: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari",
 });
 
 // ─── VERİ ─────────────────────────────────────────────────────────────────────

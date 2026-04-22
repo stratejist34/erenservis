@@ -206,12 +206,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: `https://erenservis.net/blog/${slug}/`,
+      canonical: `https://www.erenservis.net/blog/${slug}/`,
     },
     openGraph: {
       title,
       description,
-      url: `https://erenservis.net/blog/${slug}/`,
+      url: `https://www.erenservis.net/blog/${slug}/`,
       siteName: 'Eren Servis',
       locale: 'tr_TR',
       type: 'article',

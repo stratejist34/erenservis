@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'dsg şanzıman solenoid fiyatı',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/solenoid-valf-ariza-belirtileri/',
+    canonical: 'https://www.erenservis.net/blog/solenoid-valf-ariza-belirtileri/',
   },
 };
 

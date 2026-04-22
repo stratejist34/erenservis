@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     description:
       "DSG, PowerShift, EDC ve CVT şanzımanlarda vuruntu nedenleri. " +
       "Bostancı'da ücretsiz ön tanı.",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-vuruntu",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Otomatik Şanzımanda Vuruntu",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/otomatik-sanziman-vuruntu",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
   },
 };
 
@@ -53,18 +53,18 @@ const articleSchema = buildArticleSchema({
   description:
     "DSG, PowerShift, EDC ve CVT şanzımanlarda vuruntunun nedenleri, " +
     "davranış farkları ve tehlike sinyalleri.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-vuruntu",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "Otomatik Şanzımanda Vuruntu",
-    url: "https://erenservis.net/rehber/otomatik-sanziman-vuruntu",
+    url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "Otomatik Şanzıman Vuruntu Teşhis ve Onarım",
   description:
     "Tüm otomatik şanzıman tiplerinde vuruntu arızası teşhisi ve onarımı. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/otomatik-sanziman-vuruntu",
+  url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu",
 });
 
 const tipler = [

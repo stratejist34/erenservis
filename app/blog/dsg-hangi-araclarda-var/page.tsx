@@ -20,15 +20,15 @@ export const metadata: Metadata = {
     'dsg olan arabalar 2026',
   ],
   alternates: {
-    canonical: 'https://erenservis.net/blog/dsg-hangi-araclarda-var/',
+    canonical: 'https://www.erenservis.net/blog/dsg-hangi-araclarda-var/',
   },
   openGraph: {
     title: 'DSG Hangi Araçlarda Var? DQ200/DQ381 Tam Liste 2026',
     description:
       'VW, Audi, Seat, Skoda için DSG model listesi. DQ200 kuru mu DQ250 ıslak mı? Araçta DSG var mı nasıl anlarım.',
-    url: 'https://erenservis.net/blog/dsg-hangi-araclarda-var/',
+    url: 'https://www.erenservis.net/blog/dsg-hangi-araclarda-var/',
     type: 'article',
-    images: [{ url: 'https://erenservis.net/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.erenservis.net/og-image.jpg', width: 1200, height: 630 }],
   },
 };
 

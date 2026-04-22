@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: "ZF ve Aisin Şanzımanda Gecikme | Eren Servis",
     description:
       "Mercedes, BMW, Peugeot, Volvo'da tork konvertörlü şanzıman gecikmesi. Bostancı.",
-    url: "https://erenservis.net/rehber/zf-aisin-gecikme",
+    url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
     type: "article",
     publishedTime: "2026-04-17",
     authors: ["Eren Servis"],
     images: [
       {
-        url: "https://erenservis.net/og-image.jpg",
+        url: "https://www.erenservis.net/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "ZF ve Aisin Şanzıman Gecikme",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://erenservis.net/rehber/zf-aisin-gecikme",
+    canonical: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
   },
 };
 
@@ -53,18 +53,18 @@ const articleSchema = buildArticleSchema({
   description:
     "ZF 8HP, Mercedes 7G/9G-Tronic ve Aisin TF80-SC şanzımanlarda vites gecikmesi " +
     "nedenleri, valve body revizyonu ve adaptasyon süreci.",
-  url: "https://erenservis.net/rehber/zf-aisin-gecikme",
+  url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
   datePublished: "2026-04-17",
 });
 
 const faqSchema = buildFAQSchema(faqItems);
 
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Ana Sayfa", url: "https://erenservis.net" },
-  { name: "Rehber", url: "https://erenservis.net/rehber" },
+  { name: "Ana Sayfa", url: "https://www.erenservis.net" },
+  { name: "Rehber", url: "https://www.erenservis.net/rehber" },
   {
     name: "ZF ve Aisin Gecikme",
-    url: "https://erenservis.net/rehber/zf-aisin-gecikme",
+    url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
   },
 ]);
 
@@ -72,7 +72,7 @@ const serviceSchema = buildServiceSchema({
   name: "ZF ve Aisin Şanzıman Valve Body Revizyonu",
   description:
     "ZF 8HP, Mercedes 7G/9G-Tronic ve Aisin TF80-SC valve body, solenoid ve adaptasyon servisi. Bostancı, İstanbul.",
-  url: "https://erenservis.net/rehber/zf-aisin-gecikme",
+  url: "https://www.erenservis.net/rehber/zf-aisin-gecikme",
 });
 
 const aileler = [

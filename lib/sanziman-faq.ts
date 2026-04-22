@@ -620,7 +620,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       q: 'DQ200 ve DQ250 solenoid farkı nedir?',
       a:
         'DQ200 kuru tip şanzımandır ve solenoidleri daha küçüktür; basınç tüpü gevşemesi ' +
-        'kronik sorundur. DQ250 ıslak tiptir ve solenoidleri sürekli yağ banyosu içinde ' +
+        'kronik sorundur. DQ250 ıslak tiptir ve solenoidleri sürekli yağ banyosunda ' +
         'çalışır — yağ bakımı kritik önem taşır.',
     },
   ],
@@ -643,8 +643,8 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'DQ200 mu DQ250 mu daha uzun ömürlü?',
       a:
-        'DQ250 ıslak kavrama yapısı ve yağ banyolu sistemi sayesinde ısıyı daha iyi ' +
-        'yönetir ve genellikle daha uzun ömürlüdür. DQ200 şehir içi yoğun kullanımda ' +
+        'DQ250 ıslak kavrama yapısı ve yağ banyosu sayesinde ısıyı daha iyi ' +
+        'yönetir ve genellikle daha uzun ömürlüdür. DQ200 kuru kavramalı olduğundan şehir içi yoğun kullanımda ' +
         'daha çabuk aşınır.',
     },
     {

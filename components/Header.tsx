@@ -89,6 +89,7 @@ export default function Header() {
           alt="Eren Otomatik Şanzıman Servisi"
           width={112}
           height={31}
+          sizes="112px"
           className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-[26px]' : 'h-[31px]'}`}
           priority
         />

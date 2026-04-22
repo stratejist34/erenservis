@@ -1,4 +1,9 @@
 import type { NextConfig } from "next";
+import os from "node:os";
+
+// Build-time paralelliğini makinedeki fiziksel çekirdek sayısına göre seç.
+// Hosts with very low core counts (1-2) still benefit from a minimum of 2.
+const BUILD_CPUS = Math.max(2, Math.min(os.cpus().length, 8));
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -18,7 +23,7 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', 'date-fns'],
-    cpus: 4,
+    cpus: BUILD_CPUS,
   },
 
   compiler: {

@@ -89,7 +89,7 @@ export const TRANSMISSIONS: Record<string, TransmissionFamily> = {
       { question: 'DQ250 ne kadar dayanır?', answer: 'Islak kavrama sistemi sayesinde DQ200\'den daha uzun ömürlüdür. Bakımlı kullanımda 200.000 km üzeri beklenir. Şanzıman yağı 60.000 km\'de değiştirilmelidir.' },
       { question: 'DQ250 mekatronik tamiri gerekiyor mu?', answer: 'DQ250 mekatronik arızaları DQ200 kadar sık değildir. En yaygın sorun mekatronik yağ sızıntısıdır. Erken müdahale mekatronik yenilenmesini önler.' },
       { question: 'DQ250 hangi araçlarda var?', answer: 'Volkswagen Passat 2.0 TDI/TSI, Golf GTI, Audi A3 2.0 TFSI, Skoda Octavia RS ve benzeri yüksek torklu VAG grubu araçlarda yaygındır.' },
-      { question: 'DQ250 ile DQ200 farkı nedir?', answer: 'DQ250 ıslak kavramalı (yağ banyosunda) 6 ileri, DQ200 kuru kavramalı 7 ileri şanzımandır. DQ250 daha yüksek tork kapasitesi sunar; kavrama titremesi DQ200\'e göre çok daha azdır.' },
+      { question: 'DQ250 ile DQ200 farkı nedir?', answer: 'DQ250 ıslak kavramalı (yağ banyosunda çalışır) 6 ileri, DQ200 kuru kavramalı 7 ileri şanzımandır. DQ250 daha yüksek tork kapasitesi sunar; kavrama titremesi DQ200\'e göre çok daha azdır.' },
       { question: 'DQ250 tamiri Bostancı\'da yapılıyor mu?', answer: 'Evet, Eren Servis Bostancı Oto Sanayi Sitesi\'nde DQ250 mekatronik, kavrama ve yağ değişimi hizmetleri verilmektedir.' },
     ],
   },

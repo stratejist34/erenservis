@@ -116,7 +116,7 @@ export const BRANDS: Brand[] = [
   {
     slug: 'ford',
     name: 'Ford',
-    logo: { src: '/images/brands/Ford_Motor_Company_Logo.svg.webp', width: 40, height: 40, filter: 'gradient' },
+    logo: { src: '/images/brands/ford-logo.webp', width: 40, height: 40, filter: 'gradient' },
     transmissions: [
       { familyId: 'ford-powershift', isPrimary: true, models: ['Focus', 'Fiesta', 'B-Max', 'EcoSport', 'Mondeo', 'Kuga'] },
     ],

@@ -275,6 +275,49 @@ export function buildTransmissionSchema(params: TransmissionSchemaParams) {
   };
 }
 
+/* ── REVIEWS (ItemList + tek tek Review entity) ─────────────────────────── */
+
+export interface ReviewSchemaItem {
+  name: string;
+  vehicle: string;
+  rating: number;
+  text: string;
+  datePublished: string;
+}
+
+/**
+ * Müşteri yorumları için ItemList + Review[] schema.
+ * itemReviewed olarak BUSINESS_REF kullanılır — aggregateRating BUSINESS_NODE'da tanımlı.
+ * Google rich result: review snippet (yıldız + yazar + tarih).
+ */
+export function buildReviewsSchema(reviews: ReviewSchemaItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Eren Servis Müşteri Yorumları',
+    itemListElement: reviews.map((review, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: review.name,
+        },
+        datePublished: review.datePublished,
+        reviewBody: review.text,
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: review.rating,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        itemReviewed: BUSINESS_REF,
+      },
+    })),
+  };
+}
+
 /* ── HOW TO ──────────────────────────────────────────────────────────────── */
 
 export interface HowToSchemaParams {

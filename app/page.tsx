@@ -42,6 +42,22 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative">
+      {/* Hero LCP preload — picture'ın media query'sine eşleşen varyantı erken çeker.
+          Native <img> + <picture> kullandığımız için Next/Image'ın otomatik preload'u devrede değil. */}
+      <link
+        rel="preload"
+        as="image"
+        href="/images/part2/Screenshot_57-mobile.webp"
+        media="(max-width: 768px)"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/part2/Screenshot_57.webp"
+        media="(min-width: 769px)"
+        fetchPriority="high"
+      />
       <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
         <SymptomProvider>
           <HomePageSections />

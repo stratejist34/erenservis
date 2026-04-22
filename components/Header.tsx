@@ -94,6 +94,7 @@ export default function Header() {
           width={112}
           height={31}
           sizes="112px"
+          quality={60}
           className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-[26px]' : 'h-[31px]'}`}
           priority
         />

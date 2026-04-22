@@ -114,6 +114,15 @@ export default function RootLayout({
       lang="tr"
       className={`${geistSans.variable} ${sairaSemiCondensed.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* GTM 153 KB — lazyOnload olsa da connection'ı erken kur */}
+        {GA_ID && (
+          <>
+            <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+          </>
+        )}
+      </head>
       <body className="font-sans antialiased pb-16 md:pb-0">
         {GA_ID && (
           <>

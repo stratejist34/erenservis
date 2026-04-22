@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   // Next.js 16 turbopack TS native-checker build sırasında OOM veriyor.
   // Ayrı `npx tsc --noEmit` CI'da çalıştırılıyor; build-time çift check gereksiz.
   typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
 
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -277,22 +276,14 @@ const nextConfig: NextConfig = {
       { source: '/sanziman', destination: '/sanziman-tipleri/', permanent: true },
       { source: '/sanziman/', destination: '/sanziman-tipleri/', permanent: true },
       { source: '/sanziman/:slug*', destination: '/sanziman-tipleri/', permanent: true },
-      // Marka kategori sayfaları
-      {
-        source: '/marka/:slug',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/markalar',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/markalar/',
-        destination: '/',
-        permanent: true,
-      },
+      // Marka kategori sayfaları — tüm varyantlar anasayfaya
+      { source: '/marka', destination: '/', permanent: true },
+      { source: '/marka/', destination: '/', permanent: true },
+      { source: '/marka/:slug', destination: '/', permanent: true },
+      { source: '/marka/:slug/', destination: '/', permanent: true },
+      { source: '/marka/:slug*', destination: '/', permanent: true },
+      { source: '/markalar', destination: '/', permanent: true },
+      { source: '/markalar/', destination: '/', permanent: true },
     ];
   },
 };

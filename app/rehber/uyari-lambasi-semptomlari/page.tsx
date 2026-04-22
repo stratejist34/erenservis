@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari",
+    canonical: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari/",
   },
 };
 

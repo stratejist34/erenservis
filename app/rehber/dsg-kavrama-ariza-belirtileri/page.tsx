@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri",
+    canonical: "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri/",
   },
 };
 

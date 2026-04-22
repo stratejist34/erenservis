@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart",
+    canonical: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
   },
 };
 

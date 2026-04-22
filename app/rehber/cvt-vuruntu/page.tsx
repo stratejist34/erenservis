@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/cvt-vuruntu",
+    canonical: "https://www.erenservis.net/rehber/cvt-vuruntu/",
   },
 };
 

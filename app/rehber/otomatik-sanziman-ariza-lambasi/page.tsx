@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi/",
   },
 };
 

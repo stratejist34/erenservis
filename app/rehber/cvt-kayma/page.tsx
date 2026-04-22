@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/cvt-kayma",
+    canonical: "https://www.erenservis.net/rehber/cvt-kayma/",
   },
 };
 

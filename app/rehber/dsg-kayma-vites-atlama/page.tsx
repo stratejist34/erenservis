@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama",
+    canonical: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama/",
   },
 };
 

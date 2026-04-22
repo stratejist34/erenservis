@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/edc-ariza-lambasi",
+    canonical: "https://www.erenservis.net/rehber/edc-ariza-lambasi/",
   },
 };
 

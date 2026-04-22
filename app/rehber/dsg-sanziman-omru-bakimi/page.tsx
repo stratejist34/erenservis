@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi",
+    canonical: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",
   },
 };
 

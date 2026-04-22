@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme",
+    canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme/",
   },
 };
 

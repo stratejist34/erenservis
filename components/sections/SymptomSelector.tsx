@@ -8,7 +8,7 @@ const PHONE_HREF = 'tel:+905327153751';
 
 export default function SymptomSelector() {
   const { selectedId, setSelectedId } = useSymptom();
-  const active = SYMPTOMS.find((s) => s.id === selectedId)!;
+  const active = SYMPTOMS.find((s) => s.id === selectedId) ?? SYMPTOMS[0];
 
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">

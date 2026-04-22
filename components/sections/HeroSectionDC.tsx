@@ -90,7 +90,7 @@ export default function HeroSectionDC({
   const phoneHref = `tel:${ctaPhone.number.replace(/\s/g, '')}`;
   const pathname = usePathname() ?? '/';
   const { selectedId, setSelectedId } = useSymptom();
-  const selected = SYMPTOMS.find((s) => s.id === selectedId)!;
+  const selected = SYMPTOMS.find((s) => s.id === selectedId) ?? SYMPTOMS[0];
 
   const [delayedId, setDelayedId] = useState(selectedId);
   const [ctaFading, setCtaFading] = useState(false);
@@ -113,7 +113,7 @@ export default function HeroSectionDC({
     return () => clearTimeout(t);
   }, [selectedId, delayedId]);
 
-  const delayed = SYMPTOMS.find((s) => s.id === delayedId)!;
+  const delayed = SYMPTOMS.find((s) => s.id === delayedId) ?? SYMPTOMS[0];
   const preDiagLabel = `${delayed.shortLabel} için ön teşhis al`;
   const preDiagContext = `Muhtemel: ${delayed.label} — ${delayed.severity === 'high' ? 'Yüksek risk' : 'Orta risk'}`;
   const preDiagWaHref = `https://wa.me/905327153751?text=${encodeURIComponent(

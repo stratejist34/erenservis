@@ -454,7 +454,7 @@ export const transmissions: TransmissionType[] = [
       'EDC (Efficient Dual Clutch), Renault-Nissan ittifakının Getrag ortaklığıyla geliştirdiği 6 ve 7 ileri kuru kavramalı çift kavramalı şanzımandır. Clio, Megane, Captur, Fluence ve Nissan Juke gibi küçük–orta sınıf modellerde yaygındır. DSG DQ200\'e mimari olarak benzer ancak mekatronik tasarımı ve kavrama sistemi farklıdır. En yaygın servis konuları kavrama balatası aşınması, mekatronik rezistans arızası ve adaptasyon kaybıdır. Erken belirti tanıma (vuruntu, nötr takılma) ile onarım maliyeti düşük tutulabilir.',
     shortDesc:
       'Renault Clio, Megane, Captur ve Nissan Juke\'ta kullanılan 6/7 ileri kuru kavramalı çift kavramalı şanzıman. Kavrama ve mekatronik başlıca servis konusu.',
-    serviceHref: '/hizmetler/dsg-sanziman-tamiri/',
+    serviceHref: '/hizmetler/dsg-kavrama-degisimi/',
     metaTitle: 'Renault EDC Arızaları ve Bakımı | Eren Servis Bostancı',
     metaDescription:
       'Renault EDC6 / EDC7 (DC4) şanzıman arızaları, kavrama aşınması, mekatronik rezistans ve adaptasyon. Clio, Megane, Captur EDC servisi Bostancı.',
@@ -479,7 +479,7 @@ export const transmissions: TransmissionType[] = [
         name: 'DPS6 kuru kavrama agresif aşınması',
         severity: 'high',
         description:
-          'Ford Focus / Fiesta DPS6\'nın en kronik sorunudur. Kuru kavrama balatası düşük km\'de (40–70.000 km) ağır titreme, kayma ve vuruntu yapabilir. Ford bu nedenle birçok pazarda uzatılmış garanti kampanyası uygulamıştır.',
+          'Ford Focus / Fiesta DPS6\'nın en kronik sorunudur. Kuru kavrama balatası düşük km\'de (40–70.000 km) ağır titreme, kayma ve vuruntu yapabilir. Ford bu nedenle birçok pazarda uzatılmış garanti kampanyası başlatmıştır.',
       },
       {
         name: 'TCM (Transmission Control Module) yazılım hataları',

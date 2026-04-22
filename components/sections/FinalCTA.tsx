@@ -18,7 +18,7 @@ export default function FinalCTA({
   phone = DEFAULT_PHONE,
 }: FinalCTAProps) {
   const { selectedId } = useSymptom();
-  const selected = SYMPTOMS.find((s) => s.id === selectedId)!;
+  const selected = SYMPTOMS.find((s) => s.id === selectedId) ?? SYMPTOMS[0];
 
   return (
     <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6">

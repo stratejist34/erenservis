@@ -27,6 +27,11 @@
   --status-success-border: #10B981;
   --status-success-text: #6EE7B7;
   --status-success-label: #10B981;
+
+  --status-info-bg: rgba(56, 189, 248, 0.12);
+  --status-info-border: #38BDF8;
+  --status-info-text: #7DD3FC;
+  --status-info-label: #38BDF8;
 }
 
 @theme inline {
@@ -74,6 +79,11 @@
   --color-status-success-border: #10B981;
   --color-status-success-text: #6EE7B7;
   --color-status-success-label: #10B981;
+
+  --color-status-info-bg: rgba(56, 189, 248, 0.12);
+  --color-status-info-border: #38BDF8;
+  --color-status-info-text: #7DD3FC;
+  --color-status-info-label: #38BDF8;
 
   /* Font sizes */
   --text-eyebrow: 11px;

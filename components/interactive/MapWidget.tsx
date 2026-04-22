@@ -6,7 +6,7 @@ const MAP_EMBED_URL =
 
 export default function MapWidget() {
   return (
-    <div className="w-full h-80 md:h-96 rounded-2xl overflow-hidden border border-content-border shadow-sm">
+    <div className="w-full h-80 md:h-96 rounded-2xl overflow-hidden border border-border-subtle shadow-sm">
       <iframe
         src={MAP_EMBED_URL}
         width="100%"

@@ -1,8 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RefreshCcw, Zap, Gauge } from 'lucide-react';
+import { transmissions } from '@/lib/sanziman';
 
 export const dynamic = 'force-static';
+
+function topFaults(slug: string, count: number): string[] {
+  const t = transmissions.find((x) => x.slug === slug);
+  return t ? t.commonFaults.slice(0, count).map((f) => f.name) : [];
+}
+
+function faultMatching(slug: string, keyword: string): string | null {
+  const t = transmissions.find((x) => x.slug === slug);
+  if (!t) return null;
+  const hit = t.commonFaults.find((f) => f.name.toLocaleLowerCase('tr-TR').includes(keyword.toLocaleLowerCase('tr-TR')));
+  return hit?.name ?? t.commonFaults[0]?.name ?? null;
+}
 
 export const metadata: Metadata = {
   title: 'Hizmetlerimiz | Eren Servis — Bostancı Otomatik Şanzıman',
@@ -25,24 +38,15 @@ export const metadata: Metadata = {
 const PHONE_HREF = 'tel:+905327153751';
 const WHATSAPP_HREF = 'https://wa.me/905327153751';
 
-const DSG_FAULTS = [
-  'Kavrama balata aşınması',
-  'Mekatronik kart arızası',
-  'Vites geçiş sertliği',
-  'Basınç tüpü problemi',
-] as const;
+const DSG_FAULTS = topFaults('dsg-s-tronic', 4);
 
-const AISIN_FAULTS = [
-  'Valf gövdesi davranış bozulması',
-  'EAT6 / EAT8 geçiş sertliği',
-  'Tork konvertörü ve yağ basıncı takibi',
-] as const;
+const AISIN_FAULTS = topFaults('aisin-eat', 3);
 
 const CVT_FAULTS = [
-  'CVT kayış kayması ve titreme',
-  'EDC / DCT geçiş sertliği',
-  'PowerShift vites gecikmesi',
-] as const;
+  faultMatching('cvt-sanziman', 'kayış'),
+  faultMatching('renault-edc', 'vuruntu'),
+  faultMatching('ford-powershift', 'kuru kavrama'),
+].filter((name): name is string => name !== null);
 
 const DSG_TAGS = ['DQ200', 'DQ250', 'DQ381', 'DQ500'] as const;
 const AISIN_TAGS = ['Aisin', 'EAT6', 'EAT8', 'AT6'] as const;
@@ -113,7 +117,7 @@ export default function HizmetlerPage() {
 
             <div className="text-center md:border-r md:border-iron-deep px-4">
               <div className="font-jetbrains text-[10px] tracking-[0.2em] text-iron-light uppercase mb-2">GARANTİ</div>
-              <div className="font-saira font-bold text-3xl text-text-primary">730 <span className="text-base text-text-secondary">GÜN</span></div>
+              <div className="font-saira font-bold text-3xl text-text-primary">6 <span className="text-base text-text-secondary">AY</span></div>
             </div>
 
             <div className="text-center md:border-r md:border-iron-deep px-4">

@@ -1,12 +1,70 @@
 import { NextRequest, NextResponse } from 'next/server';
+import crypto from 'crypto';
 
 type RateEntry = { count: number; resetAt: number };
-const rateLimitMap = new Map<string, RateEntry>();
 const RATE_LIMIT_MAX = 3;
 const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_CLEANUP_MS = 5 * 60_000;
+
+// globalThis ile HMR/cold start sırasında interval'in iki kere register edilmesini engelle
+const globalStore = globalThis as unknown as {
+  __contactRateLimitMap?: Map<string, RateEntry>;
+  __contactRateLimitCleanup?: NodeJS.Timeout;
+};
+
+const rateLimitMap = globalStore.__contactRateLimitMap ?? new Map<string, RateEntry>();
+globalStore.__contactRateLimitMap = rateLimitMap;
+
+if (!globalStore.__contactRateLimitCleanup) {
+  globalStore.__contactRateLimitCleanup = setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of rateLimitMap.entries()) {
+      if (entry.resetAt <= now) rateLimitMap.delete(ip);
+    }
+  }, RATE_LIMIT_CLEANUP_MS);
+}
+
+const MAX_NAME = 100;
+const MAX_MESSAGE = 2000;
+const MAX_PAGE = 200;
+const TR_PHONE_RE = /^(?:\+?90)?0?5\d{9}$/;
+
+function normalizePhone(raw: string): string {
+  return raw.replace(/[\s\-()]/g, '');
+}
+
+function validatePayload(input: Record<string, unknown>):
+  | { ok: true; data: { name: string; phone: string; message: string; page: string } }
+  | { ok: false; error: string } {
+  const name = typeof input.name === 'string' ? input.name.trim() : '';
+  if (name.length < 2 || name.length > MAX_NAME) {
+    return { ok: false, error: 'Ad geçersiz' };
+  }
+
+  const phoneRaw = typeof input.phone === 'string' ? input.phone : '';
+  const phone = normalizePhone(phoneRaw);
+  if (!TR_PHONE_RE.test(phone)) {
+    return { ok: false, error: 'Telefon geçersiz' };
+  }
+
+  const message = typeof input.message === 'string' ? input.message.slice(0, MAX_MESSAGE) : '';
+  const page = typeof input.page === 'string' ? input.page.slice(0, MAX_PAGE) : '';
+
+  return { ok: true, data: { name, phone, message, page } };
+}
+
+function getClientIp(req: NextRequest): string {
+  const fwd = req.headers.get('x-forwarded-for');
+  if (fwd) return fwd.split(',')[0]?.trim() || 'unknown';
+  return req.headers.get('x-real-ip')?.trim() || 'unknown';
+}
+
+function genericError(status: number): NextResponse {
+  return NextResponse.json({ error: 'Kayıt oluşturulamadı. Lütfen tekrar deneyin.' }, { status });
+}
 
 export async function POST(req: NextRequest) {
-  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+  const ip = getClientIp(req);
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
 
@@ -22,53 +80,59 @@ export async function POST(req: NextRequest) {
     rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
   }
 
-  const body = await req.json().catch(() => ({}));
-  const { name, phone, message, page, company } = body as {
-    name?: string;
-    phone?: string;
-    message?: string;
-    page?: string;
-    company?: string;
-  };
+  const parsed = await req.json().catch(() => null);
+  if (!parsed || typeof parsed !== 'object') {
+    return NextResponse.json({ error: 'Geçersiz istek' }, { status: 400 });
+  }
 
-  // Honeypot — botlar gizli alanı doldurur, insan dokunamaz
-  if (company) {
+  const body = parsed as Record<string, unknown>;
+
+  // Honeypot — bot bu alanı doldurur. Sessizce 200 dön, botu bilgilendirme.
+  if (typeof body.website === 'string' && body.website.length > 0) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!name || typeof name !== 'string' || name.trim().length < 2 || name.length > 100) {
-    return NextResponse.json({ error: 'Ad geçersiz' }, { status: 400 });
+  const validation = validatePayload(body);
+  if (!validation.ok) {
+    return NextResponse.json({ error: validation.error }, { status: 400 });
   }
 
-  const phoneRegex = /^[0-9\s\-+()]{10,20}$/;
-  if (!phone || !phoneRegex.test(phone)) {
-    return NextResponse.json({ error: 'Telefon geçersiz' }, { status: 400 });
-  }
-
-  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const webhookUrl = process.env.CONTACT_WEBHOOK_URL ?? process.env.GOOGLE_SHEETS_WEBHOOK_URL;
   if (!webhookUrl) {
     return NextResponse.json({ ok: true, warning: 'webhook not configured' });
   }
 
+  const payload = {
+    ...validation.data,
+    date: new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' }),
+  };
+  const bodyString = JSON.stringify(payload);
+
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  const secret = process.env.CONTACT_WEBHOOK_SECRET;
+  if (secret) {
+    const signature = crypto.createHmac('sha256', secret).update(bodyString).digest('hex');
+    headers['X-Webhook-Signature'] = signature;
+  }
+
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     const res = await fetch(webhookUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name,
-        phone,
-        message: message ?? '',
-        page: page ?? '',
-        date: new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' }),
-      }),
+      headers,
+      body: bodyString,
+      signal: controller.signal,
     });
+    clearTimeout(timeout);
+
     if (!res.ok) {
-      console.error('[contact] webhook returned non-ok', res.status);
-      return NextResponse.json({ error: 'Kayıt oluşturulamadı' }, { status: 502 });
+      console.error('[contact] webhook non-ok', res.status);
+      return genericError(502);
     }
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error('[contact] webhook threw', err);
-    return NextResponse.json({ error: 'Kayıt oluşturulamadı' }, { status: 502 });
+    return genericError(502);
   }
 }

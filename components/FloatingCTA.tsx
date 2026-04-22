@@ -6,12 +6,12 @@ import { trackWhatsappClick } from '@/lib/analytics';
 
 const WHATSAPP_HREF = 'https://wa.me/905327153751';
 
-const HIDDEN_PATHS = ['/', '/iletisim', '/hakkimizda'];
+const HIDDEN_PATHS = new Set(['/', '/iletisim', '/iletisim/', '/hakkimizda', '/hakkimizda/']);
 
 export default function FloatingCTA() {
   const pathname = usePathname();
 
-  if (!pathname || HIDDEN_PATHS.includes(pathname)) return null;
+  if (!pathname || HIDDEN_PATHS.has(pathname)) return null;
 
   return (
     <a

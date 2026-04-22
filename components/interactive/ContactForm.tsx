@@ -29,7 +29,7 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
-          company: honeypot,
+          website: honeypot,
           page: typeof window !== 'undefined' ? window.location.pathname : '',
         }),
       });
@@ -74,7 +74,7 @@ export default function ContactForm() {
             {/* Honeypot — botlar için görünmez tuzak alan */}
             <input
               type="text"
-              name="company"
+              name="website"
               tabIndex={-1}
               autoComplete="off"
               value={honeypot}

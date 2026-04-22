@@ -25,7 +25,7 @@ export function SymptomProvider({ children }: { children: React.ReactNode }) {
       const found = SYMPTOMS.find((s) => s.slug === slug);
       if (found) setSelectedIdState(found.id);
     }
-  }, []); // sadece mount'ta okur
+  }, [searchParams]);
 
   function setSelectedId(id: number) {
     setSelectedIdState(id);

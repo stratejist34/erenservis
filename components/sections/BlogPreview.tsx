@@ -11,7 +11,7 @@ const PREVIEW_POSTS = [
   {
     title: 'Otomatik Şanzıman Tamiri Ne Kadar Tutar?',
     excerpt: 'DSG kavrama, mekatronik kart, CVT — 2026 güncel fiyat tablosu ve arıza türüne göre rehber.',
-    href: '/rehber/otomatik-sanziman-tamiri-fiyat',
+    href: '/rehber/otomatik-sanziman-tamiri-fiyat/',
     category: 'Fiyat Rehberi',
   },
   {
@@ -23,7 +23,7 @@ const PREVIEW_POSTS = [
   {
     title: 'DSG Mekatronik Kart Fiyatı 2026',
     excerpt: 'DQ200 ve DQ250 mekatronik kart değişimi ve tamiri fiyatları. Tamir mi değişim mi?',
-    href: '/hizmetler/dsg-mekatronik-kart',
+    href: '/hizmetler/dsg-mekatronik-kart/',
     category: 'Fiyat',
   },
 ] as const;

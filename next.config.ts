@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
 
-  // Next.js 16 turbopack TS native-checker build sırasında OOM veriyor.
-  // Ayrı `npx tsc --noEmit` CI'da çalıştırılıyor; build-time çift check gereksiz.
-  typescript: { ignoreBuildErrors: true },
+  typescript: { ignoreBuildErrors: false },
 
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -14,7 +12,7 @@ const nextConfig: NextConfig = {
     imageSizes: [64, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 yıl
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: 'inline',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 

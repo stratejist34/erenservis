@@ -29,7 +29,7 @@ const TOTAL = String(BRANDS.length).padStart(2, '0');
 
 export default function BrandSection() {
   const { selectedId } = useSymptom();
-  const symptom = SYMPTOMS.find((s) => s.id === selectedId)!;
+  const symptom = SYMPTOMS.find((s) => s.id === selectedId) ?? SYMPTOMS[0];
   const allFeaturedSlugs = symptom.topBrandGroups.flatMap((g) => g.slugs);
   const remainingBrands = BRANDS.filter((b) => !allFeaturedSlugs.includes(b.slug));
 

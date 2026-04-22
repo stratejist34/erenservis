@@ -8,6 +8,7 @@ import PostServiceBlock from '@/components/blog/PostServiceBlock';
 import { getPostServiceBlock } from '@/lib/post-service-blocks';
 import { HOWTO_PAGES } from '@/lib/howto-pages-dsg';
 import { buildHowToSchema, schemaToString } from '@/lib/schema';
+import { sanitizeHtml } from '@/lib/sanitize-html';
 import TableOfContents, { type TocItem } from '@/components/blog/TableOfContents';
 
 export const dynamic = 'force-static';
@@ -233,14 +234,16 @@ export default async function BlogPostPage({ params }: Props) {
   const categoryLabel = post.categories?.[0] ?? 'Blog';
   const serviceBlock = getPostServiceBlock(post.slug);
   const howToData = HOWTO_PAGES[post.slug];
-  const contentFaqItems = extractFaqItems(post.content);
+  // XSS savunması: posts.json WordPress-export kökenli, build-time sanitize
+  const safeContent = sanitizeHtml(post.content);
+  const contentFaqItems = extractFaqItems(safeContent);
   const hasTags = post.tags && post.tags.length > 0;
   const publishedDate = formatDate(post.date);
   const modifiedDate = post.dateModified ? formatDate(post.dateModified) : null;
   const showModified = modifiedDate && modifiedDate !== publishedDate;
 
   // Heading ID'lerini enjekte et → ToC + anchor link desteği
-  const { processed: contentWithIds, tocItems } = injectHeadingIds(post.content);
+  const { processed: contentWithIds, tocItems } = injectHeadingIds(safeContent);
   const { part1, part2, faqContent } = splitContent(contentWithIds);
   const hasSplit = part2.length > 0 || faqContent.length > 0;
 
@@ -381,7 +384,7 @@ export default async function BlogPostPage({ params }: Props) {
                 /* Split bulunamadıysa tek parça */
                 <div
                   className={proseClasses}
-                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  dangerouslySetInnerHTML={{ __html: safeContent }}
                 />
               )}
 

@@ -75,17 +75,19 @@ export default async function MarkaPage({ params }: Props) {
     ? getBrandsByTransmission(primary.id).filter((b) => b.slug !== brand.slug)
     : [];
 
-  const transmissionCrossLinks = brand.transmissions
-    .map((bt) => {
-      const t = TRANSMISSIONS[bt.familyId];
-      if (!t) return null;
-      return {
-        href: buildTransmissionUrl(bt.familyId),
-        label: t.shortName ?? t.displayName,
-        sublabel: t.customerFacingName ?? t.displayName,
-      };
-    })
-    .filter((x): x is NonNullable<typeof x> => x !== null);
+  const transmissionCrossLinksMap = new Map<string, { href: string; label: string; sublabel: string }>();
+  for (const bt of brand.transmissions) {
+    const t = TRANSMISSIONS[bt.familyId];
+    if (!t) continue;
+    const href = buildTransmissionUrl(bt.familyId);
+    if (transmissionCrossLinksMap.has(href)) continue;
+    transmissionCrossLinksMap.set(href, {
+      href,
+      label: t.shortName ?? t.displayName,
+      sublabel: t.customerFacingName ?? t.displayName,
+    });
+  }
+  const transmissionCrossLinks = Array.from(transmissionCrossLinksMap.values());
 
   const brandLabel = brand.displayName ?? brand.name;
 

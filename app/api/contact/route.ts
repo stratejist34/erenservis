@@ -29,6 +29,29 @@ const MAX_MESSAGE = 2000;
 const MAX_PAGE = 200;
 const TR_PHONE_RE = /^(?:\+?90)?0?5\d{9}$/;
 
+const ALLOWED_ORIGINS = new Set<string>([
+  'https://www.erenservis.net',
+  'https://erenservis.net',
+  ...(process.env.NODE_ENV === 'development'
+    ? ['http://localhost:3000', 'http://127.0.0.1:3000']
+    : []),
+]);
+
+function isOriginAllowed(req: NextRequest): boolean {
+  const origin = req.headers.get('origin');
+  if (origin) return ALLOWED_ORIGINS.has(origin);
+
+  // Origin header yoksa Referer ile karşılaştır (bazı tarayıcılar same-origin POST'larda origin göndermez)
+  const referer = req.headers.get('referer');
+  if (!referer) return false;
+  try {
+    const url = new URL(referer);
+    return ALLOWED_ORIGINS.has(`${url.protocol}//${url.host}`);
+  } catch {
+    return false;
+  }
+}
+
 function normalizePhone(raw: string): string {
   return raw.replace(/[\s\-()]/g, '');
 }
@@ -64,6 +87,10 @@ function genericError(status: number): NextResponse {
 }
 
 export async function POST(req: NextRequest) {
+  if (!isOriginAllowed(req)) {
+    return NextResponse.json({ error: 'Geçersiz kaynak' }, { status: 403 });
+  }
+
   const ip = getClientIp(req);
   const now = Date.now();
   const entry = rateLimitMap.get(ip);

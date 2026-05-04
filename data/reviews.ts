@@ -1,5 +1,5 @@
 // data/reviews.ts
-// Eren Servis müşteri yorumları — Google My Business sayfasından küratörlü.
+// Eren Otomatik Şanzıman Servisi müşteri yorumları — Google My Business sayfasından küratörlü.
 // Metinler 1:1 korunur (yazım/noktalama dahil). Tarihler Google'daki göreli etiketlerden
 // yaklaşık ISO'ya çevrildi (referans: 2026-04-22).
 //

@@ -10,7 +10,7 @@ import {
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Aisin ve Tam Otomatik Sanziman Tamiri Bostanci | Eren Servis',
+  title: 'Aisin ve Tam Otomatik Sanziman Tamiri Bostanci | Eren Otomatik Şanzıman Servisi',
   description:
     'Aisin, EAT6, EAT8 ve tam otomatik sanziman tamiri. Peugeot, Citroen, Opel, Toyota, Ford ve klasik hidrolik otomatik ailelerde revizyon, tork konvertoru ve valf govdesi hizmeti.',
   keywords: [

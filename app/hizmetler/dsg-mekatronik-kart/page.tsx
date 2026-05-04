@@ -13,10 +13,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "DSG Mekatronik Kart Fiyatı 2026 | Eren Servis Bostancı",
+  title: "DSG Mekatronik Kart Fiyatı 2026 | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG mekatronik kart değişimi ve tamiri 2026 fiyatları: DQ200 45.000–58.000 TL, " +
-    "DQ250 55.000–68.000 TL. Bostancı'da garantili işlem, ücretsiz ön tanı — Eren Servis.",
+    "DQ250 55.000–68.000 TL. Bostancı'da garantili işlem, ücretsiz ön tanı — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "dsg mekatronik kart fiyatı",
     "dsg mekatronik kart fiyatı 2026",
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     "7 ileri dsg mekatronik kart fiyatı",
   ],
   openGraph: {
-    title: "DSG Mekatronik Kart Fiyatı 2026 | Eren Servis Bostancı",
+    title: "DSG Mekatronik Kart Fiyatı 2026 | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "DQ200 ve DQ250 mekatronik kart 2026 fiyat tablosu. " +
-      "Tamir mi, değişim mi? Ücretsiz tanı ile net karar — Eren Servis Bostancı.",
+      "Tamir mi, değişim mi? Ücretsiz tanı ile net karar — Eren Otomatik Şanzıman Servisi Bostancı.",
     url: "https://www.erenservis.net/hizmetler/dsg-mekatronik-kart/",
     type: "website",
   },
@@ -176,7 +176,7 @@ export default function DsgMekatronikKartPage() {
         <div className="mt-8 relative w-full h-72 sm:h-96 overflow-hidden bg-graphite-elevated">
           <Image
             src="/images/part2/Screenshot_83.webp"
-            alt="Wolf's Tech DSG mekatronik onarım kiti ve solenoid valfi — Eren Servis Bostancı"
+            alt="Wolf's Tech DSG mekatronik onarım kiti ve solenoid valfi — Eren Otomatik Şanzıman Servisi Bostancı"
             fill
             className="object-cover object-top brightness-[0.73] saturate-[0.6]"
             sizes="100vw"
@@ -267,7 +267,7 @@ export default function DsgMekatronikKartPage() {
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
             <p className="text-sm text-amber-800 leading-relaxed">
               <strong>Önemli:</strong> Hata kodu okumadan &quot;mekatronik kart lazım&quot;
-              diyen servise dikkat edin. Eren Servis&apos;te tanı olmadan parça
+              diyen servise dikkat edin. Eren Otomatik Şanzıman Servisi&apos;nde tanı olmadan parça
               önerisi yapılmaz — önce okuma, sonra karar.
             </p>
           </div>

@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Otomatik Şanzımanda Sarsıntı: Rölantide Titreşimin 4 Kaynağı | Eren Servis Bostancı",
+  title: "Otomatik Şanzımanda Sarsıntı: Rölantide Titreşimin 4 Kaynağı | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG, CVT, ZF ve PowerShift şanzımanlarda sarsıntı neden olur? " +
     "Çift kütleli volant, kavrama balatası, tork konvertör lockup ve solenoid. " +
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "volant titreşimi",
   ],
   openGraph: {
-    title: "Otomatik Şanzımanda Sarsıntı: 4 Kaynak ve Çözümleri | Eren Servis",
+    title: "Otomatik Şanzımanda Sarsıntı: 4 Kaynak ve Çözümleri | Eren Otomatik Şanzıman Servisi",
     description:
       "Rölantide sarsıntı, D vitesinde titreşim ve klima ile artan sarsıntı — " +
       "nedenleri ve çözümleri. Bostancı'da ücretsiz teşhis.",
     url: "https://www.erenservis.net/rehber/otomatik-sanziman-sarsinti/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

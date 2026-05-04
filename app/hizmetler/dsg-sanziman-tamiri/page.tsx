@@ -12,7 +12,7 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'DSG Şanzıman Tamiri Bostancı | DQ200 DQ250 DQ381 | Eren Servis',
+  title: 'DSG Şanzıman Tamiri Bostancı | DQ200 DQ250 DQ381 | Eren Otomatik Şanzıman Servisi',
   description:
     'Bostancı\'da DSG şanzıman tamiri. DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 6 ay garanti, ücretsiz ön tanı, orijinal parça.',
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.erenservis.net/hizmetler/dsg-sanziman-tamiri/',
   },
   openGraph: {
-    title: 'DSG Şanzıman Tamiri Bostancı | Eren Servis',
+    title: 'DSG Şanzıman Tamiri Bostancı | Eren Otomatik Şanzıman Servisi',
     description: 'DQ200, DQ250, DQ381 mekatronik, kavrama ve solenoid servisi. 6 ay garanti, ücretsiz ön tanı.',
     url: 'https://www.erenservis.net/hizmetler/dsg-sanziman-tamiri/',
     images: [{ url: 'https://www.erenservis.net/og-image.jpg', width: 1200, height: 630 }],
@@ -562,10 +562,10 @@ export default function DsgSanzımanTamiriPage() {
           </div>
         </section>
 
-        {/* Neden Eren Servis */}
+        {/* Neden Eren Otomatik Şanzıman */}
         <section className="py-16 bg-graphite-surface">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Neden Eren Servis?</h2>
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Neden Eren Otomatik Şanzıman?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { rakam: '15+', etiket: 'Yıl Deneyim', aciklama: 'Sadece DSG ve otomatik şanzıman — genel oto servis değil' },

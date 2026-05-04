@@ -145,7 +145,7 @@ export default async function SanzimanDetayPage({
             <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden">
               <Image
                 src={data.heroImage}
-                alt={`${data.title} onarımı — Eren Servis atölyesi`}
+                alt={`${data.title} onarımı — Eren Otomatik Şanzıman atölyesi`}
                 fill
                 priority
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1152px"

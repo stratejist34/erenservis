@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "DSG'de Kayma ve Vites Atlama: DQ200, DQ250, DQ381 | Eren Servis Bostancı",
+  title: "DSG'de Kayma ve Vites Atlama: DQ200, DQ250, DQ381 | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG kayması neden olur? Kuru kavrama (DQ200) ve ıslak kavrama (DQ250, DQ381) " +
     "arasındaki fark, basınç tüpü, solenoid ve çözüm maliyetleri. Bostancı, İstanbul.",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "dsg kavrama devir atıyor",
   ],
   openGraph: {
-    title: "DSG'de Kayma ve Vites Atlama: Kuru vs Islak Kavrama | Eren Servis",
+    title: "DSG'de Kayma ve Vites Atlama: Kuru vs Islak Kavrama | Eren Otomatik Şanzıman Servisi",
     description:
       "DQ200, DQ250, DQ381 DSG modellerinde kayma nedenleri ve çözümleri. Bostancı.",
     url: "https://www.erenservis.net/rehber/dsg-kayma-vites-atlama/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

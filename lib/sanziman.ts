@@ -108,9 +108,9 @@ export const transmissions: TransmissionType[] = [
       'VW, Audi ve Skoda\'da kullanılan çift kavramalı şanzıman. DQ200 baskı tüpü ve mekatronik arızaları konusunda özel uzmanlık gerektirir.',
     serviceHref: '/hizmetler/dsg-sanziman-tamiri/',
     heroImage: '/images/sanziman/dsg-s-tronic.webp',
-    metaTitle: 'DSG & S-Tronic Şanzıman Arızaları ve Bakımı | Eren Servis Bostancı',
+    metaTitle: 'DSG & S-Tronic Şanzıman Arızaları ve Bakımı | Eren Otomatik Şanzıman Servisi',
     metaDescription:
-      'DSG DQ200, DQ250 ve DQ381 şanzıman arızaları, belirtiler, bakım aralıkları ve çözümler. Bostancı\'nın DSG uzmanı Eren Servis ile tanışın.',
+      'DSG DQ200, DQ250 ve DQ381 şanzıman arızaları, belirtiler, bakım aralıkları ve çözümler. Bostancı\'nın DSG uzmanı Eren Otomatik Şanzıman Servisi ile tanışın.',
   },
 
   {
@@ -177,9 +177,9 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'BMW, Audi ve Land Rover\'da kullanılan güçlü 8 ileri otomatik şanzıman. "Ömür boyu yağ" efsanesine rağmen düzenli bakım kritik öneme sahiptir.',
     serviceHref: '/hizmetler/zf-sanziman-tamiri/',
-    metaTitle: 'ZF Otomatik Şanzıman Arızaları ve Bakımı | Eren Servis Bostancı',
+    metaTitle: 'ZF Otomatik Şanzıman Arızaları ve Bakımı | Eren Otomatik Şanzıman Servisi',
     metaDescription:
-      'ZF 8HP ve 6HP şanzıman arızaları, torque konvertör sorunları ve bakım aralıkları. BMW ve Audi ZF şanzıman uzmanı Eren Servis.',
+      'ZF 8HP ve 6HP şanzıman arızaları, torque konvertör sorunları ve bakım aralıkları. BMW ve Audi ZF şanzıman uzmanı Eren Otomatik Şanzıman Servisi.',
   },
 
   {
@@ -244,7 +244,7 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'Nissan, Toyota ve Honda\'da kullanılan sürekli değişken şanzıman. Metal kayış aşınması ve yağ kalitesi kritik önemdedir.',
     serviceHref: '/hizmetler/cvt-sanziman-tamiri/',
-    metaTitle: 'CVT Şanzıman Arızaları, Metal Kayış ve Bakım | Eren Servis Bostancı',
+    metaTitle: 'CVT Şanzıman Arızaları, Metal Kayış ve Bakım | Eren Otomatik Şanzıman Servisi',
     metaDescription:
       'CVT şanzıman arızaları (JF015E, JF011E, Lineartronic), metal kayış aşınması, yağ değişim aralıkları ve Bostancı CVT servis bilgileri.',
   },
@@ -316,7 +316,7 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'Mercedes C / E / S / GLC / GLE serisi için 7G ve 9G-Tronic planet dişli otomatikler. Y3/8n5 konnektör ve iletken plaka arızaları özel uzmanlık ister.',
     serviceHref: '/hizmetler/konvansiyonel-sanziman/',
-    metaTitle: 'Mercedes 7G / 9G-Tronic Arızaları ve Bakımı | Eren Servis Bostancı',
+    metaTitle: 'Mercedes 7G / 9G-Tronic Arızaları ve Bakımı | Eren Otomatik Şanzıman Servisi',
     metaDescription:
       'Mercedes 722.9 ve 725.0 şanzıman arızaları, Y3/8n5 konnektör sızıntısı, iletken plaka ve adaptasyon. Bostancı Mercedes şanzıman servisi.',
   },
@@ -383,7 +383,7 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'Peugeot, Citroen, Volvo, Opel ve Toyota modellerinde kullanılan Aisin EAT6 / EAT8 / TF-SC otomatikler. Valf gövdesi ve TCC aşınması başlıca servis konusu.',
     serviceHref: '/hizmetler/aisin-sanziman-tamiri/',
-    metaTitle: 'Aisin EAT6 / EAT8 / TF-SC Arızaları ve Bakımı | Eren Servis Bostancı',
+    metaTitle: 'Aisin EAT6 / EAT8 / TF-SC Arızaları ve Bakımı | Eren Otomatik Şanzıman Servisi',
     metaDescription:
       'Aisin EAT6, EAT8 ve TF-80SC şanzıman arızaları, valf gövdesi solenoid ve tork konvertör bakımı. Peugeot, Citroen, Volvo, Opel Aisin servisi Bostancı.',
   },
@@ -455,7 +455,7 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'Renault Clio, Megane, Captur ve Nissan Juke\'ta kullanılan 6/7 ileri kuru kavramalı çift kavramalı şanzıman. Kavrama ve mekatronik başlıca servis konusu.',
     serviceHref: '/hizmetler/dsg-kavrama-degisimi/',
-    metaTitle: 'Renault EDC Arızaları ve Bakımı | Eren Servis Bostancı',
+    metaTitle: 'Renault EDC Arızaları ve Bakımı | Eren Otomatik Şanzıman Servisi',
     metaDescription:
       'Renault EDC6 / EDC7 (DC4) şanzıman arızaları, kavrama aşınması, mekatronik rezistans ve adaptasyon. Clio, Megane, Captur EDC servisi Bostancı.',
   },
@@ -528,7 +528,7 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'Ford Focus, Fiesta, Kuga ve Volvo S40 / V50\'de kullanılan DPS6 (kuru) ve MPS6 (ıslak) çift kavramalı şanzımanlar. Kavrama, TCM ve mekatronik servis odak noktası.',
     serviceHref: '/hizmetler/eat-sanziman-tamiri/',
-    metaTitle: 'Ford PowerShift (DPS6 / MPS6) Arızaları ve Bakımı | Eren Servis Bostancı',
+    metaTitle: 'Ford PowerShift (DPS6 / MPS6) Arızaları ve Bakımı | Eren Otomatik Şanzıman Servisi',
     metaDescription:
       'Ford Focus / Fiesta DPS6 ve Kuga / Galaxy MPS6 şanzıman arızaları, kavrama aşınması, TCM yazılım ve mekatronik sızıntı. Bostancı Ford PowerShift servisi.',
   },
@@ -595,9 +595,9 @@ export const transmissions: TransmissionType[] = [
     shortDesc:
       'Hyundai, Kia, Opel/GM ve eski nesil Ford 6 ileri otomatiklerin oluşturduğu klasik AT ailesi. Uygun maliyetli bakım ile 250.000 km üzeri ömür mümkündür.',
     serviceHref: '/hizmetler/konvansiyonel-sanziman/',
-    metaTitle: 'Hyundai A6GF1 / Kia A6MF2 / GM 6T Klasik Otomatik | Eren Servis Bostancı',
+    metaTitle: 'Hyundai A6GF1 / Kia A6MF2 / GM 6T Klasik Otomatik | Eren Otomatik Şanzıman Servisi',
     metaDescription:
-      'Hyundai, Kia ve Opel 6 ileri klasik otomatik şanzıman arızaları, valf gövdesi, tork konvertör ve bakım bilgileri. Bostancı Eren Servis.',
+      'Hyundai, Kia ve Opel 6 ileri klasik otomatik şanzıman arızaları, valf gövdesi, tork konvertör ve bakım bilgileri. Bostancı Eren Otomatik Şanzıman Servisi.',
   },
 ];
 

@@ -7,7 +7,7 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'DSG Mekatronik Arıza Fiyatı 2026 | Tamir & Revizyon — Eren Servis',
+  title: 'DSG Mekatronik Arıza Fiyatı 2026 | Tamir & Revizyon — Eren Otomatik Şanzıman Servisi',
   description:
     'DSG mekatronik arıza fiyatları 2026. DQ200 ve DQ250 kart tamiri, güçlendirilmiş tüp ve revizyon maliyetleri. 6 ay garantili uzman servis.',
   keywords: [
@@ -54,7 +54,7 @@ export default function DSGMekatronikArızaFiyatiPage() {
     <>
       <BlogSchema
         slug="dsg-mekatronik-ariza-fiyati"
-        title="DSG Mekatronik Arıza Fiyatı 2026 | Tamir & Revizyon — Eren Servis"
+        title="DSG Mekatronik Arıza Fiyatı 2026 | Tamir & Revizyon — Eren Otomatik Şanzıman Servisi"
         description="DSG mekatronik arıza fiyatları 2026. DQ200 ve DQ250 kart tamiri, güçlendirilmiş tüp ve revizyon maliyetleri. 6 ay garantili uzman servis."
         datePublished="2026-04-11"
       />
@@ -121,7 +121,7 @@ export default function DSGMekatronikArızaFiyatiPage() {
             DSG şanzımanın &quot;beyni&quot; olan mekatronik ünite, arızalandığında araç sahiplerinin en çok
             korktuğu kalemdir. Ancak arızanın türüne göre fiyat aralığı inanılmaz ölçüde değişir:{' '}
             <strong>kart onarımı 14.000 TL&apos;den başlarken</strong> sıfır ünite değişimi 68.000 TL&apos;ye ulaşabilir.
-            Bostancı&apos;daki Eren Servis olarak ücretsiz ön tanı sonrası size net sabit fiyat sunuyoruz.
+            Bostancı&apos;daki Eren Otomatik Şanzıman Servisi olarak ücretsiz ön tanı sonrası size net sabit fiyat sunuyoruz.
           </p>
         </div>
 
@@ -197,7 +197,7 @@ export default function DSGMekatronikArızaFiyatiPage() {
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">Neden Sadece Mekatronik Tamiri Yetmeyebilir?</h2>
           <p className="font-saira text-text-secondary text-sm mb-6">
             Aşınmış kavramadan yağa karışan metal tozu yeni mekatroniği 3 ayda bozar.
-            Bu yüzden Eren Servis&apos;te şu sırayı uyguluyoruz:
+            Bu yüzden Eren Otomatik Şanzıman Servisi&apos;nde şu sırayı uyguluyoruz:
           </p>
           <div className="grid gap-4">
             {ADIMLAR.map((adim) => (

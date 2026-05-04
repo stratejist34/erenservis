@@ -11,7 +11,7 @@ import {
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'DSG Basınç Tüpü | Değişim ve Yükseltme | Eren Servis Bostancı',
+  title: 'DSG Basınç Tüpü | Değişim ve Yükseltme | Eren Otomatik Şanzıman Servisi Bostancı',
   description:
     'DQ200 DSG şanzıman basınç tüpü değişimi ve yükseltmesi. OEM orijinal veya WT Wolf\'s Tech güçlendirilmiş seçenek. Montaj, adaptasyon ve garanti dahil.',
   keywords: [
@@ -234,7 +234,7 @@ export default function DsgBasincTupuPage() {
             <div className="relative w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-border-hairline mb-8">
               <Image
                 src="/images/part2/basic_tupu_yag_kacirma2.webp"
-                alt="Basınç tüpü montajı — Eren Servis atölyesi"
+                alt="Basınç tüpü montajı — Eren Otomatik Şanzıman Servisi atölyesi"
                 fill
                 className="object-cover"
               />

@@ -12,10 +12,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Mekatronik Nedir? DSG Şanzımanda Görevi ve Arıza Belirtileri | Eren Servis",
+  title: "Mekatronik Nedir? DSG Şanzımanda Görevi ve Arıza Belirtileri | Eren Otomatik Şanzıman Servisi",
   description:
     "DSG şanzımanda mekatronik ünitesinin görevi, arıza belirtileri ve değişim maliyeti. " +
-    "Bostancı'da ücretsiz ön tanı ve garantili tamir hizmeti — Eren Servis.",
+    "Bostancı'da ücretsiz ön tanı ve garantili tamir hizmeti — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "mekatronik nedir",
     "dsg mekatronik",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "mekatronik değişimi",
   ],
   openGraph: {
-    title: "Mekatronik Nedir? DSG Şanzımanda Görevi | Eren Servis Bostancı",
+    title: "Mekatronik Nedir? DSG Şanzımanda Görevi | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "Mekatronik arızası varsa ertelemeyin. " +
-      "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
+      "Bostancı DSG uzmanı Eren Otomatik Şanzıman Servisi'nde ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/mekatronik-nedir/",
     type: "article",
     publishedTime: "2026-04-10",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/mekatronik-nedir/",
@@ -487,7 +487,7 @@ export default function MekatronikNedirPage() {
               Mekatronik Arızasından mı Şüpheleniyorsunuz?
             </h2>
             <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed">
-              Bostancı Eren Servis&apos;te DSG uzmanlarımızla 45 dakikada arıza tespiti
+              Bostancı Eren Otomatik Şanzıman Servisi&apos;nde DSG uzmanlarımızla 45 dakikada arıza tespiti
               yapıyoruz. Arızayı büyümeden yakalamak için hemen randevu alın.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

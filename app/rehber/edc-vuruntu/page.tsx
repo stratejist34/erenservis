@@ -11,10 +11,10 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Renault EDC Vuruntu: EDC7 Arızası Belirtileri | Eren Servis Bostancı",
+  title: "Renault EDC Vuruntu: EDC7 Arızası Belirtileri | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "Renault Clio, Captur ve Megane EDC şanzımanda vuruntunun nedenleri, belirtileri ve " +
-    "kavrama değişimi fiyatı 2026. Nissan Juke dahil. Bostancı'da ücretsiz ön tanı — Eren Servis.",
+    "kavrama değişimi fiyatı 2026. Nissan Juke dahil. Bostancı'da ücretsiz ön tanı — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "renault edc vuruntu",
     "renault clio şanzıman vuruntu",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "renault otomatik şanzıman titreşim",
   ],
   openGraph: {
-    title: "Renault EDC Vuruntu: Arıza Belirtileri ve Çözüm | Eren Servis",
+    title: "Renault EDC Vuruntu: Arıza Belirtileri ve Çözüm | Eren Otomatik Şanzıman Servisi",
     description:
       "Clio, Captur ve Megane'de EDC şanzıman vuruntusunun nedenleri, belirtileri ve " +
       "kavrama değişim fiyatı. Bostancı'da ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/edc-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

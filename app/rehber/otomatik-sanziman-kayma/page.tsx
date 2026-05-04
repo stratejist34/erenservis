@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Otomatik Şanzımanda Kayma: Vites Atlama Neden Olur? | Eren Servis Bostancı",
+  title: "Otomatik Şanzımanda Kayma: Vites Atlama Neden Olur? | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG, CVT, ZF ve tork konvertörlü şanzımanlarda kayma ve vites atlama nedenleri. " +
     "Kavrama, basınç tüpü, kayış ve mekatronik — hangi senaryoda ne yapılır. Bostancı, İstanbul.",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "şanzıman boş yere dönüyor",
   ],
   openGraph: {
-    title: "Otomatik Şanzımanda Kayma ve Vites Atlama | Eren Servis",
+    title: "Otomatik Şanzımanda Kayma ve Vites Atlama | Eren Otomatik Şanzıman Servisi",
     description:
       "DSG, CVT ve tork konvertörlü şanzımanlarda kayma nedenleri ve çözümleri. " +
       "Bostancı'da ücretsiz teşhis.",
     url: "https://www.erenservis.net/rehber/otomatik-sanziman-kayma/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "CVT Şanzımanda Vuruntu: Kayış Aşınması mı? | Eren Servis Bostancı",
+  title: "CVT Şanzımanda Vuruntu: Kayış Aşınması mı? | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "Toyota, Honda ve Nissan CVT şanzımanda vuruntu neden olur? Kayış aşınması, pully ve " +
     "kontrol birimi. Nadir ama ciddi — 2026 tanı ve maliyet rehberi. Ücretsiz ön tanı Bostancı.",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "cvt yağ değişimi vuruntu",
   ],
   openGraph: {
-    title: "CVT Şanzımanda Vuruntu: Kayış mı, Kontrol Birimi mi? | Eren Servis",
+    title: "CVT Şanzımanda Vuruntu: Kayış mı, Kontrol Birimi mi? | Eren Otomatik Şanzıman Servisi",
     description:
       "CVT'de vuruntu nadirdir ama olduğunda ciddidir. Kayış aşınması, pully sorunu ve " +
       "CVT yağı — nedenleri, belirtileri ve maliyet. Bostancı'da ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/cvt-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

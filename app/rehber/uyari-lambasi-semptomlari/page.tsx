@@ -12,10 +12,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "DSG Uyarı Lambası Yandı — Ne Yapmalısınız? | Eren Servis Bostancı",
+  title: "DSG Uyarı Lambası Yandı — Ne Yapmalısınız? | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG anahtar işareti, P sembolü veya vites göstergesi yanıp sönüyor mu? " +
-    "Her uyarı lambası farklı anlam taşır. Bostancı'da ücretsiz hata kodu okuma — Eren Servis.",
+    "Her uyarı lambası farklı anlam taşır. Bostancı'da ücretsiz hata kodu okuma — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "dsg uyarı lambası",
     "dsg anahtar işareti yanıp sönüyor",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "otomatik şanzıman uyarı lambası",
   ],
   openGraph: {
-    title: "DSG Uyarı Lambası Yandı — Ne Yapmalısınız? | Eren Servis",
+    title: "DSG Uyarı Lambası Yandı — Ne Yapmalısınız? | Eren Otomatik Şanzıman Servisi",
     description:
       "DSG'de anahtar işareti veya P lambası yanıyorsa durumu anlayın. " +
-      "Bostancı'da ücretsiz hata kodu okuma — Eren Servis.",
+      "Bostancı'da ücretsiz hata kodu okuma — Eren Otomatik Şanzıman Servisi.",
     url: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari/",
     type: "article",
     publishedTime: "2026-03-30",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/uyari-lambasi-semptomlari/",
@@ -400,7 +400,7 @@ export default function UyariLambasiSemptomlariPage() {
             </p>
             <p className="font-saira text-text-secondary text-sm leading-relaxed mb-6">
               &quot;DSG&apos;niz bozulmuş, mekatronik kart lazım&quot; diyen ama hata kodu
-              okumayan servise dikkat edin. Eren Servis&apos;te her kontrol
+              okumayan servise dikkat edin. Eren Otomatik Şanzıman Servisi&apos;nde her kontrol
               önce hata kodu okumasıyla başlar — tanı olmadan teklif verilmez.
             </p>
 

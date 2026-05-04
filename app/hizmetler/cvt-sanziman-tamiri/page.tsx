@@ -12,7 +12,7 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'CVT Şanzıman Tamiri Bostancı | Resetleme & Revizyon | Eren Servis',
+  title: 'CVT Şanzıman Tamiri Bostancı | Resetleme & Revizyon | Eren Otomatik Şanzıman Servisi',
   description:
     'Bostancı\'da CVT şanzıman tamiri, resetleme ve revizyonu. Nissan JATCO, Toyota K310, Honda, Hyundai IVT. Metal kayış, yağ değişimi ve elektronik kalibrasyon. 6 ay garanti.',
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.erenservis.net/hizmetler/cvt-sanziman-tamiri/',
   },
   openGraph: {
-    title: 'CVT Şanzıman Tamiri Bostancı | Eren Servis',
+    title: 'CVT Şanzıman Tamiri Bostancı | Eren Otomatik Şanzıman Servisi',
     description: 'JATCO, Aisin, Toyota, Honda CVT şanzıman resetleme, kayış değişimi ve revizyonu. 6 ay garanti.',
     url: 'https://www.erenservis.net/hizmetler/cvt-sanziman-tamiri/',
     images: [{ url: 'https://www.erenservis.net/og-image.jpg', width: 1200, height: 630 }],
@@ -235,7 +235,7 @@ export default function CvtSanzımanTamiriPage() {
                 konvansiyonel otomatiklerden <strong className="text-text-primary font-medium">çok daha kritiktir</strong>.
               </p>
               <p>
-                Eren Servis&apos;te JATCO (Nissan/Mitsubishi), Toyota K-serisi, Honda, Hyundai IVT ve Subaru
+                Eren Otomatik Şanzıman Servisi&apos;nde JATCO (Nissan/Mitsubishi), Toyota K-serisi, Honda, Hyundai IVT ve Subaru
                 Lineartronic dahil tüm CVT ailelerinde tanı, resetleme ve revizyon hizmeti veriyoruz.
                 CVT&apos;de vuruntu tipik bir belirti değildir; eğer vites geçişlerinde darbe hissediyorsanız{' '}
                 <Link href="/rehber/cvt-vuruntu/" className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors">
@@ -526,10 +526,10 @@ export default function CvtSanzımanTamiriPage() {
           </div>
         </section>
 
-        {/* Neden Eren Servis */}
+        {/* Neden Eren Otomatik Şanzıman */}
         <section className="py-16 bg-graphite-surface">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Neden Eren Servis?</h2>
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-10">Neden Eren Otomatik Şanzıman?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { rakam: '15+', etiket: 'Yıl Deneyim', aciklama: 'Sadece otomatik şanzıman — genel oto servis değil' },

@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Çift Kütleli Volant Titreşimi: DSG'de Sarsıntının Ana Kaynağı | Eren Servis Bostancı",
+  title: "Çift Kütleli Volant Titreşimi: DSG'de Sarsıntının Ana Kaynağı | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "Çift kütleli volant (DMF) nedir, neden titrer, ne zaman değişir? DSG DQ200, DQ250, DQ381 " +
     "araçlarda volant ömrü, belirtileri ve değişim detayları. Bostancı, İstanbul.",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "klima açınca titreme",
   ],
   openGraph: {
-    title: "Çift Kütleli Volant Titreşimi: DMF Yay Yorgunluğu | Eren Servis",
+    title: "Çift Kütleli Volant Titreşimi: DMF Yay Yorgunluğu | Eren Otomatik Şanzıman Servisi",
     description:
       "DSG araçlarda volant titreşimi belirtileri, ömrü ve değişim zamanı. Bostancı.",
     url: "https://www.erenservis.net/rehber/volant-titresim/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

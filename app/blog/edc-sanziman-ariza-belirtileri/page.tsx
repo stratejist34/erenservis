@@ -46,6 +46,48 @@ const MODELLER = [
   { model: 'Dacia Sandero', sanziman: 'EDC', belirti: 'Ekonomik kullanımda erken aşınma' },
 ];
 
+const KARAR_NOTLARI = [
+  {
+    baslik: 'Kalkışta titreme varsa',
+    aciklama:
+      'EDC tarafında ilk akla gelen alan kavrama ve adaptasyon davranışıdır. Özellikle soğukta belirginleşen titreme, ileride aktüatör ve kavrama maliyetini büyütebilir.',
+    link: '/rehber/edc-vuruntu/',
+    linkLabel: 'EDC vuruntu rehberi',
+  },
+  {
+    baslik: 'Vites geçişi gecikiyorsa',
+    aciklama:
+      'Araç gaz alıyor ama vites kararsız kalıyorsa yalnız yazılım değil, aktüatör tepkisi ve debriyaj yönetimi de değerlendirilmelidir. Bu belirti bekledikçe ağırlaşır.',
+    link: '/rehber/otomatik-sanziman-gecikme/',
+    linkLabel: 'Geçikme semptom rehberi',
+  },
+  {
+    baslik: 'Arıza lambası yanıyorsa',
+    aciklama:
+      'EDC lambası veya genel şanzıman uyarısı tek başına parça kararı verdirmez. Hata kodu okunmadan kavrama ya da mekatronik hükmü vermek çoğu zaman hatalıdır.',
+    link: '/rehber/edc-ariza-lambasi/',
+    linkLabel: 'EDC arıza lambası rehberi',
+  },
+];
+
+const NEDENLER = [
+  {
+    baslik: 'Kavrama aşınması',
+    aciklama:
+      'Sık dur-kalk, yarım kavrama benzeri kullanım ve adaptasyon bozulması EDC kavrama ömrünü kısaltır. İlk belirti titreme ve kalkış kararsızlığıdır.',
+  },
+  {
+    baslik: 'Aktüatör / elektro-hidrolik yönetim',
+    aciklama:
+      'Vites seçim motorları veya aktüatör sistemi yavaşladığında araç doğru vitesi geç bağlar. Kullanıcı bunu çoğu zaman yalnız “şanzıman yığılıyor” diye tarif eder.',
+  },
+  {
+    baslik: 'Yazılım ve adaptasyon sapması',
+    aciklama:
+      'Her EDC sorunu mekanik değildir. Özellikle akü zayıflığı, önceki hatalı işlem veya kalibrasyon bozulması geçiş karakterini ciddi biçimde etkileyebilir.',
+  },
+];
+
 
 export default function EDCArizaPage() {
   return (
@@ -119,6 +161,42 @@ export default function EDCArizaPage() {
           </div>
         </section>
 
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">Belirtiye Göre İlk Karar Notları</h2>
+          <p className="font-saira text-text-secondary text-sm mb-6">
+            EDC şanzımanda doğru karar, semptomu doğru okumakla başlar. Her titreme aynı arıza değildir; her arıza lambası da direkt kavrama değişimi anlamına gelmez.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {KARAR_NOTLARI.map((item) => (
+              <div key={item.baslik} className="rounded-xl border border-border-hairline bg-graphite-surface p-5">
+                <h3 className="font-saira font-semibold text-text-primary mb-3">{item.baslik}</h3>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">{item.aciklama}</p>
+                <Link
+                  href={item.link}
+                  className="font-saira text-sm font-semibold text-text-primary underline decoration-brass/40 underline-offset-2 hover:decoration-brass transition-colors"
+                >
+                  {item.linkLabel}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">EDC Arızasının En Yaygın 3 Kök Nedeni</h2>
+          <p className="font-saira text-text-secondary text-sm mb-6">
+            Renault ve Dacia EDC tarafında kullanıcı aynı semptomu yaşasa da arıza üç ana başlıkta toplanır: kavrama, aktüatör yönetimi ve adaptasyon.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {NEDENLER.map((item) => (
+              <div key={item.baslik} className="rounded-xl border border-border-hairline bg-graphite-elevated p-5">
+                <h3 className="font-saira font-semibold text-text-primary mb-3">{item.baslik}</h3>
+                <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.aciklama}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Model Bazlı */}
         <section className="mb-12">
           <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Model Bazlı Şikayetler</h2>
@@ -134,6 +212,28 @@ export default function EDCArizaPage() {
                 <p className="font-saira text-text-secondary text-sm">{item.belirti}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">Ne Zaman Beklememek Gerekir?</h2>
+          <div className="rounded-xl border border-border-subtle bg-graphite-elevated p-6">
+            <ul className="space-y-3">
+              {[
+                'Titreme ve vuruntu artık yalnız soğukta değil her kalkışta hissediliyorsa',
+                'Araç bazen vitesi geç bağlıyor veya bir anda koruma moduna düşüyorsa',
+                'Arıza lambasına yüksek devir ve çekiş kaybı eşlik ediyorsa',
+                'Koku, ısınma veya geri viteste belirgin gecikme başladıysa',
+              ].map((madde) => (
+                <li key={madde} className="flex items-start gap-3">
+                  <AlertTriangle className="w-5 h-5 text-brass shrink-0 mt-0.5" />
+                  <span className="font-saira text-sm text-text-primary">{madde}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 font-saira text-sm text-text-secondary leading-relaxed">
+              Bu noktadan sonra “biraz daha idare eder” yaklaşımı genelde maliyeti büyütür. Özellikle Clio, Megane ve Captur tarafında erken cihazlı kontrol, büyük revizyonla küçük müdahaleyi birbirinden ayırır.
+            </p>
           </div>
         </section>
 
@@ -168,16 +268,16 @@ export default function EDCArizaPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link
-              href="/hizmetler/dsg-kavrama-degisimi/"
+              href="/arac/renault/"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brass-bright text-graphite-base font-saira font-semibold hover:bg-brass transition-colors"
             >
-              Kavrama Değişimi Bilgi
+              Renault Servisi Bilgi
             </Link>
             <Link
-              href="/arac/renault/"
+              href="/rehber/edc-vuruntu/"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-colors"
             >
-              Renault Servisi &rarr;
+              EDC Vuruntu Rehberi &rarr;
             </Link>
           </div>
         </section>
@@ -189,6 +289,21 @@ export default function EDCArizaPage() {
             Bostancı İstanbul&apos;da erken teşhis, hem güvenliği korur hem de maliyeti kontrol altında tutar.
             İlk belirtilerde uzman kontrolü, büyük masraflardan kaçınmanın en etkili yoludur.
           </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-border-hairline">
+          <Link
+            href="/rehber/edc-vuruntu/"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brass-bright text-graphite-base font-saira font-semibold hover:bg-brass transition-colors"
+          >
+            EDC Vuruntu Rehberi
+          </Link>
+          <Link
+            href="/rehber/edc-ariza-lambasi/"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border-subtle text-text-secondary font-saira font-semibold hover:border-brass hover:text-text-primary transition-colors"
+          >
+            EDC Arıza Lambası &rarr;
+          </Link>
         </div>
       </article>
 

@@ -11,10 +11,10 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Otomatik Şanzımanda Vuruntu Neden Olur? | Eren Servis Bostancı",
+  title: "Otomatik Şanzımanda Vuruntu Neden Olur? | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG, PowerShift, EDC ve CVT şanzımanlarda vuruntunun nedenleri, hangi tipte nasıl davranır, " +
-    "ne zaman tehlikeli olur. Bostancı'da ücretsiz ön tanı — Eren Servis.",
+    "ne zaman tehlikeli olur. Bostancı'da ücretsiz ön tanı — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "otomatik şanzıman vuruntu",
     "şanzıman geçişte vuruntu neden olur",
@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     "şanzıman tipi vuruntu karşılaştırma",
   ],
   openGraph: {
-    title: "Otomatik Şanzımanda Vuruntu: Hangi Tip, Hangi Neden? | Eren Servis",
+    title: "Otomatik Şanzımanda Vuruntu: Hangi Tip, Hangi Neden? | Eren Otomatik Şanzıman Servisi",
     description:
       "DSG, PowerShift, EDC ve CVT şanzımanlarda vuruntu nedenleri. " +
       "Bostancı'da ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/otomatik-sanziman-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

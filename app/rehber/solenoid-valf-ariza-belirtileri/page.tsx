@@ -12,10 +12,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Solenoid Valf Arıza Belirtileri | DSG Uzmanı Bostancı | Eren Servis",
+  title: "Solenoid Valf Arıza Belirtileri | DSG Uzmanı Bostancı | Eren Otomatik Şanzıman Servisi",
   description:
     "DSG solenoid valf arıza belirtileri ve çözüm yolları. " +
-    "Bostancı Eren Servis'te profesyonel mekatronik onarımı ve garantili değişim. Hemen randevu alın.",
+    "Bostancı Eren Otomatik Şanzıman Servisi'nde profesyonel mekatronik onarımı ve garantili değişim. Hemen randevu alın.",
   keywords: [
     "solenoid valf arıza belirtileri",
     "dsg solenoid valf",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "p17bf hata kodu",
   ],
   openGraph: {
-    title: "DSG Solenoid Valf Arıza Belirtileri | Eren Servis Bostancı",
+    title: "DSG Solenoid Valf Arıza Belirtileri | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "Solenoid valf arızasının 7 kritik belirtisi. " +
-      "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
+      "Bostancı DSG uzmanı Eren Otomatik Şanzıman Servisi'nde ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",
     type: "article",
     publishedTime: "2026-04-10",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/solenoid-valf-ariza-belirtileri/",

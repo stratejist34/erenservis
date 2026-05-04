@@ -12,7 +12,7 @@ import { TRANSMISSION_FAQS } from '@/lib/sanziman-faq';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'ZF Şanzıman Tamiri Bostancı | Eren Servis',
+  title: 'ZF Şanzıman Tamiri Bostancı | Eren Otomatik Şanzıman Servisi',
   description:
     'Bostancı\'da ZF şanzıman tamiri ve revizyonu. ZF 8HP, ZF 6HP ve tüm ZF otomatik şanzıman modelleri. BMW, Mercedes, Audi, Land Rover. 6 ay garanti.',
   keywords: [

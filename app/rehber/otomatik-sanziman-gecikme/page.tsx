@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Otomatik Şanzımanda Gecikme: Vites Geçişi Neden Yavaş? | Eren Servis Bostancı",
+  title: "Otomatik Şanzımanda Gecikme: Vites Geçişi Neden Yavaş? | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG, ZF, Aisin, CVT ve PowerShift şanzımanlarda vites gecikmesinin nedenleri. " +
     "Solenoid valf, yağ basıncı, adaptasyon bozukluğu ve çözümler. Bostancı, İstanbul.",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "geç vites değişimi",
   ],
   openGraph: {
-    title: "Otomatik Şanzımanda Gecikme: Vites Geç Geçiyor | Eren Servis",
+    title: "Otomatik Şanzımanda Gecikme: Vites Geç Geçiyor | Eren Otomatik Şanzıman Servisi",
     description:
       "DSG, ZF, Aisin ve CVT'de geç vites değişimi nedenleri ve çözümleri. Bostancı.",
     url: "https://www.erenservis.net/rehber/otomatik-sanziman-gecikme/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

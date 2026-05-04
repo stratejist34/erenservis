@@ -12,10 +12,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "DSG Şanzıman Ömrü ve Bakım Rehberi | Eren Servis Bostancı",
+  title: "DSG Şanzıman Ömrü ve Bakım Rehberi | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG şanzıman ömrü nasıl uzatılır? DQ200 vs DQ250 karşılaştırması, bakım takvimi " +
-    "ve kullanım hataları. Bostancı Eren Servis'te profesyonel DSG bakımı.",
+    "ve kullanım hataları. Bostancı Eren Otomatik Şanzıman Servisi'nde profesyonel DSG bakımı.",
   keywords: [
     "dsg şanzıman ömrü",
     "dsg bakımı ne zaman yapılır",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "dsg şanzıman bakım takvimi",
   ],
   openGraph: {
-    title: "DSG Şanzıman Ömrü: Kaç KM Dayanır? | Eren Servis Bostancı",
+    title: "DSG Şanzıman Ömrü: Kaç KM Dayanır? | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "DQ200 ve DQ250 ömür karşılaştırması, bakım aralıkları ve ömrü uzatmanın 3 yolu. " +
       "Bostancı'da ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",
     type: "article",
     publishedTime: "2026-04-10",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/dsg-sanziman-omru-bakimi/",
@@ -204,7 +204,7 @@ export default function DsgSanzimanOmruBakimiPage() {
             yanıtı tamamen bakım disiplinine bağlıdır.
           </p>
           <p className="font-saira text-text-secondary text-base leading-relaxed">
-            Bostancı Eren Servis olarak, DSG şanzımanlardaki kronik sorunları
+            Bostancı'daki Eren Otomatik Şanzıman Servisi olarak, DSG şanzımanlardaki kronik sorunları
             önlemek ve mekanik ömrü maksimize etmek için uzman çözümler
             sunuyoruz. Doğru müdahalelerle şanzıman revizyonu maliyetlerinden
             kurtulmanız mümkündür — bu disiplinin merkezinde{" "}

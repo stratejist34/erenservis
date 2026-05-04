@@ -197,9 +197,9 @@ export default function DQ200Page() {
           </div>
         </section>
 
-        {/* Neden Eren Servis */}
+        {/* Neden Eren Otomatik Şanzıman */}
         <section className="mb-12">
-          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Neden Eren Servis?</h2>
+          <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Neden Eren Otomatik Şanzıman?</h2>
           <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-6">
             <ul className="space-y-3">
               {AVANTAJLAR.map((madde) => (

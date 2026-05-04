@@ -18,16 +18,16 @@ function faultMatching(slug: string, keyword: string): string | null {
 }
 
 export const metadata: Metadata = {
-  title: 'Hizmetlerimiz | Eren Servis — Bostancı Otomatik Şanzıman',
+  title: 'Hizmetlerimiz | Eren Otomatik Şanzıman Servisi — Bostancı Otomatik Şanzıman',
   description:
-    'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Servis.',
+    'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Otomatik Şanzıman Servisi.',
   alternates: {
     canonical: 'https://www.erenservis.net/hizmetler/',
   },
   openGraph: {
-    title: 'Hizmetlerimiz | Eren Servis — Bostancı Otomatik Şanzıman',
+    title: 'Hizmetlerimiz | Eren Otomatik Şanzıman Servisi — Bostancı Otomatik Şanzıman',
     description:
-      'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Servis.',
+      'DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. Bostancı\'nın şanzıman uzmanı Eren Otomatik Şanzıman Servisi.',
     url: 'https://www.erenservis.net/hizmetler/',
     siteName: 'Eren Otomatik Şanzıman Servisi',
     locale: 'tr_TR',

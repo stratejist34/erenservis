@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "CVT Şanzımanda Kayma: Kayış ve Pully Aşınması | Eren Servis Bostancı",
+  title: "CVT Şanzımanda Kayma: Kayış ve Pully Aşınması | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "CVT kayması neden olur? Toyota, Honda, Nissan ve Subaru CVT modellerinde kayış aşınması, " +
     "pully yüzey hasarı ve yağ değişimi rehberi. Bostancı, İstanbul.",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "cvt pully aşınması",
   ],
   openGraph: {
-    title: "CVT Şanzımanda Kayma ve Vites Atlama | Eren Servis",
+    title: "CVT Şanzımanda Kayma ve Vites Atlama | Eren Otomatik Şanzıman Servisi",
     description:
       "Toyota, Honda, Nissan CVT kayma nedenleri ve kayış değişim maliyeti. Bostancı.",
     url: "https://www.erenservis.net/rehber/cvt-kayma/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

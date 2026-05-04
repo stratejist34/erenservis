@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Otomatik Şanzıman Arıza Lambası: Ne Anlama Gelir? | Eren Servis Bostancı",
+  title: "Otomatik Şanzıman Arıza Lambası: Ne Anlama Gelir? | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG, EDC, CVT ve ZF şanzımanlarda arıza lambası ne anlama gelir, ne yapılmalı? " +
     "Sarı ile kırmızı lamba farkı, limp mode, hata kodu okuma. Bostancı'da ücretsiz teşhis.",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "dsg p lambası",
   ],
   openGraph: {
-    title: "Otomatik Şanzıman Arıza Lambası: Ne Anlama Gelir? | Eren Servis",
+    title: "Otomatik Şanzıman Arıza Lambası: Ne Anlama Gelir? | Eren Otomatik Şanzıman Servisi",
     description:
       "DSG, EDC, CVT şanzımanlarda arıza lambası anlamı ve yapılması gerekenler. " +
-      "Bostancı'da ücretsiz hata kodu okuma — Eren Servis.",
+      "Bostancı'da ücretsiz hata kodu okuma — Eren Otomatik Şanzıman Servisi.",
     url: "https://www.erenservis.net/rehber/otomatik-sanziman-ariza-lambasi/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

@@ -11,10 +11,10 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Ford PowerShift Vuruntu: DPS6 Arızası Belirtileri | Eren Servis",
+  title: "Ford PowerShift Vuruntu: DPS6 Arızası Belirtileri | Eren Otomatik Şanzıman Servisi",
   description:
     "Ford Focus ve Fiesta PowerShift (DPS6) şanzımanda vuruntunun 5 belirtisi, nedenleri ve " +
-    "kavrama seti değişimi fiyatı 2026. Bostancı'da ücretsiz ön tanı — Eren Servis.",
+    "kavrama seti değişimi fiyatı 2026. Bostancı'da ücretsiz ön tanı — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "powershift vuruntu",
     "ford focus şanzıman vuruntu",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "ford focus otomatik şanzıman titreşim",
   ],
   openGraph: {
-    title: "Ford PowerShift Vuruntu: DPS6 Arızası Belirtileri | Eren Servis",
+    title: "Ford PowerShift Vuruntu: DPS6 Arızası Belirtileri | Eren Otomatik Şanzıman Servisi",
     description:
       "Focus ve Fiesta'da DPS6 vuruntusunun nedenleri, belirtileri ve kavrama seti değişim fiyatı. " +
       "Bostancı'da ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/powershift-vuruntu/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

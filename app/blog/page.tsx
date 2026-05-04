@@ -7,7 +7,7 @@ import { Calendar, ArrowRight } from 'lucide-react';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Blog | Eren Servis — Otomatik Şanzıman Rehberi',
+  title: 'Blog | Eren Otomatik Şanzıman Servisi — Otomatik Şanzıman Rehberi',
   description:
     'Otomatik şanzıman bakımı, DSG tamiri ve CVT hakkında uzman ipuçları ve rehber yazılar.',
   alternates: {

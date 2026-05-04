@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "CVT Arıza Lambası: Toyota, Honda, Nissan'da Uyarı Işığı | Eren Servis",
+  title: "CVT Arıza Lambası: Toyota, Honda, Nissan'da Uyarı Işığı | Eren Otomatik Şanzıman Servisi",
   description:
     "CVT şanzımanda arıza lambası neden yanar? Kayış basınç anomalisi, kontrol ünitesi hatası " +
     "ve kalibrasyon sorunu. Toyota, Honda, Nissan, Subaru rehberi. Bostancı'da ücretsiz teşhis.",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "cvt kontrol ünitesi arıza",
   ],
   openGraph: {
-    title: "CVT Arıza Lambası: Toyota, Honda, Nissan Rehberi | Eren Servis",
+    title: "CVT Arıza Lambası: Toyota, Honda, Nissan Rehberi | Eren Otomatik Şanzıman Servisi",
     description:
       "CVT şanzımanda uyarı ışığının nedenleri ve aciliyet değerlendirmesi. " +
       "Bostancı'da ücretsiz hata kodu okuma.",
     url: "https://www.erenservis.net/rehber/cvt-ariza-lambasi/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",
@@ -386,7 +386,7 @@ export default function CvtArızaLambasıPage() {
               CVT'nizde arıza lambası yandı mı?
             </h2>
             <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed">
-              CVT arızaları erken teşhiste çok daha ucuza çözülür. Eren Servis'te
+              CVT arızaları erken teşhiste çok daha ucuza çözülür. Eren Otomatik Şanzıman Servisi'nde
               ücretsiz hata kodu okuma — Toyota, Honda, Nissan ve Subaru CVT
               şanzıman uzmanı.
             </p>

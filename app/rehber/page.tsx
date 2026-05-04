@@ -7,7 +7,7 @@ import { buildBreadcrumbSchema, schemaToString } from '@/lib/schema';
 export const dynamic = 'force-static';
 
 const PAGE_URL = 'https://www.erenservis.net/rehber/';
-const PAGE_TITLE = 'Şanzıman Rehberi | Eren Servis — DSG, CVT, ZF, EDC';
+const PAGE_TITLE = 'Şanzıman Rehberi | Eren Otomatik Şanzıman Servisi — DSG, CVT, ZF, EDC';
 const PAGE_DESC =
   'Otomatik şanzıman arıza belirtileri, semptom analizleri ve marka özel rehberler. DSG, CVT, ZF, Aisin, EDC ve PowerShift sahipleri için Bostancı uzman serisi.';
 

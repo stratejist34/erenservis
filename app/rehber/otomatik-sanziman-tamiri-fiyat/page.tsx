@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Otomatik Şanzıman Tamiri Ne Kadar Tutar? 2026 Fiyat Rehberi",
   description:
     "DSG kavrama 18.000–35.000 TL, mekatronik kart 8.000–48.000 TL, CVT 5.000–35.000 TL. " +
-    "Nisan 2026 güncel fiyat tablosu ve arıza türüne göre rehber — Eren Servis Bostancı.",
+    "Nisan 2026 güncel fiyat tablosu ve arıza türüne göre rehber — Eren Otomatik Şanzıman Servisi Bostancı.",
   keywords: [
     "otomatik şanzıman tamiri fiyatı",
     "şanzıman tamiri ne kadar",
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     title: "Otomatik Şanzıman Tamiri Ne Kadar Tutar? 2026 Fiyat Rehberi",
     description:
       "Nisan 2026 güncel fiyatlar: DSG, CVT, ZF ve konvansiyonel şanzıman tamir fiyatları. " +
-      "Ücretsiz ön tanı ile net fiyat — Eren Servis Bostancı.",
+      "Ücretsiz ön tanı ile net fiyat — Eren Otomatik Şanzıman Servisi Bostancı.",
     url: "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat/",
     type: "article",
     publishedTime: "2026-04-01",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/otomatik-sanziman-tamiri-fiyat/",
@@ -192,7 +192,7 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
           <p className="font-saira text-text-secondary text-base leading-relaxed">
             Bu rehberde Nisan 2026 itibarıyla güncel fiyat aralıklarını ve
             sürelerini bulacaksınız. Net fiyat için araç getirilip hata kodu
-            okunmalıdır. Eren Servis&apos;te ön tanı ücretsizdir; VAG araçlarında
+            okunmalıdır. Eren Otomatik Şanzıman Servisi&apos;nde ön tanı ücretsizdir; VAG araçlarında
             onarım çoğunlukla{" "}
             <Link
               href="/hizmetler/dsg-sanziman-tamiri/"
@@ -362,7 +362,7 @@ export default function OtomatikSanzimanTamiriFiyatPage() {
             </li>
           </ul>
           <p className="font-saira text-text-secondary text-sm leading-relaxed">
-            Bu yüzden Eren Servis&apos;te ön tanı ücretsizdir. Aracınızı getirin,
+            Bu yüzden Eren Otomatik Şanzıman Servisi&apos;nde ön tanı ücretsizdir. Aracınızı getirin,
             hata kodunu okuyalım, net fiyatı yazılı bildirelim.
           </p>
         </section>

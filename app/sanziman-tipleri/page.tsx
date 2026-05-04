@@ -4,14 +4,14 @@ import TransmissionFilter from '@/components/sanziman/TransmissionFilter';
 import { transmissions } from '@/lib/sanziman';
 
 export const metadata: Metadata = {
-  title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Servis Bostancı',
+  title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Otomatik Şanzıman Servisi Bostancı',
   description:
-    'DSG, ZF, CVT, Mercedes 7G/9G, Aisin EAT, Renault EDC, Ford PowerShift — 7 otomatik şanzıman ailesi. Kronik arızalar, bakım aralıkları ve Bostancı Eren Servis uzman bilgisi.',
+    'DSG, ZF, CVT, Mercedes 7G/9G, Aisin EAT, Renault EDC, Ford PowerShift — 7 otomatik şanzıman ailesi. Kronik arızalar, bakım aralıkları ve Bostancı Eren Otomatik Şanzıman Servisi uzman bilgisi.',
   alternates: {
     canonical: 'https://www.erenservis.net/sanziman-tipleri/',
   },
   openGraph: {
-    title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Servis',
+    title: 'Şanzıman Türleri ve Teknik Rehberi | Eren Otomatik Şanzıman Servisi',
     description:
       'DSG, ZF, CVT, Mercedes 7G/9G, Aisin, EDC ve PowerShift şanzıman aileleri. Arızalar, bakım ve uzman bilgisi.',
     url: 'https://www.erenservis.net/sanziman-tipleri/',
@@ -64,7 +64,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'İkinci el araçta şanzıman kontrolü nasıl yapılır?',
-    a: 'Öncelikle diagnostik cihazıyla hata kodu taraması yapılır. Ardından yağın rengi ve kıvamı kontrol edilir — siyah veya yanık kokulu yağ ihmal işaretidir. Test sürüşünde vites geçiş kalitesi, titreme ve sürüklenme hissi değerlendirilir. Eren Servis\'te ikinci el araç şanzıman kontrolü ücretsizdir.',
+    a: 'Öncelikle diagnostik cihazıyla hata kodu taraması yapılır. Ardından yağın rengi ve kıvamı kontrol edilir — siyah veya yanık kokulu yağ ihmal işaretidir. Test sürüşünde vites geçiş kalitesi, titreme ve sürüklenme hissi değerlendirilir. Eren Otomatik Şanzıman Servisi\'te ikinci el araç şanzıman kontrolü ücretsizdir.',
   },
   {
     q: 'Orijinal şanzıman yağı mı, muadil mi kullanılmalı?',

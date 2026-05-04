@@ -13,10 +13,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "DSG Kavrama Değişimi Fiyatı 2026 | Eren Servis Bostancı",
+  title: "DSG Kavrama Değişimi Fiyatı 2026 | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DQ200 kavrama değişimi 55.000–65.000 TL, DQ250 62.000–72.000 TL. " +
-    "Bostancı'da garantili DSG kavrama değişimi. Ücretsiz ön tanı — Eren Servis.",
+    "Bostancı'da garantili DSG kavrama değişimi. Ücretsiz ön tanı — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "dsg kavrama değişimi fiyatı",
     "dsg kavrama değişimi fiyatı 2026",
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     "kavrama değişimi fiyatı",
   ],
   openGraph: {
-    title: "DSG Kavrama Değişimi Fiyatı 2026 | Eren Servis Bostancı",
+    title: "DSG Kavrama Değişimi Fiyatı 2026 | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "DQ200 ve DQ250 için net fiyat tablosu. Nisan 2026 güncel. Garantili işlem, ücretsiz ön tanı. " +
-      "Bostancı DSG uzmanı Eren Servis.",
+      "Bostancı DSG uzmanı Eren Otomatik Şanzıman Servisi.",
     url: "https://www.erenservis.net/hizmetler/dsg-kavrama-degisimi/",
     type: "website",
   },
@@ -172,7 +172,7 @@ export default function DsgKavramaDegisimiPage() {
         <div className="mt-8 relative w-full h-72 sm:h-96 overflow-hidden bg-graphite-elevated">
           <Image
             src="/images/part2/Screenshot_83.webp"
-            alt="DSG kavrama diski ve piston montajı — Eren Servis Bostancı DQ200 kavrama değişimi"
+            alt="DSG kavrama diski ve piston montajı — Eren Otomatik Şanzıman Servisi Bostancı DQ200 kavrama değişimi"
             fill
             className="object-cover brightness-[0.73] saturate-[0.6]"
             style={{ objectPosition: '50% 30%' }}

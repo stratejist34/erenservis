@@ -12,7 +12,7 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ─────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "DSG Volant Kavrama Paketi Fiyatı 2026 | Eren Servis Bostancı",
+  title: "DSG Volant Kavrama Paketi Fiyatı 2026 | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DQ200 volant + kavrama kombo paketi 2026. Orijinal parçayla 80.000–95.000 TL, " +
     "muadille 62.000–72.000 TL. İkisini aynı anda değiştirmek işçilik tasarrufu sağlar. Bostancı.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "dsg volant kavrama bostancı",
   ],
   openGraph: {
-    title: "DSG Volant Kavrama Paketi Fiyatı 2026 | Eren Servis Bostancı",
+    title: "DSG Volant Kavrama Paketi Fiyatı 2026 | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "DQ200 volant + kavrama kombo 80.000–95.000 TL. " +
       "İkisi ayrı yapılsaydı işçilik iki kez ödenirdi. Garantili, ücretsiz ön tanı.",

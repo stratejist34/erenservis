@@ -49,7 +49,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
     {
       q: 'DSG mekatronik arızası ne kadara mal olur?',
-      a: 'Mekatronik onarımı hasarın boyutuna göre değişir. Elektronik kart tamiri genellikle mekanik revizyondan daha ekonomiktir. Kesin fiyat, diagnostik sonrası yazılı olarak sunulur — Eren Servis\'te ön diagnostik ücretsizdir.',
+      a: 'Mekatronik onarımı hasarın boyutuna göre değişir. Elektronik kart tamiri genellikle mekanik revizyondan daha ekonomiktir. Kesin fiyat, diagnostik sonrası yazılı olarak sunulur — Eren Otomatik Şanzıman Servisi\'nde ön diagnostik ücretsizdir.',
     },
     {
       q: 'DQ200 ve DQ250 arasındaki fark nedir?',
@@ -84,7 +84,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
     {
       q: 'ZF şanzımanlı araç satın alırken nelere dikkat edilmeli?',
-      a: 'Yağ değişim geçmişi belgelenmeli, diagnostik taramasında hata kodu bulunmamalıdır. Test sürüşünde 60–90 km/s aralığında titreme ve sert vites geçişi yokluğu kontrol edilmeli. Eren Servis\'te ikinci el araç şanzıman kontrolü ücretsiz yapılmaktadır.',
+      a: 'Yağ değişim geçmişi belgelenmeli, diagnostik taramasında hata kodu bulunmamalıdır. Test sürüşünde 60–90 km/s aralığında titreme ve sert vites geçişi yokluğu kontrol edilmeli. Eren Otomatik Şanzıman Servisi\'nde ikinci el araç şanzıman kontrolü ücretsiz yapılmaktadır.',
     },
   ],
 
@@ -148,7 +148,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       q: 'DSG vuruntusunda kavrama değişimi ne kadar sürer?',
       a:
         'Yalnızca kavrama seti değişimi genellikle 1 iş günü sürer. Volant da ' +
-        'etkilenmişse 1,5–2 güne uzayabilir. Eren Servis\'te araç tesliminde ' +
+        'etkilenmişse 1,5–2 güne uzayabilir. Eren Otomatik Şanzıman Servisi\'nde araç tesliminde ' +
         'net süre bildirilir.',
     },
   ],
@@ -182,7 +182,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'DSG kavrama değişimi garanti kansamıyor mu?',
       a:
-        'Eren Servis\'te 6 ay / 10.000 km işçilik garantisi sunulanır. ' +
+        'Eren Otomatik Şanzıman Servisi\'nde 6 ay / 10.000 km işçilik garantisi sunulur. ' +
         'Kavrama seti, orijinal veya OEM eşdeğeri parça kullanılır. ' +
         'Garanti kapsamı: işçilik hataları. Değişim sonrası mekatronik adaptasyon ' +
         'ücretsiz olarak yapılır.',
@@ -198,7 +198,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'Kavrama değişiminde orijinal parça mı, muadil kullanılır mı?',
       a:
-        'Evet. Eren Servis\'te orijinal veya OEM eşdeğeri parça kullanılır. ' +
+        'Evet. Eren Otomatik Şanzıman Servisi\'nde orijinal veya OEM eşdeğeri parça kullanılır. ' +
         'Muadil parça kullanımı kısa vadeli maliyet avantusu uzun vadede, ' +
         'ancak kalıcı arıza riski de yüksek tutar. Ucuz or orijinal parça ' +
         'tercihi göre tanı sürece KDS şanzıman yazılımı uyumlu çalışamaz.',
@@ -303,7 +303,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       a:
         'Hayır. Arıza lambası onlarca farklı hata kodu tarafından tetiklenebilir. ' +
         'Sensör temizliğiyle geçen bir sorun mekatronik kart değişimiyle aynı lambayla sonuçlanır. ' +
-        'Eren Servis\'te KDS ile hata kodu okuma ücretsizdir — onaysız hiçbir işlem yapılmaz.',
+        'Eren Otomatik Şanzıman Servisi\'nde KDS ile hata kodu okuma ücretsizdir — onaysız hiçbir işlem yapılmaz.',
     },
     {
       q: 'Renault EDC ile DSG arıza lambası aynı mı?',
@@ -341,7 +341,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       a:
         'Tıkanıklık düzeyi ve valf durumuna göre değişir. ' +
         'Erken evrede temizleme yeterli olabilir. İleri tıkanıklıkta değişim gerekir. ' +
-        'Eren Servis\'te teşhis sonrası en uygun seçenek belirlenir.',
+        'Eren Otomatik Şanzıman Servisi\'nde teşhis sonrası en uygun seçenek belirlenir.',
     },
   ],
 
@@ -372,7 +372,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       a:
         'Kayış veya pully erken aşamada yakalanırsa tamir mümkün ve çok daha ucuzdur. ' +
         'İleri hasar durumunda komple revizyon gerekebilir. ' +
-        'Eren Servis\'te teşhis sonrası net karar verilir — gereksiz tamir veya değişim önerilmez.',
+        'Eren Otomatik Şanzıman Servisi\'nde teşhis sonrası net karar verilir — gereksiz tamir veya değişim önerilmez.',
     },
   ],
 
@@ -410,7 +410,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: "Hata kodu okuma ücretsiz mi?",
       a:
-        "Eren Servis'te ilk hata kodu okuma ücretsizdir. Okuma sonrası " +
+        "Eren Otomatik Şanzıman Servisi'nde ilk hata kodu okuma ücretsizdir. Okuma sonrası " +
         "nedenini ve gerekli işlemi net olarak bildiririz — onayınız " +
         "olmadan hiçbir işlem yapılmaz.",
     },
@@ -454,7 +454,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       a:
         'Evet. Yeni kart takıldıktan sonra mekatronik adaptasyonu teşhis ' +
         'cihazıyla sıfırlanır ve yeniden öğrenmesi sağlanır. Bu işlem ' +
-        'yapılmazsa vuruntu devam eder. Eren Servis\'te adaptasyon işlemi ' +
+        'yapılmazsa vuruntu devam eder. Eren Otomatik Şanzıman Servisi\'nde adaptasyon işlemi ' +
         'ayrıca ücretlendirilmez.',
     },
   ],
@@ -467,7 +467,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
             'DQ200 için tamir 14.000–20.000 TL, değişim 45.000–58.000 TL. ' +
             'DQ250 için tamir 18.000–25.000 TL, değişim 55.000–68.000 TL aralığındadır. ' +
             'Kesin fiyat hata kodu okuma ve fiziksel inceleme sonrası verilir. ' +
-            'Eren Servis\'te ön tanı ücretsizdir.',
+            'Eren Otomatik Şanzıman Servisi\'nde ön tanı ücretsizdir.',
         },
         {
           q: 'Telefonda mekatronik kart fiyatı öğrenebilir miyim?',
@@ -497,7 +497,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
           a:
             'Fiyata şunlar dahildir: Hata kodu okuma, mekatronik kart (tamir veya ' +
             'değişim), adaptasyon ve test sürüşü. Kavrama da değişiyorsa ayrıca ' +
-            'fiyatlandırılır. Eren Servis\'te gizli maliyet yoktur, tüm kalemler ' +
+            'fiyatlandırılır. Eren Otomatik Şanzıman Servisi\'nde gizli maliyet yoktur, tüm kalemler ' +
             'yazılı olarak bildirilir.',
         },
         {
@@ -535,7 +535,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
     {
       q: 'Şanzıman tamiri fiyatına neler dahil?',
-      a: 'Eren Servis\'te verilen fiyatlara; arıza tespiti, sökme-takma işçiliği, değişen orijinal/OEM parçalar, yeni şanzıman yağı ve adaptasyon işlemleri dahildir. Sürpriz ek ücret çıkarılmaz.',
+      a: 'Eren Otomatik Şanzıman Servisi\'nde verilen fiyatlara; arıza tespiti, sökme-takma işçiliği, değişen orijinal/OEM parçalar, yeni şanzıman yağı ve adaptasyon işlemleri dahildir. Sürpriz ek ücret çıkarılmaz.',
     },
     {
       q: 'Kredi kartına taksit imkanı var mı?',
@@ -780,7 +780,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'DSG tamiri garantili mi?',
       a:
-        'Evet. Eren Servis\'te yapılan tüm DSG şanzıman onarım ve parça değişim işlemleri ' +
+        'Evet. Eren Otomatik Şanzıman Servisi\'nde yapılan tüm DSG şanzıman onarım ve parça değişim işlemleri ' +
         '6 ay garanti kapsamındadır. Garanti belgesi yazılı olarak teslim edilir.',
     },
     {
@@ -877,7 +877,7 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     {
       q: 'DSG şanzıman tamiri Bostancı\'da nerede yaptırılır?',
       a:
-        'Eren Servis, Bostancı Oto Sanayi Sitesi\'nde DSG mekatronik kart tamiri, kavrama ' +
+        'Eren Otomatik Şanzıman Servisi, Bostancı Oto Sanayi Sitesi\'nde DSG mekatronik kart tamiri, kavrama ' +
         'değişimi ve DQ200/DQ250/DQ381 revizyonu konusunda uzmanlaşmıştır. Ücretsiz ön tanı ' +
         'için 0532 715 37 51 numaradan randevu alabilirsiniz.',
     },

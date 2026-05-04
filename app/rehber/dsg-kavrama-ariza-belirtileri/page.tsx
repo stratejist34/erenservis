@@ -12,10 +12,10 @@ import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 // ─── META ────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "DSG Kavrama Arızası Belirtileri | Eren Servis Bostancı",
+  title: "DSG Kavrama Arızası Belirtileri | Eren Otomatik Şanzıman Servisi Bostancı",
   description:
     "DSG kavrama arızasının 7 kritik belirtisi: vuruntu, titreme, geç geçiş, koku. " +
-    "Bostancı'da ücretsiz ön tanı. DQ200 ve DQ250 uzmanı Eren Servis.",
+    "Bostancı'da ücretsiz ön tanı. DQ200 ve DQ250 uzmanı Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "dsg kavrama arızası belirtileri",
     "dsg kavrama sorunu",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "otomatik şanzıman kavrama sorunu",
   ],
   openGraph: {
-    title: "DSG Kavrama Arızası Belirtileri | Eren Servis Bostancı",
+    title: "DSG Kavrama Arızası Belirtileri | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "Aracınız vuruntu yapıyor, geç geçiş mi yapıyor? DSG kavrama arızasının " +
-      "7 kritik belirtisini öğrenin. Eren Servis Bostancı'da ücretsiz ön tanı.",
+      "7 kritik belirtisini öğrenin. Eren Otomatik Şanzıman Servisi Bostancı'da ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri/",
     type: "article",
     publishedTime: "2026-03-30",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/dsg-kavrama-ariza-belirtileri/",

@@ -11,10 +11,10 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "DSG Vuruntu Neden Olur? Vites Geçişinde Sarsıntı | Eren Servis",
+  title: "DSG Vuruntu Neden Olur? Vites Geçişinde Sarsıntı | Eren Otomatik Şanzıman Servisi",
   description:
     "DSG şanzımanda 1→2 veya 2→3 geçişte vuruntu, sarsıntı ve takılma yaşıyorsanız " +
-    "kavrama arızasının işareti olabilir. Bostancı'da ücretsiz ön tanı — Eren Servis.",
+    "kavrama arızasının işareti olabilir. Bostancı'da ücretsiz ön tanı — Eren Otomatik Şanzıman Servisi.",
   keywords: [
     "dsg vuruntu",
     "dsg 2 den 3 e geçerken vuruntu",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "otomatik şanzıman vuruntu nedeni",
   ],
   openGraph: {
-    title: "DSG Vuruntu Neden Olur? | Eren Servis Bostancı",
+    title: "DSG Vuruntu Neden Olur? | Eren Otomatik Şanzıman Servisi Bostancı",
     description:
       "Vites geçişinde vuruntu veya sarsıntı yaşıyorsanız ertelemeyin. " +
-      "Bostancı DSG uzmanı Eren Servis'te ücretsiz ön tanı.",
+      "Bostancı DSG uzmanı Eren Otomatik Şanzıman Servisi'nde ücretsiz ön tanı.",
     url: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",
     type: "article",
     publishedTime: "2026-03-30",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
   },
   alternates: {
     canonical: "https://www.erenservis.net/rehber/dsg-vuruntu-semptomlari/",

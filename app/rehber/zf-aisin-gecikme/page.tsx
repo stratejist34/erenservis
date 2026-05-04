@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "ZF ve Aisin Şanzımanda Gecikme: Mercedes, BMW, Peugeot Rehberi | Eren Servis",
+  title: "ZF ve Aisin Şanzımanda Gecikme: Mercedes, BMW, Peugeot Rehberi | Eren Otomatik Şanzıman Servisi",
   description:
     "ZF 8HP, Mercedes 7G/9G-Tronic ve Aisin TF80-SC şanzımanlarda vites gecikmesinin " +
     "nedenleri, çözümleri ve adaptasyon süreci. Bostancı, İstanbul.",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "peugeot aisin gecikme",
   ],
   openGraph: {
-    title: "ZF ve Aisin Şanzımanda Gecikme | Eren Servis",
+    title: "ZF ve Aisin Şanzımanda Gecikme | Eren Otomatik Şanzıman Servisi",
     description:
       "Mercedes, BMW, Peugeot, Volvo'da tork konvertörlü şanzıman gecikmesi. Bostancı.",
     url: "https://www.erenservis.net/rehber/zf-aisin-gecikme/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",

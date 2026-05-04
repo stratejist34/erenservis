@@ -11,7 +11,7 @@ import {
 import { TRANSMISSION_FAQS } from "@/lib/sanziman-faq";
 
 export const metadata: Metadata = {
-  title: "Renault EDC Arıza Lambası: Sarı Dişli Ne Anlama Gelir? | Eren Servis",
+  title: "Renault EDC Arıza Lambası: Sarı Dişli Ne Anlama Gelir? | Eren Otomatik Şanzıman Servisi",
   description:
     "Renault EDC7 ve EDC8 şanzımanda sarı dişli arıza lambası neden yanar? " +
     "Clio, Fluence, Megane, Captur, Nissan Juke sahipleri için rehber. Bostancı'da ücretsiz teşhis.",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "nissan juke arıza lambası şanzıman",
   ],
   openGraph: {
-    title: "Renault EDC Arıza Lambası: Sarı Dişli Ne Anlama Gelir? | Eren Servis",
+    title: "Renault EDC Arıza Lambası: Sarı Dişli Ne Anlama Gelir? | Eren Otomatik Şanzıman Servisi",
     description:
       "EDC7 / EDC8 şanzımanda sarı dişli ışığının anlamı, nedeni ve yapılması gerekenler. " +
       "Bostancı'da ücretsiz hata kodu okuma.",
     url: "https://www.erenservis.net/rehber/edc-ariza-lambasi/",
     type: "article",
     publishedTime: "2026-04-17",
-    authors: ["Eren Servis"],
+    authors: ["Eren Otomatik Şanzıman Servisi"],
     images: [
       {
         url: "https://www.erenservis.net/og-image.jpg",
@@ -388,7 +388,7 @@ export default function EdcArızaLambasıPage() {
               Renault'nuzun arıza lambası mı yandı?
             </h2>
             <p className="font-saira text-text-secondary text-sm mb-6 leading-relaxed">
-              EDC teşhisinde model uyumlu cihaz gereklidir. Eren Servis'te
+              EDC teşhisinde model uyumlu cihaz gereklidir. Eren Otomatik Şanzıman Servisi'nde
               Renault ve Nissan EDC şanzımanları için ücretsiz hata kodu okuma.
               Net fiyat, onaysız işlem yok.
             </p>

@@ -2,6 +2,7 @@
 **Güncelleme:** 2026-05-04  
 **Canlı domain:** https://www.erenservis.net  
 **Referans rapor:** `docs/CONTENT-BACKLOG-SYNC-2026-05-04.md`
+**DSG parity planı:** `docs/DSG-PARITY-PLAN-2026-05-04.md`
 
 ---
 

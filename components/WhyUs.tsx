@@ -1,3 +1,4 @@
+import { BRAND } from '@/lib/brand';
 import { Shield, Award, Wrench, Clock, Users, ThumbsUp } from 'lucide-react';
 
 const PRIMARY = [
@@ -60,7 +61,7 @@ export default function WhyUs() {
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14">
-          <p className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.22em] text-brass mb-4">Neden Eren Servis</p>
+          <p className="font-jetbrains text-[10px] font-semibold uppercase tracking-[0.22em] text-brass mb-4">Neden {BRAND.alternateName}</p>
           <h2 id="neden-baslik" className="font-saira font-semibold text-text-primary mb-4">
             Bu İş Güven İster.
           </h2>

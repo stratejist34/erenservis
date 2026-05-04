@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MessageCircle, Phone, MapPin } from 'lucide-react';
+import { BRAND } from '@/lib/brand';
 import { BRANDS } from '@/lib/brands';
 import { BUSINESS_HOURS, CONTACT } from '@/lib/constants';
 
@@ -39,8 +40,8 @@ export default function Footer() {
                 ES
               </div>
               <div>
-                <div className="font-saira text-sm font-semibold tracking-wide text-text-primary">Eren Servis</div>
-                <div className="font-jetbrains text-[11px] uppercase tracking-[0.24em] text-iron-light">Otomatik Şanzıman Uzmanı</div>
+                <div className="font-saira text-sm font-semibold tracking-wide text-text-primary">{BRAND.primaryName}</div>
+                <div className="font-jetbrains text-[11px] uppercase tracking-[0.24em] text-iron-light">{BRAND.alternateName}</div>
               </div>
             </div>
             <p className="mt-5 font-saira text-sm leading-7 text-text-secondary">
@@ -146,7 +147,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 border-t border-iron-deep pt-6 text-center font-saira text-sm text-text-secondary">
-          &copy; {new Date().getFullYear()} Eren Servis. Tüm hakları saklıdır.
+          &copy; {new Date().getFullYear()} {BRAND.primaryName}. Tüm hakları saklıdır.
         </div>
 
       </div>

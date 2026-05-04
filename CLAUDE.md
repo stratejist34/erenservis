@@ -59,6 +59,15 @@ Yeni FAQ soruları = sanziman-faq.ts'e kayıt.
 - Yeni hardcoded sayfa = rehber-posts.ts'e kayıt + app/rehber/ altına TSX
 - Yeni blog yazısı = posts.json'a kayıt, TSX dosyası gerekmez
 
+## Güncel Durum Notu (2026-05-04)
+- Canlı domain: https://www.erenservis.net
+- İşletme adı standardı: `Eren Otomatik Şanzıman Servisi`
+- Kısa marka varyasyonu: `Eren Otomatik Şanzıman`
+- Güncel backlog ve gerçek içerik envanteri için ana referans:
+  `docs/CONTENT-BACKLOG-SYNC-2026-05-04.md`
+- `docs/SPRINT-PLAN.md` güncel sprint özeti olarak kullanılır
+- `docs/PRE_LAUNC-AUDIT.md` tarihsel arşivdir, aktif iş listesi değildir
+
 ## Bilinen Teknik Borçlar (öncelik sırasıyla)
 1. ~~app/hakkimizda ve app/iletisim title'larında "Tuzla" → "Bostancı" düzelt~~ ✓ TAMAMLANDI
 2. ~~app/iletisim ADDRESS sabiti placeholder — gerçek adres girilecek~~ ✓ TAMAMLANDI

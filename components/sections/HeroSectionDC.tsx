@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation';
 import { SYMPTOMS } from '@/data/symptoms';
 import { useSymptom } from '@/contexts/SymptomContext';
 import { trackPhoneCall, trackWhatsappClick } from '@/lib/analytics';
+import { BRAND } from '@/lib/brand';
 
 // setInterval + pulse chain içerdiği için SSR'dan ayrıştırılıp lazy yüklenir.
 // Hero'nun alt bandında yer alıyor; ilk paint'i bloke etmez.
@@ -226,6 +227,10 @@ export default function HeroSectionDC({
 
         <p className="hero-item-3 mt-7 max-w-[52ch] font-saira text-lg leading-8 text-text-secondary">
           {subtitle}
+        </p>
+
+        <p className="hero-item-3 mt-4 max-w-[52ch] font-saira text-sm font-medium uppercase tracking-[0.16em] text-text-primary">
+          {BRAND.primaryName}
         </p>
 
         <p className="hero-item-3 mt-3 font-jetbrains text-[11px] uppercase tracking-widest text-iron-light">

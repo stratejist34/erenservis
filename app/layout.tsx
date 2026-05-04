@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { BRAND } from "@/lib/brand";
 import { buildLocalBusinessSchema, buildWebSiteSchema } from "@/lib/schema";
 import { Geist, Saira_Semi_Condensed, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -41,7 +42,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.erenservis.net"),
-  title: "Eren Servis | Bostancı Otomatik Şanzıman Servisi",
+  title: `Bostancı Otomatik Şanzıman Servisi | ${BRAND.primaryName}`,
   description:
     "Bostancı'da DSG, ZF, CVT ve konvansiyonel otomatik şanzıman tamiri, bakımı ve revizyonu. 15 yılı aşkın deneyim, orijinal parça, 6 ay garanti.",
   keywords: [
@@ -57,11 +58,11 @@ export const metadata: Metadata = {
     canonical: "https://www.erenservis.net",
   },
   openGraph: {
-    title: "Eren Servis | Bostancı Otomatik Şanzıman Servisi",
+    title: `Bostancı Otomatik Şanzıman Servisi | ${BRAND.primaryName}`,
     description:
       "Bostancı'da DSG, ZF ve CVT otomatik şanzıman tamiri. 15+ yıl deneyim, garantili servis.",
     url: "https://www.erenservis.net",
-    siteName: "Eren Otomatik Şanzıman Servisi",
+    siteName: BRAND.primaryName,
     locale: "tr_TR",
     type: "website",
     images: [
@@ -69,14 +70,14 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Eren Otomatik Şanzıman Servisi — Bostancı",
+        alt: `${BRAND.primaryName} — Bostancı`,
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eren Servis | Bostancı Otomatik Şanzıman Servisi",
+    title: `Bostancı Otomatik Şanzıman Servisi | ${BRAND.primaryName}`,
     description:
       "Bostancı'da DSG, ZF ve CVT otomatik şanzıman tamiri. 15+ yıl deneyim, garantili servis.",
     images: ["/og-image.jpg"],

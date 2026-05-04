@@ -1,3 +1,5 @@
+import { BRAND } from '@/lib/brand';
+
 interface ErenLogoProps {
   className?: string;
   height?: number;
@@ -14,7 +16,7 @@ export default function ErenLogo({ className, height = 44 }: ErenLogoProps) {
       height={height}
       viewBox={`0 0 ${W} ${H}`}
       fill="none"
-      aria-label="Eren Otomatik Şanzıman Servisi"
+      aria-label={BRAND.primaryName}
       role="img"
       className={className}
     >

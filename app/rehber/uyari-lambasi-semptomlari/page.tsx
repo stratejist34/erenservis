@@ -153,22 +153,22 @@ const aciliyetStil: Record<
   { kart: string; etiket: string; etiketMetin: string; nokta: string }
 > = {
   kritik: {
-    kart: "border-red-200 bg-red-50",
-    etiket: "bg-red-100 text-red-700",
+    kart: "border-red-500/30 bg-red-950/20",
+    etiket: "bg-red-500/15 text-red-300 border border-red-500/20",
     etiketMetin: "Acil — çekici çağır",
-    nokta: "bg-red-500",
+    nokta: "bg-red-400",
   },
   "yüksek": {
-    kart: "border-amber-200 bg-amber-50",
-    etiket: "bg-amber-100 text-amber-700",
+    kart: "border-amber-500/30 bg-amber-500/8",
+    etiket: "bg-amber-500/15 text-amber-200 border border-amber-500/20",
     etiketMetin: "Bugün servise git",
-    nokta: "bg-amber-500",
+    nokta: "bg-amber-400",
   },
   orta: {
-    kart: "border-blue-200 bg-blue-50",
-    etiket: "bg-blue-100 text-blue-700",
-    etiketMetin: "Yakın zamanda kontrol",
-    nokta: "bg-blue-400",
+    kart: "border-border-subtle bg-graphite-surface",
+    etiket: "bg-brass/10 text-brass border border-brass/20",
+    etiketMetin: "Kontrol ettir",
+    nokta: "bg-brass",
   },
 };
 
@@ -195,16 +195,16 @@ export default function UyariLambasiSemptomlariPage() {
             <nav className="text-xs text-text-secondary mb-6 flex items-center gap-2">
               <Link href="/" className="hover:text-text-primary transition-colors">Ana Sayfa</Link>
               <span>/</span>
-              <a href="/rehber" className="hover:text-text-primary transition-colors">Rehber</a>
+              <Link href="/rehber" className="hover:text-text-primary transition-colors">Rehber</Link>
               <span>/</span>
               <span className="text-text-secondary">DSG Uyarı Lambası</span>
             </nav>
 
             {/* Acil uyarı bandı — PRESERVED semantic emergency */}
-            <div className="inline-flex items-center gap-2 bg-red-900/40 border border-red-700/50 rounded-lg px-3 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 bg-red-950/30 border border-red-500/30 rounded-lg px-3 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
               <span className="text-xs text-red-300 font-medium">
-                Araç hareket etmiyorsa — aşağıya gidin
+                Araç hareket etmiyorsa sürmeye devam etmeyin
               </span>
             </div>
 
@@ -217,17 +217,17 @@ export default function UyariLambasiSemptomlariPage() {
               ne yapacağınızı öğrenin.
             </p>
 
-            <div className="grid grid-cols-3 gap-3 border-t border-border-hairline pt-8">
-              <div className="text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-border-hairline pt-8">
+              <div className="rounded-xl border border-border-hairline bg-graphite-surface p-4 text-center">
                 <div className="font-saira text-2xl font-semibold text-brass">4</div>
                 <div className="font-jetbrains text-xs text-text-secondary mt-1">Uyarı tipi</div>
               </div>
-              <div className="text-center border-x border-border-hairline">
+              <div className="rounded-xl border border-red-500/20 bg-red-950/20 p-4 text-center">
                 {/* PRESERVED — semantic emergency red stat */}
                 <div className="font-saira text-2xl font-semibold text-red-400">1</div>
-                <div className="font-jetbrains text-xs text-text-secondary mt-1">Acil senaryo</div>
+                <div className="font-jetbrains text-xs text-text-secondary mt-1">Kritik senaryo</div>
               </div>
-              <div className="text-center">
+              <div className="rounded-xl border border-border-hairline bg-graphite-surface p-4 text-center">
                 <div className="font-saira text-2xl font-semibold text-brass">Ücretsiz</div>
                 <div className="font-jetbrains text-xs text-text-secondary mt-1">Hata kodu okuma</div>
               </div>
@@ -237,7 +237,7 @@ export default function UyariLambasiSemptomlariPage() {
 
         {/* ── HIZLI CEVAP BLOĞU ────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 py-10">
-          <div className="border border-border-hairline bg-graphite-surface rounded-xl p-5 mb-6">
+          <div className="border border-border-hairline bg-graphite-surface rounded-2xl p-6 mb-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
             <div className="font-jetbrains text-xs text-iron-light uppercase tracking-wider mb-3">
               Kısa cevap
             </div>
@@ -257,25 +257,44 @@ export default function UyariLambasiSemptomlariPage() {
             </p>
           </div>
 
-          {/* Acil durum kutusu — PRESERVED semantic emergency */}
-          <div className="border-2 border-red-200 bg-red-50 rounded-xl p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-3 h-3 rounded-full bg-red-500" />
-              <span className="text-sm font-bold text-red-700">
-                Araç hareket etmiyor mu?
-              </span>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="border border-red-500/25 bg-red-950/20 rounded-2xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-3 h-3 rounded-full bg-red-400" />
+                <span className="text-sm font-bold text-red-300">
+                  Hemen durmanız gereken durum
+                </span>
+              </div>
+              <p className="font-saira text-sm text-red-100/90 mb-4 leading-relaxed">
+                Vites göstergesi yanıp sönüyor, araç ilerlemiyor veya aniden
+                durdu. Sürmeye çalışmayın; şanzıman koruma modunda olabilir.
+              </p>
+              <a
+                href="tel:+905327153751"
+                className="inline-block bg-red-600 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-red-700 transition-colors"
+              >
+                Hemen ara: 0532 715 37 51
+              </a>
             </div>
-            <p className="text-sm text-red-700 mb-4 leading-relaxed">
-              Vites göstergesi yanıp sönüyor, araç ilerlemiyor veya aniden
-              durdu. Sürmeye çalışmayın — şanzıman koruma modunda.
-            </p>
-            <a
-              href="tel:+905327153751"
-              className="inline-block bg-red-600 text-white font-semibold text-sm
-                         px-5 py-2.5 rounded-lg hover:bg-red-700 transition-colors"
-            >
-              Hemen ara: 0532 715 37 51
-            </a>
+
+            <div className="border border-border-hairline bg-graphite-surface rounded-2xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-3 h-3 rounded-full bg-brass" />
+                <span className="text-sm font-bold text-text-primary">
+                  Araç gidiyorsa ilk adım
+                </span>
+              </div>
+              <p className="font-saira text-sm text-text-secondary mb-4 leading-relaxed">
+                Işık yanıyor ama araç ilerliyorsa tahmin yürütmeyin. Aynı gün hata
+                kodu okutulursa mekatronik, kavrama ve sensör tarafı hızla ayrıştırılır.
+              </p>
+              <Link
+                href="/hizmetler/dsg-sanziman-tamiri/"
+                className="inline-flex items-center text-sm font-semibold text-text-primary underline decoration-brass/40 underline-offset-2 hover:decoration-brass transition-colors"
+              >
+                DSG teşhis sürecini gör →
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -288,6 +307,21 @@ export default function UyariLambasiSemptomlariPage() {
             Sembolü veya rengi tanıyın — yapılacaklar aşağıda.
           </p>
 
+          <div className="grid sm:grid-cols-3 gap-3 mb-8">
+            <div className="rounded-xl border border-red-500/20 bg-red-950/20 p-4">
+              <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-red-300 mb-2">Kritik</div>
+              <p className="font-saira text-sm text-text-primary">Araç ilerlemiyorsa sürmeye devam etmeyin, çekici çağırın.</p>
+            </div>
+            <div className="rounded-xl border border-amber-500/20 bg-amber-500/8 p-4">
+              <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-amber-200 mb-2">Yüksek</div>
+              <p className="font-saira text-sm text-text-primary">Araç gidiyor olsa bile aynı gün hata kodu okutulmalı.</p>
+            </div>
+            <div className="rounded-xl border border-border-subtle bg-graphite-surface p-4">
+              <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-brass mb-2">Genel</div>
+              <p className="font-saira text-sm text-text-primary">Semptom yoksa planlı kontrol yeterli olabilir, parça değişimine koşmayın.</p>
+            </div>
+          </div>
+
           <div className="space-y-5">
             {lambalar.map((l) => {
               const stil = aciliyetStil[l.aciliyet];
@@ -297,13 +331,16 @@ export default function UyariLambasiSemptomlariPage() {
                   className={`border rounded-xl overflow-hidden ${stil.kart}`}
                 >
                   {/* Başlık satırı */}
-                  <div className="flex items-center justify-between gap-3 px-5 pt-5 pb-3">
+                  <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center min-w-8 h-8 rounded-lg border border-white/10 bg-graphite-base text-text-primary font-jetbrains text-sm">
+                          {l.sembol}
+                        </span>
                         <span className={`w-2.5 h-2.5 rounded-full ${stil.nokta}`} />
-                        <span className="font-jetbrains text-xs text-slate-600">{l.renk}</span>
+                        <span className="font-jetbrains text-xs text-text-secondary">{l.renk}</span>
                       </div>
-                      <h3 className="font-saira font-semibold text-sm sm:text-base text-slate-800">
+                      <h3 className="font-saira font-semibold text-sm sm:text-base text-text-primary">
                         {l.baslik}
                       </h3>
                     </div>
@@ -313,33 +350,33 @@ export default function UyariLambasiSemptomlariPage() {
                   </div>
 
                   {/* Kısa cevap */}
-                  <div className="px-5 pb-3">
-                    <p className="font-saira text-sm font-medium text-slate-800">{l.kisa}</p>
+                  <div className="px-5 pb-3 border-t border-white/5">
+                    <p className="font-saira text-sm font-medium text-text-primary pt-4">{l.kisa}</p>
                   </div>
 
                   {/* Açıklama */}
                   <div className="px-5 pb-3">
-                    <p className="font-saira text-sm text-slate-700 leading-relaxed">
+                    <p className="font-saira text-sm text-text-secondary leading-relaxed">
                       {l.aciklama}
                     </p>
                   </div>
 
                   {/* Yapılacaklar */}
                   <div className="px-5 pb-5">
-                    <div className="font-jetbrains text-xs text-slate-600 uppercase tracking-wide mb-2">
+                    <div className="font-jetbrains text-xs text-iron-light uppercase tracking-wide mb-2">
                       Ne yapmalısınız?
                     </div>
                     <ol className="space-y-1.5">
                       {l.yapilacak.map((adim, i) => (
-                        <li key={i} className="flex items-start gap-2 font-saira text-sm text-slate-700">
-                          <span className="shrink-0 font-jetbrains text-xs font-bold opacity-40 mt-0.5">
+                        <li key={i} className="flex items-start gap-2 font-saira text-sm text-text-secondary">
+                          <span className="shrink-0 font-jetbrains text-xs font-bold text-brass/70 mt-0.5">
                             {i + 1}.
                           </span>
                           {adim}
                         </li>
                       ))}
                     </ol>
-                    <div className="mt-3 font-jetbrains text-xs text-slate-600">
+                    <div className="mt-4 pt-3 border-t border-white/5 font-jetbrains text-xs text-iron-light">
                       Etkilenen araçlar: {l.araclar}
                     </div>
                   </div>
@@ -390,6 +427,17 @@ export default function UyariLambasiSemptomlariPage() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 rounded-2xl border border-border-hairline bg-graphite-base p-5">
+              <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-iron-light mb-2">
+                Pratik not
+              </div>
+              <p className="font-saira text-sm text-text-secondary leading-relaxed">
+                “Direkt mekatronik değişecek” veya “kesin kavrama bitmiş” gibi hızlı yorumlar,
+                kod okuma ve canlı veri olmadan güvenilir değildir. Bu sayfa teşhis öncesi yön bulmanız içindir;
+                kesin karar için hata kodu ve semptom birlikte değerlendirilmelidir.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -409,7 +457,7 @@ export default function UyariLambasiSemptomlariPage() {
             İlgili Rehberler
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
-            <a
+            <Link
               href="/rehber/dsg-kavrama-ariza-belirtileri"
               className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
@@ -417,8 +465,8 @@ export default function UyariLambasiSemptomlariPage() {
               <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Kavrama Arızası Belirtileri →
               </div>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/rehber/dsg-vuruntu-semptomlari"
               className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
@@ -426,8 +474,8 @@ export default function UyariLambasiSemptomlariPage() {
               <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Vuruntu Neden Olur? →
               </div>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/hizmetler/dsg-kavrama-degisimi"
               className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
@@ -435,8 +483,8 @@ export default function UyariLambasiSemptomlariPage() {
               <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 DSG Kavrama Değişimi Fiyatı 2026 →
               </div>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/iletisim"
               className="block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
@@ -444,8 +492,8 @@ export default function UyariLambasiSemptomlariPage() {
               <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 Ücretsiz Ön Tanı İçin Ara →
               </div>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/rehber/otomatik-sanziman-ariza-lambasi"
               className="sm:col-span-2 block border border-border-hairline bg-graphite-surface rounded-xl p-4 hover:border-border-brass hover:bg-graphite-elevated transition-all group"
             >
@@ -453,13 +501,13 @@ export default function UyariLambasiSemptomlariPage() {
               <div className="font-saira text-sm font-semibold text-text-primary group-hover:text-brass transition-colors">
                 Tüm şanzıman tiplerinde arıza lambası anlamları →
               </div>
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section className="max-w-2xl mx-auto px-4 pb-12">
-          <div className="bg-graphite-elevated border border-border-subtle rounded-xl p-8 text-center">
+          <div className="bg-graphite-elevated border border-border-subtle rounded-2xl p-8 text-center">
             <h2 className="font-saira text-2xl font-semibold text-text-primary mb-3">
               Lamba yandı, ne yapacağınızı bilmiyorsunuz?
             </h2>
@@ -467,7 +515,7 @@ export default function UyariLambasiSemptomlariPage() {
               Getirin, hata kodunu ücretsiz okuyalım. Nedenini net söyleriz —
               onayınız olmadan hiçbir işlem yapılmaz.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
               <a
                 href="tel:+905327153751"
                 className="inline-block bg-brass-bright text-graphite-base font-saira font-semibold
@@ -475,14 +523,28 @@ export default function UyariLambasiSemptomlariPage() {
               >
                 0532 715 37 51
               </a>
-              <a
+              <Link
                 href="/iletisim"
                 className="inline-block border border-border-subtle text-text-secondary font-saira font-medium
                            px-6 py-3 rounded-full hover:border-brass hover:text-text-primary
                            transition-colors"
               >
                 Mesaj gönder →
-              </a>
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-3 text-left">
+              <div className="rounded-xl border border-white/5 bg-graphite-base p-4">
+                <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-iron-light mb-2">1</div>
+                <p className="font-saira text-sm text-text-primary">Gösterge sembolünü ve semptomu dinleriz.</p>
+              </div>
+              <div className="rounded-xl border border-white/5 bg-graphite-base p-4">
+                <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-iron-light mb-2">2</div>
+                <p className="font-saira text-sm text-text-primary">Hata kodunu okur, hangi sistemin uyardığını ayırırız.</p>
+              </div>
+              <div className="rounded-xl border border-white/5 bg-graphite-base p-4">
+                <div className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-iron-light mb-2">3</div>
+                <p className="font-saira text-sm text-text-primary">Net teşhis ve işlem sırasını onayınızla çıkarırız.</p>
+              </div>
             </div>
           </div>
         </section>

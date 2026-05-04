@@ -99,6 +99,59 @@ const CVT_YAG_TABLOSU = [
   { marka: 'Mitsubishi', yag: 'Dia Queen CVTF-J1', not: 'JATCO tabanlı modellerde' },
 ];
 
+const CVT_ARIZA_NEDENLERI = [
+  {
+    baslik: 'Yağ bozulması ve yanlış spesifikasyon',
+    aciklama:
+      'CVT şanzımanlarda ilk kırılma çoğu zaman mekanik değil, yağ kalitesinden başlar. Yanlış viskozite veya geç kalmış değişim metal kayışın puli yüzeyinde tutunmasını bozar.',
+  },
+  {
+    baslik: 'Solenoid ve valf gövdesi basınç hataları',
+    aciklama:
+      'Hat basıncı düştüğünde araçta kayma, yüksek devir ve gecikmeli tepki başlar. Bu aşama doğru teşhis edilirse komple revizyon yerine valf gövdesi tarafında çözüm mümkün olabilir.',
+  },
+  {
+    baslik: 'Metal kayış / zincir ve puli aşınması',
+    aciklama:
+      'İleri aşamada kayış veya zincir yüzeyi parlatır, konik kasnakta iz bırakır. Bu durumda yalnız resetleme yapmak sorunu gizler ama çözmez.',
+  },
+];
+
+const MODEL_BAZLI_SENARYOLAR = [
+  {
+    baslik: 'Nissan JATCO',
+    modeller: 'Qashqai, Juke, X-Trail, Micra',
+    durum:
+      'Yüksek devir, çekiş düşüşü ve ısınma uyarısı en sık gördüğümüz kombinasyon. Özellikle gecikmiş NS-3 yağ değişimi, JF015E ve JF011E ailesinde maliyeti büyütür.',
+    link: '/rehber/cvt-kayma/',
+    linkLabel: 'CVT kayma rehberi',
+  },
+  {
+    baslik: 'Toyota CVT / e-CVT',
+    modeller: 'Corolla, C-HR, Yaris, Auris',
+    durum:
+      'Toyota tarafında her titreme mekanik revizyon anlamına gelmez. Kalibrasyon, yağ kalitesi ve hibrit kullanım karakteri birlikte değerlendirilmelidir.',
+    link: '/arac/toyota/',
+    linkLabel: 'Toyota şanzıman sayfası',
+  },
+  {
+    baslik: 'Honda CVT',
+    modeller: 'Civic, HR-V, Jazz, CR-V',
+    durum:
+      'Kalkış titremesi ve sabit hızda devir dalgalanması HCF-2 dışı yağ kullanımında sık görülür. Erken bakım ile büyük revizyon çoğu zaman ötelenebilir.',
+    link: '/rehber/otomatik-sanziman-sarsinti/',
+    linkLabel: 'Sarsıntı rehberi',
+  },
+  {
+    baslik: 'Hyundai / Kia IVT',
+    modeller: 'i20, i30, Tucson, Rio, Sportage',
+    durum:
+      'IVT sistemlerinde yazılım-adaptasyon ile mekanik arızayı ayırmak kritik. Kullanıcı şikâyeti yalnız “çekiş düştü” gibi genel olabilir; canlı veri olmadan karar verilmemeli.',
+    link: '/arac/hyundai/',
+    linkLabel: 'Hyundai şanzıman sayfası',
+  },
+];
+
 // ─── SCHEMA ──────────────────────────────────────────────────────────────────
 const faqItems = TRANSMISSION_FAQS['cvt-sanziman'] ?? [];
 
@@ -295,6 +348,25 @@ export default function CvtSanzımanTamiriPage() {
           </div>
         </section>
 
+        {/* Arıza Nedenleri */}
+        <section className="py-16 bg-graphite-base">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-3">CVT Arızasının Kök Nedenleri</h2>
+            <p className="font-saira text-text-secondary text-center mb-10 max-w-2xl mx-auto">
+              CVT tarafında en pahalı hata, semptomu doğru okuyamadan “şanzıman komple bitmiş” kararı vermektir.
+              Biz önce yağ, basınç ve mekanik aşınma seviyesini birbirinden ayırıyoruz.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {CVT_ARIZA_NEDENLERI.map((item) => (
+                <div key={item.baslik} className="p-6 rounded-xl bg-graphite-surface border border-border-hairline">
+                  <h3 className="font-saira font-semibold text-text-primary mb-3">{item.baslik}</h3>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed">{item.aciklama}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Belirtiler */}
         <section className="py-16 bg-graphite-base">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -368,6 +440,32 @@ export default function CvtSanzımanTamiriPage() {
           </div>
         </section>
 
+        {/* Model Bazlı Karar Notları */}
+        <section className="py-16 bg-graphite-surface">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-3">Marka ve Model Bazlı CVT Karar Notları</h2>
+            <p className="font-saira text-text-secondary text-center mb-10 max-w-2xl mx-auto">
+              Aynı “kayma” şikâyeti Nissan JATCO’da farklı, Toyota e-CVT’de farklı anlama gelebilir.
+              Bu yüzden teşhisi şanzıman ailesine göre yapıyoruz.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {MODEL_BAZLI_SENARYOLAR.map((item) => (
+                <div key={item.baslik} className="p-6 rounded-xl bg-graphite-elevated border border-border-hairline">
+                  <h3 className="font-saira font-semibold text-text-primary mb-1">{item.baslik}</h3>
+                  <p className="font-jetbrains text-xs text-brass mb-3">{item.modeller}</p>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">{item.durum}</p>
+                  <Link
+                    href={item.link}
+                    className="font-saira text-sm font-semibold text-text-primary underline decoration-brass/40 underline-offset-2 hover:decoration-brass transition-colors"
+                  >
+                    {item.linkLabel}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Bakım Periyodu */}
         <section className="py-16 bg-graphite-base">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -395,6 +493,36 @@ export default function CvtSanzımanTamiriPage() {
                 </span>
               </li>
             </ul>
+          </div>
+        </section>
+
+        {/* Ne Zaman Güçlendirilmiş İşlem Gerekir */}
+        <section className="py-16 bg-graphite-surface">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Hangi Durumda Resetleme Yetmez?</h2>
+            <div className="flex flex-col gap-4 font-saira text-text-secondary leading-relaxed">
+              <p>
+                CVT resetleme doğru vakada çok faydalıdır; ama metal talaşı oluşmuşsa, puli yüzeyi çizilmişse veya hat
+                basıncı ciddi biçimde düşmüşse tek başına çözüm olmaz. Bu noktada resetleme sadece semptomu kısa süreliğine
+                yumuşatır.
+              </p>
+              <p>
+                Özellikle şu üç durumda mekanik inceleme zorunlu hale gelir:
+                sürekli yüksek devirde ilerleme, geri viteste belirgin gecikme ve yağ karterinde metal partikül görülmesi.
+                Bu belirtiler varsa doğrudan{' '}
+                <Link
+                  href="/rehber/otomatik-sanziman-gecikme/"
+                  className="text-brass underline decoration-brass/40 hover:decoration-brass underline-offset-2 transition-colors"
+                >
+                  gecikme semptom rehberine
+                </Link>{' '}
+                ve ardından servis kontrolüne geçmek daha sağlıklıdır.
+              </p>
+              <p>
+                Amacımız her arızayı “komple revizyon” diye satmak değil; hafif, orta ve ağır senaryoları ayırıp mümkün olan
+                en doğru müdahaleyi seçmektir. Bu da maliyetin gereksiz büyümesini önler.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -429,6 +557,10 @@ export default function CvtSanzımanTamiriPage() {
                 { href: '/hizmetler/aisin-sanziman-tamiri/', label: 'Aisin Şanzıman' },
                 { href: '/rehber/cvt-kayma/', label: 'CVT Kayma Rehberi' },
                 { href: '/rehber/cvt-vuruntu/', label: 'CVT Vuruntu Rehberi' },
+                { href: '/rehber/cvt-ariza-lambasi/', label: 'CVT Arıza Lambası' },
+                { href: '/arac/toyota/', label: 'Toyota Şanzıman Servisi' },
+                { href: '/arac/nissan/', label: 'Nissan Şanzıman Servisi' },
+                { href: '/blog/en-iyi-sanziman-yagi/', label: 'Şanzıman Yağı Rehberi' },
               ].map((link) => (
                 <Link key={link.href} href={link.href}
                   className="flex items-center justify-center px-4 py-3 rounded-xl border border-border-hairline text-text-secondary font-saira text-sm font-semibold hover:border-brass hover:text-text-primary transition-colors text-center">

@@ -1,23 +1,24 @@
 import type { Metadata } from 'next';
 import ContactForm from '@/components/interactive/ContactForm';
 import MapWidget from '@/components/interactive/MapWidget';
+import { BRAND } from '@/lib/brand';
 import { MapPin } from 'lucide-react';
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'İletişim | Eren Servis — Bostancı Otomatik Şanzıman',
+  title: `İletişim | ${BRAND.primaryName}`,
   description:
-    'Eren Servis ile iletişime geçin. Bostancı\'da otomatik şanzıman tamiri için randevu alın.',
+    `${BRAND.primaryName} ile iletişime geçin. Bostancı'da otomatik şanzıman tamiri için randevu alın.`,
   alternates: {
     canonical: 'https://www.erenservis.net/iletisim/',
   },
   openGraph: {
-    title: 'İletişim | Eren Servis — Bostancı Otomatik Şanzıman',
+    title: `İletişim | ${BRAND.primaryName}`,
     description:
       'Bostancı\'da DSG, ZF ve CVT şanzıman tamiri için bizi arayın. Ücretsiz ön tanı, hızlı randevu.',
     url: 'https://www.erenservis.net/iletisim/',
-    siteName: 'Eren Otomatik Şanzıman Servisi',
+    siteName: BRAND.primaryName,
     locale: 'tr_TR',
     type: 'website',
   },
@@ -40,7 +41,7 @@ export default function IletisimPage() {
             İletişim
           </h1>
           <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-xl mx-auto">
-            Şanzıman sorunlarınız için bizi arayın veya mesaj gönderin. Hızlı yanıt garantisi.
+            {BRAND.primaryName} ekibine ulaşmak için bizi arayın veya mesaj gönderin. Hızlı yanıt garantisi.
           </p>
         </div>
       </section>

@@ -85,6 +85,65 @@ const ARIZA_KODLARI = [
   { kod: 'P070D', ad: 'Vites Seçici Sensör', aciklama: 'Selector kol sensörü veya TCU haberleşmesi. Elektronik ağırlıklı arıza.' },
 ];
 
+const DSG_KARAR_AKISI = [
+  {
+    baslik: 'Kalkışta titreme ve düşük hızda silkme',
+    aciklama:
+      'En sık DQ200 kuru kavrama tarafında görülür. Kavrama aşınması, adaptasyon sapması veya mekatronik basınç dengesizliği birlikte değerlendirilmelidir.',
+    link: '/rehber/dsg-kavrama-ariza-belirtileri/',
+    linkLabel: 'DSG kavrama belirtileri',
+  },
+  {
+    baslik: 'Vites geçişinde sert vuruntu',
+    aciklama:
+      'DQ250 ve DQ381 tarafında solenoid kirlenmesi, valf gövdesi davranışı veya yağ kalitesi daha öne çıkar. Her vuruntu doğrudan kavrama seti anlamına gelmez.',
+    link: '/rehber/dsg-vuruntu-semptomlari/',
+    linkLabel: 'DSG vuruntu rehberi',
+  },
+  {
+    baslik: 'Devir artıyor ama araç gecikmeli hızlanıyor',
+    aciklama:
+      'Kayma, kavrama yüzeyi ve basınç üretimiyle ilgilidir. Bu semptom ilerlediyse yalnız yazılım güncellemesi yetmez; mekanik tarafta aşınma aranmalıdır.',
+    link: '/rehber/dsg-kayma-vites-atlama/',
+    linkLabel: 'DSG kayma rehberi',
+  },
+];
+
+const DSG_MODEL_SENARYOLARI = [
+  {
+    baslik: 'Volkswagen / Skoda / Seat DQ200',
+    modeller: 'Golf, Polo, Octavia, Leon, Fabia',
+    aciklama:
+      'Şehir içi kullanım, yokuşta bekleme ve sık dur-kalk DQ200 kavrama ömrünü doğrudan etkiler. P17BF ve titreme şikâyeti bu ailede öne çıkar.',
+    link: '/arac/volkswagen/',
+    linkLabel: 'Volkswagen şanzıman sayfası',
+  },
+  {
+    baslik: 'Volkswagen / Audi DQ250',
+    modeller: 'Passat, Tiguan, A3, A4, Golf GTI',
+    aciklama:
+      'Islak kavrama yapısı daha dayanıklıdır ama yağ değişimi ihmal edildiğinde solenoid ve valf gövdesi sorunları büyür. Bu ailede bakım geçmişi çok önemlidir.',
+    link: '/hizmetler/sanziman-bakimi/',
+    linkLabel: 'Şanzıman bakım sayfası',
+  },
+  {
+    baslik: 'DQ381 / yüksek tork DSG',
+    modeller: 'Arteon, Golf R, Tiguan 2.0 TSI, bazı Audi uygulamaları',
+    aciklama:
+      'Yüksek torklu kullanımda yazılım, hidrolik tepki ve valf gövdesi davranışı birlikte okunmalıdır. Özellikle sert kullanım geçmişi maliyeti etkiler.',
+    link: '/blog/dsg-mekatronik-ariza-fiyati/',
+    linkLabel: 'Mekatronik fiyat rehberi',
+  },
+  {
+    baslik: 'Audi S-Tronic',
+    modeller: 'A3, A4, A5, Q3, Q5',
+    aciklama:
+      'S-Tronic kullanıcıları çoğu zaman arızayı farklı isimle tarif eder; ancak kök problem DSG ailesiyle aynıdır. Audi tarafında doğru varyantı ayırmak kritik önemdedir.',
+    link: '/arac/audi/',
+    linkLabel: 'Audi şanzıman sayfası',
+  },
+];
+
 const HIZMET_ADIMLAR = [
   {
     icon: Settings,
@@ -290,6 +349,31 @@ export default function DsgSanzımanTamiriPage() {
           </div>
         </section>
 
+        {/* Karar Akışı */}
+        <section className="py-16 bg-graphite-base">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-3">Belirtiye Göre İlk Karar Akışı</h2>
+            <p className="font-saira text-text-secondary text-center mb-10 max-w-2xl mx-auto">
+              DSG arızasında doğru karar, semptomu hangi alt sistemin ürettiğini ayırmakla başlar. Biz önce kavrama mı,
+              mekatronik mi, yağ-basınç mı sorusunu netleştiriyoruz.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {DSG_KARAR_AKISI.map((item) => (
+                <div key={item.baslik} className="p-6 rounded-xl bg-graphite-surface border border-border-hairline">
+                  <h3 className="font-saira font-semibold text-text-primary mb-3">{item.baslik}</h3>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">{item.aciklama}</p>
+                  <Link
+                    href={item.link}
+                    className="font-saira text-sm font-semibold text-text-primary underline decoration-brass/40 underline-offset-2 hover:decoration-brass transition-colors"
+                  >
+                    {item.linkLabel}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Belirtiler */}
         <section className="py-16 bg-graphite-base">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -354,6 +438,32 @@ export default function DsgSanzımanTamiriPage() {
               Liste özet geçer — detaylı canlı veri (live data) analizi olmadan arıza kodu tek başına
               kesin teşhis koymaz. Aynı kod farklı araçta farklı parça hatasına işaret edebilir.
             </p>
+          </div>
+        </section>
+
+        {/* Model Bazlı Senaryolar */}
+        <section className="py-16 bg-graphite-base">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary text-center mb-3">Araç ve Şanzıman Ailesine Göre Senaryolar</h2>
+            <p className="font-saira text-text-secondary text-center mb-10 max-w-2xl mx-auto">
+              Aynı “DSG arızası” ifadesi farklı ailelerde farklı maliyet ve çözüm anlamına gelir. Bu yüzden marka ve şanzıman
+              varyantını birlikte okuyoruz.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {DSG_MODEL_SENARYOLARI.map((item) => (
+                <div key={item.baslik} className="p-6 rounded-xl bg-graphite-elevated border border-border-hairline">
+                  <h3 className="font-saira font-semibold text-text-primary mb-1">{item.baslik}</h3>
+                  <p className="font-jetbrains text-xs text-brass mb-3">{item.modeller}</p>
+                  <p className="font-saira text-sm text-text-secondary leading-relaxed mb-4">{item.aciklama}</p>
+                  <Link
+                    href={item.link}
+                    className="font-saira text-sm font-semibold text-text-primary underline decoration-brass/40 underline-offset-2 hover:decoration-brass transition-colors"
+                  >
+                    {item.linkLabel}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -431,6 +541,27 @@ export default function DsgSanzımanTamiriPage() {
           </div>
         </section>
 
+        {/* Müdahale Eşiği */}
+        <section className="py-16 bg-graphite-base">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 className="font-saira text-2xl font-semibold text-text-primary mb-6">Ne Zaman Bakım, Ne Zaman Tamir, Ne Zaman Revizyon?</h2>
+            <div className="flex flex-col gap-4 font-saira text-text-secondary leading-relaxed">
+              <p>
+                Hafif senaryoda yağ, filtre ve adaptasyon işlemi yeterli olabilir. Bu genelde ıslak kavramalı DSG ailesinde,
+                bakım gecikmiş ama mekanik hasar başlamamış araçlarda görülür.
+              </p>
+              <p>
+                Orta seviyede mekatronik, solenoid veya basınç tüpü odaklı müdahale gerekir. Özellikle DQ200 tarafında
+                elektronik ve hidrolik belirtileri mekanik kavrama aşınmasıyla karıştırmamak önemlidir.
+              </p>
+              <p>
+                Ağır senaryoda kavrama paketi, volant veya komple revizyon gündeme gelir. Eğer araçta aynı anda titreme,
+                kayma ve hata kodu birlikte varsa, yalnız adaptasyon yapmak sorunu erteleyebilir ama çözmez.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Neden Eren Servis */}
         <section className="py-16 bg-graphite-surface">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -462,6 +593,10 @@ export default function DsgSanzımanTamiriPage() {
                 { href: '/hizmetler/dsg-kavrama-degisimi/', label: 'Kavrama Değişimi' },
                 { href: '/hizmetler/dsg-basinc-tupu/', label: 'Basınç Tüpü' },
                 { href: '/hizmetler/sanziman-bakimi/', label: 'Şanzıman Bakımı' },
+                { href: '/hizmetler/dsg-volant-kavrama-paketi/', label: 'Volant + Kavrama' },
+                { href: '/rehber/dsg-kayma-vites-atlama/', label: 'DSG Kayma Rehberi' },
+                { href: '/rehber/dsg-sanziman-omru-bakimi/', label: 'DSG Ömrü ve Bakımı' },
+                { href: '/arac/volkswagen/', label: 'Volkswagen Şanzıman' },
               ].map((link) => (
                 <Link key={link.href} href={link.href}
                   className="flex items-center justify-center px-4 py-3 rounded-xl border border-border-hairline text-text-secondary font-saira text-sm font-semibold hover:border-brass hover:text-text-primary transition-colors text-center">

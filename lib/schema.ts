@@ -2,6 +2,7 @@
 // Merkezi schema fabrikası — tüm sayfalar buradan import eder, hardcoded yazılmaz.
 
 import type { FaqItem } from './sanziman-faq';
+import { BRAND } from './brand';
 import { BRANDS, buildBrandTransmissionTitle } from './brands';
 import type { TransmissionFamily } from './transmissions';
 import type { Brand } from './brands';
@@ -47,8 +48,8 @@ export interface BreadcrumbItem {
 const BUSINESS_NODE = {
   '@type': ['LocalBusiness', 'AutoRepair', 'Organization'] as const,
   '@id': 'https://www.erenservis.net/#business',
-  name: 'Eren Otomatik Şanzıman Servisi',
-  alternateName: 'Eren Servis',
+  name: BRAND.primaryName,
+  alternateName: BRAND.alternateName,
   description:
     "Bostancı'nın DSG ve otomatik şanzıman uzmanı. DQ200, DQ250, DQ381 " +
     'mekatronik, kavrama ve CVT tamiri.',
@@ -123,8 +124,8 @@ export function buildWebSiteSchema() {
     '@type': 'WebSite',
     '@id': 'https://www.erenservis.net/#website',
     url: 'https://www.erenservis.net/',
-    name: 'Eren Otomatik Şanzıman Servisi',
-    alternateName: 'Eren Servis',
+    name: BRAND.primaryName,
+    alternateName: BRAND.alternateName,
     publisher: BUSINESS_REF,
     inLanguage: 'tr-TR',
   };
@@ -197,7 +198,7 @@ export function buildArticleSchema(params: ArticleParams) {
     author: {
       '@type': 'Person',
       '@id': 'https://www.erenservis.net/#author',
-      name: 'Eren Servis Teknik Ekibi',
+      name: `${BRAND.alternateName} Teknik Ekibi`,
       url: 'https://www.erenservis.net/hakkimizda/',
       worksFor: { '@id': 'https://www.erenservis.net/#business' },
     },
@@ -312,7 +313,7 @@ export function buildReviewsSchema(reviews: ReviewSchemaItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Eren Servis Müşteri Yorumları',
+    name: `${BRAND.alternateName} Müşteri Yorumları`,
     itemListElement: reviews.map((review, index) => ({
       '@type': 'ListItem',
       position: index + 1,

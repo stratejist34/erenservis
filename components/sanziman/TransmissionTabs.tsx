@@ -13,6 +13,7 @@ import {
   XCircle,
   MessageCircle,
 } from 'lucide-react';
+import { BRAND } from '@/lib/brand';
 import { cn } from '@/lib/utils';
 import type { TransmissionType } from '@/lib/sanziman';
 import TransmissionDiagram from '@/components/sanziman/TransmissionDiagram';
@@ -240,7 +241,7 @@ export default function TransmissionTabs({ data }: { data: TransmissionType }) {
           >
             <div className="bg-surface-1 border border-edge rounded-xl p-6">
               <h3 className="text-base font-semibold text-fg mb-3">
-                Eren Servis&apos;te {data.title} Revizyonu
+                {BRAND.alternateName}&apos;nda {data.title} Revizyonu
               </h3>
               <p className="text-sm text-fg-soft leading-relaxed mb-4">
                 Atölyemizde {data.title.toLocaleLowerCase('tr-TR')} şanzımanlar için tam teşekküllü

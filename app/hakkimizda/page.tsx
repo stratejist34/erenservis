@@ -1,22 +1,23 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import WhyUs from '@/components/WhyUs';
+import { BRAND } from '@/lib/brand';
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda | Eren Servis — Bostancı Otomatik Şanzıman',
+  title: `Hakkımızda | ${BRAND.primaryName}`,
   description:
-    'Bostancı\'da 15 yılı aşkın deneyimle otomatik şanzıman servisi. Eren Servis hakkında bilgi edinin.',
+    `Bostancı'da 15 yılı aşkın deneyimle otomatik şanzıman servisi. ${BRAND.primaryName} hakkında bilgi edinin.`,
   alternates: {
     canonical: 'https://www.erenservis.net/hakkimizda/',
   },
   openGraph: {
-    title: 'Hakkımızda | Eren Servis — Bostancı Otomatik Şanzıman',
+    title: `Hakkımızda | ${BRAND.primaryName}`,
     description:
       'Bostancı\'da 15 yılı aşkın deneyimle DSG, ZF, CVT otomatik şanzıman tamiri. Garantili servis, uzman kadro.',
     url: 'https://www.erenservis.net/hakkimizda/',
-    siteName: 'Eren Otomatik Şanzıman Servisi',
+    siteName: BRAND.primaryName,
     locale: 'tr_TR',
     type: 'website',
   },
@@ -55,8 +56,8 @@ export default function HakkimizdaPage() {
             Hakkımızda
           </h1>
           <p className="font-saira text-lg text-text-secondary leading-relaxed max-w-xl mx-auto">
-            Bostancı&apos;da 15 yılı aşkın deneyimle otomatik şanzıman alanında uzmanlaşmış bir servis.
-            Her işi ilk seferinde doğru yapıyoruz.
+            {BRAND.primaryName}, Bostancı&apos;da 15 yılı aşkın deneyimle otomatik şanzıman alanında
+            uzmanlaşmış bir servistir. Her işi ilk seferinde doğru yapıyoruz.
           </p>
         </div>
       </section>
@@ -67,9 +68,9 @@ export default function HakkimizdaPage() {
           <div className="flex flex-col md:flex-row gap-10 items-start">
             <div className="flex-1">
               <p className="font-saira text-lg text-text-secondary leading-relaxed">
-                Eren Servis, 2009 yılından bu yana Bostancı&apos;da otomatik şanzıman tamiri ve revizyonu
-                konusunda hizmet vermektedir. DSG, CVT ve konvansiyonel otomatik şanzımanlar başta olmak
-                üzere tüm şanzıman türlerinde uzman kadromuzla garantili hizmet sunuyoruz.
+                {BRAND.primaryName}, 2009 yılından bu yana Bostancı&apos;da otomatik şanzıman tamiri ve
+                revizyonu konusunda hizmet vermektedir. DSG, CVT, ZF ve konvansiyonel otomatik şanzımanlar
+                başta olmak üzere tüm şanzıman türlerinde uzman kadromuzla garantili hizmet sunuyoruz.
               </p>
               <p className="font-saira text-text-secondary leading-relaxed mt-4">
                 Her arıza farklıdır. Tanı yapmadan fiyat vermiyoruz; tanı sonrası yazılı teklif
@@ -79,7 +80,7 @@ export default function HakkimizdaPage() {
             <div className="relative flex-shrink-0 w-full md:w-72 h-52 md:h-64 rounded-xl overflow-hidden">
               <Image
                 src="/images/part2/Screenshot_107.webp"
-                alt="Eren Servis teknisyeni araç altı inceleme yapıyor — Bostancı DSG uzman servis"
+                alt={`${BRAND.primaryName} teknisyeni araç altı inceleme yapıyor — Bostancı DSG uzman servis`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 288px"

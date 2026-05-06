@@ -288,6 +288,78 @@ export const REHBER_POSTS: RehberPost[] = [
     categories: ['dsg', 'volkswagen', 'dq200'],
   },
   {
+    slug: 'otomatik-vites-kavrama-sorunu',
+    title: 'Otomatik Vites Kavrama Sorunu',
+    excerpt:
+      'Otomatik viteste kavrama kaçırması DSG, EDC, CVT, PowerShift ve tam otomatikte nasıl farklı davranır? Belirti ve karar rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/otomatik-vites-kavrama-sorunu/',
+    categories: ['genel', 'kavrama', 'semptom'],
+  },
+  {
+    slug: 'fluence-vites-kutusunu-kontrol-ettiriniz',
+    title: 'Fluence Vites Kutusunu Kontrol Ettiriniz',
+    excerpt:
+      'Renault Fluence ve Megane EDC’de çıkan “Vites kutusunu kontrol ettiriniz” uyarısı ne anlatır? Beyin, kavrama, aktüatör ve voltaj rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/fluence-vites-kutusunu-kontrol-ettiriniz/',
+    categories: ['edc', 'renault', 'uyari'],
+  },
+  {
+    slug: 'honda-civic-cvt-sanziman-sorunlari',
+    title: 'Honda Civic CVT Şanzıman Sorunları',
+    excerpt:
+      'Honda Civic FC5, FK7 ve FE1 CVT’de kayma, vuruntu, devir dalgalanması, HCF-2 yağ disiplini ve doğru servis kararı rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/honda-civic-cvt-sanziman-sorunlari/',
+    categories: ['cvt', 'honda', 'model'],
+  },
+  {
+    slug: 'toyota-corolla-cvt-sanziman-sorunlari',
+    title: 'Toyota Corolla CVT Şanzıman Sorunları',
+    excerpt:
+      'Toyota Corolla ve Auris CVT’de kalkış vuruntusu, uğultu, kayış-kasnak kaydırması, yağ disiplini ve doğru servis kararı rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/toyota-corolla-cvt-sanziman-sorunlari/',
+    categories: ['cvt', 'toyota', 'model'],
+  },
+  {
+    slug: 'renault-edc-sanziman-sorunlari',
+    title: 'Renault EDC Şanzıman Sorunları',
+    excerpt:
+      'Renault Clio, Megane, Fluence, Kadjar ve Talisman EDC’de beyin ısınması, kavrama titremesi, aktüatör sorunları ve doğru servis kararı rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/renault-edc-sanziman-sorunlari/',
+    categories: ['edc', 'renault', 'matrix'],
+  },
+  {
+    slug: 'seat-dsg-sanziman-sorunlari',
+    title: 'Seat DSG Şanzıman Sorunları',
+    excerpt:
+      'Seat Leon, Ibiza, Ateca, Arona ve Cupra modellerinde DQ200, DQ250, DQ381 ayrımı, sportif kullanım profili ve doğru servis kararı rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/seat-dsg-sanziman-sorunlari/',
+    categories: ['dsg', 'seat', 'matrix'],
+  },
+  {
+    slug: 'peugeot-eat8-sanziman-sorunlari',
+    title: 'Peugeot EAT8 Şanzıman Sorunları',
+    excerpt:
+      'Peugeot, Citroen, DS ve Opel grubunda kullanılan Aisin EAT8’de vuruntu, ilk kalkış gecikmesi, devir dalgalanması ve yağ disiplini rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/peugeot-eat8-sanziman-sorunlari/',
+    categories: ['eat8', 'peugeot', 'matrix'],
+  },
+  {
+    slug: 'bmw-zf-8hp-sanziman-sorunlari',
+    title: 'BMW ZF 8HP Şanzıman Sorunları',
+    excerpt:
+      'BMW 3, 5, 7 Serisi ve X modellerinde ZF 8HP şanzımanda yağ disiplini, mekatronik köprü manşonu sızıntısı, tork konvertörü titreşimi ve doğru servis kararı rehberi.',
+    date: '2026-05-06',
+    href: '/rehber/bmw-zf-8hp-sanziman-sorunlari/',
+    categories: ['zf', 'bmw', 'matrix'],
+  },
+  {
     slug: 'sanziman-arizasi-nasil-anlasilir',
     title: 'Şanzıman Arızası Nasıl Anlaşılır?',
     excerpt:

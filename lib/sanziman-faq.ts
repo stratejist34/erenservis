@@ -1465,6 +1465,214 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
       a: 'Belirti yoksa evet. Ama anahtar lambası, geç bağlama, silkeleme ve kayma gibi işaretler başladıysa uzun yol öncesi kontrol etmek çok daha güvenlidir.',
     },
   ],
+  'otomatik-vites-kavrama-sorunu': [
+    {
+      q: 'Otomatik viteste kavrama sorunu yolda bırakır mı?',
+      a: 'Evet, bırakabilir. Güç aktarımı tamamen zayıflarsa araç gaza bassanız da ilerlemez veya koruma moduna geçebilir. Erken belirti döneminde müdahale bu yüzden önemlidir.',
+    },
+    {
+      q: 'Kavrama değişiminden sonra adaptasyon şart mı?',
+      a: 'Evet, özellikle çift kavramalı sistemlerde şarttır. Yeni kavramanın kalınlığı ve basınç eşiği mekatroniğe yeniden öğretilmezse aynı belirti kısa sürede geri dönebilir.',
+    },
+    {
+      q: 'CVT’de de kavrama sorunu olur mu?',
+      a: 'Evet, ama klasik DSG veya EDC gibi davranmaz. CVT’de daha çok kayış-kasnak tutunması ve ileri kavrama hattı üzerinden devir yükselmesi ama hızın gelmemesi gibi semptomlar görülür.',
+    },
+    {
+      q: 'Tam otomatikte DSG’deki gibi balata var mı?',
+      a: 'Yapı farklıdır. ZF ve EAT8 gibi sistemlerde tork konvertörü ve iç ıslak kavrama paketleri görev alır. Yine de sürtünme kaybı ve kaçırma davranışı oluşabilir.',
+    },
+    {
+      q: 'Her titreme kavrama değişimi demek midir?',
+      a: 'Hayır. Bazı vakalarda mekatronik, basınç, yazılım veya adaptasyon tarafı aynı semptomu üretebilir. Bu yüzden parça kararından önce aile bazlı teşhis gerekir.',
+    },
+    {
+      q: 'Motor bağırıyor ama araç gitmiyorsa ne yapmalıyım?',
+      a: 'Bu tipik bir güç aktarım kaybı belirtisidir. Aracı zorlamadan kullanımı azaltmak ve kısa sürede kontrol ettirmek gerekir. Özellikle koku veya lamba eşlik ediyorsa beklemek doğru değildir.',
+    },
+  ],
+  'fluence-vites-kutusunu-kontrol-ettiriniz': [
+    {
+      q: 'Bu uyarı varken araç sürülür mü?',
+      a: 'Sarı uyarı varsa ve araç sınırlı da olsa yürüyorsa kısa mesafede güvenli yere alınabilir; ama araç vitesleri kaybediyorsa, geri vitese geçmiyorsa veya kırmızı uyarı varsa zorlamamak daha doğrudur.',
+    },
+    {
+      q: 'Kontağı kapatıp açınca düzelmesi ne anlama gelir?',
+      a: 'Bu çoğu zaman geçici sıfırlamadır. Özellikle ısınınca hata veren EDC beyin vakalarında araç kısa süre normale döner ama sonraki trafikte hata geri gelir.',
+    },
+    {
+      q: 'Her “vites kutusunu kontrol ettiriniz” uyarısı beyin arızası mıdır?',
+      a: 'Hayır. Beyin sık görülen sebeplerden biridir; ama kavrama aşınması, aktüatör sorunu veya düşük voltaj da aynı mesajı tetikleyebilir.',
+    },
+    {
+      q: 'Şanzıman yağı değişirse bu uyarı geçer mi?',
+      a: 'Tek başına garanti çözüm değildir. EDC’de sorun elektronik, kavrama veya aktüatör kaynaklıysa yağ değişimi asıl problemi çözmez.',
+    },
+    {
+      q: 'Fluence EDC beyin tamiri güvenilir midir?',
+      a: 'Doğru ekipman ve doğru laboratuvar yaklaşımıyla yapılan revizyonlar güvenilir olabilir. Burada önemli olan sorunun gerçekten beyinden gelip gelmediğinin doğru ayrılmasıdır.',
+    },
+    {
+      q: 'Bu uyarıdan önce hangi belirtiler görülür?',
+      a: 'Çoğu araçta daha önce silkeleme, geçiş kararsızlığı, geri viteste nazlanma veya ısınınca tuhaf davranışlar başlar. Uyarı çoğu zaman bu sürecin görünür hâlidir.',
+    },
+  ],
+  'honda-civic-cvt-sanziman-sorunlari': [
+    {
+      q: 'Honda Civic CVT yağı kaç kilometrede değişmeli?',
+      a: 'Genel pratikte 40.000 km civarında veya kullanım profiline göre daha erken kontrol etmek en sağlıklı yaklaşımdır. Doğru spesifikasyon ve doğru prosedür burada çok önemlidir.',
+    },
+    {
+      q: 'Honda Civic CVT’de de DSG’deki gibi kavrama biter mi?',
+      a: 'Yapı aynı değildir. CVT’de DSG tarzı kuru çift kavrama yoktur; ama başlangıç kavraması ve kayış-kasnak tutunma hattı sorun çıkarabilir. Belirti bu yüzden farklı görünür.',
+    },
+    {
+      q: 'Devir yükseliyor ama araç uzamıyorsa bu ciddi midir?',
+      a: 'Evet. Bu, kayışın kasnak üzerinde tutunma kaybına işaret edebilir. Özellikle uzun süre bu şekilde kullanım kasnak yüzeyine kalıcı hasar verebilir.',
+    },
+    {
+      q: 'Yanlış yağ kullanımı gerçekten bu kadar zararlı mı?',
+      a: 'Evet. Civic CVT’de doğru sıvı tutunma karakterini doğrudan etkiler. Uygun olmayan yağ, şanzımanın çalışma mantığını bozup kayma davranışını hızlandırabilir.',
+    },
+    {
+      q: 'Kalkışta vuruntu varsa mutlaka büyük revizyon gerekir mi?',
+      a: 'Hayır. Bazı vakalarda başlangıç kavraması kalibrasyonu ve doğru bakım yeterli olabilir. Ama fiziksel aşınma başladıysa daha ileri müdahale gerekir.',
+    },
+    {
+      q: 'Civic CVT ile uzun yola çıkılır mı?',
+      a: 'Belirti yoksa evet. Ama kayma, uğultu veya sıcaklık davranışı başladıysa uzun yol öncesi kontrol etmek çok daha güvenlidir.',
+    },
+  ],
+  'toyota-corolla-cvt-sanziman-sorunlari': [
+    {
+      q: 'Toyota Corolla şanzıman yağı gerçekten hiç değişmez mi?',
+      a: 'Hayır. “Ömürlük yağ” ifadesi gerçek kullanım koşullarında güvenli bir bakım planı değildir. Corolla CVT’de yağın durumu şanzımanın davranışını doğrudan etkiler.',
+    },
+    {
+      q: 'Corolla CVT’den gelen uğultu normal midir?',
+      a: 'Hayır. İnce metalik uğultu veya ıslık sesi, özellikle hız arttıkça artıyorsa rulman veya kasnak çevresi tarafında aşınma düşündürür.',
+    },
+    {
+      q: 'D’den R’ye alırken sert tepki neden olur?',
+      a: 'Bu durum çoğu zaman hidrolik basınç yönlendirmesi veya forward clutch davranışıyla ilgilidir. Yağ kalitesi ve valf gövdesi tarafı birlikte değerlendirilmelidir.',
+    },
+    {
+      q: 'Devir yükselip araç uzamıyorsa büyük sorun mu var?',
+      a: 'Evet, bu ciddi bir işarettir. Kayış-kasnak tutunma kaybı başladıysa beklemek kasnak yüzeyini de riske atar ve maliyeti büyütür.',
+    },
+    {
+      q: 'Toyota CVT’de yanlış yağ gerçekten bu kadar zararlı mı?',
+      a: 'Evet. Doğru sıvı kullanılmazsa tutunma ve basınç karakteri bozulabilir. Corolla CVT’de yağ seçimi yalnız bakım değil, doğrudan çalışma prensibidir.',
+    },
+    {
+      q: 'Corolla CVT ile uzun yola çıkılır mı?',
+      a: 'Belirti yoksa evet. Ama vuruntu, uğultu veya kaydırma başladıysa uzun yol öncesi kontrol etmek çok daha güvenlidir.',
+    },
+  ],
+  'renault-edc-sanziman-sorunlari': [
+    {
+      q: 'EDC beyin revizyonu sonrası aynı arıza tekrar eder mi?',
+      a: 'Doğru teşhis ve doğru revizyonla uzun süre sağlıklı kullanılabilir. Asıl kritik nokta, sorunun gerçekten beyinden gelip gelmediğini net ayırmaktır; kavrama veya aktüatör sorununa yalnız beyin işlemi çözüm olmaz.',
+    },
+    {
+      q: 'Renault EDC şanzıman yağı kaç kilometrede kontrol edilmeli?',
+      a: 'Kuru ve ıslak EDC varyantlarının bakım yaklaşımı farklıdır; ama pratikte 60.000 km bandı kontrol ve bakım disiplini için kritik eşiktir. Özellikle ıslak EDC’de yağ kalitesi doğrudan davranışı etkiler.',
+    },
+    {
+      q: 'Yokuşta kalkışta titreme EDC için normal midir?',
+      a: 'Hayır. Özellikle kuru kavramalı EDC’de yokuşta titreme, kavrama yüzeyinin yorulmaya başladığını gösterebilir. Erken dönemde yakalanırsa maliyet büyümeden karar vermek mümkün olur.',
+    },
+    {
+      q: 'Renault EDC’de kuru kavrama ile ıslak kavrama farkı neden önemlidir?',
+      a: 'Çünkü arızanın karakteri değişir. Kuru EDC’de kavrama ısısı ve silkeleme daha baskınken, ıslak EDC’de yağ disiplini ve hidrolik davranış daha kritik hâle gelir.',
+    },
+    {
+      q: 'Uyarı lambası varken araç kullanılmaya devam edilir mi?',
+      a: 'Araç koruma moduna düşmüşse, geri vitese geçmiyorsa veya sıcak trafikte sürekli hata veriyorsa zorlamamak gerekir. Kısa mesafe güvenli alana geçiş ayrı, günlük kullanıma devam etmek ayrıdır.',
+    },
+    {
+      q: 'Beyin mi kavrama mı nasıl ayırt edilir?',
+      a: 'Sıcaklıkla gelen koruma modu, geçici düzelme ve uyarı mesajı daha çok beyin hattını; sürekli silkeleme ve kalkış titremesi ise kavrama hattını düşündürür. Kesin karar için hata kodu ve sürüş davranışı birlikte okunmalıdır.',
+    },
+  ],
+  'seat-dsg-sanziman-sorunlari': [
+    {
+      q: 'Seat DSG ile Volkswagen DSG arasında fark var mı?',
+      a: 'Mekanik aile aynıdır. Fark daha çok model, motor ve kullanım karakterinden gelir. Seat tarafında sportif sürüş beklentisi yüzünden küçük geçiş bozulmaları daha erken fark edilir.',
+    },
+    {
+      q: 'Seat Leon’da 1’den 2’ye silkeleme en çok neyi gösterir?',
+      a: 'Özellikle DQ200 kullanan Leon’larda ilk şüphe kavrama hattıdır. Ancak lamba, geç bağlanma veya korumaya düşme eşlik ediyorsa mekatronik tarafı da dışlanmamalıdır.',
+    },
+    {
+      q: 'Cupra modellerinde DSG daha mı çabuk yorulur?',
+      a: 'Tek başına marka adı değil, tork seviyesi ve kullanım profili belirleyicidir. Performanslı kullanım ısı yükünü artırabilir; ama asıl yıpratma çoğu zaman geciken bakım ve yanlış kullanım alışkanlıklarından gelir.',
+    },
+    {
+      q: 'Seat DSG’de yazılım sonrası sorun çıkması normal mi?',
+      a: 'Tork artışı özellikle DQ200 gibi kuru kavramalı kutularda tolerans sınırını daha erken öne çekebilir. Bu yüzden yazılım sonrası oluşan silkeleme veya gecikme ciddiye alınmalıdır.',
+    },
+    {
+      q: 'Seat DSG arızası varken araç kullanılmaya devam edilir mi?',
+      a: 'Hafif silkeleme ile koruma modu aynı şey değildir. Araç vites kaybediyor, lamba yakıyor veya geri vitese geçmiyorsa beklemek doğru değildir; kısa sürede kontrol edilmelidir.',
+    },
+    {
+      q: 'Seat DSG’de adaptasyon ne zaman yeterli olur?',
+      a: 'Erken kalibrasyon kaybı ve hafif geçiş bozulmalarında yardımcı olabilir. Ama fiziksel kavrama aşınması veya mekatronik hatası başladıysa adaptasyon tek başına kalıcı çözüm olmaz.',
+    },
+  ],
+  'peugeot-eat8-sanziman-sorunlari': [
+    {
+      q: 'Peugeot EAT8 DSG gibi çift kavrama mıdır?',
+      a: 'Hayır. EAT8, Aisin üretimi tork konvertörlü tam otomatik bir şanzımandır. Bu yüzden arıza karakteri çift kavramadan farklıdır; daha çok yağ, valf gövdesi ve tork konvertörü tarafında okunur.',
+    },
+    {
+      q: 'Kırmızı ışıkta durmaya yakın öne atılma hissi neden olur?',
+      a: 'Bu, vites küçültme sırasında hidrolik basıncın yeterince yumuşayamamasından kaynaklanabilir. Özellikle 3-2 ve 2-1 düşüşlerinde valf gövdesi davranışı dikkatle okunmalıdır.',
+    },
+    {
+      q: 'Sadece yağ değişimi EAT8 vuruntusunu düzeltir mi?',
+      a: 'Belirti yeni başladıysa çoğu zaman ciddi fayda sağlar; özellikle doğru prosedür ve adaptasyonla birlikte. Ama sertleşmiş ve uzun süredir devam eden vuruntularda valf gövdesi tarafı da masaya gelir.',
+    },
+    {
+      q: 'EAT8’de yağ gerçekten ömürlük mü?',
+      a: 'Hayır. Gerçek saha kullanımında bu güvenli bir yaklaşım değildir. Yoğun şehir içi, ısı ve kullanım şekli nedeniyle yağ zamanla özelliğini kaybeder ve davranış bozulur.',
+    },
+    {
+      q: 'Sabit hızda devir dalgalanması neyi gösterir?',
+      a: 'Bu, çoğu zaman lock-up yani tork konvertörü kilitleme hattında kaçırma veya kararsız tutunma ihtimalini düşündürür. Yağ ve basınç davranışı birlikte değerlendirilmelidir.',
+    },
+    {
+      q: 'EAT8 arızasında hemen komple şanzıman mı gerekir?',
+      a: 'Hayır. Birçok vakada erken teşhisle yağ, adaptasyon, valf gövdesi veya sınırlı hidrolik müdahale yeterli olabilir. Geç kalındığında maliyet büyür.',
+    },
+  ],
+  'bmw-zf-8hp-sanziman-sorunlari': [
+    {
+      q: 'ZF 8HP’de “lifetime oil” gerçekten doğru mu?',
+      a: 'Hayır. Gerçek saha kullanımında bu ifade güvenli bir bakım planı değildir. Özellikle yoğun şehir içi ve yüksek ısıda yağ özelliklerini kaybeder; 60.000-100.000 km bandında bakım disiplini önemlidir.',
+    },
+    {
+      q: 'BMW’de mekatronik köprü manşonu sızıntısı ne anlama gelir?',
+      a: 'ZF 8HP’nin en tipik sızıntı hatlarından biridir. Erken yakalandığında sınırlı kapsamla çözülebilir; ihmal edilirse yağ seviyesi düşer ve çok daha pahalı bir tabloya dönüşebilir.',
+    },
+    {
+      q: '50-90 km/s arasında hafif titreşim neden olur?',
+      a: 'Bu çoğu zaman tork konvertörü kilitleme hattında, yani lock-up tarafında yorgunluk işaretidir. Yağ, basınç ve tork konvertörü birlikte değerlendirilmelidir.',
+    },
+    {
+      q: 'Sıcakken geçişler kötüleşiyor, soğukken normal. Bu ne anlatır?',
+      a: 'En sık senaryo eski yağ ve mekatronik yorgunluğudur. Doğru sıra önce yağ disiplini, sonra mekatronik değerlendirmesidir.',
+    },
+    {
+      q: 'Yetkili servis komple değişim dediyse ikinci görüş almak mantıklı mı?',
+      a: 'Evet. ZF 8HP’de birçok vaka kademeli teşhis ve sınırlı müdahaleyle çözülebilir. Komple yenileme ancak gerçekten gerekli olduğunda anlamlıdır.',
+    },
+    {
+      q: 'ZF 8HP’de adaptasyon ne zaman yeterli olur?',
+      a: 'Erken dönemde, özellikle yağ ve pan işlemi sonrası belirti hafifse yardımcı olabilir. Ama sızıntı, tork konvertörü yorgunluğu veya ciddi mekatronik sorunu varsa tek başına yetmez.',
+    },
+  ],
   'sanziman-arizasi-nasil-anlasilir': [
     {
       q: 'Şanzıman arızasının ilk belirtisi genelde nedir?',

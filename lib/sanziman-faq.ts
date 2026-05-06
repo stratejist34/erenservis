@@ -1109,6 +1109,140 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
     },
   ],
 
+  'dsg-1-2-vites-silkeleme': [
+    {
+      q: "DSG'mde sadece 1-2 geçişinde silkeleme var, hemen kavrama mı değişir?",
+      a: 'Hayır. Tek başına 1-2 silkelemesi her zaman kavrama değişimi anlamına gelmez. Adaptasyon kaybı, basınç tarafı veya erken kavrama yorgunluğu aynı davranışı üretebilir.',
+    },
+    {
+      q: 'Yağ değişiminden sonra 1-2 silkelemesi başladı, neden?',
+      a: 'Bu çoğu zaman adaptasyon kaybı ile ilgilidir. Yağ değişimi sonrasında basis settings yapılmazsa şanzıman eski öğrenilmiş değerlerle çalışmaya devam edebilir.',
+    },
+    {
+      q: 'DQ200 ve DQ250’de 1-2 silkelemesinin sebebi aynı mı?',
+      a: 'Hayır. DQ200 tarafında kuru kavrama ve basınç tüpü daha sık öne çıkar. DQ250 tarafında ise ıslak kavrama ile mekatronik basınç ilişkisi daha belirgindir.',
+    },
+    {
+      q: 'Adaptasyon yapıldı ama belirti geri döndü, ne anlama gelir?',
+      a: 'Adaptasyonun kısa sürede aşılması çoğu zaman fiziksel aşınmanın sınırı geçtiğini gösterir. Bu noktada kavrama veya mekatronik hattı yeniden değerlendirilmelidir.',
+    },
+    {
+      q: '1-2 silkelemesiyle uzun yola çıkılır mı?',
+      a: 'Lamba, kayma ve koku yoksa kısa süreli kullanım mümkün olabilir; ama belirti büyüyorsa, özellikle yüklü kullanım ve sıcak havada beklemek yerine ön kontrol daha doğrudur.',
+    },
+    {
+      q: 'Servis direkt kavrama değişimi diyorsa ne istemeliyim?',
+      a: 'VCDS taraması, canlı veri ve yol testi sonucunu sorun. Bu üçlü olmadan verilen “direkt değişim” kararı eksik teşhis riski taşır.',
+    },
+  ],
+
+  'dsg-anahtar-isareti-yanip-sonuyor': [
+    {
+      q: "DSG'mde anahtar ikonu yandı, hemen mekatronik kart mı değişir?",
+      a: 'Hayır. Bu uyarı çoğu zaman hata kaydı anlamına gelir; sebep bazen adaptasyon veya sensör tarafında, bazen de bobin, basınç sensörü ya da basınç tüpü hattında olur. Veri olmadan direkt kart değişimi doğru değildir.',
+    },
+    {
+      q: 'Anahtar işareti yanıyor ama araç normal gidiyor, yine de servise gitmeli miyim?',
+      a: 'Evet. Araç yürüyor olsa da sistem bir hata kodu kaydetmiş demektir. Özellikle sarı sabit lambada 50-100 km içinde tarama yaptırmak en sağlıklı yaklaşımdır.',
+    },
+    {
+      q: 'Hata silindi ama birkaç gün sonra tekrar yandı, bu ne anlama gelir?',
+      a: 'Bu durum çoğu zaman sebebin yazılımsal değil donanımsal olduğunu gösterir. Kodun geri gelmesi, basınç, sensör veya solenoid hattında gerçek bir sorun olabileceğini düşündürür.',
+    },
+    {
+      q: 'Anahtar ikonu ile EPC lambası aynı şey mi?',
+      a: 'Hayır. EPC daha çok motor ve gaz yönetimi tarafını işaret eder. Anahtar veya anahtarlı dişli ikonu ise DSG kontrol modülünün şanzıman tarafında bir hata gördüğünü anlatır.',
+    },
+    {
+      q: 'Anahtar işareti yandığında uzun yola çıkılır mı?',
+      a: 'Lamba tek başınaysa ve başka belirti yoksa kısa süreli kullanım mümkün olabilir; ama yanıp sönüyorsa, boşa düşme, P kilidi, limp mode veya koku eşlik ediyorsa uzun yola çıkmak doğru değildir.',
+    },
+    {
+      q: 'DQ200’de anahtar lambası en çok hangi yüzden yanar?',
+      a: 'Sahada en sık gördüğümüz nedenler solenoid bobini, basınç sensörü, basınç tüpü ve P kilidi mekanizmasıdır. Çoğu vaka bağımsız parça müdahalesiyle çözülebilir.',
+    },
+  ],
+
+  'dsg-kavrama-tolerans-limiti': [
+    {
+      q: 'Kavrama tolerans limit kodu çıkınca kavrama kesin bitmiş midir?',
+      a: 'Hayır. Bu kod çoğu zaman karar penceresinin açıldığını gösterir. Gerçekten mekanik aşınma olabilir; ama bazen adaptasyon kaybı veya basınç tarafı da kavramayı olduğundan kötü gösterebilir.',
+    },
+    {
+      q: 'Kodu sildirmek yeterli olur mu?',
+      a: 'Tek başına kod silmek çözüm değildir. Sebep yazılımsalsa geri gelmeyebilir; ama fiziksel aşınma varsa kod kısa sürede tekrar yazılır. Doğru karar için canlı veri gerekir.',
+    },
+    {
+      q: 'Kavrama 1 ve Kavrama 2 farkı neden önemli?',
+      a: 'K1 daha çok şehir içi ve sık kalkışta yorulur, K2 ise daha çok yüksek vites yükleriyle ilişkilidir. Hangi hattın tolerans dışına çıktığı kullanım profilini anlamaya yardım eder.',
+    },
+    {
+      q: 'Adaptasyon ne zaman denenmeli?',
+      a: 'Yağ değişimi, akü işlemi veya yazılım güncellemesi sonrası yeni çıkan hafif vakalarda adaptasyon denenebilir. Özellikle belirti yoksa ilk basamak budur.',
+    },
+    {
+      q: 'Adaptasyon yapıldıktan sonra kod geri gelirse ne anlama gelir?',
+      a: 'Bu çoğu zaman fiziksel aşınma sınırının geçildiğini gösterir. Tekrar tekrar adaptasyon yapmak çözüm değil, gecikmedir.',
+    },
+    {
+      q: 'Bu kodla uzun yola çıkılır mı?',
+      a: 'Belirti yoksa kısa süreli kullanım mümkün olabilir; ama kayma, koku veya silkeleme eşlik ediyorsa uzun yol öncesi kontrol şarttır. Özellikle yüklü ve sıcak kullanım riski büyütür.',
+    },
+  ],
+
+  'dsg-yokusta-geri-kacirma': [
+    {
+      q: "DSG'm yokuşta kısa süre geri kayıyor, bu her zaman arıza mıdır?",
+      a: 'Hayır. Çok hafif eğimde ve çok kısa sürede olan kayma bazen hill-hold süresinin kısa davranmasıyla ilişkilidir. Ama belirti büyüyorsa veya sıklaşıyorsa normal kabul edilmemelidir.',
+    },
+    {
+      q: 'Yokuşta geri kaçma kavramadan mı gelir, basınç tüpünden mi?',
+      a: 'Her ikisi de olabilir. DQ200 tarafında basınç tüpü sık atlanan sebeptir; kavrama tarafında ise kayma, silkeleme ve koku daha baskın eşlik eder.',
+    },
+    {
+      q: 'Hill-hold kapalıysa aynı belirtiyi üretir mi?',
+      a: 'Evet. Hill-hold kapalı veya arızalıysa araç, şanzıman sağlıklı olsa bile rampada geri kaçabilir. Bu yüzden yalnız şanzıman değil ABS/ESC tarafı da kontrol edilmelidir.',
+    },
+    {
+      q: 'Kavrama değişti ama geri kaçma sürüyor, neden?',
+      a: 'Bu durum çoğu zaman sebebin kavramada değil mekatronik basınç tarafında veya hill-hold sisteminde olduğunu gösterir. Yanlış teşhisle değişen kavrama tek başına çözüm getirmez.',
+    },
+    {
+      q: 'Geri kaçma ile birlikte yanık koku varsa ne yapmalıyım?',
+      a: 'Bu kombinasyon kavramanın zorlandığını ve riski büyüttüğünü gösterir. Dik rampalarda zorlamamak ve mümkünse çekiciyle kontrol ettirmek daha güvenlidir.',
+    },
+    {
+      q: 'Adaptasyon bu sorunu tamamen çözebilir mi?',
+      a: 'Sadece yazılımsal veya öğrenme kaynaklı vakalarda yardımcı olabilir. Basınç kaybı, kavrama aşınması veya hill-hold arızasında tek başına çözüm değildir.',
+    },
+  ],
+  'dsg-yag-kacagi-belirtileri': [
+    {
+      q: 'DSG yağ kaçağı en kolay nasıl fark edilir?',
+      a: 'En kolay işaret, park yerinde düzenli iz bırakmasıdır. Ama her kaçak damlama yapmaz; bazı vakalarda ilk belirti geç bağlama, vuruntu veya sıcak kullanımda davranış değişimi olur.',
+    },
+    {
+      q: 'Yağ kaçağı varken araç kullanılabilir mi?',
+      a: 'Kaçağın boyutuna göre kısa süreli kullanım mümkün olabilir ama doğru strateji bu değildir. Çünkü küçük görünen eksiltme, basınç ve geçiş davranışını düşündüğünüzden hızlı bozabilir.',
+    },
+    {
+      q: 'DSG yağ kaçağı doğrudan komple revizyon demek midir?',
+      a: 'Hayır. Erken yakalanan birçok vaka conta veya kapak seviyesinde kalır. Asıl maliyet, kaçağın uzun süre ihmal edilip basınç ve kavrama davranışını bozmasıyla büyür.',
+    },
+    {
+      q: 'Şanzıman yağı eksilince hangi belirtiler çıkar?',
+      a: 'Geç bağlama, vuruntu, ilk kalkışta kararsızlık, sıcak kullanımda karakter değişimi ve bazen uyarı lambası görülebilir. Yani eksilme sadece fiziksel değil, sürüş davranışına da yansır.',
+    },
+    {
+      q: 'Sadece yağ ekletmek yeterli olur mu?',
+      a: 'Hayır. Sistem neden eksilttiği çözülmeden yalnız yağ eklemek sorunu gizler. Kısa süre rahatlama olsa bile kaçak devam ettiği için gerçek risk büyümeye devam eder.',
+    },
+    {
+      q: 'Mekatronik çevresindeki kaçak neden daha önemlidir?',
+      a: 'Çünkü burada konu yalnız sıvı seviyesi değil, basınç davranışıdır. Mekatronik çevresindeki kaçak uzarsa geç bağlama, vuruntu ve basınç kararsızlığı gibi daha pahalı zincir sorunlara dönebilir.',
+    },
+  ],
+
   'otomatik-sanziman-gecikme': [
     {
       q: 'Otomatik şanzımanda vites geçişi neden gecikiyor?',
@@ -1198,6 +1332,163 @@ export const TRANSMISSION_FAQS: Record<string, FaqItem[]> = {
         'Erken evrede yağ + filtre değişimi + adaptasyon kaymayı durdurabilir. ' +
         'Ancak kayış aşınması başlamışsa yağ değişimi semptomu geçici maskeler, ' +
         'kalıcı çözüm değildir.',
+    },
+  ],
+
+  'passat-dsg-sanziman-sorunlari': [
+    {
+      q: "Passat 2.0 TDI'mde hangi DSG var?",
+      a: 'Çoğu zaman DQ250 veya DQ381 kullanılır. 4Motion ve daha yüksek torklu versiyonlarda DQ500 görülür. Kesin tespit için VIN sorgulaması en güvenli yoldur.',
+    },
+    {
+      q: "Passat'ımda yağ değişimini hiç yaptırmadım, ne olur?",
+      a: 'Islak DSG tarafında yağ ihmali en yıkıcı senaryolardan biridir. Eski yağ önce basınç sistemini, ardından kavrama davranışını bozar ve toplam tamir kapsamını büyütür.',
+    },
+    {
+      q: 'Passat DQ500 güvenilir mi?',
+      a: 'Evet, doğru yağ disiplini ile çok güvenilirdir. Ancak tamir maliyeti DQ250’ye göre daha yüksektir; bu yüzden erken teşhis ve doğru bakım daha da kritik hale gelir.',
+    },
+    {
+      q: "Passat'ım uzun yolda iyi ama şehir içinde gecikme var, ciddi mi?",
+      a: 'Bu çoğu zaman erken mekatronik veya hidrolik basınç uyarısıdır. Uzun yolda belirti gizlenebilir; şehir içi ve soğuk çalışma davranışı gerçek tabloyu daha net gösterir.',
+    },
+    {
+      q: "Passat 4Motion'da DSG farkı var mı?",
+      a: 'Evet. 4Motion tarafında daha yüksek tork aktarıldığı için DQ500 ve bazı yeni nesil DQ381 uygulamaları görülür. Bu araçlarda yağ + filtre disiplini daha da önemlidir.',
+    },
+    {
+      q: "Limp mode'a düştü, eve kadar gidebilir miyim?",
+      a: 'Kısa mesafede araç yürüyebilir gibi görünse de limp mode genelde basınç veya mekatronik tarafında aktif bir koruma durumudur. En güvenli yaklaşım çekici ve kontrollü teşhistir.',
+    },
+  ],
+  'golf-7-dsg-sanziman-sorunlari': [
+    {
+      q: "Golf 7'de en sık hangi DSG var?",
+      a: "Türkiye'de en sık görülen Golf 7 DSG, 1.0 / 1.2 / 1.4 TSI ve 1.6 TDI tarafındaki DQ200'dür. 2.0 TDI ve GTI / R tarafında ise DQ250 veya DQ381 daha yaygındır.",
+    },
+    {
+      q: "Golf 7 DSG'de sarsıntı her zaman kavrama anlamına mı gelir?",
+      a: 'Hayır. Sarsıntı çoğu zaman kavrama tarafını düşündürür ama basınç tüpü, adaptasyon kaybı veya mekatronik basınç sorunu da aynı belirtiyi üretebilir.',
+    },
+    {
+      q: 'Golf 7 DQ200 mü DQ250 mi nasıl anlarım?',
+      a: 'En temiz yol VIN sorgulaması veya VCDS taramasıdır. Pratikte düşük hacimli TSI ve 1.6 TDI tarafında DQ200, 2.0 TDI ve GTI/R tarafında DQ250-DQ381 daha yaygındır.',
+    },
+    {
+      q: "Golf 7 DSG'de yağ değişimi ne kadar önemli?",
+      a: 'Çok önemlidir. Özellikle ıslak DSG ailelerinde 60.000 km yağ + filtre disiplini ömrü doğrudan belirler. DQ200 tarafında da mekatronik yağı ve doğru adaptasyon ihmal edilmemelidir.',
+    },
+    {
+      q: "Golf 7 DSG'de anahtar lambası yanınca ne düşünmeliyim?",
+      a: 'Özellikle DQ200 tarafında mekatronik hattı akla gelir. Bobin, sensör, basınç tüpü veya P kilidi tarafı tarama ile ayrıştırılmalıdır; direkt kavrama kararı doğru olmayabilir.',
+    },
+    {
+      q: "Golf 7 DSG'de adaptasyon ne zaman işe yarar?",
+      a: 'Yağ değişimi, akü işlemi veya yazılım sonrası oluşan hafif vakalarda işe yarayabilir. Fiziksel aşınma veya basınç düşüklüğünde tek başına çözüm olmaz.',
+    },
+  ],
+  'skoda-octavia-dsg-sanziman-sorunlari': [
+    {
+      q: "Skoda Octavia'da en sık hangi DSG var?",
+      a: "Türkiye'de en sık görülen Octavia DSG, 1.0 / 1.2 / 1.4 TSI ve 1.6 TDI tarafındaki DQ200'dür. 2.0 TDI, RS ve 4x4/Scout tarafında DQ250 veya DQ381 daha yaygındır.",
+    },
+    {
+      q: "Octavia'da DSG neden Golf 7'ye göre daha erken yoruluyor gibi görünür?",
+      a: 'Çünkü kullanım profili daha ağırdır. Daha yüklü bagaj, ticari kullanım ve daha yüksek yıllık kilometre, aynı DSG ailesini sahada daha erken belirti verir hâle getirir.',
+    },
+    {
+      q: "Ticari kullanılan Octavia'da DQ200 mantıklı mı?",
+      a: 'Kullanılır ama ağır profildir. Ticari yoğunlukta DQ200 daha erken kavrama ve basınç tüpü yorgunluğu üretebilir; bu yüzden bakım disiplini ve erken teşhis çok daha kritik hale gelir.',
+    },
+    {
+      q: "Octavia'da yokuşta geri kaçma neyi düşündürür?",
+      a: 'Yüklü kullanımda bu belirti kavrama kadar basınç tüpü ve mekatronik tarafını da düşündürür. Hill-hold tarafı da dışlanmadan kontrol edilmelidir.',
+    },
+    {
+      q: "Octavia DSG'de yağ değişimi kaç km'de yapılmalı?",
+      a: 'DQ250 ve benzeri ıslak DSG ailelerinde 60.000 km temel kabul edilir; ticari kullanımda 50.000 km’ye çekmek akıllıcadır. DQ200 tarafında da mekatronik yağı ve adaptasyon ihmal edilmemelidir.',
+    },
+    {
+      q: "Octavia'da adaptasyon ne zaman yeterli olur?",
+      a: 'Yağ değişimi, akü işlemi veya yazılım sonrası başlayan hafif vakalarda işe yarayabilir. Ama gerçek aşınma veya basınç kaybı varsa tek başına çözüm değildir.',
+    },
+  ],
+  'audi-a3-s-tronic-sanziman-sorunlari': [
+    {
+      q: 'S-Tronic ile DSG aynı şey mi?',
+      a: 'Evet. S-Tronic, Audi’nin DSG için kullandığı isimdir. DQ200, DQ250, DQ381 ve DQ500 gibi temel şanzıman aileleri markalar arasında ortaktır.',
+    },
+    {
+      q: "Audi A3'te en sık hangi S-Tronic var?",
+      a: "Türkiye'de en sık görülen A3 S-Tronic, 1.0 / 1.2 / 1.4 TFSI ve 1.6 TDI tarafındaki DQ200'dür. 1.8 TFSI, 2.0 TDI ve daha güçlü versiyonlarda ıslak aileler devreye girer.",
+    },
+    {
+      q: "A3'te küçük bir geçiş farkını hemen hissetmem normal mi?",
+      a: 'Evet. A3 kabini daha sessiz ve sürüş beklentisi daha yüksek olduğu için küçük kalibrasyon kayıpları bile erken fark edilir. Bu çoğu zaman değerli bir erken uyarıdır.',
+    },
+    {
+      q: "A3 S-Tronic için yetkili servis şart mı?",
+      a: 'Hayır. Doğru ekipman ve DSG tecrübesi olan uzman özel servisler, A3 S-Tronic’i aynı mekanik aile mantığıyla güvenle teşhis ve tamir edebilir.',
+    },
+    {
+      q: "A3 S-Tronic'te yağ değişimi neden önemli?",
+      a: 'Özellikle ıslak DSG ailelerinde yağ + filtre disiplini ömrü doğrudan belirler. DQ200 tarafında da mekatronik yağı ve doğru adaptasyon ihmal edilmemelidir.',
+    },
+    {
+      q: "A3'te adaptasyon ne zaman işe yarar?",
+      a: 'Yağ değişimi, akü işlemi veya yazılım sonrası oluşan hafif kararsızlıklarda işe yarayabilir. Gerçek kavrama aşınması veya basınç kaybı varsa tek başına çözüm olmaz.',
+    },
+  ],
+  'volkswagen-dq200-sanziman-sorunlari': [
+    {
+      q: 'DQ200 şanzımanın ömrü ne kadardır?',
+      a: 'Kullanım profiline göre ciddi değişir. Yoğun şehir içi kullanımda kavrama ömrü daha erken gelebilir; uzun yol ağırlıklı kullanımda daha uzun yaşayabilir. DQ200 için davranış ve bakım disiplini kilometreden daha belirleyicidir.',
+    },
+    {
+      q: 'DQ200 kuru kavrama diye içinde hiç yağ yok mu?',
+      a: 'Hayır. Kuru olan kavrama diskleridir. Şanzımanın mekanik ve mekatronik tarafında yine yağ ve hidrolik davranış vardır; bu yüzden yağ ve basınç tarafı ihmal edilmez.',
+    },
+    {
+      q: 'P17BF her zaman komple kart değişimi demek midir?',
+      a: 'Hayır. Bu kod çoğu zaman basınç hattı ve akümülatör tarafını düşündürür. Doğru teşhis yapılmadan direkt komple kart değişimi kararı vermek sağlıklı değildir.',
+    },
+    {
+      q: 'DQ200’de 1-2 silkelemesi her zaman kavrama mıdır?',
+      a: 'Çoğu zaman kavrama tarafı öne çıkar; ama basınç tüpü, solenoid veya adaptasyon kaybı da benzer semptom üretebilir. Bu yüzden canlı veri olmadan net hüküm verilmez.',
+    },
+    {
+      q: 'Güçlendirilmiş çözüm ne demek?',
+      a: 'Amacımız yalnız bozulan parçayı değiştirmek değil, aynı hattın tekrar zayıf kalmasını önleyecek doğru kapsamı seçmektir. DQ200’de özellikle basınç hattı ve doğru adaptasyon bu yüzden kritik önemdedir.',
+    },
+    {
+      q: 'DQ200’le uzun yola çıkılır mı?',
+      a: 'Belirti yoksa evet. Ama anahtar lambası, geç bağlama, silkeleme ve kayma gibi işaretler başladıysa uzun yol öncesi kontrol etmek çok daha güvenlidir.',
+    },
+  ],
+  'sanziman-arizasi-nasil-anlasilir': [
+    {
+      q: 'Şanzıman arızasının ilk belirtisi genelde nedir?',
+      a: 'En sık ilk belirti, sürücünün “araç biraz geç bağlamaya başladı” diye tarif ettiği gecikmedir. Bunu hafif vuruntu, titreme veya uğultu izleyebilir.',
+    },
+    {
+      q: 'Her vuruntu şanzıman arızası mıdır?',
+      a: 'Hayır, ama her vuruntu ciddiye alınmalıdır. Basit adaptasyon kaymasından daha ciddi basınç veya kavrama sorununa kadar farklı tablolarda benzer his oluşabilir.',
+    },
+    {
+      q: 'Şanzıman arızası ilerlemeden nasıl yakalanır?',
+      a: 'Belirtinin hangi koşulda çıktığını erken not etmek gerekir: soğuk-sıcak farkı, yokuşta olup olmadığı, uyarı lambası eşlik edip etmediği ve zeminde iz bırakıp bırakmadığı ilk ayrımı hızlandırır.',
+    },
+    {
+      q: 'Sadece yağ kaçağı varsa yine de riskli midir?',
+      a: 'Evet. Çünkü kaçağın boyutu gözle her zaman doğru okunmaz. Kaçak uzun süre sürerse davranış bozulmasına ve daha büyük maliyete dönebilir.',
+    },
+    {
+      q: 'Ne zaman hemen servise gitmek gerekir?',
+      a: 'Araç tek viteste kalıyor, geri viteste bağlanmıyor, belirgin yanık koku geliyor veya uyarı lambası ile birlikte güç kaybı yaşanıyorsa beklememek gerekir.',
+    },
+    {
+      q: 'Arıza lambası yanmadan da şanzıman sorunu olabilir mi?',
+      a: 'Evet. Birçok şanzıman sorunu önce davranış değişimiyle başlar; lamba daha sonra gelir. Bu yüzden vuruntu, gecikme ve koku gibi erken belirtiler önemlidir.',
     },
   ],
 };

@@ -53,7 +53,7 @@ export default function HakkimizdaPage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/part2/Screenshot_102.webp)',
+            backgroundImage: 'url(/images/part2/Sanziman-inceleme-Eren-Servis-DSG-Sanziman-Servisi-1170x494.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'blur(6px) saturate(0.55) brightness(0.5)',
@@ -115,8 +115,8 @@ export default function HakkimizdaPage() {
             <div className="relative rounded-2xl overflow-hidden border border-border-hairline bg-graphite-surface">
               <div className="relative h-72">
                 <Image
-                  src="/images/part2/Screenshot_107.webp"
-                  alt="Önder Usta ve Eren Otomatik Şanzıman Servisi ekibi araç altında otomatik şanzıman incelemesi yapıyor"
+                  src="/images/part2/Screenshot_102.webp"
+                  alt="Önder Usta, Eren Otomatik Şanzıman Servisi atölyesinde mekatronik incelemesi yapıyor"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 420px"

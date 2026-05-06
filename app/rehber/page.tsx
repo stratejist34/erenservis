@@ -204,8 +204,8 @@ export default function RehberHubPage() {
                 <div className="overflow-hidden rounded-[30px] border border-[#d5c2aa] bg-[#f8f2ea] shadow-[0_20px_60px_rgba(63,42,19,0.14)]">
                   <div className="relative aspect-[4/4.25]">
                     <Image
-                      src="/images/servis2.webp"
-                      alt="Eren Otomatik Şanzıman Servisi atölye görüntüsü"
+                      src="/images/part2/dsg-sanziman-tamiri.webp"
+                      alt="Eren Otomatik Şanzıman Servisi'nde DSG mekatronik parça incelemesi"
                       fill
                       className="object-cover"
                       priority
